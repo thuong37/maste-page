@@ -281,8 +281,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const recentSearchList = document.getElementById('recentSearchList');
   const btnClearSearchHistory = document.getElementById('btnClearSearchHistory');
   const btnCloseSuggest = document.getElementById('btnCloseSuggest');
-  const industryPillsRow = document.getElementById('industryPillsRow');
-  const industryHotRoles = document.getElementById('industryHotRoles');
+  const industryNavList = document.getElementById('industryNavList');
+  const industryPageInfo = document.getElementById('industryPageInfo');
+  const btnIndustryPrevPage = document.getElementById('btnIndustryPrevPage');
+  const btnIndustryNextPage = document.getElementById('btnIndustryNextPage');
+  const industryMegaContent = document.getElementById('industryMegaContent');
 
   if (heroSearchWrapper && heroSearchInput && searchSuggestDropdown) {
     const STORAGE_KEY = 'easycv_recent_searches_v2';
@@ -294,40 +297,379 @@ document.addEventListener('DOMContentLoaded', () => {
       'Kế toán tổng hợp'
     ];
 
-    const INDUSTRY_ROLES = {
-      it: [
-        'Frontend ReactJS', 'Backend Java / Spring', 'Node.js Developer',
-        'AI & Prompt Engineer', 'DevOps / Cloud', 'Mobile Flutter / iOS', 'Data Analyst'
+    // Dữ liệu 5 trang Danh mục ngành nghề (mỗi trang 6 ngành) chuẩn Mega-Menu TopCV
+    const INDUSTRY_PAGES = [
+      // TRANG 1: Trọng tâm (theo ảnh mẫu người dùng cung cấp)
+      [
+        {
+          key: 'sales',
+          name: 'Kinh doanh/Bán hàng',
+          hotSearches: [
+            'Nhân viên kinh doanh', 'Nhân viên bán hàng', 'Nhân viên tư vấn',
+            'Telesales', 'Sales Admin', 'Tư vấn tuyển sinh', 'Sales Online'
+          ],
+          subgroups: [
+            {
+              title: 'Sales Xuất nhập khẩu/Logistics',
+              roles: ['Sales Logistics', 'Kinh doanh chuyển phát nhanh', 'Sales Xuất nhập khẩu/Logistics khác']
+            },
+            {
+              title: 'Sales Bất động sản',
+              roles: ['Sales bất động sản/Môi giới bất động sản', 'Sales Bất động sản khác']
+            },
+            {
+              title: 'Sales Xây dựng',
+              roles: ['Kinh doanh thiết bị/vật liệu xây dựng', 'Kinh doanh nội thất']
+            },
+            {
+              title: 'Sales Kỹ thuật & Công nghệ',
+              roles: ['Sales Phần mềm B2B (SaaS)', 'Kinh doanh thiết bị IT', 'Chuyên viên giải pháp doanh nghiệp']
+            },
+            {
+              title: 'Sales Bán lẻ & Chuỗi phân phối',
+              roles: ['Giám sát bán hàng (Supervisor)', 'Quản lý cửa hàng', 'Trình dược viên ETC/OTC']
+            }
+          ]
+        },
+        {
+          key: 'marketing',
+          name: 'Marketing/PR/Quảng cáo',
+          hotSearches: [
+            'Digital Marketing', 'Content Creator', 'SEO Specialist',
+            'Performance Ads', 'Brand Manager', 'Social Media Lead'
+          ],
+          subgroups: [
+            {
+              title: 'Truyền thông & Sáng tạo nội dung',
+              roles: ['Copywriter / Content Lead', 'Social Media Executive', 'Biên kịch Video / TikTok', 'PR & Báo chí']
+            },
+            {
+              title: 'Chạy Quảng cáo & Tăng trưởng',
+              roles: ['Chuyên viên Google Ads', 'Facebook & TikTok Ads', 'Performance Marketing', 'Growth Hacker']
+            },
+            {
+              title: 'Thương hiệu & Sự kiện',
+              roles: ['Brand Marketing Specialist', 'Trade Marketing Executive', 'Tổ chức sự kiện (Event Officer)']
+            }
+          ]
+        },
+        {
+          key: 'cskh',
+          name: 'Chăm sóc khách hàng (Customer Service)',
+          hotSearches: [
+            'Chuyên viên CSKH', 'Nhân viên Call Center', 'Trực chat hỗ trợ',
+            'Chăm sóc khách hàng VIP', 'Hỗ trợ kỹ thuật Helpdesk'
+          ],
+          subgroups: [
+            {
+              title: 'Vận hành & Hỗ trợ CSKH',
+              roles: ['Chuyên viên tư vấn & CSKH', 'Xử lý khiếu nại khách hàng', 'Điều phối dịch vụ khách hàng']
+            },
+            {
+              title: 'CSKH Doanh nghiệp & VIP',
+              roles: ['Quản lý tài khoản khách hàng (AM)', 'CSKH khách hàng Doanh nghiệp (B2B)', 'Chăm sóc hội viên VIP']
+            }
+          ]
+        },
+        {
+          key: 'hr',
+          name: 'Nhân sự/Hành chính/Pháp chế',
+          hotSearches: [
+            'Tuyển dụng (Recruiter / TA)', 'HR Generalist', 'C&B Specialist',
+            'Hành chính văn phòng', 'Pháp chế doanh nghiệp'
+          ],
+          subgroups: [
+            {
+              title: 'Tuyển dụng & Quản trị nhân tài',
+              roles: ['Talent Acquisition Specialist', 'Headhunter', 'HR Business Partner (HRBP)', 'Chuyên viên Đào tạo (L&D)']
+            },
+            {
+              title: 'Vận hành nhân sự & Đãi ngộ',
+              roles: ['Chuyên viên Tiền lương & Phúc lợi (C&B)', 'Quản lý hợp đồng & Hồ sơ nhân sự', 'Chuyên viên Quan hệ lao động']
+            },
+            {
+              title: 'Hành chính & Pháp lý',
+              roles: ['Hành chính nhân sự tổng hợp', 'Pháp chế hợp đồng', 'Văn thư - Lưu trữ']
+            }
+          ]
+        },
+        {
+          key: 'it',
+          name: 'Công nghệ Thông tin',
+          hotSearches: [
+            'Frontend ReactJS', 'Backend Java / Spring', 'Node.js Developer',
+            'AI & Prompt Engineer', 'DevOps / Cloud', 'Mobile Flutter / iOS', 'Data Analyst'
+          ],
+          subgroups: [
+            {
+              title: 'Lập trình Phần mềm & Web',
+              roles: ['Frontend Developer (Vue/React)', 'Backend Developer (Java/Node/.NET)', 'Fullstack Developer', 'Mobile Developer (iOS/Android)']
+            },
+            {
+              title: 'Dữ liệu & Trí tuệ nhân tạo (AI)',
+              roles: ['Data Analyst', 'Data Engineer', 'Machine Learning Engineer', 'Prompt Engineer']
+            },
+            {
+              title: 'Hạ tầng, Đám mây & Bảo mật',
+              roles: ['DevOps / SRE', 'Cloud AWS/Azure Solutions', 'System & Network Admin', 'Cyber Security Specialist']
+            },
+            {
+              title: 'Quản lý dự án & Kiểm thử',
+              roles: ['QA/QC Automation Tester', 'Product Owner (PO)', 'Business Analyst (BA)', 'Scrum Master / PM']
+            }
+          ]
+        },
+        {
+          key: 'worker',
+          name: 'Lao động phổ thông',
+          hotSearches: [
+            'Công nhân may mặc', 'Nhân viên phụ kho', 'Tài xế giao hàng (Shipper)',
+            'Thợ cơ khí hàn tiện', 'Bảo vệ tòa nhà'
+          ],
+          subgroups: [
+            {
+              title: 'Sản xuất, Gia công & May mặc',
+              roles: ['Công nhân lắp ráp điện tử', 'Thợ may công nghiệp', 'Công nhân chế biến thực phẩm', 'Kiểm tra chất lượng (KCS)']
+            },
+            {
+              title: 'Kho bãi & Vận tải phổ thông',
+              roles: ['Nhân viên đóng gói & phụ kho', 'Tài xế xe tải / xe nâng', 'Giao hàng nhanh', 'Bốc xếp hàng hóa']
+            }
+          ]
+        }
       ],
-      marketing: [
-        'Digital Marketing', 'Content Creator', 'SEO Specialist',
-        'Brand Manager', 'Performance Ads Lead', 'Social Media Lead'
+      // TRANG 2
+      [
+        {
+          key: 'finance',
+          name: 'Tài chính / Ngân hàng / Bảo hiểm',
+          hotSearches: ['Kế toán tổng hợp', 'Chuyên viên Tín dụng', 'Kiểm toán viên', 'Phân tích tài chính', 'Giao dịch viên Ngân hàng'],
+          subgroups: [
+            { title: 'Kế toán & Kiểm toán', roles: ['Kế toán thuế', 'Kế toán trưởng', 'Kiểm toán viên độc lập', 'Kế toán kho'] },
+            { title: 'Ngân hàng & Đầu tư', roles: ['Quan hệ khách hàng doanh nghiệp (RM)', 'Tư vấn tín dụng cá nhân', 'Phân tích đầu tư chứng khoán', 'Giao dịch viên'] }
+          ]
+        },
+        {
+          key: 'eng',
+          name: 'Kỹ thuật / Cơ điện / Chế tạo',
+          hotSearches: ['Kỹ sư Cơ khí', 'Kỹ sư Điện - Tự động hóa', 'Kỹ sư Xây dựng', 'QA/QC Engineer', 'Kỹ thuật viên Vận hành'],
+          subgroups: [
+            { title: 'Cơ khí & Tự động hóa', roles: ['Thiết kế cơ khí (SolidWorks/AutoCAD)', 'Lập trình PLC & Tự động hóa', 'Bảo trì máy công nghiệp'] },
+            { title: 'Điện - Điện tử & Công trình', roles: ['Kỹ sư điện M&E', 'Giám sát thi công xây dựng', 'Kỹ sư trắc địa / dự toán'] }
+          ]
+        },
+        {
+          key: 'logistics',
+          name: 'Vận tải / Kho vận / Logistics',
+          hotSearches: ['Nhân viên Xuất nhập khẩu', 'Quản lý kho vận (Warehouse)', 'Thu mua (Purchasing)', 'Điều phối vận tải', 'Customs Specialist'],
+          subgroups: [
+            { title: 'Xuất nhập khẩu & Hải quan', roles: ['Nhân viên chứng từ XNK', 'Khai báo hải quan điện tử', 'Thu mua quốc tế (Sourcing)'] },
+            { title: 'Quản trị chuỗi cung ứng & Kho', roles: ['Supply Chain Specialist', 'Quản lý kho bãi 3PL', 'Điều phối đội xe container'] }
+          ]
+        },
+        {
+          key: 'design',
+          name: 'Thiết kế / Sáng tạo / Nghệ thuật',
+          hotSearches: ['Senior UI/UX Designer', 'Graphic Designer', '3D / Motion Artist', 'Product Designer', 'Brand Visual Designer'],
+          subgroups: [
+            { title: 'Thiết kế Đồ họa & Thương hiệu', roles: ['Graphic Designer 2D', 'Nhận diện thương hiệu', 'Thiết kế bao bì / ấn phẩm'] },
+            { title: 'UI/UX & Mỹ thuật số', roles: ['UI/UX App/Web Designer', '3D Generalist', 'Motion Designer / Animator'] }
+          ]
+        },
+        {
+          key: 'realestate',
+          name: 'Bất động sản / Địa ốc',
+          hotSearches: ['Môi giới căn hộ cao cấp', 'Chuyên viên đất nền', 'Quản lý tòa nhà', 'Thẩm định giá bất động sản'],
+          subgroups: [
+            { title: 'Kinh doanh & Phân phối BĐS', roles: ['Chuyên viên BĐS thương mại', 'Môi giới dự án', 'Tư vấn đầu tư BĐS'] },
+            { title: 'Vận hành & Phát triển dự án', roles: ['Ban quản lý tòa nhà', 'Phát triển quỹ đất', 'Thẩm định dự án'] }
+          ]
+        },
+        {
+          key: 'hospitality',
+          name: 'Du lịch / Nhà hàng / Khách sạn',
+          hotSearches: ['Lễ tân khách sạn', 'Bếp trưởng / Bếp phó', 'Quản lý nhà hàng', 'Hướng dẫn viên du lịch', 'Bartender / Pha chế'],
+          subgroups: [
+            { title: 'Khách sạn & Nghỉ dưỡng', roles: ['Lễ tân ca đêm', 'Housekeeping', 'Sales Khách sạn / OTA'] },
+            { title: 'Ẩm thực (F&B)', roles: ['Đầu bếp Á/Âu', 'Phục vụ bàn chuyên nghiệp', 'Giám sát ca F&B'] }
+          ]
+        }
       ],
-      finance: [
-        'Kế toán tổng hợp', 'Chuyên viên Tín dụng', 'Kiểm toán viên',
-        'Phân tích tài chính', 'Giao dịch viên Ngân hàng'
+      // TRANG 3
+      [
+        {
+          key: 'healthcare',
+          name: 'Y tế / Dược phẩm / Sức khỏe',
+          hotSearches: ['Dược sĩ đại học', 'Điều dưỡng viên', 'Trình dược viên', 'Bác sĩ đa khoa', 'Kỹ thuật viên xét nghiệm'],
+          subgroups: [
+            { title: 'Dược & Thiết bị y tế', roles: ['Dược sĩ phụ trách nhà thuốc', 'Sales thiết bị y tế', 'Đăng ký lưu hành thuốc'] },
+            { title: 'Khám chữa bệnh & Chăm sóc', roles: ['Điều dưỡng phòng khám', 'Kỹ thuật viên nha khoa', 'Chuyên viên dinh dưỡng'] }
+          ]
+        },
+        {
+          key: 'education',
+          name: 'Giáo dục / Đào tạo / Giảng dạy',
+          hotSearches: ['Giáo viên tiếng Anh', 'Giáo viên mầm non', 'Trợ giảng IELTS', 'Cố vấn học tập', 'Chuyên viên phát triển khóa học'],
+          subgroups: [
+            { title: 'Giảng dạy ngoại ngữ', roles: ['Giáo viên IELTS / TOEIC', 'Giáo viên tiếng Hàn / Nhật', 'Trợ giảng lớp học'] },
+            { title: 'Giáo dục phổ thông & Trực tuyến', roles: ['Giáo viên STEM / Lập trình', 'Biên tập giáo trình số', 'Tư vấn giáo dục'] }
+          ]
+        },
+        {
+          key: 'languages',
+          name: 'Biên - Phiên dịch / Ngoại ngữ',
+          hotSearches: ['Biên dịch tiếng Anh', 'Phiên dịch tiếng Trung cabin', 'Biên dịch tiếng Nhật N2/N1', 'Phiên dịch tiếng Hàn công trường'],
+          subgroups: [
+            { title: 'Biên dịch tài liệu chuyên ngành', roles: ['Biên dịch hợp đồng pháp lý', 'Biên dịch phụ đề phim', 'Biên dịch sách / game'] },
+            { title: 'Phiên dịch hội nghị & Nhà máy', roles: ['Phiên dịch dự án EPC', 'Trợ lý giám đốc ngoại ngữ', 'Thông dịch viên hội thảo'] }
+          ]
+        },
+        {
+          key: 'agriculture',
+          name: 'Nông - Lâm - Ngư nghiệp',
+          hotSearches: ['Kỹ sư nông nghiệp', 'Bác sĩ thú y', 'Kỹ sư nuôi trồng thủy sản', 'Kỹ thuật viên vi sinh'],
+          subgroups: [
+            { title: 'Nông nghiệp công nghệ cao', roles: ['Kỹ thuật nhà màng', 'Chuyên viên dinh dưỡng cây trồng', 'Kiểm soát dịch bệnh'] },
+            { title: 'Thú y & Thủy sản', roles: ['Bác sĩ thú y trang trại', 'Kỹ sư thủy sản tôm / cá', 'Kinh doanh thức ăn chăn nuôi'] }
+          ]
+        },
+        {
+          key: 'media',
+          name: 'Truyền thông / Báo chí / Xuất bản',
+          hotSearches: ['Phóng viên / Biên tập viên', 'MC / Dẫn chương trình', 'Biên tập viên xuất bản', 'Quản trị kênh truyền thông'],
+          subgroups: [
+            { title: 'Báo chí & Đa phương tiện', roles: ['Biên tập báo điện tử', 'Kỹ thuật viên trường quay', 'Biên kịch truyền hình'] },
+            { title: 'Xuất bản & Bản quyền', roles: ['Biên tập viên sách', 'Khai thác bản quyền quốc tế', 'Thiết kế dàn trang'] }
+          ]
+        },
+        {
+          key: 'executive',
+          name: 'Quản lý điều hành / C-Level',
+          hotSearches: ['Tổng giám đốc (CEO)', 'Giám đốc vận hành (COO)', 'Giám đốc tài chính (CFO)', 'Giám đốc công nghệ (CTO)'],
+          subgroups: [
+            { title: 'Lãnh đạo cấp cao', roles: ['Giám đốc điều hành chi nhánh', 'Trợ lý ban tổng giám đốc', 'Giám đốc chiến lược'] },
+            { title: 'Quản lý khối / Vùng', roles: ['Giám đốc kinh doanh miền (RSM)', 'Giám đốc nhà máy (Factory Manager)', 'Giám đốc nhân sự (CHRO)'] }
+          ]
+        }
       ],
-      sales: [
-        'Account Executive (B2B)', 'Trưởng phòng Kinh doanh', 'Sales Bất động sản',
-        'Tư vấn tài chính', 'Telesales Chuyên nghiệp'
+      // TRANG 4
+      [
+        {
+          key: 'construction',
+          name: 'Xây dựng / Kiến trúc / Nội thất',
+          hotSearches: ['Kiến trúc sư công trình', 'Kỹ sư kết cấu', 'Thiết kế nội thất 3D', 'Chỉ huy trưởng công trường'],
+          subgroups: [
+            { title: 'Kiến trúc & Nội thất', roles: ['Thiết kế nội thất căn hộ', 'Khai triển kiến trúc Revit', 'Giám sát thi công nội thất'] },
+            { title: 'Thi công xây dựng', roles: ['Chỉ huy phó công trường', 'Kỹ sư QS bóc tách dự toán', 'Kỹ sư an toàn lao động (HSE)'] }
+          ]
+        },
+        {
+          key: 'chemistry',
+          name: 'Hóa học / Sinh học / Thực phẩm',
+          hotSearches: ['Kỹ sư R&D thực phẩm', 'Chuyên viên kiểm nghiệm vi sinh', 'Kỹ sư hóa chất', 'QA/QC phòng lab'],
+          subgroups: [
+            { title: 'Nghiên cứu & Phát triển (R&D)', roles: ['Nghiên cứu công thức mỹ phẩm', 'Phát triển hương liệu thực phẩm', 'Kỹ sư công nghệ sinh học'] },
+            { title: 'Kiểm soát chất lượng Lab', roles: ['Kỹ thuật viên sắc ký HPLC', 'Đánh giá an toàn thực phẩm ISO', 'Kiểm tra mẫu nguyên liệu'] }
+          ]
+        },
+        {
+          key: 'ecommerce',
+          name: 'Thương mại điện tử (E-Commerce)',
+          hotSearches: ['Vận hành sàn Shopee/Lazada/TikTok', 'Livestreamer bán hàng', 'Tối ưu gian hàng trực tuyến', 'Chuyên viên Ads sàn TMĐT'],
+          subgroups: [
+            { title: 'Vận hành kênh TMĐT', roles: ['Trưởng nhóm vận hành sàn', 'Xử lý đơn hàng đa kênh', 'Quản trị danh mục sản phẩm'] },
+            { title: 'Livestream & Tương tác số', roles: ['Host livestream chốt đơn', 'Kỹ thuật viên set up live', 'Tối ưu tỷ lệ chuyển đổi (CRO)'] }
+          ]
+        },
+        {
+          key: 'fashion',
+          name: 'Thời trang / May mặc / Giày da',
+          hotSearches: ['Nhà thiết kế thời trang', 'Kỹ thuật may rập', 'Merchandiser ngành may', 'Quản lý xưởng may'],
+          subgroups: [
+            { title: 'Thiết kế & Tạo mẫu', roles: ['Fashion Designer', 'Thợ cắt rập dưỡng', 'Stylist thời trang'] },
+            { title: 'Đơn hàng & Sản xuất', roles: ['Merchandiser (May mặc)', 'KCS kiểm hàng xuất khẩu', 'Quản đốc xưởng may'] }
+          ]
+        },
+        {
+          key: 'retail',
+          name: 'Bán lẻ / Siêu thị / Chuỗi cửa hàng',
+          hotSearches: ['Quản lý siêu thị mini', 'Giám sát ca bán hàng', 'Thu ngân siêu thị', 'Nhân viên trưng bày (Visual Merchandiser)'],
+          subgroups: [
+            { title: 'Vận hành chuỗi bán lẻ', roles: ['Cửa hàng trưởng', 'Nhân viên bảo quản hàng hóa', 'Kiểm kê định kỳ'] },
+            { title: 'Visual Merchandising & Dịch vụ', roles: ['Thiết kế trưng bày sản phẩm', 'Hỗ trợ trải nghiệm mua sắm', 'Tư vấn tại quầy'] }
+          ]
+        },
+        {
+          key: 'law',
+          name: 'Luật / Tư vấn pháp lý',
+          hotSearches: ['Luật sư tranh tụng', 'Chuyên viên pháp lý M&A', 'Tư vấn sở hữu trí tuệ', 'Trợ lý công chứng'],
+          subgroups: [
+            { title: 'Tư vấn doanh nghiệp & M&A', roles: ['Thẩm định pháp lý giao dịch', 'Thành lập & giải thể doanh nghiệp', 'Tư vấn đầu tư nước ngoài'] },
+            { title: 'Tranh tụng & Sở hữu trí tuệ', roles: ['Đăng ký nhãn hiệu - sáng chế', 'Đại diện giải quyết tranh chấp', 'Tư vấn lao động doanh nghiệp'] }
+          ]
+        }
       ],
-      design: [
-        'Senior UI/UX Designer', 'Graphic Designer', '3D / Motion Artist',
-        'Product Designer', 'Brand Visual Designer'
-      ],
-      hr: [
-        'Chuyên viên Tuyển dụng (TA)', 'HR Generalist', 'C&B Specialist',
-        'HR Business Partner (HRBP)', 'Training & Development'
-      ],
-      eng: [
-        'Kỹ sư Cơ khí', 'Kỹ sư Điện - Tự động hóa', 'Kỹ sư Xây dựng',
-        'QA/QC Engineer', 'Kỹ thuật viên Vận hành'
-      ],
-      logistics: [
-        'Nhân viên Xuất nhập khẩu', 'Quản lý kho vận (Warehouse)',
-        'Thu mua (Purchasing)', 'Điều phối vận tải', 'Customs Specialist'
+      // TRANG 5
+      [
+        {
+          key: 'security',
+          name: 'An ninh / Bảo vệ / Vệ sĩ',
+          hotSearches: ['Đội trưởng bảo vệ', 'Vệ sĩ riêng chuyên nghiệp', 'Giám sát camera an ninh', 'Nhân viên tuần tra'],
+          subgroups: [
+            { title: 'An ninh mục tiêu cố định', roles: ['Bảo vệ tòa nhà - chung cư', 'Bảo vệ trung tâm thương mại', 'Giám sát phòng điều khiển CCTV'] },
+            { title: 'Vệ sĩ & Áp tải', roles: ['Vệ sĩ yếu nhân', 'Áp tải tiền và kim loại quý', 'Điều phối sự kiện an ninh'] }
+          ]
+        },
+        {
+          key: 'environment',
+          name: 'Môi trường / Xử lý chất thải',
+          hotSearches: ['Kỹ sư xử lý nước thải', 'Quan trắc môi trường', 'Tư vấn lập hồ sơ ĐTM', 'Kỹ thuật viên vận hành trạm bơm'],
+          subgroups: [
+            { title: 'Công nghệ môi trường', roles: ['Thiết kế hệ thống xử lý khí thải', 'Vận hành hệ thống lọc nước RO', 'Quản lý chất thải nguy hại'] },
+            { title: 'Hồ sơ & Đánh giá tác động', roles: ['Chuyên viên giấy phép môi trường', 'Quan trắc hiện trường', 'Tư vấn ESG bền vững'] }
+          ]
+        },
+        {
+          key: 'events',
+          name: 'Tổ chức sự kiện / Hội nghị',
+          hotSearches: ['Event Planner', 'Điều phối sự kiện', 'Kỹ thuật âm thanh ánh sáng', 'Quản lý MC & Nghệ sĩ'],
+          subgroups: [
+            { title: 'Lên ý tưởng & Kế hoạch', roles: ['Biên kịch kịch bản sự kiện', 'Thiết kế sân khấu 3D', 'Lập ngân sách dự án sự kiện'] },
+            { title: 'Chạy sự kiện (On-site)', roles: ['Giám sát sân khấu', 'Kỹ thuật LED & Visual', 'Điều phối hậu cần - tiệc'] }
+          ]
+        },
+        {
+          key: 'labor_export',
+          name: 'Xuất khẩu lao động',
+          hotSearches: ['Tư vấn viên XKLĐ Nhật Bản', 'Đơn hàng kỹ sư Đài Loan', 'Điều phối bay quốc tế', 'Giáo viên giáo dục định hướng'],
+          subgroups: [
+            { title: 'Tư vấn & Hồ sơ tuyển dụng', roles: ['Tư vấn thủ tục visa lao động', 'Xử lý hồ sơ xuất cảnh', 'Tổ chức thi tuyển đơn hàng'] },
+            { title: 'Đào tạo xuất khẩu', roles: ['Đào tạo tiếng Nhật/Hàn cho thực tập sinh', 'Quản lý thực tập sinh ở nước ngoài', 'Hỗ trợ chuyển đổi tư cách'] }
+          ]
+        },
+        {
+          key: 'biotech',
+          name: 'Công nghệ sinh học',
+          hotSearches: ['Kỹ sư nuôi cấy mô thực vật', 'Chuyên viên giải trình tự gen', 'Kỹ thuật viên vi sinh phòng sạch', 'Nghiên cứu enzym'],
+          subgroups: [
+            { title: 'Sinh học phân tử & Y sinh', roles: ['Kỹ thuật viên PCR xét nghiệm', 'Nghiên cứu vắc xin & kháng thể', 'Giải trình tự ADN/ARN'] },
+            { title: 'Công nghệ vi sinh công nghiệp', roles: ['Nuôi cấy vi sinh vật men', 'Lên men sinh học công nghiệp', 'Kiểm soát độ tinh sạch'] }
+          ]
+        },
+        {
+          key: 'general',
+          name: 'Khác / Việc làm liên ngành',
+          hotSearches: ['Việc làm bán thời gian', 'Cộng tác viên tại nhà', 'Thực tập sinh đa ngành', 'Trợ lý cá nhân'],
+          subgroups: [
+            { title: 'Linh hoạt & Thời vụ', roles: ['Freelancer nội dung', 'Cộng tác viên nhập liệu', 'Trực tổng đài ca linh hoạt'] },
+            { title: 'Dự án liên ngành', roles: ['Trợ lý dự án đổi mới sáng tạo', 'Chuyên viên chuyển đổi số', 'Điều phối viên chương trình'] }
+          ]
+        }
       ]
-    };
+    ];
+
+    let currentIndustryPage = 1;
+    let selectedCategoryKey = 'sales'; // Mặc định mở ngành Kinh doanh/Bán hàng theo ảnh mẫu
 
     function getHistory() {
       try {
@@ -410,22 +752,160 @@ document.addEventListener('DOMContentLoaded', () => {
       showToast('Đã xóa toàn bộ lịch sử tìm kiếm', '✕');
     }
 
-    function renderIndustryRoles(categoryKey) {
-      if (!industryHotRoles) return;
-      industryHotRoles.innerHTML = '';
-      const roles = INDUSTRY_ROLES[categoryKey] || INDUSTRY_ROLES['it'];
+    function renderIndustryNav() {
+      if (!industryNavList || !industryPageInfo) return;
+      const pageIndex = currentIndustryPage - 1;
+      const currentList = INDUSTRY_PAGES[pageIndex] || INDUSTRY_PAGES[0];
 
-      roles.forEach(role => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'hot-role-btn';
-        btn.textContent = role;
-        btn.addEventListener('click', (e) => {
+      // Cập nhật số trang 1/5
+      industryPageInfo.textContent = `${currentIndustryPage}/${INDUSTRY_PAGES.length}`;
+
+      if (btnIndustryPrevPage) {
+        btnIndustryPrevPage.disabled = currentIndustryPage <= 1;
+      }
+      if (btnIndustryNextPage) {
+        btnIndustryNextPage.disabled = currentIndustryPage >= INDUSTRY_PAGES.length;
+      }
+
+      // Kiểm tra nếu selectedCategoryKey thuộc trang này, nếu không chọn ngành đầu tiên của trang
+      const exists = currentList.some(item => item.key === selectedCategoryKey);
+      if (!exists && currentList.length > 0) {
+        selectedCategoryKey = currentList[0].key;
+      }
+
+      industryNavList.innerHTML = '';
+      currentList.forEach(cat => {
+        const itemBtn = document.createElement('button');
+        itemBtn.type = 'button';
+        itemBtn.className = `industry-nav-item ${cat.key === selectedCategoryKey ? 'active' : ''}`;
+        itemBtn.setAttribute('data-category', cat.key);
+        itemBtn.innerHTML = `
+          <span>${cat.name}</span>
+          <span class="nav-item-chevron">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        `;
+
+        itemBtn.addEventListener('click', (e) => {
           e.preventDefault();
+          selectCategory(cat.key);
+        });
+
+        itemBtn.addEventListener('mouseenter', () => {
+          selectCategory(cat.key);
+        });
+
+        industryNavList.appendChild(itemBtn);
+      });
+
+      renderIndustryContent();
+    }
+
+    function selectCategory(categoryKey) {
+      selectedCategoryKey = categoryKey;
+      if (industryNavList) {
+        const buttons = industryNavList.querySelectorAll('.industry-nav-item');
+        buttons.forEach(btn => {
+          if (btn.getAttribute('data-category') === categoryKey) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+      }
+      renderIndustryContent();
+    }
+
+    function renderIndustryContent() {
+      if (!industryMegaContent) return;
+
+      // Tìm thông tin danh mục qua tất cả các trang
+      let catData = null;
+      for (const page of INDUSTRY_PAGES) {
+        const found = page.find(c => c.key === selectedCategoryKey);
+        if (found) {
+          catData = found;
+          break;
+        }
+      }
+      if (!catData) {
+        catData = INDUSTRY_PAGES[0][0];
+      }
+
+      let html = '';
+
+      // Phần 1: Khối "Được tìm kiếm nhiều" với biểu tượng lửa đỏ
+      if (catData.hotSearches && catData.hotSearches.length > 0) {
+        html += `
+          <div class="mega-section-hot">
+            <span class="mega-hot-label">Được tìm kiếm nhiều</span>
+            <div class="mega-hot-tags">
+              ${catData.hotSearches.map(role => `
+                <button type="button" class="hot-search-pill" data-role="${role}">
+                  <span class="hot-fire-icon">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.1 0 2 .9 2 2 0 .74-.4 1.38-1 1.72V7a5 5 0 0 1 5 5v1.28c.6.34 1 .98 1 1.72 0 1.1-.9 2-2 2h-1a5 5 0 0 1-5 5v1c0 1.1-.9 2-2 2s-2-.9-2-2v-1a5 5 0 0 1-5-5H2c-1.1 0-2-.9-2-2 0-.74.4-1.38 1-1.72V12a5 5 0 0 1 5-5V5.72C5.4 5.38 5 4.74 5 4c0-1.1.9-2 2-2h5z" opacity="0"/></svg>🔥
+                  </span>
+                  <span>${role}</span>
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      // Phần 2: Các nhóm danh mục chi tiết (mỗi nhóm gồm tên nhóm và các tag vị trí)
+      if (catData.subgroups && catData.subgroups.length > 0) {
+        catData.subgroups.forEach(group => {
+          html += `
+            <div class="mega-subgroup-row">
+              <span class="mega-subgroup-title">${group.title}</span>
+              <div class="mega-subgroup-tags">
+                ${group.roles.map(r => `
+                  <button type="button" class="subgroup-tag-pill" data-role="${r}">${r}</button>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        });
+      }
+
+      // Phần 3: Nút hướng dẫn cuộn để xem
+      html += `
+        <div class="industry-scroll-badge" id="industryScrollBadge" title="Cuộn xuống xem thêm vị trí">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          <span>Cuộn để xem</span>
+        </div>
+      `;
+
+      industryMegaContent.innerHTML = html;
+      industryMegaContent.scrollTop = 0;
+
+      // Gắn sự kiện click tìm kiếm cho tất cả các thẻ vị trí
+      const allPills = industryMegaContent.querySelectorAll('.hot-search-pill, .subgroup-tag-pill');
+      allPills.forEach(pill => {
+        pill.addEventListener('click', (e) => {
+          e.preventDefault();
+          const role = pill.getAttribute('data-role') || pill.textContent.trim();
           executeSearch(role);
         });
-        industryHotRoles.appendChild(btn);
       });
+
+      // Xử lý huy hiệu cuộn
+      const scrollBadge = document.getElementById('industryScrollBadge');
+      if (scrollBadge) {
+        scrollBadge.addEventListener('click', () => {
+          industryMegaContent.scrollBy({ top: 130, behavior: 'smooth' });
+        });
+
+        industryMegaContent.onscroll = () => {
+          const isNearBottom = industryMegaContent.scrollHeight - industryMegaContent.scrollTop - industryMegaContent.clientHeight < 30;
+          if (isNearBottom) {
+            scrollBadge.classList.add('is-hidden');
+          } else {
+            scrollBadge.classList.remove('is-hidden');
+          }
+        };
+      }
     }
 
     function openDropdown() {
@@ -563,17 +1043,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Industry Pills switcher
-    if (industryPillsRow) {
-      const pills = industryPillsRow.querySelectorAll('.industry-pill');
-      pills.forEach(pill => {
-        pill.addEventListener('click', (e) => {
-          e.preventDefault();
-          pills.forEach(p => p.classList.remove('active'));
-          pill.classList.add('active');
-          const cat = pill.getAttribute('data-category') || 'it';
-          renderIndustryRoles(cat);
-        });
+    // Sự kiện phân trang ngành nghề (Mega-Menu 5 trang)
+    if (btnIndustryPrevPage) {
+      btnIndustryPrevPage.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (currentIndustryPage > 1) {
+          currentIndustryPage--;
+          renderIndustryNav();
+        }
+      });
+    }
+
+    if (btnIndustryNextPage) {
+      btnIndustryNextPage.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (currentIndustryPage < INDUSTRY_PAGES.length) {
+          currentIndustryPage++;
+          renderIndustryNav();
+        }
       });
     }
 
@@ -589,7 +1078,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize
     renderHistory();
-    renderIndustryRoles('it');
+    renderIndustryNav();
   }
 });
 
