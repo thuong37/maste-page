@@ -1,0 +1,95 @@
+{
+  "name": "EasyCV Design Tokens",
+  "version": "1.0.0",
+  "primitive": {
+    "color": {
+      "orange": {
+        "50": "#FFF7ED",
+        "100": "#FFEDD5",
+        "200": "#FED7AA",
+        "300": "#FDBA74",
+        "400": "#FB923C",
+        "500": "#F97316",
+        "600": "#EA580C",
+        "700": "#C2410C",
+        "800": "#9A3412",
+        "900": "#7C2D12"
+      },
+      "slate": {
+        "50": "#F8FAFC",
+        "100": "#F1F5F9",
+        "200": "#E2E8F0",
+        "300": "#CBD5E1",
+        "400": "#94A3B8",
+        "500": "#64748B",
+        "600": "#475569",
+        "700": "#334155",
+        "800": "#1E293B",
+        "900": "#0F172A",
+        "950": "#020617"
+      },
+      "green": {
+        "500": "#22C55E",
+        "600": "#16A34A"
+      },
+      "blue": {
+        "500": "#0EA5E9",
+        "600": "#0284C7"
+      }
+    },
+    "fontFamily": {
+      "sans": "Plus Jakarta Sans, Inter, Be Vietnam Pro, system-ui, -apple-system, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "borderRadius": {
+      "sm": "0.375rem",
+      "md": "0.5rem",
+      "lg": "0.75rem",
+      "xl": "1rem",
+      "full": "9999px"
+    }
+  },
+  "semantic": {
+    "color": {
+      "primary": "#F97316",
+      "primaryHover": "#EA580C",
+      "primaryMuted": "#FFF7ED",
+      "secondary": "#0F172A",
+      "secondaryMuted": "#F1F5F9",
+      "accent": "#16A34A",
+      "background": "#FFFFFF",
+      "surface": "#F8FAFC",
+      "card": "#FFFFFF",
+      "cardBorder": "#E2E8F0",
+      "textPrimary": "#0F172A",
+      "textSecondary": "#64748B",
+      "textMuted": "#94A3B8"
+    },
+    "assets": {
+      "logo": "assets/logos/easycv-logo-transparent.png",
+      "logoDark": "assets/logos/easycv-logo-dark.png",
+      "logoIcon": "assets/logos/easycv-icon.png",
+      "logoSvg": "assets/logos/easycv-logo.svg",
+      "publicLogo": "/assets/logo/easycv-logo-transparent.png",
+      "publicLogoDark": "/assets/logo/easycv-logo-dark.png",
+      "publicLogoIcon": "/assets/logo/easycv-icon.png"
+    }
+  },
+  "component": {
+    "navbar": {
+      "height": "4.5rem",
+      "logoHeight": "2.5rem"
+    },
+    "searchHero": {
+      "borderRadius": "0.75rem",
+      "buttonBg": "#F97316"
+    },
+    "jobCard": {
+      "border": "1px solid #E2E8F0",
+      "borderRadius": "0.75rem",
+      "salaryColor": "#F97316",
+      "badgeBg": "#FFF7ED",
+      "badgeText": "#EA580C"
+    }
+  }
+}

@@ -1,0 +1,3474 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyCV - Nền tảng tuyển dụng thông minh & kết nối việc làm hàng đầu</title>
+  <meta name="description" content="Hệ thống sàn tuyển dụng và quản lý CV thông minh EasyCV, tương tự TopCV, ITviec, VietnamWorks.">
+  <link rel="icon" type="image/png" href="assets/logos/easycv-icon.png">
+  <link rel="stylesheet" href="assets/design-tokens.css?v=1.1">
+  <link rel="stylesheet" href="css/navbar.css?v=3.8">
+  <link rel="stylesheet" href="css/home.css?v=3.8">
+  <style>
+    /* =========================================================================
+       CRITICAL INLINE CSS: HERO SPLIT LAYOUT & SPONSORED RECRUITER SHOWCASE
+       (Bypass Browser Cache & Ensure 100% Reliable Rendering)
+       ========================================================================= */
+    .hero-mock-section {
+      position: relative;
+      background: radial-gradient(ellipse at 80% 20%, rgba(249, 115, 22, 0.07), transparent 50%),
+                  radial-gradient(ellipse at 15% 70%, rgba(14, 165, 233, 0.05), transparent 50%),
+                  #FFFFFF;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 34px 0 28px 0;
+      overflow: visible;
+    }
+    .hero-container {
+      max-width: var(--container-max-width, 1170px);
+      margin: 0 auto;
+      padding: 0 var(--container-padding, 20px);
+      box-sizing: border-box;
+      position: relative;
+    }
+    .hero-stack-layout, .hero-grid-layout {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 16px !important;
+      width: 100% !important;
+    }
+    .hero-header-box {
+      margin-bottom: 2px;
+    }
+    .hero-title {
+      font-size: 32px !important;
+      font-weight: 800 !important;
+      line-height: 1.3 !important;
+      color: #0F172A !important;
+      margin: 0 0 6px 0 !important;
+      letter-spacing: -0.02em;
+    }
+    @media (min-width: 992px) {
+      .hero-title {
+        white-space: nowrap !important;
+      }
+    }
+    .hero-title .highlight-orange {
+      color: #F97316 !important;
+      position: relative;
+      display: inline-block;
+    }
+    .hero-desc {
+      font-size: 15px !important;
+      color: #64748B !important;
+      line-height: 1.5 !important;
+      margin: 0 0 16px 0 !important;
+    }
+    .hero-search-wrapper {
+      position: relative;
+      width: 100%;
+      z-index: 70;
+    }
+    .hero-search-box {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 16px;
+      box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.08);
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .hero-search-box:focus-within {
+      border-color: #F97316;
+      box-shadow: 0 16px 36px -8px rgba(249, 115, 22, 0.18);
+    }
+    .search-input-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      padding: 8px 12px;
+    }
+    .search-input-group svg {
+      color: #F97316;
+      flex-shrink: 0;
+    }
+    .search-input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 14.5px;
+      color: #0F172A;
+      font-family: inherit;
+    }
+    .clear-search-btn {
+      background: #F1F5F9;
+      border: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      color: #64748B;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      line-height: 1;
+      padding: 0;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+    .clear-search-btn:hover {
+      background: #E2E8F0;
+      color: #0F172A;
+    }
+    .search-divider {
+      width: 1px;
+      height: 28px;
+      background: #E2E8F0;
+    }
+    .search-location-group {
+      flex: 0.65;
+    }
+    .search-select {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 14px;
+      color: #0F172A;
+      font-family: inherit;
+      cursor: pointer;
+      padding: 8px;
+      width: 100%;
+    }
+    .btn-hero-search {
+      background: linear-gradient(135deg, #FF8A34 0%, #F97316 100%);
+      color: #FFF !important;
+      border: none;
+      border-radius: 12px;
+      padding: 13px 26px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25);
+    }
+    .btn-hero-search:hover {
+      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(249, 115, 22, 0.35);
+    }
+    .quick-tags {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      margin-bottom: 2px !important;
+    }
+    .quick-tag-label {
+      color: #64748B;
+      font-weight: 600;
+    }
+    .quick-tag-link {
+      color: #0F172A !important;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      text-decoration: none !important;
+      transition: all 0.2s;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .quick-tag-link:hover {
+      border-color: #F97316;
+      color: #F97316 !important;
+      background: #FFF7ED;
+    }
+    .quick-tag-link.tag-highlight {
+      background: #FFF7ED;
+      border-color: #FED7AA;
+      color: #EA580C !important;
+      font-weight: 700;
+    }
+    .quick-tag-link.tag-highlight:hover {
+      background: #FED7AA;
+      border-color: #F97316;
+    }
+
+    /* =========================================================================
+       SEARCH SUGGESTION DROPDOWN (ĐÈ LÊN KHỐI TIÊU ĐIỂM)
+       ========================================================================= */
+    .search-suggest-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      width: 100%;
+      background: #FFFFFF;
+      border: 1.5px solid #FED7AA;
+      border-radius: 18px;
+      box-shadow: 0 24px 50px -10px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(249, 115, 22, 0.12);
+      padding: 20px 24px;
+      box-sizing: border-box;
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
+      pointer-events: none;
+    }
+    .search-suggest-dropdown.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .suggest-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .suggest-section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .suggest-title-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #334155;
+    }
+    .suggest-title-group svg {
+      color: #F97316;
+      flex-shrink: 0;
+    }
+    .suggest-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #1E293B;
+      letter-spacing: 0.02em;
+    }
+    .btn-clear-history {
+      background: none;
+      border: none;
+      color: #94A3B8;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 4px;
+      transition: color 0.2s;
+    }
+    .btn-clear-history:hover {
+      color: #EF4444;
+      text-decoration: underline;
+    }
+    .suggest-hint-tag {
+      font-size: 11px;
+      color: #94A3B8;
+      font-weight: 500;
+    }
+    .recent-chips-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .recent-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 9999px;
+      padding: 5px 12px;
+      font-size: 13px;
+      color: #334155;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .recent-chip:hover {
+      background: #FFF7ED;
+      border-color: #F97316;
+      color: #EA580C;
+    }
+    .recent-chip-remove {
+      background: none;
+      border: none;
+      color: #94A3B8;
+      cursor: pointer;
+      font-size: 11px;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      margin-left: 2px;
+      transition: all 0.2s;
+    }
+    .recent-chip-remove:hover {
+      background: #FEE2E2;
+      color: #EF4444;
+    }
+    .recent-empty-hint {
+      font-size: 13px;
+      color: #94A3B8;
+      font-style: italic;
+      padding: 4px 0;
+    }
+    .suggest-divider {
+      height: 1px;
+      background: #F1F5F9;
+      margin: 14px 0;
+    }
+    .industry-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .industry-pill {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 6px 12px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .industry-pill:hover {
+      border-color: #CBD5E1;
+      background: #F1F5F9;
+      color: #0F172A;
+    }
+    .industry-pill.active {
+      background: #FFF7ED;
+      border-color: #F97316;
+      color: #EA580C;
+      box-shadow: 0 2px 6px rgba(249, 115, 22, 0.15);
+    }
+    .industry-hot-roles-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #FAFAFA;
+      border-radius: 10px;
+      padding: 8px 12px;
+      border: 1px dashed #E2E8F0;
+    }
+    .hot-roles-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #64748B;
+      white-space: nowrap;
+    }
+    .hot-roles-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .hot-role-btn {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .hot-role-btn:hover {
+      background: #F97316;
+      border-color: #F97316;
+      color: #FFFFFF;
+    }
+    .trending-chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .suggest-trend-chip {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 9999px;
+      padding: 4px 12px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #334155;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .suggest-trend-chip:hover {
+      background: #FFF7ED;
+      border-color: #F97316;
+      color: #EA580C;
+    }
+    .suggest-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #F1F5F9;
+      font-size: 12px;
+      color: #94A3B8;
+    }
+    .suggest-footer-tip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-close-suggest {
+      background: #F1F5F9;
+      border: none;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #64748B;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-close-suggest:hover {
+      background: #E2E8F0;
+      color: #0F172A;
+    }
+
+    /* =========================================================================
+       KHUNG BANNER DOANH NGHIỆP CỐ ĐỊNH KÍCH THƯỚC (FIXED BILLBOARD SHOWCASE)
+       - Cố định hoàn toàn chiều rộng 100% & chiều cao 220px, không bị co giật/nhảy kích thước
+       - Bỏ header tiêu đề cũ để dành trọn vẹn diện tích cho ảnh quảng cáo
+       ========================================================================= */
+    .hero-ad-showcase {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 220px !important;
+      min-height: 220px !important;
+      max-height: 220px !important;
+      position: relative !important;
+      padding: 0 !important;
+      border-radius: 18px !important;
+      overflow: hidden !important;
+      border: 1.5px solid #FED7AA !important;
+      box-shadow: 0 10px 28px -6px rgba(249, 115, 22, 0.12) !important;
+      box-sizing: border-box !important;
+      margin-top: 10px !important;
+      background: #0F172A !important;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+    }
+    .hero-ad-showcase:hover {
+      border-color: #F97316 !important;
+      box-shadow: 0 14px 36px -6px rgba(249, 115, 22, 0.22) !important;
+    }
+    .ad-cards-wrapper {
+      position: relative !important;
+      width: 100% !important;
+      height: 100% !important;
+      overflow: hidden !important;
+    }
+    .employer-spotlight-card {
+      display: block !important;
+      width: 100% !important;
+      height: 100% !important;
+      position: relative !important;
+      text-decoration: none !important;
+      color: inherit !important;
+      cursor: pointer !important;
+      overflow: hidden !important;
+    }
+    .spotlight-banner-img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center 30% !important;
+      display: block !important;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .employer-spotlight-card:hover .spotlight-banner-img {
+      transform: scale(1.025) !important;
+    }
+    .ad-badge-overlay {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #FFFFFF;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      letter-spacing: 0.02em;
+      z-index: 10;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      pointer-events: none;
+    }
+    .ad-tag-badge-mini {
+      font-size: 10px;
+      font-weight: 800;
+      background: #F97316;
+      color: #FFFFFF;
+      padding: 1px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Brand Partners Infinite Running Marquee Cards */
+    .hero-brand-strip {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px solid #E2E8F0;
+      position: relative;
+      overflow: hidden;
+    }
+    .brand-strip-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .brand-strip-pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #F97316;
+      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+      animation: heroPulse 1.8s infinite;
+    }
+    .brand-strip-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748B;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .marquee-slider-container {
+      overflow: hidden;
+      position: relative;
+      flex: 1;
+      display: flex;
+      mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: infiniteMarquee 26s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+    .marquee-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      padding-right: 12px;
+    }
+    .marquee-partner-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      padding: 5px 14px 5px 7px;
+      border-radius: 9999px;
+      text-decoration: none !important;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+      transition: all 0.22s ease;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .marquee-partner-card:hover {
+      border-color: #F97316;
+      background: #FFF7ED;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px -2px rgba(249, 115, 22, 0.18);
+    }
+    .partner-card-logo {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFF;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      flex-shrink: 0;
+    }
+    .partner-card-name {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #334155;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+    .marquee-partner-card:hover .partner-card-name {
+      color: #EA580C;
+    }
+    @keyframes infiniteMarquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-title {
+        font-size: 28px !important;
+        white-space: normal !important;
+      }
+      .hero-ad-showcase {
+        height: 190px !important;
+        min-height: 190px !important;
+        max-height: 190px !important;
+      }
+    }
+    @media (max-width: 768px) {
+      .hero-container {
+        padding: 0 var(--container-padding-mobile, 16px) !important;
+      }
+      .hero-mock-section {
+        padding: 22px 0 !important;
+      }
+      .hero-title {
+        font-size: 24px !important;
+        white-space: normal !important;
+      }
+      .hero-ad-showcase {
+        height: 150px !important;
+        min-height: 150px !important;
+        max-height: 150px !important;
+        border-radius: 14px !important;
+      }
+      .hero-search-box {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search-divider {
+        display: none;
+      }
+      .search-location-group {
+        border-top: 1px solid #E2E8F0;
+        padding-top: 8px;
+      }
+      .btn-hero-search {
+        justify-content: center;
+        width: 100%;
+      }
+      .search-suggest-dropdown {
+        padding: 14px 16px;
+      }
+      .industry-pills-row {
+        max-height: 120px;
+        overflow-y: auto;
+      }
+      .mini-sponsor-row {
+        grid-template-columns: 1fr !important;
+      }
+      .hero-trust-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero-brand-strip {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+    }
+
+    .promo-banners-strip {
+      padding: 36px 0;
+      background: var(--bg-primary, #FFFFFF);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .promo-banners-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+    @media (max-width: 1024px) {
+      .promo-banners-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .promo-banner-card {
+      border-radius: 16px;
+      padding: 24px 28px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 180px;
+      height: 100%;
+      box-sizing: border-box;
+      transition: all 240ms cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    }
+    .promo-banner-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.12);
+    }
+    .promo-banner-primary {
+      background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%) !important;
+      border: 1px solid #334155 !important;
+      color: #FFFFFF !important;
+    }
+    .promo-banner-accent {
+      background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%) !important;
+      border: 1px solid #FED7AA !important;
+      color: #0F172A !important;
+    }
+    [data-theme="dark"] .promo-banner-accent {
+      background: linear-gradient(135deg, #2A1B10 0%, #1E1711 100%) !important;
+      border-color: #7C2D12 !important;
+      color: #F8FAFC !important;
+    }
+    .promo-banner-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .ad-label-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #E2E8F0;
+    }
+    .ad-label-pill.ad-label-orange {
+      background: #F97316;
+      color: #FFFFFF;
+    }
+    .promo-countdown-pill {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #FB923C;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .promo-banner-title {
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+    .promo-banner-desc {
+      font-size: 13px;
+      opacity: 0.85;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      max-width: 90%;
+    }
+    .promo-banner-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: auto;
+    }
+    .btn-promo-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none !important;
+      transition: all 160ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-promo-primary {
+      background: linear-gradient(135deg, #FF8A34 0%, #F97316 100%) !important;
+      color: #FFFFFF !important;
+    }
+    .btn-promo-primary:hover {
+      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%) !important;
+      transform: translateX(2px);
+    }
+    .btn-promo-outline {
+      background: #FFFFFF !important;
+      color: #0F172A !important;
+      border: 1px solid #CBD5E1 !important;
+    }
+    [data-theme="dark"] .btn-promo-outline {
+      background: #1E293B !important;
+      color: #FFFFFF !important;
+      border-color: #475569 !important;
+    }
+    .btn-promo-outline:hover {
+      border-color: #F97316 !important;
+      color: #F97316 !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Demo State Switcher Bar (Giúp bạn kiểm tra ngay cả 2 trạng thái: Đã đăng nhập & Chưa đăng nhập) -->
+  <div class="demo-control-bar">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="badge">EASYCV DEMO</span>
+      <span>Thanh Menu điều hướng đa cấp chuẩn UI/UX</span>
+    </div>
+    <div class="demo-actions">
+      <div class="demo-toggle-group">
+        <button id="demo-btn-loggedin" class="demo-toggle-btn active" title="Hiển thị menu khi ứng viên đã đăng nhập">
+          Tài khoản: Đã đăng nhập
+        </button>
+        <button id="demo-btn-guest" class="demo-toggle-btn" title="Hiển thị menu khi là khách vãng lai">
+          Tài khoản: Chưa đăng nhập
+        </button>
+      </div>
+      <button id="demo-theme-btn" class="demo-theme-btn" title="Chuyển đổi giao diện Sáng / Tối">
+        <svg id="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Header & Navigation Bar -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Menu chính">
+
+      <!-- 1. Logo Brand -->
+      <a href="#" class="navbar-brand" aria-label="Trang chủ EasyCV">
+        <img src="assets/logos/easycv-logo-transparent.png" alt="EasyCV Logo" class="brand-logo-img logo-light" />
+        <img src="assets/logos/easycv-logo-dark.png" alt="EasyCV Logo Dark" class="brand-logo-img logo-dark" />
+      </a>
+
+      <!-- 2. Primary Nav Items (Left Menu) -->
+      <ul class="navbar-nav">
+
+        <!-- Cột 1: Tìm việc -->
+        <li class="nav-item">
+          <button class="nav-link" aria-expanded="false">
+            <span>Tìm việc</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="#tim-kiem-viec-lam" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Tìm kiếm việc làm</span>
+                <span class="dropdown-item-desc">Hơn 30.000+ cơ hội mới mỗi ngày</span>
+              </div>
+            </a>
+
+            <a href="#viec-lam-goi-y" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Việc làm gợi ý</span>
+                <span class="dropdown-item-desc">Khớp theo kỹ năng & kinh nghiệm của bạn</span>
+              </div>
+              <span class="badge-pill badge-new">AI Match</span>
+            </a>
+
+            <a href="#viec-lam-da-luu" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Việc làm đã lưu</span>
+                <span class="dropdown-item-desc">Xem lại các vị trí đã đánh dấu</span>
+              </div>
+            </a>
+
+            <div class="dropdown-divider"></div>
+
+            <a href="#kham-pha-cong-ty" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Khám phá công ty</span>
+                <span class="dropdown-item-desc">Đánh giá văn hóa & chế độ đãi ngộ</span>
+              </div>
+            </a>
+          </div>
+        </li>
+
+        <!-- Cột 2: Hồ sơ & CV -->
+        <li class="nav-item">
+          <button class="nav-link" aria-expanded="false">
+            <span>Hồ sơ & CV</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="#ho-so-cua-toi" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Hồ sơ của tôi</span>
+                <span class="dropdown-item-desc">Cập nhật thông tin chuyên môn cá nhân</span>
+              </div>
+            </a>
+
+            <a href="#tao-cv-theo-mau" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Tạo CV theo mẫu</span>
+                <span class="dropdown-item-desc">Kho 100+ mẫu CV chuẩn ATS hiện đại</span>
+              </div>
+              <span class="badge-pill badge-hot">Hot</span>
+            </a>
+
+            <a href="#quan-ly-cv" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Quản lý CV</span>
+                <span class="dropdown-item-desc">Chỉnh sửa, bật chế độ tìm việc</span>
+              </div>
+            </a>
+
+            <a href="#tai-len-cv" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Tải lên CV</span>
+                <span class="dropdown-item-desc">Hỗ trợ định dạng PDF, DOCX (tối đa 5MB)</span>
+              </div>
+            </a>
+          </div>
+        </li>
+
+        <!-- Cột 3: Ứng tuyển -->
+        <li class="nav-item">
+          <button class="nav-link" aria-expanded="false">
+            <span>Ứng tuyển</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="#danh-sach-don-ung-tuyen" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="m9 14 2 2 4-4"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Danh sách đơn ứng tuyển</span>
+                <span class="dropdown-item-desc">Theo dõi trạng thái CV gửi đến nhà tuyển dụng</span>
+              </div>
+              <span class="badge-pill badge-count">3</span>
+            </a>
+
+            <a href="#lich-phong-van" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Lịch phỏng vấn</span>
+                <span class="dropdown-item-desc">Nhắc hẹn phỏng vấn Online & Trực tiếp</span>
+              </div>
+              <span class="badge-pill badge-new">1 mới</span>
+            </a>
+
+            <a href="#bai-kiem-tra-nang-luc" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Bài kiểm tra năng lực</span>
+                <span class="dropdown-item-desc">Đánh giá kỹ năng & nhận chứng chỉ xác thực</span>
+              </div>
+            </a>
+          </div>
+        </li>
+
+        <!-- Cột 4: Công cụ nghề nghiệp -->
+        <li class="nav-item">
+          <button class="nav-link" aria-expanded="false">
+            <span>Công cụ nghề nghiệp</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="#tinh-luong-gross-net" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 8h10"/><path d="M7 12h10"/><path d="M7 16h10"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Tính lương Gross - Net</span>
+                <span class="dropdown-item-desc">Quy đổi lương chuẩn luật lao động mới nhất</span>
+              </div>
+            </a>
+
+            <a href="#tinh-bao-hiem-xa-hoi" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Tính bảo hiểm xã hội</span>
+                <span class="dropdown-item-desc">BHXH một lần, thai sản, thất nghiệp</span>
+              </div>
+            </a>
+
+            <a href="#khao-sat-muc-luong" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Báo cáo thị trường lương</span>
+                <span class="dropdown-item-desc">Khảo sát mức lương theo từng cấp bậc & ngành</span>
+              </div>
+            </a>
+
+            <a href="#trac-nghiem-tinh-cach" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3.08A2.49 2.49 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3.08A2.49 2.49 0 0 0 14.5 2Z"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Trắc nghiệm MBTI / DISC</span>
+                <span class="dropdown-item-desc">Thấu hiểu điểm mạnh để chọn đúng nghề</span>
+              </div>
+            </a>
+          </div>
+        </li>
+
+      </ul>
+
+      <!-- 3. Actions Right (Notifications, Messages, Account / Login) -->
+      <div class="navbar-actions">
+
+        <!-- Employer Portal Quick Link (TopCV/ITviec style) -->
+        <a href="#nha-tuyen-dung" class="btn-employer" title="Dành cho nhà tuyển dụng">
+          Dành cho Nhà tuyển dụng
+        </a>
+
+        <!-- Cột 5: Thông báo (Notification Icon & Flyout) -->
+        <div style="position: relative;">
+          <button id="notif-btn" class="action-icon-btn" aria-label="Xem thông báo" title="Thông báo mới">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+            <span id="notif-badge" class="action-badge">3</span>
+          </button>
+
+          <!-- Popover Panel Thông báo -->
+          <div id="notif-panel" class="popover-panel">
+            <div class="popover-header">
+              <div class="popover-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+                <span>Thông báo</span>
+              </div>
+              <button id="notif-mark-read" class="popover-action">Đánh dấu đã đọc</button>
+            </div>
+            <div class="popover-body">
+              <a href="#notif-1" class="popover-item unread">
+                <div class="popover-item-icon" style="background: #F97316;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div>
+                  <div class="popover-item-title">Nhà tuyển dụng <strong>FPT Software</strong> đã xem hồ sơ CV của bạn</div>
+                  <div class="popover-item-time">15 phút trước</div>
+                </div>
+              </a>
+              <a href="#notif-2" class="popover-item unread">
+                <div class="popover-item-icon" style="background: #16A34A;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                </div>
+                <div>
+                  <div class="popover-item-title">Lời mời phỏng vấn vị trí <strong>Senior Frontend</strong> từ <strong>VNG Corp</strong></div>
+                  <div class="popover-item-time">2 giờ trước</div>
+                </div>
+              </a>
+              <a href="#notif-3" class="popover-item unread">
+                <div class="popover-item-icon" style="background: #0284C7;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+                </div>
+                <div>
+                  <div class="popover-item-title">Có <strong>8 việc làm mới</strong> phù hợp 95% với kỹ năng React/TypeScript của bạn</div>
+                  <div class="popover-item-time">Hôm qua</div>
+                </div>
+              </a>
+            </div>
+            <div class="popover-footer">
+              <a href="#xem-tat-ca-thong-bao" class="popover-footer-link">Xem tất cả thông báo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cột 6: Tin nhắn (Messages Icon & Flyout) -->
+        <div style="position: relative;">
+          <button id="message-btn" class="action-icon-btn" aria-label="Xem tin nhắn" title="Tin nhắn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span id="message-badge" class="action-badge">2</span>
+          </button>
+
+          <!-- Popover Panel Tin nhắn -->
+          <div id="message-panel" class="popover-panel">
+            <div class="popover-header">
+              <div class="popover-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <span>Tin nhắn tuyển dụng</span>
+              </div>
+              <button id="message-mark-read" class="popover-action">Đánh dấu đã đọc</button>
+            </div>
+            <div class="popover-body">
+              <a href="#chat-1" class="popover-item unread">
+                <div class="popover-item-icon" style="background: #1E293B;">
+                  <span style="font-weight: 700; font-size: 13px;">HR</span>
+                </div>
+                <div>
+                  <div class="popover-item-title">HR Viettel Digital: <em>"Chào bạn, hồ sơ của bạn rất ấn tượng, bên mình muốn trao đổi thêm..."</em></div>
+                  <div class="popover-item-time">10 phút trước</div>
+                </div>
+              </a>
+              <a href="#chat-2" class="popover-item unread">
+                <div class="popover-item-icon" style="background: #0284C7;">
+                  <span style="font-weight: 700; font-size: 13px;">MS</span>
+                </div>
+                <div>
+                  <div class="popover-item-title">Mai Chi (Techcombank): <em>"Bạn có thể tham gia buổi technical interview vào thứ 5 tuần này không?"</em></div>
+                  <div class="popover-item-time">1 giờ trước</div>
+                </div>
+              </a>
+            </div>
+            <div class="popover-footer">
+              <a href="#hop-thu-den" class="popover-footer-link">Mở hộp thư ứng tuyển</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cột 7: Tài khoản (ĐÃ ĐĂNG NHẬP) - Cấu trúc chính xác theo file Excel của bạn -->
+        <div id="account-logged-view" class="account-logged-view">
+          <button id="user-profile-btn" class="user-profile-btn" aria-expanded="false" aria-label="Menu tài khoản cá nhân">
+            <div class="user-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80" alt="Avatar" class="user-avatar" />
+              <span class="avatar-badge-online" title="Đang trực tuyến"></span>
+            </div>
+            <div class="user-meta">
+              <span class="user-name">Nguyễn Văn A</span>
+              <span class="user-role-badge">Hồ sơ <span>85%</span></span>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--text-muted);"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+
+          <!-- User Mega Dropdown Menu (Chứa đầy đủ các nhóm theo bảng Excel) -->
+          <div class="user-dropdown-menu" role="menu">
+
+            <!-- Card tóm tắt hồ sơ người dùng -->
+            <div class="user-dropdown-header">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80" alt="Avatar lớn" class="dropdown-user-avatar" />
+              <div class="dropdown-user-info">
+                <div class="dropdown-user-name">Nguyễn Văn A</div>
+                <div class="dropdown-user-email">nguyen.vana@easycv.vn</div>
+                <div class="profile-completion-wrap">
+                  <div class="completion-bar">
+                    <div class="completion-progress"></div>
+                  </div>
+                  <span class="completion-percent">85% Hoàn thiện</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="user-dropdown-body">
+
+              <!-- 1. Tổng quan hoạt động -->
+              <div class="menu-group">
+                <a href="#tong-quan-hoat-dong" class="menu-group-link" style="font-weight: 700;">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                    <span>Tổng quan hoạt động</span>
+                  </div>
+                  <span class="link-tag tag-orange">Dashboard</span>
+                </a>
+              </div>
+
+              <!-- 2. Quản lý hồ sơ -->
+              <div class="menu-group">
+                <div class="menu-group-title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+                  <span>Quản lý hồ sơ</span>
+                </div>
+                <a href="#ho-so-cua-toi" class="menu-group-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>Hồ sơ của tôi</span>
+                  </div>
+                  <span class="link-tag tag-green">Đã xác thực</span>
+                </a>
+                <a href="#quan-ly-phien-ban-ho-so" class="menu-group-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                    <span>Quản lý phiên bản hồ sơ</span>
+                  </div>
+                  <span style="font-size: 11.5px; color: var(--text-muted);">2 phiên bản</span>
+                </a>
+              </div>
+
+              <!-- 3. CV của tôi -->
+              <div class="menu-group">
+                <div class="menu-group-title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/></svg>
+                  <span>CV của tôi</span>
+                </div>
+                <a href="#quan-ly-cv" class="menu-group-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg>
+                    <span>Quản lý CV</span>
+                  </div>
+                  <span class="link-tag tag-orange">CV chính</span>
+                </a>
+                <a href="#nha-tuyen-dung-xem-cv" class="menu-group-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <span>Nhà tuyển dụng xem CV</span>
+                  </div>
+                  <span class="link-tag tag-green">24 lượt xem</span>
+                </a>
+              </div>
+
+              <!-- 4. Việc làm của tôi -->
+              <div class="menu-group">
+                <div class="menu-group-title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                  <span>Việc làm của tôi</span>
+                </div>
+                <a href="#viec-da-ung-tuyen" class="menu-group-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Việc đã ứng tuyển</span>
+                  </div>
+                  <span class="badge-pill badge-count">5</span>
+                </a>
+                <a href="#viec-da-luu" class="menu-group-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+                    <span>Việc đã lưu</span>
+                  </div>
+                  <span style="font-size: 11.5px; color: var(--text-muted);">12</span>
+                </a>
+                <a href="#viec-phu-hop" class="menu-group-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+                    <span>Việc phù hợp</span>
+                  </div>
+                  <span class="link-tag tag-orange">Top Match</span>
+                </a>
+                <a href="#loi-moi-cong-viec" class="menu-group-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg>
+                    <span>Lời mời công việc</span>
+                  </div>
+                  <span class="link-tag tag-green">2 lời mời</span>
+                </a>
+                <a href="#cai-dat-goi-y-viec-lam" class="menu-group-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <span>Cài đặt gợi ý việc làm</span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- 5. Cài đặt -->
+              <div class="menu-group">
+                <div class="menu-group-title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                  <span>Cài đặt</span>
+                </div>
+                <a href="#cai-dat-thong-bao-viec-lam" class="menu-group-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/></svg>
+                    <span>Cài đặt thông báo việc làm</span>
+                  </div>
+                </a>
+                <a href="#cai-dat-nhan-email" class="menu-group-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <span>Cài đặt nhận email</span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- 6. Cá nhân và bảo mật -->
+              <div class="menu-group">
+                <div class="menu-group-title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <span>Cá nhân và bảo mật</span>
+                </div>
+                <a href="#cai-dat-thong-tin-ca-nhan" class="menu-group-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>Cài đặt thông tin cá nhân</span>
+                  </div>
+                </a>
+                <a href="#cai-dat-bao-mat" class="menu-group-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <span>Cài đặt bảo mật</span>
+                  </div>
+                </a>
+                <a href="#doi-mat-khau" class="menu-group-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21 2-2 2m-1.5 1.5L14 9l-1.5-1.5L10 10l-1.5-1.5L6 11l-4 4v5h5l4-4 2.5 2.5L16 13l-1.5-1.5 3.5-3.5 2-2Z"/></svg>
+                    <span>Đổi mật khẩu</span>
+                  </div>
+                </a>
+                <a href="#xac-minh-2-buoc" class="menu-group-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    <span>Xác minh 2 bước</span>
+                  </div>
+                  <span class="link-tag tag-green">Bật</span>
+                </a>
+              </div>
+
+              <!-- 7. Đăng xuất -->
+              <div class="menu-group">
+                <a href="#dang-xuat" class="menu-group-link menu-logout-link">
+                  <div class="menu-group-link-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+                    <span>Đăng xuất</span>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Cột 8: Tài khoản (CHƯA ĐĂNG NHẬP) - Đăng nhập - Đăng ký -->
+        <div id="account-guest-view" class="account-guest-view" style="display: none;">
+          <a href="#dang-nhap" class="btn-login">Đăng nhập</a>
+          <a href="#dang-ky" class="btn-register">Đăng ký</a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button (Hamburger) -->
+        <button id="mobile-toggle-btn" class="mobile-toggle-btn" aria-label="Mở menu trên điện thoại">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer-overlay" class="mobile-drawer-overlay">
+    <div class="mobile-drawer">
+      <div class="mobile-drawer-header">
+        <img src="assets/logos/easycv-logo-transparent.png" alt="EasyCV Logo" style="height: 32px; width: auto;" />
+        <button id="mobile-drawer-close" class="mobile-drawer-close" aria-label="Đóng menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="mobile-drawer-body">
+        <!-- 1. Tìm việc -->
+        <div class="mobile-nav-item">
+          <div class="mobile-nav-title">
+            <span>Tìm việc</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="mobile-sub-menu">
+            <a href="#tim-kiem-viec-lam" class="mobile-sub-link">Tìm kiếm việc làm</a>
+            <a href="#viec-lam-goi-y" class="mobile-sub-link">Việc làm gợi ý</a>
+            <a href="#viec-lam-da-luu" class="mobile-sub-link">Việc làm đã lưu</a>
+            <a href="#kham-pha-cong-ty" class="mobile-sub-link">Khám phá công ty</a>
+          </div>
+        </div>
+
+        <!-- 2. Hồ sơ & CV -->
+        <div class="mobile-nav-item">
+          <div class="mobile-nav-title">
+            <span>Hồ sơ & CV</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="mobile-sub-menu">
+            <a href="#ho-so-cua-toi" class="mobile-sub-link">Hồ sơ của tôi</a>
+            <a href="#tao-cv-theo-mau" class="mobile-sub-link">Tạo CV theo mẫu</a>
+            <a href="#quan-ly-cv" class="mobile-sub-link">Quản lý CV</a>
+            <a href="#tai-len-cv" class="mobile-sub-link">Tải lên CV</a>
+          </div>
+        </div>
+
+        <!-- 3. Ứng tuyển -->
+        <div class="mobile-nav-item">
+          <div class="mobile-nav-title">
+            <span>Ứng tuyển</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="mobile-sub-menu">
+            <a href="#danh-sach-don-ung-tuyen" class="mobile-sub-link">Danh sách đơn ứng tuyển</a>
+            <a href="#lich-phong-van" class="mobile-sub-link">Lịch phỏng vấn</a>
+            <a href="#bai-kiem-tra-nang-luc" class="mobile-sub-link">Bài kiểm tra năng lực</a>
+          </div>
+        </div>
+
+        <!-- 4. Công cụ nghề nghiệp -->
+        <div class="mobile-nav-item">
+          <div class="mobile-nav-title">
+            <span>Công cụ nghề nghiệp</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="mobile-sub-menu">
+            <a href="#tinh-luong-gross-net" class="mobile-sub-link">Tính lương Gross - Net</a>
+            <a href="#tinh-bao-hiem-xa-hoi" class="mobile-sub-link">Tính bảo hiểm xã hội</a>
+            <a href="#khao-sat-muc-luong" class="mobile-sub-link">Khảo sát mức lương</a>
+            <a href="#trac-nghiem-tinh-cach" class="mobile-sub-link">Trắc nghiệm tính cách MBTI</a>
+          </div>
+        </div>
+
+        <div style="margin: 20px 0; border-top: 1px solid var(--border-color);"></div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="#nha-tuyen-dung" class="btn-employer" style="text-align: center; border: 1px solid var(--border-color);">
+            Dành cho Nhà tuyển dụng
+          </a>
+          <a href="#dang-nhap" class="btn-login" style="text-align: center;">Đăng nhập</a>
+          <a href="#dang-ky" class="btn-register" style="text-align: center;">Đăng ký tài khoản</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       HERO SECTION: Tinh gọn chữ & Tích hợp Vùng Quảng Cáo Nhà Tuyển Dụng (Sponsored Hub)
+       ========================================================================= -->
+  <main class="hero-mock-section">
+    <div class="hero-container">
+      <div class="hero-stack-layout">
+
+        <!-- TIÊU ĐỀ HERO -->
+        <div class="hero-header-box">
+          <h1 class="hero-title">Tìm việc chất lượng, chạm đỉnh <span class="highlight-orange">sự nghiệp tương lai</span></h1>
+        </div>
+
+        <!-- KHỐI TÌM KIẾM THÔNG MINH (KÈM POPUP GỢI Ý ĐÈ LÊN KHỐI TIÊU ĐIỂM) -->
+        <div class="hero-search-wrapper" id="heroSearchWrapper">
+          <div class="hero-search-box" id="heroSearchBox">
+            <div class="search-input-group">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input type="text" id="heroSearchInput" class="search-input" placeholder="Vị trí tuyển dụng, kỹ năng (vd: Java, React, Marketing...)" autocomplete="off" />
+              <button type="button" id="clearSearchInputBtn" class="clear-search-btn" title="Xóa từ khóa" style="display: none;">✕</button>
+            </div>
+
+            <div class="search-divider"></div>
+
+            <div class="search-input-group search-location-group">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <select class="search-select" id="heroLocationSelect">
+                <option value="">Tất cả địa điểm</option>
+                <option value="Hà Nội">Hà Nội</option>
+                <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
+                <option value="Đà Nẵng">Đà Nẵng</option>
+                <option value="Remote">Remote / Toàn quốc</option>
+              </select>
+            </div>
+
+            <button type="button" id="btnHeroSearch" class="btn-hero-search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <span>Tìm việc ngay</span>
+            </button>
+          </div>
+
+          <!-- KHỐI GỢI Ý SEARCH ĐÈ LÊN KHỐI TIÊU ĐIỂM -->
+          <div class="search-suggest-dropdown" id="searchSuggestDropdown">
+            <!-- PHẦN 1: LỊCH SỬ TÌM KIẾM GẦN ĐÂY -->
+            <div class="suggest-section suggest-recent-section">
+              <div class="suggest-section-header">
+                <div class="suggest-title-group">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span class="suggest-title">Lịch sử tìm kiếm gần đây</span>
+                </div>
+                <button type="button" class="btn-clear-history" id="btnClearSearchHistory">Xóa tất cả</button>
+              </div>
+              <div class="recent-chips-list" id="recentSearchList">
+                <!-- Sẽ được render tự động qua JS từ localStorage -->
+              </div>
+            </div>
+
+            <div class="suggest-divider"></div>
+
+            <!-- PHẦN 2: BỘ LỌC THEO NHÓM NGÀNH NGHỀ -->
+            <div class="suggest-section suggest-industry-section">
+              <div class="suggest-section-header">
+                <div class="suggest-title-group">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                  <span class="suggest-title">Bộ lọc theo nhóm ngành nghề</span>
+                </div>
+                <span class="suggest-hint-tag">Chọn ngành để xem vị trí hot</span>
+              </div>
+
+              <!-- Tabs ngành nghề -->
+              <div class="industry-pills-row" id="industryPillsRow">
+                <button type="button" class="industry-pill active" data-category="it">💻 Công nghệ thông tin</button>
+                <button type="button" class="industry-pill" data-category="marketing">📢 Marketing / Truyền thông</button>
+                <button type="button" class="industry-pill" data-category="finance">💰 Tài chính - Ngân hàng</button>
+                <button type="button" class="industry-pill" data-category="sales">💼 Kinh doanh / Sales</button>
+                <button type="button" class="industry-pill" data-category="design">🎨 Thiết kế / Sáng tạo</button>
+                <button type="button" class="industry-pill" data-category="hr">📋 Nhân sự / Tuyển dụng</button>
+                <button type="button" class="industry-pill" data-category="eng">⚙️ Kỹ thuật / Cơ điện</button>
+                <button type="button" class="industry-pill" data-category="logistics">🚚 Vận tải / Logistics</button>
+              </div>
+
+              <!-- Danh sách vị trí phổ biến của ngành được chọn -->
+              <div class="industry-hot-roles-box">
+                <span class="hot-roles-label">Vị trí phổ biến:</span>
+                <div class="hot-roles-tags" id="industryHotRoles">
+                  <!-- Được JS render tự động theo ngành -->
+                </div>
+              </div>
+            </div>
+
+            <div class="suggest-divider"></div>
+
+            <!-- PHẦN 3: TỪ KHÓA XU HƯỚNG HÔM NAY -->
+            <div class="suggest-section suggest-trending-section">
+              <div class="suggest-section-header">
+                <div class="suggest-title-group">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="#F97316" stroke="#F97316" stroke-width="1"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/></svg>
+                  <span class="suggest-title">Từ khóa xu hướng tuyển dụng 2026</span>
+                </div>
+              </div>
+              <div class="trending-chips-row">
+                <a href="#remote" class="suggest-trend-chip" data-keyword="Việc làm Remote">🔥 Việc làm Remote</a>
+                <a href="#urgent" class="suggest-trend-chip" data-keyword="Tuyển gấp đi làm ngay">⚡ Tuyển gấp đi làm ngay</a>
+                <a href="#fresher" class="suggest-trend-chip" data-keyword="Thực tập sinh Fresher">🎓 Thực tập sinh có lương</a>
+                <a href="#highsalary" class="suggest-trend-chip" data-keyword="Lương trên 25 triệu">💎 Lương > 25 Triệu</a>
+                <a href="#ai" class="suggest-trend-chip" data-keyword="AI Prompt Engineer">🤖 AI & Prompt Engineer</a>
+              </div>
+            </div>
+
+            <!-- CHÂN BẢNG GỢI Ý -->
+            <div class="suggest-footer">
+              <div class="suggest-footer-tip">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span>Nhấn <strong>Enter</strong> để tìm kiếm • Bấm <strong>Esc</strong> để đóng</span>
+              </div>
+              <button type="button" class="btn-close-suggest" id="btnCloseSuggest">Đóng [Esc]</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUICK TAGS XU HƯỚNG (NẰM DƯỚI BOX SEARCH THEO ẢNH) -->
+        <div class="quick-tags">
+          <span class="quick-tag-label">Xu hướng:</span>
+          <a href="#frontend" class="quick-tag-link" data-keyword="Frontend Dev">Frontend Dev</a>
+          <a href="#java" class="quick-tag-link" data-keyword="Java Spring">Java Spring</a>
+          <a href="#marketing" class="quick-tag-link" data-keyword="Marketing">Marketing</a>
+          <a href="#uiux" class="quick-tag-link" data-keyword="UI/UX Designer">UI/UX Designer</a>
+          <a href="#data" class="quick-tag-link" data-keyword="Data AI">Data AI</a>
+          <a href="#remote" class="quick-tag-link tag-highlight" data-keyword="Việc làm Remote">🔥 Việc làm Remote</a>
+        </div>
+
+        <!-- KHỐI BANNER DOANH NGHIỆP TIÊU BIỂU (CỐ ĐỊNH KÍCH THƯỚC CHIỀU RỘNG & CHIỀU CAO, TRÀN VIỀN TỐI ƯU DIỆN TÍCH) -->
+        <div class="hero-ad-showcase fixed-billboard-showcase">
+          <div class="ad-cards-wrapper">
+            <!-- Banner chính thức: Nhà phát triển có thể thay thế ảnh hoặc bổ sung slide tại đây -->
+            <a href="#doanh-nghiep-tieu-bieu" class="employer-spotlight-card active" data-ad-index="0" title="Khám phá cơ hội nghề nghiệp tại doanh nghiệp công nghệ tiêu biểu">
+              <img src="assets/banners/employer-spotlight-banner.jpg" alt="Doanh nghiệp tiêu biểu EasyCV - Innovate The Future" class="spotlight-banner-img" />
+              <!-- Badge Tài trợ tinh tế ở góc ảnh, không chiếm diện tích khung -->
+              <div class="ad-badge-overlay">
+                <span class="sponsor-star-icon">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="#F97316"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </span>
+                <span>Doanh nghiệp nổi bật</span>
+                <span class="ad-tag-badge-mini">Tài trợ</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- DẢI THẺ ĐỐI TÁC TUYỂN DỤNG CHẠY LIÊN TỤC (INFINITE RUNNING MARQUEE) -->
+      <div class="hero-brand-strip">
+        <div class="brand-strip-header">
+          <span class="brand-strip-pulse"></span>
+          <span class="brand-strip-label">Đối tác tiêu biểu</span>
+        </div>
+
+        <div class="marquee-slider-container">
+          <div class="marquee-track">
+            <!-- Group 1 -->
+            <div class="marquee-group">
+              <a href="#techcombank" class="marquee-partner-card" title="Techcombank tuyển dụng">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#FFF"/>
+                    <path d="M6 12L11 7L13 9L8 14L6 12Z" fill="#EE0000"/>
+                    <path d="M18 12L13 17L11 15L16 10L18 12Z" fill="#EE0000"/>
+                    <rect x="9.5" y="9.5" width="5" height="5" fill="#111"/>
+                  </svg>
+                </div>
+                <span class="partner-card-name">Techcombank</span>
+              </a>
+
+              <a href="#fpt-software" class="marquee-partner-card" title="FPT Software tuyển dụng">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#FFF"/>
+                    <path d="M4 17L8 7H11L7 17H4Z" fill="#005BAA"/>
+                    <path d="M9.5 17L13.5 7H16.5L12.5 17H9.5Z" fill="#F37021"/>
+                    <path d="M15 17L19 7H22L18 17H15Z" fill="#009640"/>
+                  </svg>
+                </div>
+                <span class="partner-card-name">FPT Software</span>
+              </a>
+
+              <a href="#viettel" class="marquee-partner-card" title="Viettel Group tuyển dụng">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#EE0033"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="6.5">viettel</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">Viettel Group</span>
+              </a>
+
+              <a href="#samsung" class="marquee-partner-card" title="Samsung SRV tuyển dụng">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#034EA2"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="5" letter-spacing="0.5">SAMSUNG</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">Samsung SRV</span>
+              </a>
+
+              <a href="#vng" class="marquee-partner-card" title="VNG Corporation tuyển dụng">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#F97316"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="7">vng</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">VNG Corporation</span>
+              </a>
+
+              <a href="#shopee" class="marquee-partner-card" title="Shopee Vietnam tuyển dụng">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#EE4D2D"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="8.5">S</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">Shopee Vietnam</span>
+              </a>
+
+              <a href="#mbbank" class="marquee-partner-card" title="MB Bank tuyển dụng">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#003B70"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="7">MB</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">MB Bank</span>
+              </a>
+
+              <a href="#vinamilk" class="marquee-partner-card" title="Vinamilk tuyển dụng">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#002D72"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="5.5">VML</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">Vinamilk</span>
+              </a>
+
+              <a href="#vpbank" class="marquee-partner-card" title="VPBank tuyển dụng">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#009A44"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="6">VPB</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">VPBank</span>
+              </a>
+
+              <a href="#vnpt" class="marquee-partner-card" title="VNPT Group tuyển dụng">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#0066B3"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="5.5">VNPT</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">VNPT Group</span>
+              </a>
+            </div>
+
+            <!-- Group 2 (Duplicate for Seamless Infinite Loop) -->
+            <div class="marquee-group" aria-hidden="true">
+              <a href="#techcombank" class="marquee-partner-card" title="Techcombank tuyển dụng" tabindex="-1">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#FFF"/>
+                    <path d="M6 12L11 7L13 9L8 14L6 12Z" fill="#EE0000"/>
+                    <path d="M18 12L13 17L11 15L16 10L18 12Z" fill="#EE0000"/>
+                    <rect x="9.5" y="9.5" width="5" height="5" fill="#111"/>
+                  </svg>
+                </div>
+                <span class="partner-card-name">Techcombank</span>
+              </a>
+
+              <a href="#fpt-software" class="marquee-partner-card" title="FPT Software tuyển dụng" tabindex="-1">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#FFF"/>
+                    <path d="M4 17L8 7H11L7 17H4Z" fill="#005BAA"/>
+                    <path d="M9.5 17L13.5 7H16.5L12.5 17H9.5Z" fill="#F37021"/>
+                    <path d="M15 17L19 7H22L18 17H15Z" fill="#009640"/>
+                  </svg>
+                </div>
+                <span class="partner-card-name">FPT Software</span>
+              </a>
+
+              <a href="#viettel" class="marquee-partner-card" title="Viettel Group tuyển dụng" tabindex="-1">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#EE0033"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="6.5">viettel</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">Viettel Group</span>
+              </a>
+
+              <a href="#samsung" class="marquee-partner-card" title="Samsung SRV tuyển dụng" tabindex="-1">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#034EA2"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="5" letter-spacing="0.5">SAMSUNG</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">Samsung SRV</span>
+              </a>
+
+              <a href="#vng" class="marquee-partner-card" title="VNG Corporation tuyển dụng" tabindex="-1">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#F97316"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="7">vng</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">VNG Corporation</span>
+              </a>
+
+              <a href="#shopee" class="marquee-partner-card" title="Shopee Vietnam tuyển dụng" tabindex="-1">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#EE4D2D"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="8.5">S</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">Shopee Vietnam</span>
+              </a>
+
+              <a href="#mbbank" class="marquee-partner-card" title="MB Bank tuyển dụng" tabindex="-1">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#003B70"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="7">MB</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">MB Bank</span>
+              </a>
+
+              <a href="#vinamilk" class="marquee-partner-card" title="Vinamilk tuyển dụng" tabindex="-1">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#002D72"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="5.5">VML</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">Vinamilk</span>
+              </a>
+
+              <a href="#vpbank" class="marquee-partner-card" title="VPBank tuyển dụng" tabindex="-1">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#009A44"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="6">VPB</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">VPBank</span>
+              </a>
+
+              <a href="#vnpt" class="marquee-partner-card" title="VNPT Group tuyển dụng" tabindex="-1">
+                <div class="partner-card-logo">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#0066B3"/>
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#FFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="5.5">VNPT</text>
+                  </svg>
+                </div>
+                <span class="partner-card-name">VNPT Group</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       VÙNG 1: VIỆC LÀM NỔI BẬT (Featured / Hot Jobs)
+       ========================================================================= -->
+  <section id="viec-lam-noi-bat" class="home-section featured-jobs-section">
+    <div class="home-container">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-badge badge-orange-subtle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.1 0 2 .9 2 2 0 .74-.4 1.38-1 1.72V7a5 5 0 0 1 5 5v1.28c.6.34 1 .98 1 1.72 0 1.1-.9 2-2 2h-1a5 5 0 0 1-5 5v1c0 1.1-.9 2-2 2s-2-.9-2-2v-1a5 5 0 0 1-5-5H2c-1.1 0-2-.9-2-2 0-.74.4-1.38 1-1.72V12a5 5 0 0 1 5-5V5.72C5.4 5.38 5 4.74 5 4c0-1.1.9-2 2-2h5z" opacity="0"/></svg>
+            <span>Cơ hội tuyển dụng ưu tiên 🔥</span>
+          </div>
+          <h2 class="section-title">
+            Việc làm Nổi bật hôm nay
+          </h2>
+          <p class="section-subtitle">Hơn 1.500+ vị trí việc làm chất lượng cao được xác thực và tuyển dụng trực tiếp từ các doanh nghiệp lớn</p>
+        </div>
+
+        <a href="#tat-ca-viec-lam-noi-bat" class="section-view-all">
+          <span>Xem tất cả 1.520 việc làm</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Quick Filter Pills -->
+      <div class="filter-pills-bar">
+        <button class="filter-pill-btn active" data-filter="all">Tất cả việc làm</button>
+        <button class="filter-pill-btn" data-filter="it">IT - Phần mềm & Công nghệ</button>
+        <button class="filter-pill-btn" data-filter="marketing">Marketing - Truyền thông</button>
+        <button class="filter-pill-btn" data-filter="sales">Kinh doanh - Bán hàng (B2B)</button>
+        <button class="filter-pill-btn" data-filter="finance">Tài chính - Ngân hàng</button>
+        <button class="filter-pill-btn" data-filter="remote">Làm việc từ xa (Remote)</button>
+      </div>
+
+      <!-- Jobs Grid -->
+      <div class="jobs-grid">
+
+        <!-- Card 1: Kiến Trúc Việt (Chính xác theo mẫu của User) -->
+        <article class="job-card" data-category="all it">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper">
+              <img src="assets/logos/kientrucviet-logo.svg" alt="Kiến Trúc Việt" class="job-logo" />
+              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-kientrucviet" class="job-title" title="Kiến Trúc Sư - Chủ Trì Thiết Kế Kiến Trúc/Quản Lý Thiết Kế/Design...">Kiến Trúc Sư - Chủ Trì Thiết Kế Kiến Trúc/Quản Lý Thiết Kế/Design...</a>
+              <a href="#kientrucviet" class="company-name" title="CÔNG TY CỔ PHẦN KIẾN TRÚC VIỆT">CÔNG TY CỔ PHẦN KIẾN TRÚC VIỆT</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary">25 - 40 triệu</span>
+              <span class="job-pill job-pill-location">Hà Nội</span>
+            </div>
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 2: Samsung SRV (Tài trợ) -->
+        <article class="job-card card-sponsored" data-category="all it">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper">
+              <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=120&h=120&q=80" alt="Samsung SRV" class="job-logo" />
+              <span class="badge-lightning" title="Được tài trợ">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-samsung-lead" class="job-title" title="Principal Software Architect (AI Camera & Mobile OS)">Principal Software Architect (AI Camera & Mobile OS)</a>
+              <a href="#samsung-srv" class="company-name" title="SAMSUNG R&D INSTITUTE VIETNAM (SRV)">SAMSUNG R&D INSTITUTE VIETNAM (SRV)</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary">55 - 85 triệu</span>
+              <span class="job-pill job-pill-location">Hà Nội</span>
+            </div>
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 3: FPT Software -->
+        <article class="job-card" data-category="all it">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=120&h=120&q=80" alt="FPT Software" class="job-logo" />
+              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-fpt-frontend" class="job-title" title="Senior Frontend Engineer (ReactJS, Next.js, TypeScript)">Senior Frontend Engineer (ReactJS, Next.js, TypeScript)</a>
+              <a href="#fpt-software" class="company-name" title="FPT SOFTWARE">FPT SOFTWARE</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary">30 - 45 triệu</span>
+              <span class="job-pill job-pill-location">Hà Nội</span>
+            </div>
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 4: VNG Corporation -->
+        <article class="job-card" data-category="all marketing">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80" alt="VNG Corporation" class="job-logo" />
+              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-vng-mkt" class="job-title" title="Trưởng nhóm Digital Marketing & Performance Ads">Trưởng nhóm Digital Marketing & Performance Ads</a>
+              <a href="#vng-corp" class="company-name" title="VNG CORPORATION">VNG CORPORATION</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary">28 - 40 triệu</span>
+              <span class="job-pill job-pill-location">TP.HCM</span>
+            </div>
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 5: Techcombank -->
+        <article class="job-card" data-category="all finance it">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper">
+              <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=120&h=120&q=80" alt="Techcombank" class="job-logo" />
+              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-tcb-analyst" class="job-title" title="Chuyên viên Cao cấp Phân tích Dữ liệu (Senior Data Analyst)">Chuyên viên Cao cấp Phân tích Dữ liệu (Senior Data Analyst)</a>
+              <a href="#techcombank" class="company-name" title="NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM">TECHCOMBANK</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary">35 - 55 triệu</span>
+              <span class="job-pill job-pill-location">Hà Nội</span>
+            </div>
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 6: Viettel Digital -->
+        <article class="job-card" data-category="all sales">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=120&h=120&q=80" alt="Viettel Digital" class="job-logo" />
+              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-viettel-sales" class="job-title" title="Giám đốc Khách hàng Doanh nghiệp (B2B Account Manager)">Giám đốc Khách hàng Doanh nghiệp (B2B Account Manager)</a>
+              <a href="#viettel-digital" class="company-name" title="TỔNG CÔNG TY DỊCH VỤ SỐ VIETTEL">TỔNG CÔNG TY DỊCH VỤ SỐ VIETTEL</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary">25 - 50 triệu</span>
+              <span class="job-pill job-pill-location">Hà Nội & TP.HCM</span>
+            </div>
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 7: Shopee Vietnam (Remote) -->
+        <article class="job-card" data-category="all it remote">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper">
+              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=120&h=120&q=80" alt="Shopee Vietnam" class="job-logo" />
+              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-shopee-golang" class="job-title" title="Backend Engineer (Golang, Microservices, Distributed Systems)">Backend Engineer (Golang, Microservices, Cloud Systems)</a>
+              <a href="#shopee" class="company-name" title="SHOPEE VIETNAM">SHOPEE VIETNAM</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary">1,800 - 3,200 USD</span>
+              <span class="job-pill job-pill-location">Toàn quốc (Remote)</span>
+            </div>
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 8: VinAI Research -->
+        <article class="job-card" data-category="all it">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper">
+              <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=120&h=120&q=80" alt="VinAI Research" class="job-logo" />
+              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-vinai-ml" class="job-title" title="AI Research Scientist / Computer Vision Specialist">AI Research Scientist / Computer Vision Specialist</a>
+              <a href="#vinai" class="company-name" title="VINAI RESEARCH">VINAI RESEARCH</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary">40 - 75 triệu</span>
+              <span class="job-pill job-pill-location">Hà Nội</span>
+            </div>
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 9: MB Bank -->
+        <article class="job-card" data-category="all finance it">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper">
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=120&h=120&q=80" alt="MB Bank" class="job-logo" />
+              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-mb-uiux" class="job-title" title="Senior UI/UX Designer (Design System & App Banking)">Senior UI/UX Designer (Design System & App Banking)</a>
+              <a href="#mbbank" class="company-name" title="NGÂN HÀNG TMCP QUÂN ĐỘI (MB BANK)">NGÂN HÀNG QUÂN ĐỘI (MB BANK)</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary">25 - 40 triệu</span>
+              <span class="job-pill job-pill-location">Hà Nội</span>
+            </div>
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VÙNG 2: VIỆC LÀM HẤP DẪN (Attractive / High Perks & Best Salary Jobs)
+       ========================================================================= -->
+  <section id="viec-lam-hap-dan" class="home-section attractive-jobs-section">
+    <div class="home-container">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-badge badge-green-subtle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span>Đãi ngộ hàng đầu & Phúc lợi 5 sao</span>
+          </div>
+          <h2 class="section-title">
+            Việc làm Hấp dẫn & Thu nhập Đỉnh cao
+          </h2>
+          <p class="section-subtitle">Dành riêng cho nhân tài đang tìm kiếm môi trường phát triển đột phá, thưởng gia nhập cao và phúc lợi toàn diện</p>
+        </div>
+
+        <a href="#tat-ca-viec-lam-hap-dan" class="section-view-all">
+          <span>Khám phá 860 vị trí lương thưởng cao</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="attractive-grid">
+
+        <!-- Attractive Card 1 -->
+        <article class="attractive-card">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper" style="border-color: #F59E0B;">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=120&h=120&q=80" alt="One Mount Group" class="job-logo" />
+              <span class="badge-lightning" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);" title="Đãi ngộ đỉnh cao">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-om-lead" class="job-title" title="Engineering Lead / Solution Architect (Fintech & Retail)">Engineering Lead / Solution Architect (Fintech & Retail)</a>
+              <a href="#one-mount" class="company-name" title="ONE MOUNT GROUP (VINGROUP & TECHCOMBANK)">ONE MOUNT GROUP</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary" style="color: #D97706;">60 - 90 triệu</span>
+              <span class="job-pill job-pill-location">Hà Nội</span>
+            </div>
+            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Attractive Card 2 -->
+        <article class="attractive-card">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper" style="border-color: #F59E0B;">
+              <img src="https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=120&h=120&q=80" alt="MoMo" class="job-logo" />
+              <span class="badge-lightning" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);" title="Đãi ngộ đỉnh cao">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-momo-lead" class="job-title" title="Senior Product Manager (AI Personalization & Payment)">Senior Product Manager (AI Personalization & Payment)</a>
+              <a href="#momo" class="company-name" title="MOMO (M_SERVICE)">MOMO (M_SERVICE)</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary" style="color: #D97706;">45 - 70 triệu</span>
+              <span class="job-pill job-pill-location">TP.HCM</span>
+            </div>
+            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Attractive Card 3 -->
+        <article class="attractive-card">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper" style="border-color: #F59E0B;">
+              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=120&h=120&q=80" alt="Vinamilk" class="job-logo" />
+              <span class="badge-lightning" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);" title="Đãi ngộ đỉnh cao">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-vinamilk-cloud" class="job-title" title="Head of Digital Transformation & Cloud Architecture">Head of Digital Transformation & Cloud Architecture</a>
+              <a href="#vinamilk" class="company-name" title="VINAMILK CORPORATION">VINAMILK CORPORATION</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary" style="color: #D97706;">55 - 80 triệu</span>
+              <span class="job-pill job-pill-location">TP.HCM & Hybrid</span>
+            </div>
+            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+        <!-- Attractive Card 4 -->
+        <article class="attractive-card">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper" style="border-color: #F59E0B;">
+              <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=120&h=120&q=80" alt="Techcombank" class="job-logo" />
+              <span class="badge-lightning" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);" title="Đãi ngộ đỉnh cao">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-tcb-cloud" class="job-title" title="Director of Cloud Infrastructure & Enterprise Security">Director of Cloud Infrastructure & Security</a>
+              <a href="#techcombank" class="company-name" title="TECHCOMBANK (NGÂN HÀNG KỸ THƯƠNG)">TECHCOMBANK</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary" style="color: #D97706;">70 - 100 triệu</span>
+              <span class="job-pill job-pill-location">Hà Nội</span>
+            </div>
+            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Attractive Card 5 -->
+        <article class="attractive-card">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper" style="border-color: #F59E0B;">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80" alt="VNG Corporation" class="job-logo" />
+              <span class="badge-lightning" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);" title="Đãi ngộ đỉnh cao">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-vng-lead-ai" class="job-title" title="Lead AI / Data Scientist (Generative AI & LLMs Research)">Lead AI / Data Scientist (Generative AI & LLMs)</a>
+              <a href="#vng-corp" class="company-name" title="VNG CORPORATION">VNG CORPORATION</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary" style="color: #D97706;">65 - 95 triệu</span>
+              <span class="job-pill job-pill-location">TP.HCM & Hybrid</span>
+            </div>
+            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Attractive Card 6 -->
+        <article class="attractive-card">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper" style="border-color: #F59E0B;">
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=120&h=120&q=80" alt="Viettel Digital Solutions" class="job-logo" />
+              <span class="badge-lightning" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);" title="Đãi ngộ đỉnh cao">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-viettel-fintech" class="job-title" title="Principal Fintech Architect (High-Frequency Microservices)">Principal Fintech Architect (High-Frequency Microservices)</a>
+              <a href="#viettel-digital" class="company-name" title="VIETTEL DIGITAL SOLUTIONS">VIETTEL DIGITAL SOLUTIONS</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary" style="color: #D97706;">50 - 85 triệu</span>
+              <span class="job-pill job-pill-location">Hà Nội</span>
+            </div>
+            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+
+      </div>
+    </div>
+  </section>
+
+    <!-- =========================================================================
+       VÙNG 3: CÔNG TY TIÊU BIỂU (Top / Featured Companies)
+       ========================================================================= -->
+  <section id="cong-ty-tieu-bieu" class="home-section top-companies-section">
+    <div class="home-container">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-badge badge-blue-subtle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/></svg>
+            <span>Nhà tuyển dụng uy tín hàng đầu</span>
+          </div>
+          <h2 class="section-title">
+            Top Công ty Tiêu biểu
+          </h2>
+          <p class="section-subtitle">Khám phá văn hóa làm việc, phúc lợi chuẩn quốc tế và các cơ hội nghề nghiệp tại các tập đoàn công nghệ lớn nhất Việt Nam</p>
+        </div>
+
+        <a href="#kham-pha-tat-ca-cong-ty" class="section-view-all">
+          <span>Xem tất cả 500+ doanh nghiệp</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="companies-grid">
+
+        <!-- Company 1: FPT Software -->
+        <div class="company-card">
+          <div class="company-cover" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80');">
+            <div class="company-cover-overlay"></div>
+          </div>
+          <div class="company-card-body">
+            <div class="company-card-logo-wrap">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=120&h=120&q=80" alt="FPT Software" class="company-card-logo" />
+            </div>
+            <a href="#fpt-profile" class="company-card-title">
+              <span>FPT Software</span>
+              <span class="badge-verified-inline"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
+            </a>
+            <span class="company-industry">Công nghệ thông tin & Dịch vụ phần mềm toàn cầu</span>
+
+            <div class="company-meta-stats">
+              <span class="company-rating">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                4.8 (850+ đánh giá)
+              </span>
+              <span class="company-open-jobs">145 việc làm đang mở</span>
+            </div>
+
+            <button class="btn-follow-company">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <span>Theo dõi (54.2k)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Company 2: VNG Corporation -->
+        <div class="company-card">
+          <div class="company-cover" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80');">
+            <div class="company-cover-overlay"></div>
+          </div>
+          <div class="company-card-body">
+            <div class="company-card-logo-wrap">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80" alt="VNG Corporation" class="company-card-logo" />
+            </div>
+            <a href="#vng-profile" class="company-card-title">
+              <span>VNG Corporation</span>
+              <span class="badge-verified-inline"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
+            </a>
+            <span class="company-industry">Game, Zalo AI & Nền tảng số Kỳ lân Việt Nam</span>
+
+            <div class="company-meta-stats">
+              <span class="company-rating">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                4.9 (1.2k+ đánh giá)
+              </span>
+              <span class="company-open-jobs">82 việc làm đang mở</span>
+            </div>
+
+            <button class="btn-follow-company">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <span>Theo dõi (68.1k)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Company 3: Viettel Digital -->
+        <div class="company-card">
+          <div class="company-cover" style="background-image: url('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=400&q=80');">
+            <div class="company-cover-overlay"></div>
+          </div>
+          <div class="company-card-body">
+            <div class="company-card-logo-wrap">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=120&h=120&q=80" alt="Viettel Digital" class="company-card-logo" />
+            </div>
+            <a href="#viettel-profile" class="company-card-title">
+              <span>Viettel Digital</span>
+              <span class="badge-verified-inline"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
+            </a>
+            <span class="company-industry">Viễn thông, Fintech & Chuyển đổi số quốc gia</span>
+
+            <div class="company-meta-stats">
+              <span class="company-rating">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                4.8 (640+ đánh giá)
+              </span>
+              <span class="company-open-jobs">96 việc làm đang mở</span>
+            </div>
+
+            <button class="btn-follow-company">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <span>Theo dõi (49.5k)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Company 4: Techcombank -->
+        <div class="company-card">
+          <div class="company-cover" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d0fbb186f5f7?auto=format&fit=crop&w=400&q=80');">
+            <div class="company-cover-overlay"></div>
+          </div>
+          <div class="company-card-body">
+            <div class="company-card-logo-wrap">
+              <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=120&h=120&q=80" alt="Techcombank" class="company-card-logo" />
+            </div>
+            <a href="#tcb-profile" class="company-card-title">
+              <span>Techcombank</span>
+              <span class="badge-verified-inline"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
+            </a>
+            <span class="company-industry">Ngân hàng TMCP Kỹ thương Việt Nam & Digital Banking</span>
+
+            <div class="company-meta-stats">
+              <span class="company-rating">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                4.7 (790+ đánh giá)
+              </span>
+              <span class="company-open-jobs">118 việc làm đang mở</span>
+            </div>
+
+            <button class="btn-follow-company">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <span>Theo dõi (41.8k)</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VÙNG QUẢNG CÁO 2: NÂNG CẤP TÀI KHOẢN ỨNG VIÊN VIP (In-feed Native Ad)
+       ========================================================================= -->
+  <section class="infeed-vip-ad-section">
+    <div class="home-container">
+      <div class="infeed-vip-card">
+        <div class="infeed-vip-left">
+          <div class="infeed-vip-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span>Dành riêng cho ứng viên tiềm năng</span>
+          </div>
+          <h3 class="infeed-vip-title">Nâng cấp EasyCV VIP Pro — Tăng 5 lần cơ hội được Headhunter liên hệ săn đón</h3>
+          <p class="infeed-vip-desc">Đưa hồ sơ lên vị trí Top đầu tìm kiếm của hơn 12.500+ nhà tuyển dụng, nhận báo cáo phân tích độ cạnh tranh CV và dịch vụ sửa CV 1-1 miễn phí từ chuyên gia tuyển dụng hàng đầu.</p>
+          <div class="infeed-vip-perks">
+            <div class="infeed-vip-perk-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Huy hiệu Ứng viên Nổi bật</span>
+            </div>
+            <div class="infeed-vip-perk-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Xem ai đã đọc CV của bạn</span>
+            </div>
+            <div class="infeed-vip-perk-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Ưu tiên phỏng vấn trực tiếp</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="infeed-vip-right">
+          <a href="#nang-cap-vip" class="btn-vip-upgrade">
+            <span>Dùng thử VIP 14 ngày miễn phí</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <span class="infeed-vip-subnote">Không cần thẻ tín dụng • Hủy bất cứ lúc nào</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VÙNG 4: VIỆC LÀM PHÙ HỢP (Smart AI Matching Jobs for Candidate)
+       ========================================================================= -->
+  <section id="viec-lam-phu-hop" class="home-section matching-jobs-section">
+    <div class="home-container">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-badge badge-orange-subtle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+            <span>EasyCV AI Matcher Engine™</span>
+          </div>
+          <h2 class="section-title">
+            Việc làm Phù hợp với Hồ sơ của bạn
+          </h2>
+          <p class="section-subtitle">Thuật toán AI đối chiếu tự động kinh nghiệm, kỹ năng và mức lương mong muốn trong hồ sơ của bạn với hơn 50.000 tin tuyển dụng</p>
+        </div>
+
+        <a href="#ho-so-cua-toi" class="section-view-all">
+          <span>Tùy chỉnh tiêu chí gợi ý</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- AI Profile Boost Banner -->
+      <div class="ai-recommendation-hero-card">
+        <div class="ai-hero-left">
+          <div class="ai-badge-pulse">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+          </div>
+          <div>
+            <div class="ai-hero-title">Độ hoàn thiện hồ sơ của bạn: 85% — Khớp với 34 việc làm chất lượng cao!</div>
+            <div class="ai-hero-desc">Bổ sung thêm 1 chứng chỉ ngoại ngữ hoặc dự án gần nhất để tăng thêm 40% cơ hội nhận lời mời phỏng vấn trực tiếp từ HR.</div>
+          </div>
+        </div>
+        <a href="#cap-nhat-cv" class="btn-update-cv">Cập nhật hồ sơ ngay</a>
+      </div>
+
+      <!-- Interactive Matching Tabs -->
+      <div class="matching-tabs">
+        <button class="matching-tab-btn active" data-tab="all">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+          <span>Gợi ý AI thông minh</span>
+        </button>
+        <button class="matching-tab-btn" data-tab="profile">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          <span>Khớp CV của bạn (Top Match)</span>
+        </button>
+        <button class="matching-tab-btn" data-tab="salary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>Lương cao từ 25+ Triệu</span>
+        </button>
+        <button class="matching-tab-btn" data-tab="remote">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>Làm việc từ xa (Remote / Hybrid)</span>
+        </button>
+      </div>
+
+      <!-- Matching Jobs Grid -->
+      <div class="jobs-grid">
+
+        <!-- Match Job 1: Shopee / Sea Group -->
+        <article class="job-card card-sponsored" data-match-type="all profile salary">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper">
+              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=120&h=120&q=80" alt="Shopee Logo" class="job-logo" />
+              <span class="badge-lightning" title="Ưu tiên phỏng vấn">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-shopee-ai" class="job-title" title="Staff AI / Machine Learning Specialist (Ranking & Recommendation)">Staff AI / Machine Learning Specialist (Ranking & Recommendation)</a>
+              <a href="#shopee-sea" class="company-name" title="SHOPEE / SEA MONEY">SHOPEE / SEA MONEY</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary">2,500 - 4,000 USD</span>
+              <span class="job-pill job-pill-location">TP.HCM</span>
+              <span class="job-pill job-pill-match">99% Khớp CV</span>
+            </div>
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Match Job 2: Tiki Corporation -->
+        <article class="job-card" data-match-type="all profile salary">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper">
+              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=120&h=120&q=80" alt="Tiki Corporation" class="job-logo" />
+              <span class="badge-lightning" title="Đã xác minh hôm nay">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-tiki-react" class="job-title" title="Senior React Native / Mobile App Engineer">Senior React Native / Mobile App Engineer</a>
+              <a href="#tiki" class="company-name" title="TIKI CORPORATION">TIKI CORPORATION</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary">32 - 50 triệu</span>
+              <span class="job-pill job-pill-location">TP.HCM</span>
+              <span class="job-pill job-pill-match">98% Khớp CV</span>
+            </div>
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Match Job 3: KMS Technology -->
+        <article class="job-card" data-match-type="all remote salary">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper">
+              <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=120&h=120&q=80" alt="KMS Technology" class="job-logo" />
+              <span class="badge-lightning" title="HR vừa xem hồ sơ">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-kms-fullstack" class="job-title" title="Fullstack Developer (Node.js & React/Next.js)">Fullstack Developer (Node.js & React/Next.js)</a>
+              <a href="#kms" class="company-name" title="KMS TECHNOLOGY">KMS TECHNOLOGY</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary">1,500 - 2,500 USD</span>
+              <span class="job-pill job-pill-location">Remote</span>
+              <span class="job-pill job-pill-match">95% Khớp CV</span>
+            </div>
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Match Job 4: MB Bank -->
+        <article class="job-card" data-match-type="all profile">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper">
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=120&h=120&q=80" alt="MB Bank" class="job-logo" />
+              <span class="badge-lightning" title="Tuyển dụng nhanh">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-mb-uiux" class="job-title" title="Senior UI/UX Designer (Design System & App Banking)">Senior UI/UX Designer (Design System & App Banking)</a>
+              <a href="#mbbank" class="company-name" title="NGÂN HÀNG TMCP QUÂN ĐỘI">NGÂN HÀNG QUÂN ĐỘI (MB BANK)</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary">25 - 40 triệu</span>
+              <span class="job-pill job-pill-location">Hà Nội</span>
+              <span class="job-pill job-pill-match">94% Khớp CV</span>
+            </div>
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Match Job 5: FPT Software (Solutions Architect) -->
+        <article class="job-card" data-match-type="all profile salary">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=120&h=120&q=80" alt="FPT Software" class="job-logo" />
+              <span class="badge-lightning" title="Ưu tiên phỏng vấn">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-fpt-architect" class="job-title" title="Cloud Solutions Architect (AWS / Azure Enterprise)">Cloud Solutions Architect (AWS / Azure Enterprise)</a>
+              <a href="#fpt-software" class="company-name" title="FPT SOFTWARE">FPT SOFTWARE</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary">40 - 65 triệu</span>
+              <span class="job-pill job-pill-location">Hà Nội</span>
+              <span class="job-pill job-pill-match">96% Khớp CV</span>
+            </div>
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Match Job 6: VNG Corporation (High-Load Backend) -->
+        <article class="job-card" data-match-type="all remote salary">
+          <div class="job-card-header">
+            <div class="job-logo-wrapper">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80" alt="VNG Corporation" class="job-logo" />
+              <span class="badge-lightning" title="HR xem hồ sơ">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+            </div>
+            <div class="job-content">
+              <a href="#job-vng-backend" class="job-title" title="Senior Backend Engineer (Golang & High-Load Microservices)">Senior Backend Engineer (Golang & High-Load Systems)</a>
+              <a href="#vng-corp" class="company-name" title="VNG CORPORATION">VNG CORPORATION</a>
+            </div>
+          </div>
+
+          <div class="job-card-footer">
+            <div class="job-pills">
+              <span class="job-pill job-pill-salary">35 - 60 triệu</span>
+              <span class="job-pill job-pill-location">TP.HCM & Remote</span>
+              <span class="job-pill job-pill-match">97% Khớp CV</span>
+            </div>
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       THÔNG SỐ & CHỈ SỐ NỀN TẢNG (Stats Counter Strip)
+       ========================================================================= -->
+  <div class="hero-stats-strip">
+    <div class="home-container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon-wrap stat-icon-orange">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-number">52.400+</span>
+            <span class="stat-label">Việc làm đang tuyển dụng</span>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon-wrap stat-icon-green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-number">12.500+</span>
+            <span class="stat-label">Doanh nghiệp hàng đầu</span>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon-wrap stat-icon-blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-number">380.000+</span>
+            <span class="stat-label">CV ứng viên đã kết nối</span>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon-wrap stat-icon-purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-number">98.6%</span>
+            <span class="stat-label">Phản hồi hồ sơ trong 48h</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       VÙNG QUẢNG CÁO: BANNER TÀI TRỢ & SỰ KIỆN NỔI BẬT (Promo Banners Strip)
+       ========================================================================= -->
+  <div class="promo-banners-strip">
+    <div class="home-container">
+      <div class="promo-banners-grid">
+
+        <!-- Promo Card 1: Sự kiện tuyển dụng lớn -->
+        <div class="promo-banner-card promo-banner-primary">
+          <div class="promo-banner-top">
+            <span class="ad-label-pill">Tài trợ / Event Hot</span>
+            <span class="promo-countdown-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Còn 45 vé miễn phí</span>
+            </span>
+          </div>
+          <div>
+            <h3 class="promo-banner-title">Vietnam Tech Career Expo 2026: Kết nối 150+ Doanh nghiệp Công nghệ</h3>
+            <p class="promo-banner-desc">Phỏng vấn trực tiếp tại sự kiện cùng FPT, VNG, Viettel, Shopee. Cơ hội nhận Offer ngay trong ngày kèm 500+ phần quà công nghệ độc quyền.</p>
+          </div>
+          <div class="promo-banner-action">
+            <a href="#dang-ky-expo" class="btn-promo-action btn-promo-primary">
+              <span>Đăng ký tham gia ngay</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <span style="font-size: 12px; opacity: 0.7;">Tổ chức: 25/10/2026 tại Hà Nội & Online</span>
+          </div>
+        </div>
+
+        <!-- Promo Card 2: Học bổng đào tạo / Chứng chỉ đối tác -->
+        <div class="promo-banner-card promo-banner-accent">
+          <div class="promo-banner-top">
+            <span class="ad-label-pill ad-label-orange">Ưu đãi Đối tác</span>
+            <span style="font-size: 12px; font-weight: 700; color: #EA580C;">Học bổng 50%</span>
+          </div>
+          <div>
+            <h3 class="promo-banner-title" style="color: var(--slate-900);">Học bổng AWS & Google Cloud Mastery</h3>
+            <p class="promo-banner-desc" style="color: var(--slate-700);">Nâng tầm CV với chứng chỉ điện toán đám mây quốc tế. Cam kết giới thiệu việc làm mức lương từ $1,500+.</p>
+          </div>
+          <div class="promo-banner-action">
+            <a href="#nhan-hoc-bong" class="btn-promo-action btn-promo-outline">
+              <span>Nhận ưu đãi học bổng</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <span style="font-size: 12px; color: var(--text-muted);">Dành riêng ứng viên EasyCV</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       VÙNG ĐÀO TẠO & KỸ NĂNG: KHÓA HỌC GỢI Ý (#goi-y-khoa-hoc)
+       ========================================================================= -->
+  <section id="goi-y-khoa-hoc" class="home-section suggested-courses-section">
+    <div class="home-container">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-badge badge-green-subtle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            <span>Phát triển kỹ năng theo hồ sơ của bạn</span>
+          </div>
+          <h2 class="section-title">
+            Gợi ý Khóa học & Kỹ năng Tăng Lương
+          </h2>
+          <p class="section-subtitle">Dựa trên xu hướng tuyển dụng 2026, bổ sung các chứng chỉ này giúp hồ sơ của bạn thu hút thêm 40% lượt liên hệ phỏng vấn từ HR</p>
+        </div>
+
+        <a href="#tat-ca-khoa-hoc" class="section-view-all">
+          <span>Xem tất cả 120+ khóa học & học bổng</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="courses-grid">
+
+        <!-- Course 1 -->
+        <a href="#khoa-hoc-system-design" class="course-card">
+          <div class="course-thumb-wrap" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80');">
+            <span class="course-category-tag">Software Architecture</span>
+            <span class="course-match-badge">96% Khớp mục tiêu</span>
+          </div>
+          <div class="course-body">
+            <h3 class="course-title">Luyện Phỏng vấn Thuật toán & System Design Chuẩn Big Tech (FAANG)</h3>
+            <div class="course-instructor">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Giảng viên: Cựu Tech Lead Google & VNG</span>
+            </div>
+            <div class="course-meta-row">
+              <span class="course-rating">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                4.9 (2.4k học viên)
+              </span>
+              <div class="course-price-wrap">
+                <span class="course-price-sale">2.490.000đ</span>
+                <span class="course-price-old">4.500.000đ</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Course 2 -->
+        <a href="#khoa-hoc-data-analytics" class="course-card">
+          <div class="course-thumb-wrap" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80');">
+            <span class="course-category-tag">Data & AI Analytics</span>
+            <span class="course-match-badge">Kỹ năng HOT 2026</span>
+          </div>
+          <div class="course-body">
+            <h3 class="course-title">Thực chiến Phân tích Dữ liệu Chuyên sâu: SQL, Python & PowerBI</h3>
+            <div class="course-instructor">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Giảng viên: Head of Data Analytics Techcombank</span>
+            </div>
+            <div class="course-meta-row">
+              <span class="course-rating">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                4.8 (3.8k học viên)
+              </span>
+              <div class="course-price-wrap">
+                <span class="course-price-sale">1.890.000đ</span>
+                <span class="course-price-old">3.200.000đ</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Course 3 -->
+        <a href="#khoa-hoc-uiux" class="course-card">
+          <div class="course-thumb-wrap" style="background-image: url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=400&q=80');">
+            <span class="course-category-tag">UI/UX Product Design</span>
+            <span class="course-match-badge">Portfolio chuẩn ATS</span>
+          </div>
+          <div class="course-body">
+            <h3 class="course-title">Thiết kế Giao diện UI/UX & Xây dựng Design System Chuẩn Quốc Tế (Figma)</h3>
+            <div class="course-instructor">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Giảng viên: Senior Product Designer tại Grab</span>
+            </div>
+            <div class="course-meta-row">
+              <span class="course-rating">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                4.9 (1.6k học viên)
+              </span>
+              <div class="course-price-wrap">
+                <span class="course-price-sale">1.950.000đ</span>
+                <span class="course-price-old">3.500.000đ</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Course 4 -->
+        <a href="#khoa-hoc-tieng-anh" class="course-card">
+          <div class="course-thumb-wrap" style="background-image: url('https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=400&q=80');">
+            <span class="course-category-tag">Business English</span>
+            <span class="course-match-badge">Tăng 30% Mức lương</span>
+          </div>
+          <div class="course-body">
+            <h3 class="course-title">Tiếng Anh Giao Tiếp Công Sở & Nghệ Thuật Đàm Phán Lương Cao Cho Chuyên Gia</h3>
+            <div class="course-instructor">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Giảng viên: Master TESOL & HR Director Tập đoàn Đa quốc gia</span>
+            </div>
+            <div class="course-meta-row">
+              <span class="course-rating">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                4.8 (4.1k học viên)
+              </span>
+              <div class="course-price-wrap">
+                <span class="course-price-sale">1.490.000đ</span>
+                <span class="course-price-old">2.800.000đ</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VÙNG GỢI Ý 2: SỰ KIỆN TUYỂN DỤNG & WORKSHOP NGHỀ NGHIỆP (#goi-y-su-kien)
+       ========================================================================= -->
+  <section id="goi-y-su-kien" class="home-section suggested-events-section">
+    <div class="home-container">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-badge badge-orange-subtle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Sự kiện & Ngày hội phỏng vấn trực tiếp</span>
+          </div>
+          <h2 class="section-title">
+            Sự kiện Tuyển dụng Gợi ý cho bạn
+          </h2>
+          <p class="section-subtitle">Gặp gỡ trực tiếp nhà tuyển dụng, tham gia workshop review CV 1-1 và lắng nghe chia sẻ kinh nghiệm từ các chuyên gia đầu ngành</p>
+        </div>
+
+        <a href="#tat-ca-su-kien" class="section-view-all">
+          <span>Xem tất cả 45 sự kiện</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="events-grid">
+
+        <!-- Event 1 -->
+        <article class="event-card">
+          <div>
+            <div class="event-card-top">
+              <div class="event-date-badge">
+                <span class="event-date-day">28</span>
+                <span class="event-date-month">Tháng 10</span>
+              </div>
+              <div class="event-meta-header">
+                <span class="event-format-tag tag-online">Trực tuyến (Zoom Webinar)</span>
+                <a href="#event-fintech" class="event-title">Ngày Hội Việc Làm Fintech & Digital Banking Career Day 2026</a>
+              </div>
+            </div>
+
+            <div class="event-organizer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/></svg>
+              <span>Đồng tổ chức: Techcombank, MB Bank, MoMo & EasyCV</span>
+            </div>
+
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+              Phỏng vấn thử 1-1, lắng nghe định hướng phát triển ngành Tài chính công nghệ và cơ hội nhận hơn 250+ Offer tuyển dụng trực tiếp.
+            </p>
+          </div>
+
+          <div class="event-footer">
+            <span class="event-attendees">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
+              <span>1.840 người đã đăng ký</span>
+            </span>
+            <a href="#dang-ky-event-1" class="btn-event-register">Đăng ký miễn phí</a>
+          </div>
+        </article>
+
+        <!-- Event 2 -->
+        <article class="event-card">
+          <div>
+            <div class="event-card-top">
+              <div class="event-date-badge">
+                <span class="event-date-day">05</span>
+                <span class="event-date-month">Tháng 11</span>
+              </div>
+              <div class="event-meta-header">
+                <span class="event-format-tag tag-offline">Trực tiếp (Hà Nội)</span>
+                <a href="#event-workshop-cv" class="event-title">Workshop: Chiến Lược Đàm Phán Lương & Chinh Phục Phỏng Vấn Big Tech</a>
+              </div>
+            </div>
+
+            <div class="event-organizer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Địa điểm: Trung tâm Hội nghị Quốc gia, Hà Nội</span>
+            </div>
+
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+              Diễn giả: Cựu HR Director tại Shopee & VNG. Hướng dẫn chi tiết kỹ năng định giá bản thân, xây dựng thương hiệu cá nhân LinkedIn.
+            </p>
+          </div>
+
+          <div class="event-footer">
+            <span class="event-attendees">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
+              <span>650 người đã đăng ký</span>
+            </span>
+            <a href="#dang-ky-event-2" class="btn-event-register">Đăng ký miễn phí</a>
+          </div>
+        </article>
+
+        <!-- Event 3 -->
+        <article class="event-card">
+          <div>
+            <div class="event-card-top">
+              <div class="event-date-badge">
+                <span class="event-date-day">12</span>
+                <span class="event-date-month">Tháng 11</span>
+              </div>
+              <div class="event-meta-header">
+                <span class="event-format-tag tag-offline">Trực tiếp (TP.HCM)</span>
+                <a href="#event-jobfair-hcm" class="event-title">Hội Chợ Việc Làm Fresher & Junior Toàn Diện - Mega Job Fair 2026</a>
+              </div>
+            </div>
+
+            <div class="event-organizer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Địa điểm: Nhà Thi đấu Quân Khu 7, TP. Hồ Chí Minh</span>
+            </div>
+
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+              Dành riêng cho sinh viên năm cuối và người đi làm 1-3 năm kinh nghiệm. Cơ hội tiếp cận hơn 3.000+ vị trí tuyển dụng có đào tạo bài bản.
+            </p>
+          </div>
+
+          <div class="event-footer">
+            <span class="event-attendees">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
+              <span>3.200 người đã đăng ký</span>
+            </span>
+            <a href="#dang-ky-event-3" class="btn-event-register">Đăng ký miễn phí</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VÙNG 5: TỪ KHÓA VIỆC LÀM PHỔ BIẾN & NGÀNH NGHỀ XU HƯỚNG
+       ========================================================================= -->
+  <section id="tu-khoa-pho-bien" class="home-section popular-keywords-section">
+    <div class="home-container">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-badge badge-blue-subtle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <span>Xu hướng thị trường lao động 2026</span>
+          </div>
+          <h2 class="section-title">
+            Danh mục Ngành nghề & Từ khóa Phổ biến
+          </h2>
+          <p class="section-subtitle">Tra cứu cơ hội việc làm theo chuyên môn hàng đầu và các kỹ năng đang được các nhà tuyển dụng săn đón nhất</p>
+        </div>
+
+        <a href="#tat-ca-nganh-nghe" class="section-view-all">
+          <span>Xem tất cả 45 ngành nghề</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Part A: 8 Popular Industry Categories -->
+      <div class="categories-grid">
+
+        <a href="#nganh-it" class="category-card">
+          <div class="category-icon" style="background: rgba(249, 115, 22, 0.1); color: var(--easycv-orange);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Công nghệ thông tin</span>
+            <span class="category-jobs-count">14.850 việc làm</span>
+          </div>
+        </a>
+
+        <a href="#nganh-sales" class="category-card">
+          <div class="category-icon" style="background: rgba(34, 197, 94, 0.1); color: var(--green-600);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><line x1="12" y1="6" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="18"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Kinh doanh / Bán hàng</span>
+            <span class="category-jobs-count">16.200 việc làm</span>
+          </div>
+        </a>
+
+        <a href="#nganh-marketing" class="category-card">
+          <div class="category-icon" style="background: rgba(14, 165, 233, 0.1); color: var(--blue-600);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Marketing / Truyền thông</span>
+            <span class="category-jobs-count">9.450 việc làm</span>
+          </div>
+        </a>
+
+        <a href="#nganh-finance" class="category-card">
+          <div class="category-icon" style="background: rgba(168, 85, 247, 0.1); color: #A855F7;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Tài chính / Ngân hàng</span>
+            <span class="category-jobs-count">7.120 việc làm</span>
+          </div>
+        </a>
+
+        <a href="#nganh-accounting" class="category-card">
+          <div class="category-icon" style="background: rgba(234, 179, 8, 0.1); color: #CA8A04;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Kế toán / Kiểm toán</span>
+            <span class="category-jobs-count">6.350 việc làm</span>
+          </div>
+        </a>
+
+        <a href="#nganh-hr" class="category-card">
+          <div class="category-icon" style="background: rgba(239, 68, 68, 0.1); color: #EF4444;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Nhân sự / Hành chính</span>
+            <span class="category-jobs-count">4.890 việc làm</span>
+          </div>
+        </a>
+
+        <a href="#nganh-design" class="category-card">
+          <div class="category-icon" style="background: rgba(236, 72, 153, 0.1); color: #EC4899;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2Z"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Thiết kế / Sáng tạo (UI/UX)</span>
+            <span class="category-jobs-count">4.150 việc làm</span>
+          </div>
+        </a>
+
+        <a href="#nganh-logistics" class="category-card">
+          <div class="category-icon" style="background: rgba(20, 184, 166, 0.1); color: #0D9488;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M17 18h2a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2"/><path d="M7 18H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Logistics / Xuất nhập khẩu</span>
+            <span class="category-jobs-count">5.240 việc làm</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Part B: Trending Search Keywords Cloud -->
+      <div class="keywords-cloud-box">
+        <div class="keywords-header">
+          <div class="keywords-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color: #EF4444;"><path d="M12 2c1.1 0 2 .9 2 2 0 .74-.4 1.38-1 1.72V7a5 5 0 0 1 5 5v1.28c.6.34 1 .98 1 1.72 0 1.1-.9 2-2 2h-1a5 5 0 0 1-5 5v1c0 1.1-.9 2-2 2s-2-.9-2-2v-1a5 5 0 0 1-5-5H2c-1.1 0-2-.9-2-2 0-.74.4-1.38 1-1.72V12a5 5 0 0 1 5-5V5.72C5.4 5.38 5 4.74 5 4c0-1.1.9-2 2-2h5z" opacity="0"/></svg>
+            <span>Từ khóa việc làm được tìm kiếm nhiều nhất (Hot Search)</span>
+          </div>
+          <span style="font-size: 12.5px; color: var(--text-muted);">Cập nhật mỗi 15 phút</span>
+        </div>
+
+        <div class="keywords-cloud">
+          <a href="#search-java" class="keyword-badge-link" data-keyword="Java Developer">
+            <span class="keyword-hot-icon">🔥</span>
+            <span>Java Developer</span>
+            <span class="keyword-count">1.4k việc</span>
+          </a>
+          <a href="#search-react" class="keyword-badge-link" data-keyword="ReactJS Frontend">
+            <span class="keyword-hot-icon">🔥</span>
+            <span>Frontend ReactJS</span>
+            <span class="keyword-count">2.1k việc</span>
+          </a>
+          <a href="#search-salesb2b" class="keyword-badge-link" data-keyword="Nhân viên kinh doanh B2B">
+            <span>Nhân viên kinh doanh B2B</span>
+            <span class="keyword-count">3.8k việc</span>
+          </a>
+          <a href="#search-mkt" class="keyword-badge-link" data-keyword="Digital Marketing Specialist">
+            <span class="keyword-hot-icon">🔥</span>
+            <span>Chuyên viên Digital Marketing</span>
+            <span class="keyword-count">1.9k việc</span>
+          </a>
+          <a href="#search-data" class="keyword-badge-link" data-keyword="Data Analyst">
+            <span>Data Analyst (SQL / Python)</span>
+            <span class="keyword-count">920 việc</span>
+          </a>
+          <a href="#search-ketoan" class="keyword-badge-link" data-keyword="Kế toán tổng hợp">
+            <span>Kế toán tổng hợp</span>
+            <span class="keyword-count">2.4k việc</span>
+          </a>
+          <a href="#search-uiux" class="keyword-badge-link" data-keyword="UI/UX Designer">
+            <span class="keyword-hot-icon">🔥</span>
+            <span>UI/UX Product Designer</span>
+            <span class="keyword-count">850 việc</span>
+          </a>
+          <a href="#search-hr" class="keyword-badge-link" data-keyword="Chuyên viên Tuyển dụng">
+            <span>Chuyên viên Tuyển dụng (Recruiter)</span>
+            <span class="keyword-count">1.1k việc</span>
+          </a>
+          <a href="#search-flutter" class="keyword-badge-link" data-keyword="Flutter Developer">
+            <span>Flutter Mobile Developer</span>
+            <span class="keyword-count">640 việc</span>
+          </a>
+          <a href="#search-pm" class="keyword-badge-link" data-keyword="Product Owner">
+            <span>Product Owner / BA</span>
+            <span class="keyword-count">780 việc</span>
+          </a>
+          <a href="#search-tienganh" class="keyword-badge-link" data-keyword="Việc làm tiếng Anh">
+            <span>Việc làm yêu cầu tiếng Anh</span>
+            <span class="keyword-count">4.5k việc</span>
+          </a>
+          <a href="#search-thuctapsinh" class="keyword-badge-link" data-keyword="Thực tập sinh Intern">
+            <span>Thực tập sinh (Intern có lương)</span>
+            <span class="keyword-count">1.6k việc</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VÙNG 6: CHÂN TRANG GIỚI THIỆU VỀ CÔNG TY (Site Footer)
+       ========================================================================= -->
+  <footer id="chan-trang" class="site-footer">
+    <div class="home-container">
+
+      <!-- Newsletter Alert Box -->
+      <div class="footer-newsletter-wrap">
+        <div class="newsletter-info">
+          <h4>Đăng ký nhận Thông báo Việc làm phù hợp</h4>
+          <p>Nhận ngay bản tin cập nhật việc làm lương cao, chuẩn theo chuyên môn và địa điểm của bạn vào mỗi sáng thứ Hai.</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Nhập địa chỉ email của bạn..." required />
+          <button type="submit" class="btn-subscribe">Đăng ký nhận tin</button>
+        </form>
+      </div>
+
+      <!-- Main Footer 5 Columns -->
+      <div class="footer-main-grid">
+
+        <!-- Col 1: EasyCV Brand & About -->
+        <div class="footer-col-brand">
+          <img src="assets/logos/easycv-logo-dark.png" alt="EasyCV Logo Footer" class="footer-brand-logo" />
+          <p class="footer-brand-desc">
+            <strong>EasyCV</strong> là hệ sinh thái công nghệ nhân sự và sàn giao dịch việc làm thông minh hàng đầu tại Việt Nam. 
+            Ứng dụng trí tuệ nhân tạo (AI Match Engine) giúp ứng viên kết nối nhanh chóng với hơn 50.000+ doanh nghiệp uy tín trong và ngoài nước.
+          </p>
+          <div style="font-size: 12px; color: #64748B; line-height: 1.6;">
+            Giấy phép hoạt động dịch vụ việc làm số: <strong>128/GP-SLĐTBXH</strong> do Sở Lao động - Thương binh và Xã hội cấp.
+          </div>
+          <div class="accreditation-badges">
+            <div class="badge-trust">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              <span>Bộ Công Thương</span>
+            </div>
+            <div class="badge-trust">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+              <span>An toàn thông tin ISO 27001</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Về EasyCV -->
+        <div>
+          <h4 class="footer-col-title">Về EasyCV</h4>
+          <ul class="footer-links-list">
+            <li><a href="#gioi-thieu" class="footer-link">Giới thiệu nền tảng</a></li>
+            <li><a href="#ban-dieu-hanh" class="footer-link">Ban điều hành & Cố vấn</a></li>
+            <li><a href="#co-hoi-nghe-nghiep" class="footer-link">Tuyển dụng tại EasyCV</a></li>
+            <li><a href="#quy-che-hoat-dong" class="footer-link">Quy chế hoạt động sàn</a></li>
+            <li><a href="#giai-quyet-khieu-nai" class="footer-link">Giải quyết khiếu nại</a></li>
+            <li><a href="#chinh-sach-bao-mat" class="footer-link">Chính sách bảo mật</a></li>
+            <li><a href="#bao-chi" class="footer-link">Báo chí và Truyền thông</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Dành cho Ứng viên -->
+        <div>
+          <h4 class="footer-col-title">Dành cho Ứng viên</h4>
+          <ul class="footer-links-list">
+            <li><a href="#tim-viec-lam" class="footer-link">Tìm kiếm việc làm mới</a></li>
+            <li><a href="#tao-cv-online" class="footer-link">Tạo CV online chuẩn ATS</a></li>
+            <li><a href="#mau-cv-chuyen-nghiep" class="footer-link">Mẫu CV chuyên nghiệp</a></li>
+            <li><a href="#tinh-luong-gross-net" class="footer-link">Công cụ tính lương Gross - Net</a></li>
+            <li><a href="#trac-nghiem-mbti" class="footer-link">Trắc nghiệm nghề nghiệp MBTI</a></li>
+            <li><a href="#cam-nang-phong-van" class="footer-link">Cẩm nang viết CV & Phỏng vấn</a></li>
+            <li><a href="#khao-sat-luong" class="footer-link">Báo cáo thị trường lương 2026</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Dành cho Doanh nghiệp -->
+        <div>
+          <h4 class="footer-col-title">Nhà tuyển dụng</h4>
+          <ul class="footer-links-list">
+            <li><a href="#dang-tin-tuyen-dung" class="footer-link">Đăng tin tuyển dụng</a></li>
+            <li><a href="#tim-kiem-ho-so" class="footer-link">Tìm kiếm hồ sơ ứng viên</a></li>
+            <li><a href="#he-thong-ats" class="footer-link">Giải pháp EasyCV ATS</a></li>
+            <li><a href="#tuyen-dung-headhunt" class="footer-link">Dịch vụ Headhunter cao cấp</a></li>
+            <li><a href="#bao-gia-dich-vu" class="footer-link">Báo giá & Gói tuyển dụng</a></li>
+            <li><a href="#dong-thuong-hieu" class="footer-link">Quảng bá thương hiệu nhà tuyển dụng</a></li>
+            <li><a href="#lien-he-tu-van" class="footer-link">Liên hệ tư vấn doanh nghiệp</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Liên hệ & Tải ứng dụng Mobile -->
+        <div>
+          <h4 class="footer-col-title">Liên hệ & Trụ sở</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span><strong>Trụ sở Hà Nội:</strong> Tầng 12, Tòa nhà Diamond Flower, Hoàng Đạo Thúy, Q. Thanh Xuân</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span><strong>VP TP.HCM:</strong> Tầng 8, Tòa nhà Viettel Complex, 285 Cách Mạng Tháng 8, Quận 10</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>Hotline 24/7: <strong>(024) 7109 8888</strong></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>Email hỗ trợ: <strong>hotro@easycv.vn</strong></span>
+          </div>
+
+          <div class="app-download-wrap">
+            <div class="app-download-title">Tải ứng dụng EasyCV Mobile:</div>
+            <div class="app-buttons">
+              <a href="#app-store" class="btn-store">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 .6-2.65 1.35-.58.67-1.09 1.74-.95 2.77.99.08 2.04-.52 2.68-1.27z"/></svg>
+                <div>
+                  <span class="store-text-small">Tải về trên</span>
+                  <span class="store-text-bold">App Store</span>
+                </div>
+              </a>
+              <a href="#google-play" class="btn-store">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.86.97-1.35 1.66-.86l13.14 8.5c.67.43.67 1.41 0 1.84L4.66 21.36c-.69.49-1.66 0-1.66-.86z"/></svg>
+                <div>
+                  <span class="store-text-small">Có sẵn trên</span>
+                  <span class="store-text-bold">Google Play</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright & Social Bar -->
+      <div class="footer-bottom-bar">
+        <div style="color: #64748B;">
+          © 2026 <strong>EasyCV Vietnam JSC</strong>. Tất cả quyền được bảo lưu. Nền tảng kết nối nhân tài hàng đầu.
+        </div>
+        <div class="footer-social-links">
+          <a href="#facebook" class="social-icon-link" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#linkedin" class="social-icon-link" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#youtube" class="social-icon-link" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+          </a>
+          <a href="#tiktok" class="social-icon-link" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       WIDGET GỢI Ý THÔNG MINH NỔI (Floating AI Recommendation Widget)
+       ========================================================================= -->
+  <div class="floating-ai-widget">
+    <!-- Popover Box -->
+    <div class="floating-ai-popover">
+      <div class="popover-header">
+        <div class="popover-title-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color: var(--easycv-orange);"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+          <span>Gợi ý Việc Làm AI Mới Nhất</span>
+        </div>
+        <button class="popover-close-btn" aria-label="Đóng gợi ý">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="popover-body">
+        <a href="#popover-job-1" class="popover-job-item">
+          <div class="popover-job-top">
+            <span class="popover-job-title">Senior React/TypeScript Dev</span>
+            <span class="match-score-badge" style="font-size: 10.5px; padding: 2px 6px;">98% Match</span>
+          </div>
+          <span class="popover-job-company">FPT Software • Cầu Giấy, Hà Nội</span>
+          <span class="popover-job-salary">30 - 45 Triệu</span>
+        </a>
+
+        <a href="#popover-job-2" class="popover-job-item">
+          <div class="popover-job-top">
+            <span class="popover-job-title">Staff AI Machine Learning</span>
+            <span class="match-score-badge" style="font-size: 10.5px; padding: 2px 6px;">99% Match</span>
+          </div>
+          <span class="popover-job-company">Shopee / Sea • Q.7, TP.HCM</span>
+          <span class="popover-job-salary">2,500 - 4,000 USD</span>
+        </a>
+
+        <a href="#popover-job-3" class="popover-job-item">
+          <div class="popover-job-top">
+            <span class="popover-job-title">Senior Product Manager</span>
+            <span class="match-score-badge" style="font-size: 10.5px; padding: 2px 6px;">94% Match</span>
+          </div>
+          <span class="popover-job-company">MoMo • Hybrid / Remote</span>
+          <span class="popover-job-salary">45 - 70 Triệu</span>
+        </a>
+      </div>
+
+      <div class="popover-footer">
+        <a href="#viec-lam-phu-hop" class="popover-view-all-link">Xem tất cả 34 việc làm khớp hồ sơ →</a>
+      </div>
+    </div>
+
+    <!-- Floating Trigger Button -->
+    <button class="floating-ai-btn" aria-label="Mở gợi ý việc làm AI">
+      <span class="floating-ai-pulse-dot"></span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+      <span>Gợi ý AI (3 việc mới)</span>
+    </button>
+  </div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

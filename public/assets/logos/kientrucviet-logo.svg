@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <rect width="160" height="160" fill="#FFFFFF"/>
+  <!-- Red Architectural Icon Box -->
+  <g transform="translate(15, 30)">
+    <rect x="0" y="0" width="42" height="42" rx="4" fill="#DC2626"/>
+    <path d="M10 32 L10 10 L22 26 L34 10 L34 32" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Company Name -->
+    <text x="48" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="900" fill="#1E293B" letter-spacing="-0.3">KIẾN TRÚC VIỆT</text>
+    <text x="48" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="500" fill="#94A3B8" letter-spacing="0.2">vẽ ước mơ thành thơ</text>
+  </g>
+</svg>
