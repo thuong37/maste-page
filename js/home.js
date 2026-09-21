@@ -10,6 +10,63 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const courseSection = document.querySelector('#goi-y-khoa-hoc');
+  const courseGrid = courseSection?.querySelector('.courses-grid');
+  if (courseGrid) {
+    const samples = [
+      { id: 'cloud', title: 'AWS Cloud Practitioner từ cơ bản đến thực hành', category: 'Cloud Computing', badge: 'Chứng chỉ quốc tế', teacher: 'Chuyên gia giải pháp Cloud', rating: '4.9 (1.8k học viên)', price: '1.790.000đ', old: '2.990.000đ', image: 'photo-1451187580459-43490279c0fa' },
+      { id: 'marketing', title: 'Digital Marketing & tối ưu chiến dịch đa kênh', category: 'Digital Marketing', badge: 'Dự án thực tế', teacher: 'Marketing Lead tại doanh nghiệp công nghệ', rating: '4.8 (2.1k học viên)', price: '1.390.000đ', old: '2.490.000đ', image: 'photo-1460925895917-afdab827c52f' },
+      { id: 'product', title: 'Quản lý sản phẩm: Từ ý tưởng đến ra mắt', category: 'Product Management', badge: 'Có chứng nhận', teacher: 'Senior Product Manager', rating: '4.9 (980 học viên)', price: '1.690.000đ', old: '2.890.000đ', image: 'photo-1552664730-d307ca884978' },
+      { id: 'excel', title: 'Excel nâng cao & tự động hóa báo cáo', category: 'Office Skills', badge: 'Học theo dự án', teacher: 'Chuyên gia phân tích kinh doanh', rating: '4.8 (3.2k học viên)', price: '990.000đ', old: '1.790.000đ', image: 'photo-1543286386-713bdd548da4' }
+    ];
+    const star = '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+    samples.forEach(course => {
+      const card = document.createElement('a');
+      card.className = 'course-card';
+      card.href = `#khoa-hoc-${course.id}`;
+      card.innerHTML = `<div class="course-thumb-wrap" style="background-image:url('https://images.unsplash.com/${course.image}?auto=format&fit=crop&w=500&q=80')"><span class="course-category-tag">${course.category}</span><span class="course-match-badge">${course.badge}</span></div><div class="course-body"><h3 class="course-title">${course.title}</h3><div class="course-instructor"><span>Giảng viên: ${course.teacher}</span></div><div class="course-meta-row"><span class="course-rating">${star} ${course.rating}</span><div class="course-price-wrap"><span class="course-price-sale">${course.price}</span><span class="course-price-old">${course.old}</span></div></div></div>`;
+      courseGrid.appendChild(card);
+    });
+
+    const cards = [...courseGrid.querySelectorAll('.course-card')];
+    const controls = document.createElement('div');
+    controls.className = 'course-carousel-controls';
+    controls.setAttribute('aria-label', 'Điều hướng khóa học');
+    controls.innerHTML = '<button class="course-carousel-arrow" type="button" aria-label="Nhóm khóa học trước">‹</button><div class="course-carousel-dots"></div><button class="course-carousel-arrow" type="button" aria-label="Nhóm khóa học tiếp theo">›</button>';
+    courseGrid.after(controls);
+    const dotsWrap = controls.querySelector('.course-carousel-dots');
+    let page = 0;
+    let timer;
+    const pageSize = () => window.innerWidth <= 640 ? 1 : window.innerWidth <= 1100 ? 2 : 4;
+    const render = () => {
+      const size = pageSize();
+      const count = Math.ceil(cards.length / size);
+      page = Math.min(page, count - 1);
+      cards.forEach((card, index) => { card.hidden = Math.floor(index / size) !== page; });
+      dotsWrap.replaceChildren();
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'course-carousel-dot';
+        dot.setAttribute('aria-label', `Nhóm khóa học ${i + 1}`);
+        dot.setAttribute('aria-current', String(i === page));
+        dot.addEventListener('click', () => { page = i; render(); restart(); });
+        dotsWrap.appendChild(dot);
+      }
+    };
+    const advance = step => { page = (page + step + Math.ceil(cards.length / pageSize())) % Math.ceil(cards.length / pageSize()); render(); };
+    const stop = () => { clearInterval(timer); timer = undefined; };
+    const restart = () => { stop(); if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && !courseSection.matches(':hover, :focus-within')) timer = setInterval(() => advance(1), 5000); };
+    controls.querySelectorAll('.course-carousel-arrow').forEach((button, index) => button.addEventListener('click', () => { advance(index ? 1 : -1); restart(); }));
+    courseSection.addEventListener('mouseenter', stop);
+    courseSection.addEventListener('mouseleave', restart);
+    courseSection.addEventListener('focusin', stop);
+    courseSection.addEventListener('focusout', () => setTimeout(restart, 0));
+    window.addEventListener('resize', () => { render(); restart(); });
+    document.addEventListener('visibilitychange', () => document.hidden ? stop() : restart());
+    render();
+    restart();
+  }
   // --- 1. Toast Notification Utility ---
   let toastContainer = document.querySelector('.easycv-toast-container');
   if (!toastContainer) {

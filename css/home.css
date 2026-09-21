@@ -622,8 +622,8 @@
 
 .companies-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
 }
 
 .company-card {
@@ -644,7 +644,7 @@
 }
 
 .company-cover {
-  height: 100px;
+  height: 112px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -657,45 +657,68 @@
 }
 
 .company-card-body {
-  padding: 0 16px 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  padding: 0 24px 22px;
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  grid-template-rows: auto auto auto 1fr;
+  column-gap: 18px;
+  text-align: left;
   position: relative;
   flex: 1;
 }
 
 .company-card-logo-wrap {
-  width: 68px;
-  height: 68px;
-  border-radius: var(--radius-md);
-  border: 3px solid var(--bg-primary);
+  width: 92px;
+  height: 92px;
+  border-radius: 18px;
+  border: 4px solid var(--bg-primary);
   background: #FFFFFF;
   overflow: hidden;
-  margin-top: -34px;
-  box-shadow: var(--shadow-sm);
+  margin-top: -40px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
+  grid-column: 1;
+  grid-row: 1 / span 2;
 }
+
+.company-card-logo-mark {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+.company-logo-fpt { color: #f37021; background: #fff7ed; }
+.company-logo-vng { color: #ed670c; background: #fff7ed; }
+.company-logo-viettel { color: #e2231a; background: #fff5f5; font-size: 20px; letter-spacing: -0.05em; }
+.company-logo-techcombank { color: #d71920; background: #fff5f5; }
 
 .company-card-logo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .company-card-title {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 21px;
+  line-height: 1.3;
+  font-weight: 800;
   color: var(--text-main);
-  margin-top: 10px;
+  margin-top: 14px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
 }
 
 .company-card-title:hover {
@@ -703,40 +726,61 @@
 }
 
 .company-industry {
-  font-size: 12.5px;
+  font-size: 14px;
   color: var(--text-muted);
-  margin-top: 3px;
+  line-height: 1.5;
+  margin-top: 6px;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .company-meta-stats {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin: 12px 0 14px;
-  font-size: 12.5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0 16px;
+  font-size: 14px;
   width: 100%;
-  padding-top: 10px;
-  border-top: 1px dashed var(--border-color);
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+  grid-column: 1 / -1;
+  grid-row: 3;
 }
 
 .company-rating {
   display: flex;
   align-items: center;
-  gap: 4px;
-  color: #EAB308;
+  gap: 6px;
+  color: var(--text-main);
   font-weight: 700;
+}
+
+.company-rating svg {
+  color: #D97706;
+  flex: none;
+}
+
+.company-rating-count {
+  color: var(--text-muted);
+  font-weight: 400;
 }
 
 .company-open-jobs {
   color: var(--easycv-orange);
   font-weight: 700;
+  text-align: left;
+}
+
+.company-stat-label {
+  color: var(--text-muted);
+  font-weight: 400;
 }
 
 .btn-follow-company {
   width: 100%;
-  padding: 8px 14px;
-  font-size: 13px;
+  min-height: 42px;
+  padding: 9px 14px;
+  font-size: 14px;
   font-weight: 600;
   border-radius: var(--radius-full);
   border: 1px solid var(--border-color);
@@ -750,12 +794,20 @@
   transition: all var(--transition-fast);
   font-family: inherit;
   margin-top: auto;
+  grid-column: 1 / -1;
+  grid-row: 4;
 }
 
 .btn-follow-company:hover {
   border-color: var(--easycv-orange);
   color: var(--easycv-orange);
   background: var(--easycv-orange-50);
+}
+
+.company-card-title:focus-visible,
+.btn-follow-company:focus-visible {
+  outline: 2px solid var(--easycv-orange);
+  outline-offset: 3px;
 }
 
 .btn-follow-company.following {
@@ -1388,6 +1440,29 @@
   .companies-grid {
     grid-template-columns: 1fr;
   }
+  .company-card-body {
+    padding: 0 18px 18px;
+    grid-template-columns: 76px minmax(0, 1fr);
+    column-gap: 14px;
+  }
+  .company-card-logo-wrap {
+    width: 76px;
+    height: 76px;
+    margin-top: -32px;
+  }
+  .company-card-logo-mark {
+    font-size: 21px;
+  }
+  .company-logo-viettel {
+    font-size: 17px;
+  }
+  .company-card-title {
+    font-size: 18px;
+  }
+  .company-meta-stats {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
   .categories-grid {
     grid-template-columns: 1fr;
   }
@@ -1847,6 +1922,29 @@
   color: var(--text-subtle);
   text-decoration: line-through;
 }
+
+/* Compact course cards and carousel controls */
+.suggested-courses-section .courses-grid { gap: 16px; }
+.suggested-courses-section .course-card { min-width: 0; border-radius: 16px; box-shadow: 0 3px 12px rgba(15,23,42,.035); }
+.suggested-courses-section .course-card[hidden] { display: none; }
+.suggested-courses-section .course-thumb-wrap { height: 130px; }
+.suggested-courses-section .course-body { padding: 14px; }
+.suggested-courses-section .course-title { min-height: 42px; margin-bottom: 6px; line-height: 1.35; }
+.suggested-courses-section .course-instructor { min-height: 18px; margin-bottom: 12px; white-space: nowrap; overflow: hidden; }
+.suggested-courses-section .course-instructor span { overflow: hidden; text-overflow: ellipsis; }
+.suggested-courses-section .course-instructor svg { flex: none; }
+.suggested-courses-section .course-meta-row { display: grid; gap: 5px; align-items: start; }
+.suggested-courses-section .course-rating { color: #B45309; white-space: nowrap; }
+.suggested-courses-section .course-price-wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 3px 8px; }
+.suggested-courses-section .course-price-sale { font-size: 16px; }
+.suggested-courses-section .course-price-old { font-size: 12px; }
+.course-carousel-controls { display: flex; justify-content: center; align-items: center; gap: 12px; margin-top: 18px; }
+.course-carousel-arrow { width: 34px; height: 34px; border: 1px solid #CBD5E1; border-radius: 50%; background: #fff; color: #334155; cursor: pointer; font-size: 23px; line-height: 1; }
+.course-carousel-arrow:hover, .course-carousel-arrow:focus-visible { border-color: var(--easycv-orange); color: var(--easycv-orange); }
+.course-carousel-dots { display: flex; gap: 8px; align-items: center; }
+.course-carousel-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: #CBD5E1; cursor: pointer; }
+.course-carousel-dot[aria-current="true"] { width: 22px; border-radius: 8px; background: var(--easycv-orange); }
+@media (max-width: 640px) { .suggested-courses-section .course-thumb-wrap { height: 150px; } }
 
 /* ==========================================================================
    VÙNG GỢI Ý 2: SỰ KIỆN TUYỂN DỤNG & WORKSHOP (#goi-y-su-kien)
@@ -3015,7 +3113,7 @@
   gap: 10px;
   background: #FFFFFF;
   border: 1.5px solid #E2E8F0;
-  padding: 7px 18px 7px 8px;
+  padding: 6px 18px 6px 7px;
   border-radius: 9999px;
   text-decoration: none !important;
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
@@ -3030,8 +3128,8 @@
   box-shadow: 0 8px 18px -2px rgba(249, 115, 22, 0.2);
 }
 .partner-card-logo {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -3042,12 +3140,12 @@
   flex-shrink: 0;
 }
 .partner-card-logo svg {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   display: block;
 }
 .partner-card-name {
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 700;
   color: #1E293B;
   white-space: nowrap;

@@ -210,7 +210,7 @@ body {
 }
 
 .brand-logo-img {
-  height: 38px;
+  height: 54px;
   width: auto;
   display: block;
 }
@@ -1898,6 +1898,9 @@ body {
 }
 
 @media (max-width: 768px) {
+  .brand-logo-img {
+    height: 48px;
+  }
   .navbar {
     padding: 0 var(--container-padding-mobile, 16px);
   }
