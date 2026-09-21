@@ -1,0 +1,17 @@
+{
+  "project": "EasyCV",
+  "logoRules": {
+    "clearSpace": "Minimum clear space equal to 50% of the icon mark height on all 4 sides.",
+    "minWidth": 120,
+    "minHeight": 40,
+    "primaryMarkColor": "#F97316",
+    "wordmarkLightColor": "#111827",
+    "wordmarkDarkColor": "#FFFFFF",
+    "usage": {
+      "lightBackgrounds": "assets/logos/easycv-logo-transparent.png or assets/logos/easycv-logo.png",
+      "darkBackgrounds": "assets/logos/easycv-logo-dark.png",
+      "mobileFaviconAvatar": "assets/logos/easycv-icon.png",
+      "responsiveSvg": "assets/logos/easycv-logo.svg"
+    }
+  }
+}

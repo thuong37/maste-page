@@ -1,0 +1,80 @@
+/**
+ * EasyCV Design Tokens - CSS Custom Properties
+ * Brand: EasyCV (Sàn tuyển dụng & việc làm thông minh)
+ */
+
+:root {
+  /* --- Brand Primitive Colors --- */
+  --color-orange-50: #FFF7ED;
+  --color-orange-100: #FFEDD5;
+  --color-orange-200: #FED7AA;
+  --color-orange-400: #FB923C;
+  --color-orange-500: #F97316; /* EasyCV Core Brand Color */
+  --color-orange-600: #EA580C;
+  --color-orange-700: #C2410C;
+
+  --color-slate-50: #F8FAFC;
+  --color-slate-100: #F1F5F9;
+  --color-slate-200: #E2E8F0;
+  --color-slate-300: #CBD5E1;
+  --color-slate-400: #94A3B8;
+  --color-slate-500: #64748B;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1E293B;
+  --color-slate-900: #0F172A;
+
+  --color-green-500: #22C55E;
+  --color-green-600: #16A34A;
+  --color-blue-500: #0EA5E9;
+  --color-blue-600: #0284C7;
+
+  /* --- Semantic Colors --- */
+  --color-primary: var(--color-orange-500);
+  --color-primary-hover: var(--color-orange-600);
+  --color-primary-light: var(--color-orange-50);
+  --color-on-primary: #FFFFFF;
+
+  --color-secondary: var(--color-slate-900);
+  --color-on-secondary: #FFFFFF;
+
+  --color-accent: var(--color-green-600);
+  --color-on-accent: #FFFFFF;
+
+  --color-background: #FFFFFF;
+  --color-surface: var(--color-slate-50);
+  --color-surface-card: #FFFFFF;
+  --color-border: var(--color-slate-200);
+
+  --color-text-primary: var(--color-slate-900);
+  --color-text-secondary: var(--color-slate-500);
+  --color-text-muted: var(--color-slate-400);
+
+  /* --- Typography --- */
+  --font-family-sans: 'Plus Jakarta Sans', 'Inter', 'Be Vietnam Pro', system-ui, sans-serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+
+  /* --- Spacing & Radius --- */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* --- Logo Asset References --- */
+  --easycv-logo-light: url('/assets/logo/easycv-logo-transparent.png');
+  --easycv-logo-dark: url('/assets/logo/easycv-logo-dark.png');
+  --easycv-logo-icon: url('/assets/logo/easycv-icon.png');
+  --easycv-logo-svg: url('/assets/logo/easycv-logo.svg');
+
+  /* --- Layout & Container Standards --- */
+  --navbar-max-width: 1360px; /* Chiều rộng thanh menu tiêu chuẩn, thoáng đãng độc lập */
+  --container-max-width: 1170px; /* Chuẩn TopCV cho phần nội dung trang bên dưới */
+  --container-padding: 20px;
+  --container-padding-mobile: 16px;
+}

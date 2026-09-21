@@ -1,0 +1,92 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-09-21T11:30:00Z",
+  "project": "EasyCV",
+  "category": "Recruitment & Job Marketplace Platform",
+  "assets": [
+    {
+      "id": "easycv-logo-horizontal-light",
+      "name": "EasyCV Primary Full Horizontal Logo (Light Mode)",
+      "type": "logo",
+      "variant": "full-horizontal",
+      "path": "assets/logos/full-horizontal/logo_easycv_full-horizontal_20260921.png",
+      "altPaths": [
+        "assets/logos/easycv-logo.png",
+        "public/assets/logo/easycv-logo.png",
+        "src/assets/logo/easycv-logo.png"
+      ],
+      "dimensions": { "width": 220, "height": 74 },
+      "mimeType": "image/png",
+      "background": "white",
+      "tags": ["logo", "primary", "horizontal", "easycv", "light-mode"],
+      "status": "approved"
+    },
+    {
+      "id": "easycv-logo-horizontal-transparent",
+      "name": "EasyCV Full Horizontal Logo (Alpha Transparent)",
+      "type": "logo",
+      "variant": "transparent",
+      "path": "assets/logos/full-horizontal/logo_easycv_full-horizontal-trans_20260921.png",
+      "altPaths": [
+        "assets/logos/easycv-logo-transparent.png",
+        "public/assets/logo/easycv-logo-transparent.png",
+        "src/assets/logo/easycv-logo-transparent.png"
+      ],
+      "dimensions": { "width": 220, "height": 74 },
+      "mimeType": "image/png",
+      "background": "transparent",
+      "tags": ["logo", "transparent", "horizontal", "easycv", "navbar", "clean-edges"],
+      "status": "approved"
+    },
+    {
+      "id": "easycv-logo-horizontal-dark",
+      "name": "EasyCV Full Horizontal Logo (Dark Mode)",
+      "type": "logo",
+      "variant": "dark-mode",
+      "path": "assets/logos/full-horizontal/logo_easycv_full-horizontal-dark_20260921.png",
+      "altPaths": [
+        "assets/logos/easycv-logo-dark.png",
+        "public/assets/logo/easycv-logo-dark.png",
+        "src/assets/logo/easycv-logo-dark.png"
+      ],
+      "dimensions": { "width": 220, "height": 74 },
+      "mimeType": "image/png",
+      "background": "dark / navy",
+      "tags": ["logo", "dark-mode", "white-text", "easycv", "header"],
+      "status": "approved"
+    },
+    {
+      "id": "easycv-logo-icon-only",
+      "name": "EasyCV Brand Mark Icon Only (Square)",
+      "type": "logo",
+      "variant": "icon-only",
+      "path": "assets/logos/icon-only/logo_easycv_icon-only_20260921.png",
+      "altPaths": [
+        "assets/logos/easycv-icon.png",
+        "public/assets/logo/easycv-icon.png",
+        "src/assets/logo/easycv-icon.png",
+        "public/favicon.png"
+      ],
+      "dimensions": { "width": 256, "height": 256 },
+      "mimeType": "image/png",
+      "background": "transparent",
+      "tags": ["icon", "mark", "favicon", "mobile-app", "avatar", "easycv"],
+      "status": "approved"
+    },
+    {
+      "id": "easycv-logo-vector-svg",
+      "name": "EasyCV Vector SVG Logo",
+      "type": "logo",
+      "variant": "vector",
+      "path": "assets/logos/easycv-logo.svg",
+      "altPaths": [
+        "public/assets/logo/easycv-logo.svg",
+        "src/assets/logo/easycv-logo.svg"
+      ],
+      "dimensions": { "width": 220, "height": 74 },
+      "mimeType": "image/svg+xml",
+      "tags": ["vector", "svg", "scalable", "easycv"],
+      "status": "approved"
+    }
+  ]
+}
