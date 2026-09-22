@@ -3051,115 +3051,130 @@
   opacity: 1;
 }
 
-/* Brand Partners Strip */
+/* Featured employer cards */
 .hero-brand-strip {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-top: 26px;
-  padding-top: 18px;
+  margin-top: 28px;
+  padding-top: 22px;
   border-top: 1px solid #E2E8F0;
   position: relative;
   overflow: hidden;
 }
-.brand-strip-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.brand-strip-pulse {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #F97316;
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
-  animation: heroPulse 1.8s infinite;
-}
-.brand-strip-label {
-  font-size: 12px;
-  font-weight: 700;
-  color: #64748B;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
 .marquee-slider-container {
   overflow: hidden;
   position: relative;
-  flex: 1;
+  width: 100%;
+  min-width: 0;
   display: flex;
-  mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+  mask-image: none;
+  -webkit-mask-image: none;
 }
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: infiniteMarquee 26s linear infinite;
-}
-.marquee-track:hover {
-  animation-play-state: paused;
+  animation: none;
 }
 .marquee-group {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   flex-shrink: 0;
-  padding-right: 14px;
+  padding-right: 0;
 }
 .marquee-partner-card {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  width: 356px;
+  min-width: 0;
+  min-height: 146px;
+  box-sizing: border-box;
   background: #FFFFFF;
-  border: 1.5px solid #E2E8F0;
-  padding: 6px 18px 6px 7px;
-  border-radius: 9999px;
+  border: 1px solid #FDBA74;
+  padding: 16px;
+  border-radius: 17px;
   text-decoration: none !important;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
-  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: border-color 0.2s, box-shadow 0.2s;
   cursor: pointer;
   flex-shrink: 0;
 }
 .marquee-partner-card:hover {
   border-color: #F97316;
-  background: #FFF7ED;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px -2px rgba(249, 115, 22, 0.2);
+  box-shadow: 0 6px 18px rgba(249, 115, 22, 0.12);
 }
 .partner-card-logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
+  width: 116px;
+  height: 98px;
+  border: 1px solid #E2E8F0;
+  border-radius: 9px;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 4px;
+  padding: 6px;
+  box-sizing: border-box;
   background: #FFF;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: none;
   flex-shrink: 0;
 }
 .partner-card-logo svg {
-  width: 40px;
-  height: 40px;
+  width: 52px;
+  height: 52px;
   display: block;
 }
-.partner-card-name {
-  font-size: 14px;
-  font-weight: 700;
-  color: #1E293B;
+.partner-card-monogram {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: var(--partner-color);
+  color: #FFF;
+  font-size: 22px;
+  font-weight: 800;
+}
+.partner-logo-wordmark {
+  display: block;
+  max-width: 100%;
+  color: var(--partner-color, #334155);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-align: center;
   white-space: nowrap;
+}
+.partner-card-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.partner-card-name {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #334155;
+  text-transform: uppercase;
+  white-space: normal;
   transition: color 0.2s ease;
+}
+.partner-card-industry {
+  font-size: 14px;
+  line-height: 1.35;
+  color: #64748B;
 }
 .marquee-partner-card:hover .partner-card-name {
   color: #EA580C;
 }
-@keyframes infiniteMarquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
+.marquee-partner-card:focus-visible {
+  outline: 3px solid #F97316;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-slider-container {
+    overflow-x: auto;
   }
 }
 
@@ -3212,6 +3227,22 @@
   .hero-brand-strip {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 14px;
+  }
+  .marquee-slider-container {
+    width: 100%;
+  }
+  .marquee-partner-card {
+    min-width: 210px;
+    min-height: 76px;
+    padding: 10px 16px 10px 10px;
+  }
+  .partner-card-logo,
+  .partner-card-logo svg {
+    width: 50px;
+    height: 50px;
+  }
+  .partner-card-name {
+    font-size: 16px;
   }
 }
