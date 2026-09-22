@@ -3102,48 +3102,32 @@
   box-shadow: 0 6px 18px rgba(249, 115, 22, 0.12);
 }
 .partner-card-logo {
-  width: 116px;
+  width: 98px;
   height: 98px;
   border: 1px solid #E2E8F0;
   border-radius: 9px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  padding: 6px;
+  display: grid;
+  place-items: center;
   box-sizing: border-box;
   background: #FFF;
   box-shadow: none;
   flex-shrink: 0;
 }
 .partner-card-logo svg {
-  width: 52px;
-  height: 52px;
+  width: 100%;
+  height: 100%;
   display: block;
 }
 .partner-card-monogram {
-  width: 52px;
-  height: 52px;
-  border-radius: 8px;
+  width: 100%;
+  height: 100%;
   display: grid;
   place-items: center;
   background: var(--partner-color);
   color: #FFF;
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 800;
-}
-.partner-logo-wordmark {
-  display: block;
-  max-width: 100%;
-  color: var(--partner-color, #334155);
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  text-align: center;
-  white-space: nowrap;
 }
 .partner-card-copy {
   display: flex;
@@ -3237,10 +3221,9 @@
     min-height: 76px;
     padding: 10px 16px 10px 10px;
   }
-  .partner-card-logo,
-  .partner-card-logo svg {
-    width: 50px;
-    height: 50px;
+  .partner-card-logo {
+    width: 56px;
+    height: 56px;
   }
   .partner-card-name {
     font-size: 16px;
