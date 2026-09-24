@@ -6,8 +6,15 @@
   if (!viewport || cards.length < 2) return;
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const GAP = 12;
+  const CARDS_VISIBLE = 3;
   let index = 0;
   let timer;
+
+  const updateCardWidth = () => {
+    const cardWidth = (viewport.clientWidth - GAP * (CARDS_VISIBLE - 1)) / CARDS_VISIBLE;
+    strip.style.setProperty('--partner-card-w', `${cardWidth}px`);
+  };
 
   const stop = () => {
     clearInterval(timer);
@@ -36,8 +43,10 @@
   reducedMotion.addEventListener('change', start);
   window.addEventListener('resize', () => {
     index = 0;
+    updateCardWidth();
     viewport.scrollLeft = 0;
     start();
   });
+  updateCardWidth();
   start();
 })();

@@ -44,7 +44,7 @@ Màn hình giúp ứng viên tìm việc theo từ khóa/địa điểm, khám p
 
 - Font chính: Plus Jakarta Sans với fallback hệ thống. Lấy token từ `assets/design-tokens.css`.
 - Màu thương hiệu: cam `#F97316`, hover `#EA580C`, xanh đen `#0F172A`, nền phụ `#F8FAFC`, viền `#E2E8F0`. Giữ các màu riêng của thành phần trong CSS nguồn nếu mục tiêu là bám sát bản mẫu.
-- Vùng nội dung chính khoảng `1170px` (`--container-max-width`); navbar có giới hạn riêng khoảng `1360px`. Các card dùng nền trắng, bo góc, viền mỏng và khoảng trắng rõ.
+- Vùng nội dung chính tối đa `1250px` (`--container-max-width`); navbar có giới hạn riêng khoảng `1360px`. Các card dùng nền trắng, bo góc, viền mỏng và khoảng trắng rõ.
 - CSS nguồn có breakpoint `1100`, `1024`, `992`, `900`, `768`, `700`, `640px`. Tái dựng theo hành vi thực thay vì chọn duy nhất một breakpoint chung.
 - Màn desktop: grid job/công ty nhiều cột. Tablet: giảm số cột. Mobile: card một cột, bộ tìm kiếm và menu đủ rộng, không tràn ngang. Carousel khóa học hiển thị 4/2/1 card theo độ rộng >1100 / 641–1100 / ≤640px.
 - Dark mode tồn tại dưới `[data-theme="dark"]`, nhưng nút bật chỉ ở thanh demo. Nếu dự án đích có theme thật, nối vào hệ theme đó.

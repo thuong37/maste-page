@@ -74,7 +74,7 @@
 
   /* --- Layout & Container Standards --- */
   --navbar-max-width: 1360px; /* Chiều rộng thanh menu tiêu chuẩn, thoáng đãng độc lập */
-  --container-max-width: 1170px; /* Chuẩn TopCV cho phần nội dung trang bên dưới */
+  --container-max-width: 1250px; /* Đồng bộ chiều rộng nội dung với trang candidate */
   --container-padding: 20px;
   --container-padding-mobile: 16px;
 }
