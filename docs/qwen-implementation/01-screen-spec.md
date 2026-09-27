@@ -13,10 +13,10 @@ Màn hình giúp ứng viên tìm việc theo từ khóa/địa điểm, khám p
 | H03 | Quảng bá đầu trang | Banner Orion 3 ảnh, dấu điều hướng, chân banner doanh nghiệp, dải card đối tác | `.hero-ad-showcase`, `.hero-brand-strip` |
 | H04 | Việc làm nổi bật | Tiêu đề, mô tả, link xem tất cả, 6 pill ngành, lưới job card | `#viec-lam-noi-bat` |
 | H05 | Việc làm lương cao | Tiêu đề, link xem thêm, lưới card có đãi ngộ/lương | `#viec-lam-hap-dan` |
-| H06 | Công ty nổi bật | Card có cover, logo, ngành, xác thực, theo dõi và số việc | `#cong-ty-tieu-bieu` |
+| H06 | Công ty nổi bật | Vị trí theo gói hiển thị; 4 card/trang (2 cột × 2 hàng), tự chuyển 5 giây, có chỉ báo trang; card có cover, logo, ngành, xác thực, theo dõi và số việc | `#cong-ty-tieu-bieu` |
 | H07 | Quảng bá VIP | Khối infeed giới thiệu VIP Pro, CTA dùng thử | `.infeed-vip-ad-section` |
 | H08 | Việc làm phù hợp | Banner hoàn thiện hồ sơ, tab gợi ý, job card với mức khớp mẫu | `#viec-lam-phu-hop` |
-| H09 | Hai banner quảng bá | Sự kiện tuyển dụng và học bổng/chứng chỉ đối tác | `.promo-banners-grid` |
+| H09 | Đề xuất mẫu CV | Tiêu đề “Khám phá mẫu CV phù hợp với bạn”, bộ lọc Tất cả/Đơn giản/Chuyên nghiệp/Hiện đại/Ấn tượng/ATS, carousel preview CV và CTA “Xem tất cả” | Component `CvTemplateRecommendations`; thay hoàn toàn `.promo-banners-grid` cũ |
 | H10 | Khóa học | Card khóa học, ảnh, tag, giảng viên, đánh giá, giá; carousel | `#goi-y-khoa-hoc` |
 | H11 | Sự kiện | Card ngày, hình thức, đơn vị tổ chức, mô tả, số người, CTA | `#goi-y-su-kien` |
 | H12 | Ngành nghề/từ khóa | Lưới ngành và các từ khóa tìm kiếm nhanh | `#tu-khoa-pho-bien` |
@@ -38,7 +38,7 @@ Màn hình giúp ứng viên tìm việc theo từ khóa/địa điểm, khám p
 - `company-card`: cover, logo, tên công ty, nhãn xác thực, ngành, dữ liệu tuyển dụng và nút theo dõi.
 - `course-card`: ảnh, lĩnh vực, mức phù hợp mẫu, tiêu đề, giảng viên, đánh giá, giá hiện tại/giá cũ.
 - `event-card`: nhãn ngày và hình thức, tên, tổ chức, mô tả, số tham gia mẫu, nút đăng ký.
-- Banner tài trợ cần có dấu nhận diện quảng cáo/tài trợ như giao diện hiện tại.
+- Khu vực mẫu CV dùng ảnh preview tỷ lệ A4, desktop 5 mẫu, tablet 3 mẫu, mobile 1–2 mẫu; không tự chuyển carousel. Click card mở editor bằng đúng `templateId`; “Xem tất cả” mở trang tạo CV.
 
 ## 5. Hệ thị giác
 

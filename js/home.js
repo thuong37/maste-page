@@ -6,25 +6,68 @@
  * - Bookmark job toggle & toast notification
  * - Follow company toggle
  * - Popular keywords click-to-search
- * - Newsletter subscribe confirmation
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const cvSection = document.querySelector('.cv-template-section');
+  if (cvSection) {
+    const viewport = cvSection.querySelector('.cv-template-viewport');
+    const filters = [...cvSection.querySelectorAll('.cv-style-filter')];
+    const cards = [...cvSection.querySelectorAll('.cv-template-card')];
+    const prevButton = cvSection.querySelector('[data-cv-direction="prev"]');
+    const nextButton = cvSection.querySelector('[data-cv-direction="next"]');
+    const emptyState = cvSection.querySelector('.cv-template-empty');
+
+    const visibleCards = () => cards.filter(card => !card.hidden);
+    const updateArrows = () => {
+      const overflow = viewport.scrollWidth > viewport.clientWidth + 2;
+      prevButton.disabled = !overflow || viewport.scrollLeft <= 2;
+      nextButton.disabled = !overflow || viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 2;
+    };
+
+    filters.forEach(filter => filter.addEventListener('click', () => {
+      const selectedStyle = filter.dataset.cvStyle;
+      filters.forEach(item => {
+        const selected = item === filter;
+        item.classList.toggle('is-active', selected);
+        item.setAttribute('aria-pressed', String(selected));
+      });
+      cards.forEach(card => {
+        const styles = (card.dataset.cvStyles || '').split(' ');
+        card.hidden = selectedStyle !== 'all' && !styles.includes(selectedStyle);
+      });
+      emptyState.hidden = visibleCards().length > 0;
+      viewport.hidden = visibleCards().length === 0;
+      viewport.scrollLeft = 0;
+      requestAnimationFrame(updateArrows);
+    }));
+
+    [prevButton, nextButton].forEach(button => button.addEventListener('click', () => {
+      const card = visibleCards()[0];
+      const distance = card ? card.getBoundingClientRect().width + 24 : viewport.clientWidth;
+      viewport.scrollBy({ left: button.dataset.cvDirection === 'next' ? distance : -distance, behavior: 'smooth' });
+    }));
+    viewport.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
+  }
   const courseSection = document.querySelector('#goi-y-khoa-hoc');
   const courseGrid = courseSection?.querySelector('.courses-grid');
   if (courseGrid) {
     const samples = [
-      { id: 'cloud', title: 'AWS Cloud Practitioner từ cơ bản đến thực hành', category: 'Cloud Computing', badge: 'Chứng chỉ quốc tế', teacher: 'Chuyên gia giải pháp Cloud', rating: '4.9 (1.8k học viên)', price: '1.790.000đ', old: '2.990.000đ', image: 'photo-1451187580459-43490279c0fa' },
-      { id: 'marketing', title: 'Digital Marketing & tối ưu chiến dịch đa kênh', category: 'Digital Marketing', badge: 'Dự án thực tế', teacher: 'Marketing Lead tại doanh nghiệp công nghệ', rating: '4.8 (2.1k học viên)', price: '1.390.000đ', old: '2.490.000đ', image: 'photo-1460925895917-afdab827c52f' },
-      { id: 'product', title: 'Quản lý sản phẩm: Từ ý tưởng đến ra mắt', category: 'Product Management', badge: 'Có chứng nhận', teacher: 'Senior Product Manager', rating: '4.9 (980 học viên)', price: '1.690.000đ', old: '2.890.000đ', image: 'photo-1552664730-d307ca884978' },
-      { id: 'excel', title: 'Excel nâng cao & tự động hóa báo cáo', category: 'Office Skills', badge: 'Học theo dự án', teacher: 'Chuyên gia phân tích kinh doanh', rating: '4.8 (3.2k học viên)', price: '990.000đ', old: '1.790.000đ', image: 'photo-1543286386-713bdd548da4' }
+      { id: 'cloud', title: 'AWS Cloud Practitioner từ cơ bản đến thực hành', category: 'Cloud Computing', categoryCode: 'cloud-computing', provider: 'Cloud Skills Academy', rating: '4.9 (1.8k học viên)', price: '1.790.000đ', old: '2.990.000đ', image: 'photo-1451187580459-43490279c0fa' },
+      { id: 'marketing', title: 'Digital Marketing & tối ưu chiến dịch đa kênh', category: 'Digital Marketing', categoryCode: 'digital-marketing', provider: 'Growth Learning Hub', rating: '4.8 (2.1k học viên)', price: '1.390.000đ', old: '2.490.000đ', image: 'photo-1460925895917-afdab827c52f' },
+      { id: 'product', title: 'Quản lý sản phẩm: Từ ý tưởng đến ra mắt', category: 'Product Management', categoryCode: 'product-management', provider: 'Product Leaders Academy', rating: '4.9 (980 học viên)', price: '1.690.000đ', old: '2.890.000đ', image: 'photo-1552664730-d307ca884978' },
+      { id: 'excel', title: 'Excel nâng cao & tự động hóa báo cáo', category: 'Office Skills', categoryCode: 'office-skills', provider: 'Business Skills Center', rating: '4.8 (3.2k học viên)', price: '990.000đ', old: '1.790.000đ', image: 'photo-1543286386-713bdd548da4' }
     ];
     const star = '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
     samples.forEach(course => {
       const card = document.createElement('a');
       card.className = 'course-card';
       card.href = `#khoa-hoc-${course.id}`;
-      card.innerHTML = `<div class="course-thumb-wrap" style="background-image:url('https://images.unsplash.com/${course.image}?auto=format&fit=crop&w=500&q=80')"><span class="course-category-tag">${course.category}</span><span class="course-match-badge">${course.badge}</span></div><div class="course-body"><h3 class="course-title">${course.title}</h3><div class="course-instructor"><span>Giảng viên: ${course.teacher}</span></div><div class="course-meta-row"><span class="course-rating">${star} ${course.rating}</span><div class="course-price-wrap"><span class="course-price-sale">${course.price}</span><span class="course-price-old">${course.old}</span></div></div></div>`;
+      card.dataset.providerType = 'easycv-partner';
+      card.dataset.categoryCode = course.categoryCode;
+      card.innerHTML = `<div class="course-thumb-wrap" style="background-image:url('https://images.unsplash.com/${course.image}?auto=format&fit=crop&w=500&q=80')"><span class="course-category-tag">${course.category}</span><span class="course-match-badge">Đối tác EasyCV</span></div><div class="course-body"><h3 class="course-title">${course.title}</h3><div class="course-instructor"><span>Đơn vị liên kết: ${course.provider}</span></div><div class="course-meta-row"><span class="course-rating">${star} ${course.rating}</span><div class="course-price-wrap"><span class="course-price-sale">${course.price}</span><span class="course-price-old">${course.old}</span></div></div></div>`;
       courseGrid.appendChild(card);
     });
 
@@ -92,9 +135,170 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3200);
   }
 
-  // --- 2. Filter Pills for "Việc làm nổi bật" (Featured Jobs) ---
+  // --- 2. Job grids: maximum 12 cards (3 columns x 4 rows) per page ---
+  function createJobPaginator(sectionSelector, cardSelector) {
+    const section = document.querySelector(sectionSelector);
+    const grid = section?.querySelector('.jobs-grid, .attractive-grid');
+    if (!section || !grid) return null;
+
+    const cards = [...grid.querySelectorAll(cardSelector)];
+    const pageSize = 12;
+    let currentPage = 1;
+    let filterPredicate = () => true;
+
+    const pagination = document.createElement('nav');
+    pagination.className = 'job-list-pagination';
+    pagination.setAttribute('aria-label', `Phân trang ${section.querySelector('.section-title')?.textContent.trim() || 'việc làm'}`);
+    pagination.innerHTML = `
+      <button class="job-list-page-button job-list-page-prev" type="button" aria-label="Trang việc làm trước">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <span class="job-list-page-info" aria-live="polite"></span>
+      <button class="job-list-page-button job-list-page-next" type="button" aria-label="Trang việc làm tiếp theo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>`;
+    grid.after(pagination);
+
+    const previousButton = pagination.querySelector('.job-list-page-prev');
+    const nextButton = pagination.querySelector('.job-list-page-next');
+    const pageInfo = pagination.querySelector('.job-list-page-info');
+
+    const render = () => {
+      const filteredCards = cards.filter(filterPredicate);
+      const totalPages = Math.max(1, Math.ceil(filteredCards.length / pageSize));
+      currentPage = Math.min(currentPage, totalPages);
+      const firstIndex = (currentPage - 1) * pageSize;
+      const visibleCards = new Set(filteredCards.slice(firstIndex, firstIndex + pageSize));
+
+      cards.forEach(card => {
+        card.hidden = !visibleCards.has(card);
+        if (!card.hidden) card.style.animation = 'fadeInCard 0.3s ease forwards';
+      });
+
+      pageInfo.textContent = `Trang ${currentPage}/${totalPages}`;
+      previousButton.disabled = currentPage === 1;
+      nextButton.disabled = currentPage === totalPages;
+    };
+
+    previousButton.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage -= 1;
+        render();
+      }
+    });
+    nextButton.addEventListener('click', () => {
+      const totalPages = Math.max(1, Math.ceil(cards.filter(filterPredicate).length / pageSize));
+      if (currentPage < totalPages) {
+        currentPage += 1;
+        render();
+      }
+    });
+
+    render();
+    return {
+      setFilter(predicate) {
+        filterPredicate = predicate;
+        currentPage = 1;
+        render();
+      }
+    };
+  }
+
+  const featuredPaginator = createJobPaginator('.featured-jobs-section', '.job-card');
+  createJobPaginator('.attractive-jobs-section', '.attractive-card');
+  const matchingPaginator = createJobPaginator('.matching-jobs-section', '.job-card');
+
+  // Featured companies: 4 cards per page, automatically advance every 5 seconds.
+  const companiesSection = document.querySelector('.top-companies-section');
+  const companiesGrid = companiesSection?.querySelector('.companies-grid');
+  if (companiesSection && companiesGrid) {
+    const additionalCompanies = [
+      { slug: 'momo', name: 'MoMo', logo: 'MOMO', logoClass: 'company-logo-momo', industry: 'Fintech · Thanh toán số', rating: '4.8', reviews: '720+ đánh giá', jobs: 64, followers: '38.6k', image: 'photo-1556742049-0cfed4f6a45d' },
+      { slug: 'shopee', name: 'Shopee Việt Nam', logo: 'S', logoClass: 'company-logo-shopee', industry: 'Thương mại điện tử · Công nghệ', rating: '4.7', reviews: '1,1k+ đánh giá', jobs: 103, followers: '72.4k', image: 'photo-1556761175-b413da4baf72' },
+      { slug: 'mb-bank', name: 'MB Bank', logo: 'MB', logoClass: 'company-logo-mb', industry: 'Ngân hàng · Công nghệ tài chính', rating: '4.8', reviews: '930+ đánh giá', jobs: 87, followers: '46.9k', image: 'photo-1560472354-b33ff0c44a43' },
+      { slug: 'vinai', name: 'VinAI', logo: 'VinAI', logoClass: 'company-logo-vinai', industry: 'Trí tuệ nhân tạo · Nghiên cứu', rating: '4.9', reviews: '410+ đánh giá', jobs: 52, followers: '31.7k', image: 'photo-1497366811353-6870744d04b2' }
+    ];
+    additionalCompanies.forEach(company => {
+      const card = document.createElement('div');
+      card.className = 'company-card';
+      card.innerHTML = `
+        <div class="company-cover" style="background-image: url('https://images.unsplash.com/${company.image}?auto=format&fit=crop&w=400&q=80');"><div class="company-cover-overlay"></div></div>
+        <div class="company-card-body">
+          <div class="company-card-logo-wrap"><span class="company-card-logo-mark ${company.logoClass}" role="img" aria-label="${company.name}">${company.logo}</span></div>
+          <a href="#${company.slug}-profile" class="company-card-title"><span>${company.name}</span><span class="badge-verified-inline"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span></a>
+          <span class="company-industry">${company.industry}</span>
+          <div class="company-meta-stats"><span class="company-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>${company.rating} <span class="company-rating-count">· ${company.reviews}</span></span><span class="company-open-jobs">${company.jobs} <span class="company-stat-label">việc làm đang mở</span></span></div>
+          <button class="btn-follow-company" type="button"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span>Theo dõi (${company.followers})</span></button>
+        </div>`;
+      companiesGrid.appendChild(card);
+    });
+    const companyCards = [...companiesGrid.querySelectorAll('.company-card')];
+    const pageSize = 4;
+    const totalPages = Math.ceil(companyCards.length / pageSize);
+
+    if (totalPages > 1) {
+      let currentPage = 0;
+      let timer;
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const pagination = document.createElement('nav');
+      pagination.className = 'company-pagination';
+      pagination.setAttribute('aria-label', 'Phân trang công ty nổi bật');
+      pagination.innerHTML = `
+        <button class="company-page-button company-page-prev" type="button" aria-label="Trang công ty trước">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <div class="company-page-status">
+          <span class="company-page-info" aria-live="polite"></span>
+          <span class="company-page-dots" aria-hidden="true"></span>
+        </div>
+        <button class="company-page-button company-page-next" type="button" aria-label="Trang công ty tiếp theo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </button>`;
+      companiesGrid.after(pagination);
+
+      const pageInfo = pagination.querySelector('.company-page-info');
+      const dots = pagination.querySelector('.company-page-dots');
+      const render = () => {
+        companyCards.forEach((card, index) => {
+          card.hidden = Math.floor(index / pageSize) !== currentPage;
+        });
+        pageInfo.textContent = `Trang ${currentPage + 1}/${totalPages}`;
+        dots.replaceChildren(...Array.from({ length: totalPages }, (_, index) => {
+          const dot = document.createElement('span');
+          dot.className = `company-page-dot${index === currentPage ? ' active' : ''}`;
+          return dot;
+        }));
+      };
+      const goTo = page => {
+        currentPage = (page + totalPages) % totalPages;
+        render();
+      };
+      const stop = () => {
+        clearInterval(timer);
+        timer = undefined;
+      };
+      const start = () => {
+        stop();
+        if (!document.hidden && !reducedMotion.matches && !companiesSection.matches(':hover, :focus-within')) {
+          timer = setInterval(() => goTo(currentPage + 1), 5000);
+        }
+      };
+
+      pagination.querySelector('.company-page-prev').addEventListener('click', () => goTo(currentPage - 1));
+      pagination.querySelector('.company-page-next').addEventListener('click', () => goTo(currentPage + 1));
+      companiesSection.addEventListener('mouseenter', stop);
+      companiesSection.addEventListener('mouseleave', start);
+      companiesSection.addEventListener('focusin', stop);
+      companiesSection.addEventListener('focusout', () => setTimeout(start, 0));
+      document.addEventListener('visibilitychange', start);
+      reducedMotion.addEventListener('change', start);
+      render();
+      start();
+    }
+  }
+
+  // --- 3. Filter Pills for "Việc làm nổi bật" (Featured Jobs) ---
   const filterPillBtns = document.querySelectorAll('.featured-jobs-section .filter-pill-btn');
-  const featuredJobCards = document.querySelectorAll('.featured-jobs-section .job-card');
 
   filterPillBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -102,22 +306,15 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.add('active');
 
       const filterValue = btn.getAttribute('data-filter') || 'all';
-
-      featuredJobCards.forEach(card => {
+      featuredPaginator?.setFilter(card => {
         const category = card.getAttribute('data-category') || '';
-        if (filterValue === 'all' || category.includes(filterValue)) {
-          card.style.display = 'flex';
-          card.style.animation = 'fadeInCard 0.3s ease forwards';
-        } else {
-          card.style.display = 'none';
-        }
+        return filterValue === 'all' || category.split(' ').includes(filterValue);
       });
     });
   });
 
-  // --- 3. Dynamic Tabs for "Việc làm phù hợp" (AI Recommendations) ---
+  // --- 4. Dynamic Tabs for "Việc làm phù hợp" (AI Recommendations) ---
   const matchingTabBtns = document.querySelectorAll('.matching-tab-btn');
-  const matchingJobCards = document.querySelectorAll('.matching-jobs-section .job-card');
 
   matchingTabBtns.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -125,20 +322,14 @@ document.addEventListener('DOMContentLoaded', () => {
       tab.classList.add('active');
 
       const tabFilter = tab.getAttribute('data-tab') || 'all';
-
-      matchingJobCards.forEach(card => {
+      matchingPaginator?.setFilter(card => {
         const tagType = card.getAttribute('data-match-type') || '';
-        if (tabFilter === 'all' || tagType.includes(tabFilter)) {
-          card.style.display = 'flex';
-          card.style.animation = 'fadeInCard 0.3s ease forwards';
-        } else {
-          card.style.display = 'none';
-        }
+        return tabFilter === 'all' || tagType.split(' ').includes(tabFilter);
       });
     });
   });
 
-  // --- 4. Bookmark Job Toggle ---
+  // --- 5. Bookmark Job Toggle ---
   document.addEventListener('click', (e) => {
     const bookmarkBtn = e.target.closest('.btn-bookmark');
     if (bookmarkBtn) {
@@ -200,19 +391,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // --- 7. Newsletter Subscription Form ---
-  const newsletterForm = document.querySelector('.newsletter-form');
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const input = newsletterForm.querySelector('.newsletter-input');
-      if (input && input.value.trim()) {
-        showToast(`Đăng ký thành công! EasyCV sẽ gửi việc làm phù hợp tới ${input.value.trim()}`, '✉');
-        input.value = '';
-      }
-    });
-  }
 
   // --- 8. Floating AI Recommendation Widget ---
   const floatingAiBtn = document.querySelector('.floating-ai-btn');
@@ -345,6 +523,52 @@ document.addEventListener('DOMContentLoaded', () => {
   const industryMegaContent = document.getElementById('industryMegaContent');
 
   if (heroSearchWrapper && heroSearchInput && searchSuggestDropdown) {
+    heroSearchInput.setAttribute('aria-haspopup', 'dialog');
+    heroSearchInput.setAttribute('aria-controls', 'searchSuggestDropdown');
+    heroSearchInput.setAttribute('aria-expanded', 'false');
+    searchSuggestDropdown.setAttribute('role', 'dialog');
+    searchSuggestDropdown.setAttribute('aria-label', 'Gợi ý tìm kiếm việc làm');
+
+    const legacyRecentSection = searchSuggestDropdown.querySelector('.suggest-recent-section');
+    const compactSearchPanel = document.createElement('div');
+    compactSearchPanel.className = 'search-format-panel';
+    compactSearchPanel.innerHTML = `
+      <section class="search-format-left" aria-label="Lịch sử và từ khóa phổ biến">
+        <div class="search-format-recent-slot"></div>
+        <div class="popular-keywords">
+          <h3>Từ khóa phổ biến</h3>
+          <div class="popular-keyword-list">
+            ${['Finance', 'Kinh doanh', 'IT', 'Accountant', 'Marketing'].map(keyword => `
+              <button type="button" class="suggest-trend-chip" data-keyword="${keyword}">${keyword}</button>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+      <section class="recommended-jobs" aria-labelledby="recommendedJobsTitle">
+        <h3 id="recommendedJobsTitle">Việc làm bạn sẽ thích</h3>
+        <div class="recommended-job-list">
+          ${[
+            ['GD', 'Giám Đốc Kinh Doanh Vikimco Toàn Quốc', '$1,000–1,500 / tháng'],
+            ['IT', 'Senior IT Infrastructure Officer', 'Thương lượng'],
+            ['KM', 'Quản Lý Nhà Hàng Kimmari Chicken', '15–25tr ₫/tháng'],
+            ['TS', 'Technical Service Engineer – Industrial Printer', 'Thương lượng'],
+            ['PM', 'Nhân Viên Phòng Mua Bán', 'Thương lượng']
+          ].map(([mark, title, salary]) => `
+            <button type="button" class="recommended-job suggest-trend-chip" data-keyword="${title}" aria-label="Tìm ${title}, mức lương ${salary}">
+              <span class="recommended-job-logo" aria-hidden="true">${mark}</span>
+              <span class="recommended-job-title">${title}</span>
+              <span class="recommended-job-salary">${salary}</span>
+            </button>
+          `).join('')}
+        </div>
+      </section>`;
+    searchSuggestDropdown.prepend(compactSearchPanel);
+    if (legacyRecentSection) {
+      compactSearchPanel.querySelector('.search-format-recent-slot').appendChild(legacyRecentSection);
+      const recentTitle = legacyRecentSection.querySelector('.suggest-title');
+      if (recentTitle) recentTitle.textContent = 'Tìm kiếm gần đây';
+    }
+
     const STORAGE_KEY = 'easycv_recent_searches_v2';
     const DEFAULT_HISTORY = [
       'ReactJS Developer',
@@ -967,10 +1191,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openDropdown() {
       searchSuggestDropdown.classList.add('is-open');
+      heroSearchInput.setAttribute('aria-expanded', 'true');
     }
 
     function closeDropdown() {
       searchSuggestDropdown.classList.remove('is-open');
+      heroSearchInput.setAttribute('aria-expanded', 'false');
     }
 
     function executeSearch(keyword) {
@@ -989,39 +1215,12 @@ document.addEventListener('DOMContentLoaded', () => {
       closeDropdown();
       heroSearchInput.blur();
 
-      // Filter featured job cards on page matching the keyword
-      const jobCards = document.querySelectorAll('.job-card, .attractive-card');
-      let matchCount = 0;
+      const searchParams = new URLSearchParams();
+      if (query) searchParams.set('keyword', query);
+      if (location) searchParams.set('locations', location);
 
-      if (query) {
-        const lowerQ = query.toLowerCase();
-        jobCards.forEach(card => {
-          const text = card.textContent.toLowerCase();
-          if (text.includes(lowerQ)) {
-            card.style.display = 'flex';
-            matchCount++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      } else {
-        jobCards.forEach(card => card.style.display = 'flex');
-        matchCount = jobCards.length;
-      }
-
-      const locText = location ? ` tại ${location}` : '';
-      const msg = query 
-        ? `Tìm thấy ${matchCount} việc làm phù hợp cho "${query}"${locText}`
-        : `Đang hiển thị tất cả việc làm${locText}`;
-      showToast(msg, '🔍');
-
-      // Scroll smoothly towards job listing section
-      const targetSection = document.querySelector('.featured-jobs-section') || document.querySelector('.all-jobs-container');
-      if (targetSection) {
-        const navOffset = 90;
-        const targetPos = targetSection.getBoundingClientRect().top + window.pageYOffset - navOffset;
-        window.scrollTo({ top: targetPos, behavior: 'smooth' });
-      }
+      const queryString = searchParams.toString();
+      window.location.assign(`/viec-lam${queryString ? `?${queryString}` : ''}`);
     }
 
     // Input Events

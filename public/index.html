@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="assets/logos/easycv-icon.png">
   <link rel="stylesheet" href="assets/design-tokens.css?v=1.1">
   <link rel="stylesheet" href="css/navbar.css?v=4.0">
-  <link rel="stylesheet" href="css/home.css?v=4.1">
+  <link rel="stylesheet" href="css/home.css?v=4.3_cv_templates">
   <link rel="stylesheet" href="css/location-picker.css?v=1">
   <style>
     /* =========================================================================
@@ -135,7 +135,8 @@
       background: #E2E8F0;
     }
     .search-location-group {
-      flex: 0.65;
+      flex: 0 1 220px;
+      max-width: 220px;
     }
     .search-select {
       border: none;
@@ -1120,6 +1121,9 @@
         display: none;
       }
       .search-location-group {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: none;
         border-top: 1px solid #E2E8F0;
         padding-top: 8px;
       }
@@ -2388,11 +2392,10 @@
           <h2 class="section-title">
             Việc làm nổi bật
           </h2>
-          <p class="section-subtitle">Hơn 1.500+ vị trí việc làm chất lượng cao được xác thực và tuyển dụng trực tiếp từ các doanh nghiệp lớn</p>
         </div>
 
         <a href="#tat-ca-viec-lam-noi-bat" class="section-view-all">
-          <span>Xem tất cả 1.520 việc làm</span>
+          <span>Xem tất cả việc làm</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </div>
@@ -2658,7 +2661,6 @@
           <h2 class="section-title">
             Việc làm lương cao
           </h2>
-          <p class="section-subtitle">Dành riêng cho nhân tài đang tìm kiếm môi trường phát triển đột phá, thưởng gia nhập cao và phúc lợi toàn diện</p>
         </div>
 
         <a href="#tat-ca-viec-lam-hap-dan" class="section-view-all">
@@ -3285,57 +3287,26 @@
     </div>
   </div>
 
-  <!-- =========================================================================
-       VÙNG QUẢNG CÁO: BANNER TÀI TRỢ & SỰ KIỆN NỔI BẬT (Promo Banners Strip)
-       ========================================================================= -->
-  <div class="promo-banners-strip">
+  <!-- ĐỀ XUẤT MẪU CV -->
+  <section class="cv-template-section" aria-labelledby="cv-template-title">
     <div class="home-container">
-      <div class="promo-banners-grid">
-
-        <!-- Promo Card 1: Sự kiện tuyển dụng lớn -->
-        <div class="promo-banner-card promo-banner-primary">
-          <div class="promo-banner-top">
-            <span class="ad-label-pill">Tài trợ / Event Hot</span>
-            <span class="promo-countdown-pill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span>Còn 45 vé miễn phí</span>
-            </span>
-          </div>
-          <div>
-            <h3 class="promo-banner-title">Vietnam Tech Career Expo 2026</h3>
-            <p class="promo-banner-desc">Phỏng vấn trực tiếp tại sự kiện cùng FPT, VNG, Viettel, Shopee. Cơ hội nhận Offer ngay trong ngày kèm 500+ phần quà công nghệ độc quyền.</p>
-          </div>
-          <div class="promo-banner-action">
-            <a href="#dang-ky-expo" class="btn-promo-action btn-promo-primary">
-              <span>Đăng ký tham gia ngay</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-            <span style="font-size: 12px; opacity: 0.7;">Tổ chức: 25/10/2026 tại Hà Nội & Online</span>
-          </div>
-        </div>
-
-        <!-- Promo Card 2: Học bổng đào tạo / Chứng chỉ đối tác -->
-        <div class="promo-banner-card promo-banner-accent">
-          <div class="promo-banner-top">
-            <span class="ad-label-pill ad-label-orange">Ưu đãi Đối tác</span>
-            <span style="font-size: 12px; font-weight: 700; color: #EA580C;">Học bổng 50%</span>
-          </div>
-          <div>
-            <h3 class="promo-banner-title" style="color: var(--slate-900);">Học bổng AWS & Google Cloud</h3>
-            <p class="promo-banner-desc" style="color: var(--slate-700);">Nâng tầm CV với chứng chỉ điện toán đám mây quốc tế. Cam kết giới thiệu việc làm mức lương từ $1,500+.</p>
-          </div>
-          <div class="promo-banner-action">
-            <a href="#nhan-hoc-bong" class="btn-promo-action btn-promo-outline">
-              <span>Nhận ưu đãi học bổng</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-            <span style="font-size: 12px; color: var(--text-muted);">Dành riêng ứng viên EasyCV</span>
-          </div>
-        </div>
-
+      <div class="cv-template-header">
+        <div><span class="cv-template-eyebrow">Tạo CV nhanh chóng</span><h2 id="cv-template-title">Khám phá mẫu CV phù hợp với bạn</h2></div>
+        <div class="cv-template-actions"><a class="cv-template-view-all" href="/tao-cv">Xem tất cả</a><button class="cv-template-arrow" type="button" data-cv-direction="prev" aria-label="Mẫu trước" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><button class="cv-template-arrow" type="button" data-cv-direction="next" aria-label="Mẫu tiếp theo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
       </div>
+      <div class="cv-style-filters" aria-label="Lọc mẫu CV theo phong cách"><button type="button" class="cv-style-filter is-active" data-cv-style="all" aria-pressed="true">Tất cả</button><button type="button" class="cv-style-filter" data-cv-style="simple" aria-pressed="false">Đơn giản</button><button type="button" class="cv-style-filter" data-cv-style="professional" aria-pressed="false">Chuyên nghiệp</button><button type="button" class="cv-style-filter" data-cv-style="modern" aria-pressed="false">Hiện đại</button><button type="button" class="cv-style-filter" data-cv-style="impressive" aria-pressed="false">Ấn tượng</button><button type="button" class="cv-style-filter" data-cv-style="ats" aria-pressed="false">ATS</button></div>
+      <div class="cv-template-viewport" tabindex="0" aria-label="Danh sách mẫu CV"><div class="cv-template-track">
+        <a class="cv-template-card cv-green" data-cv-styles="simple ats" href="/tao-cv/chinh-sua?templateId=emerald-ats" aria-label="Chọn mẫu CV Emerald ATS"><span class="cv-template-badge">ATS</span><span class="cv-sheet"><i class="cv-avatar"></i><b>NGUYỄN HOÀNG</b><small>CHUYÊN VIÊN KINH DOANH</small><em></em><em></em><strong>KINH NGHIỆM LÀM VIỆC</strong><em></em><em></em><em></em><strong>HỌC VẤN</strong><em></em><em></em></span><span class="cv-template-name">Emerald ATS</span></a>
+        <a class="cv-template-card cv-teal" data-cv-styles="professional ats" href="/tao-cv/chinh-sua?templateId=professional-teal" aria-label="Chọn mẫu CV Professional Teal"><span class="cv-sheet"><i class="cv-avatar"></i><b>NGUYỄN HOÀNG</b><small>NHÂN VIÊN MARKETING</small><em></em><strong>MỤC TIÊU NGHỀ NGHIỆP</strong><em></em><em></em><strong>KINH NGHIỆM</strong><em></em><em></em><em></em></span><span class="cv-template-name">Professional Teal</span></a>
+        <a class="cv-template-card cv-orange" data-cv-styles="modern impressive" href="/tao-cv/chinh-sua?templateId=modern-creative" aria-label="Chọn mẫu CV Modern Creative"><span class="cv-template-badge">Mới</span><span class="cv-sheet cv-sheet-split"><i class="cv-avatar"></i><b>TRẦN THỊ MINH</b><small>PRODUCT DESIGNER</small><em></em><strong>GIỚI THIỆU</strong><em></em><em></em><strong>KỸ NĂNG</strong><em></em><em></em></span><span class="cv-template-name">Modern Creative</span></a>
+        <a class="cv-template-card cv-rose" data-cv-styles="impressive modern" href="/tao-cv/chinh-sua?templateId=rose-impact" aria-label="Chọn mẫu CV Rose Impact"><span class="cv-sheet"><i class="cv-avatar"></i><b>NGUYỄN THU NGA</b><small>BRAND MANAGER</small><em></em><strong>KINH NGHIỆM</strong><em></em><em></em><em></em><strong>THÀNH TÍCH</strong><em></em></span><span class="cv-template-name">Rose Impact</span></a>
+        <a class="cv-template-card cv-slate" data-cv-styles="professional modern" href="/tao-cv/chinh-sua?templateId=executive-slate" aria-label="Chọn mẫu CV Executive Slate"><span class="cv-sheet cv-sheet-column"><i class="cv-avatar"></i><b>LÊ MINH ANH</b><small>PROJECT MANAGER</small><em></em><strong>PROFILE</strong><em></em><strong>EXPERIENCE</strong><em></em><em></em></span><span class="cv-template-name">Executive Slate</span></a>
+        <a class="cv-template-card cv-blue" data-cv-styles="simple professional ats" href="/tao-cv/chinh-sua?templateId=clean-blue" aria-label="Chọn mẫu CV Clean Blue"><span class="cv-template-badge">ATS</span><span class="cv-sheet"><i class="cv-avatar"></i><b>PHẠM QUANG HUY</b><small>SOFTWARE ENGINEER</small><em></em><strong>SUMMARY</strong><em></em><em></em><strong>WORK EXPERIENCE</strong><em></em><em></em></span><span class="cv-template-name">Clean Blue</span></a>
+        <a class="cv-template-card cv-violet" data-cv-styles="modern impressive" href="/tao-cv/chinh-sua?templateId=violet-studio" aria-label="Chọn mẫu CV Violet Studio"><span class="cv-sheet cv-sheet-split"><i class="cv-avatar"></i><b>ĐẶNG THẢO MY</b><small>CONTENT CREATOR</small><em></em><strong>ABOUT ME</strong><em></em><em></em><strong>PROJECTS</strong><em></em></span><span class="cv-template-name">Violet Studio</span></a>
+        <a class="cv-template-card cv-sand" data-cv-styles="simple ats" href="/tao-cv/chinh-sua?templateId=minimal-sand" aria-label="Chọn mẫu CV Minimal Sand"><span class="cv-sheet"><i class="cv-avatar"></i><b>VŨ ĐỨC LONG</b><small>ACCOUNTANT</small><em></em><strong>EXPERIENCE</strong><em></em><em></em><em></em><strong>EDUCATION</strong><em></em></span><span class="cv-template-name">Minimal Sand</span></a>
+      </div></div><p class="cv-template-empty" hidden>Chưa có mẫu CV thuộc phong cách này.</p>
     </div>
-  </div>
+  </section>
 
   <!-- =========================================================================
        VÙNG ĐÀO TẠO & KỸ NĂNG: KHÓA HỌC GỢI Ý (#goi-y-khoa-hoc)
@@ -3347,11 +3318,11 @@
           <h2 class="section-title">
             Khóa học nâng cao kỹ năng
           </h2>
-          <p class="section-subtitle">Dựa trên xu hướng tuyển dụng 2026, bổ sung các chứng chỉ này giúp hồ sơ của bạn thu hút thêm 40% lượt liên hệ phỏng vấn từ HR</p>
+          <p class="section-subtitle">Khóa học từ các đơn vị liên kết với EasyCV. Khi có đủ dữ liệu và sự đồng ý của bạn, danh sách được ưu tiên theo nhóm ngành trong hồ sơ, CV và hoạt động tìm việc.</p>
         </div>
 
         <a href="#tat-ca-khoa-hoc" class="section-view-all">
-          <span>Xem tất cả 120+ khóa học & học bổng</span>
+          <span>Xem tất cả khóa học</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </div>
@@ -3359,16 +3330,16 @@
       <div class="courses-grid">
 
         <!-- Course 1 -->
-        <a href="#khoa-hoc-system-design" class="course-card">
+        <a href="#khoa-hoc-system-design" class="course-card" data-provider-type="easycv-partner" data-category-code="software-architecture">
           <div class="course-thumb-wrap" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80');">
             <span class="course-category-tag">Software Architecture</span>
-            <span class="course-match-badge">96% Khớp mục tiêu</span>
+            <span class="course-match-badge">Đối tác EasyCV</span>
           </div>
           <div class="course-body">
             <h3 class="course-title">Phỏng vấn thuật toán & thiết kế hệ thống</h3>
             <div class="course-instructor">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <span>Giảng viên: Cựu Tech Lead Google & VNG</span>
+              <span>Đơn vị liên kết: EasyTech Academy</span>
             </div>
             <div class="course-meta-row">
               <span class="course-rating">
@@ -3384,16 +3355,16 @@
         </a>
 
         <!-- Course 2 -->
-        <a href="#khoa-hoc-data-analytics" class="course-card">
+        <a href="#khoa-hoc-data-analytics" class="course-card" data-provider-type="easycv-partner" data-category-code="data-analytics">
           <div class="course-thumb-wrap" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80');">
             <span class="course-category-tag">Data & AI Analytics</span>
-            <span class="course-match-badge">Kỹ năng HOT 2026</span>
+            <span class="course-match-badge">Đối tác EasyCV</span>
           </div>
           <div class="course-body">
             <h3 class="course-title">Phân tích dữ liệu với SQL, Python & Power BI</h3>
             <div class="course-instructor">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <span>Giảng viên: Head of Data Analytics Techcombank</span>
+              <span>Đơn vị liên kết: DataPath Academy</span>
             </div>
             <div class="course-meta-row">
               <span class="course-rating">
@@ -3409,16 +3380,16 @@
         </a>
 
         <!-- Course 3 -->
-        <a href="#khoa-hoc-uiux" class="course-card">
+        <a href="#khoa-hoc-uiux" class="course-card" data-provider-type="easycv-partner" data-category-code="ui-ux-design">
           <div class="course-thumb-wrap" style="background-image: url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=400&q=80');">
             <span class="course-category-tag">UI/UX Product Design</span>
-            <span class="course-match-badge">Portfolio chuẩn ATS</span>
+            <span class="course-match-badge">Đối tác EasyCV</span>
           </div>
           <div class="course-body">
             <h3 class="course-title">Thiết kế UI/UX & Design System với Figma</h3>
             <div class="course-instructor">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <span>Giảng viên: Senior Product Designer tại Grab</span>
+              <span>Đơn vị liên kết: Product Design Hub</span>
             </div>
             <div class="course-meta-row">
               <span class="course-rating">
@@ -3434,16 +3405,16 @@
         </a>
 
         <!-- Course 4 -->
-        <a href="#khoa-hoc-tieng-anh" class="course-card">
+        <a href="#khoa-hoc-tieng-anh" class="course-card" data-provider-type="easycv-partner" data-category-code="business-english">
           <div class="course-thumb-wrap" style="background-image: url('https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=400&q=80');">
             <span class="course-category-tag">Business English</span>
-            <span class="course-match-badge">Tăng 30% Mức lương</span>
+            <span class="course-match-badge">Đối tác EasyCV</span>
           </div>
           <div class="course-body">
             <h3 class="course-title">Tiếng Anh công sở & đàm phán lương</h3>
             <div class="course-instructor">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <span>Giảng viên: Master TESOL & HR Director Tập đoàn Đa quốc gia</span>
+              <span>Đơn vị liên kết: Workplace English Center</span>
             </div>
             <div class="course-meta-row">
               <span class="course-rating">
@@ -3765,18 +3736,6 @@
   <footer id="chan-trang" class="site-footer">
     <div class="home-container">
 
-      <!-- Newsletter Alert Box -->
-      <div class="footer-newsletter-wrap">
-        <div class="newsletter-info">
-          <h4>Nhận tin việc làm phù hợp</h4>
-          <p>Nhận ngay bản tin cập nhật việc làm lương cao, chuẩn theo chuyên môn và địa điểm của bạn vào mỗi sáng thứ Hai.</p>
-        </div>
-        <form class="newsletter-form">
-          <input type="email" class="newsletter-input" placeholder="Nhập địa chỉ email của bạn..." required />
-          <button type="submit" class="btn-subscribe">Đăng ký nhận tin</button>
-        </form>
-      </div>
-
       <!-- Main Footer 5 Columns -->
       <div class="footer-main-grid">
 
@@ -3970,7 +3929,7 @@
   </div>
 
   <script src="js/navbar.js"></script>
-  <script src="js/home.js?v=20260921_courses"></script>
+  <script src="js/home.js?v=20260927_cv_templates"></script>
   <script src="js/location-picker.js?v=1"></script>
 </body>
 </html>
