@@ -67,19 +67,19 @@ Khi thiếu API, Qwen dùng fixture riêng có nhãn `demo`, không tạo thành
 - Link card việc → route chi tiết việc; card công ty → route công ty; course/event → route tương ứng **chỉ khi đã có**.
 - Card mẫu CV → `/tao-cv/chinh-sua?templateId={templateId}`; CTA “Xem tất cả” → `/tao-cv`. Ánh xạ sang router thật nếu tên route khác; không truyền toàn bộ template qua URL.
 - Nếu editor yêu cầu đăng nhập, giữ route chỉnh sửa cùng `templateId` trong `returnUrl` sau khi chuyển tới auth.
-- Bookmark, follow, ứng tuyển, thông báo, tin nhắn và hồ sơ yêu cầu auth theo chính sách dự án đích. Với guest, chuyển tới đăng nhập và giữ URL quay lại nếu hệ thống hỗ trợ.
+- Bookmark, follow, ứng tuyển, thông báo, tin nhắn và hồ sơ dùng phiên ứng viên đã đăng nhập. Nếu phiên hết hạn, auth guard chung của hệ thống xử lý đăng nhập lại và giữ URL quay lại; trang chủ không tự chuyển sang biến thể guest.
 - CTA quảng cáo/VIP phải có destination và trạng thái tài trợ rõ, không trỏ tới anchor vô nghĩa.
-- Không suy ra quyền nhà tuyển dụng từ trạng thái ứng viên demo trên trang nguồn.
+- Không suy ra quyền nhà tuyển dụng từ phiên ứng viên; CTA nhà tuyển dụng vẫn điều hướng tới cổng/module riêng theo cấu hình.
 - Footer phải ánh xạ từng nhóm link theo `01-screen-spec.md`: route nội bộ cho nội dung/ứng viên; URL cấu hình cho cổng nhà tuyển dụng; `tel:`/`mailto:` cho liên hệ; URL chính thức cho bản đồ, kho ứng dụng và mạng xã hội. Không giữ `href="#..."` của prototype trong bản tích hợp.
 
 ## 6. Tiêu chí hoàn thành
 
-- [ ] Cấu trúc và thứ tự H01–H13 đúng; responsive tương đương nguồn ở 360/768/1440px.
+- [ ] Cấu trúc và thứ tự H01–H14 đúng; responsive tương đương nguồn ở 360/768/1440px; không có DemoBar hoặc guest actions.
 - [ ] Logo, banner nội bộ và token tải thành công; không có ảnh hỏng hoặc chữ tiếng Việt lỗi mã hóa.
 - [ ] Search, địa điểm, pill ngành và tab dùng state nhất quán; có empty/loading/error rõ.
 - [ ] Mọi thao tác ghi chỉ báo thành công sau phản hồi thật; trạng thái lỗi không làm mất dữ liệu người dùng.
 - [ ] Link/CTA có route thật hoặc được đánh dấu rõ chưa tích hợp trong báo cáo.
-- [ ] Section Đề xuất mẫu CV (H10 trong đặc tả tổng/H09 trong bản đồ màn hình rút gọn) không còn hai banner cũ; lọc đúng 6 phong cách, card mở đúng template và “Xem tất cả” mở trang tạo CV.
+- [ ] Section Đề xuất mẫu CV H09 không còn hai banner cũ; lọc đúng 6 phong cách, card mở đúng template và “Xem tất cả” mở trang tạo CV.
 - [ ] Điều hướng bàn phím, focus, `Esc`, nhãn điều khiển, reduced motion hoạt động.
 - [ ] Không có lỗi runtime/console hoặc request asset sai; chạy được lệnh build/test sẵn có của dự án đích.
 - [ ] Báo cáo phần dùng fixture, phần nối API, route chưa có và khác biệt có chủ đích so với prototype.

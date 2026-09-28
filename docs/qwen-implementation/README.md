@@ -25,7 +25,7 @@ Khi tài liệu thương hiệu mô tả một màu hoặc thành phần khác g
 | `css/navbar.css` | Header, menu, hero, ô tìm kiếm, banner đối tác, responsive |
 | `css/home.css` | Các section bên dưới hero, card, footer, widget |
 | `css/location-picker.css` | Bộ chọn địa điểm |
-| `js/navbar.js` | Menu, popover, drawer, chuyển trạng thái demo, dark mode |
+| `js/navbar.js` | Menu tài khoản đã đăng nhập, popover thông báo/tin nhắn và drawer mobile |
 | `js/home.js` | Tìm kiếm, lọc, bookmark, theo dõi, carousel, toast |
 | `js/location-picker.js` | Chọn địa điểm mẫu |
 | `js/spotlight-rotation.js`, `js/partner-cards.js` | Banner và dải đối tác tự chuyển |

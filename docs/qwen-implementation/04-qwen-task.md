@@ -17,7 +17,7 @@ Bạn là kỹ sư frontend triển khai trang chủ ứng viên EasyCV vào d�
 
 Nhiệm vụ:
 - Khảo sát stack, router, auth, API client, design system và lệnh build/test của dự án hiện tại.
-- Dựng đúng thứ tự H01–H13, giữ nội dung tiếng Việt và asset thương hiệu hiện có.
+- Dựng đúng thứ tự H01–H14, mặc định ứng viên đã đăng nhập, không dựng DemoBar/guest actions, giữ nội dung tiếng Việt và asset thương hiệu hiện có.
 - Chuyển các hành vi trong tài liệu 02 sang state có kiểm soát; tránh nhiều bộ lọc ghi đè DOM trực tiếp.
 - Ánh xạ dữ liệu theo tài liệu 03 tới service đang có. Nếu thiếu API, dùng fixture có nhãn demo và báo rõ phần chưa tích hợp; không báo thành công giả cho thao tác ghi.
 - Thực hiện responsive, bàn phím, focus, empty/loading/error và reduced motion.

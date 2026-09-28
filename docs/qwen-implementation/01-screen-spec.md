@@ -2,13 +2,13 @@
 
 ## 1. Mục tiêu và đối tượng
 
-Màn hình giúp ứng viên tìm việc theo từ khóa/địa điểm, khám phá việc làm và công ty, xem khóa học/sự kiện. Trang hiện là một landing page dài, ngôn ngữ Việt, trạng thái mặc định là **ứng viên đã đăng nhập** để trình diễn đầy đủ menu. Thanh chuyển trạng thái đăng nhập và dark mode ở đầu trang chỉ là công cụ demo.
+Màn hình giúp ứng viên tìm việc theo từ khóa/địa điểm, khám phá việc làm và công ty, xem khóa học/sự kiện. Trang là một landing page dài, ngôn ngữ Việt và luôn được đặc tả trong trạng thái **ứng viên đã đăng nhập**. Không triển khai DemoBar, nút chuyển guest/logged-in hoặc guest actions trong header/drawer.
 
 ## 2. Bản đồ màn hình theo thứ tự DOM
 
 | ID | Vùng | Thành phần chính | Nguồn DOM |
 |---|---|---|---|
-| H01 | Thanh demo + header | Chuyển logged in/guest, theme; logo; 4 menu chính; CTA nhà tuyển dụng; thông báo, tin nhắn, tài khoản; menu mobile | `index.html` → `.demo-control-bar`, `.site-header`, `.mobile-drawer-overlay` |
+| H01 | Header | Logo; 4 menu chính; CTA nhà tuyển dụng; thông báo, tin nhắn, tài khoản ứng viên đã đăng nhập; menu mobile | `index.html` → `.site-header`, `.mobile-drawer-overlay` |
 | H02 | Hero | H1, mô tả, ô từ khóa, chọn địa điểm, nút tìm, gợi ý tìm kiếm, tag xu hướng | `.hero-mock-section` |
 | H03 | Quảng bá đầu trang | Banner Orion 3 ảnh, dấu điều hướng, chân banner doanh nghiệp, dải card đối tác | `.hero-ad-showcase`, `.hero-brand-strip` |
 | H04 | Việc làm nổi bật | Tiêu đề, mô tả, link xem tất cả, 6 pill ngành, lưới job card | `#viec-lam-noi-bat` |
@@ -20,13 +20,14 @@ Màn hình giúp ứng viên tìm việc theo từ khóa/địa điểm, khám p
 | H10 | Khóa học | Chỉ hiển thị tiêu đề “Khóa học nâng cao kỹ năng”, không có dòng mô tả phụ; card khóa học, ảnh, tag, giảng viên, đánh giá, giá; carousel | `#goi-y-khoa-hoc` |
 | H11 | Sự kiện | Chỉ hiển thị tiêu đề “Sự kiện tuyển dụng”, không có dòng mô tả phụ; card ngày, hình thức, đơn vị tổ chức, mô tả, số người, CTA | `#goi-y-su-kien` |
 | H12 | Ngành nghề/từ khóa | Chỉ hiển thị tiêu đề “Ngành nghề & từ khóa phổ biến”, không có dòng mô tả phụ; lưới ngành và các từ khóa tìm kiếm nhanh | `#tu-khoa-pho-bien` |
-| H13 | Footer + AI nổi | Footer 5 cột: thương hiệu/pháp lý, Về EasyCV, Ứng viên, Nhà tuyển dụng, Liên hệ & ứng dụng; thanh copyright/social; không có form nhận tin. Kèm nút gợi ý AI và popover | `#chan-trang`, `.floating-ai-widget` |
+| H13 | Footer | Footer 5 cột: thương hiệu/pháp lý, Về EasyCV, Ứng viên, Nhà tuyển dụng, Liên hệ & ứng dụng; thanh copyright/social; không có form nhận tin | `#chan-trang` |
+| H14 | AI nổi | Nút gợi ý AI và popover danh sách việc làm phù hợp | `.floating-ai-widget` |
 
 ## 3. Header và hero
 
 - Header nền sáng, logo EasyCV. Logo trong `index.html` và footer dùng asset dưới `assets/logos/`; khi đưa vào Vite/Next hoặc thư mục `public`, kiểm tra lại đường dẫn thực.
 - Bốn menu chính: **Việc làm**, **Hồ sơ & CV**, **Ứng tuyển**, **Công cụ nghề nghiệp**. Mỗi menu mở dropdown với nhiều mục. Menu tài khoản đã đăng nhập có nhóm hồ sơ, công việc, cài đặt và đăng xuất.
-- Guest chỉ thấy đăng nhập/đăng ký; thông báo và tin nhắn ẩn. Mobile dùng drawer với các nhóm tương đương.
+- Header luôn hiển thị thông báo, tin nhắn và menu tài khoản ứng viên đã đăng nhập. Mobile dùng drawer tương đương và không có nút đăng nhập/đăng ký.
 - Hero hiện dùng `.hero-stack-layout`: H1 căn giữa, tiếp theo là ô tìm kiếm, tag xu hướng, banner doanh nghiệp rồi dải đối tác, xếp dọc cả trên màn lớn. CSS inline đầu `index.html` đặt `flex-direction: column !important`, ghi đè tên class/layout cũ trong CSS ngoài. Giữ bố cục dọc này khi tái dựng.
 - Ô tìm kiếm gồm input từ khóa, nút xóa, trigger địa điểm, nút **Tìm kiếm**. Gợi ý bao gồm lịch sử gần đây, xu hướng và mega menu ngành nghề nhiều trang.
 - Bộ chọn địa điểm có 2 chế độ địa giới mẫu: tỉnh/quận huyện cũ và tỉnh/phường xã sau 01/07/2025. Hai cột tỉnh và đơn vị cấp dưới, tìm kiếm từng cột, chọn nhiều nơi, **Bỏ chọn tất cả**, **Áp dụng**.
@@ -58,7 +59,7 @@ Màn hình giúp ứng viên tìm việc theo từ khóa/địa điểm, khám p
 - Vùng nội dung chính tối đa `1250px` (`--container-max-width`); navbar có giới hạn riêng khoảng `1360px`. Các card dùng nền trắng, bo góc, viền mỏng và khoảng trắng rõ.
 - CSS nguồn có breakpoint `1100`, `1024`, `992`, `900`, `768`, `700`, `640px`. Tái dựng theo hành vi thực thay vì chọn duy nhất một breakpoint chung.
 - Màn desktop: grid job/công ty nhiều cột. Tablet: giảm số cột. Mobile: card một cột, bộ tìm kiếm và menu đủ rộng, không tràn ngang. Carousel khóa học hiển thị 4/2/1 card theo độ rộng >1100 / 641–1100 / ≤640px.
-- Dark mode tồn tại dưới `[data-theme="dark"]`, nhưng nút bật chỉ ở thanh demo. Nếu dự án đích có theme thật, nối vào hệ theme đó.
+- CSS nguồn còn hỗ trợ `[data-theme="dark"]` nhưng màn hình không có nút chuyển theme. Chỉ nối dark mode khi dự án đích đã có theme store/điều khiển thật.
 
 ## 7. Accessibility và nội dung
 

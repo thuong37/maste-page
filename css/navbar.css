@@ -87,83 +87,6 @@ body {
 }
 
 /* ==========================================================================
-   Demo Control Bar (State Switcher for testing Logged In / Logged Out)
-   ========================================================================== */
-.demo-control-bar {
-  background: var(--slate-900);
-  color: #FFFFFF;
-  padding: 8px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 13px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  z-index: 1000;
-}
-
-.demo-control-bar .badge {
-  background: var(--easycv-orange);
-  color: #fff;
-  padding: 2px 8px;
-  border-radius: var(--radius-full);
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-.demo-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.demo-toggle-group {
-  display: inline-flex;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 3px;
-  border-radius: var(--radius-full);
-  gap: 2px;
-}
-
-.demo-toggle-btn {
-  background: transparent;
-  border: none;
-  color: var(--slate-300);
-  padding: 4px 12px;
-  border-radius: var(--radius-full);
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.demo-toggle-btn.active {
-  background: var(--easycv-orange);
-  color: #FFFFFF;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.demo-theme-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: #FFF;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background var(--transition-fast);
-}
-
-.demo-theme-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* ==========================================================================
    Header & Navbar Container
    ========================================================================== */
 .site-header {
@@ -404,7 +327,7 @@ body {
 }
 
 /* ==========================================================================
-   Navbar Right Actions (Notification, Message, Account, Login/Register)
+   Navbar Right Actions (Notification, Message, Account)
    ========================================================================== */
 .navbar-actions {
   display: flex;
@@ -482,59 +405,6 @@ body {
   align-items: center;
   justify-content: center;
   border: 2px solid var(--bg-header);
-}
-
-/* ==========================================================================
-   Account Section - State: CHƯA ĐĂNG NHẬP (Guest)
-   ========================================================================== */
-.account-guest-view {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.btn-login {
-  padding: 8px 18px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--easycv-orange);
-  background: transparent;
-  border: 1.5px solid var(--easycv-orange);
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  white-space: nowrap;
-}
-
-.btn-login:hover {
-  background: var(--easycv-orange-50);
-  transform: translateY(-1px);
-}
-
-[data-theme="dark"] .btn-login:hover {
-  background: rgba(249, 115, 22, 0.15);
-}
-
-.btn-register {
-  padding: 8.5px 20px;
-  font-size: 14px;
-  font-weight: 700;
-  color: #FFFFFF;
-  background: linear-gradient(135deg, #FF8A34 0%, #F97316 100%);
-  border: none;
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  cursor: pointer;
-  box-shadow: 0 4px 10px var(--easycv-orange-glow);
-  transition: all var(--transition-fast);
-  white-space: nowrap;
-}
-
-.btn-register:hover {
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
-  box-shadow: 0 6px 16px var(--easycv-orange-glow);
-  transform: translateY(-1px);
 }
 
 /* ==========================================================================

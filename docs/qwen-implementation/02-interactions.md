@@ -4,10 +4,10 @@ Quy ước: **Có trong prototype** nghĩa là JS hiện chạy trên dữ liệ
 
 | Mã | Trigger và trạng thái | Có trong prototype | Khi tích hợp |
 |---|---|---|---|
-| I01 | Chọn logged in/guest trên thanh demo | `js/navbar.js` bật/ẩn menu tài khoản và icon; mặc định logged in | Lấy trạng thái từ auth thực; bỏ thanh demo khỏi bản production nếu không có yêu cầu giữ |
+| I01 | Khởi tạo header ứng viên | Không có DemoBar hoặc state switcher; thông báo, tin nhắn và menu tài khoản luôn hiển thị ở trạng thái đã đăng nhập | Lấy dữ liệu ứng viên từ auth/profile thật nhưng không dựng biến thể guest trong màn hình này; phiên hết hạn do auth guard toàn hệ thống xử lý |
 | I02 | Mở menu header/tài khoản/thông báo/tin nhắn | Popover đóng khi click ngoài hoặc `Esc`; đánh dấu đã đọc chỉ thay DOM | Nối router và trạng thái thông báo/tin nhắn thật; đồng bộ số chưa đọc |
 | I03 | Mở/đóng drawer mobile | Khóa cuộn body, đóng bằng overlay/nút/`Esc` | Giữ focus trong drawer khi mở và trả focus khi đóng |
-| I04 | Bật dark mode | Đổi `data-theme` tại `html`, không lưu | Nối theme store của dự án nếu có |
+| I04 | Theme | Không có nút đổi theme trong màn hình | Chỉ phản ánh theme từ hệ thống nếu dự án đích đã có theme store; không tự thêm control |
 | I05 | Focus/click input tìm kiếm | Mở `.search-suggest-dropdown` với lịch sử, từ khóa phổ biến và việc làm đề xuất; không còn mega menu ngành trong popup | Gợi ý từ API nếu có; dùng debounce và trạng thái loading/empty/error |
 | I06 | Nhập từ khóa + Enter/nút “Tìm việc ngay” | `executeSearch()` tạo query bằng `URLSearchParams` và điều hướng tới `/viec-lam`; `keyword` và `locations` chỉ xuất hiện khi có giá trị | Trang kết quả đọc URL để khởi tạo input/bộ lọc; nối API, phân trang và số kết quả thật; giữ query khi quay lại |
 | I07 | Bấm tag xu hướng/từ khóa | Điền input; một số tag gọi tìm ngay | Giữ cùng một quy tắc tìm kiếm đã quyết định trong dự án đích; tag phải có tên query rõ |
@@ -45,7 +45,7 @@ Overlay = closed | open(trigger) ; Escape/outsideClick -> closed + restoreFocus
 
 ## Luồng kiểm thử hành vi
 
-1. Guest/đã đăng nhập: header và drawer hiện đúng mục; các nút cần auth dẫn tới flow đăng nhập thật.
+1. Header và drawer chỉ hiển thị biến thể ứng viên đã đăng nhập; không có DemoBar, nút đổi trạng thái, “Đăng nhập” hoặc “Đăng ký”.
 2. Nhập từ khóa, chọn một/nhiều địa điểm, sau đó click CTA hoặc nhấn `Enter`; xác minh route `/viec-lam` và query `keyword`, `locations` được encode/khôi phục chính xác. Kiểm tra thêm xóa từ khóa, click tag, mở/đóng gợi ý và lịch sử tìm kiếm.
 3. Chọn nhiều địa điểm, bỏ chọn, đổi mode, Áp dụng, đóng bằng `Esc`; URL/query phản ánh bộ lọc nếu đã tích hợp.
 4. Lọc ngành rồi tìm từ khóa; đổi tab match; trạng thái kết hợp vẫn đúng.

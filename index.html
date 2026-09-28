@@ -1312,29 +1312,6 @@
 </head>
 <body>
 
-  <!-- Demo State Switcher Bar (Giúp bạn kiểm tra ngay cả 2 trạng thái: Đã đăng nhập & Chưa đăng nhập) -->
-  <div class="demo-control-bar">
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <span class="badge">EASYCV DEMO</span>
-      <span>Thanh Menu điều hướng đa cấp chuẩn UI/UX</span>
-    </div>
-    <div class="demo-actions">
-      <div class="demo-toggle-group">
-        <button id="demo-btn-loggedin" class="demo-toggle-btn active" title="Hiển thị menu khi ứng viên đã đăng nhập">
-          Tài khoản: Đã đăng nhập
-        </button>
-        <button id="demo-btn-guest" class="demo-toggle-btn" title="Hiển thị menu khi là khách vãng lai">
-          Tài khoản: Chưa đăng nhập
-        </button>
-      </div>
-      <button id="demo-theme-btn" class="demo-theme-btn" title="Chuyển đổi giao diện Sáng / Tối">
-        <svg id="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-
   <!-- Header & Navigation Bar -->
   <header class="site-header">
     <nav class="navbar" aria-label="Menu chính">
@@ -1826,12 +1803,6 @@
           </div>
         </div>
 
-        <!-- Cột 8: Tài khoản (CHƯA ĐĂNG NHẬP) - Đăng nhập - Đăng ký -->
-        <div id="account-guest-view" class="account-guest-view" style="display: none;">
-          <a href="#dang-nhap" class="btn-login">Đăng nhập</a>
-          <a href="#dang-ky" class="btn-register">Đăng ký</a>
-        </div>
-
         <!-- Mobile Menu Toggle Button (Hamburger) -->
         <button id="mobile-toggle-btn" class="mobile-toggle-btn" aria-label="Mở menu trên điện thoại">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
@@ -1913,8 +1884,6 @@
           <a href="#nha-tuyen-dung" class="btn-employer" style="text-align: center; border: 1px solid var(--border-color);">
             Dành cho Nhà tuyển dụng
           </a>
-          <a href="#dang-nhap" class="btn-login" style="text-align: center;">Đăng nhập</a>
-          <a href="#dang-ky" class="btn-register" style="text-align: center;">Đăng ký tài khoản</a>
         </div>
       </div>
     </div>
