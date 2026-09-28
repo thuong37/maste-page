@@ -1,9 +1,9 @@
 # PHÂN TÍCH VÀ ĐẶC TẢ TRANG CHỦ ỨNG VIÊN EASYCV
 
 > **Loại tài liệu:** Business Analysis + UI/UX Specification + AI Implementation Contract  
-> **Phiên bản:** 1.3
+> **Phiên bản:** 1.5
 > **Ngày lập:** 25/09/2026  
-> **Cập nhật gần nhất:** 27/09/2026 — Thay H10 bằng khu vực đề xuất mẫu CV và bổ sung bộ lọc phong cách
+> **Cập nhật gần nhất:** 28/09/2026 — Đặc tả chi tiết nội dung và điều hướng của từng cột footer
 > **Phạm vi:** Chỉ trang chủ dành cho ứng viên của sàn tuyển dụng EasyCV  
 > **Đối tượng đọc:** Ban lãnh đạo, Product Owner, Business Analyst, UI/UX Designer, Frontend Engineer và AI coding agent (ưu tiên Qwen 3.8 27B)
 
@@ -413,7 +413,7 @@ Thứ tự trên là bắt buộc trên desktop và mobile. Không đổi thứ 
 
 **Tương tác:**
 
-- Click vùng card/tiêu đề → `/viec-lam/{slug-or-id}`.
+- Click vùng card/tiêu đề/tên việc làm → trang thông tin chi tiết của đúng việc làm đó: `/viec-lam/{slug-or-id}`.
 - Click tên/logo công ty → `/cong-ty/{slug-or-id}` và không kích hoạt click card.
 - Bookmark → gọi save/unsave API; khi pending khóa nút và hiển thị tiến trình; lỗi phải rollback.
 - Filter pill active có nền cam/chữ trắng. Filter phải kết hợp với từ khóa và địa điểm trong một state chung, không ghi đè lẫn nhau.
@@ -444,7 +444,11 @@ Thứ tự trên là bắt buộc trên desktop và mobile. Không đổi thứ 
 - Lương/phúc lợi là thông tin nổi bật nhất sau tên công việc.
 - Có thể thêm badge “Lương cao”, “Thưởng ký hợp đồng”, “Remote/Hybrid”, nhưng badge phải lấy từ dữ liệu.
 
-**Liên kết/tương tác:** giống H05; CTA section dẫn tới trang kết quả đã áp bộ lọc lương cao.
+**Liên kết/tương tác:**
+
+- Click vùng card/tiêu đề/tên việc làm → trang thông tin chi tiết của đúng việc làm đó: `/viec-lam/{slug-or-id}`.
+- Các liên kết tên/logo công ty và thao tác bookmark tuân theo Job card chuẩn tại H05.
+- CTA section dẫn tới trang kết quả đã áp bộ lọc lương cao.
 
 ### H07. Công ty nổi bật
 
@@ -524,6 +528,12 @@ Tên tab có thể thay đổi theo taxonomy thật nhưng mỗi tab phải ánh
 - `matchScore` và `matchReasons` PHẢI do backend cung cấp; frontend không tự suy diễn phần trăm.
 - Khi hồ sơ thiếu dữ liệu, thay danh sách bằng CTA hoàn thiện hồ sơ; không bịa kết quả matching.
 
+**Liên kết/tương tác:**
+
+- Click vùng card/tiêu đề/tên việc làm → trang thông tin chi tiết của đúng việc làm đó: `/viec-lam/{slug-or-id}`.
+- Các liên kết tên/logo công ty và thao tác bookmark tuân theo Job card chuẩn tại H05.
+- CTA “Tùy chỉnh tiêu chí gợi ý” và CTA “Cập nhật CV” phải dùng route/action thật của dự án; nếu chưa có thì ghi rõ dependency, không giả lập thành công.
+
 ### H10. Đề xuất mẫu CV
 
 **Mục đích:** Thay hoàn toàn hai banner quảng bá cũ bằng khu vực giúp ứng viên khám phá và bắt đầu tạo CV từ một mẫu phù hợp.
@@ -531,6 +541,7 @@ Tên tab có thể thay đổi theo taxonomy thật nhưng mỗi tab phải ánh
 **Tiêu đề và CTA:**
 
 - Tiêu đề section: **“Khám phá mẫu CV phù hợp với bạn”**.
+- Không hiển thị eyebrow/tiêu đề phụ **“Tạo CV nhanh chóng”** phía trên tiêu đề section.
 - Có thể hiển thị số lượng mẫu đã được backend xác nhận, ví dụ “Hơn 100 mẫu”; không hard-code số lượng như dữ liệu thật.
 - Link/button **“Xem tất cả”** nằm bên phải tiêu đề trên desktop và dẫn tới route trang tạo CV `/tao-cv`.
 - Nếu router dự án đích dùng route khác, PHẢI ánh xạ `/tao-cv` sang route tương ứng; không dùng `href="#"`.
@@ -563,6 +574,8 @@ Tên tab có thể thay đổi theo taxonomy thật nhưng mỗi tab phải ánh
 
 **Mục đích:** Đề xuất khóa học từ các đơn vị liên kết với EasyCV, được cá nhân hóa để giúp ứng viên bổ sung năng lực phù hợp với định hướng nghề nghiệp và nhu cầu tìm việc.
 
+**Trình bày tiêu đề:** Chỉ hiển thị tiêu đề **“Khóa học nâng cao kỹ năng”**; không hiển thị dòng mô tả phụ bên dưới tiêu đề.
+
 **Nguồn dữ liệu và nguyên tắc cá nhân hóa:**
 
 - Chỉ hiển thị khóa học do các đơn vị có liên kết với EasyCV cung cấp và còn hiệu lực hiển thị; không tự tổng hợp khóa học từ nguồn không được phê duyệt.
@@ -588,13 +601,15 @@ Tên tab có thể thay đổi theo taxonomy thật nhưng mỗi tab phải ánh
 
 **Tương tác:**
 
-- Click card → `/khoa-hoc/{slug-or-id}`.
+- Click card/tên khóa học → `/khoa-hoc/{slug-or-id}`.
 - Auto chuyển 5 giây, dừng khi hover/focus/reduced motion.
 - Có nút previous/next với accessible name; không chỉ hỗ trợ kéo chuột.
 
 ### H12. Sự kiện tuyển dụng
 
 **Mục đích:** Kết nối ứng viên với nhà tuyển dụng và hoạt động phát triển nghề nghiệp.
+
+**Trình bày tiêu đề:** Chỉ hiển thị tiêu đề **“Sự kiện tuyển dụng”**; không hiển thị dòng mô tả phụ bên dưới tiêu đề.
 
 **Bố cục:**
 
@@ -618,6 +633,8 @@ Tên tab có thể thay đổi theo taxonomy thật nhưng mỗi tab phải ánh
 ### H13. Ngành nghề và từ khóa phổ biến
 
 **Mục đích:** Cung cấp lối vào khám phá dành cho người chưa biết chính xác chức danh cần tìm và hỗ trợ SEO nội bộ.
+
+**Trình bày tiêu đề:** Chỉ hiển thị tiêu đề **“Ngành nghề & từ khóa phổ biến”**; không hiển thị dòng mô tả phụ bên dưới tiêu đề.
 
 **Phần A – 8 ngành phổ biến:**
 
@@ -648,17 +665,74 @@ Danh mục mẫu: Công nghệ thông tin; Kinh doanh/Bán hàng; Marketing/Truy
 **Footer chính:**
 
 - Desktop 5 cột theo tỷ lệ `2fr 1fr 1fr 1fr 1.5fr`, gap 40px.
-- Cột 1: logo sáng, mô tả EasyCV, thông tin giấy phép/chứng nhận.
-- Cột 2: Về EasyCV.
-- Cột 3: Dành cho ứng viên.
-- Cột 4: Nhà tuyển dụng.
-- Cột 5: Liên hệ và trụ sở.
-- Footer bottom: copyright, điều khoản, chính sách và social icons.
+- Mobile xếp 1 cột theo đúng thứ tự từ cột 1 đến cột 5; không đổi nhóm liên kết chỉ để lấp khoảng trống.
+- Prototype hiện không có form đăng ký nhận tin trong footer; AI không tự bổ sung form nếu chưa có yêu cầu nghiệp vụ riêng.
+
+**Cột 1 – Thương hiệu và pháp lý:**
+
+- Logo EasyCV, mô tả ngắn về nền tảng, số giấy phép hoạt động dịch vụ việc làm và các chứng nhận/nhãn tin cậy đã được phê duyệt.
+- Click logo → `/`.
+- Đoạn giới thiệu là nội dung đọc, không bắt buộc click. Chỉ liên kết sang `/gioi-thieu` nếu Product Owner yêu cầu rõ.
+- Số giấy phép/chứng nhận chỉ được click khi có trang chi tiết hoặc URL tra cứu chính thức đã được pháp chế xác nhận; nếu chưa có, hiển thị dạng văn bản, không dùng `href="#"`.
+
+**Cột 2 – Về EasyCV:**
+
+| Nhãn liên kết | Đích logic đề xuất | Nội dung trang đích |
+|---|---|---|
+| Giới thiệu nền tảng | `/gioi-thieu` | Thông tin doanh nghiệp, sứ mệnh, sản phẩm và hệ sinh thái EasyCV |
+| Ban điều hành & Cố vấn | `/ve-easycv/ban-dieu-hanh` | Hồ sơ ban điều hành và đội ngũ cố vấn đã được phép công bố |
+| Tuyển dụng tại EasyCV | `/tuyen-dung-easycv` | Danh sách vị trí EasyCV đang tuyển hoặc trang nghề nghiệp nội bộ |
+| Quy chế hoạt động sàn | `/quy-che-hoat-dong` | Quy chế vận hành sàn giao dịch việc làm |
+| Giải quyết khiếu nại | `/giai-quyet-khieu-nai` | Quy trình, thời hạn và kênh tiếp nhận khiếu nại |
+| Chính sách bảo mật | `/chinh-sach-bao-mat` | Chính sách xử lý và bảo vệ dữ liệu cá nhân |
+| Báo chí và Truyền thông | `/bao-chi` | Tin tức, thông cáo báo chí và tài nguyên truyền thông |
+
+**Cột 3 – Dành cho ứng viên:**
+
+| Nhãn liên kết | Đích logic đề xuất | Yêu cầu điều hướng |
+|---|---|---|
+| Tìm kiếm việc làm mới | `/viec-lam` | Mở trang kết quả việc làm ở trạng thái mặc định |
+| Tạo CV online chuẩn ATS | `/tao-cv` | Mở luồng tạo CV; nếu cần đăng nhập phải giữ `returnUrl` |
+| Mẫu CV chuyên nghiệp | `/tao-cv#danh-sach-mau` | Mở trang tạo CV và focus/scroll tới danh sách mẫu; nếu router không hỗ trợ fragment thì dùng route/filter tương đương |
+| Công cụ tính lương Gross - Net | `/cong-cu/tinh-luong-gross-net` | Mở công cụ tính lương, không tự điền dữ liệu cá nhân khi chưa có đồng ý |
+| Trắc nghiệm nghề nghiệp MBTI | `/cong-cu/trac-nghiem-mbti` | Mở bài trắc nghiệm hoặc trang giới thiệu trước khi bắt đầu |
+| Cẩm nang viết CV & Phỏng vấn | `/cam-nang` | Mở chuyên mục nội dung dành cho ứng viên |
+| Báo cáo thị trường lương 2026 | `/bao-cao-thi-truong-lao-dong/luong-2026` | Mở báo cáo đúng năm; năm hiển thị phải lấy từ nội dung được xuất bản, không tự tăng theo năm hệ thống |
+
+**Cột 4 – Nhà tuyển dụng:**
+
+Các liên kết trong cột này mở module/cổng nhà tuyển dụng theo cấu hình của dự án; có thể cùng domain hoặc khác domain. Nếu mở domain khác, dùng URL được cấu hình, không hard-code môi trường production trong component.
+
+| Nhãn liên kết | Đích logic | Nội dung trang đích |
+|---|---|---|
+| Đăng tin tuyển dụng | Cổng nhà tuyển dụng → route đăng tin | Form/luồng tạo tin tuyển dụng; yêu cầu đăng nhập nhà tuyển dụng nếu cần |
+| Tìm kiếm hồ sơ ứng viên | Cổng nhà tuyển dụng → kho hồ sơ | Tìm kiếm và lọc hồ sơ theo quyền/gói dịch vụ |
+| Giải pháp EasyCV ATS | Trang sản phẩm ATS | Giới thiệu tính năng ATS và CTA đăng ký tư vấn/dùng thử |
+| Dịch vụ Headhunter cao cấp | Trang dịch vụ Headhunter | Phạm vi dịch vụ và form liên hệ tư vấn |
+| Báo giá & Gói tuyển dụng | Trang bảng giá nhà tuyển dụng | Gói dịch vụ, quyền lợi và điều kiện áp dụng hiện hành |
+| Quảng bá thương hiệu nhà tuyển dụng | Trang Employer Branding | Các hình thức quảng bá và CTA nhận tư vấn |
+| Liên hệ tư vấn doanh nghiệp | Trang/form liên hệ B2B | Thu thập yêu cầu tư vấn; chỉ báo gửi thành công sau phản hồi API |
+
+**Cột 5 – Liên hệ, trụ sở và ứng dụng:**
+
+- Hiển thị địa chỉ trụ sở Hà Nội, văn phòng TP.HCM, hotline, email hỗ trợ và nút tải ứng dụng khi các thông tin này đã được nghiệp vụ xác nhận.
+- Click địa chỉ → URL bản đồ chính thức của đúng địa điểm; liên kết ngoài mở tab mới và dùng `rel="noopener noreferrer"`. Nếu chưa có URL bản đồ đã duyệt, địa chỉ chỉ là văn bản.
+- Click hotline → `tel:{so-dien-thoai-chuan-hoa}`; accessible name phải đọc được số và mục đích hỗ trợ.
+- Click email → `mailto:hotro@easycv.vn` hoặc địa chỉ hỗ trợ được cấu hình thực tế.
+- Nút App Store/Google Play → URL listing chính thức của ứng dụng tương ứng; ẩn hoặc vô hiệu hóa có giải thích nếu ứng dụng chưa phát hành, không dùng anchor giả.
+
+**Thanh cuối footer:**
+
+- Hiển thị copyright và pháp nhân sở hữu; đây là nội dung đọc, không bắt buộc click.
+- Nếu có liên kết Điều khoản sử dụng/Chính sách bảo mật thì lần lượt dẫn tới `/dieu-khoan-su-dung` và `/chinh-sach-bao-mat` hoặc route thật tương ứng.
+- Icon Facebook, LinkedIn, YouTube và TikTok dẫn tới trang/kênh EasyCV chính thức. Liên kết ngoài mở tab mới, có accessible name theo mẫu “EasyCV trên Facebook” và dùng `rel="noopener noreferrer"`.
+- Không hiển thị icon mạng xã hội nếu chưa có URL chính thức được duyệt.
 
 **Ràng buộc nội dung:**
 
 - Số giấy phép, chứng nhận, địa chỉ và số liệu doanh nghiệp phải được pháp chế/nghiệp vụ xác nhận trước production.
-- Social icon phải dẫn tới URL thật và có accessible name.
+- Các route trong bảng là đích logic đề xuất. AI phải ánh xạ sang router/config thật của dự án đích và ghi lại mapping; không tạo trang rỗng chỉ để link hoạt động.
+- Mọi item điều hướng phải dùng link; số điện thoại/email dùng URI phù hợp. Nội dung không có đích hợp lệ phải hiển thị dạng văn bản, không dùng `href="#"` hoặc toast giả.
 
 ### H15. Widget gợi ý AI nổi
 
@@ -680,6 +754,15 @@ Danh mục mẫu: Công nghệ thông tin; Kinh doanh/Bán hàng; Marketing/Truy
 
 ## 7. Quy tắc điều hướng và liên kết
 
+Quy tắc bắt buộc đối với tên thực thể trên trang chủ:
+
+- Click tên việc làm → trang thông tin chi tiết của đúng việc làm đó: `/viec-lam/{slug-or-id}`.
+- Click tên công ty → trang chủ/trang thông tin của đúng công ty đó: `/cong-ty/{slug-or-id}`.
+- Click tên khóa học → trang thông tin chi tiết của đúng khóa học đó: `/khoa-hoc/{slug-or-id}`.
+- Click tên sự kiện tuyển dụng → trang thông tin chi tiết của đúng sự kiện đó: `/su-kien/{slug-or-id}`.
+- Tên thực thể PHẢI được triển khai bằng liên kết điều hướng có accessible name rõ ràng. Khi tên nằm trong card có vùng click lớn hơn, click liên kết tên không được kích hoạt lặp sự kiện click của card cha.
+- Các route trên là đích logic. Nếu module hoặc route chi tiết tương ứng chưa được triển khai trong dự án đích, AI giữ đặc tả giao diện, không dùng `href="#"`, không giả lập điều hướng thành công và PHẢI ghi rõ dependency/route còn thiếu trong báo cáo bàn giao.
+
 | Nguồn thao tác | Đích logic | Yêu cầu |
 |---|---|---|
 | Logo | `/` | Về đầu trang chủ |
@@ -694,7 +777,7 @@ Danh mục mẫu: Công nghệ thông tin; Kinh doanh/Bán hàng; Marketing/Truy
 | VIP | `/vip` | Không mô phỏng thanh toán thành công |
 | Nhà tuyển dụng | Cổng nhà tuyển dụng | Có thể khác domain; mở theo chính sách sản phẩm |
 | Thông báo/tin nhắn | `/thong-bao`, `/tin-nhan` | Yêu cầu auth |
-| Footer | Route nội dung/pháp lý thật | Không để dead link |
+| Footer | Theo ma trận điều hướng tại H14 | Dùng route/config thật; `tel:` cho hotline, `mailto:` cho email, URL chính thức cho bản đồ/app/social; không để dead link |
 
 Nếu router hiện hữu dùng cấu trúc khác, AI phải ánh xạ sang route thật và báo bảng mapping; không tạo hàng loạt route mới chỉ để khớp tên trong tài liệu.
 
@@ -914,6 +997,7 @@ Các component danh sách PHẢI nhận data qua props/view-model, có stable ke
 - [ ] Lịch sử tìm kiếm có thể chạy lại, xóa từng mục và xóa tất cả; dữ liệu còn đúng sau khi reload prototype.
 - [ ] Năm từ khóa phổ biến thực hiện đúng truy vấn tương ứng.
 - [ ] Mỗi việc làm đề xuất hiển thị đủ logo, tiêu đề và lương; click item tìm kiếm/điều hướng theo contract đã chọn.
+- [ ] Click tên việc làm, tên công ty, tên khóa học và tên sự kiện tuyển dụng điều hướng tới đúng trang chi tiết/trang chủ của thực thể tương ứng; nếu route/module chưa tồn tại, dependency được ghi rõ và không dùng link giả.
 - [ ] Popup không hiển thị lại mega-menu ngành nghề cũ.
 - [ ] Bộ lọc kết hợp không ghi đè lẫn nhau; URL phản ánh query khi điều hướng.
 - [ ] Bookmark/follow có auth, pending, success, error và rollback.

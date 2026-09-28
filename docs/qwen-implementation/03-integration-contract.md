@@ -55,7 +55,7 @@ Không tự tạo endpoint dưới đây nếu backend chưa có. Đây là danh
 | Lưu/bỏ lưu việc | job ID, auth | trạng thái `isSaved`, lỗi 401/403/409/network |
 | Theo dõi/bỏ theo dõi | company ID, auth | trạng thái `isFollowed`, lỗi |
 | Thông báo/tin nhắn | auth, cursor | danh sách, unread count, đánh dấu đã đọc |
-| Đăng ký email/sự kiện | email hoặc event ID | xác nhận từ server, lỗi validation/trùng |
+| Đăng ký sự kiện | event ID | xác nhận từ server, lỗi validation/trùng/hết chỗ/hết hạn |
 | Gợi ý phù hợp | auth/profile | jobs và `matchScore` do backend cung cấp |
 | Lấy mẫu CV | `styleCode` tùy chọn | danh sách `CvTemplate`, loading/empty/error; giữ filter khi thử lại |
 
@@ -70,6 +70,7 @@ Khi thiếu API, Qwen dùng fixture riêng có nhãn `demo`, không tạo thành
 - Bookmark, follow, ứng tuyển, thông báo, tin nhắn và hồ sơ yêu cầu auth theo chính sách dự án đích. Với guest, chuyển tới đăng nhập và giữ URL quay lại nếu hệ thống hỗ trợ.
 - CTA quảng cáo/VIP phải có destination và trạng thái tài trợ rõ, không trỏ tới anchor vô nghĩa.
 - Không suy ra quyền nhà tuyển dụng từ trạng thái ứng viên demo trên trang nguồn.
+- Footer phải ánh xạ từng nhóm link theo `01-screen-spec.md`: route nội bộ cho nội dung/ứng viên; URL cấu hình cho cổng nhà tuyển dụng; `tel:`/`mailto:` cho liên hệ; URL chính thức cho bản đồ, kho ứng dụng và mạng xã hội. Không giữ `href="#..."` của prototype trong bản tích hợp.
 
 ## 6. Tiêu chí hoàn thành
 

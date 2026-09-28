@@ -3319,7 +3319,6 @@
 .cv-sheet { position: relative; }
 .cv-template-section { padding: 42px 0 46px; background: var(--bg-primary, #fff); border-bottom: 1px solid var(--border-color, #e2e8f0); }
 .cv-template-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
-.cv-template-eyebrow { display: block; margin-bottom: 5px; color: #f97316; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .cv-template-header h2 { margin: 0; color: var(--text-primary, #0f172a); font-size: clamp(24px, 2.3vw, 32px); line-height: 1.25; }
 .cv-template-actions { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; }
 .cv-template-view-all { min-height: 40px; display: inline-flex; align-items: center; padding: 0 15px; border: 1px solid #f97316; border-radius: 999px; color: #ea580c; font-size: 13px; font-weight: 700; text-decoration: none; }
@@ -3357,5 +3356,5 @@
 [data-theme="dark"] .cv-template-section, [data-theme="dark"] .cv-style-filter, [data-theme="dark"] .cv-template-arrow { background: #0f172a; }
 [data-theme="dark"] .cv-template-header h2, [data-theme="dark"] .cv-template-name, [data-theme="dark"] .cv-template-arrow { color: #f8fafc; }
 @media (max-width: 1024px) { .cv-template-track { grid-auto-columns: calc((100% - 40px) / 3); gap: 20px; } }
-@media (max-width: 640px) { .cv-template-section { padding: 32px 0; }.cv-template-header { align-items: flex-start; }.cv-template-actions { gap: 6px; }.cv-template-view-all { min-height: 38px; padding: 0 12px; }.cv-template-arrow { width: 38px; height: 38px; }.cv-template-track { grid-auto-columns: minmax(210px, 78%); gap: 14px; }.cv-template-header h2 { font-size: 22px; }.cv-template-eyebrow { font-size: 10px; } }
+@media (max-width: 640px) { .cv-template-section { padding: 32px 0; }.cv-template-header { align-items: flex-start; }.cv-template-actions { gap: 6px; }.cv-template-view-all { min-height: 38px; padding: 0 12px; }.cv-template-arrow { width: 38px; height: 38px; }.cv-template-track { grid-auto-columns: minmax(210px, 78%); gap: 14px; }.cv-template-header h2 { font-size: 22px; } }
 @media (prefers-reduced-motion: reduce) { .cv-template-viewport { scroll-behavior: auto; }.cv-sheet { transition: none; } }

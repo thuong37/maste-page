@@ -16,11 +16,11 @@ Màn hình giúp ứng viên tìm việc theo từ khóa/địa điểm, khám p
 | H06 | Công ty nổi bật | Vị trí theo gói hiển thị; 4 card/trang (2 cột × 2 hàng), tự chuyển 5 giây, có chỉ báo trang; card có cover, logo, ngành, xác thực, theo dõi và số việc | `#cong-ty-tieu-bieu` |
 | H07 | Quảng bá VIP | Khối infeed giới thiệu VIP Pro, CTA dùng thử | `.infeed-vip-ad-section` |
 | H08 | Việc làm phù hợp | Banner hoàn thiện hồ sơ, tab gợi ý, job card với mức khớp mẫu | `#viec-lam-phu-hop` |
-| H09 | Đề xuất mẫu CV | Tiêu đề “Khám phá mẫu CV phù hợp với bạn”, bộ lọc Tất cả/Đơn giản/Chuyên nghiệp/Hiện đại/Ấn tượng/ATS, carousel preview CV và CTA “Xem tất cả” | Component `CvTemplateRecommendations`; thay hoàn toàn `.promo-banners-grid` cũ |
-| H10 | Khóa học | Card khóa học, ảnh, tag, giảng viên, đánh giá, giá; carousel | `#goi-y-khoa-hoc` |
-| H11 | Sự kiện | Card ngày, hình thức, đơn vị tổ chức, mô tả, số người, CTA | `#goi-y-su-kien` |
-| H12 | Ngành nghề/từ khóa | Lưới ngành và các từ khóa tìm kiếm nhanh | `#tu-khoa-pho-bien` |
-| H13 | Footer + AI nổi | Form nhận tin, các cột liên kết, liên hệ, social; nút gợi ý AI và popover | `#chan-trang`, `.floating-ai-widget` |
+| H09 | Đề xuất mẫu CV | Chỉ hiển thị tiêu đề “Khám phá mẫu CV phù hợp với bạn” (không có eyebrow “Tạo CV nhanh chóng”), bộ lọc Tất cả/Đơn giản/Chuyên nghiệp/Hiện đại/Ấn tượng/ATS, carousel preview CV và CTA “Xem tất cả” | Component `CvTemplateRecommendations`; thay hoàn toàn `.promo-banners-grid` cũ |
+| H10 | Khóa học | Chỉ hiển thị tiêu đề “Khóa học nâng cao kỹ năng”, không có dòng mô tả phụ; card khóa học, ảnh, tag, giảng viên, đánh giá, giá; carousel | `#goi-y-khoa-hoc` |
+| H11 | Sự kiện | Chỉ hiển thị tiêu đề “Sự kiện tuyển dụng”, không có dòng mô tả phụ; card ngày, hình thức, đơn vị tổ chức, mô tả, số người, CTA | `#goi-y-su-kien` |
+| H12 | Ngành nghề/từ khóa | Chỉ hiển thị tiêu đề “Ngành nghề & từ khóa phổ biến”, không có dòng mô tả phụ; lưới ngành và các từ khóa tìm kiếm nhanh | `#tu-khoa-pho-bien` |
+| H13 | Footer + AI nổi | Footer 5 cột: thương hiệu/pháp lý, Về EasyCV, Ứng viên, Nhà tuyển dụng, Liên hệ & ứng dụng; thanh copyright/social; không có form nhận tin. Kèm nút gợi ý AI và popover | `#chan-trang`, `.floating-ai-widget` |
 
 ## 3. Header và hero
 
@@ -40,7 +40,18 @@ Màn hình giúp ứng viên tìm việc theo từ khóa/địa điểm, khám p
 - `event-card`: nhãn ngày và hình thức, tên, tổ chức, mô tả, số tham gia mẫu, nút đăng ký.
 - Khu vực mẫu CV dùng ảnh preview tỷ lệ A4, desktop 5 mẫu, tablet 3 mẫu, mobile 1–2 mẫu; không tự chuyển carousel. Click card mở editor bằng đúng `templateId`; “Xem tất cả” mở trang tạo CV.
 
-## 5. Hệ thị giác
+## 5. Footer và điều hướng
+
+- Cột thương hiệu/pháp lý: logo về `/`; mô tả, giấy phép và chứng nhận là văn bản trừ khi có URL tra cứu chính thức được duyệt.
+- Cột **Về EasyCV**: Giới thiệu, Ban điều hành & Cố vấn, Tuyển dụng tại EasyCV, Quy chế hoạt động sàn, Giải quyết khiếu nại, Chính sách bảo mật, Báo chí và Truyền thông.
+- Cột **Dành cho Ứng viên**: tìm việc `/viec-lam`; tạo/xem mẫu CV `/tao-cv`; các route thật của công cụ Gross–Net, MBTI, Cẩm nang và Báo cáo lương.
+- Cột **Nhà tuyển dụng**: đăng tin, tìm hồ sơ, ATS, Headhunter, bảng giá, Employer Branding và liên hệ tư vấn; tất cả đi qua URL cổng nhà tuyển dụng được cấu hình.
+- Cột **Liên hệ & Trụ sở**: địa chỉ có thể mở URL bản đồ đã duyệt; hotline dùng `tel:`; email dùng `mailto:`; App Store/Google Play dùng listing chính thức.
+- Thanh cuối: copyright; Điều khoản/Chính sách nếu có; Facebook, LinkedIn, YouTube, TikTok dùng URL kênh EasyCV chính thức.
+- Route cụ thể phải ánh xạ theo router hiện hữu. Không dùng `href="#"`, không tạo trang rỗng và không hiển thị item bên ngoài khi chưa có URL chính thức. Liên kết ngoài mở tab mới với `rel="noopener noreferrer"`.
+- Prototype hiện không có form đăng ký nhận tin trong footer; không tự bổ sung form.
+
+## 6. Hệ thị giác
 
 - Font chính: Plus Jakarta Sans với fallback hệ thống. Lấy token từ `assets/design-tokens.css`.
 - Màu thương hiệu: cam `#F97316`, hover `#EA580C`, xanh đen `#0F172A`, nền phụ `#F8FAFC`, viền `#E2E8F0`. Giữ các màu riêng của thành phần trong CSS nguồn nếu mục tiêu là bám sát bản mẫu.
@@ -49,7 +60,7 @@ Màn hình giúp ứng viên tìm việc theo từ khóa/địa điểm, khám p
 - Màn desktop: grid job/công ty nhiều cột. Tablet: giảm số cột. Mobile: card một cột, bộ tìm kiếm và menu đủ rộng, không tràn ngang. Carousel khóa học hiển thị 4/2/1 card theo độ rộng >1100 / 641–1100 / ≤640px.
 - Dark mode tồn tại dưới `[data-theme="dark"]`, nhưng nút bật chỉ ở thanh demo. Nếu dự án đích có theme thật, nối vào hệ theme đó.
 
-## 6. Accessibility và nội dung
+## 7. Accessibility và nội dung
 
 - Dùng landmark `header`, `nav`, `main`, `section`, `footer`; mỗi trang chỉ có một H1.
 - Nút icon có tên dễ hiểu; dropdown/drawer/picker cập nhật `aria-expanded`, trạng thái chọn dùng `aria-pressed` hoặc cấu trúc phù hợp. `Esc` đóng lớp nổi, focus quay về nút mở.
