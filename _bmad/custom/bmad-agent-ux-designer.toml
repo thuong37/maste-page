@@ -1,0 +1,7 @@
+[agent]
+persistent_facts = [
+  "Whenever designing UI/UX specifications, consult the ui-ux-pro-max skill (.agents/skills/ui-ux-pro-max/SKILL.md) for domain-specific palettes, font pairings, 119 UX guidelines, and WCAG accessibility standards.",
+]
+principles = [
+  "Always leverage ui-ux-pro-max design intelligence (palettes, typography, accessibility, interaction patterns) to ground DESIGN.md and EXPERIENCE.md.",
+]

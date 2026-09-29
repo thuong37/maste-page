@@ -1217,10 +1217,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const searchParams = new URLSearchParams();
       if (query) searchParams.set('keyword', query);
-      if (location) searchParams.set('locations', location);
+      if (location) searchParams.set('location', location);
 
       const queryString = searchParams.toString();
-      window.location.assign(`/viec-lam${queryString ? `?${queryString}` : ''}`);
+      window.location.assign(`viec-lam.html${queryString ? `?${queryString}` : ''}`);
     }
 
     // Input Events
@@ -1330,6 +1330,35 @@ document.addEventListener('DOMContentLoaded', () => {
         const kw = chip.getAttribute('data-keyword') || chip.textContent.trim().replace(/^🔥\s*/, '');
         executeSearch(kw);
       });
+    });
+
+    // Navbar Logo & "Tìm việc" / "Tìm kiếm việc làm" interactions on homepage
+    const navbarBrandLogo = document.getElementById('navbarBrandLogo') || document.querySelector('.navbar-brand');
+    navbarBrandLogo?.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    function focusHeroSearch(e) {
+      e.preventDefault();
+      const heroBox = document.getElementById('heroSearchBox');
+      if (heroBox) {
+        heroBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => {
+          heroSearchInput?.focus();
+        }, 320);
+      }
+    }
+
+    document.getElementById('navLinkTimViec')?.addEventListener('click', focusHeroSearch);
+    document.getElementById('dropdownItemTimKiemViecLam')?.addEventListener('click', focusHeroSearch);
+    document.getElementById('mobileLinkTimKiemViecLam')?.addEventListener('click', (e) => {
+      const overlay = document.getElementById('mobile-drawer-overlay');
+      if (overlay) {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      focusHeroSearch(e);
     });
 
     // Initialize

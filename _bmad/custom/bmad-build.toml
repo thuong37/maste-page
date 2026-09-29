@@ -1,0 +1,4 @@
+[workflow]
+persistent_facts = [
+  "When implementing frontend UI or screens, adhere to ui-ux-pro-max guidelines (.agents/skills/ui-ux-pro-max/SKILL.md) for responsive design, component interaction patterns, and WCAG accessibility standards.",
+]
