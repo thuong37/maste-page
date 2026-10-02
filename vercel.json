@@ -7,6 +7,10 @@
       "destination": "/viec-lam.html"
     },
     {
+      "source": "/chi-tiet-viec-lam",
+      "destination": "/chi-tiet-viec-lam.html"
+    },
+    {
       "source": "/((?!assets/|css/|js/|.*\\..*).*)",
       "destination": "/index.html"
     }

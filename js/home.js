@@ -51,65 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateArrows);
     updateArrows();
   }
-  const courseSection = document.querySelector('#goi-y-khoa-hoc');
-  const courseGrid = courseSection?.querySelector('.courses-grid');
-  if (courseGrid) {
-    const samples = [
-      { id: 'cloud', title: 'AWS Cloud Practitioner từ cơ bản đến thực hành', category: 'Cloud Computing', categoryCode: 'cloud-computing', provider: 'Cloud Skills Academy', rating: '4.9 (1.8k học viên)', price: '1.790.000đ', old: '2.990.000đ', image: 'photo-1451187580459-43490279c0fa' },
-      { id: 'marketing', title: 'Digital Marketing & tối ưu chiến dịch đa kênh', category: 'Digital Marketing', categoryCode: 'digital-marketing', provider: 'Growth Learning Hub', rating: '4.8 (2.1k học viên)', price: '1.390.000đ', old: '2.490.000đ', image: 'photo-1460925895917-afdab827c52f' },
-      { id: 'product', title: 'Quản lý sản phẩm: Từ ý tưởng đến ra mắt', category: 'Product Management', categoryCode: 'product-management', provider: 'Product Leaders Academy', rating: '4.9 (980 học viên)', price: '1.690.000đ', old: '2.890.000đ', image: 'photo-1552664730-d307ca884978' },
-      { id: 'excel', title: 'Excel nâng cao & tự động hóa báo cáo', category: 'Office Skills', categoryCode: 'office-skills', provider: 'Business Skills Center', rating: '4.8 (3.2k học viên)', price: '990.000đ', old: '1.790.000đ', image: 'photo-1543286386-713bdd548da4' }
-    ];
-    const star = '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
-    samples.forEach(course => {
-      const card = document.createElement('a');
-      card.className = 'course-card';
-      card.href = `#khoa-hoc-${course.id}`;
-      card.dataset.providerType = 'easycv-partner';
-      card.dataset.categoryCode = course.categoryCode;
-      card.innerHTML = `<div class="course-thumb-wrap" style="background-image:url('https://images.unsplash.com/${course.image}?auto=format&fit=crop&w=500&q=80')"><span class="course-category-tag">${course.category}</span><span class="course-match-badge">Đối tác EasyCV</span></div><div class="course-body"><h3 class="course-title">${course.title}</h3><div class="course-instructor"><span>Đơn vị liên kết: ${course.provider}</span></div><div class="course-meta-row"><span class="course-rating">${star} ${course.rating}</span><div class="course-price-wrap"><span class="course-price-sale">${course.price}</span><span class="course-price-old">${course.old}</span></div></div></div>`;
-      courseGrid.appendChild(card);
-    });
-
-    const cards = [...courseGrid.querySelectorAll('.course-card')];
-    const controls = document.createElement('div');
-    controls.className = 'course-carousel-controls';
-    controls.setAttribute('aria-label', 'Điều hướng khóa học');
-    controls.innerHTML = '<button class="course-carousel-arrow" type="button" aria-label="Nhóm khóa học trước">‹</button><div class="course-carousel-dots"></div><button class="course-carousel-arrow" type="button" aria-label="Nhóm khóa học tiếp theo">›</button>';
-    courseGrid.after(controls);
-    const dotsWrap = controls.querySelector('.course-carousel-dots');
-    let page = 0;
-    let timer;
-    const pageSize = () => window.innerWidth <= 640 ? 1 : window.innerWidth <= 1100 ? 2 : 4;
-    const render = () => {
-      const size = pageSize();
-      const count = Math.ceil(cards.length / size);
-      page = Math.min(page, count - 1);
-      cards.forEach((card, index) => { card.hidden = Math.floor(index / size) !== page; });
-      dotsWrap.replaceChildren();
-      for (let i = 0; i < count; i++) {
-        const dot = document.createElement('button');
-        dot.type = 'button';
-        dot.className = 'course-carousel-dot';
-        dot.setAttribute('aria-label', `Nhóm khóa học ${i + 1}`);
-        dot.setAttribute('aria-current', String(i === page));
-        dot.addEventListener('click', () => { page = i; render(); restart(); });
-        dotsWrap.appendChild(dot);
-      }
-    };
-    const advance = step => { page = (page + step + Math.ceil(cards.length / pageSize())) % Math.ceil(cards.length / pageSize()); render(); };
-    const stop = () => { clearInterval(timer); timer = undefined; };
-    const restart = () => { stop(); if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && !courseSection.matches(':hover, :focus-within')) timer = setInterval(() => advance(1), 5000); };
-    controls.querySelectorAll('.course-carousel-arrow').forEach((button, index) => button.addEventListener('click', () => { advance(index ? 1 : -1); restart(); }));
-    courseSection.addEventListener('mouseenter', stop);
-    courseSection.addEventListener('mouseleave', restart);
-    courseSection.addEventListener('focusin', stop);
-    courseSection.addEventListener('focusout', () => setTimeout(restart, 0));
-    window.addEventListener('resize', () => { render(); restart(); });
-    document.addEventListener('visibilitychange', () => document.hidden ? stop() : restart());
-    render();
-    restart();
-  }
   // --- 1. Toast Notification Utility ---
   let toastContainer = document.querySelector('.easycv-toast-container');
   if (!toastContainer) {
@@ -222,13 +163,27 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = document.createElement('div');
       card.className = 'company-card';
       card.innerHTML = `
-        <div class="company-cover" style="background-image: url('https://images.unsplash.com/${company.image}?auto=format&fit=crop&w=400&q=80');"><div class="company-cover-overlay"></div></div>
+        <div class="company-cover" style="background-image: url('https://images.unsplash.com/${company.image}?auto=format&fit=crop&w=400&q=80');">
+          <div class="company-cover-overlay"></div>
+        </div>
         <div class="company-card-body">
           <div class="company-card-logo-wrap"><span class="company-card-logo-mark ${company.logoClass}" role="img" aria-label="${company.name}">${company.logo}</span></div>
-          <a href="#${company.slug}-profile" class="company-card-title"><span>${company.name}</span><span class="badge-verified-inline"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span></a>
+          <div class="company-card-header-row">
+            <a href="viec-lam.html?q=${encodeURIComponent(company.name)}" class="company-card-title">
+              <span>${company.name}</span>
+              <span class="badge-verified-inline"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
+            </a>
+            <button class="btn-follow-company" type="button" data-followers="${company.followers}" aria-label="Theo dõi ${company.name}">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+              <span>Theo dõi</span>
+            </button>
+          </div>
           <span class="company-industry">${company.industry}</span>
           <div class="company-meta-stats"><span class="company-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>${company.rating} <span class="company-rating-count">· ${company.reviews}</span></span><span class="company-open-jobs">${company.jobs} <span class="company-stat-label">việc làm đang mở</span></span></div>
-          <button class="btn-follow-company" type="button"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span>Theo dõi (${company.followers})</span></button>
+          <a href="viec-lam.html?q=${encodeURIComponent(company.name)}" class="btn-company-jobs">
+            <span>Xem vị trí tuyển dụng</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
         </div>`;
       companiesGrid.appendChild(card);
     });
@@ -349,27 +304,34 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- 5. Follow Company Toggle ---
-  const followBtns = document.querySelectorAll('.btn-follow-company');
-  followBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const isFollowing = btn.classList.toggle('following');
-      const companyName = btn.closest('.company-card')?.querySelector('.company-card-title')?.textContent?.trim() || 'doanh nghiệp';
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn-follow-company');
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const isFollowing = btn.classList.toggle('following');
+    const companyCard = btn.closest('.company-card');
+    const companyName = companyCard?.querySelector('.company-card-title span')?.textContent?.trim()
+      || companyCard?.querySelector('.company-card-title')?.textContent?.trim()
+      || 'doanh nghiệp';
+    const followers = btn.getAttribute('data-followers');
+    const followCountText = followers ? ` (${followers})` : '';
 
-      if (isFollowing) {
-        btn.innerHTML = `
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>Đang theo dõi</span>
-        `;
-        showToast(`Bạn đang theo dõi ${companyName}. Sẽ nhận thông báo khi có tuyển dụng mới!`, '✓');
-      } else {
-        btn.innerHTML = `
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          <span>Theo dõi</span>
-        `;
-        showToast(`Đã hủy theo dõi ${companyName}.`, '✕');
-      }
-    });
+    if (isFollowing) {
+      btn.innerHTML = `
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Đang theo dõi</span>
+      `;
+      btn.setAttribute('aria-pressed', 'true');
+      showToast(`Bạn đang theo dõi ${companyName}. Sẽ nhận thông báo khi có tuyển dụng mới!`, '✓');
+    } else {
+      btn.innerHTML = `
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        <span>Theo dõi</span>
+      `;
+      btn.setAttribute('aria-pressed', 'false');
+      showToast(`Đã hủy theo dõi ${companyName}.`, '✕');
+    }
   });
 
   // --- 6. Quick Keyword Click-to-Search ---
@@ -521,6 +483,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnIndustryPrevPage = document.getElementById('btnIndustryPrevPage');
   const btnIndustryNextPage = document.getElementById('btnIndustryNextPage');
   const industryMegaContent = document.getElementById('industryMegaContent');
+  const industryFilterTrigger = document.getElementById('industryFilterTrigger');
+  const industryFilterLabel = document.getElementById('industryFilterLabel');
+  const industryFilterSearch = document.getElementById('industryFilterSearch');
+  const industryPickerClose = document.getElementById('industryPickerClose');
+  const industryFilterClear = document.getElementById('industryFilterClear');
+  const industryFilterCancel = document.getElementById('industryFilterCancel');
+  const industryFilterApply = document.getElementById('industryFilterApply');
+  const industryPickerStatus = document.getElementById('industryPickerStatus');
 
   if (heroSearchWrapper && heroSearchInput && searchSuggestDropdown) {
     heroSearchInput.setAttribute('aria-haspopup', 'dialog');
@@ -951,6 +921,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentIndustryPage = 1;
     let selectedCategoryKey = 'sales'; // Mặc định mở ngành Kinh doanh/Bán hàng theo ảnh mẫu
+    let appliedIndustry = '';
+    let pendingIndustry = '';
+    let appliedIndustryKey = '';
+    let pendingIndustryKey = '';
+    let appliedIndustryIsCategory = false;
+    let pendingIndustryIsCategory = false;
+    let industrySearchMatch = null;
+    const RESULT_CATEGORY_KEYS = new Set(['it', 'sales', 'marketing', 'finance', 'hr', 'logistics']);
+
+    function normalizeIndustryText(value) {
+      return (value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[đĐ]/g, 'd').toLocaleLowerCase('vi').trim();
+    }
+
+    function findIndustryMatch(value) {
+      const query = normalizeIndustryText(value);
+      if (!query) return null;
+      for (let pageIndex = 0; pageIndex < INDUSTRY_PAGES.length; pageIndex++) {
+        for (const category of INDUSTRY_PAGES[pageIndex]) {
+          if (normalizeIndustryText(category.name).includes(query)) return { category, page: pageIndex + 1, term: category.name, isCategory: true };
+          for (const role of category.hotSearches || []) {
+            if (normalizeIndustryText(role).includes(query)) return { category, page: pageIndex + 1, term: role, isCategory: false };
+          }
+          for (const group of category.subgroups || []) {
+            if (normalizeIndustryText(group.title).includes(query)) return { category, page: pageIndex + 1, term: group.title, isCategory: false };
+            const role = group.roles.find(item => normalizeIndustryText(item).includes(query));
+            if (role) return { category, page: pageIndex + 1, term: role, isCategory: false };
+          }
+        }
+      }
+      return null;
+    }
 
     function getHistory() {
       try {
@@ -1058,8 +1059,10 @@ document.addEventListener('DOMContentLoaded', () => {
       currentList.forEach(cat => {
         const itemBtn = document.createElement('button');
         itemBtn.type = 'button';
-        itemBtn.className = `industry-nav-item ${cat.key === selectedCategoryKey ? 'active' : ''}`;
+        itemBtn.className = `industry-nav-item ${cat.key === selectedCategoryKey ? 'active' : ''}${cat.name === pendingIndustry ? ' is-selected-category' : ''}`;
         itemBtn.setAttribute('data-category', cat.key);
+        itemBtn.setAttribute('data-industry-name', cat.name);
+        itemBtn.setAttribute('aria-pressed', String(cat.name === pendingIndustry));
         itemBtn.innerHTML = `
           <span>${cat.name}</span>
           <span class="nav-item-chevron">
@@ -1070,6 +1073,11 @@ document.addEventListener('DOMContentLoaded', () => {
         itemBtn.addEventListener('click', (e) => {
           e.preventDefault();
           selectCategory(cat.key);
+          pendingIndustry = cat.name;
+          pendingIndustryKey = cat.key;
+          pendingIndustryIsCategory = true;
+          renderIndustryNav();
+          updateIndustrySelection();
         });
 
         itemBtn.addEventListener('mouseenter', () => {
@@ -1115,34 +1123,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let html = '';
 
-      // Phần 1: Khối "Được tìm kiếm nhiều" với biểu tượng lửa đỏ
-      if (catData.hotSearches && catData.hotSearches.length > 0) {
-        html += `
-          <div class="mega-section-hot">
-            <span class="mega-hot-label">Được tìm kiếm nhiều</span>
-            <div class="mega-hot-tags">
-              ${catData.hotSearches.map(role => `
-                <button type="button" class="hot-search-pill" data-role="${role}">
-                  <span class="hot-fire-icon">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.1 0 2 .9 2 2 0 .74-.4 1.38-1 1.72V7a5 5 0 0 1 5 5v1.28c.6.34 1 .98 1 1.72 0 1.1-.9 2-2 2h-1a5 5 0 0 1-5 5v1c0 1.1-.9 2-2 2s-2-.9-2-2v-1a5 5 0 0 1-5-5H2c-1.1 0-2-.9-2-2 0-.74.4-1.38 1-1.72V12a5 5 0 0 1 5-5V5.72C5.4 5.38 5 4.74 5 4c0-1.1.9-2 2-2h5z" opacity="0"/></svg>🔥
-                  </span>
-                  <span>${role}</span>
-                </button>
-              `).join('')}
-            </div>
-          </div>
-        `;
-      }
-
-      // Phần 2: Các nhóm danh mục chi tiết (mỗi nhóm gồm tên nhóm và các tag vị trí)
+      // Các nhóm danh mục chi tiết (mỗi nhóm gồm tên nghề kèm checkbox và các vị trí chuyên môn)
       if (catData.subgroups && catData.subgroups.length > 0) {
         catData.subgroups.forEach(group => {
+          const isSelected = group.title === pendingIndustry;
           html += `
             <div class="mega-subgroup-row">
-              <span class="mega-subgroup-title">${group.title}</span>
+              <div class="category-role-title-wrap" data-role="${group.title}">
+                <span class="cat-checkbox ${isSelected ? 'is-checked' : ''}">
+                  <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span class="mega-subgroup-title">${group.title}</span>
+              </div>
               <div class="mega-subgroup-tags">
                 ${group.roles.map(r => `
-                  <button type="button" class="subgroup-tag-pill" data-role="${r}">${r}</button>
+                  <button type="button" class="subgroup-tag-pill${r === pendingIndustry ? ' is-selected' : ''}" data-role="${r}" aria-pressed="${r === pendingIndustry}">${r}</button>
                 `).join('')}
               </div>
             </div>
@@ -1161,13 +1156,28 @@ document.addEventListener('DOMContentLoaded', () => {
       industryMegaContent.innerHTML = html;
       industryMegaContent.scrollTop = 0;
 
-      // Gắn sự kiện click tìm kiếm cho tất cả các thẻ vị trí
+      // Gắn sự kiện click tìm kiếm cho các thẻ vị trí và tiêu đề nhóm
       const allPills = industryMegaContent.querySelectorAll('.hot-search-pill, .subgroup-tag-pill');
       allPills.forEach(pill => {
         pill.addEventListener('click', (e) => {
           e.preventDefault();
           const role = pill.getAttribute('data-role') || pill.textContent.trim();
-          executeSearch(role);
+          pendingIndustry = role;
+          pendingIndustryKey = selectedCategoryKey;
+          pendingIndustryIsCategory = false;
+          updateIndustrySelection();
+        });
+      });
+
+      const allRoleTitles = industryMegaContent.querySelectorAll('.category-role-title-wrap');
+      allRoleTitles.forEach(wrap => {
+        wrap.addEventListener('click', (e) => {
+          e.preventDefault();
+          const role = wrap.getAttribute('data-role') || wrap.textContent.trim();
+          pendingIndustry = role;
+          pendingIndustryKey = selectedCategoryKey;
+          pendingIndustryIsCategory = false;
+          updateIndustrySelection();
         });
       });
 
@@ -1189,14 +1199,36 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    function openDropdown() {
+    function updateIndustrySelection() {
+      industryMegaContent?.querySelectorAll('.hot-search-pill, .subgroup-tag-pill').forEach(pill => {
+        const selected = pill.getAttribute('data-role') === pendingIndustry;
+        pill.classList.toggle('is-selected', selected);
+        pill.setAttribute('aria-pressed', String(selected));
+      });
+      industryNavList?.querySelectorAll('.industry-nav-item').forEach(item => {
+        const selected = item.getAttribute('data-industry-name') === pendingIndustry;
+        item.classList.toggle('is-selected-category', selected);
+        item.setAttribute('aria-pressed', String(selected));
+      });
+      if (industryPickerStatus) {
+        industryPickerStatus.textContent = pendingIndustry ? `Đã chọn: ${pendingIndustry}` : 'Chưa chọn ngành nghề';
+      }
+      if (industryFilterApply) industryFilterApply.disabled = pendingIndustry === appliedIndustry;
+    }
+
+    function openDropdown(mode = 'suggestions') {
+      const industryMode = mode === 'industry';
+      searchSuggestDropdown.classList.toggle('is-industry-mode', industryMode);
       searchSuggestDropdown.classList.add('is-open');
-      heroSearchInput.setAttribute('aria-expanded', 'true');
+      heroSearchInput.setAttribute('aria-expanded', String(!industryMode));
+      industryFilterTrigger?.setAttribute('aria-expanded', String(industryMode));
+      searchSuggestDropdown.setAttribute('aria-label', industryMode ? 'Chọn ngành nghề' : 'Gợi ý tìm kiếm việc làm');
     }
 
     function closeDropdown() {
       searchSuggestDropdown.classList.remove('is-open');
       heroSearchInput.setAttribute('aria-expanded', 'false');
+      industryFilterTrigger?.setAttribute('aria-expanded', 'false');
     }
 
     function executeSearch(keyword) {
@@ -1218,6 +1250,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const searchParams = new URLSearchParams();
       if (query) searchParams.set('keyword', query);
       if (location) searchParams.set('location', location);
+      if (appliedIndustry) {
+        if (RESULT_CATEGORY_KEYS.has(appliedIndustryKey)) searchParams.set('category', appliedIndustryKey);
+        if (!appliedIndustryIsCategory || !RESULT_CATEGORY_KEYS.has(appliedIndustryKey)) searchParams.set('industry', appliedIndustry);
+      }
 
       const queryString = searchParams.toString();
       window.location.assign(`viec-lam.html${queryString ? `?${queryString}` : ''}`);
@@ -1225,11 +1261,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Input Events
     heroSearchInput.addEventListener('focus', () => {
-      openDropdown();
+      openDropdown('suggestions');
     });
 
     heroSearchInput.addEventListener('click', () => {
-      openDropdown();
+      openDropdown('suggestions');
     });
 
     heroSearchInput.addEventListener('input', () => {
@@ -1237,7 +1273,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearSearchInputBtn.style.display = heroSearchInput.value.trim() ? 'flex' : 'none';
       }
       if (!searchSuggestDropdown.classList.contains('is-open')) {
-        openDropdown();
+        openDropdown('suggestions');
       }
     });
 
@@ -1286,6 +1322,126 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    // Lắng nghe sự kiện chọn danh mục từ EasyCVCategoryModal
+    document.addEventListener('easycv:category-applied', (e) => {
+      const detail = e.detail || {};
+      const { groups = [], subgroups = [], roles = [], primaryQuery = '' } = detail;
+      appliedIndustry = primaryQuery || (roles[0] || subgroups[0] || '');
+      if (groups.length > 0) {
+        appliedIndustryKey = groups[0];
+        appliedIndustryIsCategory = true;
+      } else {
+        appliedIndustryKey = '';
+        appliedIndustryIsCategory = false;
+      }
+      if (clearSearchInputBtn) {
+        clearSearchInputBtn.style.display = (heroSearchInput.value.trim() || appliedIndustry) ? 'flex' : 'none';
+      }
+      console.log('[Home Search] Category filter synchronized:', { appliedIndustry, appliedIndustryKey });
+    });
+
+    industryFilterTrigger?.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const shouldClose = searchSuggestDropdown.classList.contains('is-open') && searchSuggestDropdown.classList.contains('is-industry-mode');
+      if (shouldClose) {
+        closeDropdown();
+        return;
+      }
+      pendingIndustry = appliedIndustry;
+      pendingIndustryKey = appliedIndustryKey;
+      pendingIndustryIsCategory = appliedIndustryIsCategory;
+      if (appliedIndustry) {
+        const appliedMatch = findIndustryMatch(appliedIndustry);
+        if (appliedMatch) {
+          currentIndustryPage = appliedMatch.page;
+          selectedCategoryKey = appliedMatch.category.key;
+        }
+      }
+      if (industryFilterSearch) industryFilterSearch.value = '';
+      renderIndustryNav();
+      updateIndustrySelection();
+      openDropdown('industry');
+      industryFilterSearch?.focus({ preventScroll: true });
+    });
+
+    const cancelIndustrySelection = () => {
+      pendingIndustry = appliedIndustry;
+      pendingIndustryKey = appliedIndustryKey;
+      pendingIndustryIsCategory = appliedIndustryIsCategory;
+      closeDropdown();
+      industryFilterTrigger?.focus();
+    };
+
+    industryPickerClose?.addEventListener('click', cancelIndustrySelection);
+    industryFilterCancel?.addEventListener('click', cancelIndustrySelection);
+
+    industryFilterClear?.addEventListener('click', () => {
+      pendingIndustry = '';
+      pendingIndustryKey = '';
+      pendingIndustryIsCategory = false;
+      updateIndustrySelection();
+    });
+
+    industryFilterApply?.addEventListener('click', () => {
+      appliedIndustry = pendingIndustry;
+      appliedIndustryKey = pendingIndustryKey;
+      appliedIndustryIsCategory = pendingIndustryIsCategory;
+      if (industryFilterLabel) {
+        industryFilterLabel.textContent = appliedIndustry ? (appliedIndustry.length > 22 ? `${appliedIndustry.slice(0, 20)}…` : appliedIndustry) : 'Danh mục nghề';
+        industryFilterLabel.title = appliedIndustry;
+      }
+      if (clearSearchInputBtn) clearSearchInputBtn.style.display = heroSearchInput.value.trim() ? 'flex' : 'none';
+      closeDropdown();
+      btnHeroSearch?.focus();
+    });
+
+    industryFilterSearch?.addEventListener('input', () => {
+      const query = industryFilterSearch.value.trim();
+      if (!query) {
+        industrySearchMatch = null;
+        renderIndustryNav();
+        updateIndustrySelection();
+        return;
+      }
+      industrySearchMatch = findIndustryMatch(query);
+      if (!industrySearchMatch) {
+        industryMegaContent.innerHTML = `<p class="industry-empty-state">Không tìm thấy ngành nghề phù hợp với “${query.replace(/[<>&"']/g, '')}”.</p>`;
+        if (industryPickerStatus) industryPickerStatus.textContent = `Không tìm thấy kết quả cho “${industryFilterSearch.value.trim()}”`;
+        return;
+      }
+      currentIndustryPage = industrySearchMatch.page;
+      selectedCategoryKey = industrySearchMatch.category.key;
+      renderIndustryNav();
+      const normalizedQuery = normalizeIndustryText(query);
+      const categoryMatched = normalizeIndustryText(industrySearchMatch.category.name).includes(normalizedQuery);
+      industryMegaContent.querySelectorAll('.hot-search-pill, .subgroup-tag-pill').forEach(pill => {
+        pill.hidden = !categoryMatched && !normalizeIndustryText(pill.textContent).includes(normalizedQuery);
+      });
+      industryMegaContent.querySelectorAll('.mega-subgroup-row').forEach(row => {
+        const titleMatched = normalizeIndustryText(row.querySelector('.mega-subgroup-title')?.textContent).includes(normalizedQuery);
+        if (titleMatched) row.querySelectorAll('.subgroup-tag-pill').forEach(pill => { pill.hidden = false; });
+        row.hidden = !titleMatched && !row.querySelector('.subgroup-tag-pill:not([hidden])');
+      });
+      const hotSection = industryMegaContent.querySelector('.mega-section-hot');
+      if (hotSection) hotSection.hidden = !categoryMatched && !hotSection.querySelector('.hot-search-pill:not([hidden])');
+      updateIndustrySelection();
+    });
+
+    industryFilterSearch?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && industrySearchMatch) {
+        e.preventDefault();
+        pendingIndustry = industrySearchMatch.term;
+        pendingIndustryKey = industrySearchMatch.category.key;
+        pendingIndustryIsCategory = industrySearchMatch.isCategory;
+        updateIndustrySelection();
+        industryFilterApply?.click();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        cancelIndustrySelection();
+      }
+    });
+
     // Click outside to close
     document.addEventListener('click', (e) => {
       if (!heroSearchWrapper.contains(e.target)) {
@@ -1295,7 +1451,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
+        const wasIndustryMode = searchSuggestDropdown.classList.contains('is-industry-mode');
         closeDropdown();
+        if (wasIndustryMode) industryFilterTrigger?.focus();
       }
     });
 
@@ -1342,6 +1500,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function focusHeroSearch(e) {
       e.preventDefault();
       const heroBox = document.getElementById('heroSearchBox');
+      const stickyBar = document.getElementById('heroSearchStickyBar');
+      if (stickyBar && stickyBar.classList.contains('is-sticky')) {
+        heroSearchInput?.focus();
+        return;
+      }
       if (heroBox) {
         heroBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
         setTimeout(() => {
@@ -1361,9 +1524,42 @@ document.addEventListener('DOMContentLoaded', () => {
       focusHeroSearch(e);
     });
 
+    // --- Sticky Hero Search Bar on Scroll ---
+    function initStickySearch() {
+      const wrapper = document.getElementById('heroSearchWrapper');
+      const stickyBar = document.getElementById('heroSearchStickyBar');
+      const header = document.querySelector('.site-header');
+      if (!wrapper || !stickyBar) return;
+
+      let isSticky = false;
+
+      function handleScroll() {
+        const headerHeight = header ? header.offsetHeight : 72;
+        stickyBar.style.setProperty('--sticky-search-top', headerHeight + 'px');
+
+        const wrapperRect = wrapper.getBoundingClientRect();
+        const shouldStick = wrapperRect.top <= headerHeight;
+
+        if (shouldStick && !isSticky) {
+          isSticky = true;
+          wrapper.style.minHeight = wrapper.offsetHeight + 'px';
+          stickyBar.classList.add('is-sticky');
+        } else if (!shouldStick && isSticky) {
+          isSticky = false;
+          stickyBar.classList.remove('is-sticky');
+          wrapper.style.minHeight = '';
+        }
+      }
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener('resize', handleScroll, { passive: true });
+      handleScroll();
+    }
+
     // Initialize
     renderHistory();
     renderIndustryNav();
+    initStickySearch();
   }
 });
 

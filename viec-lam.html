@@ -7,9 +7,45 @@
   <meta name="description" content="Tìm kiếm việc làm chất lượng cao từ hơn 50.000+ doanh nghiệp hàng đầu tại Việt Nam. Lọc việc làm theo ngành nghề, mức lương, địa điểm, kinh nghiệm.">
   <link rel="icon" type="image/png" href="assets/logos/easycv-icon.png">
   <link rel="stylesheet" href="assets/design-tokens.css?v=1.1">
-  <link rel="stylesheet" href="css/navbar.css?v=4.0">
+  <link rel="stylesheet" href="css/navbar.css?v=6.0_no_scrollbar">
   <link rel="stylesheet" href="css/home.css?v=4.3_cv_templates">
-  <link rel="stylesheet" href="css/viec-lam.css?v=1.0">
+  <link rel="stylesheet" href="css/viec-lam.css?v=6.0_no_scrollbar">
+  <link rel="stylesheet" href="css/category-filter-modal.css?v=1.0">
+  <!-- Khử triệt để thanh cuộn dọc/ngang xám trên Mobile Web và Simulator -->
+  <style id="easycv-mobile-scrollbar-killer">
+    @media (max-width: 1024px) {
+      html, body, * {
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+      }
+      ::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        background: transparent !important;
+      }
+      *::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+      }
+    }
+    html.in-simulator,
+    body.in-simulator,
+    html.in-simulator *,
+    body.in-simulator * {
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
+    }
+    html.in-simulator::-webkit-scrollbar,
+    body.in-simulator::-webkit-scrollbar,
+    .in-simulator ::-webkit-scrollbar {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      background: transparent !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -257,19 +293,37 @@
         <h1 class="job-search-title">Tìm kiếm <span class="text-orange">việc làm phù hợp</span> với bạn</h1>
         <p class="job-search-subtitle">Khám phá hơn 1.400+ cơ hội việc làm lương cao, môi trường tốt từ các công ty hàng đầu</p>
 
-        <!-- Search Input Form -->
+        <!-- Search Input Form (Tương tự mẫu tham khảo TopCV) -->
         <form class="job-search-box" id="jobSearchForm" action="viec-lam.html" method="GET">
+          <!-- 1. Danh mục Nghề Button Trigger -->
+          <button type="button" class="category-filter-trigger" id="categoryFilterTrigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="categoryModalOverlay" title="Mở bộ lọc theo danh mục nghề">
+            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="8" y1="6" x2="21" y2="6"></line>
+              <line x1="8" y1="12" x2="21" y2="12"></line>
+              <line x1="8" y1="18" x2="21" y2="18"></line>
+              <circle cx="3.5" cy="6" r="1.5" fill="currentColor"></circle>
+              <circle cx="3.5" cy="12" r="1.5" fill="currentColor"></circle>
+              <circle cx="3.5" cy="18" r="1.5" fill="currentColor"></circle>
+            </svg>
+            <span id="categoryFilterLabel" class="category-label">Danh mục Nghề</span>
+            <svg class="category-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <div class="search-divider"></div>
+
+          <!-- 2. Keyword input -->
           <div class="search-field">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-            <input type="text" id="jobSearchInput" name="keyword" placeholder="Tên công việc, vị trí, kỹ năng (ví dụ: ReactJS, Sales, Marketing...)" />
+            <input type="text" id="jobSearchInput" name="keyword" placeholder="Vị trí tuyển dụng, tên công ty" autocomplete="off" />
           </div>
 
           <div class="search-divider"></div>
 
-          <div class="search-field" style="max-width: 260px;">
+          <!-- 3. Location select -->
+          <div class="search-field search-location-field" style="max-width: 240px;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <select id="jobLocationSelect" name="location" aria-label="Chọn địa điểm">
-              <option value="">Tất cả địa điểm</option>
+            <select id="jobLocationSelect" name="location" aria-label="Địa điểm">
+              <option value="">Địa điểm</option>
               <option value="Hà Nội">Hà Nội</option>
               <option value="Hồ Chí Minh">Hồ Chí Minh</option>
               <option value="Đà Nẵng">Đà Nẵng</option>
@@ -278,26 +332,84 @@
             </select>
           </div>
 
-          <div class="search-divider"></div>
+          <!-- Hidden inputs for backward-compatible form submission -->
+          <input type="hidden" id="jobCategoryHidden" name="category" value="" />
+          <input type="hidden" id="jobIndustryHidden" name="industry" value="" />
 
-          <div class="search-field" style="max-width: 240px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            <select id="jobCategorySelect" name="category" aria-label="Chọn ngành nghề">
-              <option value="">Tất cả ngành nghề</option>
-              <option value="it">IT - Phần mềm</option>
-              <option value="sales">Kinh doanh / Bán hàng</option>
-              <option value="marketing">Marketing / Truyền thông</option>
-              <option value="finance">Tài chính / Kế toán / Ngân hàng</option>
-              <option value="hr">Nhân sự / Hành chính</option>
-              <option value="logistics">Logistics / Xuất nhập khẩu</option>
-            </select>
-          </div>
-
-          <button type="submit" class="btn-search-submit">
+          <!-- 4. Submit button -->
+          <button type="submit" class="btn-search-submit" id="btnJobSearch">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-            <span>Tìm việc ngay</span>
+            <span>Tìm kiếm</span>
           </button>
         </form>
+
+        <!-- Popover / Modal: Chọn Nhóm nghề, Nghề hoặc Chuyên môn (Chuẩn ảnh mẫu tham khảo) -->
+        <div class="category-modal-overlay" id="categoryModalOverlay" role="dialog" aria-modal="true" aria-labelledby="categoryModalTitle" hidden>
+          <div class="category-modal-backdrop" id="categoryModalBackdrop"></div>
+          <div class="category-modal-dialog">
+
+            <!-- Header -->
+            <div class="category-modal-header">
+              <h2 class="category-modal-title" id="categoryModalTitle">Chọn Nhóm nghề, Nghề hoặc Chuyên môn</h2>
+              <button type="button" class="category-modal-close" id="categoryModalClose" aria-label="Đóng bộ lọc">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+            </div>
+
+            <!-- Search input bar -->
+            <div class="category-modal-search-wrap">
+              <div class="category-modal-search-box">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                <input type="search" id="categoryModalSearchInput" placeholder="Nhập từ khóa tìm kiếm" autocomplete="off" />
+                <button type="button" class="category-search-clear" id="categorySearchClear" title="Xóa tìm kiếm" hidden>✕</button>
+              </div>
+            </div>
+
+            <!-- Body: 2 Columns -->
+            <div class="category-modal-body">
+
+              <!-- Left Panel: NHÓM NGHỀ -->
+              <div class="category-panel-left">
+                <div class="category-column-header">NHÓM NGHỀ</div>
+                <div class="category-group-list" id="categoryGroupList">
+                  <!-- Rendered dynamically -->
+                </div>
+              </div>
+
+              <!-- Right Panel: NGHỀ & VỊ TRÍ CHUYÊN MÔN -->
+              <div class="category-panel-right">
+                <div class="category-right-headers">
+                  <div class="category-column-header col-role">NGHỀ</div>
+                  <div class="category-column-header col-specialty">VỊ TRÍ CHUYÊN MÔN</div>
+                </div>
+                <div class="category-subgroup-list" id="categorySubgroupList">
+                  <!-- Rendered dynamically -->
+                </div>
+                <!-- Floating scroll hint -->
+                <div class="category-scroll-hint" id="categoryScrollHint">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"></path></svg>
+                  <span>Cuộn để xem</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="category-modal-footer">
+              <div class="category-footer-feedback">
+                <span>Bạn gặp vấn đề với Danh mục Nghề?</span>
+                <a href="javascript:void(0)" class="category-feedback-link" id="categoryFeedbackLink">Gửi góp ý</a>
+              </div>
+              <div class="category-footer-actions">
+                <button type="button" class="btn-category-clear-all" id="btnCategoryClearAll">Bỏ chọn tất cả</button>
+                <div class="action-divider"></div>
+                <button type="button" class="btn-category-cancel" id="btnCategoryCancel">Hủy</button>
+                <button type="button" class="btn-category-submit" id="btnCategorySubmit">Chọn</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
 
         <!-- Quick Filter Tags -->
         <div class="quick-filter-tags">
@@ -1100,7 +1212,67 @@
     </div>
   </footer>
 
-  <script src="js/navbar.js"></script>
+  <script src="js/navbar.js?v=6.0_no_scrollbar"></script>
+  <script src="js/category-filter-modal.js?v=1.0"></script>
   <script src="js/viec-lam.js"></script>
+
+  <!-- Floating View Mode Switcher Box (Rìa bên phải màn hình) -->
+  <div class="floating-view-mode-box" id="floatingViewModeBox" role="region" aria-label="Bộ chuyển đổi chế độ xem Web và Mobile Web">
+    <div class="floating-box-header">
+      <div class="floating-box-title">
+        <span class="floating-box-status-dot" id="floatingStatusDot"></span>
+        <span>Chế độ xem</span>
+      </div>
+      <button type="button" class="floating-box-min-btn" id="floatingMinBtn" title="Thu gọn box">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="floating-minimized-pill" id="floatingMinimizedPill" title="Bấm để mở rộng bảng điều khiển">
+      <span class="floating-box-status-dot" id="floatingMiniStatusDot"></span>
+      <span id="floatingMiniLabel">Web</span>
+    </div>
+
+    <div class="floating-mode-switcher">
+      <button type="button" class="floating-mode-btn active" data-mode="web" id="floatingBtnWeb" title="Xem phiên bản Web Desktop">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+        <span>Web</span>
+      </button>
+      <button type="button" class="floating-mode-btn" data-mode="mobile" id="floatingBtnMobile" title="Xem phiên bản Mobile Web">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>
+        <span>Mobile Web</span>
+      </button>
+    </div>
+
+    <div class="floating-mobile-controls" id="floatingMobileControls">
+      <div class="floating-preset-label">Thiết bị mô phỏng</div>
+      <div class="floating-presets-grid">
+        <button type="button" class="floating-preset-item active" data-width="390" data-height="844" title="iPhone 16 Pro (390 x 844)">
+          <span>iPhone 16</span>
+          <small>390×844</small>
+        </button>
+        <button type="button" class="floating-preset-item" data-width="412" data-height="915" title="Galaxy S24 (412 x 915)">
+          <span>Galaxy S24</span>
+          <small>412×915</small>
+        </button>
+        <button type="button" class="floating-preset-item" data-width="375" data-height="667" title="iPhone SE (375 x 667)">
+          <span>iPhone SE</span>
+          <small>375×667</small>
+        </button>
+      </div>
+
+      <div class="floating-actions-row">
+        <button type="button" class="floating-action-mini-btn" id="floatingRotateBtn" title="Xoay thiết bị ngang / dọc">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+          <span>Xoay</span>
+        </button>
+        <button type="button" class="floating-action-mini-btn" id="floatingRefreshBtn" title="Tải lại trang mobile">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
+          <span>Tải lại</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

@@ -1,0 +1,45 @@
+# Đặc Tả Tính Năng: Box Chuyển Đổi Trạng Thái Web / Mobile Web Trên Thanh Menu
+
+Dự án: **EasyCV — Nền tảng Tuyển dụng & Khám phá Việc làm Thông minh**  
+Vị trí: Thanh điều hướng cấp cao (`.site-header .navbar-actions`)  
+Ngày hoàn thành: 02/10/2026
+
+---
+
+## 1. Mục Tiêu Thiết Kế
+Cung cấp giải pháp chuyển đổi nhanh giữa hai phiên bản hiển thị **Web (Desktop)** và **Mobile Web** trực tiếp ngay trên thanh menu mà người dùng / tester không cần mở công cụ DevTools (F12) của trình duyệt.
+
+## 2. Chi Tiết Giao Diện & Vị Trí (UI/UX)
+- **Vị trí**: Nằm trong khối `.navbar-actions` ngay đầu các nút hành động, giữa menu điều hướng chính và nút "Dành cho Nhà tuyển dụng".
+- **Hình thức thiết kế**: Dạng segmented control (thanh trượt phân đoạn dạng con nhộng - pill box cao cấp):
+  - Khung bao: Nền `#F1F5F9`, viền `#E2E8F0`, bo tròn `9999px`, padding `3px`.
+  - Nút **Web**: Icon màn hình Desktop (`15px`) + Nhãn "Web", bo viền mềm mại. Khi kích hoạt: nền trắng `#FFFFFF`, chữ `#0F172A`, đổ bóng thanh thoát.
+  - Nút **Mobile Web**: Icon Smartphone (`15px`) + Nhãn "Mobile Web". Khi kích hoạt: dải màu cam EasyCV `linear-gradient(135deg, #FF8A34 0%, #F97316 100%)`, chữ trắng `#FFFFFF`, hiệu ứng glow sang trọng.
+  - Trên màn hình nhỏ (`<= 640px`): Tự động ẩn chữ, giữ biểu tượng icon trực quan gọn gàng.
+
+## 3. Cơ Chế Hoạt Động & Bộ Giả Lập Smartphone (Device Simulator)
+Khi người dùng bấm chọn **Mobile Web**:
+1. Hệ thống kích hoạt overlay giả lập thiết bị điện thoại cao cấp (`#mobileSimulatorOverlay`) trên nền studio tối mờ (`rgba(11, 15, 25, 0.88)` với backdrop blur `14px`).
+2. Khung điện thoại hiển thị:
+   - Thân máy titan bo cong góc `48px`, viền vi tế `8px`, bóng đổ sâu đa lớp.
+   - Dynamic Island / loa đệm phía trên cùng camera cảm biến.
+   - Home indicator bar ở cạnh đáy.
+   - Khung màn hình hiển thị trực tiếp trang hiện tại với kích thước viewport mobile chuẩn (mặc định: iPhone 16 Pro 390 × 844 px).
+   - Mọi truy vấn CSS `@media (max-width: 768px)` được kích hoạt 100% tự nhiên: menu ngăn kéo hamburger, thanh tìm kiếm xếp dọc, danh sách thẻ việc làm tối ưu chạm vuốt.
+3. Thanh điều khiển phía trên (Studio Bar):
+   - Huy hiệu trạng thái đang ở "Chế độ Mobile Web" với đèn led nhấp nháy.
+   - Bộ chọn nhanh 3 kích thước thiết bị:
+     - **iPhone 16** (390 × 844)
+     - **Galaxy S24** (412 × 915)
+     - **iPhone SE** (375 × 667)
+   - Nút **Tải lại** (Refresh iframe).
+   - Nút **Quay lại bản Web** (kèm phím tắt `ESC`) để lập tức đóng giả lập và quay về bản desktop full màn hình.
+4. Giao tiếp hai chiều (`postMessage`):
+   - Nếu người dùng bấm nút "Web" ngay bên trong thanh menu của điện thoại giả lập, khung con tự động gửi tín hiệu để cửa sổ chính chuyển về bản Web mượt mà.
+
+## 4. Các Tệp Mã Nguồn Triển Khai
+- `index.html` & `public/index.html`: Bổ sung markup `.view-mode-toggle-box`.
+- `viec-lam.html` & `public/viec-lam.html`: Bổ sung markup `.view-mode-toggle-box`.
+- `chi-tiet-viec-lam.html` & `public/chi-tiet-viec-lam.html`: Bổ sung markup `.view-mode-toggle-box`.
+- `css/navbar.css` & `public/css/navbar.css`: Thiết lập toàn bộ tokens, animations và styles cho toggle box và simulator.
+- `js/navbar.js` & `public/js/navbar.js`: Điều phối trạng thái kích hoạt, overlay DOM, iframe preview, tương tác bàn phím ESC và bắt sự kiện.
