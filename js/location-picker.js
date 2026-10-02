@@ -1,7 +1,7 @@
 (() => {
-  const trigger = document.getElementById('heroLocationTrigger');
-  const picker = document.getElementById('heroLocationPicker');
-  const select = document.getElementById('heroLocationSelect');
+  const trigger = document.getElementById('heroLocationTrigger') || document.getElementById('jobLocationTrigger');
+  const picker = document.getElementById('heroLocationPicker') || document.getElementById('jobLocationPicker');
+  const select = document.getElementById('heroLocationSelect') || document.getElementById('jobLocationSelect');
   if (!trigger || !picker || !select) return;
 
   const places = [
@@ -49,23 +49,26 @@
   }
 
   function render() {
+    if (!provinceList || !districtList) return;
     provinceList.replaceChildren();
     districtList.replaceChildren();
-    const visible = places.filter(place => matches(place.name, provinceSearch.value));
+    const qProv = provinceSearch ? provinceSearch.value : '';
+    const visible = places.filter(place => matches(place.name, qProv));
     visible.forEach(place => {
       const value = selected.get(place.name);
       const item = row(place.name, !!value, active === place.name, true, () => {
         active = place.name;
         if (selected.has(place.name)) selected.delete(place.name);
         else selected.set(place.name, new Set());
-        districtSearch.value = '';
+        if (districtSearch) districtSearch.value = '';
         render();
       });
       provinceList.append(item);
     });
     if (!visible.length) provinceList.append(empty('Không tìm thấy tỉnh/thành phố'));
     const place = places.find(item => item.name === active);
-    const districts = place ? place[mode].filter(name => matches(name, districtSearch.value)) : [];
+    const qDist = districtSearch ? districtSearch.value : '';
+    const districts = place ? place[mode].filter(name => matches(name, qDist)) : [];
     const current = selected.get(active);
     districtList.append(row('Tất cả', !!current && current.size === 0, false, false, () => {
       selected.set(active, new Set());
@@ -99,7 +102,12 @@
     const labels = [...committed].map(([name, districts]) => districts.size ? `${name}: ${[...districts].join(', ')}` : name);
     const value = labels.join('; ');
     select.replaceChildren(new Option(value || 'Tất cả địa điểm', value));
-    trigger.firstChild.textContent = labels.length === 0 ? 'Tất cả địa điểm ' : labels.length === 1 ? `${labels[0]} ` : `${labels.length} địa điểm `;
+    select.value = value;
+    // Dispatch change event to sync with job search filters
+    select.dispatchEvent(new Event('change', { bubbles: true }));
+    if (trigger.firstChild) {
+      trigger.firstChild.textContent = labels.length === 0 ? 'Tất cả địa điểm ' : labels.length === 1 ? `${labels[0]} ` : `${labels.length} địa điểm `;
+    }
     close();
     trigger.focus();
   }
@@ -112,11 +120,11 @@
     trigger.setAttribute('aria-expanded', 'true');
     document.getElementById('searchSuggestDropdown')?.classList.remove('is-open');
     render();
-    provinceSearch.focus();
+    provinceSearch?.focus();
   });
   picker.addEventListener('click', event => event.stopPropagation());
-  provinceSearch.addEventListener('input', render);
-  districtSearch.addEventListener('input', render);
+  provinceSearch?.addEventListener('input', render);
+  districtSearch?.addEventListener('input', render);
   picker.querySelectorAll('[data-mode]').forEach(button => button.addEventListener('click', () => {
     mode = button.dataset.mode;
     selected.clear();
@@ -124,14 +132,52 @@
       item.classList.toggle('is-active', item === button);
       item.setAttribute('aria-pressed', String(item === button));
     });
-    districtSearch.placeholder = mode === 'new' ? 'Nhập Phường/Xã' : 'Nhập Quận/Huyện';
-    districtSearch.value = '';
+    if (districtSearch) {
+      districtSearch.placeholder = mode === 'new' ? 'Nhập Phường/Xã' : 'Nhập Quận/Huyện';
+      districtSearch.value = '';
+    }
     render();
   }));
-  document.getElementById('locationClearAll').addEventListener('click', () => { selected.clear(); render(); });
-  document.getElementById('locationApply').addEventListener('click', apply);
-  document.getElementById('heroSearchInput')?.addEventListener('focus', close);
+  document.getElementById('locationClearAll')?.addEventListener('click', () => { selected.clear(); render(); });
+  document.getElementById('locationApply')?.addEventListener('click', apply);
+  (document.getElementById('heroSearchInput') || document.getElementById('jobSearchInput'))?.addEventListener('focus', close);
   document.addEventListener('click', event => { if (!picker.contains(event.target) && !trigger.contains(event.target)) close(); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && !picker.hidden) { close(); trigger.focus(); } });
+  
+  // Expose global controller
+  window.EasyCVLocationPicker = {
+    reset() {
+      selected.clear();
+      committed.clear();
+      if (select) {
+        select.replaceChildren(new Option('Tất cả địa điểm', ''));
+        select.value = '';
+      }
+      if (trigger && trigger.firstChild) trigger.firstChild.textContent = 'Tất cả địa điểm ';
+      render();
+    },
+    setSelected(cityName) {
+      selected.clear();
+      if (cityName && cityName !== 'Tất cả địa điểm' && cityName !== '') {
+        selected.set(cityName, new Set());
+        committed.set(cityName, new Set());
+        if (select) {
+          select.replaceChildren(new Option(cityName, cityName));
+          select.value = cityName;
+        }
+        if (trigger && trigger.firstChild) trigger.firstChild.textContent = `${cityName} `;
+      } else {
+        committed.clear();
+        if (select) {
+          select.replaceChildren(new Option('Tất cả địa điểm', ''));
+          select.value = '';
+        }
+        if (trigger && trigger.firstChild) trigger.firstChild.textContent = 'Tất cả địa điểm ';
+      }
+      render();
+    },
+    close
+  };
+
   render();
 })();

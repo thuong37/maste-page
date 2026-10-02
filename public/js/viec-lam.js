@@ -643,12 +643,14 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentPage = 1;
   let currentFilteredJobs = [];
 
-  const searchInput = document.getElementById('jobSearchInput');
-  const locationSelect = document.getElementById('jobLocationSelect');
+  const searchInput = document.getElementById('jobSearchInput') || document.getElementById('heroSearchInput');
+  const clearSearchInputBtn = document.getElementById('clearSearchInputBtn');
+  const locationSelect = document.getElementById('jobLocationSelect') || document.getElementById('heroLocationSelect');
+  const heroLocationTrigger = document.getElementById('heroLocationTrigger') || document.getElementById('jobLocationTrigger');
   const categorySelect = document.getElementById('jobCategorySelect');
   const sortSelect = document.getElementById('sortSelect');
   const jobSearchForm = document.getElementById('jobSearchForm');
-  const btnJobSearch = document.getElementById('btnJobSearch');
+  const btnJobSearch = document.getElementById('btnJobSearch') || document.getElementById('btnHeroSearch');
   const sampleDataBanner = document.getElementById('sampleDataBanner');
   const jobCountText = document.getElementById('jobCountText');
   const activeSearchTag = document.getElementById('activeSearchTag');
@@ -660,7 +662,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const paginationWrapper = document.getElementById('paginationWrapper');
   const toast = document.getElementById('toastMsg');
   const btnResetFilters = document.getElementById('btnResetFilters');
+  const searchSuggestDropdown = document.getElementById('searchSuggestDropdown');
+  const recentSearchList = document.getElementById('recentSearchList');
+  const btnClearSearchHistory = document.getElementById('btnClearSearchHistory');
+  const btnCloseSuggest = document.getElementById('btnCloseSuggest');
+  const heroSearchWrapper = document.getElementById('heroSearchWrapper') || document.getElementById('jobSearchWrapper');
+  const heroSearchStickyBar = document.getElementById('heroSearchStickyBar') || document.getElementById('jobSearchStickyBar');
   let activeIndustryQuery = '';
+
+  // Top Filter Bar State
+  let selectedExp = '';
+  let selectedSalary = '';
+  let selectedLevel = '';
+  let selectedType = '';
+
+  const FILTER_DEFAULT_LABELS = {
+    exp: 'Kinh nghiệm',
+    salary: 'Mức lương',
+    level: 'Cấp bậc',
+    type: 'Hình thức'
+  };
 
   // Split View & View Mode elements
   let activeViewMode = 'grid'; // 'grid' | 'split'
@@ -751,13 +772,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeTags = Array.from(document.querySelectorAll('.quick-filter-tags .tag-btn.active'))
       .map(btn => btn.getAttribute('data-tag'));
 
-    // Checkboxes
-    const checkedLevels = Array.from(document.querySelectorAll('input[name="level"]:checked')).map(cb => cb.value);
-    const checkedSalaries = Array.from(document.querySelectorAll('input[name="salary"]:checked')).map(cb => cb.value);
-    const checkedExps = Array.from(document.querySelectorAll('input[name="exp"]:checked')).map(cb => cb.value);
-    const checkedTypes = Array.from(document.querySelectorAll('input[name="type"]:checked')).map(cb => cb.value);
+    // Top Filter Bar Criteria
+    const filterExp = selectedExp;
+    const filterSalary = selectedSalary;
+    const filterLevel = selectedLevel;
+    const filterType = selectedType;
 
-    const hasFilter = Boolean(normQuery || normIndustry || (normLoc && normLoc !== 'tat ca dia diem') || catValue || activeTags.length > 0 || checkedLevels.length > 0 || checkedSalaries.length > 0 || checkedExps.length > 0 || checkedTypes.length > 0);
+    const hasFilter = Boolean(normQuery || normIndustry || (normLoc && normLoc !== 'tat ca dia diem') || catValue || activeTags.length > 0 || filterLevel || filterSalary || filterExp || filterType);
 
     const matchingJobs = [];
     const nonMatchingJobs = [];
@@ -789,13 +810,20 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isMatch && normLoc && normLoc !== 'tat ca dia diem') {
         const normJobLoc = normalizeText(job.location);
         const normJobCity = normalizeText(job.city);
-        if (normLoc === 'remote') {
-          if (!normJobLoc.includes('remote') && job.type !== 'remote') isMatch = false;
-        } else {
-          if (!normJobLoc.includes(normLoc) && !normJobCity.includes(normLoc)) {
-            isMatch = false;
+        const locTokens = normLoc.split(/[;|,]/).map(t => t.trim()).filter(Boolean);
+        const locMatch = locTokens.some(tok => {
+          const cleanTok = tok.split(':')[0].trim();
+          const districtTok = tok.includes(':') ? tok.split(':')[1].trim() : '';
+          if (cleanTok === 'remote' || tok === 'remote') {
+            return normJobLoc.includes('remote') || job.type === 'remote';
           }
-        }
+          const matchProvince = normJobLoc.includes(cleanTok) || normJobCity.includes(cleanTok) || cleanTok.includes(normJobCity);
+          if (districtTok) {
+            return matchProvince && (normJobLoc.includes(districtTok) || districtTok.includes(normJobLoc));
+          }
+          return matchProvince;
+        });
+        if (!locMatch) isMatch = false;
       }
 
       // 3. Category filter
@@ -823,24 +851,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // 5. Sidebar: Level
-      if (isMatch && checkedLevels.length > 0 && !checkedLevels.includes(job.level)) {
+      // 5. Cấp bậc (Top Filter Bar)
+      if (isMatch && filterLevel && job.level !== filterLevel) {
         isMatch = false;
       }
 
-      // 6. Sidebar: Salary (Fix BUG-02)
-      if (isMatch && checkedSalaries.length > 0) {
-        const salaryMatch = checkedSalaries.some(tier => matchSalaryTier(job, tier));
-        if (!salaryMatch) isMatch = false;
-      }
-
-      // 7. Sidebar: Experience (Fix BUG-02)
-      if (isMatch && checkedExps.length > 0 && !checkedExps.includes(job.exp)) {
+      // 6. Mức lương (Top Filter Bar)
+      if (isMatch && filterSalary && !matchSalaryTier(job, filterSalary)) {
         isMatch = false;
       }
 
-      // 8. Sidebar: Type
-      if (isMatch && checkedTypes.length > 0 && !checkedTypes.includes(job.type)) {
+      // 7. Kinh nghiệm (Top Filter Bar)
+      if (isMatch && filterExp && job.exp !== filterExp) {
+        isMatch = false;
+      }
+
+      // 8. Hình thức (Top Filter Bar)
+      if (isMatch && filterType && job.type !== filterType) {
         isMatch = false;
       }
 
@@ -943,12 +970,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (locValue) newParams.set('location', locValue);
       if (catValue) newParams.set('category', catValue);
       if (activeIndustryQuery) newParams.set('industry', activeIndustryQuery);
+      if (selectedExp) newParams.set('exp', selectedExp);
+      if (selectedSalary) newParams.set('salary', selectedSalary);
+      if (selectedLevel) newParams.set('level', selectedLevel);
+      if (selectedType) newParams.set('type', selectedType);
       const newUrl = `${window.location.pathname}${newParams.toString() ? '?' + newParams.toString() : ''}`;
       window.history.pushState(null, '', newUrl);
     }
 
-    // Update dynamic sidebar counts based on current full dataset
-    updateSidebarCounts();
+    // Update dynamic filter counts based on current full dataset
+    updateFilterCounts();
   }
 
   // =========================================================================
@@ -1041,7 +1072,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3 class="job-title"><a href="chi-tiet-viec-lam.html?id=${job.id}" target="_blank" class="job-title-link" title="Click để mở tab chi tiết riêng">${job.title}</a></h3>
                 <div class="job-badges-group">
                   ${job._isSearchMatch ? `<span class="badge-search-match" title="Việc làm khớp chính xác với tiêu chí tìm kiếm">✨ Khớp tìm kiếm</span>` : ''}
-                  <span class="badge-ai-match" title="Độ tương thích với hồ sơ của bạn">🎯 ${job.aiMatch}% Match</span>
                   <span class="job-salary-badge ${salaryOrangeClass}">${job.salaryBadge}</span>
                 </div>
               </div>
@@ -1304,7 +1334,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (detailJobTitle) detailJobTitle.textContent = job.title;
     if (detailCompanyName) detailCompanyName.textContent = job.company;
-    if (detailAiMatchBadge) detailAiMatchBadge.textContent = `🎯 ${job.aiMatch}% Match`;
+    if (detailAiMatchBadge) detailAiMatchBadge.style.display = 'none';
     if (detailSalaryBadge) {
       detailSalaryBadge.textContent = job.salaryBadge;
       if (job.salaryIsOrange) detailSalaryBadge.classList.add('orange');
@@ -1405,7 +1435,6 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="split-card-badges">
                 ${job._isSearchMatch ? `<span class="split-match-badge">🎯 Khớp</span>` : ''}
                 <span class="job-salary-badge ${salaryOrangeClass}" style="font-size: 12px; padding: 2px 7px;">${job.salaryBadge}</span>
-                <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 ${job.aiMatch}%</span>
               </div>
             </div>
           </div>
@@ -1502,7 +1531,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalCompanyName) modalCompanyName.textContent = job.company;
     if (modalSalary) modalSalary.textContent = job.salaryBadge;
     if (modalLocation) modalLocation.textContent = job.location;
-    if (modalAiBadge) modalAiBadge.textContent = `🎯 ${job.aiMatch}% Match`;
+    if (modalAiBadge) modalAiBadge.style.display = 'none';
 
     if (modalBadgesRow) {
       modalBadgesRow.innerHTML = job.skills
@@ -1548,41 +1577,364 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 8. DYNAMIC SIDEBAR COUNTS (CONSISTENCY FIX)
+  // 8. DYNAMIC FILTER COUNTS & TOP FILTER BAR CONTROLLER
   // =========================================================================
-  function updateSidebarCounts() {
-    document.querySelectorAll('.filter-sidebar .filter-option').forEach(option => {
-      const checkbox = option.querySelector('input[type="checkbox"]');
-      const countSpan = option.querySelector('.filter-count');
-      if (!checkbox || !countSpan) return;
-
-      const name = checkbox.getAttribute('name');
-      const val = checkbox.value;
-      let count = 0;
-
-      if (name === 'level') {
-        count = JOBS_DATA.filter(j => j.level === val).length;
-      } else if (name === 'salary') {
-        count = JOBS_DATA.filter(j => matchSalaryTier(j, val)).length;
-      } else if (name === 'exp') {
-        count = JOBS_DATA.filter(j => j.exp === val).length;
-      } else if (name === 'type') {
-        count = JOBS_DATA.filter(j => j.type === val).length;
-      }
-
-      countSpan.textContent = count;
+  function updateFilterCounts() {
+    document.querySelectorAll('[data-count-exp]').forEach(el => {
+      const val = el.getAttribute('data-count-exp');
+      el.textContent = JOBS_DATA.filter(j => j.exp === val).length;
     });
+    document.querySelectorAll('[data-count-salary]').forEach(el => {
+      const val = el.getAttribute('data-count-salary');
+      el.textContent = JOBS_DATA.filter(j => matchSalaryTier(j, val)).length;
+    });
+    document.querySelectorAll('[data-count-level]').forEach(el => {
+      const val = el.getAttribute('data-count-level');
+      el.textContent = JOBS_DATA.filter(j => j.level === val).length;
+    });
+    document.querySelectorAll('[data-count-type]').forEach(el => {
+      const val = el.getAttribute('data-count-type');
+      el.textContent = JOBS_DATA.filter(j => j.type === val).length;
+    });
+  }
+
+  function closeAllFilterDropdowns() {
+    document.querySelectorAll('.filter-dropdown-menu').forEach(menu => {
+      menu.hidden = true;
+    });
+    document.querySelectorAll('.filter-pill-btn').forEach(btn => {
+      btn.setAttribute('aria-expanded', 'false');
+    });
+    document.querySelectorAll('.filter-dropdown-wrap').forEach(wrap => {
+      wrap.classList.remove('is-open');
+    });
+  }
+
+  function updateFilterPillUI(type, value, label) {
+    const btn = document.getElementById(`${type}FilterBtn`);
+    const labelSpan = document.getElementById(`${type}FilterLabel`);
+    if (!btn || !labelSpan) return;
+
+    if (value) {
+      btn.classList.add('is-active');
+      labelSpan.textContent = label;
+    } else {
+      btn.classList.remove('is-active');
+      labelSpan.textContent = FILTER_DEFAULT_LABELS[type] || 'Bộ lọc';
+    }
+  }
+
+  function renderActiveFilterChips() {
+    const chipsRow = document.getElementById('activeFilterChipsRow');
+    const chipsList = document.getElementById('activeChipsList');
+    const clearBtn = document.getElementById('btnClearTopFilters');
+    if (!chipsList) return;
+
+    chipsList.innerHTML = '';
+    let activeCount = 0;
+
+    const activeFilters = [
+      { type: 'exp', value: selectedExp, labelPrefix: 'Kinh nghiệm' },
+      { type: 'salary', value: selectedSalary, labelPrefix: 'Lương' },
+      { type: 'level', value: selectedLevel, labelPrefix: 'Cấp bậc' },
+      { type: 'type', value: selectedType, labelPrefix: 'Hình thức' }
+    ];
+
+    activeFilters.forEach(f => {
+      if (f.value) {
+        activeCount++;
+        const selectedItem = document.querySelector(`.dropdown-item[data-type="${f.type}"][data-value="${f.value}"]`);
+        const itemLabel = selectedItem ? (selectedItem.getAttribute('data-label') || selectedItem.querySelector('span')?.textContent.trim()) : f.value;
+        
+        const chip = document.createElement('span');
+        chip.className = 'filter-chip';
+        chip.innerHTML = `
+          <span>${f.labelPrefix}: <strong>${itemLabel}</strong></span>
+          <button type="button" class="filter-chip-remove" data-clear-type="${f.type}" title="Xóa bộ lọc ${f.labelPrefix}">✕</button>
+        `;
+        chipsList.appendChild(chip);
+      }
+    });
+
+    if (activeCount > 0) {
+      if (chipsRow) chipsRow.style.display = 'block';
+      if (clearBtn) clearBtn.style.display = 'inline-flex';
+    } else {
+      if (chipsRow) chipsRow.style.display = 'none';
+      if (clearBtn) clearBtn.style.display = 'none';
+    }
+  }
+
+  function resetAllTopFilters(triggerFilter = true) {
+    selectedExp = '';
+    selectedSalary = '';
+    selectedLevel = '';
+    selectedType = '';
+
+    ['exp', 'salary', 'level', 'type'].forEach(type => {
+      updateFilterPillUI(type, '', '');
+      document.querySelectorAll(`.dropdown-item[data-type="${type}"]`).forEach(item => {
+        if (item.getAttribute('data-value') === '') {
+          item.classList.add('is-selected');
+          if (!item.querySelector('.check-icon')) {
+            item.insertAdjacentHTML('beforeend', '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>');
+          }
+        } else {
+          item.classList.remove('is-selected');
+          item.querySelector('.check-icon')?.remove();
+        }
+      });
+    });
+
+    renderActiveFilterChips();
+    closeAllFilterDropdowns();
+
+    if (triggerFilter) {
+      applyJobFilters(true, true);
+    }
+  }
+
+  function initTopFilterBar() {
+    // 1. Dropdown Pill Buttons click
+    document.querySelectorAll('.filter-pill-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const wrap = btn.closest('.filter-dropdown-wrap');
+        const menu = wrap?.querySelector('.filter-dropdown-menu');
+        if (!menu) return;
+
+        const isCurrentlyOpen = !menu.hidden;
+        closeAllFilterDropdowns();
+
+        if (!isCurrentlyOpen) {
+          menu.hidden = false;
+          btn.setAttribute('aria-expanded', 'true');
+          wrap.classList.add('is-open');
+        }
+      });
+    });
+
+    // 2. Dropdown Items click
+    document.querySelectorAll('.filter-dropdown-menu .dropdown-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const type = item.getAttribute('data-type');
+        const value = item.getAttribute('data-value') || '';
+        const label = item.getAttribute('data-label') || item.querySelector('span')?.textContent.trim() || '';
+
+        if (type === 'exp') selectedExp = value;
+        else if (type === 'salary') selectedSalary = value;
+        else if (type === 'level') selectedLevel = value;
+        else if (type === 'type') selectedType = value;
+
+        // Update selection UI inside menu
+        const menu = item.closest('.filter-dropdown-menu');
+        menu?.querySelectorAll('.dropdown-item').forEach(i => {
+          i.classList.remove('is-selected');
+          i.querySelector('.check-icon')?.remove();
+        });
+        item.classList.add('is-selected');
+        item.insertAdjacentHTML('beforeend', '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>');
+
+        updateFilterPillUI(type, value, label);
+        closeAllFilterDropdowns();
+        renderActiveFilterChips();
+        applyJobFilters(true, true);
+
+        showToast(`Đã lọc theo ${FILTER_DEFAULT_LABELS[type]}: ${value ? label : 'Tất cả'}`, '✓');
+      });
+    });
+
+    // 3. Clear All button & Clear inline button
+    document.getElementById('btnClearTopFilters')?.addEventListener('click', () => {
+      resetAllTopFilters(true);
+      showToast('Đã xóa tất cả bộ lọc tiêu chí', '✓');
+    });
+
+    document.getElementById('btnClearChipsInline')?.addEventListener('click', () => {
+      resetAllTopFilters(true);
+      showToast('Đã xóa tất cả bộ lọc tiêu chí', '✓');
+    });
+
+    // 4. Delegate click on chip remove
+    document.getElementById('activeChipsList')?.addEventListener('click', (e) => {
+      const removeBtn = e.target.closest('.filter-chip-remove');
+      if (!removeBtn) return;
+      const clearType = removeBtn.getAttribute('data-clear-type');
+      if (!clearType) return;
+
+      if (clearType === 'exp') selectedExp = '';
+      else if (clearType === 'salary') selectedSalary = '';
+      else if (clearType === 'level') selectedLevel = '';
+      else if (clearType === 'type') selectedType = '';
+
+      updateFilterPillUI(clearType, '', '');
+      const menu = document.getElementById(`${clearType}DropdownMenu`);
+      menu?.querySelectorAll('.dropdown-item').forEach(i => {
+        if (i.getAttribute('data-value') === '') {
+          i.classList.add('is-selected');
+          if (!i.querySelector('.check-icon')) {
+            i.insertAdjacentHTML('beforeend', '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>');
+          }
+        } else {
+          i.classList.remove('is-selected');
+          i.querySelector('.check-icon')?.remove();
+        }
+      });
+
+      renderActiveFilterChips();
+      applyJobFilters(true, true);
+      showToast(`Đã bỏ lọc ${FILTER_DEFAULT_LABELS[clearType]}`, '✓');
+    });
+
+    // 5. Click outside to close
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.filter-dropdown-wrap')) {
+        closeAllFilterDropdowns();
+      }
+    });
+
+    // 6. Escape key to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeAllFilterDropdowns();
+      }
+    });
+
+    // 7. Update counts
+    updateFilterCounts();
   }
 
   // =========================================================================
   // 9. EVENT LISTENERS & POPSTATE (BACK / FORWARD SUPPORT)
   // =========================================================================
 
+  // =========================================================================
+  // RECENT SEARCHES & SUGGEST DROPDOWN (Kế thừa từ Trang chủ)
+  // =========================================================================
+  const RECENT_SEARCH_KEY = 'easycv_recent_searches_v2';
+
+  function getRecentSearches() {
+    try {
+      const data = localStorage.getItem(RECENT_SEARCH_KEY);
+      return data ? JSON.parse(data) : ['Marketing Leader', 'Senior ReactJS', 'Product Designer', 'Node.js Backend'];
+    } catch (e) {
+      return ['Marketing Leader', 'Senior ReactJS', 'Product Designer'];
+    }
+  }
+
+  function saveRecentSearch(keyword) {
+    if (!keyword || !keyword.trim()) return;
+    const term = keyword.trim();
+    try {
+      let searches = getRecentSearches();
+      searches = searches.filter(s => s.toLowerCase() !== term.toLowerCase());
+      searches.unshift(term);
+      if (searches.length > 8) searches = searches.slice(0, 8);
+      localStorage.setItem(RECENT_SEARCH_KEY, JSON.stringify(searches));
+      renderRecentSearches();
+    } catch (e) {}
+  }
+
+  function removeRecentSearch(keyword) {
+    try {
+      let searches = getRecentSearches();
+      searches = searches.filter(s => s.toLowerCase() !== keyword.toLowerCase());
+      localStorage.setItem(RECENT_SEARCH_KEY, JSON.stringify(searches));
+      renderRecentSearches();
+    } catch (e) {}
+  }
+
+  function renderRecentSearches() {
+    if (!recentSearchList) return;
+    recentSearchList.innerHTML = '';
+    const searches = getRecentSearches();
+    if (!searches || searches.length === 0) {
+      recentSearchList.innerHTML = '<span class="recent-empty-hint">Chưa có lịch sử tìm kiếm gần đây</span>';
+      if (btnClearSearchHistory) btnClearSearchHistory.style.display = 'none';
+      return;
+    }
+    if (btnClearSearchHistory) btnClearSearchHistory.style.display = 'inline-block';
+    searches.forEach(keyword => {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'recent-chip';
+      chip.innerHTML = `
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <span class="recent-chip-text">${keyword}</span>
+        <span class="recent-chip-remove" title="Xóa từ khóa này">✕</span>
+      `;
+      chip.addEventListener('click', (e) => {
+        if (e.target.classList.contains('recent-chip-remove')) {
+          e.stopPropagation();
+          removeRecentSearch(keyword);
+          return;
+        }
+        if (searchInput) searchInput.value = keyword;
+        if (clearSearchInputBtn) clearSearchInputBtn.style.display = 'flex';
+        closeSuggest();
+        applyJobFilters(true, true);
+        showToast(`Tìm kiếm "${keyword}": Đang cập nhật kết quả`, '🎯');
+      });
+      recentSearchList.appendChild(chip);
+    });
+  }
+
+  function openSuggest() {
+    if (!searchSuggestDropdown) return;
+    renderRecentSearches();
+    searchSuggestDropdown.classList.add('is-open');
+    if (searchInput) searchInput.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeSuggest() {
+    if (!searchSuggestDropdown) return;
+    searchSuggestDropdown.classList.remove('is-open');
+    if (searchInput) searchInput.setAttribute('aria-expanded', 'false');
+  }
+
+  searchInput?.addEventListener('focus', () => {
+    openSuggest();
+  });
+
+  searchInput?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openSuggest();
+  });
+
+  btnClearSearchHistory?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    try {
+      localStorage.removeItem(RECENT_SEARCH_KEY);
+      renderRecentSearches();
+      showToast('Đã xóa toàn bộ lịch sử tìm kiếm', '🗑️');
+    } catch (e) {}
+  });
+
+  btnCloseSuggest?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeSuggest();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (searchSuggestDropdown && !searchSuggestDropdown.contains(e.target) && e.target !== searchInput) {
+      closeSuggest();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeSuggest();
+    }
+  });
+
   // Search Form Submit
   jobSearchForm?.addEventListener('submit', (e) => {
     e.preventDefault();
-    applyJobFilters(true, true);
+    closeSuggest();
     const query = searchInput?.value.trim() || '';
+    if (query) saveRecentSearch(query);
+    applyJobFilters(true, true);
     const matchCount = currentFilteredJobs.filter(j => j._isSearchMatch).length;
     if (query && matchCount > 0) {
       showToast(`Tìm kiếm "${query}": Tìm thấy ${matchCount} việc làm phù hợp nhất!`, '🎯');
@@ -1600,18 +1952,31 @@ document.addEventListener('DOMContentLoaded', () => {
     jobSearchForm?.dispatchEvent(new Event('submit', { cancelable: true }));
   });
 
-  // Search Input live type
+  // Search Input live type & Clear button
   let searchDebounceTimer;
   searchInput?.addEventListener('input', () => {
+    if (clearSearchInputBtn) {
+      clearSearchInputBtn.style.display = searchInput.value.trim() ? 'flex' : 'none';
+    }
     clearTimeout(searchDebounceTimer);
     searchDebounceTimer = setTimeout(() => {
       applyJobFilters(true, true);
     }, 250);
   });
 
+  clearSearchInputBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (searchInput) searchInput.value = '';
+    clearSearchInputBtn.style.display = 'none';
+    searchInput?.focus();
+    applyJobFilters(true, true);
+    showToast('Đã xóa từ khóa tìm kiếm', 'ℹ️');
+  });
+
   // Clear Keyword button
   btnClearKeyword?.addEventListener('click', () => {
     if (searchInput) searchInput.value = '';
+    if (clearSearchInputBtn) clearSearchInputBtn.style.display = 'none';
     activeIndustryQuery = '';
     if (categorySelect) categorySelect.value = '';
     if (window.EasyCVCategoryModal) window.EasyCVCategoryModal.clearAll();
@@ -1668,9 +2033,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Reset Filters button
   btnResetFilters?.addEventListener('click', () => {
+    resetAllTopFilters(false);
     document.querySelectorAll('.filter-sidebar input[type="checkbox"]').forEach(cb => cb.checked = false);
     document.querySelectorAll('.quick-filter-tags .tag-btn').forEach(b => b.classList.remove('active'));
-    if (locationSelect) locationSelect.value = '';
+    if (searchInput) searchInput.value = '';
+    if (clearSearchInputBtn) clearSearchInputBtn.style.display = 'none';
+    if (window.EasyCVLocationPicker) window.EasyCVLocationPicker.reset();
+    else if (locationSelect) locationSelect.value = '';
     if (categorySelect) categorySelect.value = '';
     if (window.EasyCVCategoryModal) window.EasyCVCategoryModal.clearAll();
     applyJobFilters(true, true);
@@ -1679,8 +2048,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Empty state Reset Search
   btnResetSearch?.addEventListener('click', () => {
+    resetAllTopFilters(false);
     if (searchInput) searchInput.value = '';
-    if (locationSelect) locationSelect.value = '';
+    if (clearSearchInputBtn) clearSearchInputBtn.style.display = 'none';
+    if (window.EasyCVLocationPicker) window.EasyCVLocationPicker.reset();
+    else if (locationSelect) locationSelect.value = '';
     if (categorySelect) categorySelect.value = '';
     if (window.EasyCVCategoryModal) window.EasyCVCategoryModal.clearAll();
     document.querySelectorAll('.quick-filter-tags .tag-btn').forEach(b => b.classList.remove('active'));
@@ -1746,6 +2118,45 @@ document.addEventListener('DOMContentLoaded', () => {
   btnDetailApply?.addEventListener('click', onSplitApply);
   btnStickyApply?.addEventListener('click', onSplitApply);
 
+  // --- Sticky Hero Search Bar on Scroll ---
+  function initStickySearch() {
+    const wrapper = document.getElementById('heroSearchWrapper') || document.getElementById('jobSearchWrapper');
+    const stickyBar = document.getElementById('heroSearchStickyBar') || document.getElementById('jobSearchStickyBar');
+    if (!wrapper || !stickyBar) return;
+
+    const header = document.querySelector('.site-header') || document.querySelector('.navbar');
+    let ticking = false;
+
+    function updateStickyState() {
+      const headerHeight = header ? header.offsetHeight : 72;
+      stickyBar.style.setProperty('--sticky-search-top', headerHeight + 'px');
+
+      const wrapperRect = wrapper.getBoundingClientRect();
+      if (wrapperRect.top < headerHeight) {
+        if (!stickyBar.classList.contains('is-sticky')) {
+          wrapper.style.minHeight = wrapperRect.height + 'px';
+          stickyBar.classList.add('is-sticky');
+        }
+      } else {
+        if (stickyBar.classList.contains('is-sticky')) {
+          stickyBar.classList.remove('is-sticky');
+          wrapper.style.minHeight = '';
+        }
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateStickyState);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    window.addEventListener('resize', updateStickyState, { passive: true });
+    updateStickyState();
+  }
+
   // Parse Initial URL Query Parameters & Listen to popstate
   function syncStateFromUrl() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -1755,19 +2166,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const industryParam = urlParams.get('industry') || '';
     const jobIdParam = urlParams.get('jobId') || urlParams.get('id');
 
-    if (searchInput) searchInput.value = keywordParam;
+    if (searchInput) {
+      searchInput.value = keywordParam;
+      if (clearSearchInputBtn) {
+        clearSearchInputBtn.style.display = keywordParam ? 'flex' : 'none';
+      }
+    }
     activeIndustryQuery = industryParam;
 
-    if (locationSelect && locationParam) {
-      const normLoc = normalizeText(locationParam);
-      for (let opt of locationSelect.options) {
-        if (opt.value && (normalizeText(opt.value).includes(normLoc) || normLoc.includes(normalizeText(opt.value)))) {
-          locationSelect.value = opt.value;
-          break;
-        }
+    if (locationParam) {
+      if (window.EasyCVLocationPicker) {
+        window.EasyCVLocationPicker.setSelected(locationParam);
+      } else if (heroLocationTrigger && heroLocationTrigger.firstChild) {
+        heroLocationTrigger.firstChild.textContent = `${locationParam} `;
       }
-    } else if (locationSelect) {
-      locationSelect.value = '';
+      if (locationSelect) {
+        locationSelect.value = locationParam;
+      }
+    } else {
+      if (window.EasyCVLocationPicker) {
+        window.EasyCVLocationPicker.reset();
+      } else if (heroLocationTrigger && heroLocationTrigger.firstChild) {
+        heroLocationTrigger.firstChild.textContent = 'Tất cả địa điểm ';
+      }
+      if (locationSelect) {
+        locationSelect.value = '';
+      }
     }
 
     if (categorySelect) {
@@ -1781,6 +2205,39 @@ document.addEventListener('DOMContentLoaded', () => {
         window.EasyCVCategoryModal.setSelection({ groups: [], subgroups: [], roles: [industryParam] });
       }
     }
+
+    // Đồng bộ tham số Top Filter Bar từ URL
+    const expParam = urlParams.get('exp') || '';
+    const salaryParam = urlParams.get('salary') || '';
+    const levelParam = urlParams.get('level') || '';
+    const typeParam = urlParams.get('type') || '';
+
+    selectedExp = expParam;
+    selectedSalary = salaryParam;
+    selectedLevel = levelParam;
+    selectedType = typeParam;
+
+    ['exp', 'salary', 'level', 'type'].forEach(t => {
+      const val = t === 'exp' ? selectedExp : t === 'salary' ? selectedSalary : t === 'level' ? selectedLevel : selectedType;
+      const item = document.querySelector(`.dropdown-item[data-type="${t}"][data-value="${val}"]`);
+      const label = item ? (item.getAttribute('data-label') || item.querySelector('span')?.textContent.trim()) : val;
+      updateFilterPillUI(t, val, label);
+
+      const menu = document.getElementById(`${t}DropdownMenu`);
+      menu?.querySelectorAll('.dropdown-item').forEach(i => {
+        if (i.getAttribute('data-value') === val) {
+          i.classList.add('is-selected');
+          if (!i.querySelector('.check-icon')) {
+            i.insertAdjacentHTML('beforeend', '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>');
+          }
+        } else {
+          i.classList.remove('is-selected');
+          i.querySelector('.check-icon')?.remove();
+        }
+      });
+    });
+
+    renderActiveFilterChips();
 
     applyJobFilters(true, false);
 
@@ -1801,6 +2258,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Initial Boot
+  initTopFilterBar();
   syncStateFromUrl();
+  initStickySearch();
+
+  // VIP Employer ad explore button
+  document.getElementById('btnExploreVipEmployer')?.addEventListener('click', () => {
+    if (searchInput) {
+      searchInput.value = 'Samsung';
+      applyJobFilters(true, true);
+      showToast('Đang hiển thị vị trí tuyển dụng của Samsung R&D', '★');
+      window.scrollTo({ top: 380, behavior: 'smooth' });
+    }
+  });
+
   console.log(`EasyCV Job Search loaded successfully. Total catalog: ${JOBS_DATA.length} jobs.`);
 });
