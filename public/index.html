@@ -8,121 +8,10 @@
   <link rel="icon" type="image/png" href="assets/logos/easycv-icon.png">
   <link rel="stylesheet" href="assets/design-tokens.css?v=1.1">
   <link rel="stylesheet" href="css/navbar.css?v=6.0_no_scrollbar">
-  <link rel="stylesheet" href="css/home.css?v=5.0_featured_companies">
+  <link rel="stylesheet" href="css/home.css?v=6.3_icon_favorite">
   <link rel="stylesheet" href="css/location-picker.css?v=1">
   <link rel="stylesheet" href="css/category-filter-modal.css?v=1.0">
   <style>
-    /* =========================================================================
-       CRITICAL INLINE CSS: FEATURED COMPANIES ACTIONS (BYPASS BROWSER CACHE)
-       ========================================================================= */
-    .company-card-header-row {
-      grid-column: 2;
-      grid-row: 1;
-      align-self: end;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-      gap: 12px !important;
-      margin-top: 14px !important;
-    }
-    .company-card-header-row .company-card-title {
-      font-size: 21px !important;
-      line-height: 1.3 !important;
-      font-weight: 800 !important;
-      color: var(--text-main, #0F172A) !important;
-      margin-top: 0 !important;
-      text-decoration: none !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 4px !important;
-      flex: 1 !important;
-      min-width: 0 !important;
-    }
-    .company-card-header-row .company-card-title:hover {
-      color: #F97316 !important;
-    }
-    .btn-follow-company {
-      position: static !important;
-      flex-shrink: 0 !important;
-      min-height: 30px !important;
-      padding: 4px 12px !important;
-      font-size: 13px !important;
-      font-weight: 600 !important;
-      border-radius: 9999px !important;
-      border: 1px solid #CBD5E1 !important;
-      background: #FFFFFF !important;
-      color: #F97316 !important;
-      cursor: pointer !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 5px !important;
-      transition: all 0.15s ease !important;
-      font-family: inherit !important;
-      white-space: nowrap !important;
-      text-decoration: none !important;
-      width: auto !important;
-      box-shadow: none !important;
-    }
-    .btn-follow-company:hover {
-      border-color: #F97316 !important;
-      color: #EA580C !important;
-      background: #FFF7ED !important;
-      transform: translateY(-1px) !important;
-    }
-    .btn-follow-company.following {
-      background: #F97316 !important;
-      border-color: #F97316 !important;
-      color: #FFFFFF !important;
-    }
-    .btn-company-jobs {
-      grid-column: 1 / -1 !important;
-      grid-row: 4 !important;
-      width: 100% !important;
-      min-height: 44px !important;
-      padding: 10px 20px !important;
-      font-size: 14px !important;
-      font-weight: 700 !important;
-      border-radius: 9999px !important;
-      background: linear-gradient(135deg, #FF8A34 0%, #F97316 100%) !important;
-      color: #FFFFFF !important;
-      text-decoration: none !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 8px !important;
-      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.25) !important;
-      transition: all 0.15s ease !important;
-      margin-top: auto !important;
-      border: none !important;
-      cursor: pointer !important;
-    }
-    .btn-company-jobs:hover {
-      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%) !important;
-      color: #FFFFFF !important;
-      box-shadow: 0 6px 20px rgba(249, 115, 22, 0.38) !important;
-      transform: translateY(-2px) !important;
-    }
-    .btn-company-jobs svg {
-      transition: transform 0.2s ease !important;
-      flex-shrink: 0 !important;
-    }
-    .btn-company-jobs:hover svg {
-      transform: translateX(4px) !important;
-    }
-    @media (max-width: 640px) {
-      .company-card-header-row {
-        gap: 8px !important;
-      }
-      .btn-follow-company {
-        padding: 3px 9px !important;
-        font-size: 11.5px !important;
-        min-height: 26px !important;
-      }
-      .btn-company-jobs {
-        min-height: 40px !important;
-        font-size: 13.5px !important;
-      }
-    }
     /* =========================================================================
        CRITICAL INLINE CSS: HERO SPLIT LAYOUT & SPONSORED RECRUITER SHOWCASE
        (Bypass Browser Cache & Ensure 100% Reliable Rendering)
@@ -837,139 +726,141 @@
     }
 
     /* =========================================================================
-       KHUNG BANNER DOANH NGHIỆP TIÊU BIỂU (CHUẨN VIETNAMWORKS: RỘNG THOÁNG & RÕ RÀNG)
-       - Khung rộng thoáng theo chuẩn VietnamWorks (Container 1200px, Chiều cao tổng ~410px)
-       - Phần ảnh Banner chính (cao 336px) hiển thị trọn vẹn thông điệp, slogan, không bị cắt chữ
-       - Thanh thương hiệu đính kèm (cao 74px) gồm Logo công ty, Tiêu đề, Tên doanh nghiệp & Nút CTA "Khám Phá Ngay"
+       KHỐI BANNER NHÀ TUYỂN DỤNG TIÊU BIỂU (BENTO GRID: 1 Ô CHÍNH + 3 Ô PHỤ)
+       - Ô chính (sponsor-primary) chiếm ~1.7 phần bề rộng, tài trợ cao nhất
+       - 3 ô phụ (sponsor-mini) dùng ảnh nền thật + lớp phủ gradient để chữ rõ
+       - Tổng chiều cao khối tương đương bản cũ (~410px ở desktop)
        ========================================================================= */
-    .hero-ad-showcase {
+    .hero-ad-showcase.bento-sponsor-grid {
+      display: grid !important;
+      grid-template-columns: 1.7fr 1fr 1fr !important;
+      grid-template-rows: auto auto !important;
+      gap: 14px !important;
       width: 100% !important;
       max-width: 100% !important;
       height: auto !important;
-      min-height: 410px !important;
-      position: relative !important;
+      min-height: 0 !important;
       padding: 0 !important;
-      border-radius: 16px !important;
-      overflow: hidden !important;
-      border: 1.5px solid #FED7AA !important;
-      box-shadow: 0 12px 32px -6px rgba(15, 23, 42, 0.12) !important;
-      box-sizing: border-box !important;
+      border: none !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
       margin-top: 12px !important;
-      background: #0F172A !important;
-      display: flex !important;
-      flex-direction: column !important;
-      transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+      box-sizing: border-box !important;
     }
-    .hero-ad-showcase:hover {
-      border-color: #F97316 !important;
-      box-shadow: 0 16px 40px -6px rgba(249, 115, 22, 0.22) !important;
-    }
-    .ad-cards-wrapper {
-      position: relative !important;
-      width: 100% !important;
-      height: 100% !important;
-      display: flex !important;
-      flex-direction: column !important;
-    }
-    .employer-spotlight-card {
-      display: flex !important;
-      flex-direction: column !important;
-      width: 100% !important;
-      height: 100% !important;
-      position: relative !important;
-      text-decoration: none !important;
-      color: inherit !important;
-      overflow: hidden !important;
-    }
-    .spotlight-banner-media {
-      position: relative !important;
-      width: 100% !important;
-      height: 336px !important;
-      min-height: 336px !important;
-      overflow: hidden !important;
-      display: block !important;
-      text-decoration: none !important;
-      background: #0F172A !important;
-    }
-    .spotlight-banner-img {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
-      object-position: center top !important;
-      display: block !important;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    }
-    .spotlight-banner-media:hover .spotlight-banner-img {
-      transform: scale(1.02) !important;
-    }
-    .spotlight-slide-overlay {
-      position: absolute;
-      z-index: 2;
-      top: 30px;
-      left: 70px;
-      right: 70px;
-      text-align: center;
-      color: #FFFFFF;
-      text-shadow: 0 3px 16px rgba(0, 0, 0, 0.65);
-      pointer-events: none;
-    }
-    .spotlight-slide-overlay[hidden] {
-      display: none !important;
-    }
-    .spotlight-slide-eyebrow,
-    .spotlight-slide-headline,
-    .spotlight-slide-subline {
-      display: block;
-    }
-    .spotlight-slide-eyebrow {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-    }
-    .spotlight-slide-headline {
-      margin-top: 6px;
-      font-size: clamp(25px, 3vw, 40px);
-      font-weight: 800;
-      line-height: 1.2;
-    }
-    .spotlight-slide-subline {
-      margin-top: 6px;
-      font-size: 17px;
-      font-weight: 600;
-    }
-    .spotlight-slide-controls {
-      position: absolute;
-      z-index: 20;
-      top: 294px;
-      right: 14px;
+
+    .sponsor-primary {
+      grid-column: 1;
+      grid-row: 1 / 3;
       display: flex;
-      gap: 4px;
+      flex-direction: column;
+      min-height: 410px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1.5px solid #FED7AA;
+      box-shadow: 0 12px 32px -6px rgba(15, 23, 42, 0.12);
+      background: #0F172A;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
     }
-    .spotlight-slide-dot {
+    .sponsor-primary:hover {
+      border-color: #F97316;
+      box-shadow: 0 16px 40px -6px rgba(249, 115, 22, 0.22);
+    }
+    .sponsor-primary-media {
+      position: relative;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+      background: #0F172A;
+    }
+    .sponsor-primary-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .sponsor-primary-media:hover img {
+      transform: scale(1.02);
+    }
+
+    /* 3 ô phụ: logo + tên + số vị trí nổi trên ảnh thật */
+    .sponsor-mini {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 14px 16px;
+      color: #FFFFFF;
+      text-decoration: none;
+      border-radius: 14px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 6px 16px -6px rgba(15, 23, 42, 0.18);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .sponsor-mini:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px -6px rgba(15, 23, 42, 0.3);
+    }
+    .sponsor-mini::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(11, 17, 32, 0.88), rgba(11, 17, 32, 0.15) 60%, rgba(11, 17, 32, 0));
+      z-index: 0;
+    }
+    .sponsor-mini > * {
+      position: relative;
+      z-index: 1;
+    }
+    .sponsor-mini-logo {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       display: grid;
       place-items: center;
-      width: 30px;
-      height: 30px;
-      padding: 0;
-      border: 0;
-      border-radius: 50%;
-      background: rgba(15, 23, 42, 0.7);
-      cursor: pointer;
+      font-size: 10.5px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
     }
-    .spotlight-slide-dot::after {
-      content: '';
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #FFFFFF;
+    .sponsor-mini-name {
+      font-size: 13.5px;
+      font-weight: 800;
+      line-height: 1.25;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     }
-    .spotlight-slide-dot[aria-current='true']::after {
-      background: #F97316;
-      box-shadow: 0 0 0 2px #FFFFFF;
+    .sponsor-mini-sub {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #CBD5E1;
+      margin-top: 2px;
     }
-    .spotlight-slide-dot:focus-visible {
-      outline: 3px solid #F97316;
-      outline-offset: 2px;
+    .sponsor-mini-a { grid-column: 2; grid-row: 1; min-height: 120px; }
+    .sponsor-mini-b { grid-column: 3; grid-row: 1; min-height: 120px; }
+    .sponsor-mini-wide {
+      grid-column: 2 / 4;
+      grid-row: 2;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 120px;
+    }
+    .sponsor-mini-cta {
+      font-size: 12px;
+      font-weight: 700;
+      color: #FDBA74;
+      flex-shrink: 0;
     }
     .ad-badge-overlay {
       position: absolute;
@@ -1087,23 +978,15 @@
       box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45) !important;
       transform: translateY(-1px) !important;
     }
-    .employer-spotlight-card.full-image .spotlight-banner-media,
-    .employer-spotlight-card > img.spotlight-banner-img:only-child {
-      height: 400px !important;
-      min-height: 400px !important;
-    }
-
     /* Responsive */
     @media (max-width: 1024px) {
-      .hero-ad-showcase {
-        min-height: 330px !important;
+      .sponsor-primary {
+        min-height: 330px;
       }
-      .spotlight-banner-media {
-        height: 260px !important;
-        min-height: 260px !important;
-      }
-      .spotlight-slide-controls {
-        top: 218px;
+      .sponsor-mini-a,
+      .sponsor-mini-b,
+      .sponsor-mini-wide {
+        min-height: 100px;
       }
       .spotlight-brand-footer {
         padding: 12px 18px !important;
@@ -1126,31 +1009,23 @@
       .hero-mock-section {
         padding: 22px 0 !important;
       }
-      .hero-ad-showcase {
-        min-height: 240px !important;
+      .bento-sponsor-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+      }
+      .sponsor-primary {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        min-height: 240px;
         border-radius: 14px !important;
       }
-      .spotlight-banner-media {
-        height: 180px !important;
-        min-height: 180px !important;
-      }
-      .spotlight-slide-overlay {
-        top: 52px;
-        left: 18px;
-        right: 18px;
-      }
-      .spotlight-slide-eyebrow {
-        display: none;
-      }
-      .spotlight-slide-headline {
-        margin-top: 4px;
-        font-size: 20px;
-      }
-      .spotlight-slide-subline {
-        font-size: 12px;
-      }
-      .spotlight-slide-controls {
-        top: 142px;
+      .sponsor-mini-a { grid-column: 1; grid-row: 2; }
+      .sponsor-mini-b { grid-column: 2; grid-row: 2; }
+      .sponsor-mini-wide { grid-column: 1 / 3; grid-row: 3; }
+      .sponsor-mini-a,
+      .sponsor-mini-b,
+      .sponsor-mini-wide {
+        min-height: 110px;
       }
       .spotlight-brand-footer {
         padding: 10px 14px !important;
@@ -1245,6 +1120,18 @@
         flex-direction: column;
         align-items: flex-start;
       }
+    }
+    @media (max-width: 480px) {
+      .bento-sponsor-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .sponsor-primary {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .sponsor-mini-a { grid-column: 1; grid-row: 2; }
+      .sponsor-mini-b { grid-column: 1; grid-row: 3; }
+      .sponsor-mini-wide { grid-column: 1; grid-row: 4; }
     }
 
     .promo-banners-strip {
@@ -2055,6 +1942,7 @@
               <span>Tìm việc ngay</span>
             </button>
           </div>
+          </div>
 
           <!-- KHỐI GỢI Ý SEARCH ĐÈ LÊN KHỐI TIÊU ĐIỂM -->
           <div class="search-suggest-dropdown" id="searchSuggestDropdown">
@@ -2081,10 +1969,9 @@
               <button type="button" class="btn-close-suggest" id="btnCloseSuggest">Đóng [Esc]</button>
             </div>
           </div>
-        </div>
 
-        <!-- Popover / Modal: Chọn Nhóm nghề, Nghề hoặc Chuyên môn (Chuẩn ảnh mẫu tham khảo) -->
-        <div class="category-modal-overlay" id="categoryModalOverlay" role="dialog" aria-modal="true" aria-labelledby="categoryModalTitle" hidden>
+          <!-- Popover / Modal: Chọn Nhóm nghề, Nghề hoặc Chuyên môn (Chuẩn ảnh mẫu tham khảo) -->
+          <div class="category-modal-overlay" id="categoryModalOverlay" role="dialog" aria-modal="true" aria-labelledby="categoryModalTitle" hidden>
           <div class="category-modal-backdrop" id="categoryModalBackdrop"></div>
           <div class="category-modal-dialog">
 
@@ -2121,6 +2008,12 @@
                 <div class="category-right-headers">
                   <div class="category-column-header col-role">NGHỀ</div>
                   <div class="category-column-header col-specialty">VỊ TRÍ CHUYÊN MÔN</div>
+                </div>
+                <div class="category-popular-wrap" id="categoryPopularWrap">
+                  <span class="category-popular-label">Được tìm kiếm nhiều</span>
+                  <div class="category-popular-chip-list" id="categoryPopularChipList">
+                    <!-- Rendered dynamically -->
+                  </div>
                 </div>
                 <div class="category-subgroup-list" id="categorySubgroupList">
                   <!-- Rendered dynamically -->
@@ -2163,57 +2056,62 @@
           <a href="#remote" class="quick-tag-link tag-highlight" data-keyword="Việc làm Remote">🔥 Việc làm Remote</a>
         </div>
 
-        <!-- KHỐI BANNER DOANH NGHIỆP TIÊU BIỂU (CHUẨN VIETNAMWORKS: RỘNG THOÁNG, HIỂN THỊ RÕ RÀNG BANNER & THANH NHẬN DIỆN THƯƠNG HIỆU) -->
-        <div class="hero-ad-showcase vnw-billboard-showcase">
-          <div class="ad-cards-wrapper">
-            <div class="employer-spotlight-card active" data-ad-index="0">
-              <!-- Banner chính thức: Hiển thị đầy đủ hình ảnh, slogan và thông điệp không bị cắt xén -->
-              <a href="#doanh-nghiep-tieu-bieu" class="spotlight-banner-media" title="Khám phá cơ hội nghề nghiệp tại Orion Technologies">
-                <img src="assets/banners/employer-spotlight-banner.jpg" alt="Doanh nghiệp tiêu biểu EasyCV - Orion Technologies Innovate The Future" class="spotlight-banner-img" />
-                <div class="spotlight-slide-overlay" hidden>
-                  <span class="spotlight-slide-eyebrow">ORION TECHNOLOGIES</span>
-                  <span class="spotlight-slide-headline"></span>
-                  <span class="spotlight-slide-subline"></span>
+        <!-- KHỐI BANNER NHÀ TUYỂN DỤNG TIÊU BIỂU (BENTO GRID: 1 Ô CHÍNH + 3 Ô PHỤ) -->
+        <div class="hero-ad-showcase bento-sponsor-grid">
+
+          <!-- Ô chính: Doanh nghiệp tiêu biểu (gói tài trợ cao nhất) -->
+          <div class="sponsor-primary">
+            <a href="#doanh-nghiep-tieu-bieu" class="sponsor-primary-media" title="Khám phá cơ hội nghề nghiệp tại Orion Technologies">
+              <img src="assets/banners/employer-spotlight-banner.jpg" alt="Doanh nghiệp tiêu biểu EasyCV - Orion Technologies Innovate The Future" />
+              <div class="ad-badge-overlay">
+                <span class="sponsor-star-icon">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="#F97316"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </span>
+                <span>Doanh nghiệp nổi bật</span>
+                <span class="ad-tag-badge-mini">Tài trợ</span>
+              </div>
+            </a>
+            <div class="spotlight-brand-footer">
+              <a href="#doanh-nghiep-tieu-bieu" class="spotlight-brand-info" title="Xem chi tiết doanh nghiệp Orion Technologies">
+                <div class="spotlight-brand-logo">
+                  <svg viewBox="0 0 40 40" width="38" height="38" fill="none">
+                    <rect width="40" height="40" rx="8" fill="#F97316"/>
+                    <path d="M20 9L29 14.5V25.5L20 31L11 25.5V14.5L20 9Z" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round"/>
+                    <circle cx="20" cy="20" r="4.5" fill="#FFFFFF"/>
+                  </svg>
                 </div>
-                <!-- Badge Tài trợ tinh tế ở góc ảnh -->
-                <div class="ad-badge-overlay">
-                  <span class="sponsor-star-icon">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="#F97316"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                  </span>
-                  <span>Doanh nghiệp nổi bật</span>
-                  <span class="ad-tag-badge-mini">Tài trợ</span>
+                <div class="spotlight-brand-text">
+                  <span class="spotlight-brand-title">Join Us Now • Build What Matters</span>
+                  <span class="spotlight-brand-name">TẬP ĐOÀN CÔNG NGHỆ ORION (VIỆT NAM) • 250+ VỊ TRÍ TUYỂN DỤNG</span>
                 </div>
               </a>
-              <div class="spotlight-slide-controls" aria-label="Chọn ảnh banner">
-                <button type="button" class="spotlight-slide-dot" aria-label="Ảnh banner 1" aria-current="true"></button>
-                <button type="button" class="spotlight-slide-dot" aria-label="Ảnh banner 2" aria-current="false"></button>
-                <button type="button" class="spotlight-slide-dot" aria-label="Ảnh banner 3" aria-current="false"></button>
-              </div>
-
-              <!-- Thanh nhận diện thương hiệu chuẩn VietnamWorks (Logo + Slogan + Tên công ty + Nút Khám Phá Ngay) -->
-              <div class="spotlight-brand-footer">
-                <a href="#doanh-nghiep-tieu-bieu" class="spotlight-brand-info" title="Xem chi tiết doanh nghiệp Orion Technologies">
-                  <div class="spotlight-brand-logo">
-                    <svg viewBox="0 0 40 40" width="38" height="38" fill="none">
-                      <rect width="40" height="40" rx="8" fill="#F97316"/>
-                      <path d="M20 9L29 14.5V25.5L20 31L11 25.5V14.5L20 9Z" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round"/>
-                      <circle cx="20" cy="20" r="4.5" fill="#FFFFFF"/>
-                    </svg>
-                  </div>
-                  <div class="spotlight-brand-text">
-                    <span class="spotlight-brand-title">Join Us Now • Build What Matters</span>
-                    <span class="spotlight-brand-name">TẬP ĐOÀN CÔNG NGHỆ ORION (VIỆT NAM) • 250+ VỊ TRÍ TUYỂN DỤNG</span>
-                  </div>
-                </a>
-                <a href="#doanh-nghiep-tieu-bieu" class="spotlight-brand-btn" title="Khám phá ngay cơ hội việc làm tại Orion Technologies">
-                  <span>Khám Phá Ngay</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
-              </div>
+              <a href="#doanh-nghiep-tieu-bieu" class="spotlight-brand-btn" title="Khám phá ngay cơ hội việc làm tại Orion Technologies">
+                <span>Khám Phá Ngay</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
             </div>
           </div>
+
+          <!-- 3 ô phụ: nhà tuyển dụng khác (gói tài trợ nhỏ hơn) -->
+          <a href="#doanh-nghiep-tieu-bieu" class="sponsor-mini sponsor-mini-a" style="background-image:url('assets/banners/employer-spotlight-finance.jpg');" title="Xem cơ hội việc làm tại Vietcom Finance">
+            <span class="sponsor-mini-logo">VN</span>
+            <span class="sponsor-mini-name">Vietcom Finance</span>
+            <span class="sponsor-mini-sub">48 vị trí</span>
+          </a>
+          <a href="#doanh-nghiep-tieu-bieu" class="sponsor-mini sponsor-mini-b" style="background-image:url('assets/banners/employer-spotlight-retail.jpg');" title="Xem cơ hội việc làm tại Saigon Retail Corp">
+            <span class="sponsor-mini-logo">SV</span>
+            <span class="sponsor-mini-name">Saigon Retail Corp</span>
+            <span class="sponsor-mini-sub">120 vị trí</span>
+          </a>
+          <a href="#doanh-nghiep-tieu-bieu" class="sponsor-mini sponsor-mini-wide" style="background-image:url('assets/banners/employer-spotlight-manufacturing.jpg');" title="Xem cơ hội việc làm tại HanTech Group">
+            <div style="display:flex; flex-direction:column; min-width:0;">
+              <span class="sponsor-mini-logo">HT</span>
+              <span class="sponsor-mini-name">HanTech Group</span>
+              <span class="sponsor-mini-sub">76 vị trí · Đang tuyển gấp</span>
+            </div>
+            <span class="sponsor-mini-cta">Xem ngay →</span>
+          </a>
         </div>
-        <script src="js/spotlight-rotation.js?v=1"></script>
 
       </div>
 
@@ -2688,152 +2586,122 @@
         </a>
       </div>
 
-      <div class="companies-grid">
+      <div class="companies-carousel">
+        <div class="companies-track">
 
-        <!-- Company 1: FPT Software -->
-        <div class="company-card">
-          <div class="company-cover" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80');">
-            <div class="company-cover-overlay"></div>
-          </div>
-          <div class="company-card-body">
+          <!-- Company 1: FPT Software -->
+          <div class="company-card">
             <div class="company-card-logo-wrap">
               <span class="company-card-logo-mark company-logo-fpt" role="img" aria-label="FPT Software">FPT</span>
             </div>
-            <div class="company-card-header-row">
-              <a href="viec-lam.html?q=FPT+Software" class="company-card-title">
-                <span>FPT Software</span>
-                <span class="badge-verified-inline"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
-              </a>
-              <button class="btn-follow-company" type="button" data-followers="54.2k" aria-label="Theo dõi FPT Software">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-                <span>Theo dõi</span>
+            <a href="viec-lam.html?q=FPT+Software" class="company-card-title">Công ty TNHH Phần Mềm FPT - FPT Software</a>
+            <div class="company-card-footer">
+              <span class="company-jobs-pill">145 việc làm</span>
+              <button class="btn-favorite-company" type="button" aria-label="Yêu thích FPT Software">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
               </button>
             </div>
-            <span class="company-industry">Công nghệ thông tin · Dịch vụ phần mềm</span>
-
-            <div class="company-meta-stats">
-              <span class="company-rating">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                4.8 <span class="company-rating-count">· 850+ đánh giá</span>
-              </span>
-              <span class="company-open-jobs">145 <span class="company-stat-label">việc làm đang mở</span></span>
-            </div>
-
-            <a href="viec-lam.html?q=FPT+Software" class="btn-company-jobs">
-              <span>Xem vị trí tuyển dụng</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
           </div>
-        </div>
 
-        <!-- Company 2: VNG Corporation -->
-        <div class="company-card">
-          <div class="company-cover" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80');">
-            <div class="company-cover-overlay"></div>
-          </div>
-          <div class="company-card-body">
+          <!-- Company 2: VNG Corporation -->
+          <div class="company-card">
             <div class="company-card-logo-wrap">
               <span class="company-card-logo-mark company-logo-vng" role="img" aria-label="VNG Corporation">VNG</span>
             </div>
-            <div class="company-card-header-row">
-              <a href="viec-lam.html?q=VNG+Corporation" class="company-card-title">
-                <span>VNG Corporation</span>
-                <span class="badge-verified-inline"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
-              </a>
-              <button class="btn-follow-company" type="button" data-followers="68.1k" aria-label="Theo dõi VNG Corporation">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-                <span>Theo dõi</span>
+            <a href="viec-lam.html?q=VNG+Corporation" class="company-card-title">Công ty Cổ Phần VNG - VNG Corporation</a>
+            <div class="company-card-footer">
+              <span class="company-jobs-pill">82 việc làm</span>
+              <button class="btn-favorite-company" type="button" aria-label="Yêu thích VNG Corporation">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
               </button>
             </div>
-            <span class="company-industry">Game · AI · Nền tảng số</span>
-
-            <div class="company-meta-stats">
-              <span class="company-rating">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                4.9 <span class="company-rating-count">· 1,2k+ đánh giá</span>
-              </span>
-              <span class="company-open-jobs">82 <span class="company-stat-label">việc làm đang mở</span></span>
-            </div>
-
-            <a href="viec-lam.html?q=VNG+Corporation" class="btn-company-jobs">
-              <span>Xem vị trí tuyển dụng</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
           </div>
-        </div>
 
-        <!-- Company 3: Viettel Digital -->
-        <div class="company-card">
-          <div class="company-cover" style="background-image: url('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=400&q=80');">
-            <div class="company-cover-overlay"></div>
-          </div>
-          <div class="company-card-body">
+          <!-- Company 3: Viettel Digital -->
+          <div class="company-card">
             <div class="company-card-logo-wrap">
               <span class="company-card-logo-mark company-logo-viettel" role="img" aria-label="Viettel Digital">viettel</span>
             </div>
-            <div class="company-card-header-row">
-              <a href="viec-lam.html?q=Viettel" class="company-card-title">
-                <span>Viettel Digital</span>
-                <span class="badge-verified-inline"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
-              </a>
-              <button class="btn-follow-company" type="button" data-followers="49.5k" aria-label="Theo dõi Viettel Digital">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-                <span>Theo dõi</span>
+            <a href="viec-lam.html?q=Viettel" class="company-card-title">Tổng Công ty Dịch Vụ Số Viettel - Viettel Digital</a>
+            <div class="company-card-footer">
+              <span class="company-jobs-pill">96 việc làm</span>
+              <button class="btn-favorite-company" type="button" aria-label="Yêu thích Viettel Digital">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
               </button>
             </div>
-            <span class="company-industry">Viễn thông · Fintech · Chuyển đổi số</span>
-
-            <div class="company-meta-stats">
-              <span class="company-rating">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                4.8 <span class="company-rating-count">· 640+ đánh giá</span>
-              </span>
-              <span class="company-open-jobs">96 <span class="company-stat-label">việc làm đang mở</span></span>
-            </div>
-
-            <a href="viec-lam.html?q=Viettel" class="btn-company-jobs">
-              <span>Xem vị trí tuyển dụng</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
           </div>
-        </div>
 
-        <!-- Company 4: Techcombank -->
-        <div class="company-card">
-          <div class="company-cover" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d0fbb186f5f7?auto=format&fit=crop&w=400&q=80');">
-            <div class="company-cover-overlay"></div>
-          </div>
-          <div class="company-card-body">
+          <!-- Company 4: Techcombank -->
+          <div class="company-card">
             <div class="company-card-logo-wrap">
               <span class="company-card-logo-mark company-logo-techcombank" role="img" aria-label="Techcombank">TCB</span>
             </div>
-            <div class="company-card-header-row">
-              <a href="viec-lam.html?q=Techcombank" class="company-card-title">
-                <span>Techcombank</span>
-                <span class="badge-verified-inline"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
-              </a>
-              <button class="btn-follow-company" type="button" data-followers="41.8k" aria-label="Theo dõi Techcombank">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-                <span>Theo dõi</span>
+            <a href="viec-lam.html?q=Techcombank" class="company-card-title">Ngân Hàng TMCP Kỹ Thương Việt Nam - Techcombank</a>
+            <div class="company-card-footer">
+              <span class="company-jobs-pill">118 việc làm</span>
+              <button class="btn-favorite-company" type="button" aria-label="Yêu thích Techcombank">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
               </button>
             </div>
-            <span class="company-industry">Ngân hàng · Tài chính số</span>
-
-            <div class="company-meta-stats">
-              <span class="company-rating">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                4.7 <span class="company-rating-count">· 790+ đánh giá</span>
-              </span>
-              <span class="company-open-jobs">118 <span class="company-stat-label">việc làm đang mở</span></span>
-            </div>
-
-            <a href="viec-lam.html?q=Techcombank" class="btn-company-jobs">
-              <span>Xem vị trí tuyển dụng</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
           </div>
-        </div>
 
+          <!-- Company 5: MoMo -->
+          <div class="company-card">
+            <div class="company-card-logo-wrap">
+              <span class="company-card-logo-mark company-logo-momo" role="img" aria-label="MoMo">MOMO</span>
+            </div>
+            <a href="viec-lam.html?q=MoMo" class="company-card-title">Công ty Cổ Phần Dịch Vụ Di Động Trực Tuyến - Ví MoMo</a>
+            <div class="company-card-footer">
+              <span class="company-jobs-pill">64 việc làm</span>
+              <button class="btn-favorite-company" type="button" aria-label="Yêu thích MoMo">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Company 6: Shopee Việt Nam -->
+          <div class="company-card">
+            <div class="company-card-logo-wrap">
+              <span class="company-card-logo-mark company-logo-shopee" role="img" aria-label="Shopee Việt Nam">S</span>
+            </div>
+            <a href="viec-lam.html?q=Shopee" class="company-card-title">Công ty TNHH Shopee - Shopee Việt Nam</a>
+            <div class="company-card-footer">
+              <span class="company-jobs-pill">103 việc làm</span>
+              <button class="btn-favorite-company" type="button" aria-label="Yêu thích Shopee Việt Nam">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Company 7: MB Bank -->
+          <div class="company-card">
+            <div class="company-card-logo-wrap">
+              <span class="company-card-logo-mark company-logo-mb" role="img" aria-label="MB Bank">MB</span>
+            </div>
+            <a href="viec-lam.html?q=MB+Bank" class="company-card-title">Ngân Hàng TMCP Quân Đội - MB Bank</a>
+            <div class="company-card-footer">
+              <span class="company-jobs-pill">87 việc làm</span>
+              <button class="btn-favorite-company" type="button" aria-label="Yêu thích MB Bank">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Company 8: VinAI -->
+          <div class="company-card">
+            <div class="company-card-logo-wrap">
+              <span class="company-card-logo-mark company-logo-vinai" role="img" aria-label="VinAI">VinAI</span>
+            </div>
+            <a href="viec-lam.html?q=VinAI" class="company-card-title">Công ty Cổ Phần VinAI - VinAI Research</a>
+            <div class="company-card-footer">
+              <span class="company-jobs-pill">52 việc làm</span>
+              <button class="btn-favorite-company" type="button" aria-label="Yêu thích VinAI">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>

@@ -90,15 +90,9 @@
    2. MODAL OVERLAY & BACKDROP
    ========================================================================== */
 .category-modal-overlay {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 100000;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 56px 16px 24px 16px;
-  overflow-y: auto;
-  box-sizing: border-box;
 }
 
 .category-modal-overlay[hidden] {
@@ -108,18 +102,19 @@
 .category-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.48);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(15, 23, 42, 0.38);
   z-index: 1;
   transition: opacity 0.2s ease;
 }
 
 .category-modal-dialog {
-  position: relative;
+  position: absolute;
   z-index: 2;
+  top: calc(100% + 10px);
+  left: 0;
   width: 100%;
-  max-width: 1040px;
+  max-width: 100%;
+  max-height: min(560px, 72vh);
   background: #FFFFFF;
   border: 1px solid #E2E8F0;
   border-radius: 20px;
@@ -191,16 +186,16 @@
 
 /* Search Wrap */
 .category-modal-search-wrap {
-  padding: 0 28px 16px 28px;
+  padding: 0 28px 14px 28px;
   border-bottom: 1px solid #F1F5F9;
 }
 
 .category-modal-search-box {
   display: flex;
   align-items: center;
-  gap: 12px;
-  height: 44px;
-  padding: 0 16px;
+  gap: 10px;
+  height: 40px;
+  padding: 0 14px;
   border: 1.5px solid #CBD5E1;
   border-radius: 999px;
   background: #FFFFFF;
@@ -256,13 +251,62 @@
   color: #0F172A;
 }
 
+/* Popular keywords (Được tìm kiếm nhiều) */
+.category-popular-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 24px 14px 24px;
+  border-bottom: 1px solid #F1F5F9;
+  flex-shrink: 0;
+}
+
+.category-popular-label {
+  flex-shrink: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #64748B;
+}
+
+.category-popular-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.category-popular-chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #F1F5F9;
+  color: #334155;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  line-height: 1.35;
+  user-select: none;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.category-popular-chip:hover {
+  background: #FFF7ED;
+  color: #EA580C;
+  border-color: #FDBA74;
+}
+
 /* ==========================================================================
    4. MODAL BODY (2 COLUMNS: NHÓM NGHỀ & NGHỀ + VỊ TRÍ CHUYÊN MÔN)
    ========================================================================== */
 .category-modal-body {
   display: grid;
   grid-template-columns: 290px minmax(0, 1fr);
-  height: 440px;
+  flex: 1;
+  min-height: 0;
   overflow: hidden;
   background: #FFFFFF;
 }
@@ -686,6 +730,21 @@
   color: #F8FAFC;
 }
 
+[data-theme='dark'] .category-popular-label {
+  color: #94A3B8;
+}
+
+[data-theme='dark'] .category-popular-chip {
+  background: #1E293B;
+  color: #CBD5E1;
+}
+
+[data-theme='dark'] .category-popular-chip:hover {
+  background: #431407;
+  color: #FDBA74;
+  border-color: #F97316;
+}
+
 [data-theme='dark'] .category-panel-left {
   background: #0B1120;
   border-right-color: #1E293B;
@@ -744,9 +803,6 @@
    7. RESPONSIVE DESIGN (MOBILE & TABLET)
    ========================================================================== */
 @media (max-width: 960px) {
-  .category-modal-overlay {
-    padding: 24px 12px;
-  }
   .category-modal-body {
     grid-template-columns: 240px minmax(0, 1fr);
   }
@@ -768,10 +824,20 @@
   }
 
   .category-modal-overlay {
+    position: fixed;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     padding: 0;
+    overflow-y: auto;
   }
 
   .category-modal-dialog {
+    position: static;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: none;
     height: 100vh;
     height: 100dvh;
     max-height: 100vh;
@@ -789,6 +855,13 @@
 
   .category-modal-search-wrap {
     padding: 0 18px 12px 18px;
+  }
+
+  .category-popular-wrap {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 18px;
   }
 
   .category-modal-body {

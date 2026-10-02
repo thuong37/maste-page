@@ -149,107 +149,51 @@ document.addEventListener('DOMContentLoaded', () => {
   createJobPaginator('.attractive-jobs-section', '.attractive-card');
   const matchingPaginator = createJobPaginator('.matching-jobs-section', '.job-card');
 
-  // Featured companies: 4 cards per page, automatically advance every 5 seconds.
+  // Featured companies: continuous auto-scrolling carousel, shifts 1 card left every 2 seconds.
   const companiesSection = document.querySelector('.top-companies-section');
-  const companiesGrid = companiesSection?.querySelector('.companies-grid');
-  if (companiesSection && companiesGrid) {
-    const additionalCompanies = [
-      { slug: 'momo', name: 'MoMo', logo: 'MOMO', logoClass: 'company-logo-momo', industry: 'Fintech · Thanh toán số', rating: '4.8', reviews: '720+ đánh giá', jobs: 64, followers: '38.6k', image: 'photo-1556742049-0cfed4f6a45d' },
-      { slug: 'shopee', name: 'Shopee Việt Nam', logo: 'S', logoClass: 'company-logo-shopee', industry: 'Thương mại điện tử · Công nghệ', rating: '4.7', reviews: '1,1k+ đánh giá', jobs: 103, followers: '72.4k', image: 'photo-1556761175-b413da4baf72' },
-      { slug: 'mb-bank', name: 'MB Bank', logo: 'MB', logoClass: 'company-logo-mb', industry: 'Ngân hàng · Công nghệ tài chính', rating: '4.8', reviews: '930+ đánh giá', jobs: 87, followers: '46.9k', image: 'photo-1560472354-b33ff0c44a43' },
-      { slug: 'vinai', name: 'VinAI', logo: 'VinAI', logoClass: 'company-logo-vinai', industry: 'Trí tuệ nhân tạo · Nghiên cứu', rating: '4.9', reviews: '410+ đánh giá', jobs: 52, followers: '31.7k', image: 'photo-1497366811353-6870744d04b2' }
-    ];
-    additionalCompanies.forEach(company => {
-      const card = document.createElement('div');
-      card.className = 'company-card';
-      card.innerHTML = `
-        <div class="company-cover" style="background-image: url('https://images.unsplash.com/${company.image}?auto=format&fit=crop&w=400&q=80');">
-          <div class="company-cover-overlay"></div>
-        </div>
-        <div class="company-card-body">
-          <div class="company-card-logo-wrap"><span class="company-card-logo-mark ${company.logoClass}" role="img" aria-label="${company.name}">${company.logo}</span></div>
-          <div class="company-card-header-row">
-            <a href="viec-lam.html?q=${encodeURIComponent(company.name)}" class="company-card-title">
-              <span>${company.name}</span>
-              <span class="badge-verified-inline"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
-            </a>
-            <button class="btn-follow-company" type="button" data-followers="${company.followers}" aria-label="Theo dõi ${company.name}">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-              <span>Theo dõi</span>
-            </button>
-          </div>
-          <span class="company-industry">${company.industry}</span>
-          <div class="company-meta-stats"><span class="company-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>${company.rating} <span class="company-rating-count">· ${company.reviews}</span></span><span class="company-open-jobs">${company.jobs} <span class="company-stat-label">việc làm đang mở</span></span></div>
-          <a href="viec-lam.html?q=${encodeURIComponent(company.name)}" class="btn-company-jobs">
-            <span>Xem vị trí tuyển dụng</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>`;
-      companiesGrid.appendChild(card);
-    });
-    const companyCards = [...companiesGrid.querySelectorAll('.company-card')];
-    const pageSize = 4;
-    const totalPages = Math.ceil(companyCards.length / pageSize);
+  const companiesViewport = companiesSection?.querySelector('.companies-carousel');
+  const companiesTrack = companiesViewport?.querySelector('.companies-track');
+  if (companiesSection && companiesViewport && companiesTrack && companiesTrack.children.length > 1) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let timer;
 
-    if (totalPages > 1) {
-      let currentPage = 0;
-      let timer;
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-      const pagination = document.createElement('nav');
-      pagination.className = 'company-pagination';
-      pagination.setAttribute('aria-label', 'Phân trang công ty nổi bật');
-      pagination.innerHTML = `
-        <button class="company-page-button company-page-prev" type="button" aria-label="Trang công ty trước">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
-        </button>
-        <div class="company-page-status">
-          <span class="company-page-info" aria-live="polite"></span>
-          <span class="company-page-dots" aria-hidden="true"></span>
-        </div>
-        <button class="company-page-button company-page-next" type="button" aria-label="Trang công ty tiếp theo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
-        </button>`;
-      companiesGrid.after(pagination);
+    const step = () => {
+      const firstCard = companiesTrack.firstElementChild;
+      if (!firstCard) return;
+      const trackGap = parseFloat(getComputedStyle(companiesTrack).columnGap || getComputedStyle(companiesTrack).gap) || 0;
+      const shiftBy = firstCard.getBoundingClientRect().width + trackGap;
 
-      const pageInfo = pagination.querySelector('.company-page-info');
-      const dots = pagination.querySelector('.company-page-dots');
-      const render = () => {
-        companyCards.forEach((card, index) => {
-          card.hidden = Math.floor(index / pageSize) !== currentPage;
-        });
-        pageInfo.textContent = `Trang ${currentPage + 1}/${totalPages}`;
-        dots.replaceChildren(...Array.from({ length: totalPages }, (_, index) => {
-          const dot = document.createElement('span');
-          dot.className = `company-page-dot${index === currentPage ? ' active' : ''}`;
-          return dot;
-        }));
-      };
-      const goTo = page => {
-        currentPage = (page + totalPages) % totalPages;
-        render();
-      };
-      const stop = () => {
-        clearInterval(timer);
-        timer = undefined;
-      };
-      const start = () => {
-        stop();
-        if (!document.hidden && !reducedMotion.matches && !companiesSection.matches(':hover, :focus-within')) {
-          timer = setInterval(() => goTo(currentPage + 1), 5000);
-        }
-      };
+      companiesTrack.style.transition = 'transform 0.6s ease';
+      companiesTrack.style.transform = `translateX(-${shiftBy}px)`;
 
-      pagination.querySelector('.company-page-prev').addEventListener('click', () => goTo(currentPage - 1));
-      pagination.querySelector('.company-page-next').addEventListener('click', () => goTo(currentPage + 1));
-      companiesSection.addEventListener('mouseenter', stop);
-      companiesSection.addEventListener('mouseleave', start);
-      companiesSection.addEventListener('focusin', stop);
-      companiesSection.addEventListener('focusout', () => setTimeout(start, 0));
-      document.addEventListener('visibilitychange', start);
-      reducedMotion.addEventListener('change', start);
-      render();
-      start();
-    }
+      const onTransitionEnd = () => {
+        companiesTrack.removeEventListener('transitionend', onTransitionEnd);
+        companiesTrack.style.transition = 'none';
+        companiesTrack.style.transform = 'translateX(0)';
+        companiesTrack.appendChild(firstCard);
+        void companiesTrack.offsetWidth;
+      };
+      companiesTrack.addEventListener('transitionend', onTransitionEnd, { once: true });
+    };
+
+    const stop = () => {
+      clearInterval(timer);
+      timer = undefined;
+    };
+    const start = () => {
+      stop();
+      if (!document.hidden && !reducedMotion.matches && !companiesSection.matches(':hover, :focus-within')) {
+        timer = setInterval(step, 2000);
+      }
+    };
+
+    companiesSection.addEventListener('mouseenter', stop);
+    companiesSection.addEventListener('mouseleave', start);
+    companiesSection.addEventListener('focusin', stop);
+    companiesSection.addEventListener('focusout', () => setTimeout(start, 0));
+    document.addEventListener('visibilitychange', start);
+    reducedMotion.addEventListener('change', start);
+    start();
   }
 
   // --- 3. Filter Pills for "Việc làm nổi bật" (Featured Jobs) ---
@@ -303,34 +247,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- 5. Follow Company Toggle ---
+  // --- 5. Favorite Company Toggle ---
   document.addEventListener('click', (e) => {
-    const btn = e.target.closest('.btn-follow-company');
+    const btn = e.target.closest('.btn-favorite-company');
     if (!btn) return;
     e.preventDefault();
     e.stopPropagation();
-    const isFollowing = btn.classList.toggle('following');
+    const isActive = btn.classList.toggle('active');
     const companyCard = btn.closest('.company-card');
-    const companyName = companyCard?.querySelector('.company-card-title span')?.textContent?.trim()
-      || companyCard?.querySelector('.company-card-title')?.textContent?.trim()
-      || 'doanh nghiệp';
-    const followers = btn.getAttribute('data-followers');
-    const followCountText = followers ? ` (${followers})` : '';
+    const companyName = companyCard?.querySelector('.company-card-title')?.textContent?.trim() || 'doanh nghiệp';
 
-    if (isFollowing) {
-      btn.innerHTML = `
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-        <span>Đang theo dõi</span>
-      `;
-      btn.setAttribute('aria-pressed', 'true');
-      showToast(`Bạn đang theo dõi ${companyName}. Sẽ nhận thông báo khi có tuyển dụng mới!`, '✓');
+    btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    if (isActive) {
+      showToast(`Đã thêm ${companyName} vào danh sách yêu thích!`, '♥');
     } else {
-      btn.innerHTML = `
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-        <span>Theo dõi</span>
-      `;
-      btn.setAttribute('aria-pressed', 'false');
-      showToast(`Đã hủy theo dõi ${companyName}.`, '✕');
+      showToast(`Đã bỏ ${companyName} khỏi danh sách yêu thích.`, '✕');
     }
   });
 

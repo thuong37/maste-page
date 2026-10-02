@@ -183,6 +183,17 @@
     }
   ];
 
+  // Popular searches shown below the category search input
+  const POPULAR_KEYWORDS = [
+    'Nhân viên kinh doanh',
+    'Nhân viên bán hàng',
+    'Nhân viên tư vấn',
+    'Telesales',
+    'Sales Admin',
+    'Tư vấn tuyển sinh',
+    'Sales Online'
+  ];
+
   // Helper normalizer
   function normalizeStr(text) {
     if (!text) return '';
@@ -218,6 +229,8 @@
       this.closeBtn = document.getElementById(config.closeBtnId || 'categoryModalClose');
       this.searchInput = document.getElementById(config.searchInputId || 'categoryModalSearchInput');
       this.searchClearBtn = document.getElementById(config.searchClearBtnId || 'categorySearchClear');
+      this.popularWrap = document.getElementById(config.popularWrapId || 'categoryPopularWrap');
+      this.popularChipListEl = document.getElementById(config.popularChipListId || 'categoryPopularChipList');
       this.groupListEl = document.getElementById(config.groupListId || 'categoryGroupList');
       this.subgroupListEl = document.getElementById(config.subgroupListId || 'categorySubgroupList');
       this.scrollHintEl = document.getElementById(config.scrollHintId || 'categoryScrollHint');
@@ -234,6 +247,7 @@
       this.bindEvents();
       this.renderGroups();
       this.renderSubgroups();
+      this.renderPopularKeywords();
     },
 
     bindEvents: function () {
@@ -334,6 +348,7 @@
         if (this.searchClearBtn) this.searchClearBtn.hidden = true;
         setTimeout(() => this.searchInput.focus(), 100);
       }
+      if (this.popularWrap) this.popularWrap.hidden = false;
 
       this.renderGroups();
       this.renderSubgroups();
@@ -440,8 +455,29 @@
       }
     },
 
+    renderPopularKeywords: function () {
+      if (!this.popularChipListEl) return;
+      const self = this;
+      this.popularChipListEl.innerHTML = POPULAR_KEYWORDS.map(keyword =>
+        `<button type="button" class="category-popular-chip" data-keyword="${keyword}">${keyword}</button>`
+      ).join('');
+
+      this.popularChipListEl.querySelectorAll('.category-popular-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          const keyword = chip.getAttribute('data-keyword');
+          if (self.searchInput) {
+            self.searchInput.value = keyword;
+            self.searchInput.focus();
+          }
+          if (self.searchClearBtn) self.searchClearBtn.hidden = false;
+          self.handleSearch(keyword);
+        });
+      });
+    },
+
     handleSearch: function (query) {
       const norm = normalizeStr(query);
+      if (this.popularWrap) this.popularWrap.hidden = !!norm;
       if (!norm) {
         this.renderGroups();
         this.renderSubgroups();
