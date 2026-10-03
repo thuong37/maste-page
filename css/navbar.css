@@ -182,12 +182,16 @@ body {
 }
 
 .nav-link:hover,
+.nav-link.active,
+.nav-link.is-current,
 .nav-item.open .nav-link {
   color: var(--easycv-orange);
   background: var(--easycv-orange-50);
 }
 
 [data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active,
+[data-theme="dark"] .nav-link.is-current,
 [data-theme="dark"] .nav-item.open .nav-link {
   background: rgba(249, 115, 22, 0.15);
   color: var(--easycv-orange-400);
@@ -198,6 +202,11 @@ body {
   height: 14px;
   transition: transform var(--transition-fast);
   color: var(--text-muted);
+}
+
+.nav-link.active .chevron-icon,
+.nav-link.is-current .chevron-icon {
+  color: var(--easycv-orange);
 }
 
 .nav-item:hover .nav-link .chevron-icon,

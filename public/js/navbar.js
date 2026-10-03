@@ -28,21 +28,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. User Profile Dropdown Toggle
   userProfileBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
-    const isOpen = accountLoggedView.classList.contains('open');
+    const isOpen = accountLoggedView?.classList.contains('open');
     closeAllPopovers();
     if (!isOpen) {
-      accountLoggedView.classList.add('open');
+      accountLoggedView?.classList.add('open');
     }
   });
 
   // 2. Notifications Popover Toggle
   notifBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
-    const isOpen = notifPanel.classList.contains('open');
+    const isOpen = notifPanel?.classList.contains('open');
     closeAllPopovers();
     if (!isOpen) {
-      notifPanel.classList.add('open');
-      notifBtn.classList.add('active');
+      notifPanel?.classList.add('open');
+      notifBtn?.classList.add('active');
     }
   });
 
@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Messages Popover Toggle
   messageBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
-    const isOpen = messagePanel.classList.contains('open');
+    const isOpen = messagePanel?.classList.contains('open');
     closeAllPopovers();
     if (!isOpen) {
-      messagePanel.classList.add('open');
-      messageBtn.classList.add('active');
+      messagePanel?.classList.add('open');
+      messageBtn?.classList.add('active');
     }
   });
 
@@ -92,16 +92,23 @@ document.addEventListener('DOMContentLoaded', () => {
     let timeout;
     item.addEventListener('mouseenter', () => {
       clearTimeout(timeout);
-      navItems.forEach(i => { if (i !== item) i.classList.remove('active'); });
-      item.classList.add('active');
+      navItems.forEach(i => { if (i !== item) i.classList.remove('open'); });
+      item.classList.add('open');
     });
 
     item.addEventListener('mouseleave', () => {
       timeout = setTimeout(() => {
-        item.classList.remove('active');
+        item.classList.remove('open');
       }, 150);
     });
   });
+
+  // Auto-synchronize Active Menu State across all pages
+  const currentPath = window.location.pathname.toLowerCase();
+  const navLinkTimViec = document.getElementById('navLinkTimViec');
+  if (currentPath.includes('viec-lam') || currentPath.includes('chi-tiet-viec-lam')) {
+    navLinkTimViec?.classList.add('is-current');
+  }
 
   // 5. Mobile Drawer Navigation
   mobileToggleBtn?.addEventListener('click', () => {

@@ -633,13 +633,481 @@ document.addEventListener('DOMContentLoaded', () => {
           'Thời gian làm việc từ Thứ 2 đến Thứ 6, nghỉ trọn vẹn Thứ 7 và Chủ Nhật.'
         ]
       }
+    },
+    {
+      id: 17,
+      title: 'Kỹ Sư Trí Tuệ Nhân Tạo & Học Máy (AI / Machine Learning Engineer)',
+      company: 'VinAI Research (Tập đoàn Vingroup)',
+      logo: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80',
+      verified: true,
+      salaryBadge: '40 - 75 triệu',
+      salaryIsOrange: false,
+      salaryMin: 40,
+      salaryMax: 75,
+      location: 'Hà Nội (Nam Từ Liêm)',
+      city: 'Hà Nội',
+      category: 'it',
+      level: 'senior',
+      exp: '3-5',
+      type: 'hybrid',
+      isFeatured: true,
+      isUrgent: true,
+      updated: '15 phút trước',
+      aiMatch: 96,
+      skills: ['PyTorch', 'LLMs & GenAI', 'Computer Vision', 'Deep Learning'],
+      jd: {
+        desc: [
+          'Nghiên cứu, phát triển và tối ưu hóa các mô hình Generative AI và thị giác máy tính thế hệ mới phục vụ hệ sinh thái xe điện thông minh.',
+          'Huấn luyện và fine-tune các mô hình mã nguồn mở (LLMs) trên cụm siêu máy tính NVIDIA DGX SuperPOD.',
+          'Triển khai mô hình AI trên thiết bị nhúng Edge Computing với độ trễ thấp và độ chính xác cao.'
+        ],
+        reqs: [
+          'Tốt nghiệp Đại học/Thạc sĩ chuyên ngành Khoa học Máy tính, Trí tuệ Nhân tạo hoặc Toán Tin.',
+          'Tối thiểu 3 năm kinh nghiệm nghiên cứu và triển khai Deep Learning với PyTorch/TensorFlow.',
+          'Có công bố khoa học tại các hội nghị AI hàng đầu (CVPR, NeurIPS, ICCV) là lợi thế lớn.'
+        ],
+        perks: [
+          'Mức lương từ 40 - 75 triệu/tháng + Gói thưởng dự án và cổ phiếu VinFast.',
+          'Làm việc trực tiếp cùng các nhà khoa học AI hàng đầu thế giới.',
+          'Chế độ Hybrid linh hoạt 2 ngày WFH/tuần + Bảo hiểm sức khỏe VIP toàn diện.'
+        ]
+      }
+    },
+    {
+      id: 18,
+      title: 'Chuyên Viên Phân Tích Dữ Liệu Kinh Doanh (Senior Data Analyst)',
+      company: 'Ngân hàng TMCP Quân Đội (MB Bank)',
+      logo: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=120&h=120&q=80',
+      verified: true,
+      salaryBadge: '25 - 42 triệu',
+      salaryIsOrange: false,
+      salaryMin: 25,
+      salaryMax: 42,
+      location: 'Hà Nội (Cầu Giấy)',
+      city: 'Hà Nội',
+      category: 'it',
+      level: 'senior',
+      exp: '3-5',
+      type: 'hybrid',
+      isFeatured: false,
+      isUrgent: false,
+      updated: '40 phút trước',
+      aiMatch: 94,
+      skills: ['SQL Nâng cao', 'Power BI', 'Python', 'Phân tích định lượng'],
+      jd: {
+        desc: [
+          'Xây dựng các Dashboard quản trị thông minh theo thời gian thực phục vụ khối Khách hàng cá nhân và Ngân hàng số MBBank.',
+          'Phân tích hành vi chi tiêu của khách hàng, phân khúc thị trường và dự báo xu hướng sản phẩm tín dụng tiêu dùng.',
+          'Hợp tác chặt chẽ cùng Product Owner để đưa ra các đề xuất tối ưu hóa hành trình khách hàng dựa trên dữ liệu.'
+        ],
+        reqs: [
+          'Từ 3 năm kinh nghiệm ở vị trí Data Analyst trong ngành Ngân hàng, Fintech hoặc Thương mại điện tử.',
+          'Thành thạo SQL nâng cao, Python/R, các công cụ trực quan hóa dữ liệu như Power BI hoặc Tableau.',
+          'Tư duy logic sắc bén, kỹ năng phản biện và khả năng kể chuyện bằng dữ liệu (Data Storytelling).'
+        ],
+        perks: [
+          'Thu nhập từ 25 - 42 triệu/tháng + Thưởng hiệu quả kinh doanh ngân hàng định kỳ 4-6 tháng lương/năm.',
+          'Chế độ ưu đãi lãi suất vay và hạn mức thẻ tín dụng nội bộ đặc quyền dành cho cán bộ MB.',
+          'Cơ hội đào tạo chứng chỉ quốc tế CFA/FRM/Data Science do ngân hàng tài trợ 100% học phí.'
+        ]
+      }
+    },
+    {
+      id: 19,
+      title: 'Trưởng Phòng Nhân Sự Tổng Hợp (HR Manager / HRBP)',
+      company: 'Công ty Cổ phần Sữa Việt Nam (Vinamilk)',
+      logo: 'https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=120&h=120&q=80',
+      verified: true,
+      salaryBadge: '35 - 55 triệu',
+      salaryIsOrange: true,
+      salaryMin: 35,
+      salaryMax: 55,
+      location: 'Hồ Chí Minh (Quận 7)',
+      city: 'Hồ Chí Minh',
+      category: 'hr',
+      level: 'manager',
+      exp: 'over5',
+      type: 'fulltime',
+      isFeatured: true,
+      isUrgent: false,
+      updated: '1 giờ trước',
+      aiMatch: 93,
+      skills: ['HRBP', 'C&B', 'Phát triển Nhân tài', 'Văn hóa Doanh nghiệp'],
+      jd: {
+        desc: [
+          'Đóng vai trò Đối tác Nhân sự Chiến lược (HRBP) đồng hành cùng các khối kinh doanh và vận hành nhà máy Vinamilk.',
+          'Quy hoạch và phát triển đội ngũ kế thừa, xây dựng chính sách đãi ngộ tổng thể (Total Rewards) cạnh tranh trên thị trường.',
+          'Dẫn dắt các chương trình gắn kết nhân viên, văn hóa đổi mới và nâng cao chỉ số hạnh phúc nơi làm việc.'
+        ],
+        reqs: [
+          'Tối thiểu 5 năm kinh nghiệm quản lý nhân sự tại các tập đoàn FMCG hoặc doanh nghiệp sản xuất quy mô trên 1.000 người.',
+          'Am hiểu sâu sắc Luật Lao động Việt Nam, hệ thống lương 3P và phương pháp đánh giá hiệu suất OKRs/KPIs.',
+          'Kỹ năng lãnh đạo, thấu hiểu con người và giải quyết xung đột tổ chức xuất sắc.'
+        ],
+        perks: [
+          'Lương từ 35 - 55 triệu/tháng + Thưởng doanh thu tập đoàn Vinamilk hàng năm.',
+          'Cung cấp sữa tươi và các sản phẩm dinh dưỡng miễn phí mỗi ngày tại văn phòng.',
+          'Môi trường làm việc Top 1 Nhà tuyển dụng được yêu thích nhất Việt Nam.'
+        ]
+      }
+    },
+    {
+      id: 20,
+      title: 'Kỹ Sư Lập Trình Nhúng & IoT (Embedded Software Engineer)',
+      company: 'Bosch Global Software Technologies (Bosch Việt Nam)',
+      logo: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=120&h=120&q=80',
+      verified: true,
+      salaryBadge: '22 - 38 triệu',
+      salaryIsOrange: false,
+      salaryMin: 22,
+      salaryMax: 38,
+      location: 'Hồ Chí Minh & Đà Nẵng',
+      city: 'Hồ Chí Minh',
+      category: 'it',
+      level: 'junior',
+      exp: '1-3',
+      type: 'fulltime',
+      isFeatured: false,
+      isUrgent: true,
+      updated: '2 giờ trước',
+      aiMatch: 91,
+      skills: ['C/C++', 'Microcontroller', 'RTOS', 'CAN/LIN Protocols'],
+      jd: {
+        desc: [
+          'Phát triển phần mềm nhúng điều khiển hệ thống an toàn xe hơi (ESP, ABS, túi khí) cho các hãng xe danh tiếng toàn cầu.',
+          'Lập trình firmware vi điều khiển 32-bit (ARM Cortex-M/R) trên hệ điều hành thời gian thực FreeRTOS/AUTOSAR.',
+          'Viết kịch bản kiểm thử phần cứng HIL (Hardware-in-the-Loop) và phân tích tín hiệu giao tiếp CAN/LIN.'
+        ],
+        reqs: [
+          'Tốt nghiệp Đại học ngành Điện tử Viễn thông, Cơ điện tử, Kỹ thuật Máy tính hoặc liên quan.',
+          'Từ 1 - 3 năm kinh nghiệm lập trình C/C++ cho hệ thống nhúng và giao tiếp ngoại vi (SPI, I2C, UART, CAN).',
+          'Tiếng Anh giao tiếp tốt trong môi trường dự án quốc tế đa quốc gia Đức - Nhật - Việt.'
+        ],
+        perks: [
+          'Mức thu nhập từ 22 - 38 triệu/tháng + Thưởng hiệu suất dự án theo quý.',
+          'Cơ hội onsite tu nghiệp và chuyển giao công nghệ tại Đức, Nhật Bản và Ấn Độ.',
+          'Gói bảo hiểm chăm sóc sức khỏe quốc tế cao cấp và 16 ngày phép hưởng lương/năm.'
+        ]
+      }
+    },
+    {
+      id: 21,
+      title: 'Giám Đốc Thương Hiệu Sản Phẩm Cao Cấp (Brand Manager)',
+      company: 'Unilever Việt Nam',
+      logo: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=120&h=120&q=80',
+      verified: true,
+      salaryBadge: '45 - 65 triệu',
+      salaryIsOrange: true,
+      salaryMin: 45,
+      salaryMax: 65,
+      location: 'Hồ Chí Minh (Quận 7)',
+      city: 'Hồ Chí Minh',
+      category: 'marketing',
+      level: 'manager',
+      exp: 'over5',
+      type: 'fulltime',
+      isFeatured: true,
+      isUrgent: false,
+      updated: '2 giờ trước',
+      aiMatch: 95,
+      skills: ['Brand Strategy', 'FMCG Marketing', 'IMC Campaigns', 'P&L Management'],
+      jd: {
+        desc: [
+          'Định hình chiến lược phát triển dài hạn, định vị thương hiệu và quản lý toàn diện P&L của ngành hàng chăm sóc sắc đẹp cao cấp.',
+          'Dẫn dắt các chiến dịch truyền thông tích hợp đa kênh (IMC 360) kết hợp giữa truyền thông đại chúng và tiếp thị số hiện đại.',
+          'Phân tích xu hướng tiêu dùng của thế hệ Gen Z & Alpha để liên tục đổi mới danh mục sản phẩm (NPD).'
+        ],
+        reqs: [
+          'Tối thiểu 5 năm kinh nghiệm Brand Marketing trong ngành FMCG hoặc Mỹ phẩm cao cấp quốc tế.',
+          'Thành tích dẫn dắt thành công các chiến dịch marketing đạt giải thưởng lớn trong nước và khu vực.',
+          'Tư duy chiến lược kinh doanh nhạy bén, khả năng quản trị ngân sách tiếp thị quy mô hàng chục tỷ đồng.'
+        ],
+        perks: [
+          'Thu nhập từ 45 - 65 triệu/tháng + Thưởng hiệu quả kinh doanh năm theo tiêu chuẩn tập đoàn đa quốc gia.',
+          'Chính sách làm việc kết hợp linh hoạt Hybrid tại Unilever Homebase hiện đại bậc nhất Phú Mỹ Hưng.',
+          'Chương trình đào tạo lãnh đạo toàn cầu và cơ hội luân chuyển công tác tại các trụ sở Unilever Châu Á.'
+        ]
+      }
+    },
+    {
+      id: 22,
+      title: 'Chuyên Viên Quản Trị Rủi Ro Tài Chính & Đầu Tư (Risk Management)',
+      company: 'Ngân Hàng TMCP Việt Nam Thịnh Vượng (VPBank)',
+      logo: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=120&h=120&q=80',
+      verified: true,
+      salaryBadge: '22 - 38 triệu',
+      salaryIsOrange: false,
+      salaryMin: 22,
+      salaryMax: 38,
+      location: 'Hà Nội (Ba Đình)',
+      city: 'Hà Nội',
+      category: 'finance',
+      level: 'junior',
+      exp: '1-3',
+      type: 'fulltime',
+      isFeatured: false,
+      isUrgent: false,
+      updated: '3 giờ trước',
+      aiMatch: 92,
+      skills: ['Quản trị rủi ro', 'Phân tích tín dụng', 'Mô hình hóa tài chính', 'Basel II/III'],
+      jd: {
+        desc: [
+          'Xây dựng và kiểm chuẩn các mô hình định lượng đo lường rủi ro tín dụng, rủi ro thị trường và rủi ro thanh khoản theo chuẩn Basel.',
+          'Thẩm định độc lập các dự án đầu tư lớn và danh mục cấp tín dụng của khối khách hàng doanh nghiệp quy mô vừa và lớn.',
+          'Theo dõi các chỉ số cảnh báo sớm (EWS), đề xuất các biện pháp phòng ngừa tổn thất tài chính cho ngân hàng.'
+        ],
+        reqs: [
+          'Tốt nghiệp Đại học chuyên ngành Tài chính - Ngân hàng, Toán Kinh tế, Kiểm toán hoặc Kinh tế Đối ngoại.',
+          'Từ 1 - 3 năm kinh nghiệm trong lĩnh vực quản trị rủi ro tín dụng/thị trường tại các tổ chức tín dụng hoặc Big 4.',
+          'Hiểu biết sâu sắc về các quy định của Ngân hàng Nhà nước và các chuẩn mực quản trị rủi ro quốc tế.'
+        ],
+        perks: [
+          'Lương từ 22 - 38 triệu/tháng + Thưởng thành tích cá nhân và thưởng kết quả kinh doanh ngân hàng.',
+          'Làm việc tại trụ sở VPBank Tower biểu tượng đường Láng Hạ với tiện ích nội bộ cao cấp.',
+          'Chế độ bảo hiểm sức khỏe VIP VPBank Care bảo lãnh viện phí tại tất cả các bệnh viện quốc tế.'
+        ]
+      }
+    },
+    {
+      id: 23,
+      title: 'Chuyên Viên Điều Phối Vận Tải Quốc Tế & Forwarding (Freight Forwarding)',
+      company: 'Công ty Cổ phần Gemadept (Gemadept Logistics)',
+      logo: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=120&h=120&q=80',
+      verified: true,
+      salaryBadge: '16 - 26 triệu',
+      salaryIsOrange: false,
+      salaryMin: 16,
+      salaryMax: 26,
+      location: 'Hải Phòng & Hồ Chí Minh',
+      city: 'Hồ Chí Minh',
+      category: 'logistics',
+      level: 'junior',
+      exp: '1-3',
+      type: 'fulltime',
+      isFeatured: false,
+      isUrgent: true,
+      updated: '4 giờ trước',
+      aiMatch: 90,
+      skills: ['Freight Forwarding', 'Vận tải đường biển', 'Incoterms 2020', 'Tiếng Anh thương mại'],
+      jd: {
+        desc: [
+          'Lên kế hoạch và điều phối các lô hàng xuất nhập khẩu đường biển (FCL/LCL) và đường hàng không quốc tế.',
+          'Làm việc với các hãng tàu quốc tế, đối tác đại lý nước ngoài để đàm phán cước tàu (Ocean Freight) cạnh tranh nhất.',
+          'Phát hành chứng từ vận tải (B/L, AWB, C/O), theo dõi sát sao tiến độ giao hàng và xử lý phát sinh tại cảng biển.'
+        ],
+        reqs: [
+          'Từ 1 - 3 năm kinh nghiệm vị trí Ops hoặc Docs tại các công ty Forwarder hoặc Logistics quốc tế.',
+          'Nắm vững quy tắc thương mại quốc tế Incoterms 2020, quy trình hải quan và chứng từ vận tải đường biển.',
+          'Tiếng Anh thương mại lưu loát trong giao tiếp email và đàm phán với đại lý quốc tế.'
+        ],
+        perks: [
+          'Lương từ 16 - 26 triệu/tháng + Thưởng hoa hồng theo sản lượng volume hàng tháng.',
+          'Được làm việc tại một trong những tập đoàn khai thác cảng và logistics hàng đầu Việt Nam.',
+          'Phụ cấp ăn trưa, công tác phí cảng và du lịch nghỉ dưỡng định kỳ hàng năm.'
+        ]
+      }
+    },
+    {
+      id: 24,
+      title: 'Kỹ Sư An Toàn Thông Tin & An Ninh Mạng (SOC / Cyber Security Analyst)',
+      company: 'Tập đoàn Bưu chính Viễn thông Việt Nam (VNPT Cyber Immune)',
+      logo: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=120&h=120&q=80',
+      verified: true,
+      salaryBadge: '25 - 45 triệu',
+      salaryIsOrange: false,
+      salaryMin: 25,
+      salaryMax: 45,
+      location: 'Hà Nội (Cầu Giấy)',
+      city: 'Hà Nội',
+      category: 'it',
+      level: 'senior',
+      exp: '3-5',
+      type: 'hybrid',
+      isFeatured: true,
+      isUrgent: true,
+      updated: '30 phút trước',
+      aiMatch: 94,
+      skills: ['SIEM / SOC', 'Penetration Testing', 'Threat Intelligence', 'Bảo mật mạng'],
+      jd: {
+        desc: [
+          'Giám sát, phân tích và phản ứng nhanh với các cuộc tấn công mạng nhằm vào hạ tầng trọng yếu quốc gia và khách hàng doanh nghiệp.',
+          'Vận hành các nền tảng SIEM, SOAR, EDR hiện đại và thực hiện điều tra số (Digital Forensics) đối với các sự cố an ninh.',
+          'Thực hiện đánh giá lỗ hổng bảo mật định kỳ (Vulnerability Assessment & Pentest) cho các ứng dụng web và mobile banking.'
+        ],
+        reqs: [
+          'Từ 3 - 5 năm kinh nghiệm thực chiến trong lĩnh vực An toàn thông tin hoặc kỹ sư SOC Tier 2/3.',
+          'Sở hữu các chứng chỉ bảo mật quốc tế uy tín như CEH, CISSP, OSCP, CompTIA Security+ là điểm cộng lớn.',
+          'Nắm vững kiến trúc mạng, giao thức TCP/IP và kỹ thuật phân tích mã độc cơ bản.'
+        ],
+        perks: [
+          'Mức thu nhập từ 25 - 45 triệu/tháng + Thưởng thành tích phòng chống sự cố an ninh mạng.',
+          'Cơ hội tiếp cận các dự án an ninh mạng cấp quốc gia với công nghệ bảo mật tối tân nhất.',
+          'Tài trợ 100% chi phí thi các chứng chỉ bảo mật quốc tế chuyên sâu hàng năm.'
+        ]
+      }
+    },
+    {
+      id: 25,
+      title: 'Giám Đốc Sản Phẩm Công Nghệ (Head of Product / Lead PM)',
+      company: 'Công ty Cổ phần Tiki (Tiki Tech Hub)',
+      logo: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=120&h=120&q=80',
+      verified: true,
+      salaryBadge: '50 - 75 triệu',
+      salaryIsOrange: true,
+      salaryMin: 50,
+      salaryMax: 75,
+      location: 'Hồ Chí Minh & Remote',
+      city: 'Hồ Chí Minh',
+      category: 'it',
+      level: 'manager',
+      exp: 'over5',
+      type: 'hybrid',
+      isFeatured: true,
+      isUrgent: false,
+      updated: '1 giờ trước',
+      aiMatch: 97,
+      skills: ['Product Roadmapping', 'User Centric Design', 'Agile/Scrum', 'Data-driven Growth'],
+      jd: {
+        desc: [
+          'Chịu trách nhiệm kiến tạo tầm nhìn sản phẩm, chiến lược công nghệ và roadmap phát triển cho sàn thương mại điện tử Tiki.',
+          'Lãnh đạo đội ngũ Product Managers, Product Designers và phối hợp cùng Tech Leads để hiện thực hóa các tính năng bứt phá.',
+          'Tối ưu hóa các chỉ số trải nghiệm mua sắm cốt lõi: Conversion Rate, Retargeting, NPS và thời gian xử lý đơn hàng.'
+        ],
+        reqs: [
+          'Tối thiểu 5 năm kinh nghiệm làm Product Management, trong đó có ít nhất 2 năm dẫn dắt đội ngũ tại các công ty E-Commerce/Fintech.',
+          'Tư duy chiến lược sản phẩm xuất sắc, khả năng cân bằng giữa nhu cầu người dùng và mục tiêu lợi nhuận của doanh nghiệp.',
+          'Khả năng giao tiếp, truyền cảm hứng và dẫn dắt thay đổi trong môi trường công nghệ tốc độ cao.'
+        ],
+        perks: [
+          'Thu nhập từ 50 - 75 triệu/tháng + Gói quyền mua cổ phiếu ESOP giá trị cao.',
+          'Chế độ làm việc linh hoạt kết hợp Hybrid, hỗ trợ công cụ thiết bị công nghệ hiện đại.',
+          'Gói bảo hiểm sức khỏe VIP toàn cầu cho bản thân và người thân trong gia đình.'
+        ]
+      }
+    },
+    {
+      id: 26,
+      title: 'Chuyên Viên Tư Vấn Giải Pháp ERP & Chuyển Đổi Số (ERP Consultant)',
+      company: 'FPT Digital (Tập đoàn FPT)',
+      logo: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=120&h=120&q=80',
+      verified: true,
+      salaryBadge: '20 - 35 triệu',
+      salaryIsOrange: false,
+      salaryMin: 20,
+      salaryMax: 35,
+      location: 'Hà Nội & Đà Nẵng',
+      city: 'Hà Nội',
+      category: 'it',
+      level: 'junior',
+      exp: '1-3',
+      type: 'fulltime',
+      isFeatured: false,
+      isUrgent: false,
+      updated: '5 giờ trước',
+      aiMatch: 91,
+      skills: ['SAP S/4HANA', 'Oracle Cloud', 'Quy trình Doanh nghiệp', 'Tư vấn Chuyển đổi số'],
+      jd: {
+        desc: [
+          'Khảo sát hiện trạng quy trình nghiệp vụ và tư vấn giải pháp triển khai hệ thống ERP (SAP S/4HANA, Oracle) cho các tập đoàn lớn.',
+          'Xây dựng tài liệu thiết kế giải pháp tổng thể (Blueprint) và cấu hình các phân hệ nghiệp vụ chuyên sâu.',
+          'Đào tạo người dùng cuối (Key Users) và hỗ trợ vận hành trong giai đoạn Go-Live của dự án.'
+        ],
+        reqs: [
+          'Từ 1 - 3 năm kinh nghiệm tham gia triển khai các dự án ERP (SAP, Oracle, Microsoft Dynamics).',
+          'Hiểu biết sâu sắc về quy trình tài chính kế toán, quản lý chuỗi cung ứng hoặc sản xuất trong doanh nghiệp.',
+          'Kỹ năng thuyết trình, giao tiếp tự tin và khả năng giải quyết vấn đề hiệu quả.'
+        ],
+        perks: [
+          'Mức lương từ 20 - 35 triệu/tháng + Thưởng dự án theo từng giai đoạn nghiệm thu.',
+          'Được đào tạo và tài trợ thi các chứng chỉ quốc tế SAP/Oracle Certified Consultant.',
+          'Môi trường làm việc năng động tại FPT Tower với cơ hội học hỏi từ các chuyên gia đầu ngành.'
+        ]
+      }
+    },
+    {
+      id: 27,
+      title: 'Trưởng Nhóm Thiết Kế Truyền Thông Đa Phương Tiện (Creative Lead)',
+      company: 'Dentsu Creative Vietnam',
+      logo: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=120&h=120&q=80',
+      verified: true,
+      salaryBadge: '28 - 45 triệu',
+      salaryIsOrange: false,
+      salaryMin: 28,
+      salaryMax: 45,
+      location: 'Hồ Chí Minh (Quận 1)',
+      city: 'Hồ Chí Minh',
+      category: 'marketing',
+      level: 'senior',
+      exp: '3-5',
+      type: 'fulltime',
+      isFeatured: false,
+      isUrgent: true,
+      updated: 'Hôm nay',
+      aiMatch: 93,
+      skills: ['Creative Direction', 'Motion Graphic', 'Branding', 'Adobe Creative Suite'],
+      jd: {
+        desc: [
+          'Định hướng thẩm mỹ thị giác và trực tiếp chỉ đạo sáng tạo các chiến dịch quảng cáo cho các nhãn hàng quốc tế hàng đầu.',
+          'Dẫn dắt đội ngũ Art Directors, Graphic Designers và Motion Artists để tạo ra các sản phẩm hình ảnh ấn tượng và giàu cảm xúc.',
+          'Phối hợp cùng bộ phận Chiến lược (Planning) để phát triển Concept sáng tạo cho các buổi Pitching dự án lớn.'
+        ],
+        reqs: [
+          'Từ 3 - 5 năm kinh nghiệm trong ngành Quảng cáo sáng tạo (Creative Agency) tại vị trí Senior Art Director hoặc Creative Lead.',
+          'Portfolio thể hiện đa dạng các dự án xuất sắc về Key Visual, TVC Storyboard, Digital & Motion Graphics.',
+          'Khả năng thuyết trình ý tưởng truyền cảm hứng và tinh thần làm việc nhóm nhiệt huyết.'
+        ],
+        perks: [
+          'Thu nhập từ 28 - 45 triệu/tháng + Thưởng hiệu quả chiến dịch và thưởng dự án thắng Pitch.',
+          'Văn phòng hiện đại view sông Sài Gòn trung tâm Quận 1, trang bị đầy đủ máy Mac Studio chuyên dụng.',
+          'Chính sách bảo hiểm sức khỏe VIP và các hoạt động teambuilding sáng tạo định kỳ.'
+        ]
+      }
+    },
+    {
+      id: 28,
+      title: 'Kế Toán Trưởng Doanh Nghiệp Sản Xuất & Xây Dựng (Chief Accountant)',
+      company: 'Tập đoàn Tân Á Đại Thành',
+      logo: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=120&h=120&q=80',
+      verified: true,
+      salaryBadge: '35 - 50 triệu',
+      salaryIsOrange: true,
+      salaryMin: 35,
+      salaryMax: 50,
+      location: 'Hà Nội & Hưng Yên',
+      city: 'Hà Nội',
+      category: 'finance',
+      level: 'manager',
+      exp: 'over5',
+      type: 'fulltime',
+      isFeatured: true,
+      isUrgent: false,
+      updated: 'Hôm nay',
+      aiMatch: 94,
+      skills: ['Kế toán trưởng', 'Giá thành sản xuất', 'Quyết toán thuế', 'Quản trị dòng tiền'],
+      jd: {
+        desc: [
+          'Tổ chức, điều hành toàn bộ công tác kế toán, thống kê và quản trị tài chính tại các nhà máy sản xuất của tập đoàn.',
+          'Kiểm soát chặt chẽ giá thành sản phẩm, chi phí định mức nguyên vật liệu và quản trị dòng tiền sản xuất kinh doanh.',
+          'Chịu trách nhiệm lập báo cáo tài chính hợp nhất, làm việc với cơ quan Thuế, Kiểm toán độc lập và các tổ chức tín dụng.'
+        ],
+        reqs: [
+          'Có Chứng chỉ Kế toán trưởng, tốt nghiệp Đại học chuyên ngành Kế toán - Kiểm toán hoặc Tài chính.',
+          'Tối thiểu 5 năm kinh nghiệm ở vị trí Kế toán trưởng trong các doanh nghiệp sản xuất hoặc tập đoàn công nghiệp.',
+          'Am hiểu sâu sắc chính sách thuế hiện hành, chuẩn mực kế toán Việt Nam (VAS) và phần mềm ERP.'
+        ],
+        perks: [
+          'Mức thu nhập từ 35 - 50 triệu/tháng + Thưởng kết quả kinh doanh năm hấp dẫn.',
+          'Xe đưa đón hàng ngày từ nội thành Hà Nội về khu tổ hợp nhà máy.',
+          'Gói phúc lợi sức khỏe cao cấp và chính sách ưu đãi mua nhà, mua sản phẩm tập đoàn.'
+        ]
+      }
     }
   ];
 
   // =========================================================================
   // 2. CONFIGURATION & DOM ELEMENTS
   // =========================================================================
-  const PAGE_SIZE = 6;
+  const PAGE_SIZE = 25;
   let currentPage = 1;
   let currentFilteredJobs = [];
 
@@ -651,7 +1119,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const sortSelect = document.getElementById('sortSelect');
   const jobSearchForm = document.getElementById('jobSearchForm');
   const btnJobSearch = document.getElementById('btnJobSearch') || document.getElementById('btnHeroSearch');
-  const sampleDataBanner = document.getElementById('sampleDataBanner');
   const jobCountText = document.getElementById('jobCountText');
   const activeSearchTag = document.getElementById('activeSearchTag');
   const activeKeywordText = document.getElementById('activeKeywordText');
@@ -659,7 +1126,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const noResultsBox = document.getElementById('noResultsBox');
   const btnResetSearch = document.getElementById('btnResetSearch');
   const jobListingGrid = document.getElementById('jobListingGrid');
-  const paginationWrapper = document.getElementById('paginationWrapper');
+  const paginationWrapper = document.getElementById('paginationWrapper') || document.querySelector('.pagination-wrapper');
   const toast = document.getElementById('toastMsg');
   const btnResetFilters = document.getElementById('btnResetFilters');
   const searchSuggestDropdown = document.getElementById('searchSuggestDropdown');
@@ -894,38 +1361,6 @@ document.addEventListener('DOMContentLoaded', () => {
       currentFilteredJobs = [...JOBS_DATA];
     }
 
-    // Hiển thị Banner thông báo dữ liệu mẫu thông minh
-    const sampleDataBanner = document.getElementById('sampleDataBanner');
-    if (sampleDataBanner) {
-      if (hasFilter) {
-        sampleDataBanner.style.display = 'block';
-        if (matchingJobs.length > 0) {
-          sampleDataBanner.className = 'sample-data-banner match-success';
-          sampleDataBanner.innerHTML = `
-            <div class="banner-flex">
-              <span class="banner-badge-icon">🎯</span>
-              <div class="banner-content">
-                <strong>Tìm thấy ${matchingJobs.length} việc làm phù hợp nhất</strong> được ưu tiên hiển thị đầu danh sách. Đồng thời hiển thị đầy đủ <strong>${JOBS_DATA.length} việc làm mẫu có sẵn</strong> để bạn trải nghiệm.
-              </div>
-            </div>
-          `;
-        } else {
-          sampleDataBanner.className = 'sample-data-banner match-fallback';
-          sampleDataBanner.innerHTML = `
-            <div class="banner-flex">
-              <span class="banner-badge-icon">💡</span>
-              <div class="banner-content">
-                <strong>Chế độ dữ liệu mẫu EasyCV:</strong> Không tìm thấy công việc nào khớp chính xác với yêu cầu lọc. Hệ thống đang hiển thị toàn bộ <strong>${JOBS_DATA.length} việc làm có sẵn</strong> để bạn tham khảo và trải nghiệm tính năng.
-              </div>
-            </div>
-          `;
-        }
-      } else {
-        sampleDataBanner.style.display = 'none';
-        sampleDataBanner.innerHTML = '';
-      }
-    }
-
     // Apply Sorting (Luôn ưu tiên việc làm khớp tìm kiếm lên trên)
     sortJobs();
 
@@ -955,7 +1390,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (matchCount > 0) {
           activeKeywordText.textContent = `${criteria} (${matchCount} khớp)`;
         } else {
-          activeKeywordText.textContent = `${criteria} (Dữ liệu mẫu có sẵn)`;
+          activeKeywordText.textContent = criteria;
         }
         activeSearchTag.style.display = 'inline-flex';
       } else {
@@ -1069,7 +1504,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="${job.logo}" alt="${job.company}" class="job-company-logo" loading="lazy" />
             <div class="job-info-main">
               <div class="job-title-row">
-                <h3 class="job-title"><a href="chi-tiet-viec-lam.html?id=${job.id}" target="_blank" class="job-title-link" title="Click để mở tab chi tiết riêng">${job.title}</a></h3>
+                <h3 class="job-title"><a href="chi-tiet-viec-lam.html?id=${job.id}&title=${encodeURIComponent(job.title)}" class="job-title-link" title="Xem chi tiết ${job.title}">${job.title}</a></h3>
                 <div class="job-badges-group">
                   ${job._isSearchMatch ? `<span class="badge-search-match" title="Việc làm khớp chính xác với tiêu chí tìm kiếm">✨ Khớp tìm kiếm</span>` : ''}
                   <span class="job-salary-badge ${salaryOrangeClass}">${job.salaryBadge}</span>
@@ -1429,7 +1864,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="${job.logo}" alt="${job.company}" class="split-company-logo" loading="lazy" />
             <div class="split-card-info">
               <h4 class="split-card-title">
-                <a href="chi-tiet-viec-lam.html?id=${job.id}" target="_blank" class="job-title-link" title="Click để mở tab chi tiết riêng">${job.title}</a>
+                <a href="chi-tiet-viec-lam.html?id=${job.id}&title=${encodeURIComponent(job.title)}" class="job-title-link" title="Xem chi tiết ${job.title}">${job.title}</a>
               </h4>
               <div class="split-card-company">${job.company}</div>
               <div class="split-card-badges">
@@ -1608,6 +2043,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.filter-dropdown-wrap').forEach(wrap => {
       wrap.classList.remove('is-open');
     });
+    // Reset industry search khi đóng
+    const industryInput = document.getElementById('industrySearchInput');
+    if (industryInput && industryInput.value) {
+      industryInput.value = '';
+      // Hiện lại tất cả items
+      const list = document.getElementById('industryDropdownList');
+      list?.querySelectorAll('.dropdown-item').forEach(i => { i.hidden = false; });
+      const noRes = document.getElementById('industryNoResults');
+      if (noRes) noRes.hidden = true;
+      const clearBtn = document.getElementById('industrySearchClear');
+      if (clearBtn) clearBtn.hidden = true;
+    }
   }
 
   function updateFilterPillUI(type, value, label) {
@@ -1710,9 +2157,56 @@ document.addEventListener('DOMContentLoaded', () => {
           menu.hidden = false;
           btn.setAttribute('aria-expanded', 'true');
           wrap.classList.add('is-open');
+
+          // Nếu là industry dropdown → focus vào ô tìm kiếm
+          if (menu.id === 'industryDropdownMenu') {
+            const searchInput = document.getElementById('industrySearchInput');
+            if (searchInput) {
+              requestAnimationFrame(() => searchInput.focus());
+            }
+          }
         }
       });
     });
+
+    // 1b. Industry search input logic
+    (function setupIndustrySearch() {
+      const searchInput  = document.getElementById('industrySearchInput');
+      const clearBtn     = document.getElementById('industrySearchClear');
+      const list         = document.getElementById('industryDropdownList');
+      const noResults    = document.getElementById('industryNoResults');
+      if (!searchInput || !list) return;
+
+      function filterIndustryItems(q) {
+        const query = q.trim().toLowerCase();
+        const items = list.querySelectorAll('.dropdown-item');
+        let visibleCount = 0;
+        items.forEach(item => {
+          const label = (item.getAttribute('data-label') || item.querySelector('span')?.textContent || '').toLowerCase();
+          const match = !query || label.includes(query);
+          item.hidden = !match;
+          if (match) visibleCount++;
+        });
+        if (noResults) noResults.hidden = visibleCount > 0;
+        if (clearBtn)  clearBtn.hidden  = !query;
+      }
+
+      searchInput.addEventListener('input', () => filterIndustryItems(searchInput.value));
+      searchInput.addEventListener('keydown', e => e.stopPropagation()); // chặn phím tắt
+
+      if (clearBtn) {
+        clearBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          searchInput.value = '';
+          filterIndustryItems('');
+          searchInput.focus();
+        });
+      }
+
+      // Reset search khi dropdown đóng
+      const origClose = window._closeAllFilterDropdowns;
+      const origCloseRef = closeAllFilterDropdowns;
+    })();
 
     // 2. Dropdown Items click
     document.querySelectorAll('.filter-dropdown-menu .dropdown-item').forEach(item => {
@@ -2134,7 +2628,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const wrapperRect = wrapper.getBoundingClientRect();
       if (wrapperRect.top < headerHeight) {
         if (!stickyBar.classList.contains('is-sticky')) {
-          wrapper.style.minHeight = wrapperRect.height + 'px';
+          // Dùng chiều cao thực của stickyBar (gồm cả filter bar bên trong)
+          wrapper.style.minHeight = stickyBar.offsetHeight + 'px';
           stickyBar.classList.add('is-sticky');
         }
       } else {

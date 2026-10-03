@@ -83,3 +83,12 @@ Theo yêu cầu của người dùng cùng ảnh tham khảo trực quan (chuẩ
 | Static build synchronization and cache refresh | Root and `public/` styles could diverge or deployed clients could retain `v=1.0` | Applied the same responsive rules to both CSS copies and raised all HTML consumers to `v=1.1_alignment` | Root/public CSS and HTML pairs match |
 | Regression coverage | The homepage modal test checked opening and selection but not column alignment | Added explicit modal/selection assertions, a one-pixel alignment tolerance at desktop and tablet, and a stacked-layout/overflow check at 390px | `scratch/test_homepage_category.js` PASS at 1440px, 900px, and 390px |
 
+## 7. Popular Keyword Visual Highlight — 2026-10-03
+
+| Item | Previous state | Technical solution | Verified result |
+|---|---|---|---|
+| Recommendation hierarchy | The aligned row still blended into the white modal content | Added an orange-tinted gradient surface, 3px inset accent, warm divider, and stronger orange label | The recommendation area is visually distinct without resembling a selected state |
+| Keyword affordance | Chips used the same gray treatment as ordinary specialty pills | Used white chip surfaces, orange-tinted borders, stronger type, branded hover feedback, and a 2px focus-visible outline | Light-mode colors and focus rule match expected computed values |
+| Dark-mode parity | The row had no dedicated dark highlighted surface | Added a translucent orange surface, warm divider/accent, orange label, and high-contrast dark chips | Dark-mode computed colors match expected values |
+| Delivery and regression | Existing cache key would retain the prior styling | Raised all consumers to `v=1.2_highlight` and extended the browser assertions | Chrome headless PASS at 1440px, 900px, and 390px; root/public pairs synchronized |
+

@@ -1,12 +1,23 @@
-const { execSync } = require('child_process');
-const fs = require('fs');
-const chromePath = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
-const edgePath = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
-const browserPath = fs.existsSync(chromePath) ? chromePath : edgePath;
-
+const { execFileSync } = require('child_process');
 const path = require('path');
-const outPath = path.resolve(process.argv[2] || 'scratch/current_vieclam.png');
-const url = process.argv[3] || 'http://localhost:3000/viec-lam.html';
+const chrome = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
 
-execSync(`"${browserPath}" --headless=new --disable-gpu --window-size=1440,1100 --screenshot="${outPath}" "${url}"`);
-console.log('Saved screenshot to:', outPath);
+const outDesktop = path.resolve(__dirname, 'banners_updated_desktop.png');
+execFileSync(chrome, [
+  '--headless=new',
+  '--disable-gpu',
+  '--window-size=1440,950',
+  '--screenshot=' + outDesktop,
+  'http://localhost:3000/index.html'
+]);
+console.log('Saved desktop screenshot to', outDesktop);
+
+const outMobile = path.resolve(__dirname, 'banners_updated_mobile.png');
+execFileSync(chrome, [
+  '--headless=new',
+  '--disable-gpu',
+  '--window-size=390,844',
+  '--screenshot=' + outMobile,
+  'http://localhost:3000/index.html'
+]);
+console.log('Saved mobile screenshot to', outMobile);

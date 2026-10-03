@@ -79,8 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- 2. Job grids: maximum 12 cards (3 columns x 4 rows) per page ---
   function createJobPaginator(sectionSelector, cardSelector) {
     const section = document.querySelector(sectionSelector);
-    const grid = section?.querySelector('.jobs-grid, .attractive-grid');
-    if (!section || !grid) return null;
+    if (!section || section.hidden || getComputedStyle(section).display === 'none') return null;
+    const grid = section.querySelector('.jobs-grid, .attractive-grid');
+    if (!grid) return null;
 
     const cards = [...grid.querySelectorAll(cardSelector)];
     const pageSize = 12;

@@ -341,9 +341,11 @@
   font-weight: 800;
   color: var(--text-main);
   line-height: 1.3;
+  letter-spacing: -0.02em;
   display: flex;
   align-items: center;
   gap: 10px;
+  margin: 0;
 }
 
 .section-subtitle {
@@ -610,24 +612,28 @@
   gap: 12px;
 }
 
-/* Logo Wrapper with Green Accent Border & Flash Shield Badge */
+/* Logo Wrapper with Green Accent Border & Flash Shield Badge - Standardized 65x65 */
 .job-logo-wrapper {
   position: relative;
-  width: 52px;
-  height: 52px;
+  width: 65px;
+  height: 65px;
+  min-width: 65px;
+  min-height: 65px;
   flex-shrink: 0;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1.5px solid #00B14F;
   background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3px;
+  padding: 4px;
   box-sizing: border-box;
 }
 
 .job-logo,
 .company-logo {
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -846,6 +852,7 @@
    Streamlined into clean 3-column cards
    ========================================================================== */
 .attractive-jobs-section {
+  display: none !important;
   background: var(--bg-primary);
   position: relative;
 }
@@ -936,9 +943,9 @@
   min-width: 0;
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
-  border-radius: 16px;
+  border-radius: 18px;
   box-shadow: 0 2px 10px rgba(59, 130, 246, 0.06);
-  padding: 32px 18px 26px;
+  padding: 28px 16px 22px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -952,14 +959,17 @@
 }
 
 .company-card-logo-wrap {
-  width: 84px;
-  height: 84px;
-  border-radius: 18px;
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  min-height: 88px;
+  border-radius: 20px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
 }
 
 .company-card-logo-mark {
@@ -968,20 +978,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 23px;
+  font-size: 24px;
   font-weight: 800;
-  letter-spacing: -0.06em;
-  border-radius: 18px;
+  letter-spacing: -0.05em;
+  border-radius: 20px;
 }
 
-.company-logo-fpt { color: #f37021; background: #fff7ed; }
-.company-logo-vng { color: #ed670c; background: #fff7ed; }
+.company-logo-fpt { color: #f37021; background: #fff7ed; font-size: 24px; }
+.company-logo-vng { color: #ed670c; background: #fff7ed; font-size: 24px; }
 .company-logo-viettel { color: #e2231a; background: #fff5f5; font-size: 18px; letter-spacing: -0.05em; }
-.company-logo-techcombank { color: #d71920; background: #fff5f5; }
+.company-logo-techcombank { color: #d71920; background: #fff5f5; font-size: 22px; }
 .company-logo-momo { color: #a50064; background: #fff0f8; font-size: 17px; letter-spacing: -0.03em; }
-.company-logo-shopee { color: #ee4d2d; background: #fff4f0; }
-.company-logo-mb { color: #005baa; background: #eff7ff; }
-.company-logo-vinai { color: #4f46e5; background: #eef2ff; font-size: 17px; letter-spacing: -0.03em; }
+.company-logo-shopee { color: #ee4d2d; background: #fff4f0; font-size: 26px; }
+.company-logo-mb { color: #005baa; background: #eff7ff; font-size: 24px; }
+.company-logo-vinai { color: #4f46e5; background: #eef2ff; font-size: 18px; letter-spacing: -0.03em; }
 
 .company-card-logo {
   width: 100%;
@@ -990,17 +1000,17 @@
 }
 
 .company-card-title {
-  font-size: 13px;
-  line-height: 1.4;
+  font-size: 13.5px;
+  line-height: 1.45;
   font-weight: 800;
   color: var(--text-main);
-  margin-top: 18px;
+  margin-top: 24px;
   text-decoration: none;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  min-height: 55px;
+  min-height: 56px;
 }
 
 .company-card-title:hover {
@@ -1629,6 +1639,11 @@
 }
 
 @media (max-width: 900px) {
+  .section-title,
+  .cv-template-header h2 {
+    font-size: 23px;
+    line-height: 1.3;
+  }
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1650,6 +1665,16 @@
   .section-header {
     margin-bottom: 20px;
   }
+  .section-title,
+  .cv-template-header h2 {
+    font-size: 20px;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+  .infeed-vip-title {
+    font-size: 19px;
+    line-height: 1.3;
+  }
   .stats-grid {
     grid-template-columns: 1fr;
   }
@@ -1664,24 +1689,26 @@
     padding: 20px 12px 18px;
   }
   .company-card-logo-wrap {
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
+    width: 76px;
+    height: 76px;
+    min-width: 76px;
+    min-height: 76px;
+    border-radius: 18px;
   }
   .company-card-logo-mark {
-    font-size: 17px;
-    border-radius: 16px;
+    font-size: 21px;
+    border-radius: 18px;
   }
   .company-logo-viettel {
-    font-size: 13px;
+    font-size: 15px;
   }
   .company-card-title {
     font-size: 12px;
-    margin-top: 12px;
+    margin-top: 16px;
     min-height: 48px;
   }
   .company-card-footer {
-    margin-top: 12px;
+    margin-top: 14px;
     gap: 6px;
   }
   .company-jobs-pill {
@@ -2026,6 +2053,12 @@
 .infeed-vip-subnote {
   font-size: 12px;
   color: #94A3B8;
+}
+
+@media (max-width: 640px) {
+  .infeed-vip-title {
+    font-size: 19px;
+  }
 }
 
 /* ==========================================================================
@@ -3543,9 +3576,19 @@
 }
 /* CV template recommendations */
 .cv-sheet { position: relative; }
-.cv-template-section { padding: 42px 0 46px; background: var(--bg-primary, #fff); border-bottom: 1px solid var(--border-color, #e2e8f0); }
-.cv-template-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
-.cv-template-header h2 { margin: 0; color: var(--text-primary, #0f172a); font-size: clamp(24px, 2.3vw, 32px); line-height: 1.25; }
+.cv-template-section { padding: 40px 0; background: var(--bg-primary, #fff); border-bottom: 1px solid var(--border-color, #e2e8f0); }
+.cv-template-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+.cv-template-header h2 {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .cv-template-actions { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; }
 .cv-template-view-all { min-height: 40px; display: inline-flex; align-items: center; padding: 0 15px; border: 1px solid #f97316; border-radius: 999px; color: #ea580c; font-size: 13px; font-weight: 700; text-decoration: none; }
 .cv-template-view-all:hover { background: #fff7ed; }
@@ -3582,5 +3625,5 @@
 [data-theme="dark"] .cv-template-section, [data-theme="dark"] .cv-style-filter, [data-theme="dark"] .cv-template-arrow { background: #0f172a; }
 [data-theme="dark"] .cv-template-header h2, [data-theme="dark"] .cv-template-name, [data-theme="dark"] .cv-template-arrow { color: #f8fafc; }
 @media (max-width: 1024px) { .cv-template-track { grid-auto-columns: calc((100% - 40px) / 3); gap: 20px; } }
-@media (max-width: 640px) { .cv-template-section { padding: 32px 0; }.cv-template-header { align-items: flex-start; }.cv-template-actions { gap: 6px; }.cv-template-view-all { min-height: 38px; padding: 0 12px; }.cv-template-arrow { width: 38px; height: 38px; }.cv-template-track { grid-auto-columns: minmax(210px, 78%); gap: 14px; }.cv-template-header h2 { font-size: 22px; } }
+@media (max-width: 640px) { .cv-template-section { padding: 32px 0; }.cv-template-header { align-items: flex-start; }.cv-template-actions { gap: 6px; }.cv-template-view-all { min-height: 38px; padding: 0 12px; }.cv-template-arrow { width: 38px; height: 38px; }.cv-template-track { grid-auto-columns: minmax(210px, 78%); gap: 14px; }.cv-template-header h2 { font-size: 20px; } }
 @media (prefers-reduced-motion: reduce) { .cv-template-viewport { scroll-behavior: auto; }.cv-sheet { transition: none; } }
