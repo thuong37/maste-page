@@ -4,12 +4,22 @@
 const { spawn } = require('child_process');
 const http = require('http');
 const fs = require('fs');
+const os = require('os');
 const path = require('path');
 
 const chromePath = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
 const port = 9244;
+const chromeProfile = fs.mkdtempSync(path.join(os.tmpdir(), 'easycv-homepage-category-'));
+process.on('exit', () => {
+  try {
+    fs.rmSync(chromeProfile, { recursive: true, force: true });
+  } catch (_) {
+    // Chrome may still be releasing profile files on Windows; OS temp cleanup remains the fallback.
+  }
+});
 const chrome = spawn(chromePath, [
   '--headless=new',
+  `--user-data-dir=${chromeProfile}`,
   `--remote-debugging-port=${port}`,
   '--disable-gpu',
   '--window-size=1440,1000',
@@ -103,6 +113,22 @@ async function run() {
       };
     })()`);
     console.log('Modal opened state:', modalState);
+    if (!modalState.isOpen || modalState.title !== 'Chọn Nhóm nghề, Nghề hoặc Chuyên môn' || modalState.groupsCount === 0 || modalState.subgroupsCount === 0) {
+      throw new Error('Category modal did not open with the expected content');
+    }
+
+    const popularKeywordAlignment = await evaluate(`(() => {
+      const specialtyHeader = document.querySelector('.category-right-headers .col-specialty');
+      const firstPopularKeyword = document.querySelector('#categoryPopularChipList .category-popular-chip');
+      if (!specialtyHeader || !firstPopularKeyword) return null;
+      const headerLeft = specialtyHeader.getBoundingClientRect().left;
+      const keywordLeft = firstPopularKeyword.getBoundingClientRect().left;
+      return { headerLeft, keywordLeft, delta: Math.abs(headerLeft - keywordLeft) };
+    })()`);
+    console.log('Popular keyword alignment:', popularKeywordAlignment);
+    if (!popularKeywordAlignment || popularKeywordAlignment.delta > 1) {
+      throw new Error('Popular keyword chips are not aligned with the specialty column');
+    }
 
     // Capture screenshot of opened modal on homepage
     const screenshot2 = await send('Page.captureScreenshot', { format: 'png' });
@@ -130,11 +156,51 @@ async function run() {
       };
     })()`);
     console.log('Post apply state:', postApplyState);
+    if (!postApplyState.isClosed || postApplyState.labelText !== 'Sales Logistics' || !postApplyState.isActive) {
+      throw new Error('Category selection was not applied to the homepage trigger');
+    }
 
     // Capture screenshot showing updated button pill
     const screenshot3 = await send('Page.captureScreenshot', { format: 'png', clip: clip1 });
     fs.writeFileSync(path.join(__dirname, 'homepage_search_bar_applied.png'), Buffer.from(screenshot3.data, 'base64'));
     console.log('Saved scratch/homepage_search_bar_applied.png');
+
+    console.log('--- TEST 4: Responsive popular keyword alignment ---');
+    await send('Emulation.setDeviceMetricsOverride', { width: 900, height: 900, deviceScaleFactor: 1, mobile: false });
+    await evaluate(`document.getElementById('categoryFilterTrigger').click();`);
+    await delay(200);
+    const tabletAlignment = await evaluate(`(() => {
+      const header = document.querySelector('.category-right-headers .col-specialty');
+      const keyword = document.querySelector('#categoryPopularChipList .category-popular-chip');
+      const wrap = document.getElementById('categoryPopularWrap');
+      return {
+        display: getComputedStyle(wrap).display,
+        delta: Math.abs(header.getBoundingClientRect().left - keyword.getBoundingClientRect().left)
+      };
+    })()`);
+    console.log('Tablet popular keyword alignment:', tabletAlignment);
+    if (tabletAlignment.display !== 'grid' || tabletAlignment.delta > 1) {
+      throw new Error('Tablet popular keyword chips are not aligned with the specialty column');
+    }
+    await evaluate(`document.getElementById('categoryModalClose').click();`);
+
+    await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
+    await evaluate(`document.getElementById('categoryFilterTrigger').click();`);
+    await delay(200);
+    const mobileLayout = await evaluate(`(() => {
+      const wrap = document.getElementById('categoryPopularWrap');
+      const style = getComputedStyle(wrap);
+      return {
+        display: style.display,
+        direction: style.flexDirection,
+        viewportWidth: document.documentElement.clientWidth,
+        scrollWidth: document.documentElement.scrollWidth
+      };
+    })()`);
+    console.log('Mobile popular keyword layout:', mobileLayout);
+    if (mobileLayout.display !== 'flex' || mobileLayout.direction !== 'column' || mobileLayout.scrollWidth > mobileLayout.viewportWidth) {
+      throw new Error('Mobile popular keyword layout is not stacked or causes horizontal overflow');
+    }
 
     ws.close();
     chrome.kill();

@@ -73,3 +73,13 @@ Theo yêu cầu của người dùng cùng ảnh tham khảo trực quan (chuẩ
   - `scratch/homepage_search_bar_applied.png` (Nút pill đổi tên theo danh mục được chọn).
   - `scratch/homepage_category_modal_mobile.png` (Modal hiển thị trên smartphone 390px).
 
+---
+
+## 6. Popular Keyword Column Alignment — 2026-10-03
+
+| Item | Previous state | Technical solution | Verified result |
+|---|---|---|---|
+| “Được tìm kiếm nhiều” keyword inset | The row used content-width flex spacing, so the first keyword began left of the “VỊ TRÍ CHUYÊN MÔN” column | Reused the modal's `220px minmax(0, 1fr)` desktop grid and `180px` tablet grid; retained stacked flex below `768px` | Headless Chrome measured both left edges at `642px` (`0px` delta) |
+| Static build synchronization and cache refresh | Root and `public/` styles could diverge or deployed clients could retain `v=1.0` | Applied the same responsive rules to both CSS copies and raised all HTML consumers to `v=1.1_alignment` | Root/public CSS and HTML pairs match |
+| Regression coverage | The homepage modal test checked opening and selection but not column alignment | Added explicit modal/selection assertions, a one-pixel alignment tolerance at desktop and tablet, and a stacked-layout/overflow check at 390px | `scratch/test_homepage_category.js` PASS at 1440px, 900px, and 390px |
+
