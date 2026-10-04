@@ -86,8 +86,10 @@
     .hero-search-sticky-bar.is-sticky .search-suggest-dropdown {
       max-width: var(--container-max-width, 1250px);
       width: calc(100% - 40px);
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: calc(100% + 8px);
     }
     [data-theme="dark"] .hero-search-sticky-bar.is-sticky {
       background: rgba(15, 23, 42, 0.96);
@@ -726,13 +728,13 @@
     }
 
     /* =========================================================================
-       KHỐI BANNER NHÀ TUYỂN DỤNG TIÊU BIỂU (BENTO GRID: 1 Ô CHÍNH + 3 Ô PHỤ)
-       - Banner chính bên trái: chỉ hiển thị ảnh banner (bỏ tag & thanh thông tin/nút)
-       - 3 banner phụ bên cạnh: chỉ hiển thị ảnh banner (bỏ logo, tên, số vị trí, nút)
+       KHỐI BANNER NHÀ TUYỂN DỤNG TIÊU BIỂU (BENTO GRID: 1 Ô CHÍNH SLIDER + 2 Ô PHỤ)
+       - Banner chính bên trái: Chiếm toàn chiều cao, tích hợp Slider 2 nút chuyển đổi
+       - 2 banner phụ bên phải: Xếp dọc (stacked)
        ========================================================================= */
     .hero-ad-showcase.bento-sponsor-grid {
       display: grid !important;
-      grid-template-columns: 1.7fr 1fr 1fr !important;
+      grid-template-columns: 1.5fr 1fr !important;
       grid-template-rows: 1fr 1fr !important;
       gap: 14px !important;
       width: 100% !important;
@@ -748,6 +750,7 @@
       box-sizing: border-box !important;
     }
 
+    /* Banner chính (Slider Container) */
     .sponsor-primary {
       grid-column: 1;
       grid-row: 1 / 3;
@@ -762,13 +765,43 @@
       background: #0F172A;
       text-decoration: none;
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+      user-select: none;
     }
     .sponsor-primary:hover {
       transform: translateY(-2px);
       border-color: #F97316;
       box-shadow: 0 16px 36px -6px rgba(249, 115, 22, 0.22);
     }
-    .sponsor-primary img {
+
+    /* Slides Wrapper & Items */
+    .sponsor-slides-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .sponsor-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1.02);
+      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s ease;
+      z-index: 1;
+      pointer-events: none;
+      display: block;
+      text-decoration: none;
+    }
+    .sponsor-slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+      z-index: 2;
+      pointer-events: auto;
+    }
+    .sponsor-slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -776,11 +809,107 @@
       display: block;
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .sponsor-primary:hover img {
+    /* Căn trọng tâm vào con người cho tấm ảnh thứ 2 (cụm kỹ sư trẻ sáng tạo) */
+    .sponsor-slide img.sponsor-img-focus-people,
+    .sponsor-slide-innovation img {
+      object-position: 16% 68% !important;
+      transform: scale(1.12) !important;
+      transform-origin: 18% 65% !important;
+    }
+    .sponsor-primary:hover .sponsor-slide-innovation.active img {
+      transform: scale(1.15) !important;
+    }
+    .sponsor-primary:hover .sponsor-slide.active img {
       transform: scale(1.02);
     }
 
-    /* 3 ô banner phụ: chỉ hiển thị ảnh banner, không text, không logo */
+    /* 2 Nút chuyển đổi thanh mảnh dính sát mép rìa (bán nguyệt tinh tế) */
+    .sponsor-slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 28px;
+      height: 48px;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      color: #334155;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.12);
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 0;
+      opacity: 0.88;
+    }
+    .sponsor-primary:hover .sponsor-slider-btn {
+      opacity: 1;
+    }
+    .sponsor-slider-btn:hover {
+      background: #F97316;
+      border-color: #F97316;
+      color: #FFFFFF;
+      width: 32px;
+      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
+    }
+    .sponsor-slider-btn:active {
+      transform: translateY(-50%) scale(0.96);
+    }
+    .sponsor-slider-prev {
+      left: 0;
+      border-left: none;
+      border-radius: 0 24px 24px 0;
+      padding-right: 3px;
+    }
+    .sponsor-slider-next {
+      right: 0;
+      border-right: none;
+      border-radius: 24px 0 0 24px;
+      padding-left: 3px;
+    }
+
+    /* Chỉ số chấm (Dots Indicator) */
+    .sponsor-slider-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 12px;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .sponsor-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.55);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .sponsor-dot:hover {
+      background: rgba(255, 255, 255, 0.9);
+      transform: scale(1.2);
+    }
+    .sponsor-dot.active {
+      width: 22px;
+      border-radius: 6px;
+      background: #F97316;
+      box-shadow: 0 0 8px rgba(249, 115, 22, 0.6);
+    }
+
+    /* 2 ô banner phụ: xếp dọc bên phải, chỉ hiển thị ảnh banner */
     .sponsor-mini {
       position: relative;
       display: block;
@@ -813,11 +942,7 @@
     }
 
     .sponsor-mini-a { grid-column: 2; grid-row: 1; }
-    .sponsor-mini-b { grid-column: 3; grid-row: 1; }
-    .sponsor-mini-wide {
-      grid-column: 2 / 4;
-      grid-row: 2;
-    }
+    .sponsor-mini-b { grid-column: 2; grid-row: 2; }
 
     /* Responsive */
     @media (max-width: 1024px) {
@@ -938,7 +1063,18 @@
       }
       .sponsor-mini-a { grid-column: 1; grid-row: 2; min-height: 120px; aspect-ratio: 16 / 9; }
       .sponsor-mini-b { grid-column: 1; grid-row: 3; min-height: 120px; aspect-ratio: 16 / 9; }
-      .sponsor-mini-wide { grid-column: 1; grid-row: 4; min-height: 120px; aspect-ratio: 16 / 9; }
+      .sponsor-slider-btn {
+        width: 24px;
+        height: 40px;
+      }
+      .sponsor-slider-prev {
+        left: 0;
+        border-radius: 0 20px 20px 0;
+      }
+      .sponsor-slider-next {
+        right: 0;
+        border-radius: 20px 0 0 20px;
+      }
     }
 
     .promo-banners-strip {
@@ -1125,16 +1261,16 @@
       </a>
 
       <!-- 2. Primary Nav Items (Left Menu) -->
-      <ul class="navbar-nav">
+                        <ul class="navbar-nav">
 
         <!-- Cột 1: Tìm việc -->
         <li class="nav-item">
-          <a href="viec-lam.html" class="nav-link" id="navLinkTimViec" aria-label="Tìm việc">
+          <a href="viec-lam.html" class="nav-link" id="navLinkTimViec" aria-label="Tìm việc" title="Tìm việc">
             <span>Tìm việc</span>
             <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="viec-lam.html" class="dropdown-item" id="dropdownItemTimKiemViecLam">
+            <a href="viec-lam.html" class="dropdown-item" id="dropdownItemTimKiemViecLam" title="Tìm kiếm việc làm">
               <div class="dropdown-item-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
               </div>
@@ -1143,17 +1279,16 @@
               </div>
             </a>
 
-            <a href="index.html#viec-lam-goi-y" class="dropdown-item">
+            <a href="index.html#viec-lam-goi-y" class="dropdown-item" title="Việc làm gợi ý">
               <div class="dropdown-item-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
               </div>
               <div class="dropdown-item-content">
                 <span class="dropdown-item-title">Việc làm gợi ý</span>
               </div>
-              <span class="badge-pill badge-new">AI Match</span>
             </a>
 
-            <a href="index.html#viec-lam-da-luu" class="dropdown-item">
+            <a href="index.html#viec-lam-da-luu" class="dropdown-item" title="Việc làm đã lưu">
               <div class="dropdown-item-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
               </div>
@@ -1164,7 +1299,7 @@
 
             <div class="dropdown-divider"></div>
 
-            <a href="index.html#kham-pha-cong-ty" class="dropdown-item">
+            <a href="index.html#kham-pha-cong-ty" class="dropdown-item" title="Khám phá công ty">
               <div class="dropdown-item-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/></svg>
               </div>
@@ -1177,12 +1312,12 @@
 
         <!-- Cột 2: Hồ sơ & CV -->
         <li class="nav-item">
-          <button class="nav-link" aria-expanded="false">
+          <button class="nav-link" aria-expanded="false" title="Hồ sơ & CV">
             <span>Hồ sơ & CV</span>
             <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="dropdown-menu">
-            <a href="index.html#ho-so-cua-toi" class="dropdown-item">
+            <a href="index.html#ho-so-cua-toi" class="dropdown-item" title="Hồ sơ của tôi">
               <div class="dropdown-item-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
               </div>
@@ -1191,7 +1326,7 @@
               </div>
             </a>
 
-            <a href="index.html#tao-cv-theo-mau" class="dropdown-item">
+            <a href="index.html#tao-cv-theo-mau" class="dropdown-item" title="Tạo CV theo mẫu">
               <div class="dropdown-item-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
               </div>
@@ -1201,7 +1336,7 @@
               <span class="badge-pill badge-hot">Hot</span>
             </a>
 
-            <a href="index.html#quan-ly-cv" class="dropdown-item">
+            <a href="index.html#quan-ly-cv" class="dropdown-item" title="Quản lý CV">
               <div class="dropdown-item-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg>
               </div>
@@ -1210,7 +1345,7 @@
               </div>
             </a>
 
-            <a href="index.html#tai-len-cv" class="dropdown-item">
+            <a href="index.html#tai-len-cv" class="dropdown-item" title="Tải lên CV">
               <div class="dropdown-item-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
               </div>
@@ -1223,12 +1358,12 @@
 
         <!-- Cột 3: Ứng tuyển -->
         <li class="nav-item">
-          <button class="nav-link" aria-expanded="false">
+          <button class="nav-link" aria-expanded="false" title="Ứng tuyển">
             <span>Ứng tuyển</span>
             <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="dropdown-menu">
-            <a href="index.html#danh-sach-don-ung-tuyen" class="dropdown-item">
+            <a href="index.html#danh-sach-don-ung-tuyen" class="dropdown-item" title="Danh sách đơn ứng tuyển">
               <div class="dropdown-item-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="m9 14 2 2 4-4"/></svg>
               </div>
@@ -1238,7 +1373,7 @@
               <span class="badge-pill badge-count">3</span>
             </a>
 
-            <a href="index.html#lich-phong-van" class="dropdown-item">
+            <a href="index.html#lich-phong-van" class="dropdown-item" title="Lịch phỏng vấn">
               <div class="dropdown-item-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
               </div>
@@ -1248,7 +1383,7 @@
               <span class="badge-pill badge-new">1 mới</span>
             </a>
 
-            <a href="index.html#bai-kiem-tra-nang-luc" class="dropdown-item">
+            <a href="index.html#bai-kiem-tra-nang-luc" class="dropdown-item" title="Bài kiểm tra năng lực">
               <div class="dropdown-item-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
               </div>
@@ -1261,12 +1396,12 @@
 
         <!-- Cột 4: Công cụ nghề nghiệp -->
         <li class="nav-item">
-          <button class="nav-link" aria-expanded="false">
+          <button class="nav-link" aria-expanded="false" title="Công cụ nghề nghiệp">
             <span>Công cụ nghề nghiệp</span>
             <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="dropdown-menu">
-            <a href="index.html#tinh-luong-gross-net" class="dropdown-item">
+            <a href="index.html#tinh-luong-gross-net" class="dropdown-item" title="Tính lương Gross - Net">
               <div class="dropdown-item-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 8h10"/><path d="M7 12h10"/><path d="M7 16h10"/></svg>
               </div>
@@ -1275,7 +1410,7 @@
               </div>
             </a>
 
-            <a href="index.html#tinh-bao-hiem-xa-hoi" class="dropdown-item">
+            <a href="index.html#tinh-bao-hiem-xa-hoi" class="dropdown-item" title="Tính bảo hiểm xã hội">
               <div class="dropdown-item-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
@@ -1284,7 +1419,7 @@
               </div>
             </a>
 
-            <a href="index.html#khao-sat-muc-luong" class="dropdown-item">
+            <a href="index.html#khao-sat-muc-luong" class="dropdown-item" title="Báo cáo thị trường lương">
               <div class="dropdown-item-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
               </div>
@@ -1293,7 +1428,7 @@
               </div>
             </a>
 
-            <a href="index.html#trac-nghiem-tinh-cach" class="dropdown-item">
+            <a href="index.html#trac-nghiem-tinh-cach" class="dropdown-item" title="Trắc nghiệm MBTI / DISC">
               <div class="dropdown-item-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3.08A2.49 2.49 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3.08A2.49 2.49 0 0 0 14.5 2Z"/></svg>
               </div>
@@ -1749,7 +1884,6 @@
               <span>Tìm việc ngay</span>
             </button>
           </div>
-          </div>
 
           <!-- KHỐI GỢI Ý SEARCH ĐÈ LÊN KHỐI TIÊU ĐIỂM -->
           <div class="search-suggest-dropdown" id="searchSuggestDropdown">
@@ -1775,6 +1909,7 @@
               </div>
               <button type="button" class="btn-close-suggest" id="btnCloseSuggest">Đóng [Esc]</button>
             </div>
+          </div>
           </div>
 
           <!-- Popover / Modal: Chọn Nhóm nghề, Nghề hoặc Chuyên môn (Chuẩn ảnh mẫu tham khảo) -->
@@ -1863,23 +1998,48 @@
           <a href="#remote" class="quick-tag-link tag-highlight" data-keyword="Việc làm Remote">🔥 Việc làm Remote</a>
         </div>
 
-        <!-- KHỐI BANNER NHÀ TUYỂN DỤNG TIÊU BIỂU (BENTO GRID: 1 Ô CHÍNH + 3 Ô PHỤ) -->
+        <!-- KHỐI BANNER NHÀ TUYỂN DỤNG TIÊU BIỂU (BENTO GRID: 1 Ô CHÍNH SLIDER + 2 Ô PHỤ) -->
         <div class="hero-ad-showcase bento-sponsor-grid">
 
-          <!-- Ô chính: Banner tiêu biểu ngoài cùng bên trái (chỉ ảnh banner, không tag, không thanh thông tin/nút) -->
-          <a href="#doanh-nghiep-tieu-bieu" class="sponsor-primary" title="Khám phá cơ hội nghề nghiệp tại Orion Technologies">
-            <img src="assets/banners/employer-spotlight-banner.jpg" alt="Doanh nghiệp tiêu biểu EasyCV - Orion Technologies" />
-          </a>
+          <!-- Ô chính: Banner tiêu biểu ngoài cùng bên trái (Slider chuyển đổi 2 phía) -->
+          <div class="sponsor-primary sponsor-slider-container" id="heroSponsorSlider">
+            <!-- Danh sách các Slide -->
+            <div class="sponsor-slides-wrapper">
+              <!-- Slide 1: Orion Technologies -->
+              <a href="#doanh-nghiep-tieu-bieu" class="sponsor-slide active" title="Khám phá cơ hội nghề nghiệp tại Orion Technologies" data-slide-index="0">
+                <img src="assets/banners/employer-spotlight-banner.jpg" alt="Doanh nghiệp tiêu biểu EasyCV - Orion Technologies" />
+              </a>
+              <!-- Slide 2: Tech Innovation & Sáng tạo Công nghệ (Trọng tâm vào cụm kỹ sư trẻ) -->
+              <a href="#doanh-nghiep-tieu-bieu" class="sponsor-slide sponsor-slide-innovation" title="Môi trường làm việc bứt phá & Sáng tạo Công nghệ" data-slide-index="1">
+                <img src="assets/banners/employer-spotlight-innovation.png" class="sponsor-img-focus-people" alt="Doanh nghiệp tiêu biểu EasyCV - Sáng tạo & Công nghệ Đột phá" />
+              </a>
+            </div>
 
-          <!-- 3 ô banner phụ bên cạnh (chỉ hiển thị ảnh banner) -->
+            <!-- 2 Nút chuyển đổi thanh mảnh dính sát mép rìa (Prev / Next) -->
+            <button type="button" class="sponsor-slider-btn sponsor-slider-prev" id="sponsorSliderPrev" aria-label="Banner trước" title="Banner trước">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6"/>
+              </svg>
+            </button>
+            <button type="button" class="sponsor-slider-btn sponsor-slider-next" id="sponsorSliderNext" aria-label="Banner tiếp theo" title="Banner tiếp theo">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6"/>
+              </svg>
+            </button>
+
+            <!-- Chỉ số chấm (Dots Indicator) -->
+            <div class="sponsor-slider-dots" id="sponsorSliderDots">
+              <button type="button" class="sponsor-dot active" data-index="0" aria-label="Chuyển đến banner 1"></button>
+              <button type="button" class="sponsor-dot" data-index="1" aria-label="Chuyển đến banner 2"></button>
+            </div>
+          </div>
+
+          <!-- 2 ô banner phụ bên phải (xếp dọc) -->
           <a href="#doanh-nghiep-tieu-bieu" class="sponsor-mini sponsor-mini-a" title="Xem cơ hội việc làm tại Vietcom Finance">
             <img src="assets/banners/employer-spotlight-finance.jpg" alt="Cơ hội việc làm - Vietcom Finance" />
           </a>
           <a href="#doanh-nghiep-tieu-bieu" class="sponsor-mini sponsor-mini-b" title="Xem cơ hội việc làm tại Saigon Retail Corp">
             <img src="assets/banners/employer-spotlight-retail.jpg" alt="Cơ hội việc làm - Saigon Retail Corp" />
-          </a>
-          <a href="#doanh-nghiep-tieu-bieu" class="sponsor-mini sponsor-mini-wide" title="Xem cơ hội việc làm tại HanTech Group">
-            <img src="assets/banners/employer-spotlight-manufacturing.jpg" alt="Cơ hội việc làm - HanTech Group" />
           </a>
         </div>
 
@@ -2547,25 +2707,6 @@
         <a href="#cap-nhat-cv" class="btn-update-cv">Cập nhật hồ sơ ngay</a>
       </div>
 
-      <!-- Interactive Matching Tabs -->
-      <div class="matching-tabs">
-        <button class="matching-tab-btn active" data-tab="all">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
-          <span>Tất cả</span>
-        </button>
-        <button class="matching-tab-btn" data-tab="profile">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-          <span>Khớp CV của bạn (Top Match)</span>
-        </button>
-        <button class="matching-tab-btn" data-tab="salary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          <span>Lương cao từ 25+ Triệu</span>
-        </button>
-        <button class="matching-tab-btn" data-tab="remote">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <span>Làm việc từ xa (Remote / Hybrid)</span>
-        </button>
-      </div>
 
       <!-- Matching Jobs Grid -->
       <div class="jobs-grid">
@@ -2938,7 +3079,7 @@
   <footer id="chan-trang" class="site-footer">
     <div class="home-container">
 
-      <!-- Main Footer 5 Columns -->
+      <!-- Main Footer 4 Columns -->
       <div class="footer-main-grid">
 
         <!-- Col 1: EasyCV Brand & About -->
@@ -2991,22 +3132,8 @@
           </ul>
         </div>
 
-        <!-- Col 4: Dành cho Doanh nghiệp -->
-        <div>
-          <h4 class="footer-col-title">Nhà tuyển dụng</h4>
-          <ul class="footer-links-list">
-            <li><a href="#dang-tin-tuyen-dung" class="footer-link">Đăng tin tuyển dụng</a></li>
-            <li><a href="#tim-kiem-ho-so" class="footer-link">Tìm kiếm hồ sơ ứng viên</a></li>
-            <li><a href="#he-thong-ats" class="footer-link">Giải pháp EasyCV ATS</a></li>
-            <li><a href="#tuyen-dung-headhunt" class="footer-link">Dịch vụ Headhunter cao cấp</a></li>
-            <li><a href="#bao-gia-dich-vu" class="footer-link">Báo giá & Gói tuyển dụng</a></li>
-            <li><a href="#dong-thuong-hieu" class="footer-link">Quảng bá thương hiệu nhà tuyển dụng</a></li>
-            <li><a href="#lien-he-tu-van" class="footer-link">Liên hệ tư vấn doanh nghiệp</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 5: Liên hệ & Tải ứng dụng Mobile -->
-        <div>
+        <!-- Col 4: Liên hệ & Tải ứng dụng Mobile -->
+        <div class="footer-col-contact">
           <h4 class="footer-col-title">Liên hệ & Trụ sở</h4>
           <div class="footer-contact-item">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>

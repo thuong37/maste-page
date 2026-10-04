@@ -1,0 +1,15 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="10" fill="#F8FAFC"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="9.5" stroke="#CBD5E1"/>
+  <!-- Industrial & Technology Engineering structure -->
+  <path d="M15 48V32H27V48H15Z" fill="#94A3B8"/>
+  <path d="M27 24L39 18V48H27V24Z" fill="#64748B"/>
+  <path d="M39 30L49 36V48H39V30Z" fill="#475569"/>
+  <!-- Technical accent -->
+  <circle cx="21" cy="24" r="3" stroke="#0284C7" stroke-width="2"/>
+  <line x1="21" y1="27" x2="21" y2="32" stroke="#0284C7" stroke-width="2"/>
+  <rect x="31" y="26" width="4" height="4" rx="0.5" fill="#F8FAFC"/>
+  <rect x="31" y="34" width="4" height="4" rx="0.5" fill="#F8FAFC"/>
+  <rect x="31" y="41" width="4" height="4" rx="0.5" fill="#F8FAFC"/>
+  <line x1="12" y1="48" x2="52" y2="48" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="10" fill="#EFF6FF"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="9.5" stroke="#BFDBFE"/>
+  <!-- Tech Infrastructure / Server & Cloud Data Tower -->
+  <path d="M16 48V26C16 24.8954 16.8954 24 18 24H32V48H16Z" fill="#93C5FD"/>
+  <path d="M32 18C32 16.8954 32.8954 16 34 16H46C47.1046 16 48 16.8954 48 18V48H32V18Z" fill="#3B82F6"/>
+  <!-- Server lights / slots -->
+  <rect x="20" y="28" width="8" height="2" rx="1" fill="#EFF6FF"/>
+  <rect x="20" y="33" width="8" height="2" rx="1" fill="#EFF6FF"/>
+  <rect x="20" y="38" width="8" height="2" rx="1" fill="#EFF6FF"/>
+  <rect x="20" y="43" width="8" height="2" rx="1" fill="#EFF6FF"/>
+  <rect x="36" y="21" width="8" height="2" rx="1" fill="#DBEAFE"/>
+  <rect x="36" y="26" width="8" height="2" rx="1" fill="#DBEAFE"/>
+  <rect x="36" y="31" width="8" height="2" rx="1" fill="#DBEAFE"/>
+  <rect x="36" y="36" width="8" height="2" rx="1" fill="#DBEAFE"/>
+  <rect x="36" y="41" width="8" height="2" rx="1" fill="#DBEAFE"/>
+  <circle cx="21" cy="20" r="2" fill="#2563EB"/>
+  <circle cx="27" cy="18" r="2.5" fill="#1D4ED8"/>
+  <line x1="14" y1="48" x2="50" y2="48" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round"/>
+</svg>

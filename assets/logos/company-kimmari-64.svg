@@ -1,0 +1,11 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="10" fill="#FFF1F2"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="9.5" stroke="#FECDD3"/>
+  <!-- Restaurant / Hospitality building & dining icon -->
+  <path d="M17 48V30C17 28.8954 17.8954 28 19 28H45C46.1046 28 47 28.8954 47 30V48H17Z" fill="#FDA4AF"/>
+  <path d="M14 30L32 18L50 30H14Z" fill="#F43F5E"/>
+  <rect x="22" y="34" width="6" height="6" rx="1" fill="#FFF1F2"/>
+  <rect x="36" y="34" width="6" height="6" rx="1" fill="#FFF1F2"/>
+  <path d="M28 48V41C28 39.8954 28.8954 39 30 39H34C35.1046 39 36 39.8954 36 41V48H28Z" fill="#BE123C"/>
+  <line x1="12" y1="48" x2="52" y2="48" stroke="#E11D48" stroke-width="2" stroke-linecap="round"/>
+</svg>

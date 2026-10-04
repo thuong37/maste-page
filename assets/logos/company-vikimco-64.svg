@@ -1,0 +1,18 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="10" fill="#FFF7ED"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="9.5" stroke="#FED7AA"/>
+  <!-- Modern Corporate Headquarters -->
+  <path d="M14 50V32L26 24V50H14Z" fill="#FDBA74"/>
+  <path d="M26 24L38 16V50H26V24Z" fill="#FB923C"/>
+  <path d="M38 28L50 34V50H38V28Z" fill="#F97316"/>
+  <!-- Windows accents -->
+  <rect x="18" y="36" width="4" height="3" rx="0.5" fill="#FFF7ED"/>
+  <rect x="18" y="42" width="4" height="3" rx="0.5" fill="#FFF7ED"/>
+  <rect x="30" y="24" width="4" height="3.5" rx="0.5" fill="#FFF7ED"/>
+  <rect x="30" y="31" width="4" height="3.5" rx="0.5" fill="#FFF7ED"/>
+  <rect x="30" y="38" width="4" height="3.5" rx="0.5" fill="#FFF7ED"/>
+  <rect x="30" y="44" width="4" height="3" rx="0.5" fill="#FFF7ED"/>
+  <rect x="42" y="36" width="4" height="3" rx="0.5" fill="#FED7AA"/>
+  <rect x="42" y="42" width="4" height="3" rx="0.5" fill="#FED7AA"/>
+  <line x1="12" y1="50" x2="52" y2="50" stroke="#EA580C" stroke-width="2" stroke-linecap="round"/>
+</svg>

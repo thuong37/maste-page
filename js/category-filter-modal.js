@@ -438,18 +438,23 @@
 
       if (this.triggerBtn) this.triggerBtn.classList.add('is-active');
 
-      if (this.appliedSelection.roles.size === 1) {
-        const role = Array.from(this.appliedSelection.roles)[0];
-        this.triggerLabel.textContent = role.length > 18 ? `${role.slice(0, 16)}…` : role;
-      } else if (this.appliedSelection.groups.size === 1 && this.appliedSelection.roles.size === 0) {
+      if (this.appliedSelection.groups.size === 1) {
         const groupKey = Array.from(this.appliedSelection.groups)[0];
         const group = CATEGORY_DATA.find(g => g.key === groupKey);
         const name = group ? group.name : 'Danh mục Nghề';
-        this.triggerLabel.textContent = name.length > 18 ? `${name.slice(0, 16)}…` : name;
+        this.triggerLabel.textContent = name.length > 20 ? `${name.slice(0, 18)}…` : name;
+      } else if (this.appliedSelection.roles.size === 1) {
+        const role = Array.from(this.appliedSelection.roles)[0];
+        this.triggerLabel.textContent = role.length > 18 ? `${role.slice(0, 16)}…` : role;
+      } else if (this.appliedSelection.subgroups.size === 1 && this.appliedSelection.roles.size === 0) {
+        const sub = Array.from(this.appliedSelection.subgroups)[0];
+        this.triggerLabel.textContent = sub.length > 18 ? `${sub.slice(0, 16)}…` : sub;
       } else {
-        const first = this.appliedSelection.roles.size > 0
-          ? Array.from(this.appliedSelection.roles)[0]
-          : CATEGORY_DATA.find(g => g.key === Array.from(this.appliedSelection.groups)[0])?.name || 'Nghề';
+        const first = this.appliedSelection.groups.size > 0
+          ? CATEGORY_DATA.find(g => g.key === Array.from(this.appliedSelection.groups)[0])?.name || 'Nghề'
+          : (this.appliedSelection.subgroups.size > 0
+              ? Array.from(this.appliedSelection.subgroups)[0]
+              : Array.from(this.appliedSelection.roles)[0] || 'Nghề');
         const prefix = first.length > 12 ? `${first.slice(0, 10)}…` : first;
         this.triggerLabel.textContent = `${prefix} (${totalItems})`;
       }
@@ -465,18 +470,36 @@
       this.popularChipListEl.querySelectorAll('.category-popular-chip').forEach(chip => {
         chip.addEventListener('click', () => {
           const keyword = chip.getAttribute('data-keyword');
-          if (self.searchInput) {
-            self.searchInput.value = keyword;
-            self.searchInput.focus();
+          const isAlreadyActive = chip.classList.contains('is-active');
+
+          self.popularChipListEl.querySelectorAll('.category-popular-chip').forEach(c => c.classList.remove('is-active'));
+
+          if (isAlreadyActive) {
+            if (self.searchInput) {
+              self.searchInput.value = '';
+            }
+            if (self.searchClearBtn) self.searchClearBtn.hidden = true;
+            self.handleSearch('');
+          } else {
+            chip.classList.add('is-active');
+            if (self.searchInput) {
+              self.searchInput.value = keyword;
+              self.searchInput.focus();
+            }
+            if (self.searchClearBtn) self.searchClearBtn.hidden = false;
+            self.handleSearch(keyword);
           }
-          if (self.searchClearBtn) self.searchClearBtn.hidden = false;
-          self.handleSearch(keyword);
         });
       });
     },
 
     handleSearch: function (query) {
       const norm = normalizeStr(query);
+      if (this.popularChipListEl) {
+        this.popularChipListEl.querySelectorAll('.category-popular-chip').forEach(c => {
+          c.classList.toggle('is-active', !!norm && normalizeStr(c.getAttribute('data-keyword')) === norm);
+        });
+      }
       if (this.popularWrap) this.popularWrap.hidden = !!norm;
       if (!norm) {
         this.renderGroups();
@@ -667,7 +690,11 @@
       const isCurrentlyChecked = this.tempSelection.groups.has(catKey);
       const cat = CATEGORY_DATA.find(c => c.key === catKey);
 
+      // Luôn chuyển sang hiển thị nhóm nghề được click
+      this.activeCategoryKey = catKey;
+
       if (isCurrentlyChecked) {
+        // Bỏ chọn nhóm nghề: bỏ chọn toàn bộ nghề và chuyên môn trong nhóm
         this.tempSelection.groups.delete(catKey);
         if (cat) {
           cat.subgroups.forEach(sub => {
@@ -676,7 +703,14 @@
           });
         }
       } else {
+        // Chọn nhóm nghề: TẤT CẢ NGHỀ VÀ CHUYÊN MÔN TRONG NHÓM ĐÓ ĐỀU ĐƯỢC CHỌN
         this.tempSelection.groups.add(catKey);
+        if (cat) {
+          cat.subgroups.forEach(sub => {
+            this.tempSelection.subgroups.add(sub.title);
+            sub.roles.forEach(r => this.tempSelection.roles.add(r));
+          });
+        }
       }
 
       this.renderGroups();
@@ -689,9 +723,20 @@
       if (isCurrentlyChecked) {
         this.tempSelection.subgroups.delete(title);
         roles.forEach(r => this.tempSelection.roles.delete(r));
+        const currentCat = CATEGORY_DATA.find(c => c.key === this.activeCategoryKey);
+        if (currentCat) {
+          this.tempSelection.groups.delete(currentCat.key);
+        }
       } else {
         this.tempSelection.subgroups.add(title);
-        // Optional: also check all child roles or leave as subgroup level
+        roles.forEach(r => this.tempSelection.roles.add(r));
+        const currentCat = CATEGORY_DATA.find(c => c.key === this.activeCategoryKey);
+        if (currentCat) {
+          const allSubsChecked = currentCat.subgroups.every(s => this.tempSelection.subgroups.has(s.title));
+          if (allSubsChecked) {
+            this.tempSelection.groups.add(currentCat.key);
+          }
+        }
       }
 
       this.renderGroups();
@@ -701,9 +746,25 @@
     toggleRole: function (role, subTitle) {
       if (this.tempSelection.roles.has(role)) {
         this.tempSelection.roles.delete(role);
+        if (subTitle) {
+          this.tempSelection.subgroups.delete(subTitle);
+          const currentCat = CATEGORY_DATA.find(c => c.key === this.activeCategoryKey);
+          if (currentCat) {
+            this.tempSelection.groups.delete(currentCat.key);
+          }
+        }
       } else {
         this.tempSelection.roles.add(role);
-        // Also ensure subgroup or group is aware if needed
+        if (subTitle) {
+          const currentCat = CATEGORY_DATA.find(c => c.key === this.activeCategoryKey);
+          const sub = currentCat?.subgroups.find(s => s.title === subTitle);
+          if (sub && sub.roles.every(r => this.tempSelection.roles.has(r))) {
+            this.tempSelection.subgroups.add(subTitle);
+            if (currentCat.subgroups.every(s => this.tempSelection.subgroups.has(s.title))) {
+              this.tempSelection.groups.add(currentCat.key);
+            }
+          }
+        }
       }
 
       this.renderGroups();

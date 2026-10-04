@@ -244,6 +244,7 @@ body {
 }
 
 .dropdown-item {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1077,8 +1078,10 @@ body {
 .hero-search-sticky-bar.is-sticky .search-suggest-dropdown {
   max-width: var(--container-max-width, 1250px);
   width: calc(100% - 40px);
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: calc(100% + 8px);
 }
 [data-theme='dark'] .hero-search-sticky-bar.is-sticky {
   background: rgba(15, 23, 42, 0.96);

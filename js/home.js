@@ -450,16 +450,46 @@ document.addEventListener('DOMContentLoaded', () => {
         <h3 id="recommendedJobsTitle">Việc làm bạn sẽ thích</h3>
         <div class="recommended-job-list">
           ${[
-            ['GD', 'Giám Đốc Kinh Doanh Vikimco Toàn Quốc', '$1,000–1,500 / tháng'],
-            ['IT', 'Senior IT Infrastructure Officer', 'Thương lượng'],
-            ['KM', 'Quản Lý Nhà Hàng Kimmari Chicken', '15–25tr ₫/tháng'],
-            ['TS', 'Technical Service Engineer – Industrial Printer', 'Thương lượng'],
-            ['PM', 'Nhân Viên Phòng Mua Bán', 'Thương lượng']
-          ].map(([mark, title, salary]) => `
-            <button type="button" class="recommended-job suggest-trend-chip" data-keyword="${title}" aria-label="Tìm ${title}, mức lương ${salary}">
-              <span class="recommended-job-logo" aria-hidden="true">${mark}</span>
-              <span class="recommended-job-title">${title}</span>
-              <span class="recommended-job-salary">${salary}</span>
+            {
+              logo: 'assets/logos/company-mua-he-64.png',
+              title: 'Kế Toán Tổng Hợp (Mảng Giải Trí)',
+              company: 'CÔNG TY TNHH TRUYỀN THÔNG MÙA HÈ',
+              salary: '20 - 25 triệu'
+            },
+            {
+              logo: 'assets/logos/company-vikimco-64.svg',
+              title: 'Giám Đốc Kinh Doanh Vikimco Toàn Quốc',
+              company: 'CÔNG TY CỔ PHẦN TẬP ĐOÀN VIKIMCO',
+              salary: '$1,000–1,500 / tháng'
+            },
+            {
+              logo: 'assets/logos/company-fpt-64.svg',
+              title: 'Senior IT Infrastructure Officer',
+              company: 'TẬP ĐOÀN CÔNG NGHỆ FPT',
+              salary: 'Thương lượng'
+            },
+            {
+              logo: 'assets/logos/company-kimmari-64.svg',
+              title: 'Quản Lý Nhà Hàng Kimmari Chicken',
+              company: 'CHUỖI NHÀ HÀNG KIMMARI CHICKEN',
+              salary: '15–25tr ₫/tháng'
+            },
+            {
+              logo: 'assets/logos/company-tanviet-64.svg',
+              title: 'Technical Service Engineer – Industrial Printer',
+              company: 'CÔNG TY TNHH THIẾT BỊ CÔNG NGHIỆP TÂN VIỆT',
+              salary: 'Thương lượng'
+            }
+          ].map(job => `
+            <button type="button" class="recommended-job" data-keyword="${job.title}" aria-label="Tìm ${job.title}, công ty ${job.company}, mức lương ${job.salary}">
+              <span class="recommended-job-logo" aria-hidden="true">
+                <img src="${job.logo}" alt="${job.company}" width="64" height="64" loading="lazy">
+              </span>
+              <div class="recommended-job-info">
+                <span class="recommended-job-title">${job.title}</span>
+                <span class="recommended-job-company">${job.company}</span>
+                <span class="recommended-job-salary">${job.salary}</span>
+              </div>
             </button>
           `).join('')}
         </div>
@@ -1200,6 +1230,16 @@ document.addEventListener('DOMContentLoaded', () => {
       openDropdown('suggestions');
     });
 
+    const searchInputGroup = heroSearchInput.closest('.search-input-group');
+    if (searchInputGroup) {
+      searchInputGroup.addEventListener('click', (e) => {
+        if (e.target !== clearSearchInputBtn) {
+          heroSearchInput.focus();
+          openDropdown('suggestions');
+        }
+      });
+    }
+
     heroSearchInput.addEventListener('input', () => {
       if (clearSearchInputBtn) {
         clearSearchInputBtn.style.display = heroSearchInput.value.trim() ? 'flex' : 'none';
@@ -1422,6 +1462,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    // Recommended jobs click
+    const recommendedJobBtns = document.querySelectorAll('.recommended-job');
+    recommendedJobBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const kw = btn.getAttribute('data-keyword') || btn.querySelector('.recommended-job-title')?.textContent.trim();
+        if (kw) executeSearch(kw);
+      });
+    });
+
     // Navbar Logo & "Tìm việc" / "Tìm kiếm việc làm" interactions on homepage
     const navbarBrandLogo = document.getElementById('navbarBrandLogo') || document.querySelector('.navbar-brand');
     navbarBrandLogo?.addEventListener('click', (e) => {
@@ -1492,6 +1542,100 @@ document.addEventListener('DOMContentLoaded', () => {
     renderHistory();
     renderIndustryNav();
     initStickySearch();
+    initHeroSponsorSlider();
+  }
+
+  // --- 8. Hero Sponsor Banner Slider (Tấm banner to nhất có 2 nút prev/next và dots) ---
+  function initHeroSponsorSlider() {
+    const sliderContainer = document.getElementById('heroSponsorSlider');
+    if (!sliderContainer) return;
+
+    const slides = Array.from(sliderContainer.querySelectorAll('.sponsor-slide'));
+    const dots = Array.from(sliderContainer.querySelectorAll('.sponsor-dot'));
+    const prevBtn = document.getElementById('sponsorSliderPrev');
+    const nextBtn = document.getElementById('sponsorSliderNext');
+
+    if (slides.length <= 1) return;
+
+    let currentIndex = 0;
+    let autoPlayTimer = null;
+
+    function goToSlide(index) {
+      if (index < 0) {
+        currentIndex = slides.length - 1;
+      } else if (index >= slides.length) {
+        currentIndex = 0;
+      } else {
+        currentIndex = index;
+      }
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentIndex);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function nextSlide(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      goToSlide(currentIndex + 1);
+      resetAutoPlay();
+    }
+
+    function prevSlide(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      goToSlide(currentIndex - 1);
+      resetAutoPlay();
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', nextSlide);
+    }
+    if (prevBtn) {
+      prevBtn.addEventListener('click', prevSlide);
+    }
+
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        goToSlide(idx);
+        resetAutoPlay();
+      });
+    });
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      autoPlayTimer = setInterval(() => {
+        goToSlide(currentIndex + 1);
+      }, 5000);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+      }
+    }
+
+    function resetAutoPlay() {
+      stopAutoPlay();
+      startAutoPlay();
+    }
+
+    sliderContainer.addEventListener('mouseenter', stopAutoPlay);
+    sliderContainer.addEventListener('mouseleave', startAutoPlay);
+
+    // Kích hoạt auto play
+    startAutoPlay();
   }
 });
 
