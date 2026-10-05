@@ -9,47 +9,97 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // CV templates: continuous auto-scrolling carousel with style filtering (same marquee logic as featured companies).
   const cvSection = document.querySelector('.cv-template-section');
-  if (cvSection) {
-    const viewport = cvSection.querySelector('.cv-template-viewport');
-    const filters = [...cvSection.querySelectorAll('.cv-style-filter')];
-    const cards = [...cvSection.querySelectorAll('.cv-template-card')];
-    const prevButton = cvSection.querySelector('[data-cv-direction="prev"]');
-    const nextButton = cvSection.querySelector('[data-cv-direction="next"]');
-    const emptyState = cvSection.querySelector('.cv-template-empty');
+  const cvViewport = cvSection?.querySelector('.cv-template-carousel, .cv-template-viewport');
+  const cvTrack = cvViewport?.querySelector('.cv-template-track');
+  const cvFilters = cvSection ? Array.from(cvSection.querySelectorAll('.cv-style-filter')) : [];
 
-    const visibleCards = () => cards.filter(card => !card.hidden);
-    const updateArrows = () => {
-      const overflow = viewport.scrollWidth > viewport.clientWidth + 2;
-      prevButton.disabled = !overflow || viewport.scrollLeft <= 2;
-      nextButton.disabled = !overflow || viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 2;
+  if (cvSection && cvViewport && cvTrack && cvTrack.children.length > 1) {
+    const originalTemplates = Array.from(cvTrack.children).map(card => card.cloneNode(true));
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let timer;
+    let isTransitioning = false;
+
+    const buildTrack = (style) => {
+      const filtered = originalTemplates.filter(card => {
+        if (style === 'all') return true;
+        const styles = (card.getAttribute('data-cv-styles') || '').split(' ');
+        return styles.includes(style);
+      });
+
+      // Ensure track always has enough items (at least 8) to seamlessly fill viewport slots and marquee loop
+      let items = [];
+      if (filtered.length > 0) {
+        while (items.length < Math.max(8, filtered.length * 2)) {
+          items.push(...filtered.map(c => c.cloneNode(true)));
+        }
+        if (items.length > 12) items = items.slice(0, 12);
+      }
+
+      cvTrack.style.transition = 'none';
+      cvTrack.style.transform = 'translateX(0)';
+      cvTrack.replaceChildren(...items);
+      void cvTrack.offsetWidth;
+      isTransitioning = false;
     };
 
-    filters.forEach(filter => filter.addEventListener('click', () => {
-      const selectedStyle = filter.dataset.cvStyle;
-      filters.forEach(item => {
-        const selected = item === filter;
-        item.classList.toggle('is-active', selected);
-        item.setAttribute('aria-pressed', String(selected));
-      });
-      cards.forEach(card => {
-        const styles = (card.dataset.cvStyles || '').split(' ');
-        card.hidden = selectedStyle !== 'all' && !styles.includes(selectedStyle);
-      });
-      emptyState.hidden = visibleCards().length > 0;
-      viewport.hidden = visibleCards().length === 0;
-      viewport.scrollLeft = 0;
-      requestAnimationFrame(updateArrows);
-    }));
+    const step = () => {
+      if (isTransitioning || cvTrack.children.length <= 1) return;
+      const firstCard = cvTrack.firstElementChild;
+      if (!firstCard) return;
+      const trackGap = parseFloat(getComputedStyle(cvTrack).columnGap || getComputedStyle(cvTrack).gap) || 0;
+      const shiftBy = firstCard.getBoundingClientRect().width + trackGap;
 
-    [prevButton, nextButton].forEach(button => button.addEventListener('click', () => {
-      const card = visibleCards()[0];
-      const distance = card ? card.getBoundingClientRect().width + 24 : viewport.clientWidth;
-      viewport.scrollBy({ left: button.dataset.cvDirection === 'next' ? distance : -distance, behavior: 'smooth' });
-    }));
-    viewport.addEventListener('scroll', updateArrows, { passive: true });
-    window.addEventListener('resize', updateArrows);
-    updateArrows();
+      isTransitioning = true;
+      cvTrack.style.transition = 'transform 0.6s ease';
+      cvTrack.style.transform = `translateX(-${shiftBy}px)`;
+
+      const onTransitionEnd = () => {
+        cvTrack.removeEventListener('transitionend', onTransitionEnd);
+        cvTrack.style.transition = 'none';
+        cvTrack.style.transform = 'translateX(0)';
+        cvTrack.appendChild(firstCard);
+        void cvTrack.offsetWidth;
+        isTransitioning = false;
+      };
+      cvTrack.addEventListener('transitionend', onTransitionEnd, { once: true });
+    };
+
+    const stop = () => {
+      clearInterval(timer);
+      timer = undefined;
+    };
+    const start = () => {
+      stop();
+      if (!document.hidden && !reducedMotion.matches && !cvSection.matches(':hover, :focus-within')) {
+        timer = setInterval(step, 2000);
+      }
+    };
+
+    // Filter pills event listeners
+    cvFilters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const style = btn.getAttribute('data-cv-style') || 'all';
+        cvFilters.forEach(b => {
+          const isActive = b === btn;
+          b.classList.toggle('is-active', isActive);
+          b.setAttribute('aria-pressed', String(isActive));
+        });
+        stop();
+        buildTrack(style);
+        start();
+      });
+    });
+
+    cvSection.addEventListener('mouseenter', stop);
+    cvSection.addEventListener('mouseleave', start);
+    cvSection.addEventListener('focusin', stop);
+    cvSection.addEventListener('focusout', () => setTimeout(start, 0));
+    document.addEventListener('visibilitychange', start);
+    reducedMotion.addEventListener('change', start);
+
+    start();
   }
   // --- 1. Toast Notification Utility ---
   let toastContainer = document.querySelector('.easycv-toast-container');
@@ -432,12 +482,33 @@ document.addEventListener('DOMContentLoaded', () => {
     searchSuggestDropdown.setAttribute('aria-label', 'Gợi ý tìm kiếm việc làm');
 
     const legacyRecentSection = searchSuggestDropdown.querySelector('.suggest-recent-section');
+    if (legacyRecentSection) {
+      legacyRecentSection.remove();
+    }
+
     const compactSearchPanel = document.createElement('div');
     compactSearchPanel.className = 'search-format-panel';
     compactSearchPanel.innerHTML = `
-      <section class="search-format-left" aria-label="Lịch sử và từ khóa phổ biến">
-        <div class="search-format-recent-slot"></div>
-        <div class="popular-keywords">
+      <section class="search-format-left" aria-label="Lịch sử và từ khóa gợi ý">
+        <!-- Chế độ mặc định: Lịch sử tìm kiếm gần đây -->
+        <div class="suggest-section suggest-recent-section" id="suggestRecentSection">
+          <div class="suggest-section-header">
+            <h3 class="suggest-title" id="searchSuggestHeaderTitle">Từ khóa tìm kiếm gần đây</h3>
+            <button type="button" class="btn-clear-history" id="btnClearSearchHistory">Xóa tất cả</button>
+          </div>
+          <div class="recent-chips-list" id="recentSearchList"></div>
+        </div>
+
+        <!-- Chế độ gõ phím: Từ khóa gợi ý -->
+        <div class="keyword-suggestions-section" id="keywordSuggestionsSection" style="display: none;">
+          <div class="suggest-section-header">
+            <h3 class="suggest-title">Từ khóa gợi ý</h3>
+          </div>
+          <div class="keyword-suggestions-list" id="keywordSuggestionsList"></div>
+        </div>
+
+        <!-- Từ khóa phổ biến -->
+        <div class="popular-keywords" id="popularKeywordsWrap">
           <h3>Từ khóa phổ biến</h3>
           <div class="popular-keyword-list">
             ${['Finance', 'Kinh doanh', 'IT', 'Accountant', 'Marketing'].map(keyword => `
@@ -447,7 +518,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </section>
       <section class="recommended-jobs" aria-labelledby="recommendedJobsTitle">
-        <h3 id="recommendedJobsTitle">Việc làm bạn sẽ thích</h3>
+        <h3 id="recommendedJobsTitle">Việc làm có thể bạn quan tâm</h3>
         <div class="recommended-job-list">
           ${[
             {
@@ -482,8 +553,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           ].map(job => `
             <button type="button" class="recommended-job" data-keyword="${job.title}" aria-label="Tìm ${job.title}, công ty ${job.company}, mức lương ${job.salary}">
-              <span class="recommended-job-logo" aria-hidden="true">
-                <img src="${job.logo}" alt="${job.company}" width="64" height="64" loading="lazy">
+              <span class="recommended-job-logo" aria-hidden="true" title="Công ty ${job.company} tuyển dụng tại EasyCV">
+                <img src="${job.logo}" alt="${job.company}" width="50" height="50" loading="lazy" title="Công ty ${job.company} tuyển dụng tại EasyCV">
               </span>
               <div class="recommended-job-info">
                 <span class="recommended-job-title">${job.title}</span>
@@ -495,19 +566,38 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </section>`;
     searchSuggestDropdown.prepend(compactSearchPanel);
-    if (legacyRecentSection) {
-      compactSearchPanel.querySelector('.search-format-recent-slot').appendChild(legacyRecentSection);
-      const recentTitle = legacyRecentSection.querySelector('.suggest-title');
-      if (recentTitle) recentTitle.textContent = 'Tìm kiếm gần đây';
-    }
+
+    const searchFormatLeft = compactSearchPanel.querySelector('.search-format-left');
+    const suggestRecentSection = compactSearchPanel.querySelector('#suggestRecentSection');
+    const keywordSuggestionsSection = compactSearchPanel.querySelector('#keywordSuggestionsSection');
+    const keywordSuggestionsList = compactSearchPanel.querySelector('#keywordSuggestionsList');
+    const popularKeywordsWrap = compactSearchPanel.querySelector('#popularKeywordsWrap');
+    const recentListEl = compactSearchPanel.querySelector('#recentSearchList');
+    const clearHistoryBtn = compactSearchPanel.querySelector('#btnClearSearchHistory');
+
+    compactSearchPanel.querySelectorAll('.suggest-trend-chip').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const kw = btn.getAttribute('data-keyword') || btn.textContent.trim();
+        executeSearch(kw);
+      });
+    });
+
+    compactSearchPanel.querySelectorAll('.recommended-job').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const kw = btn.getAttribute('data-keyword') || '';
+        executeSearch(kw);
+      });
+    });
 
     const STORAGE_KEY = 'easycv_recent_searches_v2';
     const DEFAULT_HISTORY = [
-      'ReactJS Developer',
-      'Marketing Leader',
-      'UI/UX Designer',
-      'Java Spring Boot',
-      'Kế toán tổng hợp'
+      { keyword: 'ReactJS Developer', count: 156 },
+      { keyword: 'Marketing Leader', count: 92 },
+      { keyword: 'UI/UX Designer', count: 143 },
+      { keyword: 'Java Spring Boot', count: 67 },
+      { keyword: 'Kế toán tổng hợp', count: 184 }
     ];
 
     // Dữ liệu 5 trang Danh mục ngành nghề (mỗi trang 6 ngành) chuẩn Mega-Menu TopCV
@@ -928,6 +1018,29 @@ document.addEventListener('DOMContentLoaded', () => {
       return [...DEFAULT_HISTORY];
     }
 
+    function getKeywordJobCount(keyword) {
+      let hash = 0;
+      for (let i = 0; i < keyword.length; i++) {
+        hash = (hash * 31 + keyword.charCodeAt(i)) % 300;
+      }
+      return 35 + (Math.abs(hash) % 240);
+    }
+
+    function getHistory() {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed)) {
+            return parsed.map(item => typeof item === 'string' ? { keyword: item, count: getKeywordJobCount(item) } : item);
+          }
+        }
+      } catch (e) {
+        console.warn('Cannot read history from localStorage', e);
+      }
+      return DEFAULT_HISTORY.map(item => typeof item === 'string' ? { keyword: item, count: getKeywordJobCount(item) } : item);
+    }
+
     function saveHistory(list) {
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
@@ -937,37 +1050,55 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderHistory() {
-      if (!recentSearchList) return;
+      if (!recentListEl) return;
       const history = getHistory();
-      recentSearchList.innerHTML = '';
+      recentListEl.innerHTML = '';
 
       if (!history || history.length === 0) {
-        recentSearchList.innerHTML = '<span class="recent-empty-hint">Chưa có lịch sử tìm kiếm gần đây</span>';
-        if (btnClearSearchHistory) btnClearSearchHistory.style.display = 'none';
+        recentListEl.innerHTML = '<span class="recent-empty-hint">Chưa có từ khóa tìm kiếm gần đây</span>';
+        if (clearHistoryBtn) clearHistoryBtn.style.display = 'none';
         return;
       }
 
-      if (btnClearSearchHistory) btnClearSearchHistory.style.display = 'inline-block';
+      if (clearHistoryBtn) clearHistoryBtn.style.display = 'inline-block';
 
-      history.forEach((keyword) => {
-        const chip = document.createElement('div');
-        chip.className = 'recent-chip';
-        chip.innerHTML = `
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span class="recent-chip-text">${keyword}</span>
-          <button type="button" class="recent-chip-remove" title="Xóa từ khóa">✕</button>
+      history.forEach((item) => {
+        const kw = item.keyword;
+        const cnt = item.count !== undefined ? item.count : getKeywordJobCount(kw);
+
+        const row = document.createElement('div');
+        row.className = 'recent-search-row';
+        row.setAttribute('role', 'button');
+        row.setAttribute('tabindex', '0');
+        row.innerHTML = `
+          <svg class="recent-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <div class="recent-search-meta">
+            <span class="recent-search-keyword">${escapeHtml(kw)}</span>
+            <span class="recent-search-count">${cnt} việc làm</span>
+          </div>
+          <button type="button" class="recent-search-remove" title="Xóa từ khóa" aria-label="Xóa ${escapeHtml(kw)}">✕</button>
         `;
 
-        chip.addEventListener('click', (e) => {
-          if (e.target.closest('.recent-chip-remove')) {
+        row.addEventListener('click', (e) => {
+          if (e.target.closest('.recent-search-remove')) {
             e.stopPropagation();
-            removeHistoryItem(keyword);
+            removeHistoryItem(kw);
             return;
           }
-          executeSearch(keyword);
+          executeSearch(kw);
         });
 
-        recentSearchList.appendChild(chip);
+        row.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            if (!e.target.closest('.recent-search-remove')) {
+              executeSearch(kw);
+            }
+          }
+        });
+
+        recentListEl.appendChild(row);
       });
     }
 
@@ -975,16 +1106,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const cleanKeyword = keyword.trim();
       if (!cleanKeyword) return;
       let history = getHistory();
-      history = history.filter(item => item.toLowerCase() !== cleanKeyword.toLowerCase());
-      history.unshift(cleanKeyword);
-      if (history.length > 8) history = history.slice(0, 8);
+      history = history.filter(item => item.keyword.toLowerCase() !== cleanKeyword.toLowerCase());
+      history.unshift({ keyword: cleanKeyword, count: getKeywordJobCount(cleanKeyword) });
+      if (history.length > 6) history = history.slice(0, 6);
       saveHistory(history);
       renderHistory();
     }
 
     function removeHistoryItem(keyword) {
       let history = getHistory();
-      history = history.filter(item => item.toLowerCase() !== keyword.toLowerCase());
+      history = history.filter(item => item.keyword.toLowerCase() !== keyword.toLowerCase());
       saveHistory(history);
       renderHistory();
       showToast(`Đã xóa "${keyword}" khỏi lịch sử`, '✕');
@@ -994,6 +1125,165 @@ document.addEventListener('DOMContentLoaded', () => {
       saveHistory([]);
       renderHistory();
       showToast('Đã xóa toàn bộ lịch sử tìm kiếm', '✕');
+    }
+
+    // Kho từ khóa gợi ý đa dạng phong phú chuẩn TopCV
+    const ALL_SUGGESTIONS = [
+      { keyword: 'ReactJS Developer', count: 156 },
+      { keyword: 'Frontend Developer', count: 240 },
+      { keyword: 'Backend Developer', count: 310 },
+      { keyword: 'Fullstack Developer', count: 185 },
+      { keyword: 'Java Spring Boot', count: 128 },
+      { keyword: 'Lập trình viên Java', count: 96 },
+      { keyword: 'NodeJS Developer', count: 112 },
+      { keyword: 'Python Developer', count: 145 },
+      { keyword: 'PHP / Laravel', count: 88 },
+      { keyword: 'Golang Developer', count: 64 },
+      { keyword: 'Flutter / Mobile App', count: 92 },
+      { keyword: 'iOS / Swift Developer', count: 54 },
+      { keyword: 'Android Developer', count: 68 },
+      { keyword: 'DevOps Engineer', count: 82 },
+      { keyword: 'UI/UX Designer', count: 143 },
+      { keyword: 'Product Designer', count: 76 },
+      { keyword: 'Graphic Designer', count: 135 },
+      { keyword: 'Product Manager', count: 62 },
+      { keyword: 'Business Analyst (BA)', count: 143 },
+      { keyword: 'Nhân viên phân tích nghiệp vụ', count: 146 },
+      { keyword: 'Data Analyst', count: 118 },
+      { keyword: 'Data Engineer', count: 79 },
+      { keyword: 'AI / Machine Learning Engineer', count: 95 },
+      { keyword: 'Tester / QA QC', count: 172 },
+      { keyword: 'Marketing Leader', count: 92 },
+      { keyword: 'Digital Marketing', count: 215 },
+      { keyword: 'Content Marketing', count: 164 },
+      { keyword: 'SEO Specialist', count: 98 },
+      { keyword: 'Telesales', count: 280 },
+      { keyword: 'Nhân viên kinh doanh', count: 420 },
+      { keyword: 'Sales B2B', count: 165 },
+      { keyword: 'Chăm sóc khách hàng', count: 310 },
+      { keyword: 'Kế toán tổng hợp', count: 184 },
+      { keyword: 'Kế toán thuế', count: 125 },
+      { keyword: 'Kế toán kho', count: 94 },
+      { keyword: 'Kế toán viên', count: 110 },
+      { keyword: 'Chuyên viên tuyển dụng (HR)', count: 152 },
+      { keyword: 'Hành chính nhân sự', count: 205 },
+      { keyword: 'Quản lý nhà hàng', count: 78 },
+      { keyword: 'Kỹ sư xây dựng', count: 115 },
+      { keyword: 'Kỹ sư cơ khí', count: 89 },
+      { keyword: 'Dược sĩ đại học', count: 72 },
+      { keyword: 'Trình dược viên', count: 84 },
+      { keyword: 'Phiên dịch tiếng Trung', count: 96 },
+      { keyword: 'Biên phiên dịch tiếng Hàn', count: 62 },
+      { keyword: 'Biên dịch tiếng Anh', count: 104 },
+      { keyword: 'Nhân viên xuất nhập khẩu', count: 132 },
+      { keyword: 'Sales Logistics', count: 110 },
+      { keyword: 'Warehouse Supervisor', count: 58 }
+    ];
+
+    INDUSTRY_PAGES.forEach(page => {
+      page.forEach(cat => {
+        (cat.hotSearches || []).forEach(hs => {
+          if (!ALL_SUGGESTIONS.some(s => s.keyword.toLowerCase() === hs.toLowerCase())) {
+            ALL_SUGGESTIONS.push({ keyword: hs, count: getKeywordJobCount(hs) });
+          }
+        });
+        (cat.subgroups || []).forEach(sg => {
+          (sg.roles || []).forEach(r => {
+            if (!ALL_SUGGESTIONS.some(s => s.keyword.toLowerCase() === r.toLowerCase())) {
+              ALL_SUGGESTIONS.push({ keyword: r, count: getKeywordJobCount(r) });
+            }
+          });
+        });
+      });
+    });
+
+    function escapeHtml(str) {
+      return (str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function highlightMatch(text, query) {
+      if (!query) return escapeHtml(text);
+      const qClean = query.trim();
+      const escaped = qClean.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(`(${escaped})`, 'gi');
+      return escapeHtml(text).replace(regex, '<strong>$1</strong>');
+    }
+
+    function renderKeywordSuggestions(query, container) {
+      if (!container) return;
+      container.innerHTML = '';
+      const clean = normalizeIndustryText(query);
+      if (!clean) return;
+
+      const matches = ALL_SUGGESTIONS.filter(item => {
+        return normalizeIndustryText(item.keyword).includes(clean);
+      }).slice(0, 6);
+
+      if (matches.length === 0) {
+        const emptyRow = document.createElement('div');
+        emptyRow.className = 'keyword-suggestion-empty';
+        emptyRow.setAttribute('role', 'button');
+        emptyRow.setAttribute('tabindex', '0');
+        emptyRow.innerHTML = `
+          <svg class="kw-suggest-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+          <span class="kw-suggest-text">Tìm kiếm việc làm cho <strong>"${escapeHtml(query)}"</strong></span>
+        `;
+        emptyRow.addEventListener('click', () => {
+          executeSearch(query);
+        });
+        emptyRow.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') executeSearch(query);
+        });
+        container.appendChild(emptyRow);
+        return;
+      }
+
+      matches.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'keyword-suggestion-row';
+        row.setAttribute('role', 'button');
+        row.setAttribute('tabindex', '0');
+        row.innerHTML = `
+          <svg class="kw-suggest-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+          <span class="kw-suggest-text">${highlightMatch(item.keyword, query)}</span>
+          <span class="kw-suggest-count">${item.count} việc làm</span>
+        `;
+        row.addEventListener('click', () => {
+          executeSearch(item.keyword);
+        });
+        row.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') executeSearch(item.keyword);
+        });
+        container.appendChild(row);
+      });
+    }
+
+    function handleSearchInputMode(rawQuery) {
+      const query = (rawQuery || '').trim();
+      const isTyping = query.length > 0;
+
+      if (isTyping) {
+        searchFormatLeft?.classList.add('is-typing');
+        if (suggestRecentSection) suggestRecentSection.style.display = 'none';
+        if (keywordSuggestionsSection) keywordSuggestionsSection.style.display = 'flex';
+        if (popularKeywordsWrap) popularKeywordsWrap.style.display = 'none';
+        renderKeywordSuggestions(query, keywordSuggestionsList);
+      } else {
+        searchFormatLeft?.classList.remove('is-typing');
+        if (suggestRecentSection) suggestRecentSection.style.display = 'flex';
+        if (keywordSuggestionsSection) keywordSuggestionsSection.style.display = 'none';
+        if (popularKeywordsWrap) popularKeywordsWrap.style.display = 'block';
+        renderHistory();
+      }
     }
 
     function renderIndustryNav() {
@@ -1178,9 +1468,44 @@ document.addEventListener('DOMContentLoaded', () => {
       if (industryFilterApply) industryFilterApply.disabled = pendingIndustry === appliedIndustry;
     }
 
+    function updateDropdownPosition() {
+      if (!heroSearchWrapper || !searchSuggestDropdown) return;
+      if (window.innerWidth <= 900) {
+        searchSuggestDropdown.style.removeProperty('--search-suggest-left');
+        searchSuggestDropdown.style.removeProperty('--search-suggest-right');
+        searchSuggestDropdown.style.left = '0';
+        searchSuggestDropdown.style.right = '0';
+        searchSuggestDropdown.style.width = '100%';
+        searchSuggestDropdown.style.maxWidth = '100%';
+        return;
+      }
+      const inputGroup = heroSearchInput ? heroSearchInput.closest('.search-input-group') : null;
+      const heroBox = document.getElementById('heroSearchBox') || (heroSearchInput ? heroSearchInput.closest('.hero-search-box') : null);
+      const parentBar = searchSuggestDropdown.parentElement;
+      if (inputGroup && parentBar && heroBox) {
+        const barRect = parentBar.getBoundingClientRect();
+        const groupRect = inputGroup.getBoundingClientRect();
+        const boxRect = heroBox.getBoundingClientRect();
+
+        // Mép trái: Thu gọn căn thẳng hàng với ô input tìm kiếm (để lộ nút "Danh mục Nghề" bên trái)
+        const leftOffset = Math.max(0, Math.round(groupRect.left - barRect.left));
+
+        // Mép phải: GIỮ NGUYÊN kéo dài đến hết mép phải của thanh tìm kiếm (hero-search-box)
+        const rightOffset = Math.max(0, Math.round(barRect.right - boxRect.right));
+
+        searchSuggestDropdown.style.setProperty('--search-suggest-left', `${leftOffset}px`);
+        searchSuggestDropdown.style.setProperty('--search-suggest-right', `${rightOffset}px`);
+        searchSuggestDropdown.style.left = `${leftOffset}px`;
+        searchSuggestDropdown.style.right = `${rightOffset}px`;
+        searchSuggestDropdown.style.width = 'auto';
+        searchSuggestDropdown.style.maxWidth = 'none';
+      }
+    }
+
     function openDropdown(mode = 'suggestions') {
       const industryMode = mode === 'industry';
       searchSuggestDropdown.classList.toggle('is-industry-mode', industryMode);
+      updateDropdownPosition();
       searchSuggestDropdown.classList.add('is-open');
       heroSearchInput.setAttribute('aria-expanded', String(!industryMode));
       industryFilterTrigger?.setAttribute('aria-expanded', String(industryMode));
@@ -1224,10 +1549,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Input Events
     heroSearchInput.addEventListener('focus', () => {
       openDropdown('suggestions');
+      handleSearchInputMode(heroSearchInput.value);
     });
 
     heroSearchInput.addEventListener('click', () => {
       openDropdown('suggestions');
+      handleSearchInputMode(heroSearchInput.value);
     });
 
     const searchInputGroup = heroSearchInput.closest('.search-input-group');
@@ -1236,17 +1563,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target !== clearSearchInputBtn) {
           heroSearchInput.focus();
           openDropdown('suggestions');
+          handleSearchInputMode(heroSearchInput.value);
         }
       });
     }
 
     heroSearchInput.addEventListener('input', () => {
+      const query = heroSearchInput.value.trim();
       if (clearSearchInputBtn) {
-        clearSearchInputBtn.style.display = heroSearchInput.value.trim() ? 'flex' : 'none';
+        clearSearchInputBtn.style.display = query ? 'flex' : 'none';
       }
       if (!searchSuggestDropdown.classList.contains('is-open')) {
         openDropdown('suggestions');
       }
+      handleSearchInputMode(query);
     });
 
     heroSearchInput.addEventListener('keydown', (e) => {
@@ -1265,9 +1595,7 @@ document.addEventListener('DOMContentLoaded', () => {
         heroSearchInput.value = '';
         clearSearchInputBtn.style.display = 'none';
         heroSearchInput.focus();
-        // Reset job filter
-        const jobCards = document.querySelectorAll('.job-card, .attractive-card');
-        jobCards.forEach(card => card.style.display = 'flex');
+        handleSearchInputMode('');
       });
     }
 
@@ -1278,8 +1606,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    if (btnClearSearchHistory) {
-      btnClearSearchHistory.addEventListener('click', (e) => {
+    if (clearHistoryBtn) {
+      clearHistoryBtn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
         clearAllHistory();
@@ -1293,6 +1621,12 @@ document.addEventListener('DOMContentLoaded', () => {
         closeDropdown();
       });
     }
+
+    window.addEventListener('resize', updateDropdownPosition, { passive: true });
+    window.addEventListener('scroll', updateDropdownPosition, { passive: true });
+
+    updateDropdownPosition();
+    renderHistory();
 
     // Lắng nghe sự kiện chọn danh mục từ EasyCVCategoryModal
     document.addEventListener('easycv:category-applied', (e) => {
@@ -1637,5 +1971,65 @@ document.addEventListener('DOMContentLoaded', () => {
     // Kích hoạt auto play
     startAutoPlay();
   }
+
+  // Ensure all job & company logos have exact requested tooltip specifications
+  function initLogoTooltips() {
+    // 1. Thẻ job thông thường: tooltip "Công ty [Tên] tuyển dụng tại EasyCV"
+    document.querySelectorAll('.job-card').forEach(card => {
+      const companyEl = card.querySelector('.company-name');
+      const logoWrapper = card.querySelector('.job-logo-wrapper');
+      const logoImg = card.querySelector('.job-logo');
+      
+      let companyName = companyEl ? companyEl.textContent.trim() : '';
+      if (!companyName && logoImg && logoImg.getAttribute('alt')) {
+        companyName = logoImg.getAttribute('alt').replace(/logo/i, '').trim();
+      }
+      if (companyName) {
+        const cleanName = companyName.replace(/^(công ty|tổng công ty|ngân hàng)\s+/i, (match) => {
+          return match.trim() + ' ';
+        });
+        const tooltipText = cleanName.toLowerCase().startsWith('công ty')
+          ? `${cleanName} tuyển dụng tại EasyCV`
+          : `Công ty ${cleanName} tuyển dụng tại EasyCV`;
+          
+        if (logoWrapper && !logoWrapper.getAttribute('title')) {
+          logoWrapper.setAttribute('title', tooltipText);
+        }
+        if (logoImg && !logoImg.getAttribute('title')) {
+          logoImg.setAttribute('title', tooltipText);
+        }
+      }
+    });
+
+    // 2. Khối Công ty nổi bật (#cong-ty-tieu-bieu hoặc .top-companies-section): tooltip "Công ty [Tên]"
+    document.querySelectorAll('#cong-ty-tieu-bieu .company-card, .top-companies-section .company-card').forEach(card => {
+      const titleEl = card.querySelector('.company-card-title');
+      const logoWrap = card.querySelector('.company-card-logo-wrap');
+      const logoMark = card.querySelector('.company-card-logo-mark');
+      
+      let companyName = '';
+      if (titleEl) {
+        const rawTitle = titleEl.textContent.trim();
+        const parts = rawTitle.split(' - ');
+        companyName = parts.length > 1 ? parts[parts.length - 1].trim() : rawTitle;
+      }
+      if (!companyName && logoMark && logoMark.getAttribute('aria-label')) {
+        companyName = logoMark.getAttribute('aria-label').trim();
+      }
+      if (companyName) {
+        const tooltipText = companyName.toLowerCase().startsWith('công ty')
+          ? companyName
+          : `Công ty ${companyName}`;
+        if (logoWrap && !logoWrap.getAttribute('title')) {
+          logoWrap.setAttribute('title', tooltipText);
+        }
+        if (logoMark && !logoMark.getAttribute('title')) {
+          logoMark.setAttribute('title', tooltipText);
+        }
+      }
+    });
+  }
+  initLogoTooltips();
 });
+
 

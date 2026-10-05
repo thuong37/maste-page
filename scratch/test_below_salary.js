@@ -1,0 +1,100 @@
+const { spawn } = require('child_process');
+const fs = require('fs');
+
+const chromePath = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+const edgePath = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
+const browserPath = fs.existsSync(chromePath) ? chromePath : edgePath;
+
+async function run() {
+  const port = 9238;
+  const proc = spawn(browserPath, [
+    '--headless=new',
+    `--remote-debugging-port=${port}`,
+    '--disable-gpu',
+    '--window-size=1440,1100',
+    'http://localhost:3000/viec-lam.html'
+  ]);
+
+  await new Promise(r => setTimeout(r, 2000));
+
+  try {
+    const listRes = await fetch(`http://127.0.0.1:${port}/json`);
+    const tabs = await listRes.json();
+    const tab = tabs.find(t => t.url.includes('viec-lam.html')) || tabs[0];
+    const ws = new WebSocket(tab.webSocketDebuggerUrl);
+    await new Promise(r => ws.addEventListener('open', r));
+
+    let msgId = 1;
+    function send(method, params = {}) {
+      return new Promise((resolve) => {
+        const id = msgId++;
+        const handler = (event) => {
+          const res = JSON.parse(event.data);
+          if (res.id === id) {
+            ws.removeEventListener('message', handler);
+            resolve(res.result);
+          }
+        };
+        ws.addEventListener('message', handler);
+        ws.send(JSON.stringify({ id, method, params }));
+      });
+    }
+
+    await send('Runtime.enable');
+    await send('Page.enable');
+
+    // Test flex-direction: column on .job-badges-group
+    await send('Runtime.evaluate', {
+      expression: `(() => {
+        const style = document.createElement('style');
+        style.innerHTML = \`
+          .job-title-row {
+            align-items: flex-start !important;
+          }
+          .job-badges-group {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-end !important;
+            gap: 8px !important;
+            flex-shrink: 0 !important;
+          }
+          .job-salary-wrap {
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+          }
+        \`;
+        document.head.appendChild(style);
+
+        // Save card 15 for visual test
+        const card15 = document.querySelector('.job-card[data-id="15"]');
+        if (card15) {
+          const btn = card15.querySelector('.btn-card-bookmark');
+          if (btn) btn.classList.add('saved');
+        }
+      })()`
+    });
+
+    // Scroll card 15 into view
+    await send('Runtime.evaluate', {
+      expression: `(() => {
+        const card15 = document.querySelector('.job-card[data-id="15"]');
+        card15.scrollIntoView({ block: 'center' });
+      })()`
+    });
+
+    await new Promise(r => setTimeout(r, 600));
+
+    const shot = await send('Page.captureScreenshot', { format: 'png' });
+    fs.writeFileSync('scratch/test_below_salary.png', Buffer.from(shot.data, 'base64'));
+    console.log('Saved scratch/test_below_salary.png');
+
+    ws.close();
+  } catch (err) {
+    console.error('Error:', err);
+  } finally {
+    proc.kill();
+  }
+}
+
+run();

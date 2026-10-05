@@ -256,7 +256,11 @@
       if (this.triggerBtn) {
         this.triggerBtn.addEventListener('click', (e) => {
           e.preventDefault();
-          self.open();
+          if (self.isOpen) {
+            self.close(false);
+          } else {
+            self.open();
+          }
         });
       }
 
@@ -322,6 +326,47 @@
           self.close(false);
         }
       });
+
+      // Window resize & scroll dynamic alignment
+      window.addEventListener('resize', () => {
+        if (self.isOpen) self.updatePosition();
+      }, { passive: true });
+
+      window.addEventListener('scroll', () => {
+        if (self.isOpen) self.updatePosition();
+      }, { passive: true });
+    },
+
+    updatePosition: function () {
+      if (!this.overlay || !this.isOpen) return;
+      const dialog = this.overlay.querySelector('.category-modal-dialog');
+      if (!dialog) return;
+
+      if (window.innerWidth <= 768) {
+        dialog.style.removeProperty('top');
+        dialog.style.removeProperty('max-height');
+        dialog.style.removeProperty('height');
+        return;
+      }
+
+      const searchBox = document.getElementById('jobSearchForm') || 
+                        document.getElementById('heroSearchBox') || 
+                        (this.triggerBtn ? this.triggerBtn.closest('.hero-search-box') : null);
+
+      if (searchBox) {
+        const boxRect = searchBox.getBoundingClientRect();
+        // Vị trí mép trên của hộp thoại modal: ngay dưới đáy thanh tìm kiếm (cách đúng 8px)
+        const topPos = Math.max(10, Math.round(boxRect.bottom + 8));
+        document.documentElement.style.setProperty('--cat-modal-top', `${topPos}px`);
+        dialog.style.setProperty('top', `${topPos}px`, 'important');
+
+        // Chiều cao thiết lập bằng đúng 2/3 chiều cao trước đó (khoảng ~400px - 440px thay vì ~612px+)
+        const availableHeight = Math.max(260, window.innerHeight - topPos - 20);
+        const targetHeight = Math.round(availableHeight * (2 / 3));
+        document.documentElement.style.setProperty('--cat-modal-height', `${targetHeight}px`);
+        dialog.style.setProperty('height', `${targetHeight}px`, 'important');
+        dialog.style.setProperty('max-height', `${targetHeight}px`, 'important');
+      }
     },
 
     open: function () {
@@ -339,6 +384,16 @@
       if (this.triggerBtn) {
         this.triggerBtn.setAttribute('aria-expanded', 'true');
         this.triggerBtn.classList.add('is-active');
+        const searchBox = this.triggerBtn.closest('.hero-search-box') || document.getElementById('jobSearchForm') || document.getElementById('heroSearchBox');
+        if (searchBox) searchBox.classList.add('is-category-open');
+      }
+
+      this.updatePosition();
+
+      // Đóng Search Suggest Dropdown nếu đang mở
+      const searchSuggestDropdown = document.getElementById('searchSuggestDropdown');
+      if (searchSuggestDropdown) {
+        searchSuggestDropdown.classList.remove('is-open');
       }
 
       document.body.style.overflow = 'hidden';
@@ -373,6 +428,8 @@
         if (this.appliedSelection.groups.size === 0 && this.appliedSelection.roles.size === 0) {
           this.triggerBtn.classList.remove('is-active');
         }
+        const searchBox = this.triggerBtn.closest('.hero-search-box') || document.getElementById('jobSearchForm') || document.getElementById('heroSearchBox');
+        if (searchBox) searchBox.classList.remove('is-category-open');
       }
 
       document.body.style.overflow = '';

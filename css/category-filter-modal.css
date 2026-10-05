@@ -89,10 +89,20 @@
 /* ==========================================================================
    2. MODAL OVERLAY & BACKDROP
    ========================================================================== */
+.hero-search-box.is-category-open,
+.job-search-box.is-category-open {
+  z-index: 2500010 !important;
+  position: relative !important;
+}
+
 .category-modal-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 100000;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2500000 !important;
+  display: block !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  pointer-events: none !important;
 }
 
 .category-modal-overlay[hidden] {
@@ -100,21 +110,27 @@
 }
 
 .category-modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.38);
-  z-index: 1;
-  transition: opacity 0.2s ease;
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(15, 23, 42, 0.45) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  z-index: 1 !important;
+  transition: opacity 0.2s ease !important;
+  pointer-events: auto !important;
 }
 
 .category-modal-dialog {
-  position: absolute;
-  z-index: 2;
-  top: calc(100% + 10px);
-  left: 0;
-  width: 100%;
-  max-width: 100%;
-  max-height: min(560px, 72vh);
+  position: fixed !important;
+  z-index: 2 !important;
+  top: var(--cat-modal-top, 173px);
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
+  width: calc(100% - 40px) !important;
+  max-width: 1250px !important;
+  height: var(--cat-modal-height, calc((100vh - var(--cat-modal-top, 173px) - 20px) * 2 / 3)) !important;
+  max-height: var(--cat-modal-height, calc((100vh - var(--cat-modal-top, 173px) - 20px) * 2 / 3)) !important;
   background: #FFFFFF;
   border: 1px solid #E2E8F0;
   border-radius: 20px;
@@ -124,6 +140,7 @@
   flex-direction: column;
   animation: catModalFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   box-sizing: border-box;
+  pointer-events: auto !important;
 }
 
 @keyframes catModalFadeIn {
@@ -144,11 +161,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 28px 14px 28px;
+  padding: 16px 24px 10px 24px;
 }
 
 .category-modal-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 750;
   color: #0F172A;
   margin: 0;
@@ -156,8 +173,8 @@
 }
 
 .category-modal-close {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: none;
   background: #F1F5F9;
@@ -170,8 +187,8 @@
 }
 
 .category-modal-close svg {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
 }
 
 .category-modal-close:hover {
@@ -186,7 +203,7 @@
 
 /* Search Wrap */
 .category-modal-search-wrap {
-  padding: 0 28px 14px 28px;
+  padding: 0 24px 10px 24px;
   border-bottom: 1px solid #F1F5F9;
 }
 
@@ -194,7 +211,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  height: 40px;
+  height: 38px;
   padding: 0 14px;
   border: 1.5px solid #CBD5E1;
   border-radius: 999px;
@@ -619,7 +636,7 @@
    5. MODAL FOOTER
    ========================================================================== */
 .category-modal-footer {
-  padding: 14px 28px;
+  padding: 10px 24px;
   border-top: 1px solid #E2E8F0;
   display: flex;
   align-items: center;

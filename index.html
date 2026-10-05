@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="assets/logos/easycv-icon.png">
   <link rel="stylesheet" href="assets/design-tokens.css?v=1.1">
   <link rel="stylesheet" href="css/navbar.css?v=7.0_synced_navbar">
-  <link rel="stylesheet" href="css/home.css?v=6.5_logo_65x65">
+  <link rel="stylesheet" href="css/home.css?v=7.0_cv_carousel">
   <link rel="stylesheet" href="css/location-picker.css?v=1">
   <link rel="stylesheet" href="css/category-filter-modal.css?v=1.2_highlight">
   <style>
@@ -84,11 +84,11 @@
       box-shadow: 0 6px 24px -2px rgba(249, 115, 22, 0.24), 0 0 0 3px rgba(249, 115, 22, 0.1);
     }
     .hero-search-sticky-bar.is-sticky .search-suggest-dropdown {
-      max-width: var(--container-max-width, 1250px);
-      width: calc(100% - 40px);
-      left: 0;
-      right: 0;
-      margin: 0 auto;
+      left: var(--search-suggest-left, 210px);
+      right: var(--search-suggest-right, 0);
+      width: auto;
+      max-width: none;
+      margin: 0;
       top: calc(100% + 8px);
     }
     [data-theme="dark"] .hero-search-sticky-bar.is-sticky {
@@ -298,8 +298,10 @@
     .search-suggest-dropdown {
       position: absolute;
       top: calc(100% + 8px);
-      left: 0;
-      width: 100%;
+      left: var(--search-suggest-left, 210px);
+      right: var(--search-suggest-right, 0);
+      /* Thu gọn bên trái (căn từ ô input tìm kiếm), bên phải giữ nguyên kéo dài hết thanh search */
+      width: auto;
       background: #FFFFFF;
       border: 1.5px solid #FED7AA;
       border-radius: 18px;
@@ -982,7 +984,11 @@
         padding: 6px;
       }
       .hero-search-sticky-bar.is-sticky .search-suggest-dropdown {
-        width: calc(100% - 24px);
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: unset;
       }
       .hero-search-box {
         height: auto !important;
@@ -1007,6 +1013,11 @@
         width: 100%;
       }
       .search-suggest-dropdown {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: unset;
         padding: 14px 16px;
       }
       .industry-mega-panel {
@@ -2082,8 +2093,8 @@
         <!-- Card 1: Kiến Trúc Việt (Chính xác theo mẫu của User) -->
         <article class="job-card" data-category="all it">
           <div class="job-card-header">
-            <div class="job-logo-wrapper">
-              <img src="assets/logos/kientrucviet-logo.svg" alt="Kiến Trúc Việt" class="job-logo" />
+            <div class="job-logo-wrapper" title="Công ty Cổ phần Kiến Trúc Việt tuyển dụng tại EasyCV">
+              <img src="assets/logos/kientrucviet-logo.svg" alt="Kiến Trúc Việt" class="job-logo" title="Công ty Cổ phần Kiến Trúc Việt tuyển dụng tại EasyCV" />
               <span class="badge-lightning" title="Ưu tiên tuyển dụng">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2108,8 +2119,8 @@
         <!-- Card 2: Samsung SRV (Tài trợ) -->
         <article class="job-card card-sponsored" data-category="all it">
           <div class="job-card-header">
-            <div class="job-logo-wrapper">
-              <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=120&h=120&q=80" alt="Samsung SRV" class="job-logo" />
+            <div class="job-logo-wrapper" title="Công ty Samsung SRV tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=120&h=120&q=80" alt="Samsung SRV" class="job-logo" title="Công ty Samsung SRV tuyển dụng tại EasyCV" />
               <span class="badge-lightning" title="Được tài trợ">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2134,8 +2145,8 @@
         <!-- Card 3: FPT Software -->
         <article class="job-card" data-category="all it">
           <div class="job-card-header">
-            <div class="job-logo-wrapper">
-              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=120&h=120&q=80" alt="FPT Software" class="job-logo" />
+            <div class="job-logo-wrapper" title="Công ty FPT Software tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=120&h=120&q=80" alt="FPT Software" class="job-logo" title="Công ty FPT Software tuyển dụng tại EasyCV" />
               <span class="badge-lightning" title="Ưu tiên tuyển dụng">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2160,8 +2171,8 @@
         <!-- Card 4: VNG Corporation -->
         <article class="job-card" data-category="all marketing">
           <div class="job-card-header">
-            <div class="job-logo-wrapper">
-              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80" alt="VNG Corporation" class="job-logo" />
+            <div class="job-logo-wrapper" title="Công ty VNG Corporation tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80" alt="VNG Corporation" class="job-logo" title="Công ty VNG Corporation tuyển dụng tại EasyCV" />
               <span class="badge-lightning" title="Ưu tiên tuyển dụng">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2186,8 +2197,8 @@
         <!-- Card 5: Techcombank -->
         <article class="job-card" data-category="all finance it">
           <div class="job-card-header">
-            <div class="job-logo-wrapper">
-              <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=120&h=120&q=80" alt="Techcombank" class="job-logo" />
+            <div class="job-logo-wrapper" title="Công ty Techcombank tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=120&h=120&q=80" alt="Techcombank" class="job-logo" title="Công ty Techcombank tuyển dụng tại EasyCV" />
               <span class="badge-lightning" title="Ưu tiên tuyển dụng">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2212,8 +2223,8 @@
         <!-- Card 6: Viettel Digital -->
         <article class="job-card" data-category="all sales">
           <div class="job-card-header">
-            <div class="job-logo-wrapper">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=120&h=120&q=80" alt="Viettel Digital" class="job-logo" />
+            <div class="job-logo-wrapper" title="Công ty Viettel Digital tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=120&h=120&q=80" alt="Viettel Digital" class="job-logo" title="Công ty Viettel Digital tuyển dụng tại EasyCV" />
               <span class="badge-lightning" title="Ưu tiên tuyển dụng">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2238,8 +2249,8 @@
         <!-- Card 7: Shopee Vietnam (Remote) -->
         <article class="job-card" data-category="all it remote">
           <div class="job-card-header">
-            <div class="job-logo-wrapper">
-              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=120&h=120&q=80" alt="Shopee Vietnam" class="job-logo" />
+            <div class="job-logo-wrapper" title="Công ty Shopee Vietnam tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=120&h=120&q=80" alt="Shopee Vietnam" class="job-logo" title="Công ty Shopee Vietnam tuyển dụng tại EasyCV" />
               <span class="badge-lightning" title="Ưu tiên tuyển dụng">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2264,8 +2275,8 @@
         <!-- Card 8: VinAI Research -->
         <article class="job-card" data-category="all it">
           <div class="job-card-header">
-            <div class="job-logo-wrapper">
-              <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=120&h=120&q=80" alt="VinAI Research" class="job-logo" />
+            <div class="job-logo-wrapper" title="Công ty VinAI Research tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=120&h=120&q=80" alt="VinAI Research" class="job-logo" title="Công ty VinAI Research tuyển dụng tại EasyCV" />
               <span class="badge-lightning" title="Ưu tiên tuyển dụng">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2290,8 +2301,8 @@
         <!-- Card 9: MB Bank -->
         <article class="job-card" data-category="all finance it">
           <div class="job-card-header">
-            <div class="job-logo-wrapper">
-              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=120&h=120&q=80" alt="MB Bank" class="job-logo" />
+            <div class="job-logo-wrapper" title="Công ty MB Bank tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=120&h=120&q=80" alt="MB Bank" class="job-logo" title="Công ty MB Bank tuyển dụng tại EasyCV" />
               <span class="badge-lightning" title="Ưu tiên tuyển dụng">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2340,8 +2351,8 @@
         <!-- Attractive Card 1 -->
         <article class="attractive-card">
           <div class="job-card-header">
-            <div class="job-logo-wrapper" style="border-color: #F59E0B;">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=120&h=120&q=80" alt="One Mount Group" class="job-logo" />
+            <div class="job-logo-wrapper" style="border-color: #F59E0B;" title="Công ty One Mount Group tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=120&h=120&q=80" alt="One Mount Group" class="job-logo" title="Công ty One Mount Group tuyển dụng tại EasyCV" />
               <span class="badge-lightning" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);" title="Đãi ngộ đỉnh cao">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2366,8 +2377,8 @@
         <!-- Attractive Card 2 -->
         <article class="attractive-card">
           <div class="job-card-header">
-            <div class="job-logo-wrapper" style="border-color: #F59E0B;">
-              <img src="https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=120&h=120&q=80" alt="MoMo" class="job-logo" />
+            <div class="job-logo-wrapper" style="border-color: #F59E0B;" title="Công ty MoMo tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=120&h=120&q=80" alt="MoMo" class="job-logo" title="Công ty MoMo tuyển dụng tại EasyCV" />
               <span class="badge-lightning" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);" title="Đãi ngộ đỉnh cao">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2392,8 +2403,8 @@
         <!-- Attractive Card 3 -->
         <article class="attractive-card">
           <div class="job-card-header">
-            <div class="job-logo-wrapper" style="border-color: #F59E0B;">
-              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=120&h=120&q=80" alt="Vinamilk" class="job-logo" />
+            <div class="job-logo-wrapper" style="border-color: #F59E0B;" title="Công ty Vinamilk tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=120&h=120&q=80" alt="Vinamilk" class="job-logo" title="Công ty Vinamilk tuyển dụng tại EasyCV" />
               <span class="badge-lightning" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);" title="Đãi ngộ đỉnh cao">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2417,8 +2428,8 @@
         <!-- Attractive Card 4 -->
         <article class="attractive-card">
           <div class="job-card-header">
-            <div class="job-logo-wrapper" style="border-color: #F59E0B;">
-              <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=120&h=120&q=80" alt="Techcombank" class="job-logo" />
+            <div class="job-logo-wrapper" style="border-color: #F59E0B;" title="Công ty Techcombank tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=120&h=120&q=80" alt="Techcombank" class="job-logo" title="Công ty Techcombank tuyển dụng tại EasyCV" />
               <span class="badge-lightning" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);" title="Đãi ngộ đỉnh cao">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2443,8 +2454,8 @@
         <!-- Attractive Card 5 -->
         <article class="attractive-card">
           <div class="job-card-header">
-            <div class="job-logo-wrapper" style="border-color: #F59E0B;">
-              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80" alt="VNG Corporation" class="job-logo" />
+            <div class="job-logo-wrapper" style="border-color: #F59E0B;" title="Công ty VNG Corporation tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80" alt="VNG Corporation" class="job-logo" title="Công ty VNG Corporation tuyển dụng tại EasyCV" />
               <span class="badge-lightning" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);" title="Đãi ngộ đỉnh cao">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2469,8 +2480,8 @@
         <!-- Attractive Card 6 -->
         <article class="attractive-card">
           <div class="job-card-header">
-            <div class="job-logo-wrapper" style="border-color: #F59E0B;">
-              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=120&h=120&q=80" alt="Viettel Digital Solutions" class="job-logo" />
+            <div class="job-logo-wrapper" style="border-color: #F59E0B;" title="Công ty Viettel Digital Solutions tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=120&h=120&q=80" alt="Viettel Digital Solutions" class="job-logo" title="Công ty Viettel Digital Solutions tuyển dụng tại EasyCV" />
               <span class="badge-lightning" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);" title="Đãi ngộ đỉnh cao">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2520,8 +2531,8 @@
 
           <!-- Company 1: FPT Software -->
           <div class="company-card">
-            <div class="company-card-logo-wrap">
-              <span class="company-card-logo-mark company-logo-fpt" role="img" aria-label="FPT Software">FPT</span>
+            <div class="company-card-logo-wrap" title="Công ty FPT Software">
+              <span class="company-card-logo-mark company-logo-fpt" role="img" aria-label="FPT Software" title="Công ty FPT Software">FPT</span>
             </div>
             <a href="viec-lam.html?q=FPT+Software" class="company-card-title">Công ty TNHH Phần Mềm FPT - FPT Software</a>
             <div class="company-card-footer">
@@ -2534,8 +2545,8 @@
 
           <!-- Company 2: VNG Corporation -->
           <div class="company-card">
-            <div class="company-card-logo-wrap">
-              <span class="company-card-logo-mark company-logo-vng" role="img" aria-label="VNG Corporation">VNG</span>
+            <div class="company-card-logo-wrap" title="Công ty VNG Corporation">
+              <span class="company-card-logo-mark company-logo-vng" role="img" aria-label="VNG Corporation" title="Công ty VNG Corporation">VNG</span>
             </div>
             <a href="viec-lam.html?q=VNG+Corporation" class="company-card-title">Công ty Cổ Phần VNG - VNG Corporation</a>
             <div class="company-card-footer">
@@ -2548,8 +2559,8 @@
 
           <!-- Company 3: Viettel Digital -->
           <div class="company-card">
-            <div class="company-card-logo-wrap">
-              <span class="company-card-logo-mark company-logo-viettel" role="img" aria-label="Viettel Digital">viettel</span>
+            <div class="company-card-logo-wrap" title="Công ty Viettel Digital">
+              <span class="company-card-logo-mark company-logo-viettel" role="img" aria-label="Viettel Digital" title="Công ty Viettel Digital">viettel</span>
             </div>
             <a href="viec-lam.html?q=Viettel" class="company-card-title">Tổng Công ty Dịch Vụ Số Viettel - Viettel Digital</a>
             <div class="company-card-footer">
@@ -2562,8 +2573,8 @@
 
           <!-- Company 4: Techcombank -->
           <div class="company-card">
-            <div class="company-card-logo-wrap">
-              <span class="company-card-logo-mark company-logo-techcombank" role="img" aria-label="Techcombank">TCB</span>
+            <div class="company-card-logo-wrap" title="Công ty Techcombank">
+              <span class="company-card-logo-mark company-logo-techcombank" role="img" aria-label="Techcombank" title="Công ty Techcombank">TCB</span>
             </div>
             <a href="viec-lam.html?q=Techcombank" class="company-card-title">Ngân Hàng TMCP Kỹ Thương Việt Nam - Techcombank</a>
             <div class="company-card-footer">
@@ -2576,8 +2587,8 @@
 
           <!-- Company 5: MoMo -->
           <div class="company-card">
-            <div class="company-card-logo-wrap">
-              <span class="company-card-logo-mark company-logo-momo" role="img" aria-label="MoMo">MOMO</span>
+            <div class="company-card-logo-wrap" title="Công ty MoMo">
+              <span class="company-card-logo-mark company-logo-momo" role="img" aria-label="MoMo" title="Công ty MoMo">MOMO</span>
             </div>
             <a href="viec-lam.html?q=MoMo" class="company-card-title">Công ty Cổ Phần Dịch Vụ Di Động Trực Tuyến - Ví MoMo</a>
             <div class="company-card-footer">
@@ -2590,8 +2601,8 @@
 
           <!-- Company 6: Shopee Việt Nam -->
           <div class="company-card">
-            <div class="company-card-logo-wrap">
-              <span class="company-card-logo-mark company-logo-shopee" role="img" aria-label="Shopee Việt Nam">S</span>
+            <div class="company-card-logo-wrap" title="Công ty Shopee Việt Nam">
+              <span class="company-card-logo-mark company-logo-shopee" role="img" aria-label="Shopee Việt Nam" title="Công ty Shopee Việt Nam">S</span>
             </div>
             <a href="viec-lam.html?q=Shopee" class="company-card-title">Công ty TNHH Shopee - Shopee Việt Nam</a>
             <div class="company-card-footer">
@@ -2604,8 +2615,8 @@
 
           <!-- Company 7: MB Bank -->
           <div class="company-card">
-            <div class="company-card-logo-wrap">
-              <span class="company-card-logo-mark company-logo-mb" role="img" aria-label="MB Bank">MB</span>
+            <div class="company-card-logo-wrap" title="Công ty MB Bank">
+              <span class="company-card-logo-mark company-logo-mb" role="img" aria-label="MB Bank" title="Công ty MB Bank">MB</span>
             </div>
             <a href="viec-lam.html?q=MB+Bank" class="company-card-title">Ngân Hàng TMCP Quân Đội - MB Bank</a>
             <div class="company-card-footer">
@@ -2618,8 +2629,8 @@
 
           <!-- Company 8: VinAI -->
           <div class="company-card">
-            <div class="company-card-logo-wrap">
-              <span class="company-card-logo-mark company-logo-vinai" role="img" aria-label="VinAI">VinAI</span>
+            <div class="company-card-logo-wrap" title="Công ty VinAI">
+              <span class="company-card-logo-mark company-logo-vinai" role="img" aria-label="VinAI" title="Công ty VinAI">VinAI</span>
             </div>
             <a href="viec-lam.html?q=VinAI" class="company-card-title">Công ty Cổ Phần VinAI - VinAI Research</a>
             <div class="company-card-footer">
@@ -2714,8 +2725,8 @@
         <!-- Match Job 1: Shopee / Sea Group -->
         <article class="job-card card-sponsored" data-match-type="all profile salary">
           <div class="job-card-header">
-            <div class="job-logo-wrapper">
-              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=120&h=120&q=80" alt="Shopee Logo" class="job-logo" />
+            <div class="job-logo-wrapper" title="Công ty Shopee tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=120&h=120&q=80" alt="Shopee Logo" class="job-logo" title="Công ty Shopee tuyển dụng tại EasyCV" />
               <span class="badge-lightning" title="Ưu tiên phỏng vấn">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2730,7 +2741,6 @@
             <div class="job-pills">
               <span class="job-pill job-pill-salary">2,500 - 4,000 USD</span>
               <span class="job-pill job-pill-location">TP.HCM</span>
-              <span class="job-pill job-pill-match">99% Khớp CV</span>
             </div>
             <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
@@ -2741,8 +2751,8 @@
         <!-- Match Job 2: Tiki Corporation -->
         <article class="job-card" data-match-type="all profile salary">
           <div class="job-card-header">
-            <div class="job-logo-wrapper">
-              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=120&h=120&q=80" alt="Tiki Corporation" class="job-logo" />
+            <div class="job-logo-wrapper" title="Công ty Tiki Corporation tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=120&h=120&q=80" alt="Tiki Corporation" class="job-logo" title="Công ty Tiki Corporation tuyển dụng tại EasyCV" />
               <span class="badge-lightning" title="Đã xác minh hôm nay">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2757,7 +2767,6 @@
             <div class="job-pills">
               <span class="job-pill job-pill-salary">32 - 50 triệu</span>
               <span class="job-pill job-pill-location">TP.HCM</span>
-              <span class="job-pill job-pill-match">98% Khớp CV</span>
             </div>
             <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
@@ -2768,8 +2777,8 @@
         <!-- Match Job 3: KMS Technology -->
         <article class="job-card" data-match-type="all remote salary">
           <div class="job-card-header">
-            <div class="job-logo-wrapper">
-              <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=120&h=120&q=80" alt="KMS Technology" class="job-logo" />
+            <div class="job-logo-wrapper" title="Công ty KMS Technology tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=120&h=120&q=80" alt="KMS Technology" class="job-logo" title="Công ty KMS Technology tuyển dụng tại EasyCV" />
               <span class="badge-lightning" title="HR vừa xem hồ sơ">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2784,7 +2793,6 @@
             <div class="job-pills">
               <span class="job-pill job-pill-salary">1,500 - 2,500 USD</span>
               <span class="job-pill job-pill-location">Remote</span>
-              <span class="job-pill job-pill-match">95% Khớp CV</span>
             </div>
             <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
@@ -2795,8 +2803,8 @@
         <!-- Match Job 4: MB Bank -->
         <article class="job-card" data-match-type="all profile">
           <div class="job-card-header">
-            <div class="job-logo-wrapper">
-              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=120&h=120&q=80" alt="MB Bank" class="job-logo" />
+            <div class="job-logo-wrapper" title="Công ty MB Bank tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=120&h=120&q=80" alt="MB Bank" class="job-logo" title="Công ty MB Bank tuyển dụng tại EasyCV" />
               <span class="badge-lightning" title="Tuyển dụng nhanh">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2811,7 +2819,6 @@
             <div class="job-pills">
               <span class="job-pill job-pill-salary">25 - 40 triệu</span>
               <span class="job-pill job-pill-location">Hà Nội</span>
-              <span class="job-pill job-pill-match">94% Khớp CV</span>
             </div>
             <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
@@ -2822,8 +2829,8 @@
         <!-- Match Job 5: FPT Software (Solutions Architect) -->
         <article class="job-card" data-match-type="all profile salary">
           <div class="job-card-header">
-            <div class="job-logo-wrapper">
-              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=120&h=120&q=80" alt="FPT Software" class="job-logo" />
+            <div class="job-logo-wrapper" title="Công ty FPT Software tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=120&h=120&q=80" alt="FPT Software" class="job-logo" title="Công ty FPT Software tuyển dụng tại EasyCV" />
               <span class="badge-lightning" title="Ưu tiên phỏng vấn">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2838,7 +2845,6 @@
             <div class="job-pills">
               <span class="job-pill job-pill-salary">40 - 65 triệu</span>
               <span class="job-pill job-pill-location">Hà Nội</span>
-              <span class="job-pill job-pill-match">96% Khớp CV</span>
             </div>
             <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
@@ -2849,8 +2855,8 @@
         <!-- Match Job 6: VNG Corporation (High-Load Backend) -->
         <article class="job-card" data-match-type="all remote salary">
           <div class="job-card-header">
-            <div class="job-logo-wrapper">
-              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80" alt="VNG Corporation" class="job-logo" />
+            <div class="job-logo-wrapper" title="Công ty VNG Corporation tuyển dụng tại EasyCV">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80" alt="VNG Corporation" class="job-logo" title="Công ty VNG Corporation tuyển dụng tại EasyCV" />
               <span class="badge-lightning" title="HR xem hồ sơ">
                 <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </span>
@@ -2865,7 +2871,6 @@
             <div class="job-pills">
               <span class="job-pill job-pill-salary">35 - 60 triệu</span>
               <span class="job-pill job-pill-location">TP.HCM & Remote</span>
-              <span class="job-pill job-pill-match">97% Khớp CV</span>
             </div>
             <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
@@ -2880,23 +2885,159 @@
   <!-- =========================================================================
        ĐỀ XUẤT MẪU CV (CV Templates Showcase)
        ========================================================================= -->
-  <section class="cv-template-section" aria-labelledby="cv-template-title">
+  <section id="mau-cv-de-xuat" class="home-section cv-template-section" aria-labelledby="cv-template-title">
     <div class="home-container">
-      <div class="cv-template-header">
-        <h2 id="cv-template-title" class="section-title">Khám phá mẫu CV phù hợp với bạn</h2>
-        <div class="cv-template-actions"><a class="cv-template-view-all" href="/tao-cv">Xem tất cả</a><button class="cv-template-arrow" type="button" data-cv-direction="prev" aria-label="Mẫu trước" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><button class="cv-template-arrow" type="button" data-cv-direction="next" aria-label="Mẫu tiếp theo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
+      <div class="section-header cv-section-header">
+        <div class="cv-header-left">
+          <h2 id="cv-template-title" class="section-title">
+            Khám phá CV
+          </h2>
+
+          <!-- CV Style Filter Pills (cùng hàng với title chính) -->
+          <div class="cv-style-filters" aria-label="Lọc mẫu CV theo phong cách">
+            <button type="button" class="cv-style-filter is-active" data-cv-style="all" aria-pressed="true">Tất cả</button>
+            <button type="button" class="cv-style-filter" data-cv-style="simple" aria-pressed="false">Đơn giản</button>
+            <button type="button" class="cv-style-filter" data-cv-style="professional" aria-pressed="false">Chuyên nghiệp</button>
+            <button type="button" class="cv-style-filter" data-cv-style="modern" aria-pressed="false">Hiện đại</button>
+            <button type="button" class="cv-style-filter" data-cv-style="impressive" aria-pressed="false">Ấn tượng</button>
+            <button type="button" class="cv-style-filter" data-cv-style="ats" aria-pressed="false">ATS</button>
+          </div>
+        </div>
+
+        <a href="#tat-ca-mau-cv" class="section-view-all">
+          <span>Xem tất cả</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
       </div>
-      <div class="cv-style-filters" aria-label="Lọc mẫu CV theo phong cách"><button type="button" class="cv-style-filter is-active" data-cv-style="all" aria-pressed="true">Tất cả</button><button type="button" class="cv-style-filter" data-cv-style="simple" aria-pressed="false">Đơn giản</button><button type="button" class="cv-style-filter" data-cv-style="professional" aria-pressed="false">Chuyên nghiệp</button><button type="button" class="cv-style-filter" data-cv-style="modern" aria-pressed="false">Hiện đại</button><button type="button" class="cv-style-filter" data-cv-style="impressive" aria-pressed="false">Ấn tượng</button><button type="button" class="cv-style-filter" data-cv-style="ats" aria-pressed="false">ATS</button></div>
-      <div class="cv-template-viewport" tabindex="0" aria-label="Danh sách mẫu CV"><div class="cv-template-track">
-        <a class="cv-template-card cv-green" data-cv-styles="simple ats" href="/tao-cv/chinh-sua?templateId=emerald-ats" aria-label="Chọn mẫu CV Emerald ATS"><span class="cv-template-badge">ATS</span><span class="cv-sheet"><i class="cv-avatar"></i><b>NGUYỄN HOÀNG</b><small>CHUYÊN VIÊN KINH DOANH</small><em></em><em></em><strong>KINH NGHIỆM LÀM VIỆC</strong><em></em><em></em><em></em><strong>HỌC VẤN</strong><em></em><em></em></span><span class="cv-template-name">Emerald ATS</span></a>
-        <a class="cv-template-card cv-teal" data-cv-styles="professional ats" href="/tao-cv/chinh-sua?templateId=professional-teal" aria-label="Chọn mẫu CV Professional Teal"><span class="cv-sheet"><i class="cv-avatar"></i><b>NGUYỄN HOÀNG</b><small>NHÂN VIÊN MARKETING</small><em></em><strong>MỤC TIÊU NGHỀ NGHIỆP</strong><em></em><em></em><strong>KINH NGHIỆM</strong><em></em><em></em><em></em></span><span class="cv-template-name">Professional Teal</span></a>
-        <a class="cv-template-card cv-orange" data-cv-styles="modern impressive" href="/tao-cv/chinh-sua?templateId=modern-creative" aria-label="Chọn mẫu CV Modern Creative"><span class="cv-template-badge">Mới</span><span class="cv-sheet cv-sheet-split"><i class="cv-avatar"></i><b>TRẦN THỊ MINH</b><small>PRODUCT DESIGNER</small><em></em><strong>GIỚI THIỆU</strong><em></em><em></em><strong>KỸ NĂNG</strong><em></em><em></em></span><span class="cv-template-name">Modern Creative</span></a>
-        <a class="cv-template-card cv-rose" data-cv-styles="impressive modern" href="/tao-cv/chinh-sua?templateId=rose-impact" aria-label="Chọn mẫu CV Rose Impact"><span class="cv-sheet"><i class="cv-avatar"></i><b>NGUYỄN THU NGA</b><small>BRAND MANAGER</small><em></em><strong>KINH NGHIỆM</strong><em></em><em></em><em></em><strong>THÀNH TÍCH</strong><em></em></span><span class="cv-template-name">Rose Impact</span></a>
-        <a class="cv-template-card cv-slate" data-cv-styles="professional modern" href="/tao-cv/chinh-sua?templateId=executive-slate" aria-label="Chọn mẫu CV Executive Slate"><span class="cv-sheet cv-sheet-column"><i class="cv-avatar"></i><b>LÊ MINH ANH</b><small>PROJECT MANAGER</small><em></em><strong>PROFILE</strong><em></em><strong>EXPERIENCE</strong><em></em><em></em></span><span class="cv-template-name">Executive Slate</span></a>
-        <a class="cv-template-card cv-blue" data-cv-styles="simple professional ats" href="/tao-cv/chinh-sua?templateId=clean-blue" aria-label="Chọn mẫu CV Clean Blue"><span class="cv-template-badge">ATS</span><span class="cv-sheet"><i class="cv-avatar"></i><b>PHẠM QUANG HUY</b><small>SOFTWARE ENGINEER</small><em></em><strong>SUMMARY</strong><em></em><em></em><strong>WORK EXPERIENCE</strong><em></em><em></em></span><span class="cv-template-name">Clean Blue</span></a>
-        <a class="cv-template-card cv-violet" data-cv-styles="modern impressive" href="/tao-cv/chinh-sua?templateId=violet-studio" aria-label="Chọn mẫu CV Violet Studio"><span class="cv-sheet cv-sheet-split"><i class="cv-avatar"></i><b>ĐẶNG THẢO MY</b><small>CONTENT CREATOR</small><em></em><strong>ABOUT ME</strong><em></em><em></em><strong>PROJECTS</strong><em></em></span><span class="cv-template-name">Violet Studio</span></a>
-        <a class="cv-template-card cv-sand" data-cv-styles="simple ats" href="/tao-cv/chinh-sua?templateId=minimal-sand" aria-label="Chọn mẫu CV Minimal Sand"><span class="cv-sheet"><i class="cv-avatar"></i><b>VŨ ĐỨC LONG</b><small>ACCOUNTANT</small><em></em><strong>EXPERIENCE</strong><em></em><em></em><em></em><strong>EDUCATION</strong><em></em></span><span class="cv-template-name">Minimal Sand</span></a>
-      </div></div><p class="cv-template-empty" hidden>Chưa có mẫu CV thuộc phong cách này.</p>
+
+      <div class="cv-template-carousel">
+        <div class="cv-template-track">
+
+          <!-- CV Template 1: Emerald ATS -->
+          <a class="cv-template-card cv-green" data-cv-styles="simple ats" href="/tao-cv/chinh-sua?templateId=emerald-ats" aria-label="Chọn mẫu CV Emerald ATS">
+            <span class="cv-template-badge">ATS</span>
+            <span class="cv-sheet">
+              <i class="cv-avatar"></i>
+              <b>NGUYỄN HOÀNG</b>
+              <small>CHUYÊN VIÊN KINH DOANH</small>
+              <em></em><em></em>
+              <strong>KINH NGHIỆM LÀM VIỆC</strong>
+              <em></em><em></em><em></em>
+              <strong>HỌC VẤN</strong>
+              <em></em><em></em>
+            </span>
+            <span class="cv-template-name">Emerald ATS</span>
+          </a>
+
+          <!-- CV Template 2: Professional Teal -->
+          <a class="cv-template-card cv-teal" data-cv-styles="professional ats" href="/tao-cv/chinh-sua?templateId=professional-teal" aria-label="Chọn mẫu CV Professional Teal">
+            <span class="cv-sheet">
+              <i class="cv-avatar"></i>
+              <b>NGUYỄN HOÀNG</b>
+              <small>NHÂN VIÊN MARKETING</small>
+              <em></em>
+              <strong>MỤC TIÊU NGHỀ NGHIỆP</strong>
+              <em></em><em></em>
+              <strong>KINH NGHIỆM</strong>
+              <em></em><em></em><em></em>
+            </span>
+            <span class="cv-template-name">Professional Teal</span>
+          </a>
+
+          <!-- CV Template 3: Modern Creative -->
+          <a class="cv-template-card cv-orange" data-cv-styles="modern impressive" href="/tao-cv/chinh-sua?templateId=modern-creative" aria-label="Chọn mẫu CV Modern Creative">
+            <span class="cv-template-badge">Mới</span>
+            <span class="cv-sheet cv-sheet-split">
+              <i class="cv-avatar"></i>
+              <b>TRẦN THỊ MINH</b>
+              <small>PRODUCT DESIGNER</small>
+              <em></em>
+              <strong>GIỚI THIỆU</strong>
+              <em></em><em></em>
+              <strong>KỸ NĂNG</strong>
+              <em></em><em></em>
+            </span>
+            <span class="cv-template-name">Modern Creative</span>
+          </a>
+
+          <!-- CV Template 4: Rose Impact -->
+          <a class="cv-template-card cv-rose" data-cv-styles="impressive modern" href="/tao-cv/chinh-sua?templateId=rose-impact" aria-label="Chọn mẫu CV Rose Impact">
+            <span class="cv-sheet">
+              <i class="cv-avatar"></i>
+              <b>NGUYỄN THU NGA</b>
+              <small>BRAND MANAGER</small>
+              <em></em>
+              <strong>KINH NGHIỆM</strong>
+              <em></em><em></em><em></em>
+              <strong>THÀNH TÍCH</strong>
+              <em></em>
+            </span>
+            <span class="cv-template-name">Rose Impact</span>
+          </a>
+
+          <!-- CV Template 5: Executive Slate -->
+          <a class="cv-template-card cv-slate" data-cv-styles="professional modern" href="/tao-cv/chinh-sua?templateId=executive-slate" aria-label="Chọn mẫu CV Executive Slate">
+            <span class="cv-sheet cv-sheet-column">
+              <i class="cv-avatar"></i>
+              <b>LÊ MINH ANH</b>
+              <small>PROJECT MANAGER</small>
+              <em></em>
+              <strong>PROFILE</strong>
+              <em></em>
+              <strong>EXPERIENCE</strong>
+              <em></em><em></em>
+            </span>
+            <span class="cv-template-name">Executive Slate</span>
+          </a>
+
+          <!-- CV Template 6: Clean Blue -->
+          <a class="cv-template-card cv-blue" data-cv-styles="simple professional ats" href="/tao-cv/chinh-sua?templateId=clean-blue" aria-label="Chọn mẫu CV Clean Blue">
+            <span class="cv-template-badge">ATS</span>
+            <span class="cv-sheet">
+              <i class="cv-avatar"></i>
+              <b>PHẠM QUANG HUY</b>
+              <small>SOFTWARE ENGINEER</small>
+              <em></em>
+              <strong>SUMMARY</strong>
+              <em></em><em></em>
+              <strong>WORK EXPERIENCE</strong>
+              <em></em><em></em>
+            </span>
+            <span class="cv-template-name">Clean Blue</span>
+          </a>
+
+          <!-- CV Template 7: Violet Studio -->
+          <a class="cv-template-card cv-violet" data-cv-styles="modern impressive" href="/tao-cv/chinh-sua?templateId=violet-studio" aria-label="Chọn mẫu CV Violet Studio">
+            <span class="cv-sheet cv-sheet-split">
+              <i class="cv-avatar"></i>
+              <b>ĐẶNG THẢO MY</b>
+              <small>CONTENT CREATOR</small>
+              <em></em>
+              <strong>ABOUT ME</strong>
+              <em></em><em></em>
+              <strong>PROJECTS</strong>
+              <em></em>
+            </span>
+            <span class="cv-template-name">Violet Studio</span>
+          </a>
+
+          <!-- CV Template 8: Minimal Sand -->
+          <a class="cv-template-card cv-sand" data-cv-styles="simple ats" href="/tao-cv/chinh-sua?templateId=minimal-sand" aria-label="Chọn mẫu CV Minimal Sand">
+            <span class="cv-sheet">
+              <i class="cv-avatar"></i>
+              <b>VŨ ĐỨC LONG</b>
+              <small>ACCOUNTANT</small>
+              <em></em>
+              <strong>EXPERIENCE</strong>
+              <em></em><em></em><em></em>
+              <strong>EDUCATION</strong>
+              <em></em>
+            </span>
+            <span class="cv-template-name">Minimal Sand</span>
+          </a>
+
+        </div>
+      </div>
     </div>
   </section>
 
@@ -3259,7 +3400,7 @@
 
   <script src="js/navbar.js?v=7.0_synced_navbar"></script>
   <script src="js/category-filter-modal.js?v=1.0"></script>
-  <script src="js/home.js?v=20260927_cv_templates"></script>
+  <script src="js/home.js?v=20261005_cv_carousel"></script>
   <script src="js/location-picker.js?v=1"></script>
 
   <!-- Floating View Mode Switcher Box (Rìa bên phải màn hình) -->
