@@ -3155,6 +3155,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateDropdownPosition() {
     if (!heroSearchWrapper || !searchSuggestDropdown) return;
+    const heroBox = document.getElementById('jobSearchForm') || document.getElementById('heroSearchBox') || (searchInput ? searchInput.closest('.hero-search-box') : null);
+    const parentBar = searchSuggestDropdown.parentElement;
+
+    if (parentBar && heroBox) {
+      const barRect = parentBar.getBoundingClientRect();
+      const boxRect = heroBox.getBoundingClientRect();
+      const topOffset = Math.max(0, Math.round(boxRect.bottom - barRect.top + 8));
+      searchSuggestDropdown.style.setProperty('--search-suggest-top', `${topOffset}px`);
+    }
+
     if (window.innerWidth <= 900) {
       searchSuggestDropdown.style.removeProperty('--search-suggest-left');
       searchSuggestDropdown.style.removeProperty('--search-suggest-right');
@@ -3166,9 +3176,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const inputGroup = searchInput ? searchInput.closest('.search-input-group') : null;
-    const heroBox = document.getElementById('jobSearchForm') || document.getElementById('heroSearchBox') || (searchInput ? searchInput.closest('.hero-search-box') : null);
-    const parentBar = searchSuggestDropdown.parentElement;
-
     if (inputGroup && parentBar && heroBox) {
       const barRect = parentBar.getBoundingClientRect();
       const groupRect = inputGroup.getBoundingClientRect();

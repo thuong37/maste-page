@@ -123,7 +123,7 @@
   width: auto;
   max-width: none;
   margin: 0;
-  top: calc(100% + 8px);
+  top: var(--search-suggest-top, calc(100% + 8px));
 }
 
 [data-theme="dark"] .hero-search-sticky-bar.is-sticky {
@@ -314,7 +314,7 @@
 /* Search Suggest Dropdown - Synchronized with Homepage 2-Column Standard */
 .search-suggest-dropdown {
   position: absolute;
-  top: calc(100% + 8px);
+  top: var(--search-suggest-top, calc(100% + 8px));
   left: var(--search-suggest-left, 210px);
   right: var(--search-suggest-right, 0);
   width: auto;
