@@ -72,7 +72,7 @@ async function run() {
         background: style.backgroundColor
       };
     })()`);
-    if (!desktop.bodyScoped || !desktop.open || desktop.backdropFilter !== 'none' || (desktop.webkitBackdropFilter && desktop.webkitBackdropFilter !== 'none') || desktop.pointerEvents !== 'auto') {
+    if (!desktop.bodyScoped || !desktop.open || desktop.backdropFilter !== 'none' || (desktop.webkitBackdropFilter && desktop.webkitBackdropFilter !== 'none') || desktop.pointerEvents !== 'auto' || desktop.background !== 'rgba(0, 0, 0, 0)') {
       throw new Error(`Job-list backdrop state failed: ${JSON.stringify(desktop)}`);
     }
 
@@ -94,19 +94,39 @@ async function run() {
     const mobile = await evaluate(`(() => {
       const dialog = document.querySelector('.category-modal-dialog').getBoundingClientRect();
       const style = getComputedStyle(document.getElementById('categoryModalBackdrop'));
-      return { backdropFilter: style.backdropFilter, width: dialog.width, viewport: document.documentElement.clientWidth };
+      return { backdropFilter: style.backdropFilter, background: style.backgroundColor, width: dialog.width, viewport: document.documentElement.clientWidth };
     })()`);
-    if (mobile.backdropFilter !== 'none' || mobile.width > mobile.viewport) throw new Error(`Mobile layout failed: ${JSON.stringify(mobile)}`);
+    if (mobile.backdropFilter !== 'none' || mobile.background !== 'rgba(0, 0, 0, 0)' || mobile.width > mobile.viewport) throw new Error(`Mobile layout failed: ${JSON.stringify(mobile)}`);
 
     await send('Emulation.clearDeviceMetricsOverride');
-    for (const path of ['index.html', 'chi-tiet-viec-lam.html']) {
+    for (const path of ['index.html', 'chi-tiet-viec-lam.html', 'public/index.html', 'public/chi-tiet-viec-lam.html']) {
       await navigate(path);
       await evaluate("document.getElementById('categoryFilterTrigger').click()");
-      const blur = await evaluate("getComputedStyle(document.getElementById('categoryModalBackdrop')).backdropFilter");
-      if (blur !== 'blur(4px)') throw new Error(`${path} shared blur changed: ${blur}`);
+      const sharedBackdrop = await evaluate(`(() => {
+        const style = getComputedStyle(document.getElementById('categoryModalBackdrop'));
+        return { blur: style.backdropFilter, background: style.backgroundColor };
+      })()`);
+      if (sharedBackdrop.blur !== 'blur(4px)' || sharedBackdrop.background !== 'rgba(15, 23, 42, 0.45)') {
+        throw new Error(`${path} shared backdrop changed: ${JSON.stringify(sharedBackdrop)}`);
+      }
     }
 
-    console.log(JSON.stringify({ desktop, closedOutside, selection, mobile, sharedPagesPreserveBlur: true }, null, 2));
+    await navigate('public/viec-lam.html');
+    await evaluate("document.getElementById('categoryFilterTrigger').click()");
+    const publicJobList = await evaluate(`(() => {
+      const style = getComputedStyle(document.getElementById('categoryModalBackdrop'));
+      return {
+        bodyScoped: document.body.classList.contains('job-list-page'),
+        blur: style.backdropFilter,
+        background: style.backgroundColor,
+        pointerEvents: style.pointerEvents
+      };
+    })()`);
+    if (!publicJobList.bodyScoped || publicJobList.blur !== 'none' || publicJobList.background !== 'rgba(0, 0, 0, 0)' || publicJobList.pointerEvents !== 'auto') {
+      throw new Error(`public/viec-lam.html backdrop state failed: ${JSON.stringify(publicJobList)}`);
+    }
+
+    console.log(JSON.stringify({ desktop, closedOutside, selection, mobile, publicJobList, sharedPagesPreserveBlurAndScrim: true }, null, 2));
     await send('Browser.close');
     ws.close();
   } catch (error) {
