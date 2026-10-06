@@ -1511,6 +1511,51 @@ document.addEventListener('DOMContentLoaded', () => {
       showToast('Đã xóa toàn bộ lịch sử tìm kiếm', '✕');
     }
 
+    const POPULAR_COMPANIES = [
+      { name: 'Tập đoàn Công nghiệp - Viễn thông Quân đội (Viettel)', shortName: 'Viettel' },
+      { name: 'Tập đoàn Công nghiệp Viettel', shortName: 'Viettel' },
+      { name: 'Tổng Công ty Viễn thông Viettel (Viettel Telecom)', shortName: 'Viettel Telecom' },
+      { name: 'Tổng Công ty Cổ phần Bưu chính Viettel (Viettel Post)', shortName: 'Viettel Post' },
+      { name: 'Tổng Công ty Giải pháp Doanh nghiệp Viettel (Viettel Solutions)', shortName: 'Viettel Solutions' },
+      { name: 'FPT Software', shortName: 'FPT Software' },
+      { name: 'TẬP ĐOÀN CÔNG NGHỆ FPT', shortName: 'FPT' },
+      { name: 'Công ty Cổ phần Viễn thông FPT (FPT Telecom)', shortName: 'FPT Telecom' },
+      { name: 'FPT Digital (Tập đoàn FPT)', shortName: 'FPT Digital' },
+      { name: 'VNG Corporation (Zalo Team)', shortName: 'VNG' },
+      { name: 'Zalo Group (VNG)', shortName: 'Zalo' },
+      { name: 'Ngân hàng Techcombank', shortName: 'Techcombank' },
+      { name: 'Ngân hàng TMCP Quân Đội (MB Bank)', shortName: 'MB Bank' },
+      { name: 'Ngân Hàng TMCP Việt Nam Thịnh Vượng (VPBank)', shortName: 'VPBank' },
+      { name: 'Shopee Vietnam (SPX Express)', shortName: 'Shopee' },
+      { name: 'Ví điện tử MoMo (M-Service)', shortName: 'MoMo' },
+      { name: 'Công ty Cổ phần Giải pháp Thanh toán Việt Nam (VNPAY)', shortName: 'VNPAY' },
+      { name: 'Tập đoàn Vingroup (Vinhomes)', shortName: 'Vingroup' },
+      { name: 'VinFast Auto', shortName: 'VinFast' },
+      { name: 'VinAI Research (Tập đoàn Vingroup)', shortName: 'VinAI' },
+      { name: 'Tiki Corporation (Tiki Tech Hub)', shortName: 'Tiki' },
+      { name: 'Tập đoàn Masan (Masan Consumer)', shortName: 'Masan' },
+      { name: 'Masan Consumer Holdings', shortName: 'Masan' },
+      { name: 'CMC Telecom', shortName: 'CMC' },
+      { name: 'Base.vn (Nền tảng Quản trị Doanh nghiệp)', shortName: 'Base.vn' },
+      { name: 'One Mount Group (Hệ sinh thái VinID & VinShop)', shortName: 'One Mount' },
+      { name: 'KMS Technology Vietnam', shortName: 'KMS Technology' },
+      { name: 'NashTech Vietnam', shortName: 'NashTech' },
+      { name: 'Bosch Global Software Technologies (Bosch Việt Nam)', shortName: 'Bosch' },
+      { name: 'Unilever Việt Nam', shortName: 'Unilever' },
+      { name: 'Công ty Cổ phần Sữa Việt Nam (Vinamilk)', shortName: 'Vinamilk' },
+      { name: 'Công ty Cổ phần Chứng khoán SSI', shortName: 'SSI' },
+      { name: 'CÔNG TY CỔ PHẦN TẬP ĐOÀN VIKIMCO', shortName: 'Vikimco' },
+      { name: 'Tập đoàn Mai Linh', shortName: 'Mai Linh' },
+      { name: 'Tập đoàn Đất Xanh', shortName: 'Đất Xanh' },
+      { name: 'Tập đoàn Tân Á Đại Thành', shortName: 'Tân Á Đại Thành' },
+      { name: 'Grab Việt Nam', shortName: 'Grab' },
+      { name: 'Bee Logistics Corporation', shortName: 'Bee Logistics' },
+      { name: 'Samsung Electronics HCMC', shortName: 'Samsung' },
+      { name: 'VCCorp Corporation', shortName: 'VCCorp' },
+      { name: 'Dentsu Creative Vietnam', shortName: 'Dentsu' },
+      { name: 'Gemadept Logistics', shortName: 'Gemadept' }
+    ];
+
     // Kho từ khóa gợi ý đa dạng phong phú chuẩn TopCV
     const ALL_SUGGESTIONS = [
       { keyword: 'ReactJS Developer', count: 156 },
@@ -1604,12 +1649,97 @@ document.addEventListener('DOMContentLoaded', () => {
       const clean = normalizeIndustryText(query);
       if (!clean) return;
 
-      // Gợi ý tối đa 10 từ khóa, không hiển thị số lượng job
-      const matches = ALL_SUGGESTIONS.filter(item => {
-        return normalizeIndustryText(item.keyword).includes(clean);
-      }).slice(0, 10);
+      // 1. Thu thập và tìm kiếm Công ty phù hợp
+      const matchedCompanies = [];
+      const seenCompanyKeys = new Set();
 
-      if (matches.length === 0) {
+      const allCompaniesList = [...POPULAR_COMPANIES];
+      RECOMMENDED_JOBS_POOL.forEach(j => {
+        if (j.company && !allCompaniesList.some(c => c.name.toLowerCase() === j.company.toLowerCase())) {
+          allCompaniesList.push({ name: j.company, shortName: j.company });
+        }
+      });
+
+      allCompaniesList.forEach(comp => {
+        const normName = normalizeIndustryText(comp.name);
+        const normShort = normalizeIndustryText(comp.shortName || '');
+        if (normName.includes(clean) || normShort.includes(clean)) {
+          const key = comp.name.toLowerCase();
+          if (!seenCompanyKeys.has(key)) {
+            seenCompanyKeys.add(key);
+            matchedCompanies.push({
+              type: 'company',
+              keyword: comp.shortName || comp.name,
+              label: comp.name,
+              searchKey: comp.shortName || comp.name
+            });
+          }
+        }
+      });
+
+      // 2. Thu thập và tìm kiếm Việc làm phù hợp
+      const matchedJobs = [];
+      const seenJobKeys = new Set();
+
+      // 2a. Việc làm từ dataset khớp theo title hoặc thuộc công ty được tìm
+      RECOMMENDED_JOBS_POOL.forEach(job => {
+        const normTitle = normalizeIndustryText(job.title);
+        const normCompany = normalizeIndustryText(job.company || '');
+        const isTitleMatch = normTitle.includes(clean);
+        const isCompanyMatch = normCompany.includes(clean);
+
+        if (isTitleMatch || isCompanyMatch) {
+          const uniqueKey = `${job.title}__${job.company}`.toLowerCase();
+          if (!seenJobKeys.has(uniqueKey)) {
+            seenJobKeys.add(uniqueKey);
+            matchedJobs.push({
+              type: 'job',
+              keyword: job.title,
+              label: isCompanyMatch && !isTitleMatch ? `${job.title} — ${job.company}` : job.title,
+              searchKey: job.title
+            });
+          }
+        }
+      });
+
+      // 2b. Vai trò/vị trí chuẩn từ ALL_SUGGESTIONS & Taxonomy
+      ALL_SUGGESTIONS.forEach(item => {
+        if (normalizeIndustryText(item.keyword).includes(clean)) {
+          const key = item.keyword.toLowerCase();
+          if (!seenJobKeys.has(key)) {
+            seenJobKeys.add(key);
+            matchedJobs.push({
+              type: 'job',
+              keyword: item.keyword,
+              label: item.keyword,
+              searchKey: item.keyword
+            });
+          }
+        }
+      });
+
+      // 3. Phân bổ thông minh: hiển thị cả Công ty và Việc làm (tối đa 10 mục)
+      let finalMatches = [];
+      if (matchedCompanies.length > 0 && matchedJobs.length > 0) {
+        const isCompanySearch = matchedCompanies.some(c => normalizeIndustryText(c.keyword) === clean || normalizeIndustryText(c.label).startsWith(clean));
+        if (isCompanySearch) {
+          finalMatches = [
+            ...matchedCompanies.slice(0, 4),
+            ...matchedJobs.slice(0, 6)
+          ];
+        } else {
+          finalMatches = [
+            ...matchedJobs.slice(0, 6),
+            ...matchedCompanies.slice(0, 4)
+          ];
+        }
+      } else {
+        finalMatches = [...matchedCompanies, ...matchedJobs];
+      }
+
+      finalMatches = finalMatches.slice(0, 10);
+
+      if (finalMatches.length === 0) {
         const emptyRow = document.createElement('div');
         emptyRow.className = 'keyword-suggestion-empty';
         emptyRow.setAttribute('role', 'button');
@@ -1630,22 +1760,32 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      matches.forEach(item => {
+      finalMatches.forEach(item => {
         const row = document.createElement('div');
-        row.className = 'keyword-suggestion-row';
+        row.className = `keyword-suggestion-row is-${item.type}`;
         row.setAttribute('role', 'button');
         row.setAttribute('tabindex', '0');
         row.innerHTML = `
-          <svg class="kw-suggest-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
-          </svg>
-          <span class="kw-suggest-text">${highlightMatch(item.keyword, query)}</span>
+          <div class="kw-suggest-left">
+            ${item.type === 'company' ? `
+              <svg class="kw-suggest-icon kw-icon-company" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M3 21h18M3 7v14M21 7v14M6 10h2M6 14h2M6 18h2M11 10h2M11 14h2M11 18h2M16 10h2M16 14h2M16 18h2M9 3h6v4H9z"/>
+              </svg>
+            ` : `
+              <svg class="kw-suggest-icon kw-icon-job" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+            `}
+            <span class="kw-suggest-text" title="${escapeHtml(item.label)}">${highlightMatch(item.label, query)}</span>
+          </div>
+          <span class="kw-suggest-badge is-${item.type}">${item.type === 'company' ? 'Công ty' : 'Việc làm'}</span>
         `;
         row.addEventListener('click', () => {
-          executeSearch(item.keyword);
+          executeSearch(item.searchKey || item.keyword);
         });
         row.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter') executeSearch(item.keyword);
+          if (e.key === 'Enter') executeSearch(item.searchKey || item.keyword);
         });
         container.appendChild(row);
       });

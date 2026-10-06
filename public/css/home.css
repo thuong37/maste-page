@@ -233,6 +233,55 @@
 .keyword-suggestion-row:hover .kw-suggest-text {
   color: #ea580c;
 }
+.kw-suggest-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.kw-suggest-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.01em;
+}
+
+.kw-suggest-badge.is-company {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.kw-suggest-badge.is-job {
+  background: #fff7ed;
+  color: #ea580c;
+  border: 1px solid #ffedd5;
+}
+
+.keyword-suggestion-row.is-company:hover {
+  background: #f0f9ff;
+}
+
+.keyword-suggestion-row.is-company:hover .kw-suggest-text {
+  color: #2563eb;
+}
+
+.keyword-suggestion-row.is-company .kw-suggest-icon {
+  color: #3b82f6;
+}
+
+.keyword-suggestion-row.is-job .kw-suggest-icon {
+  color: #f97316;
+}
+
 .kw-suggest-icon {
   width: 16px;
   height: 16px;
