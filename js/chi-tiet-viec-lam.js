@@ -1552,6 +1552,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (jobIndustryHidden) {
       jobIndustryHidden.value = chosenName || '';
     }
+
+    // Yêu cầu 5: Nếu người dùng nhấn vào nút chọn thì áp dụng luôn danh sách lọc đó vào màn tra cứu việc làm
+    if (chosenName || groups.length > 0) {
+      const searchParams = new URLSearchParams();
+      if (groups.length > 0) searchParams.set('category', groups[0]);
+      if (chosenName) searchParams.set('industry', chosenName);
+      window.location.assign(`viec-lam.html?${searchParams.toString()}`);
+    }
   });
   }
 

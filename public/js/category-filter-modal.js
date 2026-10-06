@@ -7,11 +7,20 @@
 (function () {
   'use strict';
 
-  // 1. Comprehensive Taxonomy Dataset matching user reference screenshot
+  // 1. Comprehensive Taxonomy Dataset
   const CATEGORY_DATA = [
     {
       key: 'sales',
       name: 'Kinh doanh/Bán hàng',
+      popularKeywords: [
+        'Nhân viên kinh doanh',
+        'Nhân viên bán hàng',
+        'Nhân viên tư vấn',
+        'Telesales',
+        'Sales Admin',
+        'Tư vấn tuyển sinh',
+        'Sales Online'
+      ],
       subgroups: [
         {
           title: 'Sales Xuất nhập khẩu/Logistics',
@@ -42,6 +51,15 @@
     {
       key: 'marketing',
       name: 'Marketing/PR/Quảng cáo',
+      popularKeywords: [
+        'Google Ads Specialist',
+        'Facebook & TikTok Ads',
+        'SEO Specialist',
+        'Performance Marketing',
+        'Copywriter / Content Lead',
+        'Social Media Executive',
+        'Brand Marketing Specialist'
+      ],
       subgroups: [
         {
           title: 'Marketing Số (Digital Marketing)',
@@ -60,6 +78,14 @@
     {
       key: 'cskh',
       name: 'Chăm sóc khách hàng (Customer Service)/Vận hành',
+      popularKeywords: [
+        'Chuyên viên tư vấn & CSKH',
+        'Xử lý khiếu nại khách hàng',
+        'Nhân viên Call Center / Trực chat',
+        'Chăm sóc khách hàng VIP',
+        'Điều phối dịch vụ khách hàng',
+        'Hỗ trợ kỹ thuật Helpdesk'
+      ],
       subgroups: [
         {
           title: 'Chăm sóc & Hỗ trợ khách hàng',
@@ -74,6 +100,14 @@
     {
       key: 'hr',
       name: 'Nhân sự/Hành chính/Pháp chế',
+      popularKeywords: [
+        'Talent Acquisition Specialist',
+        'Headhunter',
+        'HR Business Partner (HRBP)',
+        'Chuyên viên Tiền lương & Phúc lợi (C&B)',
+        'Hành chính văn phòng',
+        'Pháp chế doanh nghiệp'
+      ],
       subgroups: [
         {
           title: 'Tuyển dụng & Quản trị nhân tài',
@@ -92,6 +126,15 @@
     {
       key: 'it',
       name: 'Công nghệ Thông tin',
+      popularKeywords: [
+        'Frontend Developer (Vue/React)',
+        'Backend Developer (Java/Node/.NET)',
+        'Fullstack Developer',
+        'Mobile Developer (iOS/Android)',
+        'Data Analyst',
+        'Machine Learning Engineer',
+        'DevOps / SRE'
+      ],
       subgroups: [
         {
           title: 'Lập trình Phần mềm & Web',
@@ -114,6 +157,14 @@
     {
       key: 'worker',
       name: 'Lao động phổ thông',
+      popularKeywords: [
+        'Công nhân may mặc',
+        'Công nhân lắp ráp điện tử',
+        'Vận hành máy cơ khí',
+        'Kiểm tra chất lượng (KCS)',
+        'Tài xế giao hàng (Shipper)',
+        'Nhân viên đóng gói & phụ kho'
+      ],
       subgroups: [
         {
           title: 'Sản xuất & Vận hành máy',
@@ -128,6 +179,15 @@
     {
       key: 'finance',
       name: 'Tài chính / Ngân hàng / Bảo hiểm',
+      popularKeywords: [
+        'Kế toán tổng hợp',
+        'Kế toán thuế',
+        'Kế toán trưởng',
+        'Kiểm toán viên độc lập',
+        'Quan hệ khách hàng doanh nghiệp (RM)',
+        'Tín dụng cá nhân',
+        'Giao dịch viên Ngân hàng'
+      ],
       subgroups: [
         {
           title: 'Kế toán & Kiểm toán',
@@ -142,7 +202,20 @@
     {
       key: 'logistics',
       name: 'Vận tải / Kho vận / Logistics',
+      popularKeywords: [
+        'Sales Logistics',
+        'Nhân viên chứng từ XNK',
+        'Khai báo hải quan điện tử',
+        'Thu mua quốc tế (Sourcing)',
+        'Hiện trường XNK',
+        'Quản lý kho bãi (Warehouse)',
+        'Supply Chain Specialist'
+      ],
       subgroups: [
+        {
+          title: 'Sales Xuất nhập khẩu/Logistics',
+          roles: ['Sales Logistics', 'Sales Xuất nhập khẩu/Logistics khác']
+        },
         {
           title: 'Xuất nhập khẩu & Hải quan',
           roles: ['Nhân viên chứng từ XNK', 'Khai báo hải quan điện tử', 'Thu mua quốc tế (Sourcing)', 'Hiện trường XNK']
@@ -156,6 +229,14 @@
     {
       key: 'design',
       name: 'Thiết kế / Sáng tạo nghệ thuật',
+      popularKeywords: [
+        'Graphic Designer 2D',
+        'Nhận diện thương hiệu',
+        'Thiết kế bao bì / ấn phẩm',
+        'UI/UX App/Web Designer',
+        '3D Generalist',
+        'Motion Designer / Animator'
+      ],
       subgroups: [
         {
           title: 'Thiết kế Đồ họa & Thương hiệu',
@@ -170,6 +251,14 @@
     {
       key: 'education',
       name: 'Giáo dục / Đào tạo / Giảng dạy',
+      popularKeywords: [
+        'Giáo viên tiếng Anh / IELTS',
+        'Giáo viên tiếng Trung / Hàn / Nhật',
+        'Trợ giảng lớp học',
+        'Giáo viên STEM / Lập trình',
+        'Tư vấn giáo dục',
+        'Phát triển khóa học'
+      ],
       subgroups: [
         {
           title: 'Giảng dạy ngoại ngữ',
@@ -183,7 +272,7 @@
     }
   ];
 
-  // Popular searches shown below the category search input
+  // Popular searches shown inside category modal
   const POPULAR_KEYWORDS = [
     'Nhân viên kinh doanh',
     'Nhân viên bán hàng',
@@ -192,6 +281,18 @@
     'Sales Admin',
     'Tư vấn tuyển sinh',
     'Sales Online'
+  ];
+
+  // Additional quick search keywords for suggestions mode
+  const SUGGESTION_KEYWORDS = [
+    'Frontend Developer',
+    'Java Spring',
+    'Digital Marketing',
+    'Kế toán tổng hợp',
+    'Graphic Designer',
+    'Data Analyst',
+    'Nhân viên xuất nhập khẩu',
+    'Talent Acquisition'
   ];
 
   // Helper normalizer
@@ -220,19 +321,32 @@
       roles: new Set()
     },
     isOpen: false,
+    isSearchMode: false,
 
     init: function (config = {}) {
       this.triggerBtn = document.getElementById(config.triggerId || 'categoryFilterTrigger');
       this.triggerLabel = document.getElementById(config.labelId || 'categoryFilterLabel');
       this.overlay = document.getElementById(config.overlayId || 'categoryModalOverlay');
       this.backdrop = document.getElementById(config.backdropId || 'categoryModalBackdrop');
+      this.dialog = this.overlay ? this.overlay.querySelector('.category-modal-dialog') : null;
       this.closeBtn = document.getElementById(config.closeBtnId || 'categoryModalClose');
       this.searchInput = document.getElementById(config.searchInputId || 'categoryModalSearchInput');
       this.searchClearBtn = document.getElementById(config.searchClearBtnId || 'categorySearchClear');
+      
       this.popularWrap = document.getElementById(config.popularWrapId || 'categoryPopularWrap');
       this.popularChipListEl = document.getElementById(config.popularChipListId || 'categoryPopularChipList');
       this.groupListEl = document.getElementById(config.groupListId || 'categoryGroupList');
       this.subgroupListEl = document.getElementById(config.subgroupListId || 'categorySubgroupList');
+      this.subgroupItemsEl = document.getElementById('categorySubgroupItems');
+
+      this.defaultHeadersEl = document.querySelector('.category-default-headers');
+      this.searchHeadersEl = document.getElementById('categorySearchHeaders');
+      this.searchCountEl = document.getElementById('categorySearchCount');
+      this.exitSearchBtn = document.getElementById('btnExitCategorySearch');
+      this.searchSuggestionsEl = document.getElementById('categorySearchSuggestions');
+      this.searchResultsListEl = document.getElementById('categorySearchResultsList');
+      this.searchCloseBtn = document.getElementById(config.searchCloseBtnId || 'btnCategorySearchClose');
+
       this.scrollHintEl = document.getElementById(config.scrollHintId || 'categoryScrollHint');
       this.clearAllBtn = document.getElementById(config.clearAllBtnId || 'btnCategoryClearAll');
       this.cancelBtn = document.getElementById(config.cancelBtnId || 'btnCategoryCancel');
@@ -240,7 +354,6 @@
       this.onApplyCallback = config.onApply || null;
 
       if (!this.overlay) {
-        // Modal markup not yet in DOM, skip or auto-inject if needed
         return;
       }
 
@@ -284,11 +397,31 @@
         this.clearAllBtn.addEventListener('click', () => self.clearAll());
       }
 
+      // Nút Đóng tìm kiếm (chuẩn TopCV cạnh ô search input)
+      if (this.searchCloseBtn) {
+        this.searchCloseBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          self.exitSearchMode();
+        });
+      }
+
+      // Search Input Focus / Click: Enter Search Mode (TopCV Standard)
       if (this.searchInput) {
+        this.searchInput.addEventListener('focus', () => {
+          self.enterSearchMode();
+        });
+
+        this.searchInput.addEventListener('click', () => {
+          self.enterSearchMode();
+        });
+
         this.searchInput.addEventListener('input', () => {
           const val = self.searchInput.value.trim();
           if (self.searchClearBtn) {
             self.searchClearBtn.hidden = !val;
+          }
+          if (!self.isSearchMode) {
+            self.enterSearchMode();
           }
           self.handleSearch(val);
         });
@@ -302,6 +435,12 @@
             self.searchClearBtn.hidden = true;
             self.handleSearch('');
           }
+        });
+      }
+
+      if (this.exitSearchBtn) {
+        this.exitSearchBtn.addEventListener('click', () => {
+          self.exitSearchMode();
         });
       }
 
@@ -323,7 +462,15 @@
       // Keyboard navigation
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && self.isOpen) {
-          self.close(false);
+          if (self.isSearchMode && self.searchInput && self.searchInput.value) {
+            self.searchInput.value = '';
+            if (self.searchClearBtn) self.searchClearBtn.hidden = true;
+            self.handleSearch('');
+          } else if (self.isSearchMode) {
+            self.exitSearchMode();
+          } else {
+            self.close(false);
+          }
         }
       });
 
@@ -335,6 +482,103 @@
       window.addEventListener('scroll', () => {
         if (self.isOpen) self.updatePosition();
       }, { passive: true });
+    },
+
+    enterSearchMode: function () {
+      this.isSearchMode = true;
+      if (this.dialog) {
+        this.dialog.classList.add('is-searching');
+      }
+      if (this.defaultHeadersEl) this.defaultHeadersEl.style.display = 'none';
+      if (this.searchHeadersEl) this.searchHeadersEl.style.display = 'flex';
+      if (this.popularWrap) this.popularWrap.hidden = true;
+      if (this.subgroupItemsEl) this.subgroupItemsEl.style.display = 'none';
+
+      const val = this.searchInput ? this.searchInput.value.trim() : '';
+      if (!val) {
+        this.renderSearchSuggestions();
+      } else {
+        this.handleSearch(val);
+      }
+    },
+
+    exitSearchMode: function () {
+      this.isSearchMode = false;
+      if (this.dialog) {
+        this.dialog.classList.remove('is-searching');
+      }
+      if (this.searchInput) {
+        this.searchInput.value = '';
+        if (this.searchClearBtn) this.searchClearBtn.hidden = true;
+      }
+      if (this.defaultHeadersEl) this.defaultHeadersEl.style.display = 'contents';
+      if (this.searchHeadersEl) this.searchHeadersEl.style.display = 'none';
+      if (this.searchSuggestionsEl) this.searchSuggestionsEl.style.display = 'none';
+      if (this.searchResultsListEl) this.searchResultsListEl.style.display = 'none';
+      if (this.popularWrap) this.popularWrap.hidden = false;
+      if (this.subgroupItemsEl) this.subgroupItemsEl.style.display = 'block';
+
+      this.renderGroups();
+      this.renderSubgroups();
+    },
+
+    renderSearchSuggestions: function () {
+      if (!this.searchSuggestionsEl) return;
+      const self = this;
+      this.searchSuggestionsEl.style.display = 'flex';
+      if (this.searchResultsListEl) this.searchResultsListEl.style.display = 'none';
+      if (this.searchCountEl) this.searchCountEl.textContent = 'Gợi ý tìm kiếm';
+
+      const allChips = [...POPULAR_KEYWORDS, ...SUGGESTION_KEYWORDS];
+      const popularChipsHtml = allChips.map(keyword => 
+        `<button type="button" class="category-suggest-chip" data-keyword="${keyword}">${keyword}</button>`
+      ).join('');
+
+      const groupChipsHtml = CATEGORY_DATA.map(g =>
+        `<button type="button" class="category-suggest-chip is-group" data-group="${g.key}">${g.name}</button>`
+      ).join('');
+
+      this.searchSuggestionsEl.innerHTML = `
+        <div class="category-search-suggest-block">
+          <div class="category-search-suggest-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span>Từ khóa được tìm kiếm nhiều</span>
+          </div>
+          <div class="category-search-suggest-chips">
+            ${popularChipsHtml}
+          </div>
+        </div>
+
+        <div class="category-search-suggest-block">
+          <div class="category-search-suggest-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path><path d="M6 6h10"></path><path d="M6 10h10"></path></svg>
+            <span>Nhóm ngành nghề nổi bật</span>
+          </div>
+          <div class="category-search-suggest-chips">
+            ${groupChipsHtml}
+          </div>
+        </div>
+      `;
+
+      // Click suggestion chip
+      this.searchSuggestionsEl.querySelectorAll('.category-suggest-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          const kw = chip.getAttribute('data-keyword');
+          const groupKey = chip.getAttribute('data-group');
+          if (kw) {
+            if (self.searchInput) {
+              self.searchInput.value = kw;
+              if (self.searchClearBtn) self.searchClearBtn.hidden = false;
+              self.handleSearch(kw);
+            }
+          } else if (groupKey) {
+            self.exitSearchMode();
+            self.activeCategoryKey = groupKey;
+            self.renderGroups();
+            self.renderSubgroups();
+          }
+        });
+      });
     },
 
     updatePosition: function () {
@@ -355,12 +599,10 @@
 
       if (searchBox) {
         const boxRect = searchBox.getBoundingClientRect();
-        // Vị trí mép trên của hộp thoại modal: ngay dưới đáy thanh tìm kiếm (cách đúng 8px)
         const topPos = Math.max(10, Math.round(boxRect.bottom + 8));
         document.documentElement.style.setProperty('--cat-modal-top', `${topPos}px`);
         dialog.style.setProperty('top', `${topPos}px`, 'important');
 
-        // Chiều cao thiết lập bằng đúng 2/3 chiều cao trước đó (khoảng ~400px - 440px thay vì ~612px+)
         const availableHeight = Math.max(260, window.innerHeight - topPos - 20);
         const targetHeight = Math.round(availableHeight * (2 / 3));
         document.documentElement.style.setProperty('--cat-modal-height', `${targetHeight}px`);
@@ -371,7 +613,6 @@
 
     open: function () {
       this.isOpen = true;
-      // Copy applied to temp
       this.tempSelection = {
         groups: new Set(this.appliedSelection.groups),
         subgroups: new Set(this.appliedSelection.subgroups),
@@ -390,7 +631,6 @@
 
       this.updatePosition();
 
-      // Đóng Search Suggest Dropdown nếu đang mở
       const searchSuggestDropdown = document.getElementById('searchSuggestDropdown');
       if (searchSuggestDropdown) {
         searchSuggestDropdown.classList.remove('is-open');
@@ -401,18 +641,21 @@
       if (this.searchInput) {
         this.searchInput.value = '';
         if (this.searchClearBtn) this.searchClearBtn.hidden = true;
-        setTimeout(() => this.searchInput.focus(), 100);
       }
-      if (this.popularWrap) this.popularWrap.hidden = false;
 
+      this.exitSearchMode();
       this.renderGroups();
       this.renderSubgroups();
+      this.renderPopularKeywords();
     },
 
     close: function (isApplied = false) {
       this.isOpen = false;
+      this.isSearchMode = false;
+      if (this.dialog) {
+        this.dialog.classList.remove('is-searching');
+      }
       if (!isApplied) {
-        // Discard temp
         this.tempSelection = {
           groups: new Set(this.appliedSelection.groups),
           subgroups: new Set(this.appliedSelection.subgroups),
@@ -440,7 +683,11 @@
       this.tempSelection.subgroups.clear();
       this.tempSelection.roles.clear();
       this.renderGroups();
-      this.renderSubgroups();
+      if (this.isSearchMode && this.searchInput && this.searchInput.value.trim()) {
+        this.handleSearch(this.searchInput.value.trim());
+      } else {
+        this.renderSubgroups();
+      }
     },
 
     apply: function () {
@@ -520,68 +767,91 @@
     renderPopularKeywords: function () {
       if (!this.popularChipListEl) return;
       const self = this;
-      this.popularChipListEl.innerHTML = POPULAR_KEYWORDS.map(keyword =>
-        `<button type="button" class="category-popular-chip" data-keyword="${keyword}">${keyword}</button>`
-      ).join('');
+      const currentCategory = CATEGORY_DATA.find(c => c.key === self.activeCategoryKey) || CATEGORY_DATA[0];
+      const keywords = (currentCategory && currentCategory.popularKeywords && currentCategory.popularKeywords.length > 0)
+        ? currentCategory.popularKeywords
+        : POPULAR_KEYWORDS;
+
+      this.popularChipListEl.innerHTML = keywords.map(keyword => {
+        const isSelected = self.tempSelection.roles.has(keyword);
+        return `<button type="button" class="category-popular-chip ${isSelected ? 'is-selected' : ''}" data-keyword="${keyword}">${keyword}</button>`;
+      }).join('');
 
       this.popularChipListEl.querySelectorAll('.category-popular-chip').forEach(chip => {
-        chip.addEventListener('click', () => {
+        chip.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
           const keyword = chip.getAttribute('data-keyword');
-          const isAlreadyActive = chip.classList.contains('is-active');
-
-          self.popularChipListEl.querySelectorAll('.category-popular-chip').forEach(c => c.classList.remove('is-active'));
-
-          if (isAlreadyActive) {
-            if (self.searchInput) {
-              self.searchInput.value = '';
-            }
-            if (self.searchClearBtn) self.searchClearBtn.hidden = true;
-            self.handleSearch('');
-          } else {
-            chip.classList.add('is-active');
-            if (self.searchInput) {
-              self.searchInput.value = keyword;
-              self.searchInput.focus();
-            }
-            if (self.searchClearBtn) self.searchClearBtn.hidden = false;
-            self.handleSearch(keyword);
-          }
+          self.togglePopularRole(keyword);
         });
       });
     },
 
+    togglePopularRole: function (keyword) {
+      const currentCat = CATEGORY_DATA.find(c => c.key === this.activeCategoryKey);
+      let parentSub = null;
+      if (currentCat) {
+        parentSub = currentCat.subgroups.find(s => s.roles.includes(keyword));
+      }
+      if (!parentSub) {
+        for (const cat of CATEGORY_DATA) {
+          parentSub = cat.subgroups.find(s => s.roles.includes(keyword));
+          if (parentSub) break;
+        }
+      }
+      this.toggleRole(keyword, parentSub ? parentSub.title : null);
+    },
+
     handleSearch: function (query) {
       const norm = normalizeStr(query);
-      if (this.popularChipListEl) {
-        this.popularChipListEl.querySelectorAll('.category-popular-chip').forEach(c => {
-          c.classList.toggle('is-active', !!norm && normalizeStr(c.getAttribute('data-keyword')) === norm);
-        });
-      }
-      if (this.popularWrap) this.popularWrap.hidden = !!norm;
       if (!norm) {
-        this.renderGroups();
-        this.renderSubgroups();
+        this.renderSearchSuggestions();
         return;
       }
 
-      // Filter across all categories, subgroups, and roles
-      let matchingSubgroups = [];
+      if (this.searchSuggestionsEl) this.searchSuggestionsEl.style.display = 'none';
+      if (this.searchResultsListEl) this.searchResultsListEl.style.display = 'flex';
+
+      // Flat list of matching roles with full breadcrumb hierarchy (TopCV standard)
+      const matchingItems = [];
+      const seenKey = new Set();
+
       CATEGORY_DATA.forEach(group => {
         group.subgroups.forEach(sub => {
-          const matchSubTitle = normalizeStr(sub.title).includes(norm);
-          const matchingRoles = sub.roles.filter(r => normalizeStr(r).includes(norm));
-          if (matchSubTitle || matchingRoles.length > 0 || normalizeStr(group.name).includes(norm)) {
-            matchingSubgroups.push({
-              groupName: group.name,
-              groupKey: group.key,
-              title: sub.title,
-              roles: matchSubTitle ? sub.roles : (matchingRoles.length > 0 ? matchingRoles : sub.roles)
-            });
-          }
+          sub.roles.forEach(role => {
+            const matchRole = normalizeStr(role).includes(norm);
+            const matchSub = normalizeStr(sub.title).includes(norm);
+            const matchGroup = normalizeStr(group.name).includes(norm);
+
+            if (matchRole || matchSub || matchGroup) {
+              const uniqueKey = `${role}__${sub.title}__${group.key}`;
+              if (!seenKey.has(uniqueKey)) {
+                seenKey.add(uniqueKey);
+                matchingItems.push({
+                  role: role,
+                  categoryKey: group.key,
+                  categoryName: group.name,
+                  subgroupTitle: sub.title,
+                  isDirectMatch: matchRole
+                });
+              }
+            }
+          });
         });
       });
 
-      this.renderSearchResults(matchingSubgroups, query);
+      // Ưu tiên role khớp trực tiếp từ khóa lên trước
+      matchingItems.sort((a, b) => {
+        if (a.isDirectMatch && !b.isDirectMatch) return -1;
+        if (!a.isDirectMatch && b.isDirectMatch) return 1;
+        return 0;
+      });
+
+      if (this.searchCountEl) {
+        this.searchCountEl.textContent = `${matchingItems.length} kết quả`;
+      }
+
+      this.renderSearchResults(matchingItems, query);
     },
 
     renderGroups: function () {
@@ -608,16 +878,29 @@
           </svg>
         `;
 
-        // Click row: set active category
+        // Yêu cầu 1: Khi HOVER vào từng nhóm nghề thì tự động hiển thị theo "Nghề" tương ứng, không bắt buộc phải chọn
+        item.addEventListener('mouseenter', () => {
+          if (self.isSearchMode) return;
+          if (self.activeCategoryKey !== cat.key) {
+            self.activeCategoryKey = cat.key;
+            self.groupListEl.querySelectorAll('.category-group-item').forEach(el => {
+              el.classList.toggle('is-active', el.getAttribute('data-category') === cat.key);
+            });
+            self.renderSubgroups();
+          }
+        });
+
+        // Click row: toggle checkbox nếu click checkbox, hoặc active nếu click text
         item.addEventListener('click', (e) => {
           if (e.target.closest('.cat-checkbox')) {
-            // Checkbox click
             e.stopPropagation();
             self.toggleCategory(cat.key);
             return;
           }
           self.activeCategoryKey = cat.key;
-          self.renderGroups();
+          self.groupListEl.querySelectorAll('.category-group-item').forEach(el => {
+            el.classList.toggle('is-active', el.getAttribute('data-category') === cat.key);
+          });
           self.renderSubgroups();
         });
 
@@ -626,9 +909,11 @@
     },
 
     renderSubgroups: function () {
-      if (!this.subgroupListEl) return;
+      this.renderPopularKeywords();
+      const container = this.subgroupItemsEl || this.subgroupListEl;
+      if (!container) return;
       const self = this;
-      this.subgroupListEl.innerHTML = '';
+      container.innerHTML = '';
 
       const currentCategory = CATEGORY_DATA.find(c => c.key === self.activeCategoryKey) || CATEGORY_DATA[0];
       if (!currentCategory) return;
@@ -639,7 +924,6 @@
 
         const isSubChecked = self.tempSelection.subgroups.has(sub.title);
 
-        // Build Specialty Pills
         const pillsHtml = sub.roles.map(role => {
           const isRoleSelected = self.tempSelection.roles.has(role);
           return `<button type="button" class="category-specialty-pill ${isRoleSelected ? 'is-selected' : ''}" data-role="${role}">${role}</button>`;
@@ -657,13 +941,11 @@
           </div>
         `;
 
-        // Checkbox/Title click for Subgroup
         const titleWrap = row.querySelector('.category-role-title-wrap');
         titleWrap.addEventListener('click', () => {
           self.toggleSubgroup(sub.title, sub.roles);
         });
 
-        // Pill clicks
         row.querySelectorAll('.category-specialty-pill').forEach(pill => {
           pill.addEventListener('click', () => {
             const role = pill.getAttribute('data-role');
@@ -671,12 +953,10 @@
           });
         });
 
-        self.subgroupListEl.appendChild(row);
+        container.appendChild(row);
       });
 
-      // Reset scroll position and show hint if overflow
-      this.subgroupListEl.scrollTop = 0;
-      if (this.scrollHintEl) {
+      if (this.scrollHintEl && this.subgroupListEl) {
         setTimeout(() => {
           const hasScroll = self.subgroupListEl.scrollHeight > self.subgroupListEl.clientHeight + 40;
           self.scrollHintEl.classList.toggle('is-hidden', !hasScroll);
@@ -685,73 +965,72 @@
     },
 
     renderSearchResults: function (results, query) {
-      if (!this.subgroupListEl) return;
+      const container = this.searchResultsListEl || this.subgroupItemsEl || this.subgroupListEl;
+      if (!container) return;
       const self = this;
-      this.subgroupListEl.innerHTML = '';
+      container.innerHTML = '';
 
       if (results.length === 0) {
-        this.subgroupListEl.innerHTML = `
+        container.innerHTML = `
           <div class="category-search-empty">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
-            <div style="font-weight: 600; color: #334155; margin-top: 10px;">Không tìm thấy danh mục phù hợp với "${query}"</div>
-            <p>Vui lòng thử lại với từ khóa khác như "Sales", "Marketing", "React"...</p>
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+            <div style="font-weight: 700; color: #334155; margin-top: 12px; font-size: 15px;">Không tìm thấy ngành nghề phù hợp với "${query}"</div>
+            <p style="color: #64748B; font-size: 13.5px; margin-top: 6px;">Vui lòng thử lại với các từ khóa phổ biến: "Sale", "Marketing", "Frontend", "Kế toán"...</p>
           </div>
         `;
         if (this.scrollHintEl) this.scrollHintEl.classList.add('is-hidden');
         return;
       }
 
-      results.forEach(sub => {
+      results.forEach(item => {
+        const isSelected = self.tempSelection.roles.has(item.role);
+
         const row = document.createElement('div');
-        row.className = 'category-subgroup-row';
-
-        const isSubChecked = self.tempSelection.subgroups.has(sub.title);
-
-        const pillsHtml = sub.roles.map(role => {
-          const isRoleSelected = self.tempSelection.roles.has(role);
-          return `<button type="button" class="category-specialty-pill ${isRoleSelected ? 'is-selected' : ''}" data-role="${role}">${role}</button>`;
-        }).join('');
+        row.className = `category-search-result-item ${isSelected ? 'is-selected' : ''}`;
+        row.setAttribute('data-role', item.role);
+        row.setAttribute('data-subgroup', item.subgroupTitle);
 
         row.innerHTML = `
-          <div class="category-role-title-wrap" data-subgroup="${sub.title}">
-            <div class="cat-checkbox ${isSubChecked ? 'is-checked' : ''}" data-action="toggle-subgroup" data-title="${sub.title}">
-              <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            </div>
-            <div>
-              <span class="category-role-title">${sub.title}</span>
-              <div style="font-size: 11px; color: #94A3B8; font-weight: 500; margin-top: 2px;">${sub.groupName}</div>
-            </div>
+          <div class="cat-checkbox ${isSelected ? 'is-checked' : ''}" data-action="toggle-search-role">
+            <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
-          <div class="category-specialty-pills">
-            ${pillsHtml}
+          <div class="category-search-result-info">
+            <div class="category-search-result-name">${item.role}</div>
+            <div class="category-search-result-breadcrumb">
+              <span>${item.categoryName.toUpperCase()}</span>
+              <span class="breadcrumb-separator">&rsaquo;</span>
+              <span>${item.subgroupTitle.toUpperCase()}</span>
+            </div>
           </div>
         `;
 
-        const titleWrap = row.querySelector('.category-role-title-wrap');
-        titleWrap.addEventListener('click', () => {
-          self.toggleSubgroup(sub.title, sub.roles);
+        row.addEventListener('click', (e) => {
+          e.preventDefault();
+          self.toggleRole(item.role, item.subgroupTitle);
+          const nextSelected = self.tempSelection.roles.has(item.role);
+          row.classList.toggle('is-selected', nextSelected);
+          const cb = row.querySelector('.cat-checkbox');
+          if (cb) cb.classList.toggle('is-checked', nextSelected);
         });
 
-        row.querySelectorAll('.category-specialty-pill').forEach(pill => {
-          pill.addEventListener('click', () => {
-            const role = pill.getAttribute('data-role');
-            self.toggleRole(role, sub.title);
-          });
-        });
-
-        self.subgroupListEl.appendChild(row);
+        container.appendChild(row);
       });
+
+      if (this.scrollHintEl && this.subgroupListEl) {
+        setTimeout(() => {
+          const hasScroll = self.subgroupListEl.scrollHeight > self.subgroupListEl.clientHeight + 40;
+          self.scrollHintEl.classList.toggle('is-hidden', !hasScroll);
+        }, 50);
+      }
     },
 
     toggleCategory: function (catKey) {
       const isCurrentlyChecked = this.tempSelection.groups.has(catKey);
       const cat = CATEGORY_DATA.find(c => c.key === catKey);
 
-      // Luôn chuyển sang hiển thị nhóm nghề được click
       this.activeCategoryKey = catKey;
 
       if (isCurrentlyChecked) {
-        // Bỏ chọn nhóm nghề: bỏ chọn toàn bộ nghề và chuyên môn trong nhóm
         this.tempSelection.groups.delete(catKey);
         if (cat) {
           cat.subgroups.forEach(sub => {
@@ -760,7 +1039,6 @@
           });
         }
       } else {
-        // Chọn nhóm nghề: TẤT CẢ NGHỀ VÀ CHUYÊN MÔN TRONG NHÓM ĐÓ ĐỀU ĐƯỢC CHỌN
         this.tempSelection.groups.add(catKey);
         if (cat) {
           cat.subgroups.forEach(sub => {
@@ -797,7 +1075,11 @@
       }
 
       this.renderGroups();
-      this.renderSubgroups();
+      if (this.isSearchMode && this.searchInput && this.searchInput.value.trim()) {
+        this.handleSearch(this.searchInput.value.trim());
+      } else {
+        this.renderSubgroups();
+      }
     },
 
     toggleRole: function (role, subTitle) {
@@ -825,7 +1107,11 @@
       }
 
       this.renderGroups();
-      this.renderSubgroups();
+      if (this.isSearchMode && this.searchInput && this.searchInput.value.trim()) {
+        this.handleSearch(this.searchInput.value.trim());
+      } else {
+        this.renderSubgroups();
+      }
     },
 
     setSelection: function ({ groups = [], subgroups = [], roles = [] }) {

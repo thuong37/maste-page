@@ -3360,6 +3360,11 @@ document.addEventListener('DOMContentLoaded', () => {
     applyJobFilters(true, true);
     const selectedTitle = (window.EasyCVCategoryModal && window.EasyCVCategoryModal.getPrimaryFilterQuery()) || 'Tất cả';
     showToast(`Đã lọc danh mục nghề: ${selectedTitle}`, '🎯');
+
+    const targetSection = document.getElementById('splitListPane') || document.getElementById('jobListingContainer') || document.querySelector('.job-main-columns');
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
 
   // Dropdown changes

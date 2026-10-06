@@ -305,7 +305,6 @@
       right: var(--search-suggest-right, 0);
       /* Thu gọn bên trái (căn từ ô input tìm kiếm), bên phải giữ nguyên kéo dài hết thanh search */
       width: auto;
-      max-width: none;
       background: #FFFFFF;
       border: 1.5px solid #FED7AA;
       border-radius: 18px;
@@ -1946,6 +1945,7 @@
                 <input type="search" id="categoryModalSearchInput" placeholder="Nhập từ khóa tìm kiếm" autocomplete="off" />
                 <button type="button" class="category-search-clear" id="categorySearchClear" title="Xóa tìm kiếm" hidden>✕</button>
               </div>
+              <button type="button" class="btn-category-search-close" id="btnCategorySearchClose" title="Đóng tìm kiếm">Đóng</button>
             </div>
 
             <!-- Body: 2 Columns -->
@@ -1961,18 +1961,40 @@
 
               <!-- Right Panel: NGHỀ & VỊ TRÍ CHUYÊN MÔN -->
               <div class="category-panel-right">
-                <div class="category-right-headers">
-                  <div class="category-column-header col-role">NGHỀ</div>
-                  <div class="category-column-header col-specialty">VỊ TRÍ CHUYÊN MÔN</div>
-                </div>
-                <div class="category-popular-wrap" id="categoryPopularWrap">
-                  <span class="category-popular-label">Được tìm kiếm nhiều</span>
-                  <div class="category-popular-chip-list" id="categoryPopularChipList">
-                    <!-- Rendered dynamically -->
+                <div class="category-right-headers" id="categoryRightHeaders">
+                  <div class="category-default-headers" style="display: contents;">
+                    <div class="category-column-header col-role">NGHỀ</div>
+                    <div class="category-column-header col-specialty">VỊ TRÍ CHUYÊN MÔN</div>
+                  </div>
+                  <div class="category-search-headers" id="categorySearchHeaders" style="display: none; width: 100%;">
+                    <div class="category-search-header-title">
+                      <span>Kết quả tìm kiếm</span>
+                      <span class="search-badge" id="categorySearchCount">0 kết quả</span>
+                    </div>
+                    <button type="button" class="btn-exit-category-search" id="btnExitCategorySearch" title="Quay lại danh mục">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"></path></svg>
+                      <span>Quay lại danh mục</span>
+                    </button>
                   </div>
                 </div>
                 <div class="category-subgroup-list" id="categorySubgroupList">
-                  <!-- Rendered dynamically -->
+                  <div class="category-popular-wrap" id="categoryPopularWrap">
+                    <div class="category-popular-label-wrap">
+                      <span class="category-popular-label">Được tìm kiếm nhiều</span>
+                    </div>
+                    <div class="category-popular-chip-list" id="categoryPopularChipList">
+                      <!-- Rendered dynamically -->
+                    </div>
+                  </div>
+                  <div class="category-subgroup-items" id="categorySubgroupItems">
+                    <!-- Rendered dynamically -->
+                  </div>
+                  <div class="category-search-suggestions" id="categorySearchSuggestions" style="display: none;">
+                    <!-- Rendered dynamically on focus -->
+                  </div>
+                  <div class="category-search-results-list" id="categorySearchResultsList" style="display: none;">
+                    <!-- Rendered dynamically on typing -->
+                  </div>
                 </div>
                 <!-- Floating scroll hint -->
                 <div class="category-scroll-hint" id="categoryScrollHint">

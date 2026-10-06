@@ -1644,6 +1644,8 @@ document.addEventListener('DOMContentLoaded', () => {
         clearSearchInputBtn.style.display = (heroSearchInput.value.trim() || appliedIndustry) ? 'flex' : 'none';
       }
       console.log('[Home Search] Category filter synchronized:', { appliedIndustry, appliedIndustryKey });
+      // Yêu cầu 5: Khi nhấn nút chọn, áp dụng luôn danh sách lọc đó vào màn tra cứu việc làm
+      executeSearch();
     });
 
     industryFilterTrigger?.addEventListener('click', (e) => {
