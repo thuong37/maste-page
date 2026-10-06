@@ -6,6 +6,7 @@ const chrome = spawn('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe
   '--remote-debugging-port=9391',
   '--disable-gpu',
   '--disable-extensions',
+  '--user-data-dir=D:\\master page\\scratch\\chrome-profile-category-backdrop',
   '--window-size=1440,900',
   'http://127.0.0.1:8000/viec-lam.html'
 ]);
@@ -99,7 +100,24 @@ async function run() {
     if (mobile.backdropFilter !== 'none' || mobile.background !== 'rgba(0, 0, 0, 0)' || mobile.width > mobile.viewport) throw new Error(`Mobile layout failed: ${JSON.stringify(mobile)}`);
 
     await send('Emulation.clearDeviceMetricsOverride');
-    for (const path of ['index.html', 'chi-tiet-viec-lam.html', 'public/index.html', 'public/chi-tiet-viec-lam.html']) {
+    for (const path of ['index.html', 'public/index.html']) {
+      await navigate(path);
+      await evaluate("document.getElementById('categoryFilterTrigger').click()");
+      const homepageBackdrop = await evaluate(`(() => {
+        const style = getComputedStyle(document.getElementById('categoryModalBackdrop'));
+        return {
+          bodyScoped: document.body.classList.contains('home-page'),
+          blur: style.backdropFilter,
+          background: style.backgroundColor,
+          pointerEvents: style.pointerEvents
+        };
+      })()`);
+      if (!homepageBackdrop.bodyScoped || homepageBackdrop.blur !== 'none' || homepageBackdrop.background !== 'rgba(0, 0, 0, 0)' || homepageBackdrop.pointerEvents !== 'auto') {
+        throw new Error(`${path} homepage backdrop state failed: ${JSON.stringify(homepageBackdrop)}`);
+      }
+    }
+
+    for (const path of ['chi-tiet-viec-lam.html', 'public/chi-tiet-viec-lam.html']) {
       await navigate(path);
       await evaluate("document.getElementById('categoryFilterTrigger').click()");
       const sharedBackdrop = await evaluate(`(() => {
@@ -126,7 +144,7 @@ async function run() {
       throw new Error(`public/viec-lam.html backdrop state failed: ${JSON.stringify(publicJobList)}`);
     }
 
-    console.log(JSON.stringify({ desktop, closedOutside, selection, mobile, publicJobList, sharedPagesPreserveBlurAndScrim: true }, null, 2));
+    console.log(JSON.stringify({ desktop, closedOutside, selection, mobile, publicJobList, homepageMatchesJobList: true, jobDetailPreservesBlurAndScrim: true }, null, 2));
     await send('Browser.close');
     ws.close();
   } catch (error) {

@@ -92,3 +92,13 @@ Theo yêu cầu của người dùng cùng ảnh tham khảo trực quan (chuẩ
 | Dark-mode parity | The row had no dedicated dark highlighted surface | Added a translucent orange surface, warm divider/accent, orange label, and high-contrast dark chips | Dark-mode computed colors match expected values |
 | Delivery and regression | Existing cache key would retain the prior styling | Raised all consumers to `v=1.2_highlight` and extended the browser assertions | Chrome headless PASS at 1440px, 900px, and 390px; root/public pairs synchronized |
 
+## 8. Homepage Transparent Backdrop Parity — 2026-10-06
+
+| Scenario | Previous state | Technical solution | Verified result |
+|---|---|---|---|
+| Homepage category popup | Shared backdrop applied a dark scrim and `blur(4px)` | Added an explicit `home-page` body scope and grouped it with the Job List transparent/no-blur override | Root and public Homepage compute a transparent background and no backdrop blur |
+| Outside-click dismissal | Backdrop also acts as the dismissal hit area | Preserved the backdrop element and shared `pointer-events: auto` rule | Clicking outside still closes the popup |
+| Job Detail isolation | Shared stylesheet is also consumed by Job Detail | Scoped the new behavior only to `body.home-page`; no global backdrop change | Root and public Job Detail retain `blur(4px)` and the dark scrim |
+| Responsive and interaction regression | Homepage and Job List share the modal controller | Extended Chrome verification across desktop, 375px mobile, selection, and public mirrors | All automated checks PASS; mobile dialog remains inside the viewport |
+| Browser cache and mirror parity | Homepage referenced the earlier cache key | Raised root/public Homepage to `v=1.3_home_clear_backdrop` and mirrored CSS exactly | Static scope assertions pass and CSS SHA-256 hashes match |
+
