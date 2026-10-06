@@ -3529,12 +3529,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (indHidden) indHidden.value = activeIndustryQuery;
 
     applyJobFilters(true, true);
-    const selectedTitle = (window.EasyCVCategoryModal && window.EasyCVCategoryModal.getPrimaryFilterQuery()) || 'Tất cả';
-    showToast(`Đã lọc danh mục nghề: ${selectedTitle}`, '🎯');
-
-    const targetSection = document.getElementById('splitListPane') || document.getElementById('jobListingContainer') || document.querySelector('.job-main-columns');
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (primaryQuery) {
+      showToast(`Đã lọc danh mục nghề: ${primaryQuery}`, '🎯');
+      const targetSection = document.getElementById('splitListPane') || document.getElementById('jobListingContainer') || document.querySelector('.job-main-columns');
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      showToast('Đã hủy lọc danh mục nghề', '✓');
     }
   });
 

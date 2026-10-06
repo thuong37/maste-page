@@ -368,6 +368,11 @@
 
       if (this.triggerBtn) {
         this.triggerBtn.addEventListener('click', (e) => {
+          if (e.target.closest('#categoryClearBtn, .category-clear-btn')) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+          }
           e.preventDefault();
           if (self.isOpen) {
             self.close(false);
@@ -730,38 +735,99 @@
       return '';
     },
 
+    clearAndApply: function () {
+      this.appliedSelection = {
+        groups: new Set(),
+        subgroups: new Set(),
+        roles: new Set()
+      };
+      this.tempSelection = {
+        groups: new Set(),
+        subgroups: new Set(),
+        roles: new Set()
+      };
+
+      this.updateTriggerUI();
+      if (this.isOpen) {
+        this.renderGroups();
+        this.renderSubgroups();
+        this.renderPopularKeywords();
+      }
+
+      const payload = {
+        groups: [],
+        subgroups: [],
+        roles: [],
+        primaryQuery: ''
+      };
+
+      if (typeof this.onApplyCallback === 'function') {
+        this.onApplyCallback(payload);
+      }
+
+      const event = new CustomEvent('easycv:category-applied', { detail: payload, bubbles: true });
+      document.dispatchEvent(event);
+    },
+
     updateTriggerUI: function () {
       if (!this.triggerLabel) return;
 
-      const totalItems = this.appliedSelection.roles.size + this.appliedSelection.groups.size;
+      const totalItems = this.appliedSelection.roles.size > 0
+        ? this.appliedSelection.roles.size
+        : (this.appliedSelection.subgroups.size > 0
+            ? this.appliedSelection.subgroups.size
+            : this.appliedSelection.groups.size);
+
+      const chevron = this.triggerBtn ? this.triggerBtn.querySelector('.category-chevron') : null;
+      let clearBtn = this.triggerBtn ? this.triggerBtn.querySelector('.category-clear-btn') : null;
+
+      if (!clearBtn && this.triggerBtn) {
+        clearBtn = document.createElement('span');
+        clearBtn.className = 'category-clear-btn';
+        clearBtn.id = 'categoryClearBtn';
+        clearBtn.setAttribute('role', 'button');
+        clearBtn.setAttribute('tabindex', '0');
+        clearBtn.setAttribute('title', 'Hủy chọn danh mục');
+        clearBtn.setAttribute('aria-label', 'Hủy chọn danh mục nghề');
+        clearBtn.innerHTML = '✕';
+        this.triggerBtn.appendChild(clearBtn);
+
+        const self = this;
+        clearBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          self.clearAndApply();
+        });
+        clearBtn.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            e.stopPropagation();
+            self.clearAndApply();
+          }
+        });
+      }
+
       if (totalItems === 0) {
-        this.triggerLabel.textContent = 'Danh mục Nghề';
-        if (this.triggerBtn) this.triggerBtn.classList.remove('is-active');
+        this.triggerLabel.textContent = 'Danh mục nghề';
+        if (this.triggerBtn) {
+          this.triggerBtn.classList.remove('is-active');
+          this.triggerBtn.title = 'Mở bộ lọc theo danh mục nghề';
+        }
+        if (chevron) chevron.style.display = '';
+        if (clearBtn) clearBtn.style.display = 'none';
         return;
       }
 
-      if (this.triggerBtn) this.triggerBtn.classList.add('is-active');
-
-      if (this.appliedSelection.groups.size === 1) {
-        const groupKey = Array.from(this.appliedSelection.groups)[0];
-        const group = CATEGORY_DATA.find(g => g.key === groupKey);
-        const name = group ? group.name : 'Danh mục Nghề';
-        this.triggerLabel.textContent = name.length > 20 ? `${name.slice(0, 18)}…` : name;
-      } else if (this.appliedSelection.roles.size === 1) {
-        const role = Array.from(this.appliedSelection.roles)[0];
-        this.triggerLabel.textContent = role.length > 18 ? `${role.slice(0, 16)}…` : role;
-      } else if (this.appliedSelection.subgroups.size === 1 && this.appliedSelection.roles.size === 0) {
-        const sub = Array.from(this.appliedSelection.subgroups)[0];
-        this.triggerLabel.textContent = sub.length > 18 ? `${sub.slice(0, 16)}…` : sub;
-      } else {
-        const first = this.appliedSelection.groups.size > 0
-          ? CATEGORY_DATA.find(g => g.key === Array.from(this.appliedSelection.groups)[0])?.name || 'Nghề'
-          : (this.appliedSelection.subgroups.size > 0
-              ? Array.from(this.appliedSelection.subgroups)[0]
-              : Array.from(this.appliedSelection.roles)[0] || 'Nghề');
-        const prefix = first.length > 12 ? `${first.slice(0, 10)}…` : first;
-        this.triggerLabel.textContent = `${prefix} (${totalItems})`;
+      if (this.triggerBtn) {
+        this.triggerBtn.classList.add('is-active');
+        this.triggerBtn.title = `Đã chọn ${totalItems} danh mục nghề (Nhấn ✕ để hủy chọn nhanh)`;
       }
+
+      // Theo yêu cầu người dùng: lúc nào cũng hiện "Danh mục nghề", có chọn thì hiện thêm số các danh mục con: "Danh mục nghề (5)"
+      this.triggerLabel.textContent = `Danh mục nghề (${totalItems})`;
+
+      if (chevron) chevron.style.display = 'none';
+      if (clearBtn) clearBtn.style.display = 'inline-flex';
     },
 
     renderPopularKeywords: function () {
