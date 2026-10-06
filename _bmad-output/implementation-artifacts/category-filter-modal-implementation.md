@@ -102,3 +102,12 @@ Theo yêu cầu của người dùng cùng ảnh tham khảo trực quan (chuẩ
 | Responsive and interaction regression | Homepage and Job List share the modal controller | Extended Chrome verification across desktop, 375px mobile, selection, and public mirrors | All automated checks PASS; mobile dialog remains inside the viewport |
 | Browser cache and mirror parity | Homepage referenced the earlier cache key | Raised root/public Homepage to `v=1.3_home_clear_backdrop` and mirrored CSS exactly | Static scope assertions pass and CSS SHA-256 hashes match |
 
+## 9. Job Detail Transparent Backdrop Parity — 2026-10-06
+
+| Scenario | Previous state | Technical solution | Verified result |
+|---|---|---|---|
+| Job Detail category popup | Still inherited the shared dark scrim and `blur(4px)` | Added `job-detail-page` to the body and grouped it with the existing transparent/no-blur scopes | Root and public Job Detail compute `rgba(0, 0, 0, 0)` and `backdrop-filter: none` |
+| Outside-click dismissal | Backdrop provides the dismissal hit area | Kept the backdrop element and `pointer-events: auto` unchanged | Outside-click capture remains active |
+| Mobile containment | Needed validation after visual-layer parity | Added a dedicated 375×812 Job Detail browser check | Dialog width is 335px inside the 375px viewport |
+| Cache and mirrors | Detail page still referenced the preceding modal asset key | Raised both Detail consumers to `v=1.5_all_pages_clear_backdrop` and mirrored CSS/HTML | Static and SHA-256 parity checks PASS |
+

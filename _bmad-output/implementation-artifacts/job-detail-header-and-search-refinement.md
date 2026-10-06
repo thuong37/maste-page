@@ -113,3 +113,7 @@
 | Đồng bộ triển khai | Controller chỉ nằm trong file chi tiết lớn | Tách module và mirror sang `public/`; guard controller cũ làm fallback | Root/public có SHA-256 trùng khớp |
 
 Kiểm thử tự động: `scratch/verify_job_detail_search_sync.js` — Chrome headless PASS trên URL công việc `id=3`, root/public, desktop/mobile và luồng redirect đầy đủ.
+
+### Điều chỉnh backdrop Danh mục nghề — 2026-10-06
+
+Popup Danh mục nghề trên màn Chi tiết đã được đồng bộ hoàn toàn với Trang chủ và Job List: không phủ tối, không blur giao diện xung quanh, vẫn giữ click ngoài để đóng và không tràn trên mobile 375px. Chi tiết ma trận kiểm thử nằm tại `spec-job-detail-category-modal-transparent-backdrop.md`.

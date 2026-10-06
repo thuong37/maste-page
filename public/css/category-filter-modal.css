@@ -121,7 +121,8 @@
 }
 
 body.job-list-page .category-modal-backdrop,
-body.home-page .category-modal-backdrop {
+body.home-page .category-modal-backdrop,
+body.job-detail-page .category-modal-backdrop {
   background: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;

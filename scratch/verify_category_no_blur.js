@@ -120,14 +120,38 @@ async function run() {
     for (const path of ['chi-tiet-viec-lam.html', 'public/chi-tiet-viec-lam.html']) {
       await navigate(path);
       await evaluate("document.getElementById('categoryFilterTrigger').click()");
-      const sharedBackdrop = await evaluate(`(() => {
+      const detailBackdrop = await evaluate(`(() => {
         const style = getComputedStyle(document.getElementById('categoryModalBackdrop'));
-        return { blur: style.backdropFilter, background: style.backgroundColor };
+        return {
+          bodyScoped: document.body.classList.contains('job-detail-page'),
+          blur: style.backdropFilter,
+          background: style.backgroundColor,
+          pointerEvents: style.pointerEvents
+        };
       })()`);
-      if (sharedBackdrop.blur !== 'blur(4px)' || sharedBackdrop.background !== 'rgba(15, 23, 42, 0.45)') {
-        throw new Error(`${path} shared backdrop changed: ${JSON.stringify(sharedBackdrop)}`);
+      if (!detailBackdrop.bodyScoped || detailBackdrop.blur !== 'none' || detailBackdrop.background !== 'rgba(0, 0, 0, 0)' || detailBackdrop.pointerEvents !== 'auto') {
+        throw new Error(`${path} detail backdrop state failed: ${JSON.stringify(detailBackdrop)}`);
       }
     }
+
+    await send('Emulation.setDeviceMetricsOverride', { width: 375, height: 812, deviceScaleFactor: 1, mobile: true });
+    await navigate('chi-tiet-viec-lam.html?id=3');
+    await evaluate("document.getElementById('categoryFilterTrigger').click()");
+    const detailMobile = await evaluate(`(() => {
+      const dialog = document.querySelector('.category-modal-dialog').getBoundingClientRect();
+      const backdrop = getComputedStyle(document.getElementById('categoryModalBackdrop'));
+      return {
+        blur: backdrop.backdropFilter,
+        background: backdrop.backgroundColor,
+        pointerEvents: backdrop.pointerEvents,
+        width: dialog.width,
+        viewport: document.documentElement.clientWidth
+      };
+    })()`);
+    if (detailMobile.blur !== 'none' || detailMobile.background !== 'rgba(0, 0, 0, 0)' || detailMobile.pointerEvents !== 'auto' || detailMobile.width > detailMobile.viewport) {
+      throw new Error(`Job Detail mobile backdrop state failed: ${JSON.stringify(detailMobile)}`);
+    }
+    await send('Emulation.clearDeviceMetricsOverride');
 
     await navigate('public/viec-lam.html');
     await evaluate("document.getElementById('categoryFilterTrigger').click()");
@@ -144,7 +168,7 @@ async function run() {
       throw new Error(`public/viec-lam.html backdrop state failed: ${JSON.stringify(publicJobList)}`);
     }
 
-    console.log(JSON.stringify({ desktop, closedOutside, selection, mobile, publicJobList, homepageMatchesJobList: true, jobDetailPreservesBlurAndScrim: true }, null, 2));
+    console.log(JSON.stringify({ desktop, closedOutside, selection, mobile, detailMobile, publicJobList, homepageMatchesJobList: true, jobDetailMatchesJobList: true }, null, 2));
     await send('Browser.close');
     ws.close();
   } catch (error) {
