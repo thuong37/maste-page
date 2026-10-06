@@ -1227,9 +1227,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Document Title
     document.title = `${job.title} | ${job.company} - Tuyển dụng EasyCV`;
-    const breadcrumbTitle = document.getElementById('breadcrumbJobTitle');
     const pageHeaderTitle = document.getElementById('pageHeaderTitle');
-    if (breadcrumbTitle) breadcrumbTitle.textContent = job.title;
     if (pageHeaderTitle) pageHeaderTitle.textContent = job.title;
 
     // Hero

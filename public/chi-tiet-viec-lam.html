@@ -11,26 +11,16 @@
   <link rel="stylesheet" href="css/home.css?v=7.0_cv_carousel">
   <link rel="stylesheet" href="css/location-picker.css?v=2.0">
   <link rel="stylesheet" href="css/category-filter-modal.css?v=1.5_all_pages_clear_backdrop">
-  <link rel="stylesheet" href="css/viec-lam.css?v=13.0_detail_search_sync">
+  <link rel="stylesheet" href="css/viec-lam.css?v=13.1_detail_list_flush">
   <style>
     .single-job-hero {
       background: linear-gradient(180deg, #FFFFFF 0%, #FFF7ED 50%, #F8FAFC 100%);
       border-bottom: 1px solid #E2E8F0;
       padding: 20px 0 16px 0;
     }
-    .detail-breadcrumb-below-search {
-      margin-top: 14px;
-      margin-bottom: 0;
-      padding: 0 4px;
-      font-size: 13.5px;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
     /* Bo góc thẻ việc làm liên quan khác và logo chuẩn 81x81 */
     .split-list-feed {
-      padding: 12px 14px 20px 14px !important;
+      padding: 12px 0 20px 0 !important;
       gap: 12px !important;
     }
     .split-job-card {
@@ -824,15 +814,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Breadcrumb: Mô tả đường dẫn bên dưới box tìm kiếm -->
-        <nav class="breadcrumb-nav detail-breadcrumb-below-search" aria-label="Breadcrumb">
-          <a href="index.html">Trang chủ</a>
-          <span class="sep">/</span>
-          <a href="viec-lam.html">Tìm kiếm việc làm</a>
-          <span class="sep">/</span>
-          <span class="current" id="breadcrumbJobTitle">Chuyên Viên Quản Lý Chuỗi Cung Ứng &amp; Vận Hành (Logistics)</span>
-        </nav>
 
         <!-- Popover / Modal: Chọn Nhóm nghề, Nghề hoặc Chuyên môn -->
         <div class="category-modal-overlay" id="categoryModalOverlay" role="dialog" aria-modal="true" aria-labelledby="categoryModalTitle" hidden>

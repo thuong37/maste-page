@@ -10,6 +10,7 @@ async function runTestSuite() {
     '--headless=new',
     '--remote-debugging-port=' + port,
     '--disable-gpu',
+    '--user-data-dir=D:\\master page\\scratch\\chrome-profile-detail-layout-cleanup',
     '--window-size=1440,1100',
     'http://localhost:3000/chi-tiet-viec-lam.html'
   ]);
@@ -66,6 +67,8 @@ async function runTestSuite() {
         const topNav = document.querySelector('.detail-top-nav');
         const listPane = document.getElementById('splitListPane');
         const listPaneComputed = listPane ? window.getComputedStyle(listPane) : null;
+        const listFeed = document.getElementById('splitListFeed');
+        const listFeedComputed = listFeed ? window.getComputedStyle(listFeed) : null;
         const firstCard = document.querySelector('.split-job-card');
         const firstCardComputed = firstCard ? window.getComputedStyle(firstCard) : null;
         const searchForm = document.getElementById('jobSearchForm');
@@ -75,9 +78,13 @@ async function runTestSuite() {
 
         return {
           detailTopNavPresent: !!topNav,
+          breadcrumbPresent: !!document.querySelector('.detail-breadcrumb-below-search'),
           listPanePaddingLeft: listPaneComputed ? listPaneComputed.paddingLeft : null,
           listPanePaddingRight: listPaneComputed ? listPaneComputed.paddingRight : null,
+          listFeedPaddingLeft: listFeedComputed ? listFeedComputed.paddingLeft : null,
+          listFeedPaddingRight: listFeedComputed ? listFeedComputed.paddingRight : null,
           firstCardWidth: firstCard ? firstCard.offsetWidth : null,
+          listFeedWidth: listFeed ? listFeed.clientWidth : null,
           listPaneWidth: listPane ? listPane.clientWidth : null,
           firstCardBorderLeft: firstCardComputed ? firstCardComputed.borderLeft : null,
           hasSearchForm: !!searchForm,
@@ -90,7 +97,10 @@ async function runTestSuite() {
     returnByValue: true
   });
 
-  console.log('1. Layout & Elements Check:', JSON.stringify(checkInitial.value, null, 2));
+  console.log('1. Layout & Elements Check:', JSON.stringify(checkInitial.result.value, null, 2));
+  if (checkInitial.result.value.breadcrumbPresent || checkInitial.result.value.listFeedPaddingLeft !== '0px' || checkInitial.result.value.listFeedPaddingRight !== '0px' || checkInitial.result.value.firstCardWidth !== checkInitial.result.value.listFeedWidth) {
+    throw new Error(`Related-list cleanup failed: ${JSON.stringify(checkInitial.result.value)}`);
+  }
 
   // Capture Initial Screenshot
   const shot1 = await send('Page.captureScreenshot', { format: 'png' });
@@ -114,7 +124,7 @@ async function runTestSuite() {
     `,
     returnByValue: true
   });
-  console.log('2. Open Category Modal Check:', JSON.stringify(openModalRes.value, null, 2));
+  console.log('2. Open Category Modal Check:', JSON.stringify(openModalRes.result.value, null, 2));
   await new Promise(r => setTimeout(r, 600));
 
   const shotCat = await send('Page.captureScreenshot', { format: 'png' });
@@ -157,7 +167,7 @@ async function runTestSuite() {
     `,
     returnByValue: true
   });
-  console.log('3. Search Input & Clear Button Check:', JSON.stringify(searchTestRes.value, null, 2));
+  console.log('3. Search Input & Clear Button Check:', JSON.stringify(searchTestRes.result.value, null, 2));
 
   // Step 4: Test Sticky Search on Scroll
   await send('Runtime.evaluate', {
@@ -181,7 +191,7 @@ async function runTestSuite() {
     `,
     returnByValue: true
   });
-  console.log('4. Sticky Search on Scroll Check:', JSON.stringify(stickyCheck.value, null, 2));
+  console.log('4. Sticky Search on Scroll Check:', JSON.stringify(stickyCheck.result.value, null, 2));
 
   const shotSticky = await send('Page.captureScreenshot', { format: 'png' });
   if (shotSticky && shotSticky.data) {
@@ -205,6 +215,30 @@ async function runTestSuite() {
     fs.writeFileSync(path.resolve(__dirname, 'chi_tiet_feed_scrolled.png'), Buffer.from(shotFeed.data, 'base64'));
     console.log('Saved scratch/chi_tiet_feed_scrolled.png');
   }
+
+  // Step 6: Verify the same cleanup at the 375px mobile breakpoint
+  await send('Emulation.setDeviceMetricsOverride', { width: 375, height: 812, deviceScaleFactor: 1, mobile: true });
+  const mobileLayout = await send('Runtime.evaluate', {
+    expression: `(() => {
+      const feed = document.getElementById('splitListFeed');
+      const card = feed?.querySelector('.split-job-card');
+      const style = feed ? getComputedStyle(feed) : null;
+      return {
+        breadcrumbPresent: !!document.querySelector('.detail-breadcrumb-below-search'),
+        paddingLeft: style?.paddingLeft,
+        paddingRight: style?.paddingRight,
+        cardWidth: card?.offsetWidth,
+        feedWidth: feed?.clientWidth,
+        viewport: document.documentElement.clientWidth
+      };
+    })()`,
+    returnByValue: true
+  });
+  console.log('5. Mobile Related-list Check:', JSON.stringify(mobileLayout.result.value, null, 2));
+  if (mobileLayout.result.value.breadcrumbPresent || mobileLayout.result.value.paddingLeft !== '0px' || mobileLayout.result.value.paddingRight !== '0px' || mobileLayout.result.value.cardWidth !== mobileLayout.result.value.feedWidth) {
+    throw new Error(`Mobile related-list cleanup failed: ${JSON.stringify(mobileLayout.result.value)}`);
+  }
+  await send('Emulation.clearDeviceMetricsOverride');
 
   ws.close();
   chrome.kill();

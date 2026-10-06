@@ -117,3 +117,12 @@ Kiểm thử tự động: `scratch/verify_job_detail_search_sync.js` — Chrome
 ### Điều chỉnh backdrop Danh mục nghề — 2026-10-06
 
 Popup Danh mục nghề trên màn Chi tiết đã được đồng bộ hoàn toàn với Trang chủ và Job List: không phủ tối, không blur giao diện xung quanh, vẫn giữ click ngoài để đóng và không tràn trên mobile 375px. Chi tiết ma trận kiểm thử nằm tại `spec-job-detail-category-modal-transparent-backdrop.md`.
+
+## 6. Related-list Edge Alignment and Breadcrumb Removal — 2026-10-06
+
+| Hạng mục | Trạng thái trước | Giải pháp | Kết quả |
+|---|---|---|---|
+| Lề ngang danh sách liên quan | Override nội tuyến đặt lại `14px` hai bên, làm các thẻ thụt vào | Đặt padding feed thành `12px 0 20px`; giữ nguyên padding nội dung từng card và padding header | Desktop: card/feed 458px; mobile: 333px; hai bên 0px |
+| Breadcrumb dưới thanh tìm kiếm | Vẫn hiển thị “Trang chủ / Tìm kiếm việc làm / …” | Xóa toàn bộ `<nav>` breadcrumb, CSS nội tuyến và hook cập nhật tiêu đề không còn dùng | Không còn phần tử breadcrumb trong DOM |
+| Cache và mirror | Trang Chi tiết dùng cache key CSS cũ | Nâng `viec-lam.css` lên `v=13.1_detail_list_flush`; đồng bộ root/public | SHA-256 parity PASS |
+| Regression coverage | Test cũ chỉ log và đọc sai cấu trúc kết quả CDP | Thêm assertion cứng, sửa `result.value`, bổ sung breakpoint 375px | Toàn bộ suite Chrome headless PASS |
