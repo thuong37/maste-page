@@ -1202,4 +1202,5 @@
     }
   });
 
+  window.EasyCVCategoryData = CATEGORY_DATA;
 })();

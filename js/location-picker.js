@@ -5,15 +5,101 @@
   if (!trigger || !picker || !select) return;
 
   const places = [
-    { name: 'Hà Nội', old: ['Ba Đình', 'Hoàn Kiếm', 'Đống Đa', 'Hai Bà Trưng', 'Cầu Giấy', 'Thanh Xuân', 'Hà Đông', 'Long Biên'], new: ['Ba Đình', 'Hoàn Kiếm', 'Cầu Giấy', 'Hà Đông'] },
-    { name: 'Hồ Chí Minh', old: ['Bình Chánh', 'Bình Tân', 'Bình Thạnh', 'Cần Giờ', 'Củ Chi', 'Gò Vấp', 'Phú Nhuận', 'Quận 1', 'Quận 3', 'Quận 7', 'Tân Bình', 'Thủ Đức'], new: ['Bến Thành', 'Sài Gòn', 'Tân Định', 'Bình Thạnh', 'Thủ Đức'] },
-    { name: 'Bình Dương', old: ['Dĩ An', 'Thuận An', 'Thủ Dầu Một', 'Bến Cát'], new: [] },
-    { name: 'Bắc Ninh', old: ['Bắc Ninh', 'Từ Sơn', 'Quế Võ'], new: ['Bắc Ninh', 'Từ Sơn'] },
-    { name: 'Đồng Nai', old: ['Biên Hòa', 'Long Thành', 'Nhơn Trạch'], new: ['Biên Hòa', 'Long Thành'] },
-    { name: 'Hưng Yên', old: ['Hưng Yên', 'Văn Lâm', 'Mỹ Hào'], new: ['Hưng Yên', 'Mỹ Hào'] },
-    { name: 'Đà Nẵng', old: ['Hải Châu', 'Thanh Khê', 'Sơn Trà', 'Liên Chiểu'], new: ['Hải Châu', 'Sơn Trà'] },
-    { name: 'Hải Phòng', old: ['Hồng Bàng', 'Ngô Quyền', 'Lê Chân', 'Thủy Nguyên'], new: ['Hồng Bàng', 'Ngô Quyền'] },
-    { name: 'Cần Thơ', old: ['Ninh Kiều', 'Bình Thủy', 'Cái Răng'], new: ['Ninh Kiều', 'Cái Răng'] }
+    {
+      name: 'Hà Nội',
+      old: [
+        'Ba Đình', 'Hoàn Kiếm', 'Đống Đa', 'Hai Bà Trưng', 'Cầu Giấy',
+        'Thanh Xuân', 'Hà Đông', 'Long Biên', 'Nam Từ Liêm', 'Bắc Từ Liêm',
+        'Tây Hồ', 'Hoàng Mai', 'Gia Lâm', 'Đông Anh', 'Hoài Đức',
+        'Thanh Trì', 'Sóc Sơn', 'Mê Linh', 'Thường Tín', 'Đan Phượng'
+      ],
+      new: [
+        'Phường Tràng Tiền', 'Phường Hàng Bạc', 'Phường Kim Mã', 'Phường Dịch Vọng',
+        'Phường Nghĩa Đô', 'Phường Nhân Chính', 'Phường Văn Quán', 'Phường Mộ Lao',
+        'Phường Mỹ Đình 1', 'Phường Mỹ Đình 2', 'Phường Bồ Đề', 'Phường Yên Hòa'
+      ]
+    },
+    {
+      name: 'Hồ Chí Minh',
+      old: [
+        'Quận 1', 'Quận 3', 'Quận 4', 'Quận 5', 'Quận 6',
+        'Quận 7', 'Quận 8', 'Quận 10', 'Quận 11', 'Quận 12',
+        'Bình Thạnh', 'Gò Vấp', 'Phú Nhuận', 'Tân Bình', 'Tân Phú',
+        'Bình Tân', 'Thủ Đức', 'Bình Chánh', 'Củ Chi', 'Hóc Môn',
+        'Nhà Bè', 'Cần Giờ'
+      ],
+      new: [
+        'Phường Bến Nghé', 'Phường Bến Thành', 'Phường Tân Định', 'Phường Đa Kao',
+        'Phường Thảo Điền', 'Phường An Phú', 'Phường Thủ Thiêm', 'Phường 1 (Tân Bình)',
+        'Phường 2 (Tân Bình)', 'Phường Hiệp Phú', 'Phường Linh Trung', 'Phường Tân Phong (Q7)'
+      ]
+    },
+    {
+      name: 'Bình Dương',
+      old: [
+        'Thủ Dầu Một', 'Dĩ An', 'Thuận An', 'Bến Cát', 'Tân Uyên',
+        'Bàu Bàng', 'Bắc Tân Uyên', 'Phú Giáo', 'Dầu Tiếng'
+      ],
+      new: [
+        'Phường Phú Hòa', 'Phường Hiệp Thành', 'Phường Dĩ An', 'Phường An Phú',
+        'Phường Lái Thiêu', 'Phường Thuận Giao', 'Phường Mỹ Phước', 'Phường Uyên Hưng'
+      ]
+    },
+    {
+      name: 'Đà Nẵng',
+      old: [
+        'Hải Châu', 'Thanh Khê', 'Sơn Trà', 'Ngũ Hành Sơn', 'Liên Chiểu', 'Cẩm Lệ', 'Hòa Vang'
+      ],
+      new: [
+        'Phường Hải Châu 1', 'Phường Hải Châu 2', 'Phường Thạch Thang',
+        'Phường An Hải Bắc', 'Phường Mỹ An', 'Phường Hòa Khánh Bắc', 'Phường Khuê Trung'
+      ]
+    },
+    {
+      name: 'Bắc Ninh',
+      old: [
+        'TP. Bắc Ninh', 'Từ Sơn', 'Quế Võ', 'Yên Phong', 'Thuận Thành', 'Tiên Du', 'Gia Bình', 'Lương Tài'
+      ],
+      new: [
+        'Phường Tiền An', 'Phường Suối Hoa', 'Phường Đồng Nguyên', 'Phường Phố Mới', 'Phường Hồ', 'Phường Kinh Bắc'
+      ]
+    },
+    {
+      name: 'Đồng Nai',
+      old: [
+        'Biên Hòa', 'Long Thành', 'Nhơn Trạch', 'Trảng Bom', 'Vĩnh Cửu', 'Định Quán', 'Xuân Lộc', 'Long Khánh'
+      ],
+      new: [
+        'Phường Quyết Thắng', 'Phường Tam Hiệp', 'Phường Long Bình', 'Thị trấn Long Thành', 'Thị trấn Hiệp Phước'
+      ]
+    },
+    {
+      name: 'Hải Phòng',
+      old: [
+        'Hồng Bàng', 'Ngô Quyền', 'Lê Chân', 'Hải An', 'Kiến An', 'Đồ Sơn', 'Thủy Nguyên', 'An Dương'
+      ],
+      new: [
+        'Phường Minh Khai', 'Phường Máy Tơ', 'Phường Cầu Đất', 'Phường Đằng Giang', 'Phường Quán Toan'
+      ]
+    },
+    {
+      name: 'Cần Thơ',
+      old: [
+        'Ninh Kiều', 'Bình Thủy', 'Cái Răng', 'Ô Môn', 'Thốt Nốt', 'Phong Điền', 'Thới Lai'
+      ],
+      new: [
+        'Phường An Khánh', 'Phường Tân An', 'Phường Trà Nóc', 'Phường Lê Bình', 'Phường Hưng Lợi'
+      ]
+    },
+    {
+      name: 'Hưng Yên',
+      old: [
+        'TP. Hưng Yên', 'Văn Lâm', 'Mỹ Hào', 'Văn Giang', 'Yên Mỹ', 'Khoái Châu'
+      ],
+      new: [
+        'Phường Hiến Nam', 'Phường Lê Lợi', 'Thị trấn Như Quỳnh', 'Phường Bần Yên Nhân'
+      ]
+    }
   ];
   const provinceList = document.getElementById('locationProvinceList');
   const districtList = document.getElementById('locationDistrictList');
@@ -133,7 +219,7 @@
       item.setAttribute('aria-pressed', String(item === button));
     });
     if (districtSearch) {
-      districtSearch.placeholder = mode === 'new' ? 'Nhập Phường/Xã' : 'Nhập Quận/Huyện';
+      districtSearch.placeholder = mode === 'new' ? 'Nhập Phường/Xã mới' : 'Nhập Quận/Huyện cũ';
       districtSearch.value = '';
     }
     render();

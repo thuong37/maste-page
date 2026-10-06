@@ -2766,15 +2766,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   const RECENT_SEARCH_KEY = 'easycv_recent_searches_v2';
   const DEFAULT_HISTORY = [
-    { keyword: 'Kiến trúc sư', count: 94 },
     { keyword: 'ReactJS Developer', count: 156 },
+    { keyword: 'Telesales', count: 280 },
     { keyword: 'Marketing Leader', count: 92 },
     { keyword: 'UI/UX Designer', count: 143 },
     { keyword: 'Java Spring Boot', count: 67 },
     { keyword: 'Kế toán tổng hợp', count: 184 }
   ];
 
-  const POPULAR_KEYWORDS = ['Finance', 'Kinh doanh', 'IT', 'Accountant', 'Marketing', 'Kiến trúc sư'];
+  const POPULAR_KEYWORDS = ['Telesales', 'Kinh doanh', 'Java Spring', 'Marketing', 'Kế toán'];
 
   const ALL_SUGGESTIONS = [
     { keyword: 'Kiến trúc sư', count: 94 },
@@ -2817,172 +2817,272 @@ document.addEventListener('DOMContentLoaded', () => {
   const RECOMMENDED_JOBS_POOL = [
     // 1. Sales & Kinh doanh
     {
+      id: 1,
       logo: 'assets/logos/company-vikimco-64.svg',
       title: 'Giám Đốc Kinh Doanh Vikimco Toàn Quốc',
       company: 'CÔNG TY CỔ PHẦN TẬP ĐOÀN VIKIMCO',
       salary: '$1,000–1,500 / tháng',
+      location: 'Hà Nội & Toàn quốc',
       category: 'sales',
-      skills: ['Sales', 'Kinh doanh', 'B2B', 'Quản lý']
+      skills: ['Sales', 'Kinh doanh', 'B2B', 'Quản lý'],
+      isPartner: true,
+      postedDaysAgo: 1,
+      interactionScore: 96
     },
     {
+      id: 2,
       logo: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=120&h=120&q=80',
       title: 'Chuyên Viên Khách Hàng Doanh Nghiệp (RM)',
       company: 'Ngân hàng Techcombank',
       salary: '20 - 35 triệu',
+      location: 'Hà Nội',
       category: 'sales',
-      skills: ['Sales B2B', 'Quan hệ khách hàng', 'Tài chính']
+      skills: ['Sales B2B', 'Quan hệ khách hàng', 'Tài chính'],
+      isPartner: true,
+      postedDaysAgo: 2,
+      interactionScore: 94
     },
     {
+      id: 3,
       logo: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=120&h=120&q=80',
       title: 'Trưởng Phòng Kinh Doanh (B2B Sales Lead)',
       company: 'Tập đoàn Mai Linh',
       salary: '25 - 40 triệu',
+      location: 'TP. Hồ Chí Minh',
       category: 'sales',
-      skills: ['Sales B2B', 'Kinh doanh', 'Quản lý đội ngũ']
+      skills: ['Sales B2B', 'Kinh doanh', 'Quản lý đội ngũ'],
+      isPartner: true,
+      postedDaysAgo: 3,
+      interactionScore: 88
     },
     {
+      id: 4,
       logo: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=120&h=120&q=80',
       title: 'Telesales Chuyên Nghiệp (Kinh Doanh & CSKH)',
       company: 'Công ty Cổ phần VNPAY',
       salary: '12 - 22 triệu',
+      location: 'Hà Nội',
       category: 'sales',
-      skills: ['Telesales', 'Bán hàng', 'Tư vấn', 'Sales']
+      skills: ['Telesales', 'Bán hàng', 'Tư vấn', 'Sales'],
+      isPartner: true,
+      postedDaysAgo: 1,
+      interactionScore: 92
     },
     {
+      id: 5,
       logo: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=120&h=120&q=80',
       title: 'Sales Logistics & Cước Vận Tải Quốc Tế',
       company: 'Bee Logistics Corporation',
       salary: '15 - 30 triệu',
+      location: 'Hải Phòng & TP. HCM',
       category: 'sales',
-      skills: ['Sales Logistics', 'Xuất nhập khẩu', 'Cước tàu', 'Sales']
+      skills: ['Sales Logistics', 'Xuất nhập khẩu', 'Cước tàu', 'Sales'],
+      isPartner: false,
+      postedDaysAgo: 2,
+      interactionScore: 85
     },
     {
+      id: 6,
       logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=120&h=120&q=80',
       title: 'Chuyên Viên Kinh Doanh Bất Động Sản',
       company: 'Tập đoàn Đất Xanh',
       salary: '15 - 50 triệu',
+      location: 'TP. Hồ Chí Minh',
       category: 'sales',
-      skills: ['Sales BĐS', 'Bán hàng', 'Môi giới', 'Sales']
+      skills: ['Sales BĐS', 'Bán hàng', 'Môi giới', 'Sales'],
+      isPartner: true,
+      postedDaysAgo: 4,
+      interactionScore: 82
     },
 
     // 2. Kế toán & Tài chính
     {
+      id: 7,
       logo: 'assets/logos/company-mua-he-64.png',
       title: 'Kế Toán Tổng Hợp (Mảng Giải Trí)',
       company: 'CÔNG TY TNHH TRUYỀN THÔNG MÙA HÈ',
       salary: '20 - 25 triệu',
+      location: 'TP. Hồ Chí Minh',
       category: 'finance',
-      skills: ['Kế toán', 'Báo cáo thuế', 'Tài chính']
+      skills: ['Kế toán', 'Báo cáo thuế', 'Tài chính'],
+      isPartner: false,
+      postedDaysAgo: 2,
+      interactionScore: 86
     },
     {
+      id: 8,
       logo: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=120&h=120&q=80',
       title: 'Kế Toán Trưởng Doanh Nghiệp (Chief Accountant)',
       company: 'Samsung Electronics HCMC',
       salary: '35 - 50 triệu',
+      location: 'TP. Hồ Chí Minh',
       category: 'finance',
-      skills: ['Kế toán trưởng', 'Kiểm toán', 'Thuế']
+      skills: ['Kế toán trưởng', 'Kiểm toán', 'Thuế'],
+      isPartner: true,
+      postedDaysAgo: 1,
+      interactionScore: 97
     },
     {
+      id: 9,
       logo: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=120&h=120&q=80',
       title: 'Chuyên Viên Phân Tích Tài Chính & Đầu Tư',
       company: 'Công ty Chứng khoán SSI',
       salary: '25 - 40 triệu',
+      location: 'Hà Nội',
       category: 'finance',
-      skills: ['Phân tích tài chính', 'Đầu tư', 'Chứng khoán']
+      skills: ['Phân tích tài chính', 'Đầu tư', 'Chứng khoán'],
+      isPartner: true,
+      postedDaysAgo: 3,
+      interactionScore: 90
     },
 
     // 3. Công nghệ Thông tin (IT)
     {
+      id: 10,
       logo: 'assets/logos/company-fpt-64.svg',
       title: 'Senior IT Infrastructure Officer',
       company: 'TẬP ĐOÀN CÔNG NGHỆ FPT',
       salary: 'Thương lượng',
+      location: 'Hà Nội & Đà Nẵng',
       category: 'it',
-      skills: ['IT', 'Infrastructure', 'Hạ tầng mạng', 'DevOps']
+      skills: ['IT', 'Infrastructure', 'Hạ tầng mạng', 'DevOps'],
+      isPartner: true,
+      postedDaysAgo: 1,
+      interactionScore: 98
     },
     {
+      id: 11,
       logo: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80',
       title: 'Senior Fullstack Developer (ReactJS / Node.js)',
       company: 'FPT Software',
       salary: '28 - 45 triệu',
+      location: 'Đà Nẵng & Hà Nội',
       category: 'it',
-      skills: ['ReactJS', 'Node.js', 'TypeScript', 'Frontend', 'Backend']
+      skills: ['ReactJS', 'Node.js', 'TypeScript', 'Frontend', 'Backend'],
+      isPartner: true,
+      postedDaysAgo: 1,
+      interactionScore: 95
     },
     {
+      id: 12,
       logo: 'https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=120&h=120&q=80',
       title: 'Senior Product Designer (UI/UX App/Web)',
       company: 'VNG Corporation (Zalo Team)',
       salary: '30 - 50 triệu',
+      location: 'TP. Hồ Chí Minh',
       category: 'it',
-      skills: ['UI/UX', 'Figma', 'Product Design', 'Web Design']
+      skills: ['UI/UX', 'Figma', 'Product Design', 'Web Design'],
+      isPartner: true,
+      postedDaysAgo: 2,
+      interactionScore: 93
     },
     {
+      id: 13,
       logo: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=120&h=120&q=80',
       title: 'Data Analyst / Chuyên Viên Phân Tích Dữ Liệu',
       company: 'Shopee Vietnam',
       salary: '22 - 35 triệu',
+      location: 'TP. Hồ Chí Minh',
       category: 'it',
-      skills: ['Data Analyst', 'SQL', 'Python', 'PowerBI']
+      skills: ['Data Analyst', 'SQL', 'Python', 'PowerBI'],
+      isPartner: true,
+      postedDaysAgo: 2,
+      interactionScore: 91
     },
     {
+      id: 14,
       logo: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=120&h=120&q=80',
       title: 'Backend Java Developer (Spring Boot / Microservices)',
       company: 'Tập đoàn Công nghiệp Viettel',
       salary: '25 - 42 triệu',
+      location: 'Hà Nội',
       category: 'it',
-      skills: ['Java', 'Spring Boot', 'Backend', 'Microservices']
+      skills: ['Java', 'Spring Boot', 'Backend', 'Microservices'],
+      isPartner: true,
+      postedDaysAgo: 1,
+      interactionScore: 96
     },
 
     // 4. Marketing & Truyền thông
     {
+      id: 15,
       logo: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=120&h=120&q=80',
       title: 'Trưởng Phòng Marketing & Truyền Thông',
       company: 'Masan Consumer Holdings',
       salary: '35 - 55 triệu',
+      location: 'Bình Dương & TP. HCM',
       category: 'marketing',
-      skills: ['Marketing', 'Brand', 'Chiến lược', 'Quản lý']
+      skills: ['Marketing', 'Brand', 'Chiến lược', 'Quản lý'],
+      isPartner: true,
+      postedDaysAgo: 1,
+      interactionScore: 92
     },
     {
+      id: 16,
       logo: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=120&h=120&q=80',
       title: 'Digital Marketing & Performance Ads Lead',
       company: 'VinFast Auto',
       salary: '25 - 40 triệu',
+      location: 'Hải Phòng & Hà Nội',
       category: 'marketing',
-      skills: ['Digital Marketing', 'Facebook Ads', 'Google Ads', 'SEO']
+      skills: ['Digital Marketing', 'Facebook Ads', 'Google Ads', 'SEO'],
+      isPartner: true,
+      postedDaysAgo: 2,
+      interactionScore: 89
     },
     {
+      id: 17,
       logo: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=120&h=120&q=80',
       title: 'Content Marketing Lead & Sáng Tạo Nội Dung',
       company: 'VCCorp Corporation',
       salary: '18 - 28 triệu',
+      location: 'Hà Nội',
       category: 'marketing',
-      skills: ['Content Marketing', 'Copywriting', 'Social Media']
+      skills: ['Content Marketing', 'Copywriting', 'Social Media'],
+      isPartner: false,
+      postedDaysAgo: 3,
+      interactionScore: 84
     },
 
     // 5. Ngành nghề khác (F&B, Kỹ thuật, Vận hành)
     {
+      id: 18,
       logo: 'assets/logos/company-kimmari-64.svg',
       title: 'Quản Lý Nhà Hàng Kimmari Chicken',
       company: 'CHUỖI NHÀ HÀNG KIMMARI CHICKEN',
       salary: '15–25tr ₫/tháng',
+      location: 'TP. Hồ Chí Minh',
       category: 'hospitality',
-      skills: ['Quản lý', 'Nhà hàng', 'F&B', 'Dịch vụ']
+      skills: ['Quản lý', 'Nhà hàng', 'F&B', 'Dịch vụ'],
+      isPartner: false,
+      postedDaysAgo: 2,
+      interactionScore: 81
     },
     {
+      id: 19,
       logo: 'assets/logos/company-tanviet-64.svg',
       title: 'Technical Service Engineer – Industrial Printer',
       company: 'CÔNG TY TNHH THIẾT BỊ CÔNG NGHIỆP TÂN VIỆT',
       salary: 'Thương lượng',
+      location: 'Bình Dương',
       category: 'eng',
-      skills: ['Kỹ thuật', 'Bảo trì', 'Cơ điện']
+      skills: ['Kỹ thuật', 'Bảo trì', 'Cơ điện'],
+      isPartner: false,
+      postedDaysAgo: 4,
+      interactionScore: 78
     },
     {
+      id: 20,
       logo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80',
       title: 'Chuyên Viên Tuyển Dụng & Đào Tạo (HR Specialist)',
       company: 'Vinamilk Corporation',
       salary: '18 - 26 triệu',
+      location: 'TP. Hồ Chí Minh',
       category: 'hr',
-      skills: ['Tuyển dụng', 'HR', 'Nhân sự', 'Đào tạo']
+      skills: ['Tuyển dụng', 'HR', 'Nhân sự', 'Đào tạo'],
+      isPartner: true,
+      postedDaysAgo: 2,
+      interactionScore: 87
     }
   ];
 
@@ -3037,7 +3137,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let history = getRecentSearches();
       history = history.filter(h => h.keyword.toLowerCase() !== term.toLowerCase());
       history.unshift({ keyword: term, count: getKeywordJobCount(term) });
-      if (history.length > 8) history = history.slice(0, 8);
+      if (history.length > 6) history = history.slice(0, 6);
       localStorage.setItem(RECENT_SEARCH_KEY, JSON.stringify(history));
       renderRecentSearches();
     } catch (e) {}
@@ -3069,54 +3169,157 @@ document.addEventListener('DOMContentLoaded', () => {
   let recentListEl = null;
   let recommendedJobListEl = null;
 
+  function extractIndustryKeywords(query) {
+    const normQ = normalizeText(query || '');
+    if (!normQ) return [];
+    const keywordsSet = new Set();
+    const taxData = window.EasyCVCategoryData || [];
+
+    taxData.forEach(cat => {
+      const catNameNorm = normalizeText(cat.name || '');
+      const popMatches = (cat.popularKeywords || []).filter(pk => normalizeText(pk).includes(normQ));
+
+      if (catNameNorm.includes(normQ) || popMatches.length > 0) {
+        keywordsSet.add(cat.name);
+        (cat.popularKeywords || []).forEach(pk => keywordsSet.add(pk));
+        (cat.subgroups || []).forEach(sg => {
+          (sg.roles || []).slice(0, 3).forEach(r => keywordsSet.add(r));
+        });
+      } else {
+        (cat.subgroups || []).forEach(sg => {
+          const titleMatch = normalizeText(sg.title || '').includes(normQ);
+          const roleMatches = (sg.roles || []).filter(r => normalizeText(r).includes(normQ));
+          if (titleMatch || roleMatches.length > 0) {
+            keywordsSet.add(cat.name);
+            keywordsSet.add(sg.title);
+            roleMatches.forEach(r => keywordsSet.add(r));
+          }
+        });
+      }
+    });
+
+    return Array.from(keywordsSet);
+  }
+
   function renderRecommendedJobs(query = '', container = recommendedJobListEl) {
     if (!container) return;
     const clean = normalizeText(query || '');
+    const isTyping = clean.length >= 2;
 
     let jobsToDisplay = [];
-    if (!clean) {
-      jobsToDisplay = RECOMMENDED_JOBS_POOL.slice(0, 5);
+
+    if (!isTyping) {
+      // 1. Khi người dùng chưa nhập gì trong box tìm kiếm:
+      // Hiển thị 5 thẻ job được đề xuất dựa vào dữ liệu người dùng:
+      // - Hành vi gần đây: search job (recent searches), xem job, lưu job [trọng số cao]
+      // - Dữ liệu hồ sơ và CV ứng viên [trọng số cao: IT, Sales, Marketing, Tài chính]
+      // - Dữ liệu tính năng gợi ý việc làm [trọng số cao]
+      // - Dữ liệu tín hiệu job: mới đăng, uy tín NTD, độ tương tác [trung bình]
+      let recentKws = [];
+      try {
+        recentKws = getRecentSearches().map(item => normalizeText(typeof item === 'string' ? item : item.keyword));
+      } catch (e) {}
+
+      let savedJobIds = [];
+      try {
+        const rawSaved = localStorage.getItem('easycv_saved_jobs') || '[]';
+        savedJobIds = JSON.parse(rawSaved);
+      } catch (e) {}
+
+      const scoredJobs = RECOMMENDED_JOBS_POOL.map(job => {
+        let score = 50; // base score
+        const jobTextNorm = normalizeText(`${job.title} ${job.company} ${job.category || ''} ${(job.skills || []).join(' ')}`);
+
+        // Khớp hành vi search gần đây (+35 điểm)
+        const matchedRecent = recentKws.some(kw => kw && jobTextNorm.includes(kw));
+        if (matchedRecent) score += 35;
+
+        // Khớp việc làm đã lưu hoặc đã xem (+30 điểm)
+        if (Array.isArray(savedJobIds) && (savedJobIds.includes(job.id) || savedJobIds.includes(String(job.id)))) {
+          score += 30;
+        }
+
+        // Dữ liệu hồ sơ/CV ứng viên (+25 điểm cho ngành trọng điểm)
+        if (['sales', 'it', 'marketing', 'finance'].includes(job.category)) {
+          score += 25;
+        }
+
+        // Tín hiệu job: uy tín NTD (+20 điểm)
+        if (job.isPartner) score += 20;
+
+        // Tín hiệu job: mới đăng (+15 điểm)
+        if (job.postedDaysAgo && job.postedDaysAgo <= 2) score += 15;
+
+        // Độ tương tác (+ điểm theo interactionScore)
+        if (job.interactionScore) score += Math.round(job.interactionScore / 10);
+
+        return { ...job, totalScore: score };
+      });
+
+      scoredJobs.sort((a, b) => b.totalScore - a.totalScore);
+      jobsToDisplay = scoredJobs.slice(0, 5);
     } else {
-      const matched = RECOMMENDED_JOBS_POOL.filter(job => {
+      // 2. Khi người dùng đã bắt đầu nhập vào box tìm kiếm (từ ký tự thứ 2):
+      // Đề xuất dựa vào từ khóa nhập và truy xuất vào dữ liệu ngành nghề có sẵn trong hệ thống
+      const industryKeywords = extractIndustryKeywords(clean).map(kw => normalizeText(kw));
+
+      const scoredJobs = RECOMMENDED_JOBS_POOL.map(job => {
+        let score = 0;
         const titleNorm = normalizeText(job.title);
         const companyNorm = normalizeText(job.company);
         const catNorm = normalizeText(job.category || '');
         const skillsNorm = normalizeText((job.skills || []).join(' '));
-        return titleNorm.includes(clean) || companyNorm.includes(clean) || catNorm.includes(clean) || skillsNorm.includes(clean);
+        const fullJobText = `${titleNorm} ${companyNorm} ${catNorm} ${skillsNorm}`;
+
+        // 1. Khớp trực tiếp title (+60 điểm)
+        if (titleNorm.includes(clean)) score += 60;
+
+        // 2. Khớp kỹ năng trực tiếp (+45 điểm)
+        if (skillsNorm.includes(clean)) score += 45;
+
+        // 3. Khớp từ khóa ngành nghề từ taxonomy hệ thống (+35 điểm)
+        const matchedTaxonomy = industryKeywords.some(ikw => ikw && fullJobText.includes(ikw));
+        if (matchedTaxonomy) score += 35;
+
+        // 4. Khớp Category (+25 điểm)
+        if (catNorm.includes(clean)) score += 25;
+
+        // 5. Khớp Company (+15 điểm)
+        if (companyNorm.includes(clean)) score += 15;
+
+        // 6. Partial match từng từ (+10 điểm)
+        const words = clean.split(/\s+/).filter(w => w.length > 1);
+        const wordMatchCount = words.filter(w => fullJobText.includes(w)).length;
+        score += wordMatchCount * 10;
+
+        // Tín hiệu đối tác uy tín
+        if (score > 0 && job.isPartner) score += 10;
+
+        return { ...job, totalScore: score };
       });
 
+      const matched = scoredJobs.filter(j => j.totalScore > 0);
       if (matched.length > 0) {
-        matched.sort((a, b) => {
-          const aTitle = normalizeText(a.title).includes(clean);
-          const bTitle = normalizeText(b.title).includes(clean);
-          if (aTitle && !bTitle) return -1;
-          if (!aTitle && bTitle) return 1;
-          return 0;
-        });
+        matched.sort((a, b) => b.totalScore - a.totalScore);
         jobsToDisplay = matched.slice(0, 5);
       } else {
-        const words = clean.split(/\s+/).filter(w => w.length > 1);
-        const partialMatches = RECOMMENDED_JOBS_POOL.filter(job => {
-          const fullText = normalizeText(`${job.title} ${job.company} ${job.category || ''} ${(job.skills || []).join(' ')}`);
-          return words.some(w => fullText.includes(w));
-        });
-        if (partialMatches.length > 0) {
-          jobsToDisplay = partialMatches.slice(0, 5);
-        } else {
-          jobsToDisplay = RECOMMENDED_JOBS_POOL.slice(0, 5);
-        }
+        // Fallback sang top 5 job tốt nhất
+        jobsToDisplay = RECOMMENDED_JOBS_POOL.slice(0, 5);
       }
     }
 
     container.innerHTML = jobsToDisplay.map(job => `
-      <button type="button" class="recommended-job" data-keyword="${escapeHtml(job.title)}" aria-label="Tìm ${escapeHtml(job.title)}, công ty ${escapeHtml(job.company)}, mức lương ${escapeHtml(job.salary)}">
+      <button type="button" class="recommended-job" data-keyword="${escapeHtml(job.title)}" aria-label="Tìm ${escapeHtml(job.title)}, công ty ${escapeHtml(job.company)}, mức lương ${escapeHtml(job.salary)}, địa điểm ${escapeHtml(job.location || 'Toàn quốc')}">
         <span class="recommended-job-logo" aria-hidden="true" title="Công ty ${escapeHtml(job.company)} tuyển dụng tại EasyCV">
           <img src="${escapeHtml(job.logo)}" alt="${escapeHtml(job.company)}" width="50" height="50" loading="lazy" title="Công ty ${escapeHtml(job.company)} tuyển dụng tại EasyCV">
         </span>
         <div class="recommended-job-info">
           <span class="recommended-job-title">${highlightMatch(job.title, query)}</span>
           <span class="recommended-job-company">${escapeHtml(job.company)}</span>
-          <span class="recommended-job-salary">${escapeHtml(job.salary)}</span>
+          <div class="recommended-job-meta">
+            <span class="recommended-job-salary">${escapeHtml(job.salary)}</span>
+            <span class="recommended-job-loc" title="${escapeHtml(job.location || 'Toàn quốc')}">📍 ${escapeHtml(job.location || 'Toàn quốc')}</span>
+          </div>
         </div>
       </button>
     `).join('');
@@ -3212,7 +3415,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (clearHistoryBtn) clearHistoryBtn.style.display = 'inline-block';
 
-    searches.slice(0, 5).forEach(item => {
+    searches.slice(0, 6).forEach(item => {
       const kw = typeof item === 'string' ? item : item.keyword;
       const cnt = typeof item === 'object' && item.count ? item.count : getKeywordJobCount(kw);
 
@@ -3256,9 +3459,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const clean = normalizeText(query);
     if (!clean) return;
 
+    // Gợi ý tối đa 10 từ khóa, không hiển thị số việc làm
     const matches = ALL_SUGGESTIONS.filter(item => {
       return normalizeText(item.keyword).includes(clean);
-    }).slice(0, 6);
+    }).slice(0, 10);
 
     if (matches.length === 0) {
       const emptyRow = document.createElement('div');
@@ -3291,7 +3495,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
         </svg>
         <span class="kw-suggest-text">${highlightMatch(item.keyword, query)}</span>
-        <span class="kw-suggest-count">${item.count} việc làm</span>
       `;
       row.addEventListener('click', () => {
         executeSearch(item.keyword);
@@ -3305,7 +3508,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function handleSearchInputMode(rawQuery) {
     const query = (rawQuery || '').trim();
-    const isTyping = query.length > 0;
+    // Bắt đầu gợi ý khi người dùng nhập từ ký tự thứ 2 trở lên
+    const isTyping = query.length >= 2;
 
     if (isTyping) {
       searchFormatLeftEl?.classList.add('is-typing');

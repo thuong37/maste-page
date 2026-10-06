@@ -727,11 +727,36 @@
   line-height: 1.3;
 }
 
+.recommended-job-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 1px;
+}
+
 .recommended-job-salary {
   font-size: 12px;
   font-weight: 600;
   color: #EA580C;
   line-height: 1.25;
+  white-space: nowrap;
+}
+
+.recommended-job-loc {
+  font-size: 11.5px;
+  color: #64748B;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.25;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+[data-theme='dark'] .recommended-job-loc {
+  color: #94A3B8;
 }
 
 /* Dark Theme Support for Search Dropdown */
