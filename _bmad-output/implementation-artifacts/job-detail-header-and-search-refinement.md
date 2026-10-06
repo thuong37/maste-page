@@ -96,3 +96,20 @@
   - `scratch/chi_tiet_initial_view.png`: Giao diện tổng thể sắc nét, không còn card thừa, thẻ liên quan vừa khít.
   - `scratch/chi_tiet_category_modal.png`: Modal danh mục nghề 2 cột phân cấp chuẩn xác.
   - `scratch/chi_tiet_sticky_scrolled.png`: Thanh tìm kiếm neo dính trên cùng khi cuộn trang.
+
+---
+
+## 5. Đồng Bộ Đầy Đủ Tính Năng Tìm Kiếm — 2026-10-06
+
+| Hạng mục | Trạng thái cũ | Giải pháp kỹ thuật | Kết quả kiểm thử |
+|---|---|---|---|
+| Popup gợi ý | Chỉ hiển thị chip lịch sử đơn giản | Bổ sung controller `job-detail-search.js` dựng popup 2 cột theo chuẩn hiện tại | Hiển thị 5 lịch sử, 6 từ khóa phổ biến và 5 việc làm gợi ý |
+| Gợi ý khi nhập | Không có chế độ gợi ý động | Lọc kho từ khóa không phân biệt dấu, hiển thị số việc làm và tô đậm phần khớp | Gõ `Product` trả 2 kết quả và highlight đúng |
+| Quản lý lịch sử | Dùng key cũ, chỉ xóa tất cả | Dùng chung `easycv_recent_searches_v2`, hỗ trợ xóa từng dòng và xóa toàn bộ | Từ khóa submit được đưa lên đầu và còn nguyên khi quay lại trang |
+| Điều hướng tìm kiếm | Form cơ bản, chưa xác nhận đủ tham số | Tạo URLSearchParams từ keyword, location, category và industry | Chuyển sang `viec-lam.html` với đủ 4 tham số |
+| Phối hợp popup | Gợi ý và modal có thể hoạt động độc lập | Đóng popup gợi ý khi mở Danh mục nghề/Địa điểm; đóng Danh mục nghề khi focus từ khóa | Không chồng lớp popup |
+| Accessibility | Chưa đồng bộ trạng thái expanded | Bổ sung `role=dialog`, `aria-controls`, `aria-haspopup`, `aria-expanded` và keyboard Enter/Space/Escape | Trạng thái ARIA và bàn phím PASS |
+| Responsive | Chưa có kiểm thử popup giàu nội dung trên màn nhỏ | Căn lại popup theo viewport tại breakpoint 900px | Mobile 375px: popup rộng 335px, không tràn |
+| Đồng bộ triển khai | Controller chỉ nằm trong file chi tiết lớn | Tách module và mirror sang `public/`; guard controller cũ làm fallback | Root/public có SHA-256 trùng khớp |
+
+Kiểm thử tự động: `scratch/verify_job_detail_search_sync.js` — Chrome headless PASS trên URL công việc `id=3`, root/public, desktop/mobile và luồng redirect đầy đủ.

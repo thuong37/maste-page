@@ -1429,6 +1429,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Kế thừa Search Bar Functionality từ Trang Chủ ---
+  if (!window.EasyCVDetailSearchV2) {
   const searchInput = document.getElementById('jobSearchInput') || document.getElementById('heroSearchInput');
   const clearSearchBtn = document.getElementById('clearSearchInputBtn');
   const searchSuggestDropdown = document.getElementById('searchSuggestDropdown');
@@ -1554,6 +1555,7 @@ document.addEventListener('DOMContentLoaded', () => {
       jobIndustryHidden.value = chosenName || '';
     }
   });
+  }
 
   // Sticky Search Bar on Scroll
   function initStickySearch() {
