@@ -1,48 +1,75 @@
 # PHÂN TÍCH VÀ ĐẶC TẢ TRANG CHỦ ỨNG VIÊN EASYCV
 
-> **Loại tài liệu:** Business Analysis + UI/UX Specification + AI Implementation Contract  
-> **Phiên bản:** 1.6
-> **Ngày lập:** 25/09/2026  
-> **Cập nhật gần nhất:** 28/09/2026 — Loại bỏ DemoBar và cố định màn hình ở trạng thái ứng viên đã đăng nhập
-> **Phạm vi:** Chỉ trang chủ dành cho ứng viên của sàn tuyển dụng EasyCV  
-> **Đối tượng đọc:** Ban lãnh đạo, Product Owner, Business Analyst, UI/UX Designer, Frontend Engineer và AI coding agent (ưu tiên Qwen 3.8 27B)
+> **Loại tài liệu:** Business Analysis + UI/UX Specification + AI Implementation Contract
+> **Phiên bản:** 2.0
+> **Ngày cập nhật:** 06/10/2026
+> **Phạm vi:** Trang chủ ứng viên `index.html`
+> **Đối tượng đọc:** Product Owner, BA, UX/UI, Frontend, QA và AI coding agent; ưu tiên Qwen 3.8 27B
+> **Trạng thái:** As-is đã đối soát với mã nguồn hiện hành và PRD
 
 ---
 
-## 1. Tóm tắt đề xuất
+## 1. Mục đích và cách sử dụng
 
-Trang chủ EasyCV được định hướng là một **trung tâm khám phá việc làm dành cho ứng viên**, không chỉ là landing page giới thiệu thương hiệu. Trong một màn hình cuộn dọc, người dùng có thể:
+Tài liệu này mô tả **trạng thái trang chủ EasyCV sau các lần tinh chỉnh gần nhất**, đồng thời quy định cách tiếp tục triển khai mà không khôi phục nhầm các khối đã bị loại bỏ hoặc biến dữ liệu mẫu thành chức năng production.
 
-1. Tìm việc theo từ khóa, ngành nghề và địa điểm.
-2. Khám phá việc làm nổi bật, việc lương cao và doanh nghiệp uy tín.
-3. Nhận gợi ý việc làm phù hợp dựa trên hồ sơ/CV.
-4. Tiếp cận khóa học, sự kiện nghề nghiệp và nội dung hỗ trợ phát triển sự nghiệp.
-5. Thực hiện nhanh các hành động cá nhân như lưu việc, theo dõi công ty, xem thông báo và tin nhắn.
+Trang chủ hiện tại là một **trung tâm tìm kiếm và khám phá việc làm dành cho ứng viên đã đăng nhập**, tập trung vào năm nhiệm vụ:
 
-Phong cách chung là **hiện đại, tin cậy, sáng, dễ quét thông tin**, kết hợp:
+1. Tìm việc theo từ khóa, danh mục nghề và địa điểm.
+2. Khám phá việc làm nổi bật, việc làm phù hợp và doanh nghiệp nổi bật.
+3. Tiếp cận mẫu CV theo phong cách.
+4. Khám phá ngành nghề và từ khóa phổ biến.
+5. Truy cập các chức năng tài khoản, thông báo, tin nhắn và điều hướng toàn hệ thống.
 
-- Cam EasyCV cho hành động chính và điểm nhấn thương hiệu.
-- Xanh đen cho nội dung cần độ tin cậy cao và các vùng nền tối.
-- Xanh lá cho trạng thái tích cực, lưu việc và mức độ phù hợp.
-- Card trắng, viền mảnh, bo góc vừa phải, khoảng trắng rõ ràng.
-- Bố cục desktop rộng nhưng có giới hạn, chuyển tuần tự xuống một cột trên mobile.
+Trước khi sửa mã, Agent **PHẢI** đối chiếu lại các tệp nguồn tại mục 2 vì đây là prototype HTML/CSS/JavaScript tĩnh đang tiếp tục thay đổi.
 
-Kết quả mong muốn là trang chủ giúp người dùng đi từ **nhu cầu → tìm kiếm → đánh giá → hành động** với số bước tối thiểu, đồng thời tạo đủ vị trí thương mại cho doanh nghiệp tài trợ nhưng không làm mất trọng tâm tìm việc.
+### 1.1. Từ khóa quy phạm
+
+- **PHẢI:** Điều kiện bắt buộc để nghiệm thu.
+- **KHÔNG ĐƯỢC:** Hành vi bị cấm hoặc không được tự ý triển khai.
+- **NÊN:** Phương án ưu tiên; chỉ thay đổi khi có lý do rõ ràng.
+- **CÓ THỂ:** Phương án tùy chọn.
+- **Fixture/demo:** Dữ liệu minh họa, chưa phải dữ liệu đã xác minh hoặc lấy từ API.
+- **Route thật:** URL/route có hợp đồng điều hướng rõ ràng; không phải anchor `#...` minh họa.
+- **Khối đang hiển thị:** Có mặt trong render tree và người dùng nhìn thấy.
+- **Khối lưu trữ nhưng đang ẩn:** Còn markup/logic để bảo lưu nhưng không thuộc trải nghiệm hiện tại.
 
 ---
 
-## 2. Quy ước để con người và AI cùng đọc
+## 2. Nguồn đối soát và thứ tự ưu tiên
 
-Các từ khóa sau mang tính bắt buộc:
+| Mức | Nguồn | Vai trò |
+|---:|---|---|
+| 1 | `_bmad-output/planning-artifacts/prd.md` | Tầm nhìn, hành trình, phạm vi MVP và yêu cầu chức năng nền |
+| 2 | Quyết định mới của người dùng và implementation artifacts | Thay đổi có chủ đích sau PRD |
+| 3 | `index.html`, `css/home.css`, `css/navbar.css`, `css/location-picker.css`, `css/category-filter-modal.css` | Cấu trúc và giao diện as-is |
+| 4 | `js/home.js`, `js/navbar.js`, `js/location-picker.js`, `js/category-filter-modal.js` | Hành vi as-is |
+| 5 | `assets/design-tokens.css`, `docs/brand-guidelines.md` | Token và chuẩn nhận diện |
+| 6 | Thư mục `public/` | Bản mirror triển khai tĩnh; phải đồng bộ khi sửa mã tương ứng |
 
-- **PHẢI:** yêu cầu bắt buộc để được nghiệm thu.
-- **NÊN:** ưu tiên thực hiện; chỉ được bỏ khi có lý do kỹ thuật hoặc nghiệp vụ rõ ràng.
-- **CÓ THỂ:** tùy chọn, không ảnh hưởng luồng cốt lõi.
-- **Dữ liệu mẫu:** nội dung dùng để minh họa giao diện, không phải dữ liệu đã xác thực.
-- **Route đích:** đường dẫn logic cần nối với router của hệ thống thật; không mặc định dùng anchor `#`.
-- **Trạng thái từ xa:** `loading | ready | empty | error` đối với dữ liệu lấy từ API.
+### 2.1. Xử lý mâu thuẫn
 
-Tài liệu này là đặc tả độc lập. AI không được yêu cầu người đọc mở thêm HTML hoặc nhiều tài liệu khác để hiểu bố cục và hành vi trang chủ.
+1. Không bỏ qua PRD; mọi thay đổi phải chỉ ra FR/Journey liên quan.
+2. Quyết định mới có artifact và kết quả nghiệm thu có thể thay đổi cách thể hiện so với PRD.
+3. Nếu PRD và mã khác nhau nhưng không có quyết định rõ, ghi nhận là **điểm cần Product Owner xác nhận**.
+4. Không phục hồi module chỉ vì CSS, JavaScript hoặc markup cũ còn tồn tại.
+5. Không coi anchor, toast mô phỏng hoặc số liệu hard-code là tích hợp nghiệp vụ hoàn chỉnh.
+
+### 2.2. Ma trận PRD và hiện trạng
+
+| PRD | Trạng thái hiện tại | Kết luận |
+|---|---|---|
+| FR-1: Logo về trang chủ/đầu trang | Đã có | Giữ; tại trang chủ click logo cuộn lên đầu |
+| FR-2: Menu Tìm việc đưa về search | Đã có | Giữ trên desktop và mobile drawer |
+| FR-3: Tài khoản, thông báo, tin nhắn | Có UI fixture, trạng thái đã đăng nhập | Chưa phải tích hợp backend |
+| FR-4: Từ khóa và lịch sử | Đã có; key `easycv_recent_searches_v2` | Giữ popup hai cột và chế độ đổi khi gõ |
+| FR-5: Địa điểm hai cấp | Đã có hai chế độ địa giới | Dữ liệu phải xác minh trước production |
+| FR-6: Danh mục nghề đa cấp | Đã thành modal riêng neo dưới search | Không đưa mega-menu ngành vào popup từ khóa |
+| FR-7: Điều hướng kết quả | Đã có | Dùng `keyword`, `location`, `category`, `industry` |
+| FR-13: Employer Spotlight | Đã thành bento banner ảnh thuần | Một slider chính + hai banner phụ |
+| FR-14: Việc làm nổi bật/hấp dẫn | Nổi bật hiển thị; hấp dẫn/lương cao ẩn | Không tự mở lại khối ẩn |
+| FR-15: Mẫu CV | Carousel liên tục có bộ lọc | Giữ auto-run và reduced motion |
+| AI Match | Khối phù hợp còn hiển thị; tab lọc đã gỡ | Không khôi phục tab cũ |
 
 ---
 
@@ -50,1011 +77,533 @@ Tài liệu này là đặc tả độc lập. AI không được yêu cầu ng�
 
 ### 3.1. Mục tiêu nghiệp vụ
 
-- Tăng tỷ lệ người dùng bắt đầu tìm kiếm việc làm ngay tại trang chủ.
-- Tăng lượt xem chi tiết việc làm và tỷ lệ lưu việc.
-- Tăng mức hoàn thiện hồ sơ/CV để cải thiện chất lượng matching.
-- Tăng mức khám phá doanh nghiệp, khóa học và sự kiện.
-- Tạo vị trí hiển thị tài trợ minh bạch cho nhà tuyển dụng/đối tác.
-- Tạo cảm nhận EasyCV là nền tảng tuyển dụng có dữ liệu, có cá nhân hóa và đáng tin cậy.
+- Tăng tỷ lệ người dùng bắt đầu tìm việc từ trang chủ.
+- Rút ngắn luồng từ nhu cầu đến danh sách kết quả còn tối đa ba thao tác chính.
+- Tăng lượt xem việc làm, lưu việc và khám phá doanh nghiệp.
+- Khuyến khích ứng viên hoàn thiện hồ sơ/CV.
+- Tạo vị trí thương mại cho doanh nghiệp tài trợ nhưng không làm mất trọng tâm tìm việc.
+- Củng cố nhận diện EasyCV: hiện đại, đáng tin cậy, có dữ liệu và dễ quét.
 
-### 3.2. Người dùng chính
+### 3.2. Trạng thái người dùng mặc định
 
-| Nhóm | Nhu cầu chính | Hành động ưu tiên trên trang |
-|---|---|---|
-| Ứng viên đã đăng nhập | Quản lý hành trình tìm việc | Lưu việc, xem gợi ý phù hợp, thông báo, tin nhắn, hồ sơ |
-| Ứng viên mới/ít kinh nghiệm | Khám phá định hướng | Ngành phổ biến, khóa học, sự kiện, việc Fresher/Intern |
-| Ứng viên có kinh nghiệm | Tìm cơ hội chất lượng/lương cao | Việc nổi bật, việc lương cao, công ty tiêu biểu, AI Match |
+Trang cố định ở ngữ cảnh **ứng viên đã đăng nhập** theo `[ASSUMPTION-1]` của PRD:
+
+- Tên mẫu: Nguyễn Văn A; hồ sơ mẫu hoàn thiện 85%.
+- Có thông báo, tin nhắn, avatar và menu tài khoản.
+- Không có DemoBar chuyển guest/logged-in.
+- Không hiển thị nút Đăng nhập/Đăng ký trong bản trang chủ này.
 
 ### 3.3. Trong phạm vi
 
-- Toàn bộ giao diện trang chủ ứng viên từ header đến footer.
-- Màn hình mặc định và duy nhất trong phạm vi đặc tả là ứng viên đã đăng nhập; không triển khai biến thể guest hoặc thanh chuyển trạng thái demo.
-- Tìm kiếm, gợi ý, chọn địa điểm, lọc nhanh.
-- Các danh sách việc làm, công ty, khóa học, sự kiện và banner.
-- Bookmark và theo dõi ở cấp giao diện.
-- Responsive, accessibility, loading/empty/error và dark mode nếu hệ thống đích hỗ trợ.
+- Header desktop/mobile drawer.
+- Hero search, popup gợi ý, modal danh mục nghề, location picker.
+- Banner tài trợ bento.
+- Việc làm nổi bật, công ty nổi bật, quảng bá VIP, việc làm phù hợp.
+- Carousel mẫu CV; danh mục/từ khóa phổ biến.
+- Footer, floating AI widget và phản hồi UI mức prototype.
+- Responsive, keyboard, focus và reduced motion.
 
 ### 3.4. Ngoài phạm vi
 
-- Backend, thuật toán AI matching thật và mô hình chấm điểm CV.
-- Trang chi tiết việc làm/công ty/khóa học/sự kiện.
-- CV Builder, đăng nhập, thanh toán VIP và chat hoàn chỉnh.
-- CMS quản lý banner.
-
-Các trang/khả năng ngoài phạm vi chỉ được xem là **đích điều hướng hoặc dependency**, không được AI tự ý xây mở rộng khi chưa có yêu cầu.
+- Backend, database, xác thực thật và phân quyền.
+- AI matching thực; thanh toán VIP; CV editor WYSIWYG; chat realtime.
+- CMS banner và các trang chi tiết ngoài điểm điều hướng.
+- Tự xác nhận thao tác ghi thành công khi chưa có API.
 
 ---
 
-## 4. Phong cách thiết kế tổng quan
-
-### 4.1. Tính cách thị giác
-
-Ba từ khóa bắt buộc: **tin cậy – năng động – dễ sử dụng**.
-
-- Không dùng phong cách quá trang trí, quá nhiều gradient hoặc hiệu ứng kính làm giảm khả năng đọc.
-- Nội dung tuyển dụng phải được ưu tiên hơn quảng cáo.
-- Mỗi section chỉ có một mục tiêu chính và một CTA “xem tất cả” ở cấp section.
-- Card dùng độ cao tương đối đồng đều trong cùng một lưới để người dùng quét theo hàng.
-- Không dùng emoji làm icon chức năng. Icon phải là SVG cùng một họ nét, độ dày nét khoảng 1.5–2px.
-
-### 4.2. Màu sắc
-
-| Token | Giá trị | Cách dùng |
-|---|---:|---|
-| `primary` | `#F97316` | CTA chính, trạng thái active, tiêu đề/chi tiết cần nhấn |
-| `primary-hover` | `#EA580C` | Hover/pressed của CTA chính |
-| `primary-soft` | `#FFF7ED` | Nền badge/pill cam nhạt |
-| `primary-border-soft` | `#FED7AA` | Viền thành phần cam nhạt |
-| `secondary` | `#0F172A` | Chữ chính, banner tối, footer |
-| `surface` | `#FFFFFF` | Card, input, popover |
-| `page-background` | `#F8FAFC` | Nền section xen kẽ |
-| `border` | `#E2E8F0` | Viền card, divider, input |
-| `text-secondary` | `#64748B` | Mô tả, metadata |
-| `text-muted` | `#94A3B8` | Gợi ý, thời gian, thông tin phụ |
-| `success/match` | `#16A34A` | Matching, trạng thái tích cực |
-| `save-accent` | `#00B14F` | Bookmark và điểm nhấn card việc làm theo bản mẫu |
-| `info` | `#0284C7` | Xác thực, thông tin công nghệ |
-| `danger` | `#DC2626` | Lỗi, hết hạn, thao tác xóa |
-
-Quy tắc tương phản:
-
-- Chữ thường PHẢI đạt tối thiểu 4.5:1 so với nền.
-- Chữ lớn và thành phần UI PHẢI đạt tối thiểu 3:1.
-- Không dùng màu là dấu hiệu duy nhất; active/error/success phải kèm icon, chữ hoặc thay đổi viền.
-- Xanh lá `#00B14F` trong card việc làm và bộ chọn địa điểm là chủ ý của mẫu hiện tại; không tự đổi tất cả thành cam.
-
-### 4.3. Font chữ và cấp bậc
-
-Font chính: **Plus Jakarta Sans**. Fallback: `Inter`, `Be Vietnam Pro`, `system-ui`, `sans-serif`.
-
-| Vai trò | Desktop | Mobile | Weight | Line-height | Quy tắc |
-|---|---:|---:|---:|---:|---|
-| H1 Hero | 32px | 26px | 800 | 1.3 | Căn giữa; tối đa 1 dòng ở desktop, cho phép xuống dòng ở mobile |
-| H2 section | 26px | 22px | 800 | 1.3 | Căn trái |
-| H3/card nổi bật | 18px | 16–18px | 700–800 | 1.35 | Tối đa 2 dòng |
-| Tiêu đề job card | 14.5px | 14px | 700 | 1.35 | Tối đa 2 dòng, cắt bằng ellipsis |
-| Body chính | 14–15px | 14px | 400–500 | 1.5–1.6 | Không dùng chữ dưới 14px cho nội dung dài |
-| Metadata | 11.5–13px | 11.5–13px | 500–600 | 1.3–1.5 | Dùng cho công ty, địa điểm, thời gian |
-| Button | 13–15px | 13–15px | 700 | 1.2 | Nhãn động từ rõ ràng |
-| Badge | 10.5–12.5px | 10.5–12.5px | 700 | 1.2 | Nội dung ngắn, không quá 2–3 từ |
-
-Quy tắc căn chữ:
-
-- H1 và mô tả hero căn giữa.
-- Tiêu đề section, card, footer căn trái.
-- Con số thống kê có thể căn giữa trong ô nhưng nhãn vẫn phải dễ đọc.
-- Không căn đều hai bên (`text-align: justify`).
-- Nội dung card tối đa 2 dòng; metadata một dòng và có ellipsis nếu thiếu chỗ.
-
-### 4.4. Kích thước, lề và nhịp dọc
-
-- Content container: tối đa **1250px**, căn giữa.
-- Navbar container: tối đa **1360px**, căn giữa.
-- Gutter desktop: **20–24px**; mobile: **16px**.
-- Navbar cao **72px**.
-- Section tiêu chuẩn: padding dọc **40px**; có divider 1px giữa các section cần phân tách.
-- Khoảng cách section header đến nội dung: **20–24px**.
-- Khoảng cách lưới card: **16px**; riêng công ty có thể dùng **24px**.
-- Hệ spacing ưu tiên: `4, 6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 60px`.
-- Không phát sinh khoảng cách lẻ nếu không có lý do căn chỉnh cụ thể.
-
-### 4.5. Bo góc, viền, bóng và chuyển động
-
-| Thành phần | Bo góc | Viền/bóng |
-|---|---:|---|
-| Button thường | 8–12px | Không bóng hoặc bóng nhẹ |
-| Pill/badge | 9999px | Viền 1px cùng tông |
-| Card thường | 12–16px | Viền 1px `#E2E8F0` |
-| Popover/dropdown | 14–18px | Bóng nổi rõ `0 20px 25px -5px rgba(15,23,42,.10)` |
-| Banner lớn | 16px | Viền 1–1.5px, bóng vừa |
-| Logo box | 8–12px | Nền trắng, object-fit contain |
-
-Chuyển động:
-
-- Hover/focus nhanh: **160–200ms**.
-- Dropdown/carousel chuyển cảnh: **220–300ms**.
-- Card hover chỉ nâng `translateY(-2px đến -3px)` và tăng viền/bóng; không làm thay đổi kích thước layout.
-- Khi `prefers-reduced-motion: reduce`, dừng auto-play và loại bỏ chuyển động không thiết yếu.
-
----
-
-## 5. Kiến trúc thông tin của trang
+## 4. Kiến trúc thông tin hiện hành
 
 ```text
 CandidateHomePage
 ├── H01. SiteHeader
-│   ├── BrandLogo
-│   ├── PrimaryNavigation + Dropdowns
-│   ├── EmployerCTA
-│   ├── NotificationPopover
-│   ├── MessagePopover
+│   ├── BrandLogo + DesktopNavigation
+│   ├── EmployerPortalLink
+│   ├── NotificationPopover + MessagePopover
 │   ├── AccountMenu
 │   └── MobileDrawer
-├── H02. HeroSearch
-│   ├── Heading + Description
-│   ├── KeywordInput + ClearButton
-│   ├── LocationPicker
-│   ├── SearchButton
-│   ├── SuggestionPanel
-│   │   ├── RecentSearches + PopularKeywords
-│   │   └── RecommendedJobs
-│   └── TrendingTags
-├── H03. EmployerSpotlight + PartnerStrip
-├── H04. FeaturedJobs
-├── H05. HighSalaryJobs
-├── H06. FeaturedCompanies
-├── H07. VipPromotion
-├── H08. MatchedJobs
-├── H09. CvTemplateRecommendations
-├── H10. Courses
-├── H11. Events
-├── H12. PopularCategoriesAndKeywords
-├── H13. SiteFooter
-└── H14. FloatingAiWidget
+├── H02. HeroDiscovery
+│   ├── VisuallyHiddenH1
+│   ├── StickySmartSearch
+│   │   ├── CategoryTrigger + CategoryModal
+│   │   ├── KeywordInput + SmartSuggestionDropdown
+│   │   ├── LocationTrigger + TwoLevelLocationPicker
+│   │   └── SearchCTA
+│   ├── TrendingQuickTags
+│   └── SponsorBento: PrimarySlider[2] + SecondaryBanner[2]
+├── H03. FeaturedJobs
+├── H04. FeaturedCompaniesCarousel
+├── H05. VipPromotion
+├── H06. MatchedJobs
+├── H07. CvTemplateCarousel
+├── H08. PopularCategoriesAndKeywords
+├── H09. SiteFooter
+├── H10. FloatingAiRecommendation
+└── H11. PrototypeViewModeSwitcher
 ```
 
-Thứ tự trên là bắt buộc trên desktop và mobile. Không đổi thứ tự chỉ để lấp khoảng trống giao diện.
+### 4.1. Thứ tự hiển thị bắt buộc
+
+Header → Search/quick tags/bento → Việc làm nổi bật → Công ty nổi bật → VIP Pro → Việc làm phù hợp → Mẫu CV → Ngành/từ khóa phổ biến → Footer → Widget nổi.
+
+### 4.2. Khối không còn thuộc trải nghiệm hiển thị
+
+- Hero title/subtitle nhìn thấy đã gỡ; chỉ còn H1 `.sr-only`.
+- Dải logo thương hiệu dưới hero và khối thống kê đã gỡ.
+- Khóa học và sự kiện tuyển dụng đã gỡ.
+- `#viec-lam-hap-dan` còn DOM nhưng có `hidden`, `aria-hidden="true"`, `display: none !important`.
+- Tab trong `#viec-lam-phu-hop` đã gỡ.
+- Banner quảng bá cũ trong vùng mẫu CV đã gỡ.
+
+Agent **KHÔNG ĐƯỢC** phục hồi các khối trên nếu không có yêu cầu mới.
 
 ---
 
-## 6. Đặc tả chi tiết từng khối
+## 5. Ngôn ngữ thiết kế
 
-### H01. Header và điều hướng chính
+### 5.1. Nguyên tắc
 
-**Mục đích:** Nhận diện thương hiệu, dẫn người dùng tới các nghiệp vụ chính và cung cấp các hành động theo tài khoản.
+- Ba thuộc tính: **tin cậy – năng động – dễ sử dụng**.
+- Nội dung tuyển dụng nổi bật hơn quảng cáo; giao diện sáng, nhiều khoảng thở.
+- Cam EasyCV cho CTA/active; slate cho chữ/cấu trúc; xanh lá cho trạng thái tích cực đặc thù.
+- Không dùng emoji làm icon chức năng mới; emoji còn trong fixture không phải tiền lệ.
+- Một section có một tiêu đề chính và tối đa một CTA cấp section.
 
-**Bố cục desktop:**
+### 5.2. Token chính
 
-- Header sticky ở `top: 0`, cao 72px, nền trắng 95% + blur 12px, viền đáy 1px.
-- Container tối đa 1360px, padding ngang 24px.
-- Thứ tự trái → phải: logo; 4 menu nghiệp vụ; khoảng giãn; CTA nhà tuyển dụng; thông báo; tin nhắn; tài khoản.
-- Logo hiển thị ngang, cao khoảng 54px, giữ nguyên tỷ lệ.
-- Header luôn hiển thị trạng thái ứng viên đã đăng nhập: thông báo, tin nhắn, avatar/tên, mức hoàn thiện hồ sơ và menu tài khoản. Không hiển thị nút “Đăng nhập”, “Đăng ký” hoặc điều khiển đổi trạng thái.
+| Nhóm | Giá trị | Cách dùng |
+|---|---:|---|
+| Primary | `#F97316` | CTA, active, focus, điểm nhấn |
+| Primary hover | `#EA580C` | Hover CTA |
+| Primary soft | `#FFF7ED` | Nền cam nhạt |
+| Slate 900 | `#0F172A` | Chữ đậm/vùng tối |
+| Text primary | `#1E293B` | Nội dung chính |
+| Text secondary | `#475569` | Nội dung phụ |
+| Text muted | `#94A3B8` | Metadata |
+| Surface | `#FFFFFF` | Card/input/modal |
+| Page background | `#F8FAFC` | Nền xen kẽ |
+| Border | `#E2E8F0` | Viền/divider |
+| Positive | `#16A34A` | Verified/match hợp lệ |
+| Font | `Inter` | Giao diện chính |
 
-**Menu chính:**
+### 5.3. Kích thước
 
-| Menu | Mục con bắt buộc | Route logic |
-|---|---|---|
-| Tìm việc | Tìm kiếm việc làm; Việc làm gợi ý; Việc làm đã lưu; Khám phá công ty | `/viec-lam`, `/viec-lam/goi-y`, `/viec-lam/da-luu`, `/cong-ty` |
-| Hồ sơ & CV | Hồ sơ của tôi; Tạo CV theo mẫu; Quản lý CV; Tải lên CV | `/ho-so`, `/cv/tao-moi`, `/cv`, `/cv/tai-len` |
-| Ứng tuyển | Danh sách đơn; Lịch phỏng vấn; Bài kiểm tra năng lực | `/ung-tuyen`, `/phong-van`, `/danh-gia-nang-luc` |
-| Công cụ nghề nghiệp | Gross–Net; Bảo hiểm xã hội; Báo cáo lương; MBTI/DISC | `/cong-cu/...` theo router thực tế |
+- Navbar: `72px`, max-width `1360px`.
+- Content max-width `1250px`; gutter desktop `20px`, mobile `16px`.
+- Section padding dọc `40px`.
+- Search box cao `60px`, viền cam `1.5px`, bo `14px`.
+- Job card bo `12px`; logo `65 × 65px`.
+- Company card bo `18px`; logo desktop `88 × 88px`, mobile `76 × 76px`.
+- Grid gap `16px`; carousel company/CV gap `20px` desktop.
+- Motion nhanh khoảng `160–240ms`.
 
-**Dropdown:**
+### 5.4. Typography
 
-- Rộng tối thiểu 250px, nền surface, bo 14px, padding 8px, bóng nổi.
-- Mỗi item cao tối thiểu 40–44px, icon trái 18px, nhãn phải; badge “AI Match”, “Hot” hoặc số đếm đặt cuối dòng.
-- Hover: nền cam nhạt, chữ/icon cam; chevron của menu quay 180°.
-- Mở bằng hover trên desktop và click/Enter/Space; `Esc` đóng và trả focus về trigger.
+- Chỉ một H1 và đang ẩn thị giác; section chính dùng H2 căn trái.
+- Tên job tối đa hai dòng; metadata có ellipsis khi thiếu chỗ.
+- Body dài không nhỏ hơn 14px; không dùng `text-align: justify`.
 
-**Khối hành động phải:**
+---
 
-- CTA “Dành cho Nhà tuyển dụng” điều hướng sang cổng nhà tuyển dụng.
-- Nút thông báo và tin nhắn là icon 40×40px; badge số chưa đọc neo góc trên phải.
-- Popover rộng khoảng 360px, gồm header, “Đánh dấu đã đọc”, danh sách item và link xem tất cả.
-- Menu tài khoản hiển thị avatar, tên, mức hoàn thiện hồ sơ; dropdown chia nhóm hồ sơ, công việc và cài đặt/đăng xuất.
-- Không triển khai trạng thái khách trong màn hình này. Đăng xuất là điều hướng/action thật của hệ thống xác thực, không chuyển DOM sang một biến thể guest tại chỗ.
+## 6. Đặc tả từng khối
 
-**Mobile:**
+### H01. Header và điều hướng
 
-- Ẩn menu desktop; hiện logo thu gọn và hamburger.
-- Drawer trượt từ phải, có overlay, nút đóng và các nhóm menu dạng accordion trong ngữ cảnh ứng viên đã đăng nhập; không hiển thị action đăng nhập/đăng ký.
-- Mở drawer phải khóa cuộn body, giữ focus trong drawer; đóng bằng nút, overlay hoặc `Esc`.
+**Desktop:** Header sticky; thứ tự trái sang phải: logo, bốn menu, employer link, thông báo, tin nhắn, tài khoản. Bốn menu là Tìm việc, Hồ sơ & CV, Ứng tuyển, Công cụ nghề nghiệp.
 
-### H02. Hero tìm kiếm việc làm
+- Logo cuộn về đầu trang.
+- “Tìm việc”/“Tìm kiếm việc làm” cuộn tới search và focus input.
+- Notification/message dùng fixture; badge hiện tại là 3 và 2.
+- Account menu thể hiện người dùng đã đăng nhập, hồ sơ 85%.
 
-**Mục đích:** Cho người dùng bắt đầu tìm việc ngay lập tức; đây là CTA quan trọng nhất trang.
+**Mobile:** Ẩn desktop nav, dùng hamburger; drawer trượt từ trái, rộng `320px`, tối đa `85vw`, có overlay và accordion. Mở drawer phải khóa cuộn; Escape/click overlay đóng và quản lý focus.
 
-**Bố cục:**
+**Không được:** Tạo lại DemoBar, tự thêm guest variant, hoặc coi employer link là recruiter portal hoàn chỉnh.
 
-- Section nền trắng có radial gradient cam/xanh rất nhẹ; padding trên 34px, dưới 28px.
-- H1: “Tìm việc chất lượng, chạm đỉnh **sự nghiệp tương lai**”; phần nhấn màu cam.
-- Mô tả 15px, màu `#64748B`, căn giữa, cách H1 6px.
-- Toàn bộ hero xếp dọc; không dùng bố cục hai cột ở desktop.
+### H02. Hero Discovery và Smart Search
 
-**Search box:**
+#### H02.1. Cấu trúc
 
-- Rộng 100% container, nền trắng, viền 1.5px, bo 16px, padding 6px, bóng `0 16px 32px -8px rgba(15,23,42,.08)`.
-- Khi focus bên trong: viền cam, bóng cam nhẹ.
-- Thứ tự: icon tìm kiếm → input từ khóa → nút xóa tròn 22px → divider 1×28px → trigger địa điểm → nút “Tìm kiếm”.
-- Input font 14.5px, placeholder “Vị trí tuyển dụng, kỹ năng (vd: Java, React, Marketing...)”.
-- Nhóm lọc địa điểm trên desktop dùng `flex: 0 1 220px` và `max-width: 220px` để không chiếm quá nhiều không gian; khi search box chuyển sang bố cục cột thì trở lại `width: 100%` và bỏ giới hạn chiều rộng.
-- Nút tìm kiếm gradient cam, bo 12px, padding khoảng `13px 26px`, chữ 15px/700.
+Thứ tự: nút Danh mục Nghề → input từ khóa → bộ chọn địa điểm → CTA “Tìm việc ngay”. Hero không còn heading nhìn thấy; H1 `.sr-only` là “EasyCV - Nền tảng Tuyển dụng & Khám phá Việc làm Thông minh”.
 
-**Hành vi tìm kiếm:**
+#### H02.2. Sticky search
 
-1. Focus/click input mở bảng gợi ý.
-2. Nhập từ khóa có debounce 250–350ms nếu gọi API.
-3. Enter, nút “Tìm việc ngay” hoặc một gợi ý tìm kiếm đều dùng chung `executeSearch()`.
-4. `executeSearch()` tạo query bằng `URLSearchParams`, chỉ gửi đầu vào có giá trị và điều hướng sang `/viec-lam?keyword={keyword}&locations={locations}`. Từ khóa và địa điểm phải được encode an toàn; trang đích đọc query để khởi tạo bộ lọc.
-5. Nút xóa chỉ xuất hiện khi có nội dung; xóa xong vẫn giữ focus ở input.
-6. Không được báo “thành công” bằng toast khi chưa nhận kết quả thật.
+- Khi wrapper chạm đáy header, `.hero-search-sticky-bar` nhận `is-sticky`.
+- Top lấy theo chiều cao header thực, mặc định 72px.
+- Wrapper giữ chiều cao để tránh layout shift.
+- Popup gợi ý và modal danh mục vẫn neo đúng khi sticky.
 
-**Bảng gợi ý:**
+#### H02.3. Keyword popup
 
-- Neo ngay dưới search box, full width, z-index cao hơn banner; nền trắng, viền `#E2E8F0`, bo 24px, padding desktop `24px 30px`, bóng nổi mềm.
-- Desktop dùng lưới 2 cột: cột trái `0.95fr`, cột phải `1.08fr`, khoảng cách 36px; chiều cao nội dung tối thiểu 286px.
-- Cột trái gồm:
-  - Tiêu đề “Tìm kiếm gần đây” và action “Xóa tất cả”.
-  - Danh sách lịch sử dạng hàng, mỗi hàng có icon đồng hồ, từ khóa và nút xóa riêng; hover dùng nền cam rất nhạt.
-  - Khối “Từ khóa phổ biến” neo phía dưới, gồm các nút: Finance, Kinh doanh, IT, Accountant, Marketing.
-- Cột phải có tiêu đề “Việc làm bạn sẽ thích” và tối đa 5 việc làm đề xuất trong lần hiển thị đầu tiên.
-- Mỗi việc làm đề xuất gồm logo/brand mark 40×40px, tiêu đề một dòng có ellipsis và mức lương màu cam canh phải.
-- Click từ khóa phổ biến hoặc việc làm đề xuất thực hiện tìm kiếm theo từ khóa tương ứng; click lịch sử tìm kiếm thực hiện lại truy vấn.
-- Lịch sử được đọc/ghi từ `localStorage` trong bản prototype. Production phải tuân thủ chính sách quyền riêng tư, tách dữ liệu theo tài khoản hoặc thông báo rõ trên thiết bị dùng chung.
-- Mega menu ngành nghề cũ không còn xuất hiện trong bảng gợi ý này. Bộ lọc ngành chuyên sâu thuộc trang kết quả tìm kiếm hoặc một control độc lập, không được tự ý chèn lại vào popup.
-- Dữ liệu việc làm đề xuất hiện là fixture trình diễn; production phải lấy từ API recommendation và điều hướng theo `job.slug` hoặc `job.id`.
-- Popup dùng `role="dialog"`, có accessible name; input đồng bộ `aria-controls` và `aria-expanded` theo trạng thái mở/đóng.
-- `Esc` đóng popup và đưa focus về input; click ngoài đóng popup. Mọi button phải có focus ring nhìn thấy được.
+Mở khi focus/click input; đóng bằng Escape, nút “Đóng [Esc]”, click ngoài hoặc sau search.
 
-**Bộ chọn địa điểm:**
+**Input rỗng:** cột trái có tối đa sáu lịch sử, xóa từng mục/xóa tất cả, năm keyword Finance/Kinh doanh/IT/Accountant/Marketing; cột phải có năm job fixture.
 
-- Popover dạng dialog rộng tối đa 660px, cao 415px, bo 16px.
-- Header có hai chế độ dữ liệu địa giới nếu nghiệp vụ hỗ trợ.
-- Nội dung chia 2 cột bằng nhau: Tỉnh/Thành phố và Quận/Huyện hoặc Phường/Xã.
-- Mỗi cột có input lọc và danh sách cuộn; cho phép chọn nhiều.
-- Item cao tối thiểu 40px; checkbox 20×20px; selected dùng nền và dấu tick xanh.
-- Footer có “Bỏ chọn tất cả” bên trái và “Áp dụng” bên phải.
-- “Đóng/thoát” không commit lựa chọn nháp; “Áp dụng” mới cập nhật bộ lọc.
+**Đang gõ:** ẩn lịch sử/keyword phổ biến, hiển thị tối đa sáu gợi ý khớp không dấu, tô đậm phần khớp; nếu không có thì cho tìm đúng chuỗi. Cột job bên phải giữ nguyên.
 
-**Tag tìm nhanh:**
+**History contract:** key `easycv_recent_searches_v2`, tối đa sáu, mới nhất đứng đầu, loại trùng không phân biệt hoa thường. Số lượng việc làm hiện là fixture/tính giả lập.
 
-- Dòng nằm dưới search, label “Tìm kiếm phổ biến:” và các pill.
-- Pill font 13px, padding `4px 12px`, viền xám; một pill ưu tiên có nền cam nhạt.
+**Vị trí:** desktop căn mép trái popup với input để lộ nút danh mục, mép phải bám search box; `≤900px` rộng 100% wrapper.
 
-**Mobile:**
+#### H02.4. Modal Danh mục Nghề
 
-- Search box chuyển thành cột.
-- Divider dọc bị ẩn; địa điểm có divider ngang phía trên.
-- Nút tìm kiếm full width.
-- Suggestion panel chuyển từ 2 cột thành 1 cột ở viewport ≤760px, tối đa `72vh`, cho phép cuộn dọc và không tạo scroll ngang.
-- Thứ tự mobile: tìm kiếm gần đây → từ khóa phổ biến → việc làm đề xuất; mức lương xuống dòng dưới tiêu đề khi thiếu chiều rộng.
-- Location picker không được vượt viewport; hai cột địa điểm vẫn dùng được ở 360px hoặc chuyển thành quy trình 2 bước nếu dự án đích cần.
-- Khi `prefers-reduced-motion: reduce`, bỏ transition không thiết yếu của popup và item tương tác.
+- Trigger riêng, không thuộc popup từ khóa.
+- Gồm header, search, cột Nhóm nghề, vùng Nghề/Vị trí chuyên môn, nhóm phổ biến và footer.
+- Neo **8px dưới search box**, kể cả sticky.
+- Desktop rộng tối đa `1250px`; cao khoảng `2/3` phần khả dụng.
+- Mobile `≤768px` chuyển một cột/toàn viewport phù hợp.
+- Backdrop trang chủ **trong suốt, không blur**, vẫn bắt click ngoài.
+- Actions: Bỏ chọn tất cả, Hủy, Chọn.
+- Apply phát `easycv:category-applied` để đồng bộ search state.
 
-### H03. Doanh nghiệp tiêu điểm và dải đối tác
+#### H02.5. Location picker
 
-**Mục đích:** Tạo vị trí thương mại cao cấp cho nhà tuyển dụng, đồng thời củng cố độ tin cậy của nền tảng.
+- Hai chế độ: Tỉnh/Quận-huyện cũ và Tỉnh/Phường-xã sau 01/07/2025.
+- Có search riêng cho hai cấp, clear all và apply.
+- Desktop tối đa khoảng `660px × 415px`, hai cột; mobile rộng 100%, cao tối đa `70vh`.
+- `#heroLocationSelect` ẩn là cầu nối tới search controller.
 
-**Banner doanh nghiệp tiêu điểm:**
+#### H02.6. Search submission
 
-- Nằm ngay dưới tag tìm nhanh, cách 12px.
-- Khung full width, cao tối thiểu 410px, bo 16px, viền cam nhạt 1.5px, nền xanh đen.
-- Phần ảnh chính cao 336px, `object-fit: cover`, ưu tiên `object-position: center top`.
-- Chân banner ẩn ở trạng thái mặc định và chỉ hiển thị khi người dùng hover vào banner; khi điều hướng bằng bàn phím, chân banner cũng hiển thị khi focus nằm trong banner (`:focus-within`) để bảo đảm khả năng truy cập.
-- Khi hiển thị, chân banner cao tối thiểu 74px, nền `#0B1329`, gồm:
-  - Logo doanh nghiệp 46×46px trong hộp trắng bo 10px.
-  - Tên chiến dịch 16px/700 và tên doanh nghiệp 13.5px.
-  - CTA cam “Khám phá ngay” ở bên phải.
-- Có nhãn “Được tài trợ/Quảng cáo” nhìn thấy rõ.
-- Có 3 slide và dãy chấm điều hướng; chấm active rộng 20px, màu cam.
+Enter và CTA dùng cùng luồng:
 
-**Tương tác carousel:**
+```text
+viec-lam.html?keyword=<...>&location=<...>&category=<...>&industry=<...>
+```
 
-- Tự chuyển mỗi 5 giây.
-- Dừng khi hover, focus, tab trình duyệt bị ẩn hoặc reduced motion.
-- Người dùng có thể chọn từng chấm; focus không tự nhảy khi slide đổi.
-- Click ảnh/logo/CTA dẫn tới trang chiến dịch hoặc doanh nghiệp tương ứng.
+- Chỉ thêm param có giá trị và dùng `URLSearchParams`.
+- `category` chỉ dùng cho key trang kết quả hỗ trợ.
+- Lựa chọn chuyên môn/không ánh xạ category truyền qua `industry`.
+- Search rỗng vẫn đi `viec-lam.html`.
 
-**Dải đối tác:**
+#### H02.7. Quick tags
 
-- Mục đích: dành cho các doanh nghiệp trả phí quảng cáo; ưu tiên chọn 3 doanh nghiệp có tổng mức chi quảng cáo cao nhất để hiển thị.
-- Chỉ sử dụng đúng 3 thẻ doanh nghiệp tại một thời điểm. Danh sách được xác định từ dữ liệu chi tiêu quảng cáo hợp lệ trong kỳ áp dụng.
-- Cách banner 28px, có divider phía trên.
-- Card đối tác rộng khoảng 356px, cao tối thiểu 146px, bo 17px, viền cam nhạt.
-- Logo 98×98px bên trái; tên viết hoa 15px/700 và ngành 14px bên phải.
-- Auto chuyển mỗi 4 giây nhưng vẫn có điều khiển bằng bàn phím; mobile cho phép cuộn ngang.
+Frontend Dev, Java Spring, Marketing, UI/UX Designer, Data AI, Việc làm Remote. Click phải dùng cùng search contract.
+
+### H03. Bento Sponsor Banner
+
+- Một banner chính bên trái, hai banner phụ xếp dọc bên phải.
+- Banner chính có hai slide, previous/next, hai dots, autoplay `5 giây`, pause khi hover.
+- Nút/dot không được click xuyên vào link slide.
+- Ảnh có alt có nghĩa, không méo; route hiện là anchor fixture cần thay trước production.
+- Nội dung tài trợ phải được nhận diện minh bạch khi production.
 
 ### H04. Việc làm nổi bật
 
-**Mục đích:** Dành cho các việc làm thuộc gói ưu tiên đẩy top hiển thị. Trong danh sách đủ điều kiện, ưu tiên sắp xếp việc làm theo nhóm ngành được ghi nhận trong hồ sơ và CV của ứng viên.
+- ID `#viec-lam-noi-bat`; chín job fixture; desktop ba cột, gap `16px`.
+- Pill: Tất cả; IT; Marketing; Kinh doanh B2B; Tài chính; Remote.
+- Card gồm logo, badge ưu tiên/tài trợ, title, company, salary, location, bookmark.
+- Logo luôn `65 × 65px`; pill chỉ lọc section này.
+- Bookmark hiện chỉ đổi UI và toast.
 
-**Bố cục:**
+**Cảnh báo:** Link `#job-...`/`#company-...` chưa phải route; ảnh Unsplash là placeholder; không báo lưu thành công production khi chưa có API/auth.
 
-- Nền `#F8FAFC`, padding dọc 40px.
-- Header trái chỉ dùng H2 “Việc làm nổi bật” và mô tả ngắn; không hiển thị tiêu đề/số liệu “Hơn 1.500+ việc làm”. Link xem tất cả đặt ở bên phải.
-- Thanh 6 pill ngành nằm dưới header, cuộn ngang trên mobile.
-- Lưới desktop 3 cột, gap 16px; tối đa 4 hàng, tương đương 12 thẻ trên mỗi trang.
-- Bên dưới vùng thẻ phải hiển thị chỉ báo `trang đang xem/tổng số trang` để người dùng biết vị trí hiện tại trong danh sách; có điều khiển chuyển trang phù hợp.
+#### H04-Legacy. Việc làm hấp dẫn/lương cao
 
-**Job card chuẩn:**
+`#viec-lam-hap-dan` đang ẩn có chủ đích: không hiển thị, không chiếm chỗ, không khởi tạo pagination, không vào accessibility tree. Không sửa/khôi phục nếu không được giao riêng.
 
-- Nền trắng, viền 1px, bo 12px, padding `14px 16px`, min-height 118px.
-- Cấu trúc dọc gồm hai hàng:
-  1. Hàng trên: logo 52×52px → cụm tiêu đề/công ty.
-  2. Hàng dưới: các pill lương/địa điểm/matching → nút bookmark.
-- Logo trong hộp trắng, viền xanh 1.5px, bo 8px; có badge tia chớp nhỏ góc trên trái với việc ưu tiên.
-- Tiêu đề 14.5px/700, tối đa 2 dòng.
-- Tên công ty 11.5px/500, uppercase, một dòng ellipsis.
-- Pill cao khoảng 24px, padding `4px 10px`, font 12px.
-- Bookmark tròn 32×32px, viền xanh; active nền xanh, icon trắng.
-- Hover card: nâng 2px, viền xanh, bóng xanh nhẹ.
+### H05. Công ty nổi bật
 
-**Tương tác:**
+- ID `#cong-ty-tieu-bieu`; tám fixture: FPT, VNG, Viettel Digital, Techcombank, MoMo, Shopee, MB Bank, VinAI.
+- Carousel mỗi `2 giây` dịch một card; sau transition chuyển card đầu xuống cuối.
+- Pause khi hover/focus/tab ẩn; tôn trọng reduced motion.
+- Desktop/tablet/mobile hiển thị 5/3/2 card.
+- Logo desktop 88px, mobile 76px; tên tối đa ba dòng.
+- Không hiển thị “lĩnh vực công ty”; thay đổi này đã được hoàn nguyên.
+- Footer có số job và nút yêu thích.
 
-- Click vùng card/tiêu đề/tên việc làm → trang thông tin chi tiết của đúng việc làm đó: `/viec-lam/{slug-or-id}`.
-- Click tên/logo công ty → `/cong-ty/{slug-or-id}` và không kích hoạt click card.
-- Bookmark → gọi save/unsave API; khi pending khóa nút và hiển thị tiến trình; lỗi phải rollback.
-- Filter pill active có nền cam/chữ trắng. Filter phải kết hợp với từ khóa và địa điểm trong một state chung, không ghi đè lẫn nhau.
-- Empty state phải ghi “Không tìm thấy việc phù hợp” và có nút xóa bộ lọc.
+Route company dùng query `q` là fixture và cần thống nhất contract trước production.
 
-### H05. Việc làm lương cao
+### H06. EasyCV VIP Pro
 
-**Mục đích:** Thu hút ứng viên giàu kinh nghiệm bằng lương/phúc lợi và môi trường phát triển. Danh sách phải được cá nhân hóa theo nhóm ngành nghề trong CV ứng viên và dữ liệu lịch sử người dùng về nhóm ngành nghề.
+Banner in-feed gồm tiêu đề, mô tả, ba quyền lợi và CTA. “12.500+ nhà tuyển dụng”, phân tích CV và sửa CV 1-1 là claim fixture cho tới khi xác minh. CTA `#nang-cap-vip` chưa phải thanh toán; không tạo success giả.
 
-**Bố cục:**
+### H07. Việc làm phù hợp với bạn
 
-- Nền trắng, header chỉ gồm H2 “Việc làm lương cao” và CTA xem thêm; không hiển thị title/mô tả phụ “Dành riêng cho nhân tài...”.
-- Lưới desktop 3 cột, gap 16px; tối đa 4 hàng, tương đương 12 thẻ trên mỗi trang.
-- Bên dưới vùng thẻ phải hiển thị chỉ báo `trang đang xem/tổng số trang` và điều khiển chuyển trang.
-- Card dùng cùng cấu trúc job card để giảm chi phí nhận thức.
+- ID `#viec-lam-phu-hop`; có CTA hồ sơ, banner 85%/34 việc và sáu job card.
+- **Không còn tab** Tất cả/Khớp CV/Lương cao/Remote; danh sách đi thẳng sau banner.
+- Dùng lại hệ thống job card H04.
+- 85%, 34 việc và logic phù hợp chưa đến từ AI/backend; không tính match score ở client.
 
-**Quy tắc cá nhân hóa:**
+### H08. Mẫu CV phù hợp
 
-- Nguồn tín hiệu gồm: (1) nhóm ngành nghề được trích xuất/xác nhận từ CV ứng viên; (2) lịch sử tìm kiếm, xem chi tiết, lưu và ứng tuyển của người dùng đã được quy đổi về nhóm ngành nghề.
-- Chỉ xếp hạng trong tập việc làm đáp ứng tiêu chí “lương cao”; không được dùng cá nhân hóa để đưa tin không đủ điều kiện vào danh sách.
-- Khi có cả hai nguồn, hệ thống kết hợp tín hiệu CV và lịch sử người dùng để xếp hạng. Khi thiếu CV hoặc chưa có lịch sử, dùng nguồn còn lại; khi thiếu cả hai, fallback sang việc làm lương cao phổ biến/mới nhất.
-- Production phải lấy danh sách đã xếp hạng từ recommendation API. Frontend không tự suy luận nhóm ngành từ nội dung CV và không ghi dữ liệu nhạy cảm của CV vào `localStorage`.
+- ID `#mau-cv-de-xuat`; tám mẫu: Emerald ATS, Professional Teal, Modern Creative, Rose Impact, Executive Slate, Clean Blue, Violet Studio, Minimal Sand.
+- Filter: Tất cả, Đơn giản, Chuyên nghiệp, Hiện đại, Ấn tượng, ATS.
+- Auto-step `2 giây`, vòng lặp như company carousel; hiển thị 5/3/2 card.
+- Filter ít mẫu có thể clone đủ track, nhưng clone không được sai `templateId`.
+- Pause hover/focus/tab ẩn/reduced motion.
+- Route card: `/tao-cv/chinh-sua?templateId=<id>`; “Xem tất cả” hiện cần route thật.
 
-**Khác biệt thiết kế:**
+### H09. Ngành nghề và từ khóa phổ biến
 
-- Viền cam nhạt `#FED7AA`, bóng cam rất nhẹ.
-- Hover viền cam `#F97316` và bóng cam.
-- Lương/phúc lợi là thông tin nổi bật nhất sau tên công việc.
-- Có thể thêm badge “Lương cao”, “Thưởng ký hợp đồng”, “Remote/Hybrid”, nhưng badge phải lấy từ dữ liệu.
+Tám category: IT, Kinh doanh, Marketing, Tài chính, Kế toán, Nhân sự, Thiết kế, Logistics. Có 12 keyword fixture như Java, React, Sales B2B, Digital Marketing, Data Analyst, Kế toán, UI/UX, Tuyển dụng, Flutter, Product Owner, tiếng Anh, Intern.
 
-**Liên kết/tương tác:**
+- Keyword dùng `data-keyword` và search contract.
+- Số đếm `1.4k`, `4.5k`... là fixture.
+- Category anchor chưa phải route thật.
+- Emoji lửa fixture phải thay bằng SVG/icon hệ thống khi production.
 
-- Click vùng card/tiêu đề/tên việc làm → trang thông tin chi tiết của đúng việc làm đó: `/viec-lam/{slug-or-id}`.
-- Các liên kết tên/logo công ty và thao tác bookmark tuân theo Job card chuẩn tại H04.
-- CTA section dẫn tới trang kết quả đã áp bộ lọc lương cao.
+### H10. Footer
 
-### H06. Công ty nổi bật
+Bốn cột: Brand; Về EasyCV; Dành cho ứng viên; Liên hệ/trụ sở/app. Cuối footer có copyright và social.
 
-**Mục đích:** Hiển thị các doanh nghiệp đã mua **gói hiển thị Công ty nổi bật**, giúp tăng nhận diện thương hiệu tuyển dụng và khả năng tiếp cận ứng viên. Đây là vị trí hiển thị theo quyền lợi gói, không phải bảng xếp hạng chất lượng hay mức độ uy tín do EasyCV chấm tự động.
+- Link phải có destination thật trước production.
+- Pháp nhân, giấy phép, địa chỉ, hotline, email phải được xác minh.
+- App Store/Google Play chỉ hiển thị khi có URL phát hành.
+- Social icon-only link phải có accessible name.
 
-**Bố cục:**
+### H11. Widget nổi
 
-- Nền `#F8FAFC`; lưới 2 cột desktop, gap 24px; mỗi trang hiển thị **4 card** theo bố cục 2 cột × 2 hàng. Prototype có 8 card tương ứng 2 trang.
-- Mỗi card gồm cover ở trên, body ở dưới; logo chồng mép cover/body.
-- Danh sách tự chuyển sang trang tiếp theo sau mỗi **5 giây** và quay vòng về trang đầu.
-- Bên dưới khu vực thẻ phải có nút Trang trước/Trang sau, chấm chỉ báo và nhãn `Trang hiện tại/tổng số trang` (ví dụ `Trang 1/2`).
-- Tự chuyển phải dừng khi người dùng hover, focus bàn phím, tab trình duyệt bị ẩn hoặc bật `prefers-reduced-motion`; thao tác thủ công vẫn phải dùng được.
+**Floating AI:** Nút mở popover ba job fixture, có close và link đến `#viec-lam-phu-hop`; đây là UI discovery, không chứng minh AI đã tích hợp.
 
-**Quy tắc gói hiển thị và dữ liệu:**
-
-- Backend/CMS chỉ trả về doanh nghiệp có gói còn hiệu lực; frontend không tự chọn hoặc tự suy luận doanh nghiệp nổi bật.
-- Thứ tự hiển thị theo cấu hình của gói/CMS. Khi số lượng không đủ một trang, không render điều khiển phân trang và không chạy bộ đếm tự chuyển.
-- Khi gói hết hạn, doanh nghiệp phải được loại khỏi danh sách ở lần tải/refresh dữ liệu kế tiếp theo hợp đồng API.
-
-**Company card:**
-
-- Nền trắng, bo 16px, viền 1px, overflow hidden.
-- Cover dùng ảnh/gradient có tỷ lệ nhất quán; không cắt logo hoặc chữ trong ảnh.
-- Logo khoảng 64×64px, hộp trắng, bo 12px, có bóng; đặt lệch lên cover khoảng 32px.
-- Tên công ty 18px/800; badge xác thực đặt ngay cạnh tên.
-- Metadata gồm ngành, quy mô/địa điểm nếu có.
-- Khối số liệu cho biết số việc đang tuyển và lượt theo dõi; không hiển thị số giả như dữ liệu thật.
-- Footer card có nút “Theo dõi” và “Xem việc làm”.
-
-**Tương tác:**
-
-- Click card/tên → `/cong-ty/{slug-or-id}`.
-- “Xem việc làm” → `/viec-lam?company={id}`.
-- Theo dõi/unfollow dùng optimistic UI có rollback khi lỗi; nếu phiên hết hạn, auth guard chung xử lý đăng nhập lại và giữ return URL.
-
-### H07. Banner EasyCV VIP Pro
-
-**Mục đích:** Giới thiệu gói trả phí như một giải pháp tăng độ nổi bật hồ sơ, không chen ngang luồng tìm việc quá mức.
-
-**Bố cục:**
-
-- Banner full container, nền gradient tím/xanh đen, bo 16px.
-- Trái: icon/nhãn VIP, tiêu đề “Nổi bật hơn với EasyCV VIP Pro”, mô tả ngắn.
-- Có 2–3 lợi ích dạng bullet/check.
-- Phải: CTA cam “Dùng thử VIP…” và thông tin ưu đãi nếu có.
-
-**Tương tác:**
-
-- CTA → `/vip` hoặc checkout thật.
-- Nếu thanh toán chưa sẵn sàng, hiển thị “Sắp ra mắt”; không dùng toast thành công giả.
-
-### H08. Việc làm phù hợp với bạn
-
-**Mục đích:** Cá nhân hóa nội dung dựa trên hồ sơ ứng viên, ưu tiên hiển thị việc làm theo nhóm ngành được ghi nhận trong hồ sơ và CV, đồng thời thúc đẩy ứng viên hoàn thiện CV.
-
-**Bố cục:**
-
-- Header có H2, mô tả về matching và CTA “Tùy chỉnh tiêu chí gợi ý”.
-- Banner hoàn thiện hồ sơ nằm đầu section: icon AI tròn 48px, tiêu đề/mô tả ở giữa, nút “Cập nhật CV” bên phải.
-- Thanh tab nằm dưới banner, có divider 2px; tab active chữ và underline cam.
-- Lưới job card giống H04: desktop 3 cột, tối đa 4 hàng, tương đương 12 thẻ trên mỗi trang.
-- Bên dưới vùng thẻ phải hiển thị chỉ báo `trang đang xem/tổng số trang` và điều khiển chuyển trang.
-
-**Tab gợi ý:**
-
-- Gợi ý tốt nhất.
-- Phù hợp kỹ năng.
-- Phù hợp mức lương.
-- Gần địa điểm mong muốn.
-
-Tên tab có thể thay đổi theo taxonomy thật nhưng mỗi tab phải ánh xạ tới `matchType` rõ ràng.
-
-**Điểm matching:**
-
-- Badge xanh lá dạng pill, ví dụ “Khớp 95%”.
-- Có một dòng lý do ngắn, ví dụ “Khớp 4/5 kỹ năng chính”.
-- `matchScore` và `matchReasons` PHẢI do backend cung cấp; frontend không tự suy diễn phần trăm.
-- Khi hồ sơ thiếu dữ liệu, thay danh sách bằng CTA hoàn thiện hồ sơ; không bịa kết quả matching.
-
-**Liên kết/tương tác:**
-
-- Click vùng card/tiêu đề/tên việc làm → trang thông tin chi tiết của đúng việc làm đó: `/viec-lam/{slug-or-id}`.
-- Các liên kết tên/logo công ty và thao tác bookmark tuân theo Job card chuẩn tại H04.
-- CTA “Tùy chỉnh tiêu chí gợi ý” và CTA “Cập nhật CV” phải dùng route/action thật của dự án; nếu chưa có thì ghi rõ dependency, không giả lập thành công.
-
-### H09. Đề xuất mẫu CV
-
-**Mục đích:** Thay hoàn toàn hai banner quảng bá cũ bằng khu vực giúp ứng viên khám phá và bắt đầu tạo CV từ một mẫu phù hợp.
-
-**Tiêu đề và CTA:**
-
-- Tiêu đề section: **“Khám phá mẫu CV phù hợp với bạn”**.
-- Không hiển thị eyebrow/tiêu đề phụ **“Tạo CV nhanh chóng”** phía trên tiêu đề section.
-- Có thể hiển thị số lượng mẫu đã được backend xác nhận, ví dụ “Hơn 100 mẫu”; không hard-code số lượng như dữ liệu thật.
-- Link/button **“Xem tất cả”** nằm bên phải tiêu đề trên desktop và dẫn tới route trang tạo CV `/tao-cv`.
-- Nếu router dự án đích dùng route khác, PHẢI ánh xạ `/tao-cv` sang route tương ứng; không dùng `href="#"`.
-
-**Bộ lọc phong cách:**
-
-- Hiển thị một hàng filter pill/chip ngay dưới section header, gồm: **Tất cả, Đơn giản, Chuyên nghiệp, Hiện đại, Ấn tượng, ATS**.
-- Mặc định chọn **Tất cả**. Mỗi giá trị ánh xạ tới `styleCode` ổn định: `all | simple | professional | modern | impressive | ats`.
-- Chỉ cho phép chọn một phong cách tại một thời điểm. Trạng thái chọn phải thể hiện bằng cả màu sắc và `aria-pressed="true"` hoặc semantics tab tương đương.
-- Khi đổi bộ lọc, cập nhật danh sách ngay tại section; không tải lại toàn trang. Nếu lấy dữ liệu từ xa, hiển thị loading/error riêng cho danh sách và giữ filter đang chọn.
-- Nếu một phong cách không có mẫu, hiển thị thông báo “Chưa có mẫu CV thuộc phong cách này” và nút quay về **Tất cả**; không để vùng nội dung trắng.
-
-**Bố cục danh sách:**
-
-- Dùng carousel ngang theo tinh thần ảnh tham chiếu: desktop hiển thị 5 mẫu, tablet 3 mẫu, mobile 1–2 mẫu tùy chiều rộng; gap 16–24px.
-- Card dùng ảnh preview CV theo tỷ lệ giấy A4 (`210:297`), `object-fit: cover`, nền trung tính, viền mảnh và bo 8–12px. Không kéo méo ảnh.
-- Mỗi card có tên mẫu làm accessible name; có thể thêm badge như “Mới” hoặc “Chuẩn ATS” chỉ khi dữ liệu cung cấp.
-- Nút previous/next đặt ở vùng header hoặc hai cạnh carousel, dùng icon SVG đồng nhất và có accessible name “Mẫu trước”/“Mẫu tiếp theo”. Nút disabled ở đầu/cuối danh sách không được tương tác.
-- Không tự động chuyển carousel. Hỗ trợ chuột, cảm ứng và bàn phím; focus ring phải nhìn thấy rõ.
-
-**Tương tác và điều hướng:**
-
-- Click/chạm một card mẫu CV → mở trang chỉnh sửa CV với đúng mẫu vừa chọn: `/tao-cv/chinh-sua?templateId={templateId}`.
-- `templateId` PHẢI lấy từ dữ liệu của card, được encode an toàn và được trang chỉnh sửa kiểm tra hợp lệ; không truyền toàn bộ template qua URL.
-- Nếu phiên đăng nhập hết hạn khi mở editor, auth guard chung chuyển tới đăng nhập kèm `returnUrl` chứa route chỉnh sửa và `templateId` đã chọn.
-- Click **“Xem tất cả”** → `/tao-cv`; không tự động chọn mẫu và không mở editor.
-- Nếu route editor hoặc trang tạo CV chưa tồn tại, giữ UI nhưng đánh dấu dependency/route còn thiếu trong báo cáo triển khai; không mô phỏng điều hướng thành công.
-
-### H10. Khóa học nâng cao kỹ năng
-
-**Mục đích:** Đề xuất khóa học từ các đơn vị liên kết với EasyCV, được cá nhân hóa để giúp ứng viên bổ sung năng lực phù hợp với định hướng nghề nghiệp và nhu cầu tìm việc.
-
-**Trình bày tiêu đề:** Chỉ hiển thị tiêu đề **“Khóa học nâng cao kỹ năng”**; không hiển thị dòng mô tả phụ bên dưới tiêu đề.
-
-**Nguồn dữ liệu và nguyên tắc cá nhân hóa:**
-
-- Chỉ hiển thị khóa học do các đơn vị có liên kết với EasyCV cung cấp và còn hiệu lực hiển thị; không tự tổng hợp khóa học từ nguồn không được phê duyệt.
-- Danh sách được xếp hạng theo mức độ liên quan với **nhóm ngành trong hồ sơ ứng viên**, **nhóm ngành/nội dung kỹ năng trong CV** và **thói quen tìm kiếm việc làm** của ứng viên (ví dụ: từ khóa, nhóm ngành, chức danh và bộ lọc đã tìm kiếm).
-- Hệ thống phải hợp nhất các tín hiệu, loại bỏ trùng lặp và ưu tiên khóa học phù hợp với nhiều tín hiệu hơn; không suy diễn hoặc hiển thị lý do “phù hợp” khi không có dữ liệu chứng minh.
-- Chỉ sử dụng dữ liệu hồ sơ, CV và lịch sử tìm kiếm theo chính sách quyền riêng tư/đồng ý của EasyCV; không đưa dữ liệu cá nhân thô sang phía đơn vị liên kết chỉ để tạo danh sách trên trang chủ.
-- Với ứng viên chưa đủ dữ liệu cá nhân hóa, dùng danh sách dự phòng từ các đơn vị liên kết theo xu hướng tuyển dụng/ngành phổ biến; không giả lập rằng danh sách đã được cá nhân hóa.
-- Khi API cá nhân hóa lỗi, hiển thị danh sách dự phòng hoặc trạng thái lỗi của riêng section; không làm hỏng trang và không dùng dữ liệu cũ của tài khoản khác.
-
-**Bố cục:**
-
-- Header section + link xem tất cả.
-- Carousel: desktop 4 card, tablet 2, mobile 1; gap 16px.
-- Dữ liệu mẫu có 4 khóa học.
-
-**Course card:**
-
-- Nền trắng, viền 1px, bo 12–16px, overflow hidden.
-- Ảnh tỷ lệ thống nhất ở đầu card, `object-fit: cover`.
-- Badge lĩnh vực đặt trên ảnh hoặc đầu body; badge “phù hợp” chỉ hiện nếu có dữ liệu.
-- Body theo thứ tự: tiêu đề tối đa 2 dòng → giảng viên/đơn vị → rating + số đánh giá → giá hiện tại + giá cũ gạch ngang.
-- Giá hiện tại dùng cam và weight 800; giá cũ dùng xám.
-
-**Tương tác:**
-
-- Click card/tên khóa học → `/khoa-hoc/{slug-or-id}`.
-- Auto chuyển 5 giây, dừng khi hover/focus/reduced motion.
-- Có nút previous/next với accessible name; không chỉ hỗ trợ kéo chuột.
-
-### H11. Sự kiện tuyển dụng
-
-**Mục đích:** Kết nối ứng viên với nhà tuyển dụng và hoạt động phát triển nghề nghiệp.
-
-**Trình bày tiêu đề:** Chỉ hiển thị tiêu đề **“Sự kiện tuyển dụng”**; không hiển thị dòng mô tả phụ bên dưới tiêu đề.
-
-**Bố cục:**
-
-- Lưới desktop 3 cột; dữ liệu mẫu có 3 sự kiện.
-- Card nền trắng, viền 1px, bo 12–16px, padding khoảng 20px; nội dung chia phần chính và footer.
-
-**Event card:**
-
-- Hàng đầu: badge ngày 54×60px bên trái; bên phải là tag Online/Offline và tiêu đề tối đa 2 dòng.
-- Badge ngày có viền trên cam 3px; ngày 19px/800, tháng 10px/700 uppercase.
-- Dòng tổ chức/địa điểm dùng icon và font 12.5px.
-- Mô tả 13px, line-height 1.5.
-- Footer có divider nét đứt; số người đăng ký bên trái, CTA “Đăng ký miễn phí” bên phải.
-
-**Tương tác:**
-
-- Click tiêu đề/card → `/su-kien/{slug-or-id}`.
-- CTA đăng ký gọi flow thật; pending/đã đăng ký/hết chỗ/hết hạn phải có trạng thái riêng.
-- Số người đăng ký là dữ liệu từ server, không tự tăng ở frontend.
-
-### H12. Ngành nghề và từ khóa phổ biến
-
-**Mục đích:** Cung cấp lối vào khám phá dành cho người chưa biết chính xác chức danh cần tìm và hỗ trợ SEO nội bộ.
-
-**Trình bày tiêu đề:** Chỉ hiển thị tiêu đề **“Ngành nghề & từ khóa phổ biến”**; không hiển thị dòng mô tả phụ bên dưới tiêu đề.
-
-**Phần A – 8 ngành phổ biến:**
-
-- Lưới desktop 4 cột, tablet 2, mobile 1; gap 16px.
-- Card nền trắng, viền 1px, bo 14px, padding 18px.
-- Icon 46×46px trong ô nền nhạt theo từng ngành.
-- Tên ngành 14.5px/700; số việc 12.5px/600 màu cam.
-- Click → `/viec-lam?category={code}`.
-
-Danh mục mẫu: Công nghệ thông tin; Kinh doanh/Bán hàng; Marketing/Truyền thông; Tài chính/Ngân hàng; Kế toán/Kiểm toán; Nhân sự/Hành chính; Thiết kế/Sáng tạo; Logistics/Xuất nhập khẩu.
-
-**Phần B – Hot Search:**
-
-- Hộp nền trắng, bo 16px, viền 1px, padding 24px.
-- Header trái “Từ khóa việc làm được tìm kiếm nhiều nhất”; phải là thời gian cập nhật.
-- Từ khóa dạng pill wrap, gap 10px; pill có nhãn, số việc và có thể có dấu “hot”.
-- Click pill đặt query và chuyển tới trang tìm việc.
-- Thống kê số việc và “cập nhật mỗi 15 phút” chỉ được hiển thị nếu có pipeline dữ liệu tương ứng.
-
-### H13. Footer
-
-**Mục đích:** Cung cấp thông tin pháp lý, liên kết hệ thống và củng cố niềm tin.
-
-**Thiết kế chung:**
-
-- Nền `#0B1120`, chữ `#94A3B8`, padding top 60px.
-
-**Footer chính:**
-
-- Desktop 5 cột theo tỷ lệ `2fr 1fr 1fr 1fr 1.5fr`, gap 40px.
-- Mobile xếp 1 cột theo đúng thứ tự từ cột 1 đến cột 5; không đổi nhóm liên kết chỉ để lấp khoảng trống.
-- Prototype hiện không có form đăng ký nhận tin trong footer; AI không tự bổ sung form nếu chưa có yêu cầu nghiệp vụ riêng.
-
-**Cột 1 – Thương hiệu và pháp lý:**
-
-- Logo EasyCV, mô tả ngắn về nền tảng, số giấy phép hoạt động dịch vụ việc làm và các chứng nhận/nhãn tin cậy đã được phê duyệt.
-- Click logo → `/`.
-- Đoạn giới thiệu là nội dung đọc, không bắt buộc click. Chỉ liên kết sang `/gioi-thieu` nếu Product Owner yêu cầu rõ.
-- Số giấy phép/chứng nhận chỉ được click khi có trang chi tiết hoặc URL tra cứu chính thức đã được pháp chế xác nhận; nếu chưa có, hiển thị dạng văn bản, không dùng `href="#"`.
-
-**Cột 2 – Về EasyCV:**
-
-| Nhãn liên kết | Đích logic đề xuất | Nội dung trang đích |
-|---|---|---|
-| Giới thiệu nền tảng | `/gioi-thieu` | Thông tin doanh nghiệp, sứ mệnh, sản phẩm và hệ sinh thái EasyCV |
-| Ban điều hành & Cố vấn | `/ve-easycv/ban-dieu-hanh` | Hồ sơ ban điều hành và đội ngũ cố vấn đã được phép công bố |
-| Tuyển dụng tại EasyCV | `/tuyen-dung-easycv` | Danh sách vị trí EasyCV đang tuyển hoặc trang nghề nghiệp nội bộ |
-| Quy chế hoạt động sàn | `/quy-che-hoat-dong` | Quy chế vận hành sàn giao dịch việc làm |
-| Giải quyết khiếu nại | `/giai-quyet-khieu-nai` | Quy trình, thời hạn và kênh tiếp nhận khiếu nại |
-| Chính sách bảo mật | `/chinh-sach-bao-mat` | Chính sách xử lý và bảo vệ dữ liệu cá nhân |
-| Báo chí và Truyền thông | `/bao-chi` | Tin tức, thông cáo báo chí và tài nguyên truyền thông |
-
-**Cột 3 – Dành cho ứng viên:**
-
-| Nhãn liên kết | Đích logic đề xuất | Yêu cầu điều hướng |
-|---|---|---|
-| Tìm kiếm việc làm mới | `/viec-lam` | Mở trang kết quả việc làm ở trạng thái mặc định |
-| Tạo CV online chuẩn ATS | `/tao-cv` | Mở luồng tạo CV; nếu cần đăng nhập phải giữ `returnUrl` |
-| Mẫu CV chuyên nghiệp | `/tao-cv#danh-sach-mau` | Mở trang tạo CV và focus/scroll tới danh sách mẫu; nếu router không hỗ trợ fragment thì dùng route/filter tương đương |
-| Công cụ tính lương Gross - Net | `/cong-cu/tinh-luong-gross-net` | Mở công cụ tính lương, không tự điền dữ liệu cá nhân khi chưa có đồng ý |
-| Trắc nghiệm nghề nghiệp MBTI | `/cong-cu/trac-nghiem-mbti` | Mở bài trắc nghiệm hoặc trang giới thiệu trước khi bắt đầu |
-| Cẩm nang viết CV & Phỏng vấn | `/cam-nang` | Mở chuyên mục nội dung dành cho ứng viên |
-| Báo cáo thị trường lương 2026 | `/bao-cao-thi-truong-lao-dong/luong-2026` | Mở báo cáo đúng năm; năm hiển thị phải lấy từ nội dung được xuất bản, không tự tăng theo năm hệ thống |
-
-**Cột 4 – Nhà tuyển dụng:**
-
-Các liên kết trong cột này mở module/cổng nhà tuyển dụng theo cấu hình của dự án; có thể cùng domain hoặc khác domain. Nếu mở domain khác, dùng URL được cấu hình, không hard-code môi trường production trong component.
-
-| Nhãn liên kết | Đích logic | Nội dung trang đích |
-|---|---|---|
-| Đăng tin tuyển dụng | Cổng nhà tuyển dụng → route đăng tin | Form/luồng tạo tin tuyển dụng; yêu cầu đăng nhập nhà tuyển dụng nếu cần |
-| Tìm kiếm hồ sơ ứng viên | Cổng nhà tuyển dụng → kho hồ sơ | Tìm kiếm và lọc hồ sơ theo quyền/gói dịch vụ |
-| Giải pháp EasyCV ATS | Trang sản phẩm ATS | Giới thiệu tính năng ATS và CTA đăng ký tư vấn/dùng thử |
-| Dịch vụ Headhunter cao cấp | Trang dịch vụ Headhunter | Phạm vi dịch vụ và form liên hệ tư vấn |
-| Báo giá & Gói tuyển dụng | Trang bảng giá nhà tuyển dụng | Gói dịch vụ, quyền lợi và điều kiện áp dụng hiện hành |
-| Quảng bá thương hiệu nhà tuyển dụng | Trang Employer Branding | Các hình thức quảng bá và CTA nhận tư vấn |
-| Liên hệ tư vấn doanh nghiệp | Trang/form liên hệ B2B | Thu thập yêu cầu tư vấn; chỉ báo gửi thành công sau phản hồi API |
-
-**Cột 5 – Liên hệ, trụ sở và ứng dụng:**
-
-- Hiển thị địa chỉ trụ sở Hà Nội, văn phòng TP.HCM, hotline, email hỗ trợ và nút tải ứng dụng khi các thông tin này đã được nghiệp vụ xác nhận.
-- Click địa chỉ → URL bản đồ chính thức của đúng địa điểm; liên kết ngoài mở tab mới và dùng `rel="noopener noreferrer"`. Nếu chưa có URL bản đồ đã duyệt, địa chỉ chỉ là văn bản.
-- Click hotline → `tel:{so-dien-thoai-chuan-hoa}`; accessible name phải đọc được số và mục đích hỗ trợ.
-- Click email → `mailto:hotro@easycv.vn` hoặc địa chỉ hỗ trợ được cấu hình thực tế.
-- Nút App Store/Google Play → URL listing chính thức của ứng dụng tương ứng; ẩn hoặc vô hiệu hóa có giải thích nếu ứng dụng chưa phát hành, không dùng anchor giả.
-
-**Thanh cuối footer:**
-
-- Hiển thị copyright và pháp nhân sở hữu; đây là nội dung đọc, không bắt buộc click.
-- Nếu có liên kết Điều khoản sử dụng/Chính sách bảo mật thì lần lượt dẫn tới `/dieu-khoan-su-dung` và `/chinh-sach-bao-mat` hoặc route thật tương ứng.
-- Icon Facebook, LinkedIn, YouTube và TikTok dẫn tới trang/kênh EasyCV chính thức. Liên kết ngoài mở tab mới, có accessible name theo mẫu “EasyCV trên Facebook” và dùng `rel="noopener noreferrer"`.
-- Không hiển thị icon mạng xã hội nếu chưa có URL chính thức được duyệt.
-
-**Ràng buộc nội dung:**
-
-- Số giấy phép, chứng nhận, địa chỉ và số liệu doanh nghiệp phải được pháp chế/nghiệp vụ xác nhận trước production.
-- Các route trong bảng là đích logic đề xuất. AI phải ánh xạ sang router/config thật của dự án đích và ghi lại mapping; không tạo trang rỗng chỉ để link hoạt động.
-- Mọi item điều hướng phải dùng link; số điện thoại/email dùng URI phù hợp. Nội dung không có đích hợp lệ phải hiển thị dạng văn bản, không dùng `href="#"` hoặc toast giả.
-
-### H14. Widget gợi ý AI nổi
-
-**Mục đích:** Cung cấp lối vào nhanh tới gợi ý việc làm/cố vấn hồ sơ.
-
-**Thiết kế:**
-
-- Fixed ở góc phải dưới, desktop `right: 30px; bottom: 30px`, z-index 1000.
-- Nút gradient cam dạng pill, padding `12px 20px`, chữ 13.5px/700, bóng cam.
-- Chấm xanh 8px biểu thị trạng thái sẵn sàng; animation pulse phải tắt khi reduced motion.
-
-**Tương tác:**
-
-- Click mở popover nhỏ có tiêu đề, mô tả và CTA tới tính năng AI.
-- Popover đóng bằng nút, click ngoài hoặc `Esc`; trả focus về nút mở.
-- Không tuyên bố “AI đang hoạt động” nếu chưa có API/mô hình thật. Nếu chỉ là demo, ghi rõ “Bản xem trước”.
+**View Mode Switcher:** Công cụ demo/QA có Web/Mobile, preset iPhone 16 Pro, Galaxy S24, iPhone SE, rotate/refresh. **PHẢI ẩn hoặc loại khỏi production build** nếu không có quyết định khác.
 
 ---
 
-## 7. Quy tắc điều hướng và liên kết
+## 7. State và dữ liệu
 
-Quy tắc bắt buộc đối với tên thực thể trên trang chủ:
+### 7.1. Search state chuẩn
 
-- Click tên việc làm → trang thông tin chi tiết của đúng việc làm đó: `/viec-lam/{slug-or-id}`.
-- Click tên công ty → trang chủ/trang thông tin của đúng công ty đó: `/cong-ty/{slug-or-id}`.
-- Click tên khóa học → trang thông tin chi tiết của đúng khóa học đó: `/khoa-hoc/{slug-or-id}`.
-- Click tên sự kiện tuyển dụng → trang thông tin chi tiết của đúng sự kiện đó: `/su-kien/{slug-or-id}`.
-- Tên thực thể PHẢI được triển khai bằng liên kết điều hướng có accessible name rõ ràng. Khi tên nằm trong card có vùng click lớn hơn, click liên kết tên không được kích hoạt lặp sự kiện click của card cha.
-- Các route trên là đích logic. Nếu module hoặc route chi tiết tương ứng chưa được triển khai trong dự án đích, AI giữ đặc tả giao diện, không dùng `href="#"`, không giả lập điều hướng thành công và PHẢI ghi rõ dependency/route còn thiếu trong báo cáo bàn giao.
-
-| Nguồn thao tác | Đích logic | Yêu cầu |
-|---|---|---|
-| Logo | `/` | Về đầu trang chủ |
-| Enter / CTA “Tìm việc ngay” / gợi ý tìm kiếm | `/viec-lam?keyword=&locations=` | Chỉ thêm tham số có giá trị; encode bằng `URLSearchParams`; trang đích khởi tạo input và bộ lọc từ URL; giữ query khi back |
-| Job card | `/viec-lam/{slug-or-id}` | Route chi tiết thật |
-| Company card/logo | `/cong-ty/{slug-or-id}` | Route công ty thật |
-| Bookmark/follow | API action trong phiên ứng viên | Nếu phiên hết hạn, auth guard đăng nhập lại và giữ `returnUrl`; không dùng link `#` |
-| Khóa học | `/khoa-hoc/{slug-or-id}` | Chỉ dùng khi module tồn tại |
-| Sự kiện | `/su-kien/{slug-or-id}` | CTA đăng ký có state thật |
-| Card mẫu CV | `/tao-cv/chinh-sua?templateId={templateId}` | Mở editor với đúng template; nếu phiên hết hạn, auth guard giữ `returnUrl` |
-| “Xem tất cả” tại H09 | `/tao-cv` | Mở trang tạo/khám phá toàn bộ mẫu CV; không chọn sẵn template |
-| VIP | `/vip` | Không mô phỏng thanh toán thành công |
-| Nhà tuyển dụng | Cổng nhà tuyển dụng | Có thể khác domain; mở theo chính sách sản phẩm |
-| Thông báo/tin nhắn | `/thong-bao`, `/tin-nhan` | Yêu cầu auth |
-| Footer | Theo ma trận điều hướng tại H13 | Dùng route/config thật; `tel:` cho hotline, `mailto:` cho email, URL chính thức cho bản đồ/app/social; không để dead link |
-
-Nếu router hiện hữu dùng cấu trúc khác, AI phải ánh xạ sang route thật và báo bảng mapping; không tạo hàng loạt route mới chỉ để khớp tên trong tài liệu.
-
----
-
-## 8. Mô hình dữ liệu tối thiểu
-
-Đây là hợp đồng view-model đề xuất, không phải khẳng định API đã tồn tại.
-
-| Model | Trường tối thiểu |
-|---|---|
-| `Job` | `id`, `slug`, `title`, `companyId`, `companyName`, `companyLogoUrl`, `salaryLabel`, `locationCodes[]`, `locationLabel`, `categoryCodes[]`, `tags[]`, `postedAt`, `isSponsored`, `isSaved`, tùy chọn `matchScore`, `matchReasons[]` |
-| `Company` | `id`, `slug`, `name`, `logoUrl`, `coverUrl`, `industryLabel`, `locationLabel`, `isVerified`, `openJobCount`, `followerCount`, `isFollowed` |
-| `Course` | `id`, `slug`, `title`, `imageUrl`, `categoryCode`, `categoryLabel`, `providerId`, `providerLabel`, `isEasyCvPartner`, `rating`, `ratingCount`, `price`, `originalPrice`, `badgeLabel`, tùy chọn `relevanceReasons[]` do backend cung cấp |
-| `Event` | `id`, `slug`, `title`, `startsAt`, `format`, `locationLabel`, `organizers[]`, `summary`, `registrationCount`, `capacity`, `registrationStatus`, `registrationUrl` |
-| `CvTemplate` | `id`, `name`, `previewImageUrl`, `previewAlt`, `styleCodes[]`, `isAtsFriendly`, `isNew`, `order` |
-| `Banner` | `id`, `type`, `imageUrl`, `alt`, `headline`, `subline`, `sponsorLabel`, `destinationUrl`, `startsAt`, `endsAt`, `order` |
-| `Location` | `code`, `name`, `type`, `parentCode`, `boundaryVersion` |
-| `Category` | `code`, `name`, `iconKey`, `openJobCount` |
-| `RecentSearch` | `keyword`, tùy chọn `resultCount`, `searchedAt` |
-| `PopularKeyword` | `keyword`, `label`, tùy chọn `order` |
-| `RecommendedJob` | Tái sử dụng `Job`; tối thiểu cần `id`, `slug`, `title`, `companyLogoUrl`, `salaryLabel` |
-| `HomePayload` | `featuredJobs[]`, `highSalaryJobs[]`, `featuredCompanies[]`, `matchedJobs[]`, `recommendedJobs[]`, `cvTemplates[]`, `popularKeywords[]`, `courses[]`, `events[]`, `categories[]`, `keywords[]`, `banners[]`, `partners[]` |
-
-Tiền, ngày giờ và địa danh phải format theo `vi-VN`. Ảnh thiếu phải có placeholder đúng tỷ lệ; không kéo ảnh ngẫu nhiên từ internet trong production.
-
----
-
-## 9. Hành vi và máy trạng thái
-
-```text
-Search:
-idle -> suggestOpen -> submitting -> results | empty | error
-
-SearchSuggestion:
-closed -> open(history + popularKeywords + recommendedJobs)
-open -> selectSuggestion -> submitting
-open -> removeHistoryItem | clearHistory -> open(updatedHistory)
-open -> Escape | outsideClick -> closed + restoreFocus(keywordInput)
-
-LocationPicker:
-closed -> open(draftSelection) -> apply(committedSelection) -> closed
-                           \-> dismiss(no change) -> closed
-
-Bookmark / Follow:
-off -> pendingOn -> on
-on  -> pendingOff -> off
-pending* -> error -> rollback previous stable state
-
-RemoteSection:
-loading -> ready(data) | empty | error
-
-Overlay:
-closed -> open(trigger)
-open -> Escape | outsideClick | closeButton -> closed + restoreFocus(trigger)
+```ts
+type HomeSearchState = {
+  keyword: string;
+  location: string;
+  categoryKey: string;
+  industryLabel: string;
+};
 ```
 
-Quy tắc bắt buộc:
+Một nguồn state phải điều phối input, category modal, location picker, quick tags và URL.
 
-- Search, ngành, địa điểm và tab matching phải nằm trong state có kiểm soát; không dùng nhiều đoạn code thay nhau ghi `style.display` trên card.
-- `aria-expanded` của keyword input phải phản ánh đúng trạng thái mở/đóng của bảng gợi ý.
-- Xóa lịch sử không được gửi tìm kiếm; chọn history/popular keyword/recommended job mới tạo truy vấn.
-- API recommendation lỗi không được làm hỏng lịch sử và từ khóa phổ biến; cột phải hiển thị error/empty state riêng.
-- Mọi thao tác ghi phải có `pending`, `success`, `error`; không báo thành công trước response server.
-- Khi request mới bắt đầu, request cũ phải hủy hoặc kết quả cũ không được ghi đè kết quả mới.
-- Lỗi một section không làm sập toàn trang; section hiển thị retry riêng.
-- Empty state phải có lời giải thích và hành động tiếp theo.
+### 7.2. Remote state bắt buộc khi nối API
 
----
+`idle | loading | ready | empty | error`
 
-## 10. Responsive
-
-| Viewport | Bố cục yêu cầu |
-|---|---|
-| ≥ 1100px | Header desktop; job 3 cột; company 2 cột; category/course 4 cột; event 3 cột |
-| 769–1099px | Điều chỉnh menu hoặc chuyển sớm sang hamburger; job 2 cột; course 2 cột; category 2 cột |
-| 641–768px | Header mobile; search xếp dọc; promo 1 cột; card 1–2 cột tùy chiều rộng thực |
-| ≤ 640px | Tất cả danh sách chính 1 cột; gutter 16px; carousel 1 card; footer 1 cột |
-
-Điểm kiểm thử bắt buộc: **360px, 375px, 768px, 1024px, 1440px**.
-
-- Không có scroll ngang toàn trang.
-- Pill/tab/carousel có thể cuộn ngang bên trong chính nó.
-- Nội dung không bị header sticky hoặc widget nổi che khuất.
-- Touch target tối thiểu 44×44px; nếu icon nhỏ hơn, mở rộng hit area vô hình.
-
----
-
-## 11. Accessibility
-
-- Dùng landmark: `header`, `nav`, `main`, `section`, `footer`.
-- Chỉ có một H1; các section dùng H2, card dùng H3 khi phù hợp.
-- Button dùng cho hành động; link dùng cho điều hướng.
-- Icon trang trí có `aria-hidden="true"`; icon-only button có accessible name.
-- Dropdown/popover/drawer cập nhật `aria-expanded`; tab dùng role/state phù hợp.
-- Thứ tự focus phải trùng thứ tự thị giác.
-- Focus ring nhìn thấy rõ, ưu tiên màu cam, dày 2–3px.
-- `Esc` đóng overlay; focus quay về trigger.
-- Ảnh logo/banner có alt mô tả chức năng/nội dung, không lặp chữ thừa.
-- Carousel không được tự đổi khi người dùng đang focus bên trong.
-- Hỗ trợ `prefers-reduced-motion`.
-- Form lỗi giữ dữ liệu đã nhập, báo lỗi ngay gần field và không chỉ báo bằng màu.
-
----
-
-## 12. Trạng thái loading, empty và error
-
-| Thành phần | Loading | Empty | Error |
+| Section | Loading | Empty | Error |
 |---|---|---|---|
-| Search suggestion | Skeleton 3–5 dòng hoặc spinner nhỏ | “Không có gợi ý phù hợp” | “Không tải được gợi ý” + Thử lại |
-| Job list | Skeleton giữ đúng kích thước card | Mô tả + xóa bộ lọc | Error card ở cấp section + Thử lại |
-| Company/course/event | Skeleton theo lưới | Ẩn section hoặc empty có chủ ý | Không làm hỏng section khác |
-| Mẫu CV | Skeleton A4 giữ đúng tỷ lệ card | Thông báo theo filter + về “Tất cả” | Error card cấp section + Thử lại, giữ filter |
-| Bookmark/follow | Nút disabled + spinner | Không áp dụng | Rollback + thông báo ngắn |
-| Event registration | Nút loading | Không áp dụng | Giữ trạng thái và hiện lỗi |
-| Banner/carousel | Placeholder đúng tỷ lệ | Ẩn toàn khối, không để khoảng trắng | Fallback tĩnh, không auto-play |
+| Search suggestion | Skeleton dòng | Không có gợi ý + tìm chuỗi hiện tại | Thử lại, giữ input |
+| Jobs | Skeleton đúng card | Gợi ý bỏ filter/xem tất cả | Error cấp section |
+| Companies | Skeleton carousel | Ẩn hoặc empty có chủ ý | Không phá section khác |
+| CV | Skeleton đúng tỷ lệ | Giữ filter, báo không có | Thử lại, giữ filter |
+| Banner | Placeholder đúng tỷ lệ | Ẩn cả khối | Fallback tĩnh |
+| Bookmark/favorite | Disable + spinner | N/A | Rollback |
 
-Skeleton không được nhấp nháy mạnh; kích thước phải gần nội dung thật để tránh layout shift.
+### 7.3. Fixture phải xác minh
 
----
-
-## 13. Nội dung mẫu và dữ liệu cần xác minh
-
-Không sử dụng tiêu đề/số liệu “Hơn 1.500+ việc làm” tại H04. Các nội dung khác như “50.000 doanh nghiệp”, “Khớp 95%”, mức lương, giá khóa học, số người tham gia, countdown, giấy phép và chứng nhận hiện chỉ nên được xem là **fixture/demo** cho tới khi có nguồn dữ liệu hoặc phê duyệt.
-
-Trước production cần xác minh:
-
-1. Số liệu marketing và thống kê việc làm.
-2. Danh sách địa giới hành chính và phiên bản dữ liệu.
-3. Logo/ảnh và quyền sử dụng của nhà tuyển dụng/đối tác.
-4. Nội dung tài trợ và URL đích.
-5. Giấy phép, chứng nhận, địa chỉ, hotline và email.
-6. Giá, ưu đãi và điều khoản VIP/khóa học.
-7. Công thức/nguồn của điểm matching.
+Số job, lương/địa điểm/doanh nghiệp, hồ sơ 85%, 34 việc phù hợp, 12.500+ nhà tuyển dụng, keyword count, logo/ảnh/quyền sử dụng, thông tin pháp lý và các route CV/VIP/company/social/app.
 
 ---
 
-## 14. Yêu cầu phi chức năng
+## 8. Hợp đồng tương tác
 
-- Largest Contentful Paint mục tiêu ≤ 2.5 giây trên kết nối di động tốt.
-- Cumulative Layout Shift mục tiêu ≤ 0.1; ảnh/banner phải khai báo tỷ lệ/kích thước.
-- Lazy-load ảnh dưới màn hình đầu; không lazy-load logo và ảnh hero quan trọng.
-- Không tải đồng thời mọi carousel/banner độ phân giải lớn.
-- Debounce search; cache dữ liệu trang chủ theo cơ chế dự án nhưng không làm sai dữ liệu cá nhân.
-- Không lưu lịch sử tìm kiếm nhạy cảm ngoài chính sách sản phẩm; nếu lưu local, phải tách theo tài khoản hoặc làm rõ trên máy dùng chung.
-- Không đưa token, dữ liệu hồ sơ hoặc thông tin cá nhân vào log phía client.
-- Không có runtime error, console error hoặc request asset 404 trong luồng chuẩn.
+### 8.1. Overlay coordination
 
----
+- Mở category modal đóng search suggestion/location picker.
+- Mở location picker đóng overlay cạnh tranh.
+- Escape đóng lớp trên cùng; khi đóng trả focus về trigger.
+- Drawer/popover cùng cấp phải có quy tắc loại trừ rõ.
 
-## 15. Component tree đề xuất cho đội triển khai
+### 8.2. Button và link
 
-Tên có thể đổi theo convention dự án, nhưng không nhân bản logic/card markup.
+- Button cho action/state; link cho navigation.
+- Không dùng `javascript:void(0)` hoặc `#...` trong production nếu cần route/API.
+- Không gắn click lên container không focus được nếu thiếu semantics bàn phím.
 
-```text
-CandidateHomePage
-├── SiteHeader
-│   ├── DesktopNavigation
-│   ├── NotificationPopover
-│   ├── MessagePopover
-│   ├── AccountMenu
-│   └── MobileDrawer
-├── HeroSearch
-│   ├── KeywordInput
-│   ├── SearchSuggestionPanel
-│   │   ├── RecentSearchList
-│   │   ├── PopularKeywordList
-│   │   └── RecommendedJobList
-│   ├── LocationPicker
-│   └── QuickSearchTags
-├── EmployerSpotlightCarousel
-├── PartnerCarousel
-├── FeaturedJobsSection
-│   ├── CategoryFilterPills
-│   └── JobCard[]
-├── HighSalaryJobsSection -> JobCard[]
-├── FeaturedCompaniesSection -> CompanyCard[]
-├── VipPromotionBanner
-├── MatchedJobsSection
-│   ├── ProfileCompletionBanner
-│   ├── MatchTabs
-│   └── JobCard[]
-├── CvTemplateRecommendations
-│   ├── CvStyleFilters
-│   ├── CvTemplateCarousel
-│   └── CvTemplateCard[]
-├── CoursesCarousel -> CourseCard[]
-├── EventsSection -> EventCard[]
-├── PopularDiscoverySection
-│   ├── CategoryCard[]
-│   └── KeywordPill[]
-├── SiteFooter
-└── FloatingAiWidget
-```
+### 8.3. Bookmark/favorite thật
 
-Các component danh sách PHẢI nhận data qua props/view-model, có stable key và hỗ trợ trạng thái loading/empty/error.
+Kiểm tra auth → disable khi pending → optimistic update có rollback → lỗi rõ → persist sau reload khi backend xác nhận.
+
+### 8.4. Carousel
+
+- Manual controls khi thiết kế có cung cấp.
+- Pause hover/focus/`document.hidden`; dừng khi reduced motion.
+- Không dịch khi người dùng thao tác bên trong.
+- Clone không được tạo chuỗi tab/accessibility lặp vô hạn.
 
 ---
 
-## 16. Tiêu chí nghiệm thu
+## 9. Responsive
 
-### 16.1. Nghiệm thu giao diện
+Breakpoint kiểm thử: `360`, `375`, `390`, `768`, `1024`, `1440px`.
 
-- [ ] Đúng thứ tự H01–H14; không tồn tại DemoBar hoặc điều khiển chuyển guest/logged-in.
-- [ ] Font, màu, container, khoảng cách và hierarchy khớp mục 4.
-- [ ] Header sticky và hero không che/chồng nội dung.
-- [ ] Card việc làm, công ty, khóa học và sự kiện đúng thứ tự thành phần đã mô tả.
-- [ ] H09 không còn hai banner quảng bá; hiển thị section mẫu CV, bộ lọc phong cách và carousel đúng tỷ lệ A4.
-- [ ] Không có chữ Việt lỗi mã hóa, icon emoji chức năng hoặc ảnh méo tỷ lệ.
-
-### 16.2. Nghiệm thu chức năng
-
-- [ ] Tìm bằng nút và Enter; xóa từ khóa; chọn nhiều địa điểm; lọc ngành.
-- [ ] CTA “Tìm việc ngay” điều hướng sang `/viec-lam`; `keyword` và `locations` trên URL khớp chính xác đầu vào người dùng vừa nhập/chọn, kể cả ký tự tiếng Việt và nhiều địa điểm.
-- [ ] Focus/click keyword input mở popup; `Esc` và click ngoài đóng popup; `aria-expanded` cập nhật đúng.
-- [ ] Lịch sử tìm kiếm có thể chạy lại, xóa từng mục và xóa tất cả; dữ liệu còn đúng sau khi reload prototype.
-- [ ] Năm từ khóa phổ biến thực hiện đúng truy vấn tương ứng.
-- [ ] Mỗi việc làm đề xuất hiển thị đủ logo, tiêu đề và lương; click item tìm kiếm/điều hướng theo contract đã chọn.
-- [ ] Click tên việc làm, tên công ty, tên khóa học và tên sự kiện tuyển dụng điều hướng tới đúng trang chi tiết/trang chủ của thực thể tương ứng; nếu route/module chưa tồn tại, dependency được ghi rõ và không dùng link giả.
-- [ ] Popup không hiển thị lại mega-menu ngành nghề cũ.
-- [ ] Bộ lọc kết hợp không ghi đè lẫn nhau; URL phản ánh query khi điều hướng.
-- [ ] Bookmark/follow có auth, pending, success, error và rollback.
-- [ ] Dropdown, popover, drawer, modal đóng đúng bằng `Esc`/click ngoài và trả focus.
-- [ ] Carousel có điều khiển thủ công, tự dừng đúng điều kiện.
-- [ ] H09 lọc đúng `Tất cả | Đơn giản | Chuyên nghiệp | Hiện đại | Ấn tượng | ATS`; empty/error không làm mất lựa chọn hiện tại.
-- [ ] Click card mẫu CV mở editor với đúng `templateId`; “Xem tất cả” mở trang `/tao-cv` và không chọn sẵn mẫu.
-- [ ] H10 chỉ hiển thị khóa học của đơn vị liên kết còn hiệu lực; ứng viên đủ dữ liệu nhận danh sách xếp hạng theo hồ sơ, CV và hành vi tìm việc; nếu hồ sơ thiếu dữ liệu thì dùng danh sách dự phòng không gắn nhãn cá nhân hóa.
-- [ ] Mọi CTA có route/action thật hoặc trạng thái “chưa sẵn sàng” minh bạch.
-
-### 16.3. Nghiệm thu dữ liệu
-
-- [ ] Mọi section từ xa có `loading | ready | empty | error`.
-- [ ] Không tự tính match score; không hiển thị số liệu demo như số liệu thật.
-- [ ] Format tiền/ngày/địa điểm theo `vi-VN`.
-- [ ] Không báo thành công giả cho sự kiện, VIP, bookmark hoặc follow.
-
-### 16.4. Nghiệm thu responsive và accessibility
-
-- [ ] Kiểm tra 360, 375, 768, 1024, 1440px; không tràn ngang.
-- [ ] Dùng được hoàn toàn bằng bàn phím.
-- [ ] Focus ring, accessible name, `aria-expanded` và thứ tự heading đúng.
-- [ ] Chữ và UI đạt yêu cầu tương phản.
-- [ ] Touch target ≥44×44px.
-- [ ] Reduced motion dừng auto-play/animation không thiết yếu.
-- [ ] Popup tìm kiếm là 2 cột trên desktop, 1 cột ở ≤760px và không vượt `72vh` trên mobile.
-- [ ] Tiêu đề việc làm dài dùng ellipsis; mức lương không đè lên tiêu đề hoặc tràn viewport.
-
-### 16.5. Nghiệm thu kỹ thuật
-
-- [ ] Tận dụng stack/router/design system/API client sẵn có; không tự khởi tạo framework mới.
-- [ ] Không duplicate card/search/filter logic.
-- [ ] Build, lint và test hiện hữu chạy thành công.
-- [ ] Không có console error, asset 404 hoặc layout shift lớn.
-- [ ] Báo cáo rõ phần đã nối API, phần còn fixture, route còn thiếu và khác biệt có chủ đích.
+- Không horizontal scroll toàn trang.
+- Header/sticky search/popup/widget không che action.
+- Touch target tối thiểu `44 × 44px`.
+- Pill có thể cuộn ngang bên trong.
+- Job grid chuyển 3 → 2 → 1 cột.
+- Company/CV carousel 5 → 3 → 2 card.
+- Search được đổi layout mobile nhưng không đổi thứ tự nghiệp vụ.
+- Modal/category/location nằm trọn viewport; footer không ép/tràn chữ.
 
 ---
 
-## 17. Chỉ dẫn thực thi dành riêng cho Qwen 3.8 27B
+## 10. Accessibility
+
+- Dùng đúng `header`, `nav`, `main`, `section`, `footer`; chỉ một H1.
+- Icon trang trí `aria-hidden`; icon-only button có accessible name.
+- Trigger cập nhật `aria-expanded`; dialog có role/label phù hợp.
+- Tab order trùng thứ tự thị giác; focus ring màu cam rõ.
+- Escape đóng và trả focus; popup search dùng được bằng Enter/Escape.
+- Contrast chữ thường ≥4.5:1, UI lớn ≥3:1; không dùng màu làm tín hiệu duy nhất.
+- Hỗ trợ reduced motion; alt text ảnh không lặp thừa.
+
+---
+
+## 11. Phi chức năng
+
+### 11.1. Hiệu năng
+
+- Mục tiêu PRD: LCP `<1.8s`; ngưỡng chấp nhận tạm thời không quá 2.5s ở kết nối di động tốt.
+- CLS `≤0.1`; banner/logo có kích thước/aspect ratio.
+- Lazy-load ảnh dưới fold; không tải trước mọi ảnh carousel lớn.
+- Debounce suggestion khi nối API; sticky search không gây layout shift.
+
+### 11.2. Bảo mật/riêng tư
+
+- Không log token, CV, hồ sơ hoặc PII.
+- Đánh giá lịch sử localStorage trên máy dùng chung.
+- Escape dữ liệu người dùng trước khi đưa vào `innerHTML`.
+- Link ngoài mở tab mới có `rel` phù hợp.
+
+### 11.3. Tương thích
+
+Chrome, Edge, Safari, Firefox hiện đại; static hosting của dự án; không console error, runtime error hoặc asset 404 trong luồng chuẩn.
+
+---
+
+## 12. Nợ kỹ thuật cần kiểm soát
+
+| ID | Hiện trạng | Rủi ro | Hướng xử lý |
+|---|---|---|---|
+| TD-01 | Nhiều CTA dùng `#...` | Hiểu nhầm route | Lập route matrix, thay URL thật |
+| TD-02 | Fixture/ảnh placeholder | Sai dữ liệu/quyền ảnh | CMS/API và asset duyệt |
+| TD-03 | High-salary DOM còn nhưng ẩn | Phục hồi nhầm | Giữ chú thích hoặc story xóa riêng |
+| TD-04 | JS còn selector logic module đã gỡ | Dead code/regression | Refactor có test |
+| TD-05 | Hai khai báo `getHistory()` | Khó bảo trì | Hợp nhất sau regression test |
+| TD-06 | Count hard-code/sinh từ hash | Số giả giống thật | Thay API, gắn nhãn fixture |
+| TD-07 | Bookmark chỉ UI toast | Mất trạng thái | Auth/API + rollback |
+| TD-08 | VIP/AI wording vượt prototype | Niềm tin/pháp lý | Xác minh hoặc hạ claim |
+| TD-09 | View Mode Switcher hiện trên trang | Tool QA lọt production | Chặn theo environment |
+| TD-10 | Root/public sửa song song | Lệch phiên bản | Parity check/build mirror |
+
+Không tự mở rộng một yêu cầu nhỏ để xử lý toàn bộ nợ; mỗi mục cần story/chỉ đạo rõ.
+
+---
+
+## 13. Tiêu chí nghiệm thu
+
+### 13.1. Cấu trúc/UI
+
+- [ ] Đúng thứ tự H01–H11.
+- [ ] Không xuất hiện hero title nhìn thấy, brand strip, stats, khóa học, sự kiện, matching tabs.
+- [ ] High-salary section không hiển thị/chiếm chỗ.
+- [ ] Inter, `#F97316`, `#F8FAFC`, container 1250px nhất quán.
+- [ ] Job logo 65px; company logo 88px desktop/76px mobile.
+- [ ] Không lỗi encoding hoặc ảnh méo.
+
+### 13.2. Search
+
+- [ ] Search cao 60px và sticky đúng dưới header.
+- [ ] Focus/click mở popup; Enter tìm; Escape đóng.
+- [ ] Input rỗng có history/popular; đang gõ có suggestion động; cột phải có 5 jobs.
+- [ ] Xóa một/xóa tất cả history và persist reload.
+- [ ] Popup desktop căn với input, không che category trigger.
+- [ ] Category modal cách search 8px; backdrop homepage trong suốt/no blur.
+- [ ] Location picker có hai địa giới, clear/apply.
+- [ ] URL giữ Unicode và đúng bốn query param.
+
+### 13.3. Discovery
+
+- [ ] Bento có slider 2 ảnh + 2 ảnh phụ; prev/next/dot/autoplay 5s/pause hover hoạt động.
+- [ ] Featured filter chỉ ảnh hưởng H04; bookmark không điều hướng sai.
+- [ ] Company carousel auto-step 2s, pause hover/focus/reduced motion.
+- [ ] Matching không có tab cũ.
+- [ ] CV filter đúng và carousel kín track.
+- [ ] Keyword click dùng search contract.
+
+### 13.4. Responsive/accessibility
+
+- [ ] Không tràn ngang ở 360/375/390/768/1024/1440px.
+- [ ] Dùng được bằng keyboard; focus ring/name/aria-expanded đúng.
+- [ ] Overlay đóng bằng Escape và trả focus.
+- [ ] Touch target ≥44px; reduced motion dừng autoplay không thiết yếu.
+- [ ] Floating controls không che CTA/card mobile.
+
+### 13.5. Kỹ thuật
+
+- [ ] `node --check` thành công cho JS liên quan.
+- [ ] Không console error/asset 404.
+- [ ] Root/public mirror khớp sau thay đổi.
+- [ ] `git diff --check` sạch.
+- [ ] Không thêm framework/backend ngoài phạm vi.
+- [ ] Báo cáo rõ API, fixture, route thiếu và khác biệt có chủ đích.
+
+---
+
+## 14. Chỉ dẫn cho Qwen 3.8 27B
 
 ```text
 MỤC TIÊU
-Triển khai trang chủ ứng viên EasyCV theo duy nhất tài liệu này trong dự án hiện tại.
+Sửa/mở rộng trang chủ ứng viên EasyCV mà không làm mất quyết định UI/UX hiện hành.
 
-QUY TRÌNH BẮT BUỘC
-1. Khảo sát stack, router, auth, API client, design system và lệnh build/test hiện có.
-2. Lập bảng mapping H01–H14 sang component/file của dự án.
-3. Dựng layout và token trước, sau đó dựng component, cuối cùng nối state/API.
-4. Dùng route và service có sẵn. Không tự tạo backend hoặc framework mới.
-5. Nếu thiếu API, dùng fixture tách riêng và ghi nhãn demo trong báo cáo; thao tác ghi không được giả thành công.
-6. Duy trì một search/filter state chung cho keyword, locations, category và matchType. SearchSuggestionPanel chỉ gồm RecentSearchList, PopularKeywordList và RecommendedJobList; không dựng lại IndustryMegaMenu cũ trong popup.
-7. Thêm loading, empty, error, auth guard, keyboard/focus và reduced motion.
-8. Chạy build/lint/test của dự án; kiểm tra 360/768/1440px.
-9. Báo cáo: file đã thay đổi, component đã làm, API đã nối, fixture còn lại, route thiếu, test đã chạy.
+TRƯỚC KHI CODE
+1. Đọc AGENTS.md và mọi AGENTS.md gần file đích.
+2. Đọc PRD và toàn bộ tài liệu này.
+3. Khảo sát index.html, CSS/JS và mirror public/.
+4. Tra implementation artifact mới nhất của khu vực sửa.
+5. Lập bảng yêu cầu -> selector/component -> file -> test.
 
-KHÔNG ĐƯỢC
-- Đổi thứ tự section hoặc bỏ component bắt buộc mà không báo lý do.
-- Tự tưởng tượng route/API/điểm AI là đã tồn tại.
-- Dùng href="#" cho production.
-- Dùng toast thành công giả.
-- Dùng emoji làm icon chức năng.
-- Hardcode danh sách lặp trực tiếp trong markup nếu có thể đưa vào model/fixture.
-- Mở rộng sang backend, trang chi tiết, CV Builder hoặc thanh toán khi chưa được giao.
+QUY TẮC
+1. Dùng stack/token hiện có; không tạo framework mới.
+2. Một search state chung cho keyword/location/category/industry.
+3. Không đưa danh mục nghề trở lại popup từ khóa.
+4. Không phục hồi hero title, brand strip, stats, khóa học, sự kiện,
+   high-salary section hoặc matching tabs.
+5. Không coi fixture, anchor hoặc toast là tích hợp thật.
+6. Thiếu API ghi thì không báo thành công giả.
+7. Overlay có keyboard/focus/Escape/responsive containment.
+8. Carousel tôn trọng reduced motion.
+9. Sửa root có mirror public/ thì đồng bộ và kiểm tra parity.
+10. Cập nhật .memlog.md và implementation artifact theo AGENTS.md.
 
-ƯU TIÊN KHI CÓ MÂU THUẪN
-Quy tắc bắt buộc của dự án đích > dữ liệu/API thật > tài liệu này > fixture minh họa.
-Mọi khác biệt có chủ đích phải được ghi trong báo cáo bàn giao.
+KIỂM TRA
+1. Syntax.
+2. Desktop 1440px.
+3. Tablet 768/1024px.
+4. Mobile 375/390px.
+5. Keyboard và reduced motion.
+6. Console/404.
+7. Root/public parity và git diff --check.
+
+BÀN GIAO
+- File và hành vi đã đổi.
+- PRD/FR liên quan.
+- Fixture/API/route còn thiếu.
+- Test và kết quả.
+- Rủi ro/khác biệt có chủ đích.
 ```
 
 ---
 
-## 18. Kết luận đề xuất với lãnh đạo
+## 15. Kết luận
 
-Trang chủ được đề xuất không chỉ làm nhiệm vụ “đẹp và đầy đủ nội dung”, mà tổ chức toàn bộ hành trình đầu phễu của ứng viên: **tìm kiếm nhanh, khám phá cơ hội, đánh giá độ phù hợp và chuyển sang hành động**. Cấu trúc card/lưới giúp quét thông tin nhanh; các khối AI, khóa học và sự kiện tạo khác biệt sản phẩm; các vị trí tài trợ được tách nhãn rõ để bảo toàn niềm tin.
+Trang chủ đã được tinh gọn thành hành trình:
 
-Phương án này có thể triển khai theo từng giai đoạn:
+```text
+Tìm kiếm chủ động
+→ Khám phá cơ hội nổi bật
+→ Khám phá doanh nghiệp và việc phù hợp
+→ Chuẩn bị CV
+→ Mở rộng theo ngành/từ khóa
+```
 
-1. **Giai đoạn 1:** Header, hero search, việc làm, công ty và footer với dữ liệu thật.
-2. **Giai đoạn 2:** Bookmark/follow, thông báo, tin nhắn, khóa học và sự kiện.
-3. **Giai đoạn 3:** AI matching, VIP và cá nhân hóa sâu.
+Trọng tâm tiếp theo không phải bổ sung lại mọi module cũ, mà là **nâng prototype thành sản phẩm tin cậy**: thay fixture bằng dữ liệu thật, hoàn thiện route, xác minh claim marketing, bổ sung remote state và giữ các quyết định tinh gọn đã phê duyệt.
 
-Điều kiện quan trọng nhất trước production là hoàn thiện route/API, xác minh dữ liệu marketing/pháp lý và không biến dữ liệu mẫu thành tuyên bố thật.
+---
+
+## 16. Lịch sử phiên bản
+
+| Phiên bản | Ngày | Thay đổi |
+|---|---|---|
+| 1.6 | 28/09/2026 | Bản cũ mô tả cấu trúc nhiều module và trạng thái đã đăng nhập |
+| 2.0 | 06/10/2026 | Viết lại theo mã hiện hành; cập nhật hero/search, category modal, bento sponsor, job/company/CV carousel; ghi nhận khối đã gỡ/ẩn; bổ sung PRD reconciliation, technical debt và contract cho Qwen 3.8 27B |
