@@ -1741,13 +1741,13 @@
 
 .job-card:hover,
 .job-card.is-hovered {
-  border-color: var(--tc-green, #00B14F);
-  box-shadow: 0 6px 20px rgba(0, 177, 79, 0.1);
+  border-color: var(--color-primary, #F97316);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.12);
   transform: translateY(-2px);
 }
 
 .job-card.is-featured {
-  border-left: 4px solid var(--tc-green, #00B14F);
+  border-left: 4px solid var(--color-primary, #F97316);
 }
 
 .job-card-top {
@@ -1806,7 +1806,7 @@
 .job-card:hover .job-title-link,
 .job-card.is-hovered .job-title,
 .job-card.is-hovered .job-title-link {
-  color: var(--tc-green, #00B14F);
+  color: var(--color-primary, #F97316);
 }
 
 .job-company-row {
@@ -1876,7 +1876,7 @@
 .job-salary-text {
   font-size: 15.5px;
   font-weight: 700;
-  color: var(--tc-green, #00B14F);
+  color: var(--color-primary, #F97316);
   white-space: nowrap;
 }
 
@@ -1885,8 +1885,8 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: var(--tc-green-light, #E6F7ED);
-  color: var(--tc-green, #00B14F);
+  background: var(--color-surface-raised, #FFF7ED);
+  color: var(--color-primary, #F97316);
   border: none;
   border-radius: 9999px;
   padding: 4px 12px;
@@ -1902,7 +1902,7 @@
 }
 
 .btn-quick-view:hover {
-  background: #D1FAE5;
+  background: #FFEDD5;
   transform: translateY(0) scale(1.02);
 }
 
@@ -2000,7 +2000,7 @@
 
 /* Apply button */
 .btn-card-apply {
-  background: var(--tc-green, #00B14F);
+  background: var(--color-primary, #F97316);
   color: #FFFFFF;
   border: none;
   border-radius: 9999px;
@@ -2008,7 +2008,7 @@
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 177, 79, 0.22);
+  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.22);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2017,8 +2017,8 @@
 }
 
 .btn-card-apply:hover {
-  background: var(--tc-green-hover, #009643);
-  box-shadow: 0 4px 10px rgba(0, 177, 79, 0.32);
+  background: var(--color-primary-hover, #EA580C);
+  box-shadow: 0 4px 10px rgba(249, 115, 22, 0.32);
   transform: translateY(-1px);
 }
 
@@ -2050,14 +2050,14 @@
   transform: scale(1.05);
 }
 
-/* Bookmark / Heart Button (TopCV Green Style) */
+/* Bookmark / Heart Button (EasyCV Brand Orange Style) */
 .btn-card-bookmark {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 1.5px solid var(--tc-green, #00B14F);
+  border: 1.5px solid var(--color-primary, #F97316);
   background: #FFFFFF;
-  color: var(--tc-green, #00B14F);
+  color: var(--color-primary, #F97316);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2070,26 +2070,26 @@
 .btn-card-bookmark svg {
   width: 17px;
   height: 17px;
-  stroke: var(--tc-green, #00B14F);
+  stroke: var(--color-primary, #F97316);
   fill: none;
   stroke-width: 2;
   transition: all 0.18s ease;
 }
 
 .btn-card-bookmark:hover {
-  background: var(--tc-green-light, #E6F7ED);
+  background: var(--color-surface-raised, #FFF7ED);
   transform: scale(1.08);
 }
 
 .btn-card-bookmark.saved {
-  background: var(--tc-green-light, #E6F7ED);
-  border-color: var(--tc-green, #00B14F);
-  color: var(--tc-green, #00B14F);
+  background: var(--color-surface-raised, #FFF7ED);
+  border-color: var(--color-primary, #F97316);
+  color: var(--color-primary, #F97316);
 }
 
 .btn-card-bookmark.saved svg {
-  fill: var(--tc-green, #00B14F);
-  stroke: var(--tc-green, #00B14F);
+  fill: var(--color-primary, #F97316);
+  stroke: var(--color-primary, #F97316);
 }
 
 /* Pagination */

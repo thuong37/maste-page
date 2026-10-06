@@ -6,17 +6,25 @@
   <title id="pageTitle">Senior Fullstack Developer (ReactJS / Node.js) | FPT Software - Tuyển dụng EasyCV</title>
   <meta name="description" content="Xem chi tiết mô tả công việc, yêu cầu ứng viên, chế độ đãi ngộ và nộp hồ sơ ứng tuyển trực tuyến nhanh chóng trên EasyCV.">
   <link rel="icon" type="image/png" href="assets/logos/easycv-icon.png">
-  <link rel="stylesheet" href="assets/design-tokens.css?v=1.1">
-  <link rel="stylesheet" href="css/navbar.css?v=7.0_synced_navbar">
-  <link rel="stylesheet" href="css/home.css?v=7.0_cv_carousel">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/design-tokens.css?v=2.0_tokens">
+  <link rel="stylesheet" href="css/navbar.css?v=8.0_tokens">
+  <link rel="stylesheet" href="css/home.css?v=8.0_tokens">
   <link rel="stylesheet" href="css/location-picker.css?v=2.0">
   <link rel="stylesheet" href="css/category-filter-modal.css?v=1.5_all_pages_clear_backdrop">
-  <link rel="stylesheet" href="css/viec-lam.css?v=13.1_detail_list_flush">
+  <link rel="stylesheet" href="css/viec-lam.css?v=14.0_tokens">
   <style>
+    /* Thanh menu không neo cố định khi cuộn màn hình trên trang chi tiết việc làm */
+    .site-header {
+      position: relative !important;
+      top: auto !important;
+    }
     .single-job-hero {
       background: linear-gradient(180deg, #FFFFFF 0%, #FFF7ED 50%, #F8FAFC 100%);
       border-bottom: 1px solid #E2E8F0;
-      padding: 20px 0 16px 0;
+      padding: 28px 0 8px 0;
     }
     /* Bo góc thẻ việc làm liên quan khác và logo chuẩn 81x81 */
     .split-list-feed {
@@ -812,6 +820,293 @@
                 <button type="button" class="btn-close-suggest" id="btnCloseSuggest">Đóng [Esc]</button>
               </div>
             </div>
+
+<!-- BỘ LỌC TIÊU CHÍ VIỆC LÀM (Đồng bộ từ trang Danh sách Việc làm) -->
+    <section class="top-filter-bar" id="chiTietTopFilterBar" aria-label="Bộ lọc tiêu chí việc làm">
+      <div class="top-filter-bar-inner">
+        <div class="top-filter-pills-group">
+
+          <!-- Filter 0: Lĩnh vực công ty -->
+          <div class="filter-dropdown-wrap" id="ctIndustryDropdownWrap">
+            <button type="button" class="filter-pill-btn" id="ctIndustryFilterBtn" aria-haspopup="true" aria-expanded="false" title="Lọc theo lĩnh vực hoạt động của công ty">
+              <span class="pill-label" id="ctIndustryFilterLabel">Lĩnh vực công ty</span>
+              <svg class="pill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="filter-dropdown-menu industry-searchable-menu" id="ctIndustryDropdownMenu" hidden>
+              <div class="industry-search-wrap">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" class="industry-search-input" id="ctIndustrySearchInput" placeholder="Tìm lĩnh vực..." autocomplete="off" />
+                <button type="button" class="industry-search-clear" id="ctIndustrySearchClear" aria-label="Xoá tìm kiếm" hidden>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+              </div>
+              <div class="industry-dropdown-list" id="ctIndustryDropdownList">
+                <div class="dropdown-item is-selected" data-type="industry" data-value="" data-label="Tất cả lĩnh vực">
+                  <span>Tất cả lĩnh vực</span>
+                  <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="dropdown-item" data-type="industry" data-value="tech" data-label="Công nghệ thông tin">
+                  <span>Công nghệ thông tin</span>
+                  <span class="item-count">520</span>
+                </div>
+                <div class="dropdown-item" data-type="industry" data-value="finance" data-label="Tài chính / Ngân hàng">
+                  <span>Tài chính / Ngân hàng</span>
+                  <span class="item-count">210</span>
+                </div>
+                <div class="dropdown-item" data-type="industry" data-value="marketing" data-label="Marketing / Truyền thông">
+                  <span>Marketing / Truyền thông</span>
+                  <span class="item-count">185</span>
+                </div>
+                <div class="dropdown-item" data-type="industry" data-value="education" data-label="Giáo dục / Đào tạo">
+                  <span>Giáo dục / Đào tạo</span>
+                  <span class="item-count">130</span>
+                </div>
+                <div class="dropdown-item" data-type="industry" data-value="retail" data-label="Bán lẻ / Tiêu dùng">
+                  <span>Bán lẻ / Tiêu dùng</span>
+                  <span class="item-count">98</span>
+                </div>
+                <div class="dropdown-item" data-type="industry" data-value="healthcare" data-label="Y tế / Sức khỏe">
+                  <span>Y tế / Sức khỏe</span>
+                  <span class="item-count">76</span>
+                </div>
+                <div class="dropdown-item" data-type="industry" data-value="construction" data-label="Xây dựng / Bất động sản">
+                  <span>Xây dựng / Bất động sản</span>
+                  <span class="item-count">64</span>
+                </div>
+                <div class="dropdown-item" data-type="industry" data-value="manufacturing" data-label="Sản xuất / Chế tạo">
+                  <span>Sản xuất / Chế tạo</span>
+                  <span class="item-count">59</span>
+                </div>
+              </div>
+              <div class="industry-no-results" id="ctIndustryNoResults" hidden>
+                <span>Không tìm thấy lĩnh vực phù hợp</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter 1: Kinh nghiệm -->
+          <div class="filter-dropdown-wrap" id="ctExpDropdownWrap">
+            <button type="button" class="filter-pill-btn" id="ctExpFilterBtn" aria-haspopup="true" aria-expanded="false" title="Lọc theo số năm kinh nghiệm">
+              <span class="pill-label" id="ctExpFilterLabel">Kinh nghiệm</span>
+              <svg class="pill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="filter-dropdown-menu" id="ctExpDropdownMenu" hidden>
+              <div class="dropdown-item is-selected" data-type="exp" data-value="" data-label="Tất cả kinh nghiệm">
+                <span>Tất cả kinh nghiệm</span>
+                <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="dropdown-item" data-type="exp" data-value="0" data-label="Chưa có KN">
+                <span>Không yêu cầu kinh nghiệm</span>
+                <span class="item-count">235</span>
+              </div>
+              <div class="dropdown-item" data-type="exp" data-value="under1" data-label="Dưới 1 năm">
+                <span>Dưới 1 năm</span>
+                <span class="item-count">312</span>
+              </div>
+              <div class="dropdown-item" data-type="exp" data-value="1-3" data-label="1 - 3 năm">
+                <span>1 - 3 năm</span>
+                <span class="item-count">620</span>
+              </div>
+              <div class="dropdown-item" data-type="exp" data-value="3-5" data-label="3 - 5 năm">
+                <span>3 - 5 năm</span>
+                <span class="item-count">198</span>
+              </div>
+              <div class="dropdown-item" data-type="exp" data-value="over5" data-label="Trên 5 năm">
+                <span>Trên 5 năm</span>
+                <span class="item-count">63</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter 2: Cấp bậc -->
+          <div class="filter-dropdown-wrap" id="ctLevelDropdownWrap">
+            <button type="button" class="filter-pill-btn" id="ctLevelFilterBtn" aria-haspopup="true" aria-expanded="false" title="Lọc theo cấp bậc chuyên môn">
+              <span class="pill-label" id="ctLevelFilterLabel">Cấp bậc</span>
+              <svg class="pill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="filter-dropdown-menu" id="ctLevelDropdownMenu" hidden>
+              <div class="dropdown-item is-selected" data-type="level" data-value="" data-label="Tất cả cấp bậc">
+                <span>Tất cả cấp bậc</span>
+                <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="dropdown-item" data-type="level" data-value="intern" data-label="Thực tập sinh">
+                <span>Thực tập sinh</span>
+                <span class="item-count">128</span>
+              </div>
+              <div class="dropdown-item" data-type="level" data-value="junior" data-label="Nhân viên">
+                <span>Nhân viên</span>
+                <span class="item-count">845</span>
+              </div>
+              <div class="dropdown-item" data-type="level" data-value="senior" data-label="Trưởng nhóm/Lead">
+                <span>Trưởng nhóm / Leader</span>
+                <span class="item-count">240</span>
+              </div>
+              <div class="dropdown-item" data-type="level" data-value="manager" data-label="Trưởng phòng/Manager">
+                <span>Trưởng phòng / Manager</span>
+                <span class="item-count">115</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter 3: Mức lương -->
+          <div class="filter-dropdown-wrap" id="ctSalaryDropdownWrap">
+            <button type="button" class="filter-pill-btn" id="ctSalaryFilterBtn" aria-haspopup="true" aria-expanded="false" title="Lọc theo mức thu nhập">
+              <span class="pill-label" id="ctSalaryFilterLabel">Mức lương</span>
+              <svg class="pill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="filter-dropdown-menu" id="ctSalaryDropdownMenu" hidden>
+              <div class="dropdown-item is-selected" data-type="salary" data-value="" data-label="Tất cả mức lương">
+                <span>Tất cả mức lương</span>
+                <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="dropdown-item" data-type="salary" data-value="under10" data-label="Dưới 10 triệu">
+                <span>Dưới 10 triệu</span>
+                <span class="item-count">210</span>
+              </div>
+              <div class="dropdown-item" data-type="salary" data-value="10-15" data-label="10 - 15 triệu">
+                <span>10 - 15 triệu</span>
+                <span class="item-count">480</span>
+              </div>
+              <div class="dropdown-item" data-type="salary" data-value="15-25" data-label="15 - 25 triệu">
+                <span>15 - 25 triệu</span>
+                <span class="item-count">420</span>
+              </div>
+              <div class="dropdown-item" data-type="salary" data-value="25-50" data-label="25 - 50 triệu">
+                <span>25 - 50 triệu</span>
+                <span class="item-count">230</span>
+              </div>
+              <div class="dropdown-item" data-type="salary" data-value="over50" data-label="Trên 50 triệu">
+                <span>Trên 50 triệu</span>
+                <span class="item-count">85</span>
+              </div>
+              <div class="dropdown-item" data-type="salary" data-value="negotiable" data-label="Thỏa thuận">
+                <span>Thỏa thuận</span>
+                <span class="item-count">310</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter 4: Loại hình làm việc -->
+          <div class="filter-dropdown-wrap" id="ctTypeDropdownWrap">
+            <button type="button" class="filter-pill-btn" id="ctTypeFilterBtn" aria-haspopup="true" aria-expanded="false" title="Lọc theo hình thức làm việc">
+              <span class="pill-label" id="ctTypeFilterLabel">Hình thức</span>
+              <svg class="pill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="filter-dropdown-menu" id="ctTypeDropdownMenu" hidden>
+              <div class="dropdown-item is-selected" data-type="type" data-value="" data-label="Tất cả hình thức">
+                <span>Tất cả hình thức</span>
+                <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="dropdown-item" data-type="type" data-value="fulltime" data-label="Toàn thời gian">
+                <span>Toàn thời gian</span>
+                <span class="item-count">1.120</span>
+              </div>
+              <div class="dropdown-item" data-type="type" data-value="hybrid" data-label="Hybrid (Linh hoạt)">
+                <span>Kết hợp (Hybrid)</span>
+                <span class="item-count">315</span>
+              </div>
+              <div class="dropdown-item" data-type="type" data-value="remote" data-label="Remote 100%">
+                <span>Từ xa (Remote 100%)</span>
+                <span class="item-count">184</span>
+              </div>
+              <div class="dropdown-item" data-type="type" data-value="parttime" data-label="Bán thời gian">
+                <span>Bán thời gian</span>
+                <span class="item-count">65</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter 5: Thứ 7 -->
+          <div class="filter-dropdown-wrap" id="ctSaturdayDropdownWrap">
+            <button type="button" class="filter-pill-btn" id="ctSaturdayFilterBtn" aria-haspopup="true" aria-expanded="false" title="Lọc theo chế độ làm việc Nghỉ thứ 7">
+              <span class="pill-label" id="ctSaturdayFilterLabel">Nghỉ thứ 7</span>
+              <svg class="pill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="filter-dropdown-menu" id="ctSaturdayDropdownMenu" hidden>
+              <div class="dropdown-item is-selected" data-type="saturday" data-value="" data-label="Không lọc">
+                <span>Không lọc</span>
+                <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="dropdown-item" data-type="saturday" data-value="work_sat" data-label="Làm thứ 7">
+                <span>Làm thứ 7</span>
+                <span class="item-count">8</span>
+              </div>
+              <div class="dropdown-item" data-type="saturday" data-value="off_sat" data-label="Nghỉ thứ 7">
+                <span>Nghỉ thứ 7</span>
+                <span class="item-count">16</span>
+              </div>
+              <div class="dropdown-item" data-type="saturday" data-value="unmentioned" data-label="Không đề cập">
+                <span>Không đề cập</span>
+                <span class="item-count">4</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nút Xóa Lọc -->
+          <button type="button" class="btn-clear-top-filters" id="ctBtnClearTopFilters" style="display: none;" title="Xóa tất cả bộ lọc">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            <span>Xóa lọc</span>
+          </button>
+
+          <!-- Nút Lưu bộ lọc -->
+          <button type="button" class="btn-saved-filters" id="ctSavedFiltersTrigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="ctSavedFiltersDialog">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+            <span>Lưu bộ lọc</span>
+            <span class="saved-filter-count" id="ctSavedFilterBadgeCount" aria-label="0 bộ lọc đã lưu">0</span>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Saved Filters Dialog (Đồng bộ từ trang Danh sách Việc làm) -->
+    <div class="saved-filters-overlay" id="ctSavedFiltersDialog" role="dialog" aria-modal="true" aria-labelledby="ctSavedFiltersTitle" aria-describedby="ctSavedFiltersDescription" hidden>
+      <div class="saved-filters-backdrop" data-saved-filter-close></div>
+      <div class="saved-filters-panel" tabindex="-1">
+        <div class="saved-filters-header">
+          <div>
+            <p class="saved-filters-eyebrow">Tìm việc nhanh hơn</p>
+            <h2 id="ctSavedFiltersTitle">Bộ lọc đã lưu</h2>
+            <p id="ctSavedFiltersDescription">Lưu các tiêu chí hiện tại để dùng lại trên trình duyệt này.</p>
+          </div>
+          <button type="button" class="saved-filters-close" id="ctSavedFiltersClose" aria-label="Đóng hộp thoại bộ lọc đã lưu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+          </button>
+        </div>
+        <div class="saved-filters-body">
+          <section class="saved-filter-create" aria-labelledby="ctSaveCurrentFilterTitle">
+            <div class="saved-filter-section-heading">
+              <div>
+                <h3 id="ctSaveCurrentFilterTitle">Lưu tiêu chí hiện tại</h3>
+                <p class="saved-filter-current-summary" id="ctSavedFilterCurrentSummary" aria-live="polite"></p>
+              </div>
+            </div>
+            <form id="ctSavedFilterForm" novalidate>
+              <label for="ctSavedFilterName">Tên bộ lọc</label>
+              <div class="saved-filter-form-row">
+                <input type="text" id="ctSavedFilterName" name="ctSavedFilterName" maxlength="60" autocomplete="off" aria-describedby="ctSavedFilterNameHint ctSavedFilterNameError" placeholder="Ví dụ: Việc Hybrid cho Junior" />
+                <button type="submit" class="saved-filter-submit" id="ctSavedFilterSubmit">Lưu bộ lọc</button>
+              </div>
+              <p class="saved-filter-name-hint" id="ctSavedFilterNameHint">Tối đa 60 ký tự. Cần có ít nhất một tiêu chí.</p>
+              <p class="saved-filter-error" id="ctSavedFilterNameError" role="alert" hidden></p>
+            </form>
+          </section>
+          <section class="saved-filter-library" aria-labelledby="ctSavedFilterLibraryTitle">
+            <div class="saved-filter-section-heading">
+              <h3 id="ctSavedFilterLibraryTitle">Danh sách của bạn</h3>
+              <span class="saved-filter-library-count" id="ctSavedFilterLibraryCount"></span>
+            </div>
+            <div class="saved-filter-empty" id="ctSavedFilterEmpty">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+              <strong>Chưa có bộ lọc đã lưu</strong>
+              <span>Các bộ lọc bạn lưu sẽ xuất hiện tại đây.</span>
+            </div>
+            <ul class="saved-filter-list" id="ctSavedFilterList" aria-live="polite"></ul>
+          </section>
+        </div>
+      </div>
+    </div>
+
           </div>
         </div>
 
@@ -1437,6 +1732,7 @@
   <script src="js/category-filter-modal.js?v=1.0"></script>
   <script src="js/navbar.js?v=7.0_synced_navbar"></script>
   <script src="js/job-detail-search.js?v=1.0_search_parity"></script>
+  <script src="js/chi-tiet-filter.js?v=1.0_synced_from_job_list"></script>
   <script src="js/chi-tiet-viec-lam.js?v=2.2_search_parity"></script>
 
   <!-- Floating View Mode Switcher Box (Rìa bên phải màn hình) -->

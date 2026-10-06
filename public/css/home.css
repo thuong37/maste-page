@@ -14,18 +14,20 @@
    ========================================================================== */
 
 :root {
-  --radius-xl: 16px;
+  --font-family-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-stack: 'Inter', sans-serif;
 }
-/* Compact search suggestion panel — reference format */
+/* Compact search suggestion panel — reference format (TopCV style) */
 .search-suggest-dropdown {
-  padding: 24px 30px !important;
+  padding: 22px 26px !important;
   border: 1px solid #e2e8f0 !important;
-  border-radius: 24px !important;
-  box-shadow: 0 24px 60px -18px rgba(15, 23, 42, 0.3) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 24px 60px -18px rgba(15, 23, 42, 0.28) !important;
 }
 .search-suggest-dropdown > .suggest-divider,
 .search-suggest-dropdown > .suggest-industry-section,
 .search-suggest-dropdown > .suggest-footer { display: none; }
+
 /* Two-column layout: left (recent / suggestions + popular) | right (recommended jobs) */
 .search-format-panel {
   display: grid;
@@ -435,10 +437,6 @@
   .recommended-job-salary {
     font-size: 12.5px;
   }
-}
-}
-@media (prefers-reduced-motion: reduce) {
-  .search-suggest-dropdown, .recommended-job, .suggest-trend-chip { transition: none !important; }
 }
 
 /* Industry filter entry point and picker */
@@ -965,8 +963,8 @@
 
 .job-card:hover {
   transform: translateY(-2px);
-  border-color: #00B14F;
-  box-shadow: 0 8px 20px -4px rgba(0, 177, 79, 0.12), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+  border-color: var(--color-primary, #F97316);
+  box-shadow: 0 8px 20px -4px rgba(249, 115, 22, 0.14), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
 }
 
 [data-theme="dark"] .job-card {
@@ -996,7 +994,7 @@
   min-height: 65px;
   flex-shrink: 0;
   border-radius: 10px;
-  border: 1.5px solid #00B14F;
+  border: 1.5px solid var(--color-primary, #F97316);
   background: #FFFFFF;
   display: flex;
   align-items: center;
@@ -1024,14 +1022,14 @@
   left: -5px;
   width: 17px;
   height: 20px;
-  background: linear-gradient(135deg, #00B14F 0%, #059669 100%);
+  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
   z-index: 2;
-  box-shadow: 0 2px 4px rgba(0, 177, 79, 0.35);
+  box-shadow: 0 2px 4px rgba(249, 115, 22, 0.35);
 }
 
 .badge-lightning svg {
@@ -1063,7 +1061,7 @@
 }
 
 .job-title:hover {
-  color: #00B14F;
+  color: var(--color-primary, #F97316);
 }
 
 [data-theme="dark"] .job-title {
@@ -1089,7 +1087,7 @@
 }
 
 .company-name:hover {
-  color: #00B14F;
+  color: var(--color-primary, #F97316);
 }
 
 [data-theme="dark"] .company-name {
@@ -1159,14 +1157,14 @@
   color: #34D399;
 }
 
-/* Circular Green Bookmark Button */
+/* Circular Orange Bookmark Button */
 .btn-bookmark {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 1.5px solid #00B14F;
+  border: 1.5px solid var(--color-primary, #F97316);
   background: transparent;
-  color: #00B14F;
+  color: var(--color-primary, #F97316);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -1177,22 +1175,22 @@
 }
 
 .btn-bookmark:hover {
-  background: #ECFDF5;
+  background: var(--color-surface-raised, #FFF7ED);
   transform: scale(1.08);
 }
 
 .btn-bookmark svg {
   width: 17px;
   height: 17px;
-  stroke: #00B14F;
+  stroke: var(--color-primary, #F97316);
   fill: none;
   stroke-width: 2;
   transition: all 0.18s ease;
 }
 
 .btn-bookmark.active {
-  background: #00B14F;
-  border-color: #00B14F;
+  background: var(--color-primary, #F97316);
+  border-color: var(--color-primary, #F97316);
 }
 
 .btn-bookmark.active svg {

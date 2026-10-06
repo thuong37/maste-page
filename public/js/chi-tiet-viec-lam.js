@@ -1565,13 +1565,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let ticking = false;
 
     function updateStickyState() {
-      const headerHeight = header ? header.offsetHeight : 72;
-      stickyBar.style.setProperty('--sticky-search-top', headerHeight + 'px');
+      // Thanh menu (.site-header) không còn neo cố định trên màn chi tiết việc làm (position: relative),
+      // nên khi cuộn màn hình xuống, thanh tìm kiếm và bộ lọc neo trực tiếp sát mép trên cùng (top: 0).
+      stickyBar.style.setProperty('--sticky-search-top', '0px');
 
       const wrapperRect = wrapper.getBoundingClientRect();
-      if (wrapperRect.top < headerHeight) {
+      if (wrapperRect.top <= 0) {
         if (!stickyBar.classList.contains('is-sticky')) {
-          wrapper.style.minHeight = wrapperRect.height + 'px';
+          // Dùng chiều cao thực của stickyBar (gồm cả filter bar bên trong)
+          wrapper.style.minHeight = stickyBar.offsetHeight + 'px';
           stickyBar.classList.add('is-sticky');
         }
       } else {

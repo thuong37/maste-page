@@ -45,41 +45,88 @@ All skills (`ui-ux-pro-max`, `brand`, `design`, `design-system`, `banner-design`
 
 ---
 
-## 2. Global Color Palette
+## 2. Global Color Palette (Non-Copying Brand Foundation)
 
 | Role | Hex | CSS Variable | Usage |
 |------|-----|--------------|-------|
-| **Primary (EasyCV Orange)** | `#F97316` | `--color-primary` | Main CTAs, brand mark, active tabs, highlight tags |
-| **Primary Hover** | `#EA580C` | `--color-primary-hover` | Button hover, pressed states |
-| **Primary Light / Tint** | `#FFF7ED` | `--color-primary-light` | Job salary badge background, active filter pill |
+| **Primary (EasyCV Orange)** | `#F97316` | `--color-primary` / `--color-orange-500` | Main CTAs, brand mark, active tabs, highlight tags |
+| **Primary Hover** | `#EA580C` | `--color-primary-hover` / `--color-orange-600` | Button hover, pressed states |
+| **Primary Light / Raised** | `#FFF7ED` | `--color-primary-light` / `--color-surface-raised` | Job salary badge background, active filter pill, card quick-view |
+| **Primary Border** | `#FED7AA` | `--color-primary-border` / `--color-orange-200` | Soft orange borders for highlight badges |
 | **On Primary** | `#FFFFFF` | `--color-on-primary` | White text on primary buttons |
-| **Secondary (Slate Navy)** | `#0F172A` | `--color-secondary` | Dark header bar, enterprise employers, footer |
-| **On Secondary** | `#FFFFFF` | `--color-on-secondary` | Text on secondary backgrounds |
-| **Accent / Success (Match Green)** | `#16A34A` | `--color-accent` | "Đã ứng tuyển", "Khớp 95% CV", "Hot Job" badge |
-| **On Accent** | `#FFFFFF` | `--color-on-accent` | Text on accent elements |
+| **Text Primary** | `#1E293B` | `--color-text-primary` / `--text-main` | Content-first headings, job titles, primary body |
+| **Text Secondary** | `#475569` | `--color-text-secondary` / `--text-muted` | Subtitles, company metadata, locations, filters |
+| **Text Tertiary (Brand)** | `#F97316` | `--color-text-tertiary` | Accent highlights, salary numbers, active icons |
+| **Text Inverse / Subtle** | `#64748B` | `--color-text-inverse` | Secondary captions, breadcrumb text |
+| **Surface Base** | `#FFFFFF` | `--color-surface-base` / `--color-card` | Clean card surfaces, modal dialogs, search inputs |
+| **Surface Muted** | `#F8FAFC` | `--color-surface-muted` / `--color-surface` | Page background, subtle slate rhythm |
+| **Surface Raised** | `#FFF7ED` | `--color-surface-raised` | Warm peach raised surfaces, chips, badges |
+| **Surface Strong** | `#F1F5F9` | `--color-surface-strong` | Structural containers, section dividers |
+| **Border Subtle** | `#E2E8F0` | `--color-border` | Card borders, input outlines |
+| **Accent / Match Score** | `#16A34A` | `--color-accent` | "Khớp 95% CV", "Hot Job", "Đã ứng tuyển" |
 | **Tech Info Blue** | `#0284C7` | `--color-info` | Verified company badge, IT skill pills |
-| **Background** | `#FFFFFF` | `--color-background` | Page container, main sections |
-| **Surface** | `#F8FAFC` | `--color-surface` | Body background, job list wrapper, search panel |
-| **Card Surface** | `#FFFFFF` | `--color-card` | Job listing cards, company cards |
-| **Foreground / Text** | `#0F172A` | `--color-foreground` | Main headings, job titles |
-| **Muted Text** | `#64748B` | `--color-muted-foreground` | Location, salary details, company name |
-| **Border** | `#E2E8F0` | `--color-border` | Card borders, divider lines, inputs |
 | **Destructive** | `#DC2626` | `--color-destructive` | Job expired, report job |
-| **Ring** | `#F97316` | `--color-ring` | Focus ring for a11y keyboard navigation |
+| **Focus Ring** | `#F97316` | `--color-ring` | Focus ring for keyboard accessibility |
 
 ---
 
-## 3. Typography
+## 3. Structured Typography System
 
-- **Primary Font:** Plus Jakarta Sans / Inter / Be Vietnam Pro
+- **Visual Style:** Structured, tokenized, content-first
+- **Primary Font:** Inter (`font.family.primary = Inter`, `font.family.stack = Inter, sans-serif`)
 - **Monospace Font:** JetBrains Mono
-- **Mood:** Modern, Energetic, Trustworthy, Professional Recruitment Marketplace
+- **Base Metrics:** `font.size.base = 14px`, `font.weight.base = 500`, `font.lineHeight.base = 22px`
+- **Typography Scale:**
+  - `font.size.xs = 12px` (Badges, tags, timestamps)
+  - `font.size.sm = 13px` (Metadata, company labels, captions)
+  - `font.size.md = 14px` (Base body text, form inputs, navigation items)
+  - `font.size.lg = 15px` (Button text, salary highlight, callout body)
+  - `font.size.xl = 16px` (Card titles, section subheadings)
+  - `font.size.2xl = 18px` (Modal titles, secondary headers)
+  - `font.size.3xl = 20px` (Main section headings)
 - **Google Fonts Import:**
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 ```
+
+---
+
+## 4. Spacing, Radius, Shadow & Motion Tokens
+
+### Spacing Scale
+- `space.1 = 2px`
+- `space.2 = 4px`
+- `space.3 = 5px`
+- `space.4 = 6px`
+- `space.5 = 8px`
+- `space.6 = 10px`
+- `space.7 = 11px`
+- `space.8 = 12px`
+- Extended: `space.9 = 16px`, `space.10 = 20px`, `space.11 = 24px`, `space.12 = 32px`, `space.13 = 40px`, `space.14 = 48px`, `space.15 = 64px`
+
+### Radius Tokens
+- `radius.xs = 6px`
+- `radius.sm = 8px`
+- `radius.md = 10px`
+- `radius.lg = 22px`
+- `radius.xl = 32.29px`
+- `radius.2xl = 44px`
+- `radius.step7 = 50px`
+- `radius.step8 = 56px`
+- `radius.full = 9999px`
+
+### Shadow Tokens
+- `shadow.1 = rgba(0, 0, 0, 0.1) 0px 0px 12px 0px`
+- `shadow.card = 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05)`
+- `shadow.card.hover = 0 8px 24px -4px rgba(249, 115, 22, 0.14), 0 4px 8px -2px rgba(15, 23, 42, 0.04)`
+- `shadow.dropdown = 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.08)`
+
+### Motion Tokens
+- `motion.duration.instant = 200ms`
+- `motion.timing = cubic-bezier(0.16, 1, 0.3, 1)`
+- `transition.instant = 200ms cubic-bezier(0.16, 1, 0.3, 1)`
 
 ---
 
