@@ -525,16 +525,7 @@ body {
 }
 
 .user-role-badge {
-  font-size: 11px;
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.user-role-badge span {
-  color: var(--easycv-orange);
-  font-weight: 600;
+  display: none !important;
 }
 
 /* User Account Mega Dropdown (Exact Match to User Spreadsheet) */
