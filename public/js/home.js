@@ -3792,24 +3792,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="job-card-footer">
               <div class="job-pills">
                 <span class="job-pill ${salaryClass}">${job.salaryBadge}</span>
-                <span class="job-pill job-pill-location">${job.location.split('(')[0].trim()}</span>
+                <span class="job-pill job-pill-location">${job.city || job.location.split('&')[0].split('(')[0].trim()}</span>
               </div>
-              <div class="job-card-actions-right">
-                <!-- Thời gian đăng: HIỂN THỊ khi chưa hover, ẨN khi hover -->
-                <span class="job-posted-time" title="Thời gian đăng tin">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  <span>${job.updated}</span>
-                </span>
-                <!-- Nút Ứng tuyển: To đẹp như các nút khác, ẨN khi chưa hover, HIỂN THỊ khi hover -->
-                <a href="viec-lam.html?apply=${job.id}" class="btn-card-apply" target="_blank" rel="noopener noreferrer" title="Nộp hồ sơ ứng tuyển ngay">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                  <span>Ứng tuyển</span>
-                </a>
-                <!-- Nút Lưu việc làm (Bookmark trái tim) -->
-                <button type="button" class="btn-bookmark ${isSaved ? 'active' : ''}" data-job-id="${job.id}" aria-label="${isSaved ? 'Bỏ lưu việc làm' : 'Lưu công việc này'}" title="${isSaved ? 'Đã lưu việc làm' : 'Lưu việc làm'}">
-                  <svg viewBox="0 0 24 24" fill="${isSaved ? '#EF4444' : 'none'}" stroke="${isSaved ? '#EF4444' : 'currentColor'}"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                </button>
-              </div>
+              <button type="button" class="btn-bookmark ${isSaved ? 'active' : ''}" data-job-id="${job.id}" aria-label="${isSaved ? 'Bỏ lưu việc làm' : 'Lưu công việc này'}" title="${isSaved ? 'Đã lưu việc làm' : 'Lưu việc làm'}">
+                <svg viewBox="0 0 24 24" fill="${isSaved ? '#EF4444' : 'none'}" stroke="${isSaved ? '#EF4444' : 'currentColor'}"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
             </div>
           </article>
         `;
@@ -4097,7 +4084,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-      // Click Nút Ứng tuyển trên thẻ job -> Bật Toast thông báo ứng tuyển thành công
+      // Click Thẻ job -> Mở trang chi tiết việc làm
+      gridEl.querySelectorAll('.job-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('.btn-bookmark') || e.target.closest('.company-name') || e.target.closest('.badge-lightning')) {
+            return;
+          }
+          const jobId = card.getAttribute('data-job-id');
+          if (jobId) {
+            window.location.href = `chi-tiet-viec-lam.html?id=${jobId}`;
+          }
+        });
+      });
+
+      // Click Nút Ứng tuyển trên thẻ job (nếu có) -> Bật Toast thông báo ứng tuyển thành công
       gridEl.querySelectorAll('.btn-card-apply').forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.stopPropagation();

@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/design-tokens.css?v=2.0_tokens">
   <link rel="stylesheet" href="css/navbar.css?v=9.0_left_align">
-  <link rel="stylesheet" href="css/home.css?v=8.1_companies_nav">
+  <link rel="stylesheet" href="css/home.css?v=8.2_compact_job_cards">
   <link rel="stylesheet" href="css/location-picker.css?v=3.0_clean">
   <link rel="stylesheet" href="css/category-filter-modal.css?v=1.3_home_clear_backdrop">
   <style>
@@ -1360,71 +1360,100 @@
       }
     }
 
-    /* Thẻ Job Card Nổi Bật: Tối ưu không gian cho Avatar to và Nút Ứng Tuyển */
-    .job-card {
+    /* =========================================================================
+       THẺ JOB CARD TRANG CHỦ: ĐỒNG BỘ KÍCH THƯỚC GỌN GÀNG CHUẨN TOPCV REFERENCE
+       ========================================================================= */
+    .job-card,
+    .attractive-card {
       background: var(--bg-primary, #FFFFFF);
       border: 1px solid var(--border-color, #E2E8F0);
-      border-radius: 14px;
-      padding: 16px 18px;
+      border-radius: 10px;
+      padding: 12px 14px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 14px;
-      min-height: 136px;
+      gap: 10px;
+      min-height: 104px;
       box-sizing: border-box;
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
       text-decoration: none;
       cursor: pointer;
     }
-    .job-card:hover {
+    .job-card:hover,
+    .attractive-card:hover {
       transform: translateY(-2px);
-      border-color: #F97316;
-      box-shadow: 0 10px 24px -4px rgba(249, 115, 22, 0.16), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+      border-color: var(--color-primary, #F97316);
+      box-shadow: 0 8px 18px -4px rgba(249, 115, 22, 0.14), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
     }
 
-    /* Avatar Logo công ty: TĂNG KÍCH THƯỚC TO RÕ (80x80px) */
+    [data-theme="dark"] .job-card,
+    [data-theme="dark"] .attractive-card {
+      background: #1E293B;
+      border-color: #334155;
+    }
+    [data-theme="dark"] .job-card:hover,
+    [data-theme="dark"] .attractive-card:hover {
+      border-color: #F97316;
+      box-shadow: 0 8px 18px -4px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Header: Logo vuông nhỏ gọn chuẩn 52x52 + Tiêu đề & Tên công ty */
+    .job-card-header,
+    .job-card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    /* Avatar Logo công ty: Khung vuông 52x52px gọn gàng, bo góc 8px */
     .job-logo-wrapper {
       position: relative;
-      width: 80px;
-      height: 80px;
-      min-width: 80px;
-      min-height: 80px;
+      width: 52px;
+      height: 52px;
+      min-width: 52px;
+      min-height: 52px;
       flex-shrink: 0;
-      border-radius: 12px;
-      border: 1.5px solid var(--border-color, #E2E8F0);
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #E2E8F0);
       background: #FFFFFF;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 6px;
+      padding: 3px;
       box-sizing: border-box;
       cursor: pointer;
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .job-card:hover .job-logo-wrapper {
+    .job-card:hover .job-logo-wrapper,
+    .attractive-card:hover .job-logo-wrapper {
       border-color: #F97316;
-      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.18);
+      box-shadow: 0 2px 8px rgba(249, 115, 22, 0.15);
     }
-    .job-logo {
+    .job-logo,
+    .company-logo {
       width: 100%;
       height: 100%;
+      max-width: 100%;
+      max-height: 100%;
       object-fit: contain;
-      border-radius: 8px;
+      border-radius: 6px;
       background: #FFFFFF;
     }
 
-    /* Huy hiệu Tia Sét (Lightning Badge) trên Logo công ty */
+    /* Huy hiệu Tia Sét (Lightning Badge) tỷ lệ cân đối với logo 52px */
     .badge-lightning {
       position: absolute;
-      top: -7px;
-      left: -7px;
-      width: 24px;
-      height: 24px;
+      top: -5px;
+      left: -5px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       background: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #B45309 100%);
-      border: 2px solid #FFFFFF;
-      box-shadow: 0 2px 6px rgba(217, 119, 6, 0.45);
+      border: 1.5px solid #FFFFFF;
+      box-shadow: 0 1px 4px rgba(217, 119, 6, 0.4);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1435,90 +1464,141 @@
       clip-path: none !important;
     }
     .badge-lightning:hover {
-      transform: scale(1.18);
-      box-shadow: 0 4px 10px rgba(217, 119, 6, 0.6);
+      transform: scale(1.15);
+      box-shadow: 0 3px 8px rgba(217, 119, 6, 0.5);
     }
     .badge-lightning svg {
-      width: 12px;
-      height: 12px;
+      width: 9px;
+      height: 9px;
       fill: #FFFFFF;
       margin: 0;
     }
 
-    /* Cụm hành động bên phải footer thẻ: Thời gian đăng + Nút Ứng tuyển + Bookmark */
+    /* Cột nội dung thông tin công việc */
+    .job-content,
+    .job-meta-top {
+      flex: 1;
+      min-width: 0;
+    }
+    .job-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-main, #0F172A);
+      line-height: 1.35;
+      text-decoration: none;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 3px;
+      transition: color 0.18s ease;
+    }
+    .job-title:hover {
+      color: var(--color-primary, #F97316);
+    }
+    [data-theme="dark"] .job-title {
+      color: #F8FAFC;
+    }
+    [data-theme="dark"] .job-title:hover {
+      color: #FB923C;
+    }
+
+    .company-name {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted, #64748B);
+      text-transform: uppercase;
+      letter-spacing: 0.15px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      text-decoration: none;
+      line-height: 1.3;
+      transition: color 0.18s ease;
+    }
+    .company-name:hover {
+      color: var(--color-primary, #F97316);
+    }
+    [data-theme="dark"] .company-name {
+      color: #94A3B8;
+    }
+
+    /* Footer: Hàng thẻ tag bên trái & Trái tim bên phải */
+    .job-card-footer,
+    .job-card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 0;
+      border-top: none;
+      width: 100%;
+    }
+
+    /* Tags/Pills gọn gàng nằm trên 1 hàng không bị rớt dòng */
+    .job-pills {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: nowrap;
+      overflow: hidden;
+      min-width: 0;
+    }
+    .job-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      background: var(--bg-secondary, #F1F5F9);
+      font-size: 11.5px;
+      line-height: 1.25;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .job-pill-salary {
+      font-weight: 600;
+      color: var(--text-main, #1E293B);
+    }
+    .job-pill-location {
+      font-weight: 500;
+      color: var(--text-muted, #64748B);
+      max-width: 140px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    [data-theme="dark"] .job-pill {
+      background: #0F172A;
+    }
+    [data-theme="dark"] .job-pill-salary {
+      color: #E2E8F0;
+    }
+    [data-theme="dark"] .job-pill-location {
+      color: #94A3B8;
+    }
+
+    /* Cụm hành động bên phải footer thẻ: Bookmark */
     .job-card-actions-right {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 6px;
       flex-shrink: 0;
     }
 
-    /* 1. Thời gian đăng tin: HIỂN THỊ khi unhover, ẨN khi hover */
-    .job-posted-time {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 12px;
-      color: #94A3B8;
-      font-weight: 500;
-      white-space: nowrap;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-    .job-posted-time svg {
-      color: #94A3B8;
-      flex-shrink: 0;
-    }
-    .job-card:hover .job-posted-time {
+    .job-posted-time,
+    .btn-card-apply {
       display: none !important;
     }
 
-    /* 2. Nút Ứng tuyển: To như các nút khác, ẨN khi unhover, HIỆN khi hover */
-    .btn-card-apply {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      padding: 7px 20px;
-      height: 34px;
-      border-radius: 9999px;
-      background: linear-gradient(135deg, #FF8A34 0%, #F97316 100%);
-      color: #FFFFFF !important;
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-      white-space: nowrap;
-      box-shadow: 0 3px 10px rgba(249, 115, 22, 0.32);
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      cursor: pointer;
-    }
-    .btn-card-apply:hover {
-      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
-      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.45);
-      transform: translateY(-1px);
-    }
-    .job-card:hover .btn-card-apply {
-      display: inline-flex !important;
-      animation: fadeInApplyBtn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    @keyframes fadeInApplyBtn {
-      from {
-        opacity: 0;
-        transform: translateY(2px) scale(0.96);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    /* Nút Bookmark Trái tim */
+    /* Nút Bookmark Trái tim: Đường nét mảnh, kích thước 28x28px chuẩn ảnh mẫu */
     .btn-bookmark {
-      width: 34px;
-      height: 34px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
-      border: 1.5px solid var(--color-primary, #F97316);
+      border: 1px solid var(--border-color, #CBD5E1);
       background: transparent;
-      color: var(--color-primary, #F97316);
+      color: #64748B;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -1528,8 +1608,45 @@
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .btn-bookmark:hover {
+      border-color: var(--color-primary, #F97316);
+      color: var(--color-primary, #F97316);
       background: var(--color-surface-raised, #FFF7ED);
-      transform: scale(1.08);
+      transform: scale(1.06);
+    }
+    .btn-bookmark svg {
+      width: 14px;
+      height: 14px;
+      stroke-width: 1.8;
+      stroke: currentColor;
+      fill: none;
+      transition: fill 0.15s ease, stroke 0.15s ease;
+    }
+    .btn-bookmark.active {
+      border-color: #EF4444;
+      color: #EF4444;
+      background: rgba(239, 68, 68, 0.08);
+    }
+    .btn-bookmark.active svg {
+      fill: #EF4444;
+      stroke: #EF4444;
+    }
+    [data-theme="dark"] .btn-bookmark {
+      border-color: #475569;
+      color: #94A3B8;
+    }
+    [data-theme="dark"] .btn-bookmark:hover {
+      border-color: #F97316;
+      color: #F97316;
+      background: rgba(249, 115, 22, 0.15);
+    }
+    [data-theme="dark"] .btn-bookmark.active {
+      border-color: #EF4444;
+      color: #EF4444;
+      background: rgba(239, 68, 68, 0.15);
+    }
+    [data-theme="dark"] .btn-bookmark.active svg {
+      fill: #EF4444;
+      stroke: #EF4444;
     }
 
     /* Tooltip Tia Sét chuẩn TopCV */
@@ -3964,7 +4081,7 @@
 
   <script src="js/navbar.js?v=7.0_synced_navbar"></script>
   <script src="js/category-filter-modal.js?v=1.0"></script>
-  <script src="js/home.js?v=20261007_companies_nav"></script>
+  <script src="js/home.js?v=20261007_compact_job_cards"></script>
   <script src="js/location-picker.js?v=3.0_clean"></script>
 
   <!-- Floating View Mode Switcher Box (Rìa bên phải màn hình) -->
