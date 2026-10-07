@@ -27,42 +27,43 @@
 /* ==========================================================================
    1. TRIGGER BUTTON IN SEARCH BAR
    ========================================================================== */
+/* Cùng kiểu với ô "Tất cả địa điểm" (.location-trigger): không khung, icon cam, chữ xám đậm, mũi tên xám */
 .category-filter-trigger {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   height: 44px;
   max-width: 260px;
-  padding: 0 12px;
-  border: 1.5px solid #FDBA74;
+  padding: 0 10px 0 12px;
+  border: 0;
   border-radius: 10px;
-  background: #FFF7ED;
-  color: #C2410C;
-  font: 700 14px/1 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: transparent;
+  color: #334155;
+  font: 500 14px/1 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   white-space: nowrap;
   cursor: pointer;
-  transition: all 0.18s ease;
+  transition: background-color 0.18s ease, color 0.18s ease;
   flex-shrink: 0;
   box-sizing: border-box;
 }
 
 .category-filter-trigger:hover,
-.category-filter-trigger[aria-expanded="true"],
-.category-filter-trigger.is-active {
-  background: #FFEDD5;
-  border-color: #F97316;
-  color: #EA580C;
-  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.15);
+.category-filter-trigger[aria-expanded="true"] {
+  background: transparent;
+  color: #334155;
 }
 
 .category-filter-trigger .category-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
-  color: currentColor;
+  color: #F97316;
 }
 
 .category-filter-trigger .category-label {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -104,12 +105,17 @@
   width: 14px;
   height: 14px;
   flex-shrink: 0;
-  transition: transform 0.2s ease;
-  color: currentColor;
+  transition: transform 0.2s ease, color 0.2s ease;
+  color: #94A3B8;
 }
 
 .category-filter-trigger[aria-expanded="true"] .category-chevron {
   transform: rotate(180deg);
+  color: #F97316;
+}
+
+.category-filter-trigger:hover .category-chevron {
+  color: #EA580C;
 }
 
 .category-filter-trigger:focus-visible {
