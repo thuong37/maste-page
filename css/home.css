@@ -241,31 +241,6 @@
   flex: 1;
 }
 
-.kw-suggest-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 2px 7px;
-  border-radius: 9999px;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1.25;
-  white-space: nowrap;
-  flex-shrink: 0;
-  letter-spacing: 0.01em;
-}
-
-.kw-suggest-badge.is-company {
-  background: #eff6ff;
-  color: #2563eb;
-  border: 1px solid #bfdbfe;
-}
-
-.kw-suggest-badge.is-job {
-  background: #fff7ed;
-  color: #ea580c;
-  border: 1px solid #ffedd5;
-}
-
 .keyword-suggestion-row.is-company:hover {
   background: #f0f9ff;
 }
