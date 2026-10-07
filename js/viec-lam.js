@@ -1950,7 +1950,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="job-top-right">
                   <div class="job-salary-wrap">
-                    ${job._isSearchMatch ? `<span class="badge-search-match" title="Việc làm khớp chính xác với tiêu chí tìm kiếm">✨ Khớp tìm kiếm</span>` : ''}
                     <span class="job-salary-text">${job.salaryBadge}</span>
                   </div>
                   <button type="button" class="btn-quick-view" data-id="${job.id}" title="Xem nhanh việc làm">
@@ -2341,7 +2340,6 @@ document.addEventListener('DOMContentLoaded', () => {
               </h4>
               <div class="split-card-company">${job.company}</div>
               <div class="split-card-badges">
-                ${job._isSearchMatch ? `<span class="split-match-badge">🎯 Khớp</span>` : ''}
                 <span class="job-salary-badge ${salaryOrangeClass}" style="font-size: 12px; padding: 2px 7px;">${job.salaryBadge}</span>
               </div>
             </div>
