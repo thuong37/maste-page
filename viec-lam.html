@@ -1146,17 +1146,43 @@
             <div class="result-stat-text">
               Tìm thấy <strong id="jobCountText">28</strong> việc làm đang tuyển dụng
             </div>
-            <!-- Sắp xếp theo -->
+            <!-- Sắp xếp theo (TopCV Style) -->
             <div class="top-filter-sort-group">
-              <span class="sort-caption">Sắp xếp:</span>
-              <div class="sort-select-wrap">
-                <select class="top-sort-select" id="sortSelect" aria-label="Sắp xếp kết quả">
-                  <option value="relevant">Phù hợp nhất</option>
-                  <option value="newest">Tin mới nhất</option>
-                  <option value="salary_high">Lương cao đến thấp</option>
-                  <option value="views">Lượt xem nhiều</option>
-                </select>
-                <svg class="sort-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              <span class="sort-divider" aria-hidden="true"></span>
+              <div class="sort-label-wrap">
+                <svg class="sort-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 4h12M3 8h9m-9 4h6m6-7v14m0 0-4-4m4 4 4-4"/>
+                </svg>
+                <span class="sort-caption">Sắp xếp theo:</span>
+              </div>
+              <div class="sort-dropdown-custom" id="sortDropdownCustom">
+                <button type="button" class="sort-trigger-btn" id="sortTriggerBtn" aria-haspopup="listbox" aria-expanded="false" title="Chọn kiểu sắp xếp việc làm">
+                  <span class="sort-current-label" id="sortCurrentLabel">Search by AI</span>
+                  <svg class="sort-chevron-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="sort-menu-dropdown" id="sortMenuDropdown" role="listbox">
+                  <button type="button" class="sort-menu-item is-selected" data-val="relevant" role="option" aria-selected="true">
+                    <span>Search by AI</span>
+                    <svg class="sort-check-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  </button>
+                  <button type="button" class="sort-menu-item" data-val="post_date" role="option" aria-selected="false">
+                    <span>Ngày đăng</span>
+                    <svg class="sort-check-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  </button>
+                  <button type="button" class="sort-menu-item" data-val="update_date" role="option" aria-selected="false">
+                    <span>Ngày cập nhật</span>
+                    <svg class="sort-check-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  </button>
+                  <button type="button" class="sort-menu-item" data-val="salary_high" role="option" aria-selected="false">
+                    <span>Lương cao đến thấp</span>
+                    <svg class="sort-check-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  </button>
+                  <button type="button" class="sort-menu-item" data-val="urgent" role="option" aria-selected="false">
+                    <span>Cần tuyển gấp</span>
+                    <svg class="sort-check-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  </button>
+                </div>
+                <input type="hidden" id="sortSelect" value="relevant" />
               </div>
             </div>
           </div>
@@ -2651,7 +2677,7 @@
               <span class="cv-coach-badge">Chuẩn hóa ATS 2026</span>
             </div>
           </div>
-          <p class="cv-coach-desc">Được AI tự động phân tích và tối ưu hóa từ khóa chuyên môn phù hợp với vị trí bạn ứng tuyển, giúp tăng 3x tỷ lệ phản hồi.</p>
+          <p class="cv-coach-desc">Được AI tự động phân tích và tối ưu hóa từ khóa chuyên môn phù hợp với vị trí bạn ứng tuyển, giúp tăng tỷ lệ phản hồi.</p>
           <a href="index.html#tao-cv-theo-mau" class="btn-cv-coach">
             <span>Tạo CV chuẩn ATS miễn phí →</span>
           </a>

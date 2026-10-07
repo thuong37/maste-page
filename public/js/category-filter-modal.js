@@ -353,14 +353,54 @@
       this.submitBtn = document.getElementById(config.submitBtnId || 'btnCategorySubmit');
       this.onApplyCallback = config.onApply || null;
 
-      if (!this.overlay) {
-        return;
-      }
+      // Khôi phục bộ lọc danh mục đã chọn từ màn hình trước (Trang chủ -> Màn search)
+      this.restoreSavedSelection();
 
       this.bindEvents();
       this.renderGroups();
       this.renderSubgroups();
       this.renderPopularKeywords();
+      this.updateTriggerUI();
+    },
+
+    restoreSavedSelection: function () {
+      try {
+        const saved = localStorage.getItem('easycv_category_selection');
+        if (!saved) return;
+        const parsed = JSON.parse(saved);
+        if (!parsed) return;
+
+        const groups = Array.isArray(parsed.groups) ? parsed.groups : [];
+        const subgroups = Array.isArray(parsed.subgroups) ? parsed.subgroups : [];
+        const roles = Array.isArray(parsed.roles) ? parsed.roles : [];
+
+        if (groups.length > 0 || subgroups.length > 0 || roles.length > 0) {
+          this.appliedSelection = {
+            groups: new Set(groups),
+            subgroups: new Set(subgroups),
+            roles: new Set(roles)
+          };
+          this.tempSelection = {
+            groups: new Set(groups),
+            subgroups: new Set(subgroups),
+            roles: new Set(roles)
+          };
+
+          // Tự động định vị nhóm ngành chứa nghề được chọn
+          if (roles.length > 0) {
+            const firstRole = roles[0];
+            const foundCat = CATEGORY_DATA.find(c =>
+              c.subgroups.some(s => s.roles.includes(firstRole)) ||
+              (c.popularKeywords && c.popularKeywords.includes(firstRole))
+            );
+            if (foundCat) this.activeCategoryKey = foundCat.key;
+          } else if (groups.length > 0) {
+            this.activeCategoryKey = groups[0];
+          }
+        }
+      } catch (e) {
+        console.warn('[CategoryModal] restoreSavedSelection error:', e);
+      }
     },
 
     bindEvents: function () {
@@ -624,6 +664,20 @@
         roles: new Set(this.appliedSelection.roles)
       };
 
+      // Đảm bảo mở ra đúng nhóm ngành của danh sách vai trò đã chọn
+      if (this.tempSelection.roles.size > 0) {
+        const firstRole = Array.from(this.tempSelection.roles)[0];
+        const foundCat = CATEGORY_DATA.find(c =>
+          c.subgroups.some(s => s.roles.includes(firstRole)) ||
+          (c.popularKeywords && c.popularKeywords.includes(firstRole))
+        );
+        if (foundCat) {
+          this.activeCategoryKey = foundCat.key;
+        }
+      } else if (this.tempSelection.groups.size > 0) {
+        this.activeCategoryKey = Array.from(this.tempSelection.groups)[0];
+      }
+
       if (this.overlay) {
         this.overlay.hidden = false;
       }
@@ -702,6 +756,16 @@
         roles: new Set(this.tempSelection.roles)
       };
 
+      try {
+        localStorage.setItem('easycv_category_selection', JSON.stringify({
+          groups: Array.from(this.appliedSelection.groups),
+          subgroups: Array.from(this.appliedSelection.subgroups),
+          roles: Array.from(this.appliedSelection.roles)
+        }));
+      } catch (e) {
+        console.warn('Lỗi lưu easycv_category_selection:', e);
+      }
+
       this.updateTriggerUI();
       this.close(true);
 
@@ -746,6 +810,10 @@
         subgroups: new Set(),
         roles: new Set()
       };
+
+      try {
+        localStorage.removeItem('easycv_category_selection');
+      } catch (e) {}
 
       this.updateTriggerUI();
       if (this.isOpen) {

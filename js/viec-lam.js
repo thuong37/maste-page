@@ -1834,7 +1834,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 4. SORTING ENGINE
+  // 4. SORTING ENGINE (TopCV Standard)
   // =========================================================================
   function sortJobs() {
     const val = sortSelect ? sortSelect.value : 'relevant';
@@ -1847,12 +1847,22 @@ document.addEventListener('DOMContentLoaded', () => {
       // 2. Tiêu chuẩn sắp xếp người dùng chọn
       if (val === 'salary_high') {
         return b.salaryMax - a.salaryMax;
-      } else if (val === 'newest') {
+      } else if (val === 'newest' || val === 'post_date') {
+        return b.id - a.id;
+      } else if (val === 'update_date') {
+        const aToday = a.updated && (a.updated.includes('Hôm nay') || a.updated.includes('giờ'));
+        const bToday = b.updated && (b.updated.includes('Hôm nay') || b.updated.includes('giờ'));
+        if (aToday && !bToday) return -1;
+        if (!aToday && bToday) return 1;
+        return b.id - a.id;
+      } else if (val === 'urgent') {
+        if (a.isFeatured && !b.isFeatured) return -1;
+        if (!a.isFeatured && b.isFeatured) return 1;
         return b.id - a.id;
       } else if (val === 'views') {
         return b.aiMatch - a.aiMatch;
       } else {
-        // Mặc định: Featured trước, sau đó AI match cao nhất
+        // Mặc định: 'relevant' (Search by AI)
         if (a.isFeatured && !b.isFeatured) return -1;
         if (!a.isFeatured && b.isFeatured) return 1;
         return b.aiMatch - a.aiMatch;
@@ -4099,12 +4109,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (window.EasyCVCategoryModal) {
-      if (categoryParam) {
-        window.EasyCVCategoryModal.setSelection({ groups: [categoryParam], subgroups: [], roles: [] });
-      } else if (industryParam) {
-        window.EasyCVCategoryModal.setSelection({ groups: [], subgroups: [], roles: [industryParam] });
-      } else {
-        window.EasyCVCategoryModal.setSelection({ groups: [], subgroups: [], roles: [] });
+      try {
+        const savedCat = localStorage.getItem('easycv_category_selection');
+        if (savedCat) {
+          const parsed = JSON.parse(savedCat);
+          if (parsed && (parsed.roles?.length || parsed.subgroups?.length || parsed.groups?.length)) {
+            window.EasyCVCategoryModal.setSelection({
+              groups: parsed.groups || [],
+              subgroups: parsed.subgroups || [],
+              roles: parsed.roles || []
+            });
+          } else if (categoryParam) {
+            window.EasyCVCategoryModal.setSelection({ groups: [categoryParam], subgroups: [], roles: [] });
+          } else if (industryParam) {
+            window.EasyCVCategoryModal.setSelection({ groups: [], subgroups: [], roles: [industryParam] });
+          }
+        } else if (categoryParam) {
+          window.EasyCVCategoryModal.setSelection({ groups: [categoryParam], subgroups: [], roles: [] });
+        } else if (industryParam) {
+          window.EasyCVCategoryModal.setSelection({ groups: [], subgroups: [], roles: [industryParam] });
+        }
+      } catch (e) {
+        if (categoryParam) {
+          window.EasyCVCategoryModal.setSelection({ groups: [categoryParam], subgroups: [], roles: [] });
+        } else if (industryParam) {
+          window.EasyCVCategoryModal.setSelection({ groups: [], subgroups: [], roles: [industryParam] });
+        }
       }
     }
 
@@ -4156,6 +4186,68 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // TopCV Standard Sort Dropdown Engine
+  function initTopCvSortDropdown() {
+    const trigger = document.getElementById('sortTriggerBtn');
+    const menu = document.getElementById('sortMenuDropdown');
+    const hiddenInput = document.getElementById('sortSelect');
+    const labelSpan = document.getElementById('sortCurrentLabel');
+    if (!trigger || !menu) return;
+
+    // Toggle menu dropdown
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = menu.classList.contains('is-open');
+      if (isOpen) {
+        menu.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+      } else {
+        menu.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (!trigger.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Handle item selection
+    menu.querySelectorAll('.sort-menu-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const val = item.getAttribute('data-val');
+        const text = item.querySelector('span')?.textContent.trim() || 'Search by AI';
+
+        menu.querySelectorAll('.sort-menu-item').forEach(it => {
+          it.classList.remove('is-selected');
+          it.setAttribute('aria-selected', 'false');
+        });
+        item.classList.add('is-selected');
+        item.setAttribute('aria-selected', 'true');
+
+        if (labelSpan) labelSpan.textContent = text;
+        if (hiddenInput) {
+          hiddenInput.value = val;
+          hiddenInput.dispatchEvent(new Event('change'));
+        }
+
+        menu.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+
+        sortJobs();
+        currentPage = 1;
+        renderCurrentPage();
+        showToast(`Đã sắp xếp theo: ${text}`, '⇅');
+      });
+    });
+  }
+
   // Browser Back / Forward navigation support
   window.addEventListener('popstate', () => {
     syncStateFromUrl();
@@ -4163,6 +4255,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initial Boot
   initTopFilterBar();
+  initTopCvSortDropdown();
   syncStateFromUrl();
   initSavedFilters();
   initStickySearch();
