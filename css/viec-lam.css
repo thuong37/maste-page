@@ -2062,17 +2062,24 @@
 }
 
 .job-company-logo {
-  width: 80px;
-  height: 80px;
-  min-width: 80px;
-  min-height: 80px;
-  border-radius: 10px;
-  border: 1px solid #E5E7EB;
+  width: 100px;
+  height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+  border-radius: 12px;
+  border: 1.5px solid #E5E7EB;
   background: #FFFFFF;
   object-fit: contain;
-  padding: 5px;
+  padding: 6px;
   flex-shrink: 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.job-card:hover .job-company-logo,
+.job-card.is-hovered .job-company-logo {
+  border-color: var(--color-primary, #F97316);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
 }
 
 .job-info-main {
@@ -2257,11 +2264,17 @@
   position: relative;
 }
 
-/* Unhovered Meta State: Luôn luôn hiển thị */
+/* Unhovered Meta State: Luôn luôn hiển thị khi chưa hover, TỰ ĐỘNG ẨN KHI HOVER */
 .job-meta-unhovered {
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: opacity 0.15s ease;
+}
+
+.job-card:hover .job-meta-unhovered,
+.job-card.is-hovered .job-meta-unhovered {
+  display: none !important;
 }
 
 .job-post-time {
@@ -2292,27 +2305,29 @@
   display: flex !important;
 }
 
-/* Apply button */
+/* Apply button: To đẹp như các nút chính khác trên hệ thống */
 .btn-card-apply {
-  background: var(--color-primary, #F97316);
-  color: #FFFFFF;
+  background: linear-gradient(135deg, #FF8A34 0%, #F97316 100%);
+  color: #FFFFFF !important;
   border: none;
   border-radius: 9999px;
-  padding: 4px 14px;
-  font-size: 12.5px;
+  height: 36px;
+  padding: 0 22px;
+  font-size: 13.5px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.22);
+  box-shadow: 0 3px 10px rgba(249, 115, 22, 0.32);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-card-apply:hover {
-  background: var(--color-primary-hover, #EA580C);
-  box-shadow: 0 4px 10px rgba(249, 115, 22, 0.32);
+  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  box-shadow: 0 5px 14px rgba(249, 115, 22, 0.45);
   transform: translateY(-1px);
 }
 
@@ -2322,8 +2337,8 @@
 
 /* Hide / Not Interested Button */
 .btn-card-hide {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   border: 1.5px solid #CBD5E1;
   background: #FFFFFF;
@@ -2346,8 +2361,8 @@
 
 /* Bookmark / Heart Button (EasyCV Brand Orange Style) */
 .btn-card-bookmark {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   border: 1.5px solid var(--color-primary, #F97316);
   background: #FFFFFF;

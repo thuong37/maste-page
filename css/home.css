@@ -1054,23 +1054,29 @@
   gap: 12px;
 }
 
-/* Logo Wrapper with Green Accent Border & Flash Shield Badge - Standardized 65x65 */
+/* Logo Wrapper with Border & Flash Badge - Standardized 80x80 */
 .job-logo-wrapper {
   position: relative;
-  width: 65px;
-  height: 65px;
-  min-width: 65px;
-  min-height: 65px;
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  min-height: 80px;
   flex-shrink: 0;
-  border-radius: 10px;
-  border: 1.5px solid var(--color-primary, #F97316);
+  border-radius: 12px;
+  border: 1.5px solid var(--border-color, #E2E8F0);
   background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
+  padding: 6px;
   box-sizing: border-box;
   cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.job-card:hover .job-logo-wrapper {
+  border-color: #F97316;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.18);
 }
 
 .job-logo,
@@ -1080,32 +1086,41 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  border-radius: 6px;
+  border-radius: 8px;
   background: #FFFFFF;
 }
 
 /* Flash / Lightning Badge on top-left of Logo */
 .badge-lightning {
   position: absolute;
-  top: -5px;
-  left: -5px;
-  width: 17px;
-  height: 20px;
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+  top: -7px;
+  left: -7px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #B45309 100%);
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: help;
+  z-index: 3;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
   color: #FFFFFF;
-  z-index: 2;
-  box-shadow: 0 2px 4px rgba(249, 115, 22, 0.35);
+  clip-path: none !important;
+}
+
+.badge-lightning:hover {
+  transform: scale(1.18);
+  box-shadow: 0 4px 10px rgba(217, 119, 6, 0.6);
 }
 
 .badge-lightning svg {
-  width: 9px;
-  height: 11px;
+  width: 12px;
+  height: 12px;
   fill: #FFFFFF;
-  margin-top: -2px;
+  margin: 0;
 }
 
 /* Job Content */
@@ -1226,10 +1241,83 @@
   color: #34D399;
 }
 
+/* Cụm hành động bên phải footer thẻ: Thời gian đăng + Nút Ứng tuyển + Bookmark */
+.job-card-actions-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* 1. Thời gian đăng tin: HIỂN THỊ khi unhover, ẨN khi hover */
+.job-posted-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #94A3B8;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.job-posted-time svg {
+  color: #94A3B8;
+  flex-shrink: 0;
+}
+
+.job-card:hover .job-posted-time,
+.job-card.is-hovered .job-posted-time {
+  display: none !important;
+}
+
+/* 2. Nút Ứng tuyển: To như các nút khác, ẨN khi unhover, HIỆN khi hover */
+.btn-card-apply {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 7px 20px;
+  height: 34px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #FF8A34 0%, #F97316 100%);
+  color: #FFFFFF !important;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(249, 115, 22, 0.32);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-card-apply:hover {
+  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.45);
+  transform: translateY(-1px);
+}
+
+.job-card:hover .btn-card-apply,
+.job-card.is-hovered .btn-card-apply {
+  display: inline-flex !important;
+  animation: fadeInApplyBtn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInApplyBtn {
+  from {
+    opacity: 0;
+    transform: translateY(2px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 /* Circular Orange Bookmark Button */
 .btn-bookmark {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   border: 1.5px solid var(--color-primary, #F97316);
   background: transparent;

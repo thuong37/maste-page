@@ -2558,7 +2558,1343 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // =========================================================================
+  // --- 9. Khối IV: Việc Làm Nổi Bật (Featured Jobs Engine) ---
+  // - 5 Tabs lọc theo 5 ngành nghề có số lượng job nhiều nhất
+  // - Phân trang tự động 10s chuyển trang 1 lần (Hover pause / Resume)
+  // - Popover Preview chi tiết khi hover vào tên job
+  // - Huy hiệu Tia Sét ⚡ chuẩn TopCV gắn trên logo công ty
+  // - Thuật toán ưu tiên: Chưa login -> theo quy mô ngành nghề; Đã login -> theo dữ liệu cá nhân hóa
+  // =========================================================================
+  function initFeaturedJobsSection() {
+    const gridEl = document.getElementById('featuredJobsGrid');
+    const tabsContainer = document.getElementById('featuredIndustryTabs');
+    const paginationControls = document.getElementById('featuredPaginationControls');
+    const progressFill = document.getElementById('autoPageProgressFill');
+    const timerIndicator = document.getElementById('autoPageTimerIndicator');
+    const previewPopup = document.getElementById('jobPreviewPopup');
+    const sectionContainer = document.getElementById('viec-lam-noi-bat');
+
+    if (!gridEl || !tabsContainer) return;
+
+    // Kho dữ liệu chuẩn 30 việc làm phong phú cho 5 ngành nghề hàng đầu
+    const FEATURED_JOBS_DATA = [
+      // 1. KINH DOANH / BÁN HÀNG (SALES)
+      {
+        id: 101,
+        title: 'Giám Đốc Khách Hàng Doanh Nghiệp (B2B Account Manager)',
+        company: 'Tổng Công ty Dịch vụ Số Viettel',
+        logo: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'sales',
+        salaryBadge: '30 - 55 triệu',
+        salaryIsOrange: true,
+        location: 'Hà Nội & TP.HCM',
+        city: 'Hà Nội',
+        exp: '3-5 năm',
+        level: 'Trưởng nhóm / Quản lý',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 14, evaluated14d: 13, responseRate: 93, lastReviewed: '12:00' },
+        updated: '15 phút trước',
+        verified: true,
+        skills: ['B2B Sales', 'Key Account', 'Giải pháp số', 'Đàm phán cấp cao'],
+        jdSummary: [
+          'Chịu trách nhiệm phát triển doanh số khách hàng doanh nghiệp khối Tài chính - Ngân hàng.',
+          'Tư vấn các gói giải pháp Chuyển đổi số, Viettel Cloud và Payment Gateway.',
+          'Xây dựng mối quan hệ chiến lược với C-levels của các tập đoàn đối tác.'
+        ],
+        perks: ['Thưởng hoa hồng không giới hạn theo doanh số', 'Gói bảo hiểm sức khỏe Viettel Care toàn diện'],
+        aiMatch: 96
+      },
+      {
+        id: 102,
+        title: 'Trưởng Phòng Kinh Doanh Bất Động Sản Nghỉ Dưỡng',
+        company: 'Tập đoàn Vingroup (Vinhomes)',
+        logo: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'sales',
+        salaryBadge: '35 - 70 triệu',
+        salaryIsOrange: true,
+        location: 'Hà Nội',
+        city: 'Hà Nội',
+        exp: '3-5 năm',
+        level: 'Trưởng phòng',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 18, evaluated14d: 16, responseRate: 89, lastReviewed: '12:00' },
+        updated: '30 phút trước',
+        verified: true,
+        skills: ['Bất động sản', 'Quản lý đội ngũ', 'Tư vấn đầu tư', 'Chiến lược bán hàng'],
+        jdSummary: [
+          'Điều hành và dẫn dắt đội ngũ 15 chuyên viên kinh doanh dự án cao cấp.',
+          'Lập kế hoạch phân bổ chỉ tiêu doanh số và tổ chức sự kiện mở bán.',
+          'Chăm sóc tệp khách hàng VIP và các nhà đầu tư lớn.'
+        ],
+        perks: ['Hoa hồng cao nhất thị trường BĐS', 'Phúc lợi nghỉ dưỡng hệ thống Vinpearl định kỳ'],
+        aiMatch: 92
+      },
+      {
+        id: 103,
+        title: 'Chuyên Viên Quan Hệ Khách Hàng Doanh Nghiệp (RM)',
+        company: 'Ngân hàng Techcombank',
+        logo: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'sales',
+        salaryBadge: '22 - 38 triệu',
+        salaryIsOrange: false,
+        location: 'TP.HCM (Quận 1)',
+        city: 'TP.HCM',
+        exp: '1-3 năm',
+        level: 'Chuyên viên',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 22, evaluated14d: 21, responseRate: 95, lastReviewed: '12:00' },
+        updated: '1 giờ trước',
+        verified: true,
+        skills: ['Tín dụng doanh nghiệp', 'Tài trợ thương mại', 'Thẩm định tài chính', 'Quan hệ khách hàng'],
+        jdSummary: [
+          'Tìm kiếm và tiếp cận các doanh nghiệp SME/Commercial để cung cấp dịch vụ tín dụng.',
+          'Phân tích báo cáo tài chính và lập tờ trình cấp hạn mức tín dụng.',
+          'Quản lý danh mục và phòng ngừa rủi ro tín dụng định kỳ.'
+        ],
+        perks: ['Thưởng hiệu quả kinh doanh hàng quý', 'Lộ trình thăng tiến rõ ràng lên Senior RM sau 1 năm'],
+        aiMatch: 94
+      },
+      {
+        id: 104,
+        title: 'Kỹ Sư Giải Pháp Bán Hàng Kỹ Thuật (Pre-Sales Engineer)',
+        company: 'CMC Telecom Enterprise',
+        logo: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'sales',
+        salaryBadge: '25 - 45 triệu',
+        salaryIsOrange: false,
+        location: 'Hà Nội',
+        city: 'Hà Nội',
+        exp: '2-4 năm',
+        level: 'Chuyên viên cao cấp',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 10, evaluated14d: 9, responseRate: 90, lastReviewed: '12:00' },
+        updated: '2 giờ trước',
+        verified: true,
+        skills: ['Pre-Sales', 'Cloud Architecture', 'Mạng viễn thông', 'Thuyết trình kỹ thuật'],
+        jdSummary: [
+          'Phối hợp với bộ phận Sales để tư vấn giải pháp mạng & Cloud cho khách hàng lớn.',
+          'Soạn thảo hồ sơ đề xuất kỹ thuật (RFP, POC) và giải đáp kiến trúc hệ thống.',
+          'Chuyển giao yêu cầu kỹ thuật chi tiết cho đội ngũ triển khai dự án.'
+        ],
+        perks: ['Được tài trợ 100% chi phí thi chứng chỉ quốc tế AWS/Azure', 'Thưởng dự án theo quý'],
+        aiMatch: 90
+      },
+      {
+        id: 105,
+        title: 'Business Development Manager (Khu vực Đông Nam Á)',
+        company: 'Shopee Vietnam',
+        logo: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'sales',
+        salaryBadge: '30 - 50 triệu',
+        salaryIsOrange: true,
+        location: 'TP.HCM (Quận 7)',
+        city: 'TP.HCM',
+        exp: '3-5 năm',
+        level: 'Trưởng nhóm',
+        type: 'Toàn thời gian',
+        isLightningBadge: false,
+        lightningStats: { applied30d: 16, evaluated14d: 11, responseRate: 68, lastReviewed: '12:00' },
+        updated: '3 giờ trước',
+        verified: true,
+        skills: ['E-commerce', 'Thương thảo nhãn hàng', 'Phân tích dữ liệu bán lẻ', 'Tiếng Anh lưu loát'],
+        jdSummary: [
+          'Phát triển danh mục nhà bán hàng chiến lược trên sàn thương mại điện tử Shopee.',
+          'Đàm phán các chương trình khuyến mãi độc quyền và tối ưu giá bán lẻ.',
+          'Phân tích chỉ số tăng trưởng GMV để đề xuất chiến lược phát triển ngành hàng.'
+        ],
+        perks: ['Môi trường Tech năng động quốc tế', 'MacBook Pro mới nhất phục vụ công việc'],
+        aiMatch: 88
+      },
+      {
+        id: 106,
+        title: 'Chuyên Viên Tư Vấn Giải Pháp Cloud & AI SaaS',
+        company: 'FPT Smart Cloud',
+        logo: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'sales',
+        salaryBadge: '20 - 35 triệu',
+        salaryIsOrange: false,
+        location: 'Hà Nội',
+        city: 'Hà Nội',
+        exp: '1-3 năm',
+        level: 'Chuyên viên',
+        type: 'Hybrid',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 12, evaluated14d: 11, responseRate: 91, lastReviewed: '12:00' },
+        updated: '4 giờ trước',
+        verified: true,
+        skills: ['SaaS Sales', 'AI Chatbot', 'Cloud Solutions', 'Tư vấn giải pháp'],
+        jdSummary: [
+          'Tiếp nhận lead khách hàng tiềm năng và demo giải pháp FPT.AI, FPT Cloud.',
+          'Đàm phán hợp đồng cung cấp dịch vụ phần mềm cho khối doanh nghiệp tài chính, bán lẻ.',
+          'Chăm sóc tài khoản khách hàng duy trì gia hạn định kỳ (Retention).'
+        ],
+        perks: ['Chế độ làm việc linh hoạt Hybrid 2 ngày Remote/tuần', 'Bảo hiểm FPT Care'],
+        aiMatch: 93
+      },
+
+      // 2. IT - PHẦN MỀM (IT)
+      {
+        id: 201,
+        title: 'Senior Fullstack Engineer (ReactJS, Node.js & AWS)',
+        company: 'FPT Software Global',
+        logo: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'it',
+        salaryBadge: '30 - 48 triệu',
+        salaryIsOrange: false,
+        location: 'Hà Nội (Cầu Giấy)',
+        city: 'Hà Nội',
+        exp: '3-5 năm',
+        level: 'Senior',
+        type: 'Hybrid',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 25, evaluated14d: 24, responseRate: 96, lastReviewed: '12:00' },
+        updated: '10 phút trước',
+        verified: true,
+        skills: ['ReactJS', 'Node.js', 'TypeScript', 'AWS Microservices'],
+        jdSummary: [
+          'Thiết kế kiến trúc hệ thống và phát triển nền tảng FinTech quy mô hàng triệu users.',
+          'Tối ưu hóa hiệu năng render phía client và API throughput phía backend.',
+          'Review code và hướng dẫn chuyên môn cho các kỹ sư cấp dưới.'
+        ],
+        perks: ['Chế độ làm việc linh hoạt Hybrid', 'Cơ hội onsite ngắn hạn tại Nhật Bản và Singapore'],
+        aiMatch: 98
+      },
+      {
+        id: 202,
+        title: 'Principal Software Architect (AI Camera & Mobile OS)',
+        company: 'Samsung R&D Institute Vietnam (SRV)',
+        logo: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'it',
+        salaryBadge: '55 - 85 triệu',
+        salaryIsOrange: true,
+        location: 'Hà Nội (Tây Hồ)',
+        city: 'Hà Nội',
+        exp: 'Trên 5 năm',
+        level: 'Architect / Quản lý',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 11, evaluated14d: 10, responseRate: 91, lastReviewed: '12:00' },
+        updated: '25 phút trước',
+        verified: true,
+        skills: ['System Architecture', 'C/C++', 'AI Algorithms', 'Mobile OS Platform'],
+        jdSummary: [
+          'Chủ trì thiết kế kiến trúc phần mềm lõi cho camera thông minh trên các dòng flagship.',
+          'Nghiên cứu áp dụng các mô hình học sâu (Deep Learning) tối ưu trên chip bán dẫn NPU.',
+          'Phối hợp với trung tâm R&D tại Hàn Quốc để đồng bộ tiêu chuẩn kỹ thuật.'
+        ],
+        perks: ['Gói lương thưởng cạnh tranh bậc nhất ngành công nghệ', 'Xe đưa đón CBNV khắp Hà Nội'],
+        aiMatch: 95
+      },
+      {
+        id: 203,
+        title: 'Senior Backend Engineer (Golang, Microservices)',
+        company: 'VNG Corporation',
+        logo: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'it',
+        salaryBadge: '35 - 55 triệu',
+        salaryIsOrange: false,
+        location: 'TP.HCM (Quận 7)',
+        city: 'TP.HCM',
+        exp: '3-5 năm',
+        level: 'Senior',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 19, evaluated14d: 17, responseRate: 89, lastReviewed: '12:00' },
+        updated: '1 giờ trước',
+        verified: true,
+        skills: ['Golang', 'Distributed Systems', 'Kafka', 'Redis Cluster', 'K8s'],
+        jdSummary: [
+          'Xây dựng các dịch vụ microservices chịu tải cao (High Concurrency) phục vụ ZaloPay & Games.',
+          'Thiết kế cơ chế cache đa tầng và tối ưu hóa truy vấn dữ liệu phân tán.',
+          'Đảm bảo hệ thống đạt độ sẵn sàng cao 99.99% (High Availability).'
+        ],
+        perks: ['Ăn trưa miễn phí tại VNG Campus', 'Khu phức hợp thể thao, gym và hồ bơi nội bộ'],
+        aiMatch: 94
+      },
+      {
+        id: 204,
+        title: 'AI Research Scientist / Computer Vision Specialist',
+        company: 'VinAI Research',
+        logo: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'it',
+        salaryBadge: '40 - 75 triệu',
+        salaryIsOrange: true,
+        location: 'Hà Nội',
+        city: 'Hà Nội',
+        exp: '3-5 năm',
+        level: 'Chuyên gia nghiên cứu',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 12, evaluated14d: 10, responseRate: 83, lastReviewed: '12:00' },
+        updated: '2 giờ trước',
+        verified: true,
+        skills: ['Computer Vision', 'PyTorch', 'Autonomous Driving', 'Deep Learning'],
+        jdSummary: [
+          'Nghiên cứu các thuật toán thị giác máy tính cho hệ thống lái xe tự hành Smart Mobility.',
+          'Công bố các bài báo khoa học tại các hội nghị hàng đầu thế giới (CVPR, ICCV, NeurIPS).',
+          'Triển khai mô hình AI chạy thực tế trên hệ thống xe điện thông minh.'
+        ],
+        perks: ['Tài nguyên siêu máy tính GPU NVIDIA A100 không giới hạn', 'Tài trợ tham dự hội thảo quốc tế'],
+        aiMatch: 91
+      },
+      {
+        id: 205,
+        title: 'Senior DevOps / Cloud Platform Engineer (AWS, K8s)',
+        company: 'One Mount Group',
+        logo: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'it',
+        salaryBadge: '32 - 50 triệu',
+        salaryIsOrange: false,
+        location: 'Hà Nội',
+        city: 'Hà Nội',
+        exp: '3-5 năm',
+        level: 'Senior',
+        type: 'Hybrid',
+        isLightningBadge: false,
+        lightningStats: { applied30d: 14, evaluated14d: 10, responseRate: 71, lastReviewed: '12:00' },
+        updated: '3 giờ trước',
+        verified: true,
+        skills: ['Kubernetes', 'Terraform', 'CI/CD Pipeline', 'AWS Security'],
+        jdSummary: [
+          'Quản lý hạ tầng đám mây đa dịch vụ phục vụ hệ sinh thái VinID và VinShop.',
+          'Tự động hóa hoàn toàn quy trình CI/CD từ dev sang production.',
+          'Giám sát hệ thống với Prometheus, Grafana và phản ứng sự cố 24/7.'
+        ],
+        perks: ['Gói khám sức khỏe cao cấp tại Vinmec', 'Làm việc linh hoạt 2 ngày WFH'],
+        aiMatch: 87
+      },
+      {
+        id: 206,
+        title: 'Tech Lead Mobile Engineer (Flutter & Native)',
+        company: 'MoMo Fintech (M-Service)',
+        logo: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'it',
+        salaryBadge: '40 - 60 triệu',
+        salaryIsOrange: true,
+        location: 'TP.HCM',
+        city: 'TP.HCM',
+        exp: 'Trên 5 năm',
+        level: 'Tech Lead',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 15, evaluated14d: 14, responseRate: 93, lastReviewed: '12:00' },
+        updated: '5 giờ trước',
+        verified: true,
+        skills: ['Flutter', 'iOS (Swift)', 'Android (Kotlin)', 'Clean Architecture'],
+        jdSummary: [
+          'Dẫn dắt đội ngũ kỹ sư mobile phát triển các mini-apps trên siêu ứng dụng MoMo.',
+          'Định hình chuẩn kiến trúc Mobile Clean Architecture và tối ưu hóa thời gian mở app.',
+          'Phối hợp với Product Team để mang lại trải nghiệm UX mượt mà 60fps.'
+        ],
+        perks: ['Thưởng cổ phiếu ESOP theo hiệu quả công việc', 'Bảo hiểm PVI gia đình'],
+        aiMatch: 95
+      },
+
+      // 3. MARKETING / PR
+      {
+        id: 301,
+        title: 'Trưởng Nhóm Digital Marketing & Performance Ads',
+        company: 'VNG Corporation (Zalo)',
+        logo: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'marketing',
+        salaryBadge: '28 - 42 triệu',
+        salaryIsOrange: false,
+        location: 'TP.HCM',
+        city: 'TP.HCM',
+        exp: '3-5 năm',
+        level: 'Trưởng nhóm',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 16, evaluated14d: 14, responseRate: 87, lastReviewed: '12:00' },
+        updated: '20 phút trước',
+        verified: true,
+        skills: ['Performance Marketing', 'Meta Ads', 'Google Ads', 'Data Analytics', 'CRO'],
+        jdSummary: [
+          'Quản lý ngân sách Digital Ads hàng tháng cho các sản phẩm công nghệ trọng điểm.',
+          'Tối ưu hóa phễu chuyển đổi (Funnel Optimization) và chỉ số CAC / LTV.',
+          'Phối hợp với Creative Team để A/B testing thông điệp truyền thông.'
+        ],
+        perks: ['Môi trường năng động số 1 ngành Tech', 'Ngân sách thử nghiệm chiến dịch lớn'],
+        aiMatch: 93
+      },
+      {
+        id: 302,
+        title: 'Senior Brand Manager (Ngành Tiêu Dùng FMCG)',
+        company: 'Masan Consumer Holdings',
+        logo: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'marketing',
+        salaryBadge: '35 - 55 triệu',
+        salaryIsOrange: true,
+        location: 'TP.HCM',
+        city: 'TP.HCM',
+        exp: 'Trên 5 năm',
+        level: 'Trưởng phòng / Quản lý',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 17, evaluated14d: 16, responseRate: 94, lastReviewed: '12:00' },
+        updated: '45 phút trước',
+        verified: true,
+        skills: ['Brand Strategy', 'Product Launch', 'Trade Marketing', 'Quản trị ngân sách'],
+        jdSummary: [
+          'Xây dựng chiến lược định vị và phát triển thị phần thương hiệu quốc gia.',
+          'Lập kế hoạch ra mắt sản phẩm mới (NPD) trên mạng lưới phân phối toàn quốc.',
+          'Đo lường sức khỏe thương hiệu (Brand Health Tracking) định kỳ hàng quý.'
+        ],
+        perks: ['Thưởng doanh số năm cạnh tranh', 'Chính sách mua sản phẩm Masan ưu đãi cao'],
+        aiMatch: 95
+      },
+      {
+        id: 303,
+        title: 'Chuyên Viên SEO & Growth Marketing',
+        company: 'Shopee Vietnam',
+        logo: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'marketing',
+        salaryBadge: '20 - 32 triệu',
+        salaryIsOrange: false,
+        location: 'TP.HCM',
+        city: 'TP.HCM',
+        exp: '2-4 năm',
+        level: 'Chuyên viên',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 11, evaluated14d: 9, responseRate: 82, lastReviewed: '12:00' },
+        updated: '2 giờ trước',
+        verified: true,
+        skills: ['Technical SEO', 'Keyword Research', 'Google Analytics 4', 'Content Strategy'],
+        jdSummary: [
+          'Tối ưu hóa thứ hạng tìm kiếm tự nhiên của hàng triệu trang sản phẩm ngành hàng.',
+          'Nghiên cứu xu hướng từ khóa mùa vụ và chỉ đạo nội dung bài viết chất lượng.',
+          'Phân tích lưu lượng organic traffic và tỷ lệ thoát trang.'
+        ],
+        perks: ['Làm việc cùng các chuyên gia SEO đầu ngành khu vực Đông Nam Á', 'Thưởng dự án Mega Sale'],
+        aiMatch: 89
+      },
+      {
+        id: 304,
+        title: 'Public Relations (PR) & Communications Manager',
+        company: 'Tập đoàn VinFast Toàn Cầu',
+        logo: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'marketing',
+        salaryBadge: '30 - 50 triệu',
+        salaryIsOrange: true,
+        location: 'Hà Nội',
+        city: 'Hà Nội',
+        exp: '3-5 năm',
+        level: 'Quản lý',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 10, evaluated14d: 9, responseRate: 90, lastReviewed: '12:00' },
+        updated: '3 giờ trước',
+        verified: true,
+        skills: ['Quan hệ báo chí', 'Quản trị khủng hoảng truyền thông', 'Thông cáo báo chí', 'Event PR'],
+        jdSummary: [
+          'Xây dựng mối quan hệ bền vững với các cơ quan thông tấn báo chí trong và ngoài nước.',
+          'Soạn thảo các thông cáo báo chí, bài phát biểu cho lãnh đạo cấp cao của tập đoàn.',
+          'Chủ động phát hiện và xử lý khủng hoảng truyền thông mạng xã hội 24/7.'
+        ],
+        perks: ['Ưu đãi mua ô tô điện VinFast đặc quyền', 'Môi trường toàn cầu chuyên nghiệp'],
+        aiMatch: 92
+      },
+      {
+        id: 305,
+        title: 'Content Marketing Lead & Social Creative',
+        company: 'Sun Group Corporation',
+        logo: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'marketing',
+        salaryBadge: '22 - 35 triệu',
+        salaryIsOrange: false,
+        location: 'Đà Nẵng & Hà Nội',
+        city: 'Hà Nội',
+        exp: '2-4 năm',
+        level: 'Trưởng nhóm',
+        type: 'Toàn thời gian',
+        isLightningBadge: false,
+        lightningStats: { applied30d: 13, evaluated14d: 9, responseRate: 69, lastReviewed: '12:00' },
+        updated: '4 giờ trước',
+        verified: true,
+        skills: ['Content Direction', 'Viral Video', 'TikTok Marketing', 'Storytelling Du lịch'],
+        jdSummary: [
+          'Chịu trách nhiệm định hướng nội dung sáng tạo cho các điểm đến Sun World.',
+          'Sản xuất video ngắn triệu view trên TikTok, YouTube Shorts và Facebook Reels.',
+          'Quản lý chất lượng bài viết của đội ngũ copywriter và agency bên ngoài.'
+        ],
+        perks: ['Vé tham quan miễn phí các công viên Sun World', 'Nghỉ dưỡng Sun Hospitality hàng năm'],
+        aiMatch: 86
+      },
+      {
+        id: 306,
+        title: 'Senior Media Planner & Account Manager',
+        company: 'Dentsu Redder Vietnam',
+        logo: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'marketing',
+        salaryBadge: '25 - 38 triệu',
+        salaryIsOrange: false,
+        location: 'TP.HCM',
+        city: 'TP.HCM',
+        exp: '2-4 năm',
+        level: 'Senior',
+        type: 'Hybrid',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 12, evaluated14d: 10, responseRate: 83, lastReviewed: '12:00' },
+        updated: '6 giờ trước',
+        verified: true,
+        skills: ['Media Planning', 'Agency Account', 'Đàm phán Booking', 'Chiến dịch 360'],
+        jdSummary: [
+          'Tư vấn kế hoạch truyền thông tích hợp (Integrated Media Plan) cho các thương hiệu Fortune 500.',
+          'Phân bổ ngân sách truyền thông trên các kênh truyền hình, OOH và digital platforms.',
+          'Điều phối tiến độ chiến dịch và nghiệm thu KPI truyền thông với khách hàng.'
+        ],
+        perks: ['Được vinh danh tại các giải thưởng ngành truyền thông', 'Môi trường Agency trẻ trung'],
+        aiMatch: 90
+      },
+
+      // 4. TÀI CHÍNH / NGÂN HÀNG (FINANCE)
+      {
+        id: 401,
+        title: 'Chuyên Viên Phân Tích Dữ Liệu Tài Chính (Data Analyst)',
+        company: 'Ngân hàng TMCP Quân Đội (MB Bank)',
+        logo: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'finance',
+        salaryBadge: '25 - 40 triệu',
+        salaryIsOrange: false,
+        location: 'Hà Nội',
+        city: 'Hà Nội',
+        exp: '2-4 năm',
+        level: 'Chuyên viên cao cấp',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 22, evaluated14d: 20, responseRate: 91, lastReviewed: '12:00' },
+        updated: '15 phút trước',
+        verified: true,
+        skills: ['SQL', 'Power BI', 'Phân tích tín dụng', 'Mô hình tài chính', 'Python'],
+        jdSummary: [
+          'Xây dựng các dashboard tự động theo dõi danh mục tín dụng và tăng trưởng tài sản.',
+          'Phân tích hành vi chi tiêu thẻ tín dụng để đề xuất chính sách phân khúc khách hàng.',
+          'Phối hợp với khối Quản trị rủi ro phát triển mô hình chấm điểm tín dụng nội bộ.'
+        ],
+        perks: ['Gói vay ưu đãi lãi suất ngân hàng MB cho nhân viên', 'Thưởng cuối năm 4-6 tháng lương'],
+        aiMatch: 94
+      },
+      {
+        id: 402,
+        title: 'Quản Lý Rủi Ro Tín Dụng Khách Hàng Doanh Nghiệp',
+        company: 'Ngân hàng VPBank',
+        logo: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'finance',
+        salaryBadge: '30 - 45 triệu',
+        salaryIsOrange: true,
+        location: 'Hà Nội',
+        city: 'Hà Nội',
+        exp: '3-5 năm',
+        level: 'Trưởng nhóm',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 14, evaluated14d: 12, responseRate: 86, lastReviewed: '12:00' },
+        updated: '50 phút trước',
+        verified: true,
+        skills: ['Quản trị rủi ro', 'Thẩm định hồ sơ tín dụng', 'Basel II/III', 'Phân tích dòng tiền'],
+        jdSummary: [
+          'Thẩm định độc lập các khoản vay vốn trung và dài hạn của doanh nghiệp quy mô lớn.',
+          'Đánh giá tính khả thi phương án kinh doanh và phương án tài sản đảm bảo nợ vay.',
+          'Giám sát chặt chẽ các chỉ tiêu cảnh báo rủi ro sớm (Early Warning Signals).'
+        ],
+        perks: ['Chế độ đãi ngộ hàng đầu trong khối Ngân hàng TMCP', 'Bảo hiểm sức khỏe đặc quyền'],
+        aiMatch: 92
+      },
+      {
+        id: 403,
+        title: 'Trưởng Phòng Thẩm Định Dự Án & Đầu Tư Trực Tiếp',
+        company: 'Ngân hàng Techcombank',
+        logo: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'finance',
+        salaryBadge: '45 - 65 triệu',
+        salaryIsOrange: true,
+        location: 'Hà Nội',
+        city: 'Hà Nội',
+        exp: 'Trên 5 năm',
+        level: 'Trưởng phòng',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 15, evaluated14d: 14, responseRate: 93, lastReviewed: '12:00' },
+        updated: '2 giờ trước',
+        verified: true,
+        skills: ['Thẩm định đầu tư', 'Project Finance', 'M&A', 'Đàm phán hợp đồng tài trợ vốn'],
+        jdSummary: [
+          'Chủ trì thẩm định các dự án năng lượng tái tạo, hạ tầng và bất động sản công nghiệp.',
+          'Xây dựng cấu trúc tài trợ vốn hợp vốn (Syndicated Loan) với các định chế tài chính quốc tế.',
+          'Báo cáo và giải trình trước Hội đồng tín dụng và Quản lý rủi ro cấp cao.'
+        ],
+        perks: ['Thưởng hiệu quả dự án hàng năm hấp dẫn', 'Môi trường Agile chuyển đổi số số 1'],
+        aiMatch: 96
+      },
+      {
+        id: 404,
+        title: 'Chuyên Viên Quản Lý Danh Mục Đầu Tư (Portfolio Manager)',
+        company: 'Chứng khoán SSI (SSI Securities)',
+        logo: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'finance',
+        salaryBadge: '28 - 45 triệu',
+        salaryIsOrange: false,
+        location: 'TP.HCM',
+        city: 'TP.HCM',
+        exp: '2-4 năm',
+        level: 'Chuyên viên cao cấp',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 10, evaluated14d: 8, responseRate: 80, lastReviewed: '12:00' },
+        updated: '3 giờ trước',
+        verified: true,
+        skills: ['Chứng khoán', 'CFA level 2+', 'Định giá cổ phiếu', 'Phân tích vĩ mô'],
+        jdSummary: [
+          'Quản lý danh mục tài sản ủy thác của khách hàng tổ chức và cá nhân có tài sản ròng cao.',
+          'Phân tích định giá doanh nghiệp niêm yết bằng phương pháp DCF và P/E so sánh.',
+          'Thiết lập chiến lược tái cơ cấu danh mục cổ phiếu phòng ngừa biến động thị trường.'
+        ],
+        perks: ['Hoa hồng quản lý quỹ tính theo Alpha vượt trội', 'Môi trường làm việc top đầu TTCK'],
+        aiMatch: 91
+      },
+      {
+        id: 405,
+        title: 'Senior Internal Auditor (Kiểm Toán Nội Bộ Tài Chính)',
+        company: 'Vinamilk - Công ty Cổ phần Sữa Việt Nam',
+        logo: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'finance',
+        salaryBadge: '26 - 38 triệu',
+        salaryIsOrange: false,
+        location: 'TP.HCM',
+        city: 'TP.HCM',
+        exp: '3-5 năm',
+        level: 'Senior',
+        type: 'Toàn thời gian',
+        isLightningBadge: false,
+        lightningStats: { applied30d: 12, evaluated14d: 8, responseRate: 67, lastReviewed: '12:00' },
+        updated: '4 giờ trước',
+        verified: true,
+        skills: ['Kiểm toán nội bộ', 'IFRS / VAS', 'Kiểm soát tuân thủ', 'ACCA / CPA'],
+        jdSummary: [
+          'Thực hiện các cuộc kiểm toán định kỳ đối với các chi nhánh, nhà máy và trang trại Vinamilk.',
+          'Đánh giá hiệu lực của hệ thống kiểm soát nội bộ và đề xuất cải tiến quy trình kế toán.',
+          'Lập báo cáo kiểm toán độc lập trình Ủy ban Kiểm toán trực thuộc HĐQT.'
+        ],
+        perks: ['Môi trường làm việc bền vững hàng đầu Việt Nam', 'Thưởng tháng 13 + thưởng hoàn thành KPI'],
+        aiMatch: 88
+      },
+      {
+        id: 406,
+        title: 'Financial Planning & Analysis (FP&A) Specialist',
+        company: 'Công ty Cổ phần Đầu tư Thế Giới Di Động (MWG)',
+        logo: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'finance',
+        salaryBadge: '22 - 35 triệu',
+        salaryIsOrange: false,
+        location: 'TP.HCM',
+        city: 'TP.HCM',
+        exp: '2-4 năm',
+        level: 'Chuyên viên',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 11, evaluated14d: 10, responseRate: 91, lastReviewed: '12:00' },
+        updated: '5 giờ trước',
+        verified: true,
+        skills: ['FP&A', 'Lập ngân sách', 'Phân tích P&L chuỗi bán lẻ', 'Excel nâng cao'],
+        jdSummary: [
+          'Xây dựng kế hoạch tài chính và ngân sách hoạt động hàng năm cho chuỗi bán lẻ.',
+          'Theo dõi và phân tích biến động chi phí thực tế so với ngân sách đã phê duyệt.',
+          'Đưa ra các phân tích cảnh báo biên lợi nhuận ròng cho Ban Điều Hành.'
+        ],
+        perks: ['Gói cổ phiếu thưởng ESOP thường niên', 'Cơ hội phát triển lên vị trí Finance Manager'],
+        aiMatch: 89
+      },
+
+      // 5. HÀNH CHÍNH / NHÂN SỰ (HR)
+      {
+        id: 501,
+        title: 'Trưởng Phòng Tuyển Dụng Nhân Tài (Talent Acquisition Lead)',
+        company: 'FPT Software Global',
+        logo: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'hr',
+        salaryBadge: '28 - 45 triệu',
+        salaryIsOrange: false,
+        location: 'Hà Nội',
+        city: 'Hà Nội',
+        exp: '3-5 năm',
+        level: 'Trưởng phòng / Quản lý',
+        type: 'Hybrid',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 20, evaluated14d: 19, responseRate: 95, lastReviewed: '12:00' },
+        updated: '10 phút trước',
+        verified: true,
+        skills: ['Tech Recruitment', 'Talent Sourcing', 'Headhunting', 'Employer Branding'],
+        jdSummary: [
+          'Chịu trách nhiệm hoàn thành chỉ tiêu tuyển dụng 500+ kỹ sư phần mềm cao cấp hàng năm.',
+          'Xây dựng quan hệ hợp tác với các trường đại học công nghệ hàng đầu và cộng đồng developer.',
+          'Ứng dụng công nghệ AI ATS để tối ưu thời gian tuyển dụng (Time-to-Hire).'
+        ],
+        perks: ['Thưởng tuyển dụng theo năng suất hàng tháng', 'Gói bảo hiểm FPT Care cho cả gia đình'],
+        aiMatch: 95
+      },
+      {
+        id: 502,
+        title: 'HR Business Partner (HRBP) - Khối Công Nghệ',
+        company: 'VNG Corporation',
+        logo: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'hr',
+        salaryBadge: '30 - 48 triệu',
+        salaryIsOrange: true,
+        location: 'TP.HCM',
+        city: 'TP.HCM',
+        exp: '3-5 năm',
+        level: 'Senior / Quản lý',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 16, evaluated14d: 15, responseRate: 94, lastReviewed: '12:00' },
+        updated: '35 phút trước',
+        verified: true,
+        skills: ['HRBP', 'Quản trị nhân tài', 'Đánh giá KPI / OKRs', 'Văn hóa doanh nghiệp'],
+        jdSummary: [
+          'Đồng hành chiến lược với Giám đốc khối sản phẩm Game & Zalo về quy hoạch nguồn nhân lực.',
+          'Triển khai các chương trình đánh giá hiệu suất, thăng tiến và giữ chân nhân tài công nghệ.',
+          'Giải quyết các vấn đề quan hệ lao động và tư vấn phát triển tổ chức (OD).'
+        ],
+        perks: ['Làm việc tại không gian sáng tạo VNG Campus', 'Thưởng performance theo quý'],
+        aiMatch: 93
+      },
+      {
+        id: 503,
+        title: 'Chuyên Viên C&B & Chính Sách Nhân Sự Cao Cấp',
+        company: 'Tập đoàn Công nghiệp - Viễn thông Quân đội (Viettel)',
+        logo: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'hr',
+        salaryBadge: '22 - 35 triệu',
+        salaryIsOrange: false,
+        location: 'Hà Nội',
+        city: 'Hà Nội',
+        exp: '2-4 năm',
+        level: 'Chuyên viên cao cấp',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 18, evaluated14d: 16, responseRate: 89, lastReviewed: '12:00' },
+        updated: '1 giờ trước',
+        verified: true,
+        skills: ['C&B', 'Luật lao động', 'Xây dựng thang bảng lương 3P', 'Thuế TNCN & BHXH'],
+        jdSummary: [
+          'Quản lý bảng lương và chế độ đãi ngộ hàng tháng cho hơn 1.000 cán bộ nhân viên.',
+          'Khảo sát lương thưởng thị trường (Salary Benchmarking) để đề xuất điều chỉnh bảng lương 3P.',
+          'Tối ưu hóa các chính sách phúc lợi và đảm bảo tuân thủ 100% Luật lao động hiện hành.'
+        ],
+        perks: ['Môi trường quân đội kỷ luật và chuyên nghiệp', 'Phúc lợi toàn diện và ổn định lâu dài'],
+        aiMatch: 90
+      },
+      {
+        id: 504,
+        title: 'Trưởng Phòng Hành Chính & Quản Trị Vận Hành Văn Phòng',
+        company: 'Bitexco Group',
+        logo: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'hr',
+        salaryBadge: '25 - 38 triệu',
+        salaryIsOrange: false,
+        location: 'TP.HCM',
+        city: 'TP.HCM',
+        exp: '3-5 năm',
+        level: 'Trưởng phòng',
+        type: 'Toàn thời gian',
+        isLightningBadge: false,
+        lightningStats: { applied30d: 14, evaluated14d: 10, responseRate: 71, lastReviewed: '12:00' },
+        updated: '3 giờ trước',
+        verified: true,
+        skills: ['Quản trị hành chính', 'Facility Management', 'Quản lý chi phí', 'Đấu thầu nhà cung cấp'],
+        jdSummary: [
+          'Quản trị toàn bộ công tác vận hành, an ninh và lễ tân tại trụ sở tập đoàn.',
+          'Đàm phán hợp đồng mua sắm trang thiết bị văn phòng và quản lý chi phí hành chính định kỳ.',
+          'Tổ chức các sự kiện nội bộ, lễ kỷ niệm và hậu cần cho Ban Lãnh Đạo tập đoàn.'
+        ],
+        perks: ['Làm việc tại tòa tháp Bitexco Financial Tower', 'Chế độ nghỉ phép 15 ngày/năm'],
+        aiMatch: 85
+      },
+      {
+        id: 505,
+        title: 'Learning & Development (L&D) Specialist',
+        company: 'Sun Group Corporation',
+        logo: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'hr',
+        salaryBadge: '20 - 32 triệu',
+        salaryIsOrange: false,
+        location: 'Hà Nội & Đà Nẵng',
+        city: 'Hà Nội',
+        exp: '2-4 năm',
+        level: 'Chuyên viên',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 12, evaluated14d: 10, responseRate: 83, lastReviewed: '12:00' },
+        updated: '4 giờ trước',
+        verified: true,
+        skills: ['Đào tạo nội bộ', 'Khung năng lực', 'E-Learning', 'Phát triển lãnh đạo'],
+        jdSummary: [
+          'Khảo sát nhu cầu đào tạo (TNA) của các khối vận hành du lịch và quản lý dự án.',
+          'Thiết kế giáo trình và tổ chức các khóa đào tạo nâng cao kỹ năng mềm và kỹ năng chuyên môn.',
+          'Vận hành hệ thống học tập trực tuyến LMS cho toàn bộ cán bộ nhân viên tập đoàn.'
+        ],
+        perks: ['Được tham gia các chương trình đào tạo quốc tế', 'Phúc lợi du lịch nghỉ dưỡng'],
+        aiMatch: 88
+      },
+      {
+        id: 506,
+        title: 'Chuyên Viên Phát Triển Văn Hóa Doanh Nghiệp & EB',
+        company: 'Ngân hàng Techcombank',
+        logo: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=120&h=120&q=80',
+        category: 'hr',
+        salaryBadge: '22 - 35 triệu',
+        salaryIsOrange: false,
+        location: 'Hà Nội',
+        city: 'Hà Nội',
+        exp: '2-4 năm',
+        level: 'Chuyên viên',
+        type: 'Toàn thời gian',
+        isLightningBadge: true,
+        lightningStats: { applied30d: 15, evaluated14d: 13, responseRate: 87, lastReviewed: '12:00' },
+        updated: '5 giờ trước',
+        verified: true,
+        skills: ['Employer Branding', 'Truyền thông nội bộ', 'Tổ chức sự kiện', 'Sáng tạo nội dung'],
+        jdSummary: [
+          'Lên kế hoạch và triển khai các chiến dịch xây dựng Thương hiệu Nhà tuyển dụng (Employer Branding).',
+          'Sản xuất các ấn phẩm truyền thông nội bộ, radio và bản tin định kỳ gắn kết nhân viên.',
+          'Chủ trì các hoạt động teambuilding, phong trào thể thao và trách nhiệm xã hội CSR.'
+        ],
+        perks: ['Môi trường ngân hàng chuyển đổi số xuất sắc nhất', 'Chế độ đãi ngộ và lộ trình nghề nghiệp rõ ràng'],
+        aiMatch: 91
+      }
+    ];
+
+    // Trạng thái vận hành
+    let currentCategory = 'sales';
+    let currentPage = 1;
+    const JOBS_PER_PAGE = 12; // Tối đa 3 cột thẻ, tối đa 4 hàng thẻ = 12 thẻ/trang
+    const PAGING_DURATION = 10000; // 10s cho chuyển trang 1 lần
+    let autoPageTimer = null;
+    let autoPageProgressInterval = null;
+    let elapsedTimerMs = 0;
+    let isPagingPaused = false;
+    let previewHideTimeout = null;
+
+    // Kiểm tra trạng thái đăng nhập của người dùng
+    function checkUserLoginState() {
+      const loggedViewEl = document.getElementById('account-logged-view');
+      const hasLoggedStorage = localStorage.getItem('easycv_user_logged');
+      if (hasLoggedStorage !== null) {
+        return hasLoggedStorage === 'true';
+      }
+      return !!(loggedViewEl && window.getComputedStyle(loggedViewEl).display !== 'none');
+    }
+
+    // Thuật toán ưu tiên hiển thị (Sort & Scoring Engine)
+    function calculateJobRank(job, isLogged) {
+      if (!isLogged) {
+        // CHƯA ĐĂNG NHẬP:
+        // Ưu tiên theo ngành nghề có lượng job lớn hơn thị trường:
+        // sales (500) > it (400) > marketing (300) > finance (200) > hr (100)
+        const categoryWeights = {
+          sales: 500,
+          it: 400,
+          marketing: 300,
+          finance: 200,
+          hr: 100
+        };
+        let score = categoryWeights[job.category] || 50;
+        if (job.isLightningBadge) score += 60; // Job HR tương tác nhiều
+        if (job.verified) score += 20;
+        if (job.salaryIsOrange) score += 15;
+        return score;
+      }
+
+      // ĐÃ ĐĂNG NHẬP:
+      // Ưu tiên theo dữ liệu người dùng:
+      // - Hành vi gần đây (Cao): dữ liệu search job, dữ liệu xem job, dữ liệu lưu job
+      // - Dữ liệu hồ sơ và CV ứng viên (Cao)
+      // - Dữ liệu tính năng gợi ý việc làm (Cao)
+      // - Dữ liệu tín hiệu job: mới đăng, uy tín NTD, độ tương tác (Trung bình)
+      let score = 0;
+
+      // 1. Dữ liệu tìm kiếm gần đây
+      let searchHistory = [];
+      try {
+        searchHistory = JSON.parse(localStorage.getItem('easycv_search_history') || '[]');
+      } catch (e) {
+        searchHistory = ['Sales', 'B2B', 'React', 'Marketing'];
+      }
+      if (!Array.isArray(searchHistory) || searchHistory.length === 0) {
+        searchHistory = ['Sales', 'B2B', 'React', 'Marketing'];
+      }
+      searchHistory.forEach(kw => {
+        const kwLower = kw.toLowerCase();
+        if (job.title.toLowerCase().includes(kwLower)) score += 45;
+        if (job.skills.some(s => s.toLowerCase().includes(kwLower))) score += 30;
+      });
+
+      // 2. Dữ liệu xem job & lưu job gần đây
+      let savedJobs = [];
+      try {
+        savedJobs = JSON.parse(localStorage.getItem('easycv_saved_jobs') || '[]');
+      } catch (e) {
+        savedJobs = [];
+      }
+      if (savedJobs.includes(job.id)) score += 50;
+
+      // 3. Dữ liệu hồ sơ & CV ứng viên (Profile: IT & Sales B2B, Kỹ năng cao)
+      const userProfileSkills = ['B2B Sales', 'Key Account', 'ReactJS', 'Node.js', 'Digital Marketing', 'Data Analyst', 'HRBP'];
+      job.skills.forEach(skill => {
+        if (userProfileSkills.includes(skill)) score += 25;
+      });
+      if (job.category === 'sales' || job.category === 'it') score += 40;
+
+      // 4. Tính năng gợi ý việc làm (AI Match)
+      if (job.aiMatch) {
+        score += Math.round(job.aiMatch * 0.5); // +40-50 điểm
+      }
+
+      // 5. Tín hiệu job: Mới đăng, Uy tín NTD, Huy hiệu Tia Sét
+      if (job.isLightningBadge) score += 30; // HR phản hồi nhanh
+      if (job.verified) score += 20; // NTD uy tín
+      if (job.updated.includes('phút')) score += 25; // Mới đăng < 1h
+      else if (job.updated.includes('1 giờ') || job.updated.includes('2 giờ')) score += 15;
+
+      return score;
+    }
+
+    // Lấy danh sách việc làm đã sắp xếp theo tab hiện tại và thuật toán ưu tiên
+    function getRankedJobsForCategory(categoryKey) {
+      const isLogged = checkUserLoginState();
+      
+      // Lọc theo nhóm ngành đã chọn
+      const filtered = FEATURED_JOBS_DATA.filter(job => job.category === categoryKey);
+
+      // Tính điểm và sắp xếp giảm dần theo điểm ưu tiên
+      const scoredList = filtered.map(job => ({
+        ...job,
+        priorityScore: calculateJobRank(job, isLogged)
+      }));
+
+      scoredList.sort((a, b) => b.priorityScore - a.priorityScore);
+      return scoredList;
+    }
+
+    // Render danh sách job cards ra Grid
+    function renderJobsGrid() {
+      const rankedJobs = getRankedJobsForCategory(currentCategory);
+      const totalJobs = rankedJobs.length;
+      const totalPages = Math.max(1, Math.ceil(totalJobs / JOBS_PER_PAGE));
+
+      if (currentPage > totalPages) currentPage = 1;
+
+      const startIndex = (currentPage - 1) * JOBS_PER_PAGE;
+      const pageJobs = rankedJobs.slice(startIndex, startIndex + JOBS_PER_PAGE);
+
+      let savedJobs = [];
+      try {
+        savedJobs = JSON.parse(localStorage.getItem('easycv_saved_jobs') || '[]');
+      } catch (e) {
+        savedJobs = [];
+      }
+
+      const cardsHtml = pageJobs.map(job => {
+        const isSaved = savedJobs.includes(job.id);
+        const salaryClass = job.salaryIsOrange ? 'job-pill-salary' : 'job-pill-salary';
+        
+        // Huy hiệu Tia Sét chuẩn TopCV
+        let lightningBadgeHtml = '';
+        if (job.isLightningBadge && job.lightningStats) {
+          const stats = job.lightningStats;
+          lightningBadgeHtml = `
+            <div class="badge-lightning" tabindex="0" role="tooltip" aria-label="Huy hiệu Tia Sét - Phản hồi nhanh">
+              <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <!-- Tooltip chuẩn TopCV -->
+              <div class="lightning-tooltip-box">
+                <div class="lightning-tooltip-header">
+                  <span>⚡ Huy hiệu Tia Sét</span>
+                  <span style="color: #34D399; font-size: 11px;">Đang hiển thị</span>
+                </div>
+                <div class="lightning-tooltip-rate">
+                  <strong>Tỷ lệ tương tác: ${stats.responseRate}%</strong> (${stats.evaluated14d}/${stats.applied30d} CV đã đánh giá)
+                </div>
+                <div class="lightning-tooltip-rules">
+                  <div>• Tin đang hiển thị, có tối thiểu 2 CV ứng tuyển (30 ngày gần nhất).</div>
+                  <div>• Tỷ lệ tương tác ≥ 80% (được NTD đánh giá trong vòng ≤14 ngày kể từ lúc nộp).</div>
+                  <div>• Hệ thống tự động xét duyệt 2 lần/ngày vào lúc <strong>0h</strong> và <strong>12h</strong>.</div>
+                  <div style="color: #94A3B8; margin-top: 2px;">(Xét lần gần nhất lúc ${stats.lastReviewed} • Giữ huy hiệu trong khung giờ tiếp theo)</div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        return `
+          <article class="job-card" data-job-id="${job.id}" data-category="${job.category}">
+            <div class="job-card-header">
+              <div class="job-logo-wrapper" title="Công ty ${job.company} tuyển dụng tại EasyCV">
+                <img src="${job.logo}" alt="${job.company}" class="job-logo" loading="lazy" />
+                ${lightningBadgeHtml}
+              </div>
+              <div class="job-content">
+                <a href="chi-tiet-viec-lam.html?id=${job.id}" class="job-title" data-job-id="${job.id}" title="${job.title}">${job.title}</a>
+                <a href="chi-tiet-cong-ty.html?company=${encodeURIComponent(job.company)}" class="company-name" title="${job.company}">${job.company}</a>
+              </div>
+            </div>
+
+            <div class="job-card-footer">
+              <div class="job-pills">
+                <span class="job-pill ${salaryClass}">${job.salaryBadge}</span>
+                <span class="job-pill job-pill-location">${job.location.split('(')[0].trim()}</span>
+              </div>
+              <div class="job-card-actions-right">
+                <!-- Thời gian đăng: HIỂN THỊ khi chưa hover, ẨN khi hover -->
+                <span class="job-posted-time" title="Thời gian đăng tin">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>${job.updated}</span>
+                </span>
+                <!-- Nút Ứng tuyển: To đẹp như các nút khác, ẨN khi chưa hover, HIỂN THỊ khi hover -->
+                <a href="viec-lam.html?apply=${job.id}" class="btn-card-apply" target="_blank" rel="noopener noreferrer" title="Nộp hồ sơ ứng tuyển ngay">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                  <span>Ứng tuyển</span>
+                </a>
+                <!-- Nút Lưu việc làm (Bookmark trái tim) -->
+                <button type="button" class="btn-bookmark ${isSaved ? 'active' : ''}" data-job-id="${job.id}" aria-label="${isSaved ? 'Bỏ lưu việc làm' : 'Lưu công việc này'}" title="${isSaved ? 'Đã lưu việc làm' : 'Lưu việc làm'}">
+                  <svg viewBox="0 0 24 24" fill="${isSaved ? '#EF4444' : 'none'}" stroke="${isSaved ? '#EF4444' : 'currentColor'}"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      gridEl.innerHTML = cardsHtml;
+
+      // Render Pagination Buttons
+      renderPaginationControls(totalPages);
+
+      // Gắn sự kiện cho các thẻ job mới tạo
+      bindJobCardEvents();
+    }
+
+    // Render thanh điều hướng phân trang
+    function renderPaginationControls(totalPages) {
+      if (!paginationControls) return;
+
+      if (totalPages <= 1) {
+        paginationControls.innerHTML = '';
+        if (timerIndicator) timerIndicator.style.display = 'none';
+        return;
+      }
+
+      if (timerIndicator) timerIndicator.style.display = 'flex';
+
+      let btnsHtml = `
+        <button type="button" class="featured-page-btn prev-btn" ${currentPage === 1 ? 'disabled' : ''} aria-label="Trang trước" title="Trang trước">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+      `;
+
+      for (let i = 1; i <= totalPages; i++) {
+        btnsHtml += `
+          <button type="button" class="featured-page-btn page-num-btn ${i === currentPage ? 'active' : ''}" data-page="${i}" aria-label="Chuyển đến trang ${i}">
+            ${i}
+          </button>
+        `;
+      }
+
+      btnsHtml += `
+        <button type="button" class="featured-page-btn next-btn" ${currentPage === totalPages ? 'disabled' : ''} aria-label="Trang tiếp theo" title="Trang tiếp theo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      `;
+
+      paginationControls.innerHTML = btnsHtml;
+
+      // Gắn sự kiện click phân trang
+      const prevBtn = paginationControls.querySelector('.prev-btn');
+      const nextBtn = paginationControls.querySelector('.next-btn');
+      const numBtns = paginationControls.querySelectorAll('.page-num-btn');
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          if (currentPage > 1) {
+            currentPage--;
+            renderJobsGrid();
+            resetPagingTimer();
+          }
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          if (currentPage < totalPages) {
+            currentPage++;
+            renderJobsGrid();
+            resetPagingTimer();
+          }
+        });
+      }
+
+      numBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const page = parseInt(btn.getAttribute('data-page'), 10);
+          if (page && page !== currentPage) {
+            currentPage = page;
+            renderJobsGrid();
+            resetPagingTimer();
+          }
+        });
+      });
+    }
+
+    // Tự động chuyển trang sau 10s (Auto-pagination 10s)
+    function startAutoPagination() {
+      stopAutoPagination();
+      
+      const stepMs = 100;
+      autoPageProgressInterval = setInterval(() => {
+        if (isPagingPaused) return;
+
+        elapsedTimerMs += stepMs;
+        const progressPercent = Math.min(100, (elapsedTimerMs / PAGING_DURATION) * 100);
+        if (progressFill) {
+          progressFill.style.width = `${progressPercent}%`;
+        }
+
+        if (elapsedTimerMs >= PAGING_DURATION) {
+          elapsedTimerMs = 0;
+          const rankedJobs = getRankedJobsForCategory(currentCategory);
+          const totalPages = Math.max(1, Math.ceil(rankedJobs.length / JOBS_PER_PAGE));
+          if (totalPages > 1) {
+            currentPage = (currentPage % totalPages) + 1;
+            renderJobsGrid();
+          }
+        }
+      }, stepMs);
+    }
+
+    function stopAutoPagination() {
+      if (autoPageProgressInterval) {
+        clearInterval(autoPageProgressInterval);
+        autoPageProgressInterval = null;
+      }
+    }
+
+    function resetPagingTimer() {
+      elapsedTimerMs = 0;
+      if (progressFill) {
+        progressFill.style.width = '0%';
+      }
+    }
+
+    // Hover vào section hoặc grid -> tạm dừng chuyển trang
+    if (sectionContainer) {
+      sectionContainer.addEventListener('mouseenter', () => {
+        isPagingPaused = true;
+        if (timerIndicator) timerIndicator.classList.add('paused');
+      });
+      sectionContainer.addEventListener('mouseleave', () => {
+        isPagingPaused = false;
+        if (timerIndicator) timerIndicator.classList.remove('paused');
+      });
+    }
+
+    // Xử lý Popover Preview khi hover vào tên job
+    function showJobPreview(jobId, targetEl) {
+      if (!previewPopup) return;
+      clearTimeout(previewHideTimeout);
+
+      const job = FEATURED_JOBS_DATA.find(j => j.id === parseInt(jobId, 10));
+      if (!job) return;
+
+      const skillsHtml = job.skills.map(s => `<span class="job-preview-skill-pill">${s}</span>`).join('');
+      const jdHtml = job.jdSummary.map(d => `<li>${d}</li>`).join('');
+
+      let lightningBadgeInfo = '';
+      if (job.isLightningBadge && job.lightningStats) {
+        lightningBadgeInfo = `<span class="job-preview-badge job-preview-badge-lightning">⚡ Tương tác nhanh: ${job.lightningStats.responseRate}%</span>`;
+      }
+
+      previewPopup.innerHTML = `
+        <div class="job-preview-header">
+          <img src="${job.logo}" alt="${job.company}" class="job-preview-logo" />
+          <div class="job-preview-title-box">
+            <div class="job-preview-title">${job.title}</div>
+            <div class="job-preview-company">${job.company}</div>
+          </div>
+        </div>
+
+        <div class="job-preview-quick-badges">
+          <span class="job-preview-badge job-preview-badge-salary">${job.salaryBadge}</span>
+          <span class="job-preview-badge job-preview-badge-loc">📍 ${job.location}</span>
+          <span class="job-preview-badge job-preview-badge-exp">💼 ${job.exp}</span>
+          ${lightningBadgeInfo}
+        </div>
+
+        <div class="job-preview-section-title">Mô tả công việc tóm tắt</div>
+        <ul class="job-preview-desc-list">
+          ${jdHtml}
+        </ul>
+
+        <div class="job-preview-section-title">Kỹ năng yêu cầu</div>
+        <div class="job-preview-skills-wrap">
+          ${skillsHtml}
+        </div>
+
+        <div class="job-preview-actions">
+          <a href="viec-lam.html?apply=${job.id}" class="job-preview-btn-apply" target="_blank" rel="noopener noreferrer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            <span>Ứng tuyển ngay</span>
+          </a>
+          <a href="chi-tiet-viec-lam.html?id=${job.id}" class="job-preview-btn-detail" target="_blank" rel="noopener noreferrer">
+            <span>Xem chi tiết JD</span>
+          </a>
+        </div>
+      `;
+
+      // Định vị thông minh tránh tràn viewport
+      const rect = targetEl.getBoundingClientRect();
+      const popupWidth = 380;
+      let leftPos = rect.left;
+      let topPos = rect.bottom + 8;
+
+      if (leftPos + popupWidth > window.innerWidth - 20) {
+        leftPos = window.innerWidth - popupWidth - 20;
+      }
+      if (leftPos < 20) leftPos = 20;
+
+      // Nếu gần đáy màn hình, hiển thị popup phía trên
+      if (topPos + 350 > window.innerHeight) {
+        topPos = Math.max(20, rect.top - 360);
+      }
+
+      previewPopup.style.left = `${leftPos}px`;
+      previewPopup.style.top = `${topPos}px`;
+      previewPopup.classList.add('is-visible');
+      previewPopup.setAttribute('aria-hidden', 'false');
+    }
+
+    function hideJobPreview(immediate = false) {
+      if (!previewPopup) return;
+      if (immediate) {
+        previewPopup.classList.remove('is-visible');
+        previewPopup.setAttribute('aria-hidden', 'true');
+        return;
+      }
+      previewHideTimeout = setTimeout(() => {
+        previewPopup.classList.remove('is-visible');
+        previewPopup.setAttribute('aria-hidden', 'true');
+      }, 180);
+    }
+
+    if (previewPopup) {
+      previewPopup.addEventListener('mouseenter', () => {
+        clearTimeout(previewHideTimeout);
+      });
+      previewPopup.addEventListener('mouseleave', () => {
+        hideJobPreview(false);
+      });
+    }
+
+    // Gắn sự kiện cho các elements trên thẻ job
+    function bindJobCardEvents() {
+      // Hover tên job -> hiển thị Popover Preview
+      gridEl.querySelectorAll('.job-title').forEach(titleEl => {
+        titleEl.addEventListener('mouseenter', (e) => {
+          const jobId = titleEl.getAttribute('data-job-id');
+          if (jobId) {
+            showJobPreview(jobId, titleEl);
+          }
+        });
+        titleEl.addEventListener('mouseleave', () => {
+          hideJobPreview(false);
+        });
+      });
+
+      // Click Bookmark -> Lưu việc làm vào localStorage
+      gridEl.querySelectorAll('.btn-bookmark').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const jobId = parseInt(btn.getAttribute('data-job-id'), 10);
+          if (!jobId) return;
+
+          let savedJobs = [];
+          try {
+            savedJobs = JSON.parse(localStorage.getItem('easycv_saved_jobs') || '[]');
+          } catch (err) {
+            savedJobs = [];
+          }
+
+          const idx = savedJobs.indexOf(jobId);
+          if (idx > -1) {
+            savedJobs.splice(idx, 1);
+            btn.classList.remove('active');
+            const svg = btn.querySelector('svg');
+            if (svg) {
+              svg.setAttribute('fill', 'none');
+              svg.setAttribute('stroke', 'currentColor');
+            }
+          } else {
+            savedJobs.push(jobId);
+            btn.classList.add('active');
+            const svg = btn.querySelector('svg');
+            if (svg) {
+              svg.setAttribute('fill', '#EF4444');
+              svg.setAttribute('stroke', '#EF4444');
+            }
+          }
+
+          localStorage.setItem('easycv_saved_jobs', JSON.stringify(savedJobs));
+        });
+      });
+
+      // Click Nút Ứng tuyển trên thẻ job -> Bật Toast thông báo ứng tuyển thành công
+      gridEl.querySelectorAll('.btn-card-apply').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const card = btn.closest('.job-card');
+          const title = card ? card.querySelector('.job-title')?.textContent.trim() : 'công việc';
+          if (typeof showToast === 'function') {
+            showToast(`🚀 Đã gửi hồ sơ ứng tuyển vị trí "${title}" thành công!`, '✓');
+          }
+        });
+      });
+    }
+
+    // Xử lý chuyển đổi 5 Tabs ngành nghề
+    const tabBtns = tabsContainer.querySelectorAll('.filter-pill-btn');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.getAttribute('data-category');
+        if (!cat || cat === currentCategory) return;
+
+        tabBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        currentCategory = cat;
+        currentPage = 1;
+        resetPagingTimer();
+        renderJobsGrid();
+      });
+    });
+
+    // Khởi tạo ban đầu
+    renderJobsGrid();
+    startAutoPagination();
+  }
+
+  // Khởi động toàn bộ các modules
   initLogoTooltips();
+  initFeaturedJobsSection();
 });
 
 
