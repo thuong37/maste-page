@@ -1712,12 +1712,11 @@
       gap: 4px;
     }
 
-    /* Thanh điều hướng phân trang tự động 10s */
+    /* Thanh điều hướng phân trang */
     .featured-jobs-footer-bar {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 12px;
       margin-top: 24px;
       padding-top: 12px;
     }
@@ -1755,32 +1754,6 @@
     .featured-page-btn:disabled {
       opacity: 0.4;
       cursor: not-allowed;
-    }
-    .auto-page-timer-indicator {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      color: var(--text-muted, #64748B);
-      font-weight: 500;
-    }
-    .auto-page-progress-track {
-      width: 120px;
-      height: 4px;
-      background: #E2E8F0;
-      border-radius: 999px;
-      overflow: hidden;
-      position: relative;
-    }
-    .auto-page-progress-fill {
-      height: 100%;
-      width: 0%;
-      background: #F97316;
-      border-radius: 999px;
-      transition: width 0.1s linear;
-    }
-    .auto-page-timer-indicator.paused .auto-page-progress-fill {
-      background: #94A3B8;
     }
 
     /* POPUP PREVIEW KHI HOVER VÀO TÊN JOB */
@@ -2861,27 +2834,25 @@
         </a>
       </div>
 
-      <!-- 5 Tabs lọc theo ngành nghề: 5 nhóm ngành có số lượng việc làm nhiều nhất -->
+      <!-- Tabs lọc theo ngành nghề: Tab Tất cả và các nhóm ngành nổi bật (không hiển thị số lượng) -->
       <div class="filter-pills-bar" id="featuredIndustryTabs" role="tablist" aria-label="Lọc việc làm nổi bật theo ngành nghề">
-        <button class="filter-pill-btn active" data-category="sales" role="tab" aria-selected="true">
+        <button class="filter-pill-btn active" data-category="all" role="tab" aria-selected="true">
+          <span>Tất cả</span>
+        </button>
+        <button class="filter-pill-btn" data-category="sales" role="tab" aria-selected="false">
           <span>Kinh doanh / Bán hàng</span>
-          <span class="filter-pill-count">2,450+</span>
         </button>
         <button class="filter-pill-btn" data-category="it" role="tab" aria-selected="false">
           <span>IT - Phần mềm</span>
-          <span class="filter-pill-count">1,820+</span>
         </button>
         <button class="filter-pill-btn" data-category="marketing" role="tab" aria-selected="false">
           <span>Marketing / PR</span>
-          <span class="filter-pill-count">1,240+</span>
         </button>
         <button class="filter-pill-btn" data-category="finance" role="tab" aria-selected="false">
           <span>Tài chính / Ngân hàng</span>
-          <span class="filter-pill-count">1,150+</span>
         </button>
         <button class="filter-pill-btn" data-category="hr" role="tab" aria-selected="false">
           <span>Hành chính / Nhân sự</span>
-          <span class="filter-pill-count">980+</span>
         </button>
       </div>
 
@@ -2890,17 +2861,10 @@
         <!-- Được khởi tạo và render động bởi JavaScript (có fallback tĩnh bảo toàn SEO) -->
       </div>
 
-      <!-- Thanh điều hướng phân trang 10s (Auto-pagination 10s kèm timer progress) -->
+      <!-- Thanh điều hướng phân trang -->
       <div class="featured-jobs-footer-bar" id="featuredJobsFooterBar">
         <div class="featured-jobs-pagination-controls" id="featuredPaginationControls">
           <!-- Render các nút số trang và prev/next -->
-        </div>
-        <div class="auto-page-timer-indicator" id="autoPageTimerIndicator" title="Tự động chuyển trang sau 10 giây (Tạm dừng khi rê chuột vào danh sách)">
-          <span class="timer-label">Tự động chuyển trang sau 10s:</span>
-          <div class="auto-page-progress-track">
-            <div class="auto-page-progress-fill" id="autoPageProgressFill"></div>
-          </div>
-          <span class="timer-hint">(Tạm dừng khi rê chuột)</span>
         </div>
       </div>
 
@@ -4021,67 +3985,9 @@
     </div>
   </footer>
 
-  <!-- =========================================================================
-       WIDGET GỢI Ý THÔNG MINH NỔI (Floating AI Recommendation Widget)
-       ========================================================================= -->
-  <div class="floating-ai-widget">
-    <!-- Popover Box -->
-    <div class="floating-ai-popover">
-      <div class="popover-header">
-        <div class="popover-title-wrap">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color: var(--easycv-orange);"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
-          <span>Gợi ý Việc Làm AI Mới Nhất</span>
-        </div>
-        <button class="popover-close-btn" aria-label="Đóng gợi ý">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-
-      <div class="popover-body">
-        <a href="#popover-job-1" class="popover-job-item">
-          <div class="popover-job-top">
-            <span class="popover-job-title">Senior React/TypeScript Dev</span>
-            <span class="match-score-badge" style="font-size: 10.5px; padding: 2px 6px;">98% Match</span>
-          </div>
-          <span class="popover-job-company">FPT Software • Cầu Giấy, Hà Nội</span>
-          <span class="popover-job-salary">30 - 45 Triệu</span>
-        </a>
-
-        <a href="#popover-job-2" class="popover-job-item">
-          <div class="popover-job-top">
-            <span class="popover-job-title">Staff AI Machine Learning</span>
-            <span class="match-score-badge" style="font-size: 10.5px; padding: 2px 6px;">99% Match</span>
-          </div>
-          <span class="popover-job-company">Shopee / Sea • Q.7, TP.HCM</span>
-          <span class="popover-job-salary">2,500 - 4,000 USD</span>
-        </a>
-
-        <a href="#popover-job-3" class="popover-job-item">
-          <div class="popover-job-top">
-            <span class="popover-job-title">Senior Product Manager</span>
-            <span class="match-score-badge" style="font-size: 10.5px; padding: 2px 6px;">94% Match</span>
-          </div>
-          <span class="popover-job-company">MoMo • Hybrid / Remote</span>
-          <span class="popover-job-salary">45 - 70 Triệu</span>
-        </a>
-      </div>
-
-      <div class="popover-footer">
-        <a href="#viec-lam-phu-hop" class="popover-view-all-link">Xem tất cả 34 việc làm khớp hồ sơ →</a>
-      </div>
-    </div>
-
-    <!-- Floating Trigger Button -->
-    <button class="floating-ai-btn" aria-label="Mở gợi ý việc làm AI">
-      <span class="floating-ai-pulse-dot"></span>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
-      <span>Gợi ý AI (3 việc mới)</span>
-    </button>
-  </div>
-
   <script src="js/navbar.js?v=7.0_synced_navbar"></script>
   <script src="js/category-filter-modal.js?v=1.0"></script>
-  <script src="js/home.js?v=20261007_compact_job_cards"></script>
+  <script src="js/home.js?v=20261007_remove_floating_ai"></script>
   <script src="js/location-picker.js?v=3.0_clean"></script>
 
   <!-- Floating View Mode Switcher Box (Rìa bên phải màn hình) -->
