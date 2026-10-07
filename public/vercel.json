@@ -9,6 +9,10 @@
     {
       "source": "/((?!assets/|css/|js/|.*\\..*).*)",
       "destination": "/index.html"
+    },
+    {
+      "source": "/job-preview",
+      "destination": "/job-preview.html"
     }
   ]
 }

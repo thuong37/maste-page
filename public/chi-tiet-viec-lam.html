@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/location-picker.css?v=eb_colors_20261007">
   <link rel="stylesheet" href="css/category-filter-modal.css?v=eb_colors_20261007">
   <link rel="stylesheet" href="css/viec-lam.css?v=eb_colors_20261007">
+  <link rel="stylesheet" href="css/chi-tiet.css?v=detail_20261007">
   <style>
     /* Thanh menu không neo cố định khi cuộn màn hình trên trang chi tiết việc làm */
     .site-header {
@@ -907,206 +908,6 @@
               </div>
             </div>
 
-<!-- BỘ LỌC TIÊU CHÍ VIỆC LÀM (Đồng bộ từ trang Danh sách Việc làm) -->
-    <section class="top-filter-bar" id="chiTietTopFilterBar" aria-label="Bộ lọc tiêu chí việc làm">
-      <div class="top-filter-bar-inner">
-        <div class="top-filter-pills-group">
-
-          <!-- Filter 0: Lĩnh vực công ty -->
-          <div class="filter-dropdown-wrap" id="ctIndustryDropdownWrap">
-            <button type="button" class="filter-pill-btn" id="ctIndustryFilterBtn" aria-haspopup="true" aria-expanded="false" title="Lọc theo lĩnh vực hoạt động của công ty">
-              <span class="pill-label" id="ctIndustryFilterLabel">Lĩnh vực công ty</span>
-              <svg class="pill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div class="filter-dropdown-menu industry-searchable-menu" id="ctIndustryDropdownMenu" hidden>
-              <div class="industry-search-wrap">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input type="text" class="industry-search-input" id="ctIndustrySearchInput" placeholder="Tìm lĩnh vực..." autocomplete="off" />
-                <button type="button" class="industry-search-clear" id="ctIndustrySearchClear" aria-label="Xoá tìm kiếm" hidden>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                </button>
-              </div>
-              <div class="industry-dropdown-list" id="ctIndustryDropdownList">
-                <div class="dropdown-item is-selected" data-type="industry" data-value="" data-label="Tất cả lĩnh vực">
-                  <span>Tất cả lĩnh vực</span>
-                  <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <div class="dropdown-item" data-type="industry" data-value="tech" data-label="Công nghệ thông tin">
-                  <span>Công nghệ thông tin</span>
-                </div>
-                <div class="dropdown-item" data-type="industry" data-value="finance" data-label="Tài chính / Ngân hàng">
-                  <span>Tài chính / Ngân hàng</span>
-                </div>
-                <div class="dropdown-item" data-type="industry" data-value="marketing" data-label="Marketing / Truyền thông">
-                  <span>Marketing / Truyền thông</span>
-                </div>
-                <div class="dropdown-item" data-type="industry" data-value="education" data-label="Giáo dục / Đào tạo">
-                  <span>Giáo dục / Đào tạo</span>
-                </div>
-                <div class="dropdown-item" data-type="industry" data-value="retail" data-label="Bán lẻ / Tiêu dùng">
-                  <span>Bán lẻ / Tiêu dùng</span>
-                </div>
-                <div class="dropdown-item" data-type="industry" data-value="healthcare" data-label="Y tế / Sức khỏe">
-                  <span>Y tế / Sức khỏe</span>
-                </div>
-                <div class="dropdown-item" data-type="industry" data-value="construction" data-label="Xây dựng / Bất động sản">
-                  <span>Xây dựng / Bất động sản</span>
-                </div>
-                <div class="dropdown-item" data-type="industry" data-value="manufacturing" data-label="Sản xuất / Chế tạo">
-                  <span>Sản xuất / Chế tạo</span>
-                </div>
-              </div>
-              <div class="industry-no-results" id="ctIndustryNoResults" hidden>
-                <span>Không tìm thấy lĩnh vực phù hợp</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Filter 1: Kinh nghiệm -->
-          <div class="filter-dropdown-wrap" id="ctExpDropdownWrap">
-            <button type="button" class="filter-pill-btn" id="ctExpFilterBtn" aria-haspopup="true" aria-expanded="false" title="Lọc theo số năm kinh nghiệm">
-              <span class="pill-label" id="ctExpFilterLabel">Kinh nghiệm</span>
-              <svg class="pill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div class="filter-dropdown-menu" id="ctExpDropdownMenu" hidden>
-              <div class="dropdown-item is-selected" data-type="exp" data-value="" data-label="Tất cả kinh nghiệm">
-                <span>Tất cả kinh nghiệm</span>
-                <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="dropdown-item" data-type="exp" data-value="0" data-label="Chưa có KN">
-                <span>Không yêu cầu kinh nghiệm</span>
-              </div>
-              <div class="dropdown-item" data-type="exp" data-value="under1" data-label="Dưới 1 năm">
-                <span>Dưới 1 năm</span>
-              </div>
-              <div class="dropdown-item" data-type="exp" data-value="1-3" data-label="1 - 3 năm">
-                <span>1 - 3 năm</span>
-              </div>
-              <div class="dropdown-item" data-type="exp" data-value="3-5" data-label="3 - 5 năm">
-                <span>3 - 5 năm</span>
-              </div>
-              <div class="dropdown-item" data-type="exp" data-value="over5" data-label="Trên 5 năm">
-                <span>Trên 5 năm</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Filter 2: Cấp bậc -->
-          <div class="filter-dropdown-wrap" id="ctLevelDropdownWrap">
-            <button type="button" class="filter-pill-btn" id="ctLevelFilterBtn" aria-haspopup="true" aria-expanded="false" title="Lọc theo cấp bậc chuyên môn">
-              <span class="pill-label" id="ctLevelFilterLabel">Cấp bậc</span>
-              <svg class="pill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div class="filter-dropdown-menu" id="ctLevelDropdownMenu" hidden>
-              <div class="dropdown-item is-selected" data-type="level" data-value="" data-label="Tất cả cấp bậc">
-                <span>Tất cả cấp bậc</span>
-                <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="dropdown-item" data-type="level" data-value="intern" data-label="Thực tập sinh">
-                <span>Thực tập sinh</span>
-              </div>
-              <div class="dropdown-item" data-type="level" data-value="junior" data-label="Nhân viên">
-                <span>Nhân viên</span>
-              </div>
-              <div class="dropdown-item" data-type="level" data-value="senior" data-label="Trưởng nhóm/Lead">
-                <span>Trưởng nhóm / Leader</span>
-              </div>
-              <div class="dropdown-item" data-type="level" data-value="manager" data-label="Trưởng phòng/Manager">
-                <span>Trưởng phòng / Manager</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Filter 3: Mức lương -->
-          <div class="filter-dropdown-wrap" id="ctSalaryDropdownWrap">
-            <button type="button" class="filter-pill-btn" id="ctSalaryFilterBtn" aria-haspopup="true" aria-expanded="false" title="Lọc theo mức thu nhập">
-              <span class="pill-label" id="ctSalaryFilterLabel">Mức lương</span>
-              <svg class="pill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div class="filter-dropdown-menu" id="ctSalaryDropdownMenu" hidden>
-              <div class="dropdown-item is-selected" data-type="salary" data-value="" data-label="Tất cả mức lương">
-                <span>Tất cả mức lương</span>
-                <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="dropdown-item" data-type="salary" data-value="under10" data-label="Dưới 10 triệu">
-                <span>Dưới 10 triệu</span>
-              </div>
-              <div class="dropdown-item" data-type="salary" data-value="10-15" data-label="10 - 15 triệu">
-                <span>10 - 15 triệu</span>
-              </div>
-              <div class="dropdown-item" data-type="salary" data-value="15-25" data-label="15 - 25 triệu">
-                <span>15 - 25 triệu</span>
-              </div>
-              <div class="dropdown-item" data-type="salary" data-value="25-50" data-label="25 - 50 triệu">
-                <span>25 - 50 triệu</span>
-              </div>
-              <div class="dropdown-item" data-type="salary" data-value="over50" data-label="Trên 50 triệu">
-                <span>Trên 50 triệu</span>
-              </div>
-              <div class="dropdown-item" data-type="salary" data-value="negotiable" data-label="Thỏa thuận">
-                <span>Thỏa thuận</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Filter 4: Loại hình làm việc -->
-          <div class="filter-dropdown-wrap" id="ctTypeDropdownWrap">
-            <button type="button" class="filter-pill-btn" id="ctTypeFilterBtn" aria-haspopup="true" aria-expanded="false" title="Lọc theo hình thức làm việc">
-              <span class="pill-label" id="ctTypeFilterLabel">Hình thức</span>
-              <svg class="pill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div class="filter-dropdown-menu" id="ctTypeDropdownMenu" hidden>
-              <div class="dropdown-item is-selected" data-type="type" data-value="" data-label="Tất cả hình thức">
-                <span>Tất cả hình thức</span>
-                <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="dropdown-item" data-type="type" data-value="fulltime" data-label="Toàn thời gian">
-                <span>Toàn thời gian</span>
-              </div>
-              <div class="dropdown-item" data-type="type" data-value="hybrid" data-label="Hybrid (Linh hoạt)">
-                <span>Kết hợp (Hybrid)</span>
-              </div>
-              <div class="dropdown-item" data-type="type" data-value="remote" data-label="Remote 100%">
-                <span>Từ xa (Remote 100%)</span>
-              </div>
-              <div class="dropdown-item" data-type="type" data-value="parttime" data-label="Bán thời gian">
-                <span>Bán thời gian</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Filter 5: Thứ 7 -->
-          <div class="filter-dropdown-wrap" id="ctSaturdayDropdownWrap">
-            <button type="button" class="filter-pill-btn" id="ctSaturdayFilterBtn" aria-haspopup="true" aria-expanded="false" title="Lọc theo chế độ làm việc Nghỉ thứ 7">
-              <span class="pill-label" id="ctSaturdayFilterLabel">Nghỉ thứ 7</span>
-              <svg class="pill-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div class="filter-dropdown-menu" id="ctSaturdayDropdownMenu" hidden>
-              <div class="dropdown-item is-selected" data-type="saturday" data-value="" data-label="Không lọc">
-                <span>Không lọc</span>
-                <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="dropdown-item" data-type="saturday" data-value="work_sat" data-label="Làm thứ 7">
-                <span>Làm thứ 7</span>
-              </div>
-              <div class="dropdown-item" data-type="saturday" data-value="off_sat" data-label="Nghỉ thứ 7">
-                <span>Nghỉ thứ 7</span>
-              </div>
-              <div class="dropdown-item" data-type="saturday" data-value="unmentioned" data-label="Không đề cập">
-                <span>Không đề cập</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Nút Xóa Lọc -->
-          <button type="button" class="btn-clear-top-filters" id="ctBtnClearTopFilters" style="display: none;" title="Xóa tất cả bộ lọc">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            <span>Xóa lọc</span>
-          </button>
-
-        </div>
-      </div>
-    </section>
 
           </div>
         </div>
@@ -1194,518 +995,221 @@
       </div>
     </section>
 
-    <!-- 2 MAIN BLOCKS: KHỐI TRÁI LÀ DANH SÁCH JOB, KHỐI PHẢI LÀ MÔ TẢ JOB ĐÓ -->
-    <div class="job-split-container">
+    <!-- =====================================================================
+         MÀN CHI TIẾT VIỆC LÀM (Job Detail) — layout 2 cột: nội dung chính + sidebar công ty
+         Dữ liệu được render bởi js/chi-tiet-viec-lam.js từ js/jobs-data.js theo ?id=
+         ===================================================================== -->
+    <div class="jd-page" id="jdPage">
+      <div class="jd-container">
 
-      <!-- KHỐI BÊN TRÁI: DANH SÁCH JOB (Vừa khít 100% không padding 2 bên) -->
-      <aside class="split-list-pane" id="splitListPane" aria-label="Danh sách việc làm phù hợp">
-        <div class="split-list-header">
-          <div class="split-list-title-group">
-            <h3>Việc làm phù hợp</h3>
-            <div class="split-list-count">
-              Tìm thấy <strong id="splitJobCount">28</strong> việc làm đang tuyển dụng phù hợp
+        <nav class="jd-breadcrumb" aria-label="Đường dẫn">
+          <a href="index.html">Trang chủ</a>
+          <span aria-hidden="true">/</span>
+          <a href="viec-lam.html" id="jdBackLink">Việc làm</a>
+          <span aria-hidden="true">/</span>
+          <span id="jdBreadcrumbCurrent" aria-current="page">Chi tiết việc làm</span>
+        </nav>
+
+        <div class="jd-layout">
+
+          <!-- ================= CỘT TRÁI: NỘI DUNG CHÍNH ================= -->
+          <div class="jd-main">
+
+            <!-- Thẻ tiêu đề -->
+            <section class="jd-card jd-head" aria-labelledby="jdTitle">
+              <h1 class="jd-title" id="jdTitle">Đang tải...</h1>
+              <div class="jd-salary-row">
+                <span class="jd-salary" id="jdSalary"></span>
+                <a href="#" class="jd-salary-link" id="jdSalaryLink">Xem mức lương thị trường cho vị trí này
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 6 6 6-6 6"/></svg>
+                </a>
+              </div>
+
+              <div class="jd-meta-grid">
+                <div class="jd-meta-item">
+                  <span class="jd-meta-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </span>
+                  <span class="jd-meta-text"><span class="jd-meta-label">Địa điểm</span><strong id="jdMetaLocation"></strong></span>
+                </div>
+                <div class="jd-meta-item">
+                  <span class="jd-meta-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg>
+                  </span>
+                  <span class="jd-meta-text"><span class="jd-meta-label">Kinh nghiệm</span><strong id="jdMetaExp"></strong></span>
+                </div>
+                <div class="jd-meta-item">
+                  <span class="jd-meta-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </span>
+                  <span class="jd-meta-text"><span class="jd-meta-label">Hạn ứng tuyển</span><strong id="jdMetaDeadline"></strong></span>
+                </div>
+              </div>
+
+              <div class="jd-actions">
+                <button type="button" class="jd-btn jd-btn-primary" data-jd-apply>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m22 2-7 20-4-9-9-4Z"/></svg>
+                  <span>Ứng tuyển ngay</span>
+                </button>
+                <button type="button" class="jd-btn jd-btn-outline" data-jd-save aria-pressed="false">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                  <span data-jd-save-label>Lưu tin</span>
+                </button>
+              </div>
+            </section>
+
+            <!-- Banner xác thực -->
+            <div class="jd-verified-banner">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5Z" fill="var(--eb-secondary-500)"/><path d="m8.5 12 2.5 2.5L15.5 9.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>100% tin đăng tải trên EasyCV được <strong>cung cấp bởi các Nhà tuyển dụng đã được xác thực thông tin.</strong></span>
             </div>
+
+            <!-- Thẻ nội dung -->
+            <section class="jd-card jd-content">
+
+              <div class="jd-section">
+                <div class="jd-section-head">
+                  <h2 class="jd-section-title">Tổng quan</h2>
+                  <button type="button" class="jd-alert-btn" id="jdSimilarAlert">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+                    Gửi tôi việc làm tương tự
+                  </button>
+                </div>
+                <dl class="jd-overview">
+                  <div class="jd-overview-row"><dt>Yêu cầu:</dt><dd class="jd-chips" id="jdOvReqs"></dd></div>
+                  <div class="jd-overview-row"><dt>Quyền lợi:</dt><dd class="jd-chips" id="jdOvPerks"></dd></div>
+                  <div class="jd-overview-row"><dt>Chuyên môn:</dt><dd class="jd-chips" id="jdOvSkills"></dd></div>
+                </dl>
+              </div>
+
+              <hr class="jd-divider" />
+
+              <div class="jd-section" id="jdSecDesc">
+                <h2 class="jd-section-title">Mô tả công việc</h2>
+                <ul class="jd-list" id="jdDescList"></ul>
+              </div>
+
+              <div class="jd-section" id="jdSecReqs">
+                <h2 class="jd-section-title">Yêu cầu ứng viên</h2>
+                <ul class="jd-list" id="jdReqsList"></ul>
+              </div>
+
+              <div class="jd-section" id="jdSecPerks">
+                <h2 class="jd-section-title">Quyền lợi</h2>
+                <ul class="jd-list" id="jdPerksList"></ul>
+              </div>
+
+              <hr class="jd-divider" />
+
+              <div class="jd-section" id="jdSecPlace">
+                <h2 class="jd-section-title">Địa điểm và thời gian</h2>
+                <h3 class="jd-sub-title">Địa điểm làm việc</h3>
+                <ul class="jd-list" id="jdPlaceList"></ul>
+                <h3 class="jd-sub-title">Thời gian làm việc</h3>
+                <ul class="jd-list" id="jdTimeList"></ul>
+                <h3 class="jd-sub-title">Cách thức ứng tuyển</h3>
+                <ul class="jd-list">
+                  <li>Ứng viên nộp hồ sơ trực tuyến bằng cách bấm <strong>Ứng tuyển</strong> ngay dưới đây.</li>
+                </ul>
+
+                <div class="jd-actions jd-actions-inline">
+                  <button type="button" class="jd-btn jd-btn-primary" data-jd-apply>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m22 2-7 20-4-9-9-4Z"/></svg>
+                    <span>Ứng tuyển ngay</span>
+                  </button>
+                  <button type="button" class="jd-btn jd-btn-outline" data-jd-save aria-pressed="false">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    <span data-jd-save-label>Lưu tin</span>
+                  </button>
+                </div>
+                <p class="jd-deadline-line">Hạn ứng tuyển: <strong id="jdDeadlineText"></strong></p>
+
+                <div class="jd-report-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--eb-primary-500)" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 11v5M12 8h.01" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+                  <span>Báo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, <a href="#" id="jdReportLink">hãy phản ánh với chúng tôi.</a></span>
+                </div>
+
+                <div class="jd-rating-box">
+                  <h3 class="jd-rating-title">Bạn thấy độ tin cậy &amp; Rõ ràng của tin tuyển dụng này thế nào?</h3>
+                  <div class="jd-rating-options" id="jdRating" role="radiogroup" aria-label="Đánh giá độ tin cậy"></div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Việc làm liên quan -->
+            <section class="jd-card jd-related" aria-labelledby="jdRelatedTitle">
+              <h2 class="jd-section-title" id="jdRelatedTitle">Việc làm liên quan</h2>
+              <div class="jd-related-list" id="jdRelatedList"></div>
+            </section>
           </div>
+
+          <!-- ================= CỘT PHẢI: SIDEBAR ================= -->
+          <aside class="jd-side" aria-label="Thông tin công ty và thông tin chung">
+            <section class="jd-card jd-company">
+              <div class="jd-company-head">
+                <a href="#" class="jd-company-logo-wrap" id="jdCompanyLogoLink" aria-label="Xem trang công ty">
+                  <img id="jdCompanyLogo" src="assets/logos/easycv-icon.png" alt="" />
+                </a>
+                <h2 class="jd-company-name"><a href="#" id="jdCompanyName"></a></h2>
+              </div>
+              <ul class="jd-company-facts">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  <span><strong>Quy mô:</strong> <span id="jdCompanySize"></span></span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg>
+                  <span><strong>Địa điểm:</strong> <span id="jdCompanyAddress"></span></span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m21 16-9 5-9-5V8l9-5 9 5Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>
+                  <span><strong>Ngành nghề:</strong> <span id="jdCompanyIndustry"></span></span>
+                </li>
+              </ul>
+              <a href="#" class="jd-btn jd-btn-outline jd-btn-block" id="jdCompanyPageBtn">
+                <span>Xem trang công ty</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+              </a>
+            </section>
+
+            <section class="jd-card jd-general">
+              <h2 class="jd-general-title">Thông tin chung</h2>
+              <ul class="jd-general-list">
+                <li>
+                  <span class="jd-general-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m7 14 4-4 4 4 5-6"/></svg></span>
+                  <span><span class="jd-general-label">Cấp bậc</span><strong id="jdGenLevel"></strong></span>
+                </li>
+                <li>
+                  <span class="jd-general-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m22 10-10-5-10 5 10 5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+                  <span><span class="jd-general-label">Học vấn</span><strong id="jdGenEdu"></strong></span>
+                </li>
+                <li>
+                  <span class="jd-general-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><path d="M3 20v-1a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v1"/><circle cx="18" cy="9" r="2.5"/><path d="M17 14a4 4 0 0 1 4 4v2"/></svg></span>
+                  <span><span class="jd-general-label">Số lượng tuyển</span><strong id="jdGenHeadcount"></strong></span>
+                </li>
+                <li>
+                  <span class="jd-general-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+                  <span><span class="jd-general-label">Hình thức làm việc</span><strong id="jdGenWorkForm"></strong></span>
+                </li>
+                <li>
+                  <span class="jd-general-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+                  <span><span class="jd-general-label">Loại hình làm việc</span><strong id="jdGenJobType"></strong></span>
+                </li>
+              </ul>
+            </section>
+          </aside>
         </div>
+      </div>
 
-        <div class="split-list-feed" id="splitListFeed">
-          <div class="split-job-card is-selected" data-id="1">
-            <div class="split-card-top">
-              <img src="assets/logos/company-fpt.svg" alt="FPT Software" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=1&title=Senior%20Fullstack%20Developer%20(ReactJS%20%2F%20Node.js)" class="job-title-link">Senior Fullstack Developer (ReactJS / Node.js)</a>
-                </h4>
-                <div class="split-card-company">FPT Software</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge " style="font-size: 12px; padding: 2px 7px;">28 - 45 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 95%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Hà Nội</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">25 phút trước</span>
-            </div>
-          </div>
-          <div class="split-job-card " data-id="2">
-                        <div class="split-card-top">
-              <img src="assets/logos/company-techcombank.svg" alt="Ngân hàng Techcombank" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=2&title=Chuy%C3%AAn%20Vi%C3%AAn%20Kh%C3%A1ch%20H%C3%A0ng%20Doanh%20Nghi%E1%BB%87p%20(RM)" class="job-title-link">Chuyên Viên Khách Hàng Doanh Nghiệp (RM)</a>
-                </h4>
-                <div class="split-card-company">Ngân hàng Techcombank</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge orange" style="font-size: 12px; padding: 2px 7px;">20 - 35 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 92%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Hồ Chí Minh</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">1 giờ trước</span>
-            </div>
-          </div>
-          <div class="split-job-card " data-id="3">
-                        <div class="split-card-top">
-              <img src="assets/logos/company-zalo.svg" alt="VNG Corporation (Zalo Team)" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=3&title=Senior%20Product%20Designer%20(UI%2FUX%20App%2FWeb)" class="job-title-link">Senior Product Designer (UI/UX App/Web)</a>
-                </h4>
-                <div class="split-card-company">VNG Corporation (Zalo Team)</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge " style="font-size: 12px; padding: 2px 7px;">30 - 50 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 98%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Hồ Chí Minh</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">2 giờ trước</span>
-            </div>
-          </div>
-          <div class="split-job-card " data-id="4">
-                        <div class="split-card-top">
-              <img src="assets/logos/company-viettel.svg" alt="Tập đoàn Công nghiệp - Viễn thông Quân đội (Viettel)" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=4&title=Tr%C6%B0%E1%BB%9Fng%20Nh%C3%B3m%20Digital%20Marketing%20%26%20Growth%20Lead" class="job-title-link">Trưởng Nhóm Digital Marketing & Growth Lead</a>
-                </h4>
-                <div class="split-card-company">Tập đoàn Công nghiệp - Viễn thông Quân đội (Viettel)</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge " style="font-size: 12px; padding: 2px 7px;">25 - 40 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 91%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Hà Nội</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">3 giờ trước</span>
-            </div>
-          </div>
-          <div class="split-job-card " data-id="5">
-                        <div class="split-card-top">
-              <img src="assets/logos/company-shopee.svg" alt="Shopee Vietnam (SPX Express)" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=5&title=Chuy%C3%AAn%20Vi%C3%AAn%20Qu%E1%BA%A3n%20L%C3%BD%20Chu%E1%BB%97i%20Cung%20%E1%BB%A8ng%20%26%20V%E1%BA%ADn%20H%C3%A0nh%20(Logistics)" class="job-title-link">Chuyên Viên Quản Lý Chuỗi Cung Ứng & Vận Hành (Logistics)</a>
-                </h4>
-                <div class="split-card-company">Shopee Vietnam (SPX Express)</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge " style="font-size: 12px; padding: 2px 7px;">18 - 28 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 90%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Hồ Chí Minh</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">Hôm nay</span>
-            </div>
-          </div>
-          <div class="split-job-card " data-id="6">
-                        <div class="split-card-top">
-              <img src="assets/logos/company-momo.svg" alt="Ví điện tử MoMo (M-Service)" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=6&title=DevOps%20%2F%20Cloud%20Infrastructure%20Engineer%20(AWS%20%2F%20K8s)" class="job-title-link">DevOps / Cloud Infrastructure Engineer (AWS / K8s)</a>
-                </h4>
-                <div class="split-card-company">Ví điện tử MoMo (M-Service)</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge " style="font-size: 12px; padding: 2px 7px;">35 - 60 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 97%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Remote</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">Hôm nay</span>
-            </div>
-          </div>
-          <div class="split-job-card " data-id="7">
-                        <div class="split-card-top">
-              <img src="assets/logos/company-vnpay.svg" alt="Công ty Cổ phần Giải pháp Thanh toán Việt Nam (VNPAY)" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=7&title=Senior%20Java%20Backend%20Engineer%20(Spring%20Boot%20%2F%20Microservices)" class="job-title-link">Senior Java Backend Engineer (Spring Boot / Microservices)</a>
-                </h4>
-                <div class="split-card-company">Công ty Cổ phần Giải pháp Thanh toán Việt Nam (VNPAY)</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge " style="font-size: 12px; padding: 2px 7px;">30 - 55 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 96%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Hà Nội</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">45 phút trước</span>
-            </div>
-          </div>
-          <div class="split-job-card " data-id="8">
-                        <div class="split-card-top">
-              <img src="assets/logos/company-vingroup.svg" alt="Tập đoàn Vingroup (Vinhomes)" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=8&title=Chuy%C3%AAn%20Vi%C3%AAn%20K%E1%BA%BF%20To%C3%A1n%20T%E1%BB%95ng%20H%E1%BB%A3p%20%26%20Qu%E1%BA%A3n%20Tr%E1%BB%8B%20Thu%E1%BA%BF" class="job-title-link">Chuyên Viên Kế Toán Tổng Hợp & Quản Trị Thuế</a>
-                </h4>
-                <div class="split-card-company">Tập đoàn Vingroup (Vinhomes)</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge orange" style="font-size: 12px; padding: 2px 7px;">18 - 28 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 93%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Hà Nội</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">2 giờ trước</span>
-            </div>
-          </div>
-          <div class="split-job-card " data-id="9">
-                        <div class="split-card-top">
-              <img src="assets/logos/company-cmc.svg" alt="CMC Telecom" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=9&title=Nh%C3%A2n%20Vi%C3%AAn%20Kinh%20Doanh%20B2B%20%2F%20Sales%20IT%20Solutions%20(Cloud%20%26%20Network)" class="job-title-link">Nhân Viên Kinh Doanh B2B / Sales IT Solutions (Cloud & Network)</a>
-                </h4>
-                <div class="split-card-company">CMC Telecom</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge orange" style="font-size: 12px; padding: 2px 7px;">16 - 35 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 89%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Hà Nội</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">Hôm nay</span>
-            </div>
-          </div>
-          <div class="split-job-card " data-id="10">
-                        <div class="split-card-top">
-              <img src="assets/logos/company-basevn.svg" alt="Base.vn (Nền tảng Quản trị Doanh nghiệp)" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=10&title=Content%20Marketing%20Specialist%20%26%20Copywriter" class="job-title-link">Content Marketing Specialist & Copywriter</a>
-                </h4>
-                <div class="split-card-company">Base.vn (Nền tảng Quản trị Doanh nghiệp)</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge " style="font-size: 12px; padding: 2px 7px;">15 - 22 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 94%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Hồ Chí Minh</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">Hôm qua</span>
-            </div>
-          </div>
-          <div class="split-job-card " data-id="11">
-                        <div class="split-card-top">
-              <img src="assets/logos/company-onemount.svg" alt="One Mount Group (Hệ sinh thái VinID & VinShop)" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=11&title=Mobile%20Developer%20(Flutter%20%2F%20React%20Native)" class="job-title-link">Mobile Developer (Flutter / React Native)</a>
-                </h4>
-                <div class="split-card-company">One Mount Group (Hệ sinh thái VinID & VinShop)</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge " style="font-size: 12px; padding: 2px 7px;">25 - 42 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 93%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Hà Nội</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">Hôm nay</span>
-            </div>
-          </div>
-          <div class="split-job-card " data-id="12">
-                        <div class="split-card-top">
-              <img src="assets/logos/company-kms.svg" alt="KMS Technology Vietnam" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=12&title=QA%20%2F%20QC%20Automation%20Test%20Engineer%20(Selenium%20%26%20CI%2FCD)" class="job-title-link">QA / QC Automation Test Engineer (Selenium & CI/CD)</a>
-                </h4>
-                <div class="split-card-company">KMS Technology Vietnam</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge " style="font-size: 12px; padding: 2px 7px;">20 - 36 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 95%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Đà Nẵng</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">3 giờ trước</span>
-            </div>
-          </div>
-          <div class="split-job-card " data-id="13">
-                        <div class="split-card-top">
-              <img src="assets/logos/company-fpt.svg" alt="FPT Software Academy" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=13&title=Th%E1%BB%B1c%20T%E1%BA%ADp%20Sinh%20L%E1%BA%ADp%20Tr%C3%ACnh%20Frontend%20(Intern%20%2F%20Fresher%20Web%20Developer)" class="job-title-link">Thực Tập Sinh Lập Trình Frontend (Intern / Fresher Web Developer)</a>
-                </h4>
-                <div class="split-card-company">FPT Software Academy</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge " style="font-size: 12px; padding: 2px 7px;">6 - 10 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 88%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Đà Nẵng</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">Hôm nay</span>
-            </div>
-          </div>
-          <div class="split-job-card " data-id="14">
-                        <div class="split-card-top">
-              <img src="assets/logos/company-tiki.svg" alt="Tiki Corporation" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=14&title=Chuy%C3%AAn%20Vi%C3%AAn%20Tuy%E1%BB%83n%20D%E1%BB%A5ng%20%26%20%C4%90%C3%A0o%20T%E1%BA%A1o%20Nh%C3%A2n%20S%E1%BB%B1%20(HR%20Executive)" class="job-title-link">Chuyên Viên Tuyển Dụng & Đào Tạo Nhân Sự (HR Executive)</a>
-                </h4>
-                <div class="split-card-company">Tiki Corporation</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge " style="font-size: 12px; padding: 2px 7px;">14 - 20 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 91%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Hồ Chí Minh</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">2 ngày trước</span>
-            </div>
-          </div>
-          <div class="split-job-card " data-id="15">
-                        <div class="split-card-top">
-              <img src="assets/logos/company-masan.svg" alt="Tập đoàn Masan (Masan Consumer)" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=15&title=Tr%C6%B0%E1%BB%9Fng%20Ph%C3%B2ng%20Kinh%20Doanh%20To%C3%A0n%20Qu%E1%BB%91c%20(Sales%20Director)" class="job-title-link">Trưởng Phòng Kinh Doanh Toàn Quốc (Sales Director)</a>
-                </h4>
-                <div class="split-card-company">Tập đoàn Masan (Masan Consumer)</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge " style="font-size: 12px; padding: 2px 7px;">55 - 80 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 95%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Hồ Chí Minh</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">Hôm nay</span>
-            </div>
-          </div>
-          <div class="split-job-card " data-id="16">
-                        <div class="split-card-top">
-              <img src="assets/logos/company-nashtech.svg" alt="NashTech Vietnam" class="split-company-logo" loading="lazy" />
-              <div class="split-card-info">
-                <h4 class="split-card-title">
-                  <a href="chi-tiet-viec-lam.html?id=16&title=Fresher%20Java%20Web%20Developer%20(Spring%20Boot%20%2F%20MySQL)" class="job-title-link">Fresher Java Web Developer (Spring Boot / MySQL)</a>
-                </h4>
-                <div class="split-card-company">NashTech Vietnam</div>
-                <div class="split-card-badges">
-                  <span class="job-salary-badge " style="font-size: 12px; padding: 2px 7px;">10 - 15 triệu</span>
-                  <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 90%</span>
-                </div>
-              </div>
-            </div>
-            <div class="split-card-bottom">
-              <span class="split-card-location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Hà Nội</span>
-              </span>
-              <span style="font-size: 11.5px; color: #8A8A8A;">Hôm qua</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Phân trang danh sách (cùng kiểu .pagination-wrapper / .page-btn của trang Việc làm) -->
-        <nav class="pagination-wrapper split-list-pagination" id="splitListPagination" aria-label="Phân trang việc làm phù hợp" style="display: none;"></nav>
-      </aside>
-
-      <!-- KHỐI BÊN PHẢI: MÔ TẢ JOB ĐÓ (Đã gỡ bỏ top nav card như ảnh yêu cầu) -->
-      <section class="split-detail-pane" id="splitDetailPane" aria-label="Mô tả chi tiết công việc">
-
-        <div class="detail-scroll-area" id="detailScrollArea">
-          <!-- Hero Section -->
-          <div class="detail-hero-box">
-            <div class="detail-hero-header">
-              <img id="detailCompanyLogo" src="assets/logos/company-fpt.svg" alt="FPT Software" class="detail-company-logo" />
-              <div class="detail-hero-info">
-                <h2 id="detailJobTitle" class="detail-job-title">Senior Fullstack Developer (ReactJS / Node.js)</h2>
-                <div class="detail-company-line">
-                  <span id="detailCompanyName">FPT Software</span>
-                  <span class="badge-verified" title="Doanh nghiệp xác thực">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg>
-                  </span>
-                </div>
-                <div class="detail-badges-row">
-                  <span id="detailSalaryBadge" class="job-salary-badge">28 - 45 triệu</span>
-                  <span class="job-meta-item" style="font-size: 13px; color: #545454;">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span id="detailLocationText">Hà Nội (Cầu Giấy)</span>
-                  </span>
-                  <span class="job-meta-item" style="font-size: 13px; color: #545454;">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span id="detailUpdatedText">Cập nhật 25 phút trước</span>
-                  </span>
-                </div>
-                <div class="job-quick-pills detail-quick-pills">
-                  <span class="job-quick-pill" title="Kinh nghiệm">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                    <span id="metricExp">3 - 5 năm kinh nghiệm</span>
-                  </span>
-                  <span class="job-quick-pill" title="Cấp bậc">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                    <span class="sr-only">Cấp bậc: </span><span id="metricLevel">Senior / Leader</span>
-                  </span>
-                  <span class="job-quick-pill" title="Hình thức làm việc">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-                    <span class="sr-only">Hình thức: </span><span id="metricType">Kết hợp (Hybrid)</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div class="detail-cta-group">
-              <button type="button" class="btn-detail-apply-main" id="btnDetailApply">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                <span>Ứng tuyển ngay</span>
-              </button>
-              <button type="button" class="btn-detail-save-main" id="btnDetailSaveCard">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                <span id="detailSaveBtnText">Lưu</span>
-              </button>
-              <button type="button" class="btn-detail-share-btn" id="btnCopyJobLink" title="Sao chép liên kết công việc">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-                <span>Chia sẻ</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Mục lục chi tiết công việc (sticky trong vùng cuộn) -->
-          <nav class="detail-section-nav" id="detailSectionNav" aria-label="Mục lục chi tiết công việc">
-            <a href="#jdSectionDesc" class="is-active">Mô tả</a>
-            <a href="#jdSectionReqs">Yêu cầu</a>
-            <a href="#jdSectionPerks">Quyền lợi</a>
-            <a href="#jdSectionSkills">Kỹ năng</a>
-            <a href="#jdSectionCompany">Công ty</a>
-          </nav>
-
-          <!-- Section: Mô tả công việc (JD) -->
-          <div class="detail-section" id="jdSectionDesc">
-            <h3 class="detail-section-title">Mô tả công việc (Job Description)</h3>
-            <ul class="detail-bullet-list" id="detailDescList">
-              <li>Tham gia thiết kế kiến trúc và phát triển hệ thống web ứng dụng quy mô lớn cho đối tác tài chính quốc tế.</li>
-              <li>Xây dựng các RESTful API hiệu năng cao bằng Node.js và giao diện tương tác mượt mà bằng ReactJS & TypeScript.</li>
-              <li>Tối ưu hóa tốc độ tải trang, bảo mật và khả năng mở rộng của hệ thống Microservices.</li>
-            </ul>
-          </div>
-
-          <!-- Section: Yêu cầu ứng viên -->
-          <div class="detail-section" id="jdSectionReqs">
-            <h3 class="detail-section-title">Yêu cầu ứng viên</h3>
-            <ul class="detail-bullet-list" id="detailReqsList">
-              <li>Tối thiểu 3 - 5 năm kinh nghiệm làm việc chuyên sâu với ReactJS và Node.js.</li>
-              <li>Thành thạo TypeScript, cơ sở dữ liệu PostgreSQL / MongoDB và kiến trúc Cloud AWS.</li>
-              <li>Có khả năng đọc hiểu tài liệu và giao tiếp kỹ thuật tốt bằng tiếng Anh.</li>
-            </ul>
-          </div>
-
-          <!-- Section: Quyền lợi & Đãi ngộ -->
-          <div class="detail-section" id="jdSectionPerks">
-            <h3 class="detail-section-title">Quyền lợi & Chế độ đãi ngộ</h3>
-            <ul class="detail-bullet-list" id="detailPerksList">
-              <li>Thu nhập từ 28 - 45 triệu/tháng + Thưởng hiệu quả dự án hàng quý.</li>
-              <li>Chế độ làm việc linh hoạt kết hợp Hybrid (2 ngày làm từ xa/tuần).</li>
-              <li>Gói bảo hiểm sức khỏe FPT Care cho bản thân và người thân trong gia đình.</li>
-            </ul>
-          </div>
-
-          <!-- Section: Kỹ năng chuyên môn -->
-          <div class="detail-section" id="jdSectionSkills">
-            <h3 class="detail-section-title">Kỹ năng chuyên môn</h3>
-            <div class="detail-skills-wrap" id="detailSkillsWrap">
-              <span class="detail-skill-tag">ReactJS</span>
-              <span class="detail-skill-tag">Node.js</span>
-              <span class="detail-skill-tag">TypeScript</span>
-              <span class="detail-skill-tag">Hybrid</span>
-            </div>
-          </div>
-
-          <!-- Section: Công ty tuyển dụng -->
-          <div class="detail-section" id="jdSectionCompany" style="margin-bottom: 0;">
-            <h3 class="detail-section-title">Về doanh nghiệp tuyển dụng</h3>
-            <div class="detail-company-card">
-              <div class="company-card-left">
-                <img id="detailCompanyCardLogo" src="assets/logos/company-fpt.svg" alt="FPT Software" style="width: 48px; height: 48px; border-radius: 10px; border: 1px solid #E6E6E6; padding: 4px; object-fit: contain;" />
-                <div class="company-card-info">
-                  <h4 id="detailCompanyCardTitle">FPT Software</h4>
-                  <p>Tập đoàn công nghệ hàng đầu Việt Nam - Doanh nghiệp đã xác thực trên EasyCV</p>
-                </div>
-              </div>
-              <a href="index.html#kham-pha-cong-ty" class="btn-detail-action" style="white-space: nowrap;">Xem hồ sơ công ty →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sticky Bottom Bar -->
-        <div class="detail-sticky-apply-bar">
-          <div class="sticky-bar-left">
-            <div class="sticky-bar-title" id="stickyJobTitle">Senior Fullstack Developer (ReactJS / Node.js)</div>
-            <div class="sticky-bar-salary" id="stickySalary">28 - 45 triệu</div>
-          </div>
-          <button type="button" class="btn-detail-apply-main" id="btnStickyApply" style="padding: 10px 22px; font-size: 14px; flex: none;">
-            <span>Ứng tuyển ngay</span>
-          </button>
-        </div>
-      </section>
-
+      <!-- Thanh ứng tuyển cố định (mobile) -->
+      <div class="jd-sticky-bar">
+        <button type="button" class="jd-btn jd-btn-outline jd-btn-icon" data-jd-save aria-pressed="false" aria-label="Lưu tin">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        </button>
+        <button type="button" class="jd-btn jd-btn-primary" data-jd-apply><span>Ứng tuyển ngay</span></button>
+      </div>
     </div>
+
   </main>
 
   <!-- Toast Message -->
@@ -1746,8 +1250,8 @@
   <script src="js/category-filter-modal.js?v=eb_colors_20261007"></script>
   <script src="js/navbar.js?v=7.1_mobile_float"></script>
   <script src="js/job-detail-search.js?v=1.1_no_kw_badge"></script>
-  <script src="js/chi-tiet-filter.js?v=eb_colors_20261007"></script>
-  <script src="js/chi-tiet-viec-lam.js?v=eb_colors_20261007"></script>
+  <script src="js/jobs-data.js?v=detail_20261007"></script>
+  <script src="js/chi-tiet-viec-lam.js?v=detail_20261007"></script>
 
   <!-- Floating View Mode Switcher Box (Rìa bên phải màn hình) -->
   <div class="floating-view-mode-box" id="floatingViewModeBox" role="region" aria-label="Bộ chuyển đổi chế độ xem Web và Mobile Web">

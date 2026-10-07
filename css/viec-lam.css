@@ -2010,6 +2010,14 @@
   align-items: flex-start;
 }
 
+.job-logo-link {
+  display: block;
+  flex-shrink: 0;
+  border-radius: 12px;
+  line-height: 0;
+  cursor: pointer;
+}
+
 .job-company-logo {
   width: 100px;
   height: 100px;

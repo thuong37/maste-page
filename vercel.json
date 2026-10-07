@@ -11,6 +11,10 @@
       "destination": "/chi-tiet-viec-lam.html"
     },
     {
+      "source": "/job-preview",
+      "destination": "/job-preview.html"
+    },
+    {
       "source": "/((?!assets/|css/|js/|.*\\..*).*)",
       "destination": "/index.html"
     }

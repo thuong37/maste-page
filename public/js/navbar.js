@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Auto-synchronize Active Menu State across all pages
   const currentPath = window.location.pathname.toLowerCase();
   const navLinkTimViec = document.getElementById('navLinkTimViec');
-  if (currentPath.includes('viec-lam') || currentPath.includes('chi-tiet-viec-lam')) {
+  if (currentPath.includes('viec-lam') || currentPath.includes('chi-tiet-viec-lam') || currentPath.includes('job-preview')) {
     navLinkTimViec?.classList.add('is-current');
   }
 
