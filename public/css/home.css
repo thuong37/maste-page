@@ -1816,11 +1816,6 @@
   transform: translateY(-1px);
 }
 
-.keyword-hot-icon {
-  color: #EF4444;
-  font-size: 12px;
-}
-
 .keyword-count {
   font-size: 11px;
   color: var(--text-subtle);
