@@ -3116,21 +3116,27 @@
        ========================================================================= -->
   <section id="tu-khoa-pho-bien" class="home-section popular-keywords-section">
     <div class="home-container">
-      <div class="section-header">
+      <div class="section-header popular-keywords-header">
         <div class="section-title-wrap">
           <h2 class="section-title">
             Ngành nghề & từ khóa phổ biến
           </h2>
         </div>
 
-        <a href="#tat-ca-nganh-nghe" class="section-view-all">
-          <span>Xem tất cả 45 ngành nghề</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
+        <div class="section-carousel-controls" role="group" aria-label="Điều khiển danh sách ngành nghề phổ biến">
+          <button type="button" class="section-carousel-arrow industry-carousel-prev" aria-label="Xem ngành nghề trước" aria-controls="popular-industries-track" title="Ngành nghề trước">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <button type="button" class="section-carousel-arrow industry-carousel-next" aria-label="Xem ngành nghề tiếp theo" aria-controls="popular-industries-track" title="Ngành nghề tiếp theo">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+          <span class="sr-only industry-carousel-status" aria-live="polite" aria-atomic="true"></span>
+        </div>
       </div>
 
       <!-- Part A: 8 Popular Industry Categories -->
-      <div class="categories-grid">
+      <div class="categories-carousel">
+      <div id="popular-industries-track" class="categories-grid">
 
         <a href="#nganh-it" class="category-card">
           <div class="category-icon" style="background: rgba(249, 115, 22, 0.1); color: var(--easycv-orange);">
@@ -3212,6 +3218,7 @@
           </div>
         </a>
 
+      </div>
       </div>
 
       <!-- Part B: Trending Search Keywords Cloud -->

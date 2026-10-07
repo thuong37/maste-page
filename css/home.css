@@ -1704,15 +1704,30 @@
   background: var(--bg-secondary);
 }
 
-/* Categories Grid */
+/* Popular industries carousel */
+.categories-carousel {
+  margin-bottom: 36px;
+}
+
+.categories-carousel.is-carousel-ready {
+  overflow: hidden;
+  padding: 6px;
+  margin: -6px -6px 24px;
+}
+
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin-bottom: 36px;
+}
+
+.categories-carousel.is-carousel-ready .categories-grid {
+  display: flex;
+  will-change: transform;
 }
 
 .category-card {
+  min-width: 0;
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
@@ -1722,6 +1737,15 @@
   gap: 16px;
   text-decoration: none;
   transition: all var(--transition-smooth);
+}
+
+.categories-carousel.is-carousel-ready .category-card {
+  flex: 0 0 calc((100% - 3 * 16px) / 4);
+}
+
+.category-card:focus-visible {
+  outline: 2px solid var(--easycv-orange);
+  outline-offset: 2px;
 }
 
 .category-card:hover {
@@ -2068,6 +2092,9 @@
   .categories-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .categories-carousel.is-carousel-ready .category-card {
+    flex-basis: calc((100% - 16px) / 2);
+  }
   .footer-main-grid {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
@@ -2122,6 +2149,9 @@
   }
   .jobs-grid {
     grid-template-columns: 1fr;
+  }
+  .categories-carousel.is-carousel-ready .category-card {
+    flex-basis: 100%;
   }
   .companies-track {
     gap: 12px;
@@ -2189,6 +2219,18 @@
   .section-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .popular-keywords-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .categories-grid {
+    transition: none !important;
   }
 }
 
@@ -4051,7 +4093,8 @@
 }
 
 .cv-header-actions,
-.cv-carousel-controls {
+.cv-carousel-controls,
+.section-carousel-controls {
   display: flex;
   align-items: center;
 }
@@ -4065,7 +4108,13 @@
   gap: 10px;
 }
 
-.cv-carousel-arrow {
+.section-carousel-controls {
+  flex: 0 0 auto;
+  gap: 10px;
+}
+
+.cv-carousel-arrow,
+.section-carousel-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -4080,7 +4129,8 @@
   transition: color var(--transition-fast, 0.2s ease), border-color var(--transition-fast, 0.2s ease), background-color var(--transition-fast, 0.2s ease), box-shadow var(--transition-fast, 0.2s ease);
 }
 
-.cv-carousel-arrow svg {
+.cv-carousel-arrow svg,
+.section-carousel-arrow svg {
   width: 20px;
   height: 20px;
   fill: none;
@@ -4090,28 +4140,33 @@
   stroke-linejoin: round;
 }
 
-.cv-carousel-arrow:hover {
+.cv-carousel-arrow:hover,
+.section-carousel-arrow:hover {
   border-color: #fdba74;
   background: #fff7ed;
   color: #ea580c;
 }
 
-.cv-carousel-arrow:active {
+.cv-carousel-arrow:active,
+.section-carousel-arrow:active {
   background: #ffedd5;
 }
 
-.cv-carousel-arrow:focus-visible {
+.cv-carousel-arrow:focus-visible,
+.section-carousel-arrow:focus-visible {
   outline: 2px solid #f97316;
   outline-offset: 2px;
 }
 
-[data-theme="dark"] .cv-carousel-arrow {
+[data-theme="dark"] .cv-carousel-arrow,
+[data-theme="dark"] .section-carousel-arrow {
   border-color: #475569;
   background: #0f172a;
   color: #cbd5e1;
 }
 
-[data-theme="dark"] .cv-carousel-arrow:hover {
+[data-theme="dark"] .cv-carousel-arrow:hover,
+[data-theme="dark"] .section-carousel-arrow:hover {
   border-color: #f97316;
   background: #1e293b;
   color: #fb923c;

@@ -9,6 +9,111 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Popular industries: manual, responsive, infinite card carousel.
+  const industrySection = document.querySelector('.popular-keywords-section');
+  const industryViewport = industrySection?.querySelector('.categories-carousel');
+  const industryTrack = industryViewport?.querySelector('.categories-grid');
+  const industryPrevious = industrySection?.querySelector('.industry-carousel-prev');
+  const industryNext = industrySection?.querySelector('.industry-carousel-next');
+  const industryStatus = industrySection?.querySelector('.industry-carousel-status');
+
+  if (industryViewport && industryTrack && industryPrevious && industryNext && industryTrack.children.length > 1) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let isIndustryTransitioning = false;
+    industryViewport.classList.add('is-carousel-ready');
+
+    const updateIndustryAccessibility = () => {
+      const cards = Array.from(industryTrack.children);
+      const firstCard = cards[0];
+      if (!firstCard) return;
+      const gap = parseFloat(getComputedStyle(industryTrack).columnGap || getComputedStyle(industryTrack).gap) || 0;
+      const cardWidth = firstCard.getBoundingClientRect().width;
+      if (!cardWidth) {
+        requestAnimationFrame(updateIndustryAccessibility);
+        return;
+      }
+      const visibleCount = Math.max(1, Math.min(cards.length, Math.floor((industryViewport.clientWidth + gap) / (cardWidth + gap))));
+      const activeCard = document.activeElement?.closest?.('.category-card');
+
+      cards.forEach((card, index) => {
+        const isVisible = index < visibleCount;
+        card.tabIndex = isVisible ? 0 : -1;
+        card.setAttribute('aria-hidden', String(!isVisible));
+      });
+
+      if (activeCard?.getAttribute('aria-hidden') === 'true') {
+        cards[0]?.focus();
+      }
+    };
+
+    const announceIndustry = () => {
+      if (!industryStatus) return;
+      const visibleCards = Array.from(industryTrack.querySelectorAll('.category-card[aria-hidden="false"]'));
+      const firstName = visibleCards[0]?.querySelector('.category-name')?.textContent?.trim();
+      const lastName = visibleCards.at(-1)?.querySelector('.category-name')?.textContent?.trim();
+      if (firstName && lastName) {
+        industryStatus.textContent = visibleCards.length === 1
+          ? `Đang hiển thị ngành nghề ${firstName}`
+          : `Đang hiển thị ${visibleCards.length} ngành nghề, từ ${firstName} đến ${lastName}`;
+      }
+    };
+
+    const moveIndustry = (direction) => {
+      if (isIndustryTransitioning) return;
+      const firstCard = industryTrack.firstElementChild;
+      const lastCard = industryTrack.lastElementChild;
+      if (!firstCard || !lastCard) return;
+
+      if (reducedMotion.matches) {
+        if (direction > 0) industryTrack.appendChild(firstCard);
+        else industryTrack.prepend(lastCard);
+        updateIndustryAccessibility();
+        announceIndustry();
+        return;
+      }
+
+      const gap = parseFloat(getComputedStyle(industryTrack).columnGap || getComputedStyle(industryTrack).gap) || 0;
+      const shiftBy = firstCard.getBoundingClientRect().width + gap;
+      isIndustryTransitioning = true;
+
+      if (direction < 0) {
+        industryTrack.style.transition = 'none';
+        industryTrack.prepend(lastCard);
+        industryTrack.style.transform = `translateX(-${shiftBy}px)`;
+        void industryTrack.offsetWidth;
+      }
+
+      industryTrack.style.transition = 'transform 0.45s ease';
+      industryTrack.style.transform = direction > 0 ? `translateX(-${shiftBy}px)` : 'translateX(0)';
+
+      let fallbackTimer;
+      const finish = () => {
+        industryTrack.removeEventListener('transitionend', onTransitionEnd);
+        clearTimeout(fallbackTimer);
+        industryTrack.style.transition = 'none';
+        industryTrack.style.transform = 'translateX(0)';
+        if (direction > 0) industryTrack.appendChild(firstCard);
+        void industryTrack.offsetWidth;
+        isIndustryTransitioning = false;
+        updateIndustryAccessibility();
+        announceIndustry();
+      };
+      const onTransitionEnd = (event) => {
+        if (event.target !== industryTrack || event.propertyName !== 'transform') return;
+        finish();
+      };
+
+      industryTrack.addEventListener('transitionend', onTransitionEnd);
+      fallbackTimer = setTimeout(finish, 550);
+    };
+
+    industryPrevious.addEventListener('click', () => moveIndustry(-1));
+    industryNext.addEventListener('click', () => moveIndustry(1));
+    window.addEventListener('resize', updateIndustryAccessibility);
+    window.addEventListener('load', updateIndustryAccessibility, { once: true });
+    requestAnimationFrame(updateIndustryAccessibility);
+  }
+
   // CV templates: continuous auto-scrolling carousel with style filtering (same marquee logic as featured companies).
   const cvSection = document.querySelector('.cv-template-section');
   const cvViewport = cvSection?.querySelector('.cv-template-carousel, .cv-template-viewport');
