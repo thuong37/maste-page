@@ -9,7 +9,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Popular industries: manual, responsive, infinite card carousel.
+  // Popular industries: responsive carousel that advances one two-row page at a time.
   const industrySection = document.querySelector('.popular-keywords-section');
   const industryViewport = industrySection?.querySelector('.categories-carousel');
   const industryTrack = industryViewport?.querySelector('.categories-grid');
@@ -18,100 +18,83 @@ document.addEventListener('DOMContentLoaded', () => {
   const industryStatus = industrySection?.querySelector('.industry-carousel-status');
 
   if (industryViewport && industryTrack && industryPrevious && industryNext && industryTrack.children.length > 1) {
+    const industryCards = Array.from(industryTrack.children);
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let isIndustryTransitioning = false;
+    let industryColumns = 0;
+    let industryPageIndex = 0;
+    let resizeFrame;
     industryViewport.classList.add('is-carousel-ready');
 
-    const updateIndustryAccessibility = () => {
-      const cards = Array.from(industryTrack.children);
-      const firstCard = cards[0];
-      if (!firstCard) return;
-      const gap = parseFloat(getComputedStyle(industryTrack).columnGap || getComputedStyle(industryTrack).gap) || 0;
-      const cardWidth = firstCard.getBoundingClientRect().width;
-      if (!cardWidth) {
-        requestAnimationFrame(updateIndustryAccessibility);
-        return;
-      }
-      const visibleCount = Math.max(1, Math.min(cards.length, Math.floor((industryViewport.clientWidth + gap) / (cardWidth + gap))));
-      const activeCard = document.activeElement?.closest?.('.category-card');
-
-      cards.forEach((card, index) => {
-        const isVisible = index < visibleCount;
-        card.tabIndex = isVisible ? 0 : -1;
-        card.setAttribute('aria-hidden', String(!isVisible));
-      });
-
-      if (activeCard?.getAttribute('aria-hidden') === 'true') {
-        cards[0]?.focus();
-      }
+    const getIndustryColumns = () => {
+      if (window.matchMedia('(max-width: 640px)').matches) return 1;
+      if (window.matchMedia('(max-width: 992px)').matches) return 2;
+      return 4;
     };
 
-    const announceIndustry = () => {
-      if (!industryStatus) return;
-      const visibleCards = Array.from(industryTrack.querySelectorAll('.category-card[aria-hidden="false"]'));
+    const updateIndustryPage = ({ announce = false, animate = true } = {}) => {
+      const pages = Array.from(industryTrack.querySelectorAll('.categories-page'));
+      if (!pages.length) return;
+      industryPageIndex = Math.max(0, Math.min(industryPageIndex, pages.length - 1));
+      industryTrack.style.transition = animate && !reducedMotion.matches ? 'transform 0.45s ease' : 'none';
+      industryTrack.style.transform = `translateX(-${industryPageIndex * 100}%)`;
+
+      pages.forEach((page, pageIndex) => {
+        const isActive = pageIndex === industryPageIndex;
+        page.setAttribute('aria-hidden', String(!isActive));
+        page.querySelectorAll('.category-card').forEach((card) => {
+          card.tabIndex = isActive ? 0 : -1;
+        });
+      });
+
+      industryPrevious.disabled = industryPageIndex === 0;
+      industryNext.disabled = industryPageIndex === pages.length - 1;
+
+      if (!announce || !industryStatus) return;
+      const visibleCards = Array.from(pages[industryPageIndex].querySelectorAll('.category-card'));
       const firstName = visibleCards[0]?.querySelector('.category-name')?.textContent?.trim();
       const lastName = visibleCards.at(-1)?.querySelector('.category-name')?.textContent?.trim();
       if (firstName && lastName) {
-        industryStatus.textContent = visibleCards.length === 1
-          ? `Đang hiển thị ngành nghề ${firstName}`
-          : `Đang hiển thị ${visibleCards.length} ngành nghề, từ ${firstName} đến ${lastName}`;
+        industryStatus.textContent = `Trang ${industryPageIndex + 1}/${pages.length}, hiển thị ${visibleCards.length} ngành nghề, từ ${firstName} đến ${lastName}`;
       }
     };
 
-    const moveIndustry = (direction) => {
-      if (isIndustryTransitioning) return;
-      const firstCard = industryTrack.firstElementChild;
-      const lastCard = industryTrack.lastElementChild;
-      if (!firstCard || !lastCard) return;
+    const buildIndustryPages = () => {
+      const nextColumns = getIndustryColumns();
+      if (nextColumns === industryColumns) return;
+      const firstVisibleCardIndex = industryPageIndex * industryColumns * 2;
+      industryColumns = nextColumns;
+      const pageSize = industryColumns * 2;
+      industryPageIndex = Math.floor(firstVisibleCardIndex / pageSize) || 0;
+      industryTrack.replaceChildren();
+      industryTrack.style.setProperty('--industry-columns', industryColumns);
 
-      if (reducedMotion.matches) {
-        if (direction > 0) industryTrack.appendChild(firstCard);
-        else industryTrack.prepend(lastCard);
-        updateIndustryAccessibility();
-        announceIndustry();
-        return;
+      for (let index = 0; index < industryCards.length; index += pageSize) {
+        const page = document.createElement('div');
+        page.className = 'categories-page';
+        page.setAttribute('role', 'group');
+        page.setAttribute('aria-roledescription', 'trang');
+        const pageCards = industryCards.slice(index, index + pageSize);
+        pageCards.forEach(card => page.appendChild(card));
+        industryTrack.appendChild(page);
       }
 
-      const gap = parseFloat(getComputedStyle(industryTrack).columnGap || getComputedStyle(industryTrack).gap) || 0;
-      const shiftBy = firstCard.getBoundingClientRect().width + gap;
-      isIndustryTransitioning = true;
-
-      if (direction < 0) {
-        industryTrack.style.transition = 'none';
-        industryTrack.prepend(lastCard);
-        industryTrack.style.transform = `translateX(-${shiftBy}px)`;
-        void industryTrack.offsetWidth;
-      }
-
-      industryTrack.style.transition = 'transform 0.45s ease';
-      industryTrack.style.transform = direction > 0 ? `translateX(-${shiftBy}px)` : 'translateX(0)';
-
-      let fallbackTimer;
-      const finish = () => {
-        industryTrack.removeEventListener('transitionend', onTransitionEnd);
-        clearTimeout(fallbackTimer);
-        industryTrack.style.transition = 'none';
-        industryTrack.style.transform = 'translateX(0)';
-        if (direction > 0) industryTrack.appendChild(firstCard);
-        void industryTrack.offsetWidth;
-        isIndustryTransitioning = false;
-        updateIndustryAccessibility();
-        announceIndustry();
-      };
-      const onTransitionEnd = (event) => {
-        if (event.target !== industryTrack || event.propertyName !== 'transform') return;
-        finish();
-      };
-
-      industryTrack.addEventListener('transitionend', onTransitionEnd);
-      fallbackTimer = setTimeout(finish, 550);
+      const pages = industryTrack.querySelectorAll('.categories-page');
+      pages.forEach((page, index) => page.setAttribute('aria-label', `Trang ${index + 1} trên ${pages.length}`));
+      updateIndustryPage({ animate: false });
     };
 
-    industryPrevious.addEventListener('click', () => moveIndustry(-1));
-    industryNext.addEventListener('click', () => moveIndustry(1));
-    window.addEventListener('resize', updateIndustryAccessibility);
-    window.addEventListener('load', updateIndustryAccessibility, { once: true });
-    requestAnimationFrame(updateIndustryAccessibility);
+    const moveIndustryPage = (direction) => {
+      industryPageIndex += direction;
+      updateIndustryPage({ announce: true });
+    };
+
+    industryPrevious.addEventListener('click', () => moveIndustryPage(-1));
+    industryNext.addEventListener('click', () => moveIndustryPage(1));
+    window.addEventListener('resize', () => {
+      cancelAnimationFrame(resizeFrame);
+      resizeFrame = requestAnimationFrame(buildIndustryPages);
+    });
+    buildIndustryPages();
   }
 
   // CV templates: continuous auto-scrolling carousel with style filtering (same marquee logic as featured companies).
@@ -376,32 +359,106 @@ document.addEventListener('DOMContentLoaded', () => {
   createJobPaginator('.attractive-jobs-section', '.attractive-card');
   const matchingPaginator = createJobPaginator('.matching-jobs-section', '.job-card');
 
-  // Featured companies: continuous auto-scrolling carousel, shifts 1 card left every 2 seconds.
+  // Featured companies: continuous auto-scrolling carousel with bidirectional manual controls.
   const companiesSection = document.querySelector('.top-companies-section');
   const companiesViewport = companiesSection?.querySelector('.companies-carousel');
   const companiesTrack = companiesViewport?.querySelector('.companies-track');
+  const companiesPrevious = companiesSection?.querySelector('.companies-carousel-prev');
+  const companiesNext = companiesSection?.querySelector('.companies-carousel-next');
+  const companiesStatus = companiesSection?.querySelector('.companies-carousel-status');
+
   if (companiesSection && companiesViewport && companiesTrack && companiesTrack.children.length > 1) {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let timer;
+    let isTransitioning = false;
+    let cancelActiveMove = () => {};
 
-    const step = () => {
-      const firstCard = companiesTrack.firstElementChild;
+    const updateSlideAccessibility = () => {
+      const cards = Array.from(companiesTrack.children);
+      const firstCard = cards[0];
       if (!firstCard) return;
       const trackGap = parseFloat(getComputedStyle(companiesTrack).columnGap || getComputedStyle(companiesTrack).gap) || 0;
-      const shiftBy = firstCard.getBoundingClientRect().width + trackGap;
+      const cardWidth = firstCard.getBoundingClientRect().width;
+      const visibleCount = Math.max(1, Math.min(cards.length, Math.floor((companiesViewport.clientWidth + trackGap) / (cardWidth + trackGap))));
+
+      cards.forEach((card, index) => {
+        const isVisible = index < visibleCount;
+        card.tabIndex = isVisible ? 0 : -1;
+        card.setAttribute('aria-hidden', String(!isVisible));
+        const interactiveElements = card.querySelectorAll('a, button');
+        interactiveElements.forEach(el => {
+          el.tabIndex = isVisible ? 0 : -1;
+        });
+      });
+    };
+
+    const announceCurrentCompany = () => {
+      if (!companiesStatus) return;
+      const name = companiesTrack.firstElementChild?.querySelector('.company-card-title')?.textContent?.trim();
+      if (name) companiesStatus.textContent = `Đang hiển thị ${name}`;
+    };
+
+    const move = (direction = 1, announce = false) => {
+      if (isTransitioning || companiesTrack.children.length <= 1) return;
+      const firstCard = companiesTrack.firstElementChild;
+      const lastCard = companiesTrack.lastElementChild;
+      if (!firstCard || !lastCard) return;
+
+      if (reducedMotion.matches) {
+        if (direction > 0) companiesTrack.appendChild(firstCard);
+        else companiesTrack.prepend(lastCard);
+        updateSlideAccessibility();
+        if (announce) announceCurrentCompany();
+        return;
+      }
+
+      const trackGap = parseFloat(getComputedStyle(companiesTrack).columnGap || getComputedStyle(companiesTrack).gap) || 0;
+      const targetCard = direction > 0 ? firstCard : lastCard;
+      const shiftBy = targetCard.getBoundingClientRect().width + trackGap;
+
+      isTransitioning = true;
+      if (direction < 0) {
+        companiesTrack.style.transition = 'none';
+        companiesTrack.prepend(lastCard);
+        companiesTrack.style.transform = `translateX(-${shiftBy}px)`;
+        void companiesTrack.offsetWidth;
+      }
 
       companiesTrack.style.transition = 'transform 0.6s ease';
-      companiesTrack.style.transform = `translateX(-${shiftBy}px)`;
+      companiesTrack.style.transform = direction > 0 ? `translateX(-${shiftBy}px)` : 'translateX(0)';
 
-      const onTransitionEnd = () => {
+      let fallbackTimer;
+      const clearMoveHandlers = () => {
         companiesTrack.removeEventListener('transitionend', onTransitionEnd);
+        clearTimeout(fallbackTimer);
+      };
+      const finishMove = () => {
+        clearMoveHandlers();
         companiesTrack.style.transition = 'none';
         companiesTrack.style.transform = 'translateX(0)';
-        companiesTrack.appendChild(firstCard);
+        if (direction > 0) companiesTrack.appendChild(firstCard);
         void companiesTrack.offsetWidth;
+        isTransitioning = false;
+        cancelActiveMove = () => {};
+        updateSlideAccessibility();
+        if (announce) announceCurrentCompany();
       };
-      companiesTrack.addEventListener('transitionend', onTransitionEnd, { once: true });
+      const onTransitionEnd = (event) => {
+        if (event && (event.target !== companiesTrack || event.propertyName !== 'transform')) return;
+        finishMove();
+      };
+      cancelActiveMove = () => {
+        clearMoveHandlers();
+        companiesTrack.style.transition = 'none';
+        companiesTrack.style.transform = 'translateX(0)';
+        isTransitioning = false;
+        cancelActiveMove = () => {};
+      };
+      companiesTrack.addEventListener('transitionend', onTransitionEnd);
+      fallbackTimer = setTimeout(finishMove, 700);
     };
+
+    const step = () => move(1);
 
     const stop = () => {
       clearInterval(timer);
@@ -414,12 +471,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
+    companiesPrevious?.addEventListener('click', () => {
+      stop();
+      move(-1, true);
+      start();
+    });
+    companiesNext?.addEventListener('click', () => {
+      stop();
+      move(1, true);
+      start();
+    });
+
     companiesSection.addEventListener('mouseenter', stop);
     companiesSection.addEventListener('mouseleave', start);
     companiesSection.addEventListener('focusin', stop);
     companiesSection.addEventListener('focusout', () => setTimeout(start, 0));
     document.addEventListener('visibilitychange', start);
     reducedMotion.addEventListener('change', start);
+    window.addEventListener('resize', updateSlideAccessibility);
+
+    updateSlideAccessibility();
     start();
   }
 
@@ -2712,17 +2783,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const logoWrap = card.querySelector('.company-card-logo-wrap');
       const logoMark = card.querySelector('.company-card-logo-mark');
       
-      let companyName = '';
-      if (titleEl) {
+      let companyName = logoMark?.getAttribute('aria-label')?.trim() || '';
+      if (!companyName && titleEl) {
         const rawTitle = titleEl.textContent.trim();
         const parts = rawTitle.split(' - ');
         companyName = parts.length > 1 ? parts[parts.length - 1].trim() : rawTitle;
       }
-      if (!companyName && logoMark && logoMark.getAttribute('aria-label')) {
-        companyName = logoMark.getAttribute('aria-label').trim();
-      }
       if (companyName) {
-        const tooltipText = companyName.toLowerCase().startsWith('công ty')
+        const tooltipText = companyName.toLowerCase().startsWith('công ty') || companyName.toLowerCase().startsWith('ngân hàng')
           ? companyName
           : `Công ty ${companyName}`;
         if (logoWrap && !logoWrap.getAttribute('title')) {

@@ -1367,6 +1367,14 @@
   background: var(--bg-secondary);
 }
 
+.top-companies-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
 /* Continuous auto-scrolling carousel: viewport clips, track shifts left every 2s */
 .companies-carousel {
   overflow: hidden;
@@ -1388,7 +1396,7 @@
   border: 1px solid var(--border-color);
   border-radius: 18px;
   box-shadow: 0 2px 10px rgba(59, 130, 246, 0.06);
-  padding: 28px 16px 22px;
+  padding: 24px 14px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1402,18 +1410,24 @@
 }
 
 .company-card-logo-wrap {
-  width: 88px;
-  height: 88px;
-  min-width: 88px;
-  min-height: 88px;
-  border-radius: 20px;
+  width: 108px;
+  height: 108px;
+  min-width: 108px;
+  min-height: 108px;
+  border-radius: 24px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.07);
   cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.company-card:hover .company-card-logo-wrap {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
 }
 
 .company-card-logo-mark {
@@ -1422,20 +1436,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 800;
   letter-spacing: -0.05em;
-  border-radius: 20px;
+  border-radius: 24px;
 }
 
-.company-logo-fpt { color: #f37021; background: #fff7ed; font-size: 24px; }
-.company-logo-vng { color: #ed670c; background: #fff7ed; font-size: 24px; }
-.company-logo-viettel { color: #e2231a; background: #fff5f5; font-size: 18px; letter-spacing: -0.05em; }
-.company-logo-techcombank { color: #d71920; background: #fff5f5; font-size: 22px; }
-.company-logo-momo { color: #a50064; background: #fff0f8; font-size: 17px; letter-spacing: -0.03em; }
-.company-logo-shopee { color: #ee4d2d; background: #fff4f0; font-size: 26px; }
-.company-logo-mb { color: #005baa; background: #eff7ff; font-size: 24px; }
-.company-logo-vinai { color: #4f46e5; background: #eef2ff; font-size: 18px; letter-spacing: -0.03em; }
+.company-logo-fpt { color: #f37021; background: #fff7ed; font-size: 30px; }
+.company-logo-vng { color: #ed670c; background: #fff7ed; font-size: 30px; }
+.company-logo-viettel { color: #e2231a; background: #fff5f5; font-size: 23px; letter-spacing: -0.05em; }
+.company-logo-techcombank { color: #d71920; background: #fff5f5; font-size: 28px; }
+.company-logo-momo { color: #a50064; background: #fff0f8; font-size: 22px; letter-spacing: -0.03em; }
+.company-logo-shopee { color: #ee4d2d; background: #fff4f0; font-size: 34px; }
+.company-logo-mb { color: #005baa; background: #eff7ff; font-size: 30px; }
+.company-logo-vinai { color: #4f46e5; background: #eef2ff; font-size: 23px; letter-spacing: -0.03em; }
 
 .company-card-logo {
   width: 100%;
@@ -1444,17 +1458,21 @@
 }
 
 .company-card-title {
-  font-size: 13.5px;
-  line-height: 1.45;
-  font-weight: 800;
+  font-size: 15.5px;
+  line-height: 1.38;
+  font-weight: 750;
   color: var(--text-main);
-  margin-top: 24px;
+  margin-top: 16px;
   text-decoration: none;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  word-break: break-word;
+  min-height: 46px;
+  transition: color var(--transition-fast);
 }
 
 .company-card-title:hover {
@@ -1464,6 +1482,14 @@
 .company-card-title:focus-visible {
   outline: 2px solid var(--easycv-orange);
   outline-offset: 2px;
+}
+
+[data-theme="dark"] .company-card-title {
+  color: #F8FAFC;
+}
+
+[data-theme="dark"] .company-card-title:hover {
+  color: var(--easycv-orange);
 }
 
 .company-card-footer {
@@ -1723,7 +1749,17 @@
 
 .categories-carousel.is-carousel-ready .categories-grid {
   display: flex;
+  gap: 0;
+  transition: transform 0.45s ease;
   will-change: transform;
+}
+
+.categories-page {
+  display: grid;
+  grid-template-columns: repeat(var(--industry-columns, 4), minmax(0, 1fr));
+  grid-template-rows: repeat(2, auto);
+  flex: 0 0 100%;
+  gap: 16px;
 }
 
 .category-card {
@@ -1737,10 +1773,6 @@
   gap: 16px;
   text-decoration: none;
   transition: all var(--transition-smooth);
-}
-
-.categories-carousel.is-carousel-ready .category-card {
-  flex: 0 0 calc((100% - 3 * 16px) / 4);
 }
 
 .category-card:focus-visible {
@@ -2092,9 +2124,6 @@
   .categories-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .categories-carousel.is-carousel-ready .category-card {
-    flex-basis: calc((100% - 16px) / 2);
-  }
   .footer-main-grid {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
@@ -2150,9 +2179,6 @@
   .jobs-grid {
     grid-template-columns: 1fr;
   }
-  .categories-carousel.is-carousel-ready .category-card {
-    flex-basis: 100%;
-  }
   .companies-track {
     gap: 12px;
   }
@@ -2161,23 +2187,30 @@
     padding: 20px 12px 18px;
   }
   .company-card-logo-wrap {
-    width: 76px;
-    height: 76px;
-    min-width: 76px;
-    min-height: 76px;
-    border-radius: 18px;
+    width: 84px;
+    height: 84px;
+    min-width: 84px;
+    min-height: 84px;
+    border-radius: 20px;
   }
   .company-card-logo-mark {
-    font-size: 21px;
-    border-radius: 18px;
+    font-size: 24px;
+    border-radius: 20px;
   }
   .company-logo-viettel {
-    font-size: 15px;
+    font-size: 18px;
+  }
+  .company-logo-momo {
+    font-size: 17px;
+  }
+  .company-logo-vinai {
+    font-size: 18px;
   }
   .company-card-title {
-    font-size: 12px;
-    margin-top: 16px;
-    min-height: 48px;
+    font-size: 13.5px;
+    line-height: 1.35;
+    margin-top: 14px;
+    min-height: 40px;
   }
   .company-card-footer {
     margin-top: 14px;
@@ -2219,6 +2252,14 @@
   .section-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .top-companies-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
   }
   .popular-keywords-header {
     display: grid;
@@ -4093,18 +4134,22 @@
 }
 
 .cv-header-actions,
+.companies-header-actions,
 .cv-carousel-controls,
+.companies-carousel-controls,
 .section-carousel-controls {
   display: flex;
   align-items: center;
 }
 
-.cv-header-actions {
+.cv-header-actions,
+.companies-header-actions {
   flex: 0 0 auto;
   gap: 14px;
 }
 
-.cv-carousel-controls {
+.cv-carousel-controls,
+.companies-carousel-controls {
   gap: 10px;
 }
 
@@ -4114,6 +4159,7 @@
 }
 
 .cv-carousel-arrow,
+.companies-carousel-arrow,
 .section-carousel-arrow {
   display: inline-flex;
   align-items: center;
@@ -4130,6 +4176,7 @@
 }
 
 .cv-carousel-arrow svg,
+.companies-carousel-arrow svg,
 .section-carousel-arrow svg {
   width: 20px;
   height: 20px;
@@ -4141,6 +4188,7 @@
 }
 
 .cv-carousel-arrow:hover,
+.companies-carousel-arrow:hover,
 .section-carousel-arrow:hover {
   border-color: #fdba74;
   background: #fff7ed;
@@ -4148,17 +4196,29 @@
 }
 
 .cv-carousel-arrow:active,
+.companies-carousel-arrow:active,
 .section-carousel-arrow:active {
   background: #ffedd5;
 }
 
+.companies-carousel-arrow:disabled,
+.section-carousel-arrow:disabled {
+  border-color: #e2e8f0;
+  background: var(--bg-primary, #fff);
+  color: #cbd5e1;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 .cv-carousel-arrow:focus-visible,
+.companies-carousel-arrow:focus-visible,
 .section-carousel-arrow:focus-visible {
   outline: 2px solid #f97316;
   outline-offset: 2px;
 }
 
 [data-theme="dark"] .cv-carousel-arrow,
+[data-theme="dark"] .companies-carousel-arrow,
 [data-theme="dark"] .section-carousel-arrow {
   border-color: #475569;
   background: #0f172a;
@@ -4166,10 +4226,18 @@
 }
 
 [data-theme="dark"] .cv-carousel-arrow:hover,
+[data-theme="dark"] .companies-carousel-arrow:hover,
 [data-theme="dark"] .section-carousel-arrow:hover {
   border-color: #f97316;
   background: #1e293b;
   color: #fb923c;
+}
+
+[data-theme="dark"] .companies-carousel-arrow:disabled,
+[data-theme="dark"] .section-carousel-arrow:disabled {
+  border-color: #334155;
+  background: #0f172a;
+  color: #475569;
 }
 
 /* CV Style Filter Pills */
@@ -4447,6 +4515,14 @@
 }
 
 @media (max-width: 480px) {
+  .top-companies-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .top-companies-header .companies-header-actions {
+    align-self: flex-end;
+  }
   .cv-section-header {
     grid-template-columns: 1fr;
   }

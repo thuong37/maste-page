@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/design-tokens.css?v=2.0_tokens">
   <link rel="stylesheet" href="css/navbar.css?v=9.0_left_align">
-  <link rel="stylesheet" href="css/home.css?v=8.0_tokens">
+  <link rel="stylesheet" href="css/home.css?v=8.1_companies_nav">
   <link rel="stylesheet" href="css/location-picker.css?v=3.0_clean">
   <link rel="stylesheet" href="css/category-filter-modal.css?v=1.3_home_clear_backdrop">
   <style>
@@ -2574,28 +2574,36 @@
        ========================================================================= -->
   <section id="cong-ty-tieu-bieu" class="home-section top-companies-section">
     <div class="home-container">
-      <div class="section-header">
+      <div class="section-header top-companies-header">
         <div class="section-title-wrap">
           <h2 class="section-title">
             Công ty nổi bật
           </h2>
         </div>
 
-        <a href="#kham-pha-tat-ca-cong-ty" class="section-view-all">
-          <span>Xem tất cả công ty</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
+        <div class="companies-header-actions" role="group" aria-label="Tác vụ khối công ty nổi bật">
+          <a href="#kham-pha-tat-ca-cong-ty" class="section-view-all">Xem tất cả</a>
+          <div class="companies-carousel-controls" role="group" aria-label="Điều khiển danh sách công ty nổi bật">
+            <button type="button" class="companies-carousel-arrow companies-carousel-prev" aria-label="Xem công ty trước" aria-controls="companies-track" title="Công ty trước">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button type="button" class="companies-carousel-arrow companies-carousel-next" aria-label="Xem công ty tiếp theo" aria-controls="companies-track" title="Công ty tiếp theo">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+          <span class="sr-only companies-carousel-status" aria-live="polite" aria-atomic="true"></span>
+        </div>
       </div>
 
       <div class="companies-carousel">
-        <div class="companies-track">
+        <div id="companies-track" class="companies-track">
 
           <!-- Company 1: FPT Software -->
           <div class="company-card">
             <div class="company-card-logo-wrap" title="Công ty FPT Software">
               <span class="company-card-logo-mark company-logo-fpt" role="img" aria-label="FPT Software" title="Công ty FPT Software">FPT</span>
             </div>
-            <a href="viec-lam.html?q=FPT+Software" class="company-card-title">Công ty TNHH Phần Mềm FPT - FPT Software</a>
+            <a href="viec-lam.html?q=FPT+Software" class="company-card-title">Công ty TNHH Phần Mềm FPT</a>
             <div class="company-card-footer">
               <span class="company-jobs-pill">145 việc làm</span>
               <button class="btn-favorite-company" type="button" aria-label="Yêu thích FPT Software">
@@ -2609,7 +2617,7 @@
             <div class="company-card-logo-wrap" title="Công ty VNG Corporation">
               <span class="company-card-logo-mark company-logo-vng" role="img" aria-label="VNG Corporation" title="Công ty VNG Corporation">VNG</span>
             </div>
-            <a href="viec-lam.html?q=VNG+Corporation" class="company-card-title">Công ty Cổ Phần VNG - VNG Corporation</a>
+            <a href="viec-lam.html?q=VNG+Corporation" class="company-card-title">Công ty Cổ Phần VNG</a>
             <div class="company-card-footer">
               <span class="company-jobs-pill">82 việc làm</span>
               <button class="btn-favorite-company" type="button" aria-label="Yêu thích VNG Corporation">
@@ -2623,7 +2631,7 @@
             <div class="company-card-logo-wrap" title="Công ty Viettel Digital">
               <span class="company-card-logo-mark company-logo-viettel" role="img" aria-label="Viettel Digital" title="Công ty Viettel Digital">viettel</span>
             </div>
-            <a href="viec-lam.html?q=Viettel" class="company-card-title">Tổng Công ty Dịch Vụ Số Viettel - Viettel Digital</a>
+            <a href="viec-lam.html?q=Viettel" class="company-card-title">Tổng Công ty Dịch Vụ Số Viettel</a>
             <div class="company-card-footer">
               <span class="company-jobs-pill">96 việc làm</span>
               <button class="btn-favorite-company" type="button" aria-label="Yêu thích Viettel Digital">
@@ -2637,7 +2645,7 @@
             <div class="company-card-logo-wrap" title="Công ty Techcombank">
               <span class="company-card-logo-mark company-logo-techcombank" role="img" aria-label="Techcombank" title="Công ty Techcombank">TCB</span>
             </div>
-            <a href="viec-lam.html?q=Techcombank" class="company-card-title">Ngân Hàng TMCP Kỹ Thương Việt Nam - Techcombank</a>
+            <a href="viec-lam.html?q=Techcombank" class="company-card-title">Ngân Hàng TMCP Kỹ Thương Việt Nam</a>
             <div class="company-card-footer">
               <span class="company-jobs-pill">118 việc làm</span>
               <button class="btn-favorite-company" type="button" aria-label="Yêu thích Techcombank">
@@ -2651,7 +2659,7 @@
             <div class="company-card-logo-wrap" title="Công ty MoMo">
               <span class="company-card-logo-mark company-logo-momo" role="img" aria-label="MoMo" title="Công ty MoMo">MOMO</span>
             </div>
-            <a href="viec-lam.html?q=MoMo" class="company-card-title">Công ty Cổ Phần Dịch Vụ Di Động Trực Tuyến - Ví MoMo</a>
+            <a href="viec-lam.html?q=MoMo" class="company-card-title">Công ty Cổ Phần Dịch Vụ Di Động Trực Tuyến</a>
             <div class="company-card-footer">
               <span class="company-jobs-pill">64 việc làm</span>
               <button class="btn-favorite-company" type="button" aria-label="Yêu thích MoMo">
@@ -2665,7 +2673,7 @@
             <div class="company-card-logo-wrap" title="Công ty Shopee Việt Nam">
               <span class="company-card-logo-mark company-logo-shopee" role="img" aria-label="Shopee Việt Nam" title="Công ty Shopee Việt Nam">S</span>
             </div>
-            <a href="viec-lam.html?q=Shopee" class="company-card-title">Công ty TNHH Shopee - Shopee Việt Nam</a>
+            <a href="viec-lam.html?q=Shopee" class="company-card-title">Công ty TNHH Shopee</a>
             <div class="company-card-footer">
               <span class="company-jobs-pill">103 việc làm</span>
               <button class="btn-favorite-company" type="button" aria-label="Yêu thích Shopee Việt Nam">
@@ -2679,7 +2687,7 @@
             <div class="company-card-logo-wrap" title="Công ty MB Bank">
               <span class="company-card-logo-mark company-logo-mb" role="img" aria-label="MB Bank" title="Công ty MB Bank">MB</span>
             </div>
-            <a href="viec-lam.html?q=MB+Bank" class="company-card-title">Ngân Hàng TMCP Quân Đội - MB Bank</a>
+            <a href="viec-lam.html?q=MB+Bank" class="company-card-title">Ngân Hàng TMCP Quân Đội</a>
             <div class="company-card-footer">
               <span class="company-jobs-pill">87 việc làm</span>
               <button class="btn-favorite-company" type="button" aria-label="Yêu thích MB Bank">
@@ -2693,7 +2701,7 @@
             <div class="company-card-logo-wrap" title="Công ty VinAI">
               <span class="company-card-logo-mark company-logo-vinai" role="img" aria-label="VinAI" title="Công ty VinAI">VinAI</span>
             </div>
-            <a href="viec-lam.html?q=VinAI" class="company-card-title">Công ty Cổ Phần VinAI - VinAI Research</a>
+            <a href="viec-lam.html?q=VinAI" class="company-card-title">Công ty Cổ Phần VinAI</a>
             <div class="company-card-footer">
               <span class="company-jobs-pill">52 việc làm</span>
               <button class="btn-favorite-company" type="button" aria-label="Yêu thích VinAI">
@@ -3134,7 +3142,7 @@
         </div>
       </div>
 
-      <!-- Part A: 8 Popular Industry Categories -->
+      <!-- Part A: Popular Industry Categories -->
       <div class="categories-carousel">
       <div id="popular-industries-track" class="categories-grid">
 
@@ -3215,6 +3223,86 @@
           <div class="category-info">
             <span class="category-name">Logistics / Xuất nhập khẩu</span>
             <span class="category-jobs-count">5.240 việc làm</span>
+          </div>
+        </a>
+
+        <a href="#nganh-customer-service" class="category-card">
+          <div class="category-icon" style="background: rgba(59, 130, 246, 0.1); color: #2563EB;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h1v-6H4Z"/><path d="M20 13v4a2 2 0 0 1-2 2h-1v-6h3Z"/><path d="M17 19c0 1.1-.9 2-2 2h-3"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Chăm sóc khách hàng / Vận hành</span>
+            <span class="category-jobs-count">6.780 việc làm</span>
+          </div>
+        </a>
+
+        <a href="#nganh-education" class="category-card">
+          <div class="category-icon" style="background: rgba(139, 92, 246, 0.1); color: #7C3AED;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m2 10 10-5 10 5-10 5L2 10Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Giáo dục / Đào tạo</span>
+            <span class="category-jobs-count">5.960 việc làm</span>
+          </div>
+        </a>
+
+        <a href="#nganh-manufacturing" class="category-card">
+          <div class="category-icon" style="background: rgba(100, 116, 139, 0.12); color: #475569;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V9l6 3V9l6 3V5h4v16H3Z"/><path d="M7 17h2M12 17h2M17 17h2"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Sản xuất / Kỹ thuật</span>
+            <span class="category-jobs-count">8.420 việc làm</span>
+          </div>
+        </a>
+
+        <a href="#nganh-construction" class="category-card">
+          <div class="category-icon" style="background: rgba(245, 158, 11, 0.12); color: #D97706;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M6 21V8l6-4 6 4v13"/><path d="M9 21v-5h6v5M9 10h.01M15 10h.01"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Xây dựng / Kiến trúc</span>
+            <span class="category-jobs-count">4.730 việc làm</span>
+          </div>
+        </a>
+
+        <a href="#nganh-healthcare" class="category-card">
+          <div class="category-icon" style="background: rgba(244, 63, 94, 0.1); color: #E11D48;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21S4 16.5 4 9.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.5C20 16.5 12 21 12 21Z"/><path d="M9 12h6M12 9v6"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Y tế / Dược</span>
+            <span class="category-jobs-count">3.860 việc làm</span>
+          </div>
+        </a>
+
+        <a href="#nganh-tourism" class="category-card">
+          <div class="category-icon" style="background: rgba(6, 182, 212, 0.1); color: #0891B2;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7h14v14"/><path d="M8 7V3h8v4M8 11h2M14 11h2M8 15h2M14 15h2"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Du lịch / Nhà hàng / Khách sạn</span>
+            <span class="category-jobs-count">5.180 việc làm</span>
+          </div>
+        </a>
+
+        <a href="#nganh-legal" class="category-card">
+          <div class="category-icon" style="background: rgba(79, 70, 229, 0.1); color: #4F46E5;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 6h14M5 6l-3 6h6L5 6ZM19 6l-3 6h6l-3-6ZM8 21h8"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Pháp lý / Pháp chế</span>
+            <span class="category-jobs-count">2.540 việc làm</span>
+          </div>
+        </a>
+
+        <a href="#nganh-general-labor" class="category-card">
+          <div class="category-icon" style="background: rgba(34, 197, 94, 0.1); color: #16A34A;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2M8 14l4 3 4-3"/></svg>
+          </div>
+          <div class="category-info">
+            <span class="category-name">Lao động phổ thông</span>
+            <span class="category-jobs-count">11.320 việc làm</span>
           </div>
         </a>
 
@@ -3470,7 +3558,7 @@
 
   <script src="js/navbar.js?v=7.0_synced_navbar"></script>
   <script src="js/category-filter-modal.js?v=1.0"></script>
-  <script src="js/home.js?v=20261007_clean"></script>
+  <script src="js/home.js?v=20261007_companies_nav"></script>
   <script src="js/location-picker.js?v=3.0_clean"></script>
 
   <!-- Floating View Mode Switcher Box (Rìa bên phải màn hình) -->
