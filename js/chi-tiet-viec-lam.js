@@ -243,6 +243,78 @@ document.addEventListener('DOMContentLoaded', () => {
     showToast('Cảm ơn bạn! EasyCV đã ghi nhận phản ánh và sẽ kiểm tra tin tuyển dụng này.', '🛡️');
   });
 
+  // --- Mức độ cạnh tranh hồ sơ + biểu đồ mạng nhện (dữ liệu minh họa, ổn định theo job) ---
+  const COMPETE_AXES = ['Kinh nghiệm', 'Kỹ năng phù hợp', 'Học vấn', 'Chứng chỉ', 'Mức lương mong muốn', 'Độ hoàn thiện hồ sơ'];
+  function seeded(seed) {
+    let s = (Number(seed) || 0) + 7919;
+    return () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+  }
+  const rand = seeded(typeof jobKey === 'number' ? jobKey : [...String(jobKey)].reduce((a, c) => a + c.charCodeAt(0), 0));
+  const avgScores = COMPETE_AXES.map(() => Math.round(50 + rand() * 25));
+  const myScores = avgScores.map(v => Math.max(15, Math.min(98, Math.round(v + (rand() - 0.4) * 36))));
+  const avgTotal = avgScores.reduce((a, b) => a + b, 0) / avgScores.length;
+  const myTotal = myScores.reduce((a, b) => a + b, 0) / myScores.length;
+  const gap = Math.round(myTotal - avgTotal);
+  const applicants = 20 + Math.floor(rand() * 180);
+  const level = gap >= 5 ? ['is-high', 'Cạnh tranh cao'] : gap <= -5 ? ['is-low', 'Cạnh tranh thấp'] : ['is-mid', 'Cạnh tranh trung bình'];
+  const badge = $('jdCompeteBadge');
+  badge.className = `jd-compete-badge ${level[0]}`;
+  badge.textContent = level[1];
+  $('jdCompeteFill').style.left = `${Math.max(6, Math.min(94, 50 + gap * 2.5))}%`;
+  const weakest = COMPETE_AXES[myScores.reduce((m, v, i) => (v - avgScores[i] < myScores[m] - avgScores[m] ? i : m), 0)];
+  $('jdCompeteDesc').textContent = gap >= 5
+    ? `Hồ sơ của bạn cao hơn mặt bằng chung ${gap} điểm so với ${applicants} ứng viên đã ứng tuyển tin này.`
+    : gap <= -5
+      ? `Hồ sơ của bạn thấp hơn mặt bằng chung ${-gap} điểm so với ${applicants} ứng viên đã ứng tuyển. Hãy cải thiện "${weakest}" để tăng cơ hội.`
+      : `Hồ sơ của bạn tương đương mặt bằng chung của ${applicants} ứng viên đã ứng tuyển tin này.`;
+
+  function radarSvg() {
+    const cx = 200, cy = 170, R = 115, n = COMPETE_AXES.length;
+    const pt = (i, v) => {
+      const a = -Math.PI / 2 + (2 * Math.PI * i) / n;
+      return [cx + Math.cos(a) * R * v / 100, cy + Math.sin(a) * R * v / 100];
+    };
+    const poly = vals => vals.map((v, i) => pt(i, v).map(x => x.toFixed(1)).join(',')).join(' ');
+    const rings = [20, 40, 60, 80, 100].map(l => `<polygon points="${poly(COMPETE_AXES.map(() => l))}" fill="none" stroke="#E6E6E6" stroke-width="1"/>`).join('');
+    const spokes = COMPETE_AXES.map((_, i) => { const [x, y] = pt(i, 100); return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#E6E6E6"/>`; }).join('');
+    const labels = COMPETE_AXES.map((name, i) => {
+      const [x, y] = pt(i, 122);
+      const anchor = Math.abs(x - cx) < 6 ? 'middle' : x > cx ? 'start' : 'end';
+      return `<text x="${x.toFixed(1)}" y="${(y + 4).toFixed(1)}" text-anchor="${anchor}" font-size="11.5" font-weight="600" fill="#374151">${esc(name)}</text>`;
+    }).join('');
+    const dots = (vals, color) => vals.map((v, i) => { const [x, y] = pt(i, v); return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.5" fill="${color}"/>`; }).join('');
+    return `<svg viewBox="-70 0 540 340" role="img" aria-label="Biểu đồ mạng nhện so sánh hồ sơ của bạn với trung bình ứng viên">
+      ${rings}${spokes}
+      <polygon points="${poly(avgScores)}" fill="rgba(107,114,128,0.18)" stroke="#6B7280" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="${poly(myScores)}" fill="rgba(255,101,0,0.22)" stroke="#FF6500" stroke-width="2.5"/>
+      ${dots(avgScores, '#6B7280')}${dots(myScores, '#FF6500')}${labels}
+    </svg>`;
+  }
+
+  const competeModal = $('jdCompeteModal');
+  document.body.appendChild(competeModal); // đưa ra body để không bị ancestor cắt/lệch position:fixed
+  let competeOpener = null;
+  function closeCompete() {
+    competeModal.hidden = true;
+    document.body.style.overflow = '';
+    competeOpener?.focus();
+  }
+  $('jdCompeteOpen').addEventListener('click', event => {
+    event.preventDefault();
+    competeOpener = event.currentTarget;
+    $('jdCompeteModalSub').textContent = `${job.title} · ${job.company} · ${applicants} ứng viên đã ứng tuyển`;
+    $('jdRadar').innerHTML = radarSvg();
+    $('jdRadarRows').innerHTML = COMPETE_AXES.map((name, i) => {
+      const d = myScores[i] - avgScores[i];
+      return `<tr><td>${esc(name)}</td><td><strong>${myScores[i]}</strong></td><td>${avgScores[i]}</td><td class="${d >= 0 ? 'is-up' : 'is-down'}">${d >= 0 ? '+' : ''}${d}</td></tr>`;
+    }).join('');
+    competeModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    competeModal.querySelector('.jd-modal-close').focus();
+  });
+  competeModal.addEventListener('click', event => { if (event.target.closest('[data-jd-modal-close]')) closeCompete(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !competeModal.hidden) closeCompete(); });
+
   const RATINGS = [
     ['😠', 'Không đáng tin cậy & rõ ràng'],
     ['😵', 'Ít đáng tin cậy & rõ ràng'],

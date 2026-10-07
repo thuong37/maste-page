@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/location-picker.css?v=eb_colors_20261007">
   <link rel="stylesheet" href="css/category-filter-modal.css?v=eb_colors_20261007">
   <link rel="stylesheet" href="css/viec-lam.css?v=eb_colors_20261007">
-  <link rel="stylesheet" href="css/chi-tiet.css?v=detail_20261007">
+  <link rel="stylesheet" href="css/chi-tiet.css?v=detail_20261009">
   <style>
     /* Thanh menu không neo cố định khi cuộn màn hình trên trang chi tiết việc làm */
     .site-header {
@@ -1124,6 +1124,45 @@
                 </div>
                 <p class="jd-deadline-line">Hạn ứng tuyển: <strong id="jdDeadlineText"></strong></p>
 
+                <div class="jd-compete-box" id="jdCompete">
+                  <div class="jd-compete-head">
+                    <h3 class="jd-compete-title">Mức độ cạnh tranh hồ sơ so với các ứng viên khác</h3>
+                    <span class="jd-compete-badge" id="jdCompeteBadge"></span>
+                  </div>
+                  <div class="jd-compete-meter" aria-hidden="true">
+                    <div class="jd-compete-track"><span class="jd-compete-fill" id="jdCompeteFill"></span></div>
+                    <div class="jd-compete-scale"><span>Thấp</span><span>Trung bình</span><span>Cao</span></div>
+                  </div>
+                  <p class="jd-compete-desc" id="jdCompeteDesc"></p>
+                  <a href="#" class="jd-compete-link" id="jdCompeteOpen" aria-haspopup="dialog">
+                    <span>Xem chi tiết thống kê</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                  </a>
+                </div>
+
+                <div class="jd-modal" id="jdCompeteModal" hidden>
+                  <div class="jd-modal-backdrop" data-jd-modal-close></div>
+                  <div class="jd-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="jdCompeteModalTitle">
+                    <button type="button" class="jd-modal-close" data-jd-modal-close aria-label="Đóng">×</button>
+                    <h2 class="jd-modal-title" id="jdCompeteModalTitle">Thống kê cạnh tranh hồ sơ</h2>
+                    <p class="jd-modal-sub" id="jdCompeteModalSub"></p>
+                    <div class="jd-radar-wrap">
+                      <div class="jd-radar" id="jdRadar"></div>
+                      <div class="jd-radar-side">
+                        <div class="jd-radar-legend">
+                          <span><i class="jd-dot jd-dot-me"></i>Hồ sơ của bạn</span>
+                          <span><i class="jd-dot jd-dot-avg"></i>Trung bình ứng viên đã ứng tuyển</span>
+                        </div>
+                        <table class="jd-radar-table">
+                          <thead><tr><th>Yếu tố</th><th>Bạn</th><th>TB</th><th>Chênh lệch</th></tr></thead>
+                          <tbody id="jdRadarRows"></tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <p class="jd-modal-note">Điểm từng yếu tố được quy đổi về thang 0 – 100 dựa trên hồ sơ EasyCV của bạn và các ứng viên đã ứng tuyển tin này. Dữ liệu minh họa.</p>
+                  </div>
+                </div>
+
                 <div class="jd-report-box">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--eb-primary-500)" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 11v5M12 8h.01" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
                   <span>Báo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, <a href="#" id="jdReportLink">hãy phản ánh với chúng tôi.</a></span>
@@ -1251,7 +1290,7 @@
   <script src="js/navbar.js?v=7.1_mobile_float"></script>
   <script src="js/job-detail-search.js?v=1.1_no_kw_badge"></script>
   <script src="js/jobs-data.js?v=detail_20261007"></script>
-  <script src="js/chi-tiet-viec-lam.js?v=detail_20261007"></script>
+  <script src="js/chi-tiet-viec-lam.js?v=detail_20261009"></script>
 
   <!-- Floating View Mode Switcher Box (Rìa bên phải màn hình) -->
   <div class="floating-view-mode-box" id="floatingViewModeBox" role="region" aria-label="Bộ chuyển đổi chế độ xem Web và Mobile Web">
