@@ -14,14 +14,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const cvViewport = cvSection?.querySelector('.cv-template-carousel, .cv-template-viewport');
   const cvTrack = cvViewport?.querySelector('.cv-template-track');
   const cvFilters = cvSection ? Array.from(cvSection.querySelectorAll('.cv-style-filter')) : [];
+  const cvPrevious = cvSection?.querySelector('.cv-carousel-prev');
+  const cvNext = cvSection?.querySelector('.cv-carousel-next');
+  const cvStatus = cvSection?.querySelector('.cv-carousel-status');
 
   if (cvSection && cvViewport && cvTrack && cvTrack.children.length > 1) {
     const originalTemplates = Array.from(cvTrack.children).map(card => card.cloneNode(true));
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let timer;
     let isTransitioning = false;
+    let cancelActiveMove = () => {};
+
+    const updateSlideAccessibility = () => {
+      const cards = Array.from(cvTrack.children);
+      const firstCard = cards[0];
+      if (!firstCard) return;
+      const trackGap = parseFloat(getComputedStyle(cvTrack).columnGap || getComputedStyle(cvTrack).gap) || 0;
+      const cardWidth = firstCard.getBoundingClientRect().width;
+      const visibleCount = Math.max(1, Math.min(cards.length, Math.floor((cvViewport.clientWidth + trackGap) / (cardWidth + trackGap))));
+
+      cards.forEach((card, index) => {
+        const isVisible = index < visibleCount;
+        card.tabIndex = isVisible ? 0 : -1;
+        card.setAttribute('aria-hidden', String(!isVisible));
+      });
+    };
+
+    const announceCurrentTemplate = () => {
+      if (!cvStatus) return;
+      const name = cvTrack.firstElementChild?.querySelector('.cv-template-name')?.textContent?.trim();
+      if (name) cvStatus.textContent = `Đang hiển thị mẫu CV ${name}`;
+    };
 
     const buildTrack = (style) => {
+      cancelActiveMove();
       const filtered = originalTemplates.filter(card => {
         if (style === 'all') return true;
         const styles = (card.getAttribute('data-cv-styles') || '').split(' ');
@@ -42,29 +68,69 @@ document.addEventListener('DOMContentLoaded', () => {
       cvTrack.replaceChildren(...items);
       void cvTrack.offsetWidth;
       isTransitioning = false;
+      updateSlideAccessibility();
     };
 
-    const step = () => {
+    const move = (direction = 1, announce = false) => {
       if (isTransitioning || cvTrack.children.length <= 1) return;
       const firstCard = cvTrack.firstElementChild;
-      if (!firstCard) return;
+      const lastCard = cvTrack.lastElementChild;
+      if (!firstCard || !lastCard) return;
+
+      if (reducedMotion.matches) {
+        if (direction > 0) cvTrack.appendChild(firstCard);
+        else cvTrack.prepend(lastCard);
+        updateSlideAccessibility();
+        if (announce) announceCurrentTemplate();
+        return;
+      }
+
       const trackGap = parseFloat(getComputedStyle(cvTrack).columnGap || getComputedStyle(cvTrack).gap) || 0;
       const shiftBy = firstCard.getBoundingClientRect().width + trackGap;
 
       isTransitioning = true;
-      cvTrack.style.transition = 'transform 0.6s ease';
-      cvTrack.style.transform = `translateX(-${shiftBy}px)`;
+      if (direction < 0) {
+        cvTrack.style.transition = 'none';
+        cvTrack.prepend(lastCard);
+        cvTrack.style.transform = `translateX(-${shiftBy}px)`;
+        void cvTrack.offsetWidth;
+      }
 
-      const onTransitionEnd = () => {
+      cvTrack.style.transition = 'transform 0.6s ease';
+      cvTrack.style.transform = direction > 0 ? `translateX(-${shiftBy}px)` : 'translateX(0)';
+
+      let fallbackTimer;
+      const clearMoveHandlers = () => {
         cvTrack.removeEventListener('transitionend', onTransitionEnd);
+        clearTimeout(fallbackTimer);
+      };
+      const finishMove = () => {
+        clearMoveHandlers();
         cvTrack.style.transition = 'none';
         cvTrack.style.transform = 'translateX(0)';
-        cvTrack.appendChild(firstCard);
+        if (direction > 0) cvTrack.appendChild(firstCard);
         void cvTrack.offsetWidth;
         isTransitioning = false;
+        cancelActiveMove = () => {};
+        updateSlideAccessibility();
+        if (announce) announceCurrentTemplate();
       };
-      cvTrack.addEventListener('transitionend', onTransitionEnd, { once: true });
+      const onTransitionEnd = (event) => {
+        if (event && (event.target !== cvTrack || event.propertyName !== 'transform')) return;
+        finishMove();
+      };
+      cancelActiveMove = () => {
+        clearMoveHandlers();
+        cvTrack.style.transition = 'none';
+        cvTrack.style.transform = 'translateX(0)';
+        isTransitioning = false;
+        cancelActiveMove = () => {};
+      };
+      cvTrack.addEventListener('transitionend', onTransitionEnd);
+      fallbackTimer = setTimeout(finishMove, 700);
     };
+
+    const step = () => move(1);
 
     const stop = () => {
       clearInterval(timer);
@@ -92,13 +158,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    cvPrevious?.addEventListener('click', () => move(-1, true));
+    cvNext?.addEventListener('click', () => move(1, true));
+
     cvSection.addEventListener('mouseenter', stop);
     cvSection.addEventListener('mouseleave', start);
     cvSection.addEventListener('focusin', stop);
     cvSection.addEventListener('focusout', () => setTimeout(start, 0));
     document.addEventListener('visibilitychange', start);
     reducedMotion.addEventListener('change', start);
+    window.addEventListener('resize', updateSlideAccessibility);
 
+    updateSlideAccessibility();
     start();
   }
   // --- 1. Toast Notification Utility ---

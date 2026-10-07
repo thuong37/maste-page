@@ -2965,14 +2965,22 @@
           </div>
         </div>
 
-        <a href="#tat-ca-mau-cv" class="section-view-all">
-          <span>Xem tất cả</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
+        <div class="cv-header-actions">
+          <a href="#tat-ca-mau-cv" class="section-view-all">Xem tất cả</a>
+          <div class="cv-carousel-controls" role="group" aria-label="Điều khiển danh sách mẫu CV">
+            <button type="button" class="cv-carousel-arrow cv-carousel-prev" aria-label="Xem mẫu CV trước" aria-controls="cv-template-track" title="Mẫu CV trước">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button type="button" class="cv-carousel-arrow cv-carousel-next" aria-label="Xem mẫu CV tiếp theo" aria-controls="cv-template-track" title="Mẫu CV tiếp theo">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+          <span class="sr-only cv-carousel-status" aria-live="polite" aria-atomic="true"></span>
+        </div>
       </div>
 
       <div class="cv-template-carousel">
-        <div class="cv-template-track">
+        <div id="cv-template-track" class="cv-template-track">
 
           <!-- CV Template 1: Emerald ATS -->
           <a class="cv-template-card cv-green" data-cv-styles="simple ats" href="/tao-cv/chinh-sua?templateId=emerald-ats" aria-label="Chọn mẫu CV Emerald ATS">

@@ -4021,6 +4021,7 @@
     font-size: 16px;
   }
 }
+
 /* CV template recommendations */
 .cv-sheet { position: relative; }
 .cv-template-section {
@@ -4047,6 +4048,73 @@
 .cv-header-left .section-title {
   margin: 0;
   white-space: nowrap;
+}
+
+.cv-header-actions,
+.cv-carousel-controls {
+  display: flex;
+  align-items: center;
+}
+
+.cv-header-actions {
+  flex: 0 0 auto;
+  gap: 14px;
+}
+
+.cv-carousel-controls {
+  gap: 10px;
+}
+
+.cv-carousel-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  background: var(--bg-primary, #fff);
+  color: #334155;
+  cursor: pointer;
+  transition: color var(--transition-fast, 0.2s ease), border-color var(--transition-fast, 0.2s ease), background-color var(--transition-fast, 0.2s ease), box-shadow var(--transition-fast, 0.2s ease);
+}
+
+.cv-carousel-arrow svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cv-carousel-arrow:hover {
+  border-color: #fdba74;
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.cv-carousel-arrow:active {
+  background: #ffedd5;
+}
+
+.cv-carousel-arrow:focus-visible {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+
+[data-theme="dark"] .cv-carousel-arrow {
+  border-color: #475569;
+  background: #0f172a;
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .cv-carousel-arrow:hover {
+  border-color: #f97316;
+  background: #1e293b;
+  color: #fb923c;
 }
 
 /* CV Style Filter Pills */
@@ -4309,7 +4377,7 @@
     grid-column: 1;
     grid-row: 1;
   }
-  .cv-section-header .section-view-all {
+  .cv-header-actions {
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
@@ -4320,6 +4388,20 @@
     width: 100%;
     margin-top: 4px;
     padding-bottom: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-section-header {
+    grid-template-columns: 1fr;
+  }
+  .cv-header-actions {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: end;
+  }
+  .cv-style-filters {
+    grid-row: 3;
   }
 }
 
