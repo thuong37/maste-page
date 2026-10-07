@@ -830,7 +830,7 @@
       opacity: 0;
       visibility: hidden;
       transform: scale(1.02);
-      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s ease;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
       z-index: 1;
       pointer-events: none;
       display: block;
@@ -1260,6 +1260,591 @@
     .btn-promo-outline:hover {
       border-color: #F97316 !important;
       color: #F97316 !important;
+    }
+    /* ==========================================================================
+       CSS BỔ TRỢ KHỐI IV: VIỆC LÀM NỔI BẬT & HUY HIỆU TIA SÉT TOPCV & PREVIEW POPUP
+       ========================================================================== */
+    /* 5 Tabs lọc theo ngành nghề có số lượng job nhiều nhất */
+    .filter-pills-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 4px 2px 14px 2px;
+      margin-bottom: 8px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .filter-pills-bar::-webkit-scrollbar {
+      display: none;
+    }
+    .filter-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 9999px;
+      border: 1.5px solid var(--border-color, #E2E8F0);
+      background: var(--bg-primary, #FFFFFF);
+      color: var(--text-secondary, #475569);
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+    }
+    .filter-pill-btn:hover {
+      border-color: #F97316;
+      color: #EA580C;
+      background: #FFF7ED;
+      transform: translateY(-1px);
+    }
+    .filter-pill-btn.active {
+      background: #F97316;
+      border-color: #F97316;
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.32);
+      transform: translateY(-1px);
+    }
+    .filter-pill-count {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 11.5px;
+      font-weight: 700;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.06);
+      color: var(--text-muted, #64748B);
+      transition: all 0.2s ease;
+    }
+    .filter-pill-btn.active .filter-pill-count {
+      background: rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+    }
+    [data-theme="dark"] .filter-pill-btn {
+      background: #1E293B;
+      border-color: #334155;
+      color: #CBD5E1;
+    }
+    [data-theme="dark"] .filter-pill-btn:hover {
+      background: #2A1B10;
+      border-color: #EA580C;
+      color: #FDBA74;
+    }
+    [data-theme="dark"] .filter-pill-btn.active {
+      background: #F97316;
+      border-color: #F97316;
+      color: #FFFFFF;
+    }
+    [data-theme="dark"] .filter-pill-count {
+      background: rgba(255, 255, 255, 0.1);
+      color: #94A3B8;
+    }
+
+    /* Grid 3 cột x tối đa 4 hàng (12 thẻ) */
+    .jobs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+      position: relative;
+    }
+    @media (max-width: 1024px) {
+      .jobs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 640px) {
+      .jobs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Thẻ Job Card Nổi Bật: Tối ưu không gian cho Avatar to và Nút Ứng Tuyển */
+    .job-card {
+      background: var(--bg-primary, #FFFFFF);
+      border: 1px solid var(--border-color, #E2E8F0);
+      border-radius: 14px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      min-height: 136px;
+      box-sizing: border-box;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .job-card:hover {
+      transform: translateY(-2px);
+      border-color: #F97316;
+      box-shadow: 0 10px 24px -4px rgba(249, 115, 22, 0.16), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Avatar Logo công ty: TĂNG KÍCH THƯỚC TO RÕ (80x80px) */
+    .job-logo-wrapper {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      min-width: 80px;
+      min-height: 80px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      border: 1.5px solid var(--border-color, #E2E8F0);
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .job-card:hover .job-logo-wrapper {
+      border-color: #F97316;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.18);
+    }
+    .job-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #FFFFFF;
+    }
+
+    /* Huy hiệu Tia Sét (Lightning Badge) trên Logo công ty */
+    .badge-lightning {
+      position: absolute;
+      top: -7px;
+      left: -7px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #B45309 100%);
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 2px 6px rgba(217, 119, 6, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: help;
+      z-index: 3;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+      color: #FFFFFF;
+      clip-path: none !important;
+    }
+    .badge-lightning:hover {
+      transform: scale(1.18);
+      box-shadow: 0 4px 10px rgba(217, 119, 6, 0.6);
+    }
+    .badge-lightning svg {
+      width: 12px;
+      height: 12px;
+      fill: #FFFFFF;
+      margin: 0;
+    }
+
+    /* Cụm hành động bên phải footer thẻ: Thời gian đăng + Nút Ứng tuyển + Bookmark */
+    .job-card-actions-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    /* 1. Thời gian đăng tin: HIỂN THỊ khi unhover, ẨN khi hover */
+    .job-posted-time {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: #94A3B8;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .job-posted-time svg {
+      color: #94A3B8;
+      flex-shrink: 0;
+    }
+    .job-card:hover .job-posted-time {
+      display: none !important;
+    }
+
+    /* 2. Nút Ứng tuyển: To như các nút khác, ẨN khi unhover, HIỆN khi hover */
+    .btn-card-apply {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 7px 20px;
+      height: 34px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #FF8A34 0%, #F97316 100%);
+      color: #FFFFFF !important;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 3px 10px rgba(249, 115, 22, 0.32);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+    .btn-card-apply:hover {
+      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.45);
+      transform: translateY(-1px);
+    }
+    .job-card:hover .btn-card-apply {
+      display: inline-flex !important;
+      animation: fadeInApplyBtn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes fadeInApplyBtn {
+      from {
+        opacity: 0;
+        transform: translateY(2px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Nút Bookmark Trái tim */
+    .btn-bookmark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1.5px solid var(--color-primary, #F97316);
+      background: transparent;
+      color: var(--color-primary, #F97316);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      padding: 0;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-bookmark:hover {
+      background: var(--color-surface-raised, #FFF7ED);
+      transform: scale(1.08);
+    }
+
+    /* Tooltip Tia Sét chuẩn TopCV */
+    .lightning-tooltip-box {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: -10px;
+      width: 310px;
+      background: #0F172A;
+      color: #F8FAFC;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 12px;
+      line-height: 1.5;
+      box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.45);
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(6px);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    .lightning-tooltip-box::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 18px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: #0F172A transparent transparent transparent;
+    }
+    .badge-lightning:hover .lightning-tooltip-box {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .lightning-tooltip-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      font-weight: 700;
+      color: #FBBF24;
+      font-size: 12.5px;
+    }
+    .lightning-tooltip-rate {
+      background: rgba(245, 158, 11, 0.18);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 4px 8px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      font-size: 11.5px;
+      color: #FDE68A;
+    }
+    .lightning-tooltip-rules {
+      font-size: 11px;
+      color: #CBD5E1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* Thanh điều hướng phân trang tự động 10s */
+    .featured-jobs-footer-bar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 24px;
+      padding-top: 12px;
+    }
+    .featured-jobs-pagination-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .featured-page-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #E2E8F0);
+      background: var(--bg-primary, #FFFFFF);
+      color: var(--text-primary, #0F172A);
+      font-weight: 600;
+      font-size: 13.5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .featured-page-btn:hover:not(:disabled) {
+      border-color: #F97316;
+      color: #F97316;
+      background: #FFF7ED;
+    }
+    .featured-page-btn.active {
+      background: #F97316;
+      border-color: #F97316;
+      color: #FFFFFF;
+      box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+    }
+    .featured-page-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .auto-page-timer-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-muted, #64748B);
+      font-weight: 500;
+    }
+    .auto-page-progress-track {
+      width: 120px;
+      height: 4px;
+      background: #E2E8F0;
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+    .auto-page-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: #F97316;
+      border-radius: 999px;
+      transition: width 0.1s linear;
+    }
+    .auto-page-timer-indicator.paused .auto-page-progress-fill {
+      background: #94A3B8;
+    }
+
+    /* POPUP PREVIEW KHI HOVER VÀO TÊN JOB */
+    .job-preview-popover {
+      position: fixed;
+      z-index: 99999;
+      width: 380px;
+      background: #FFFFFF;
+      border-radius: 14px;
+      border: 1.5px solid #FED7AA;
+      box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.22), 0 8px 18px -4px rgba(15, 23, 42, 0.1);
+      padding: 18px;
+      pointer-events: auto;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(6px);
+      transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
+    }
+    .job-preview-popover.is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    [data-theme="dark"] .job-preview-popover {
+      background: #1E293B;
+      border-color: #7C2D12;
+      color: #F8FAFC;
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.7);
+    }
+    .job-preview-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    [data-theme="dark"] .job-preview-header {
+      border-bottom-color: #334155;
+    }
+    .job-preview-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      border: 1px solid #E2E8F0;
+      object-fit: contain;
+      background: #FFFFFF;
+      padding: 2px;
+      flex-shrink: 0;
+    }
+    .job-preview-title-box {
+      flex: 1;
+      min-width: 0;
+    }
+    .job-preview-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--text-primary, #0F172A);
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+    .job-preview-company {
+      font-size: 12px;
+      color: var(--text-muted, #64748B);
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    .job-preview-quick-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .job-preview-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 600;
+    }
+    .job-preview-badge-salary {
+      background: #FFF7ED;
+      color: #EA580C;
+      border: 1px solid #FDBA74;
+    }
+    .job-preview-badge-loc {
+      background: #F1F5F9;
+      color: #475569;
+    }
+    .job-preview-badge-exp {
+      background: #EFF6FF;
+      color: #2563EB;
+    }
+    .job-preview-badge-lightning {
+      background: #FEF3C7;
+      color: #D97706;
+      border: 1px solid #FCD34D;
+      font-weight: 700;
+    }
+    .job-preview-section-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: #94A3B8;
+      margin-bottom: 6px;
+    }
+    .job-preview-desc-list {
+      margin: 0 0 12px 0;
+      padding-left: 18px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #334155;
+    }
+    [data-theme="dark"] .job-preview-desc-list {
+      color: #CBD5E1;
+    }
+    .job-preview-skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+    .job-preview-skill-pill {
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #F1F5F9;
+      color: #475569;
+      font-weight: 500;
+    }
+    [data-theme="dark"] .job-preview-skill-pill {
+      background: #334155;
+      color: #E2E8F0;
+    }
+    .job-preview-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #F1F5F9;
+    }
+    [data-theme="dark"] .job-preview-actions {
+      border-top-color: #334155;
+    }
+    .job-preview-btn-apply {
+      flex: 1;
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: #F97316;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 12.5px;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .job-preview-btn-apply:hover {
+      background: #EA580C;
+    }
+    .job-preview-btn-detail {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #CBD5E1);
+      background: transparent;
+      color: var(--text-primary, #334155);
+      font-weight: 600;
+      font-size: 12.5px;
+      text-decoration: none;
+      transition: all 0.18s ease;
+    }
+    .job-preview-btn-detail:hover {
+      border-color: #F97316;
+      color: #F97316;
     }
   </style>
   <!-- Khử triệt để thanh cuộn dọc/ngang xám trên Mobile Web và Simulator -->
@@ -2073,17 +2658,29 @@
         <!-- KHỐI BANNER NHÀ TUYỂN DỤNG TIÊU BIỂU (BENTO GRID: 1 Ô CHÍNH SLIDER + 2 Ô PHỤ) -->
         <div class="hero-ad-showcase bento-sponsor-grid">
 
-          <!-- Ô chính: Banner tiêu biểu ngoài cùng bên trái (Slider chuyển đổi 2 phía) -->
-          <div class="sponsor-primary sponsor-slider-container" id="heroSponsorSlider">
-            <!-- Danh sách các Slide -->
+          <!-- Ô chính: Banner tiêu biểu ngoài cùng bên trái (Slider tự động chuyển sau 5s, animation 300ms, hover pause, click chuyển trang công ty) -->
+          <div class="sponsor-primary sponsor-slider-container" id="heroSponsorSlider" title="Khám phá cơ hội nghề nghiệp tại các doanh nghiệp hàng đầu">
+            <!-- Danh sách 5 Slide Doanh Nghiệp Tiêu Biểu -->
             <div class="sponsor-slides-wrapper">
               <!-- Slide 1: Orion Technologies -->
-              <a href="#doanh-nghiep-tieu-bieu" class="sponsor-slide active" title="Khám phá cơ hội nghề nghiệp tại Orion Technologies" data-slide-index="0">
+              <a href="chi-tiet-cong-ty.html?company=orion" target="_blank" rel="noopener noreferrer" class="sponsor-slide active" title="Xem trang chủ công ty Orion Technologies" data-slide-index="0">
                 <img src="assets/banners/employer-spotlight-banner.jpg" alt="Doanh nghiệp tiêu biểu EasyCV - Orion Technologies" />
               </a>
-              <!-- Slide 2: Tech Innovation & Sáng tạo Công nghệ (Trọng tâm vào cụm kỹ sư trẻ) -->
-              <a href="#doanh-nghiep-tieu-bieu" class="sponsor-slide sponsor-slide-innovation" title="Môi trường làm việc bứt phá & Sáng tạo Công nghệ" data-slide-index="1">
-                <img src="assets/banners/employer-spotlight-innovation.png" class="sponsor-img-focus-people" alt="Doanh nghiệp tiêu biểu EasyCV - Sáng tạo & Công nghệ Đột phá" />
+              <!-- Slide 2: Viettel Digital Solutions -->
+              <a href="chi-tiet-cong-ty.html?company=viettel" target="_blank" rel="noopener noreferrer" class="sponsor-slide sponsor-slide-innovation" title="Xem trang chủ Tổng Công ty Dịch vụ Số Viettel" data-slide-index="1">
+                <img src="assets/banners/employer-spotlight-innovation.png" class="sponsor-img-focus-people" alt="Doanh nghiệp tiêu biểu EasyCV - Tổng Công ty Dịch vụ Số Viettel" />
+              </a>
+              <!-- Slide 3: FPT Software Global -->
+              <a href="chi-tiet-cong-ty.html?company=fpt" target="_blank" rel="noopener noreferrer" class="sponsor-slide" title="Xem trang chủ công ty FPT Software" data-slide-index="2">
+                <img src="assets/banners/employer-spotlight-team.png" alt="Doanh nghiệp tiêu biểu EasyCV - FPT Software" />
+              </a>
+              <!-- Slide 4: Techcombank -->
+              <a href="chi-tiet-cong-ty.html?company=techcombank" target="_blank" rel="noopener noreferrer" class="sponsor-slide" title="Xem trang chủ Ngân hàng TMCP Kỹ Thương Việt Nam (Techcombank)" data-slide-index="3">
+                <img src="assets/banners/employer-spotlight-finance.jpg" alt="Doanh nghiệp tiêu biểu EasyCV - Techcombank" />
+              </a>
+              <!-- Slide 5: Saigon Retail Corp -->
+              <a href="chi-tiet-cong-ty.html?company=saigon-retail" target="_blank" rel="noopener noreferrer" class="sponsor-slide" title="Xem trang chủ Saigon Retail Corp" data-slide-index="4">
+                <img src="assets/banners/employer-spotlight-retail.jpg" alt="Doanh nghiệp tiêu biểu EasyCV - Saigon Retail Corp" />
               </a>
             </div>
 
@@ -2099,18 +2696,21 @@
               </svg>
             </button>
 
-            <!-- Chỉ số chấm (Dots Indicator) -->
+            <!-- Chỉ số 5 chấm (Dots Indicator) -->
             <div class="sponsor-slider-dots" id="sponsorSliderDots">
-              <button type="button" class="sponsor-dot active" data-index="0" aria-label="Chuyển đến banner 1"></button>
-              <button type="button" class="sponsor-dot" data-index="1" aria-label="Chuyển đến banner 2"></button>
+              <button type="button" class="sponsor-dot active" data-index="0" aria-label="Chuyển đến banner Orion Technologies"></button>
+              <button type="button" class="sponsor-dot" data-index="1" aria-label="Chuyển đến banner Viettel Digital"></button>
+              <button type="button" class="sponsor-dot" data-index="2" aria-label="Chuyển đến banner FPT Software"></button>
+              <button type="button" class="sponsor-dot" data-index="3" aria-label="Chuyển đến banner Techcombank"></button>
+              <button type="button" class="sponsor-dot" data-index="4" aria-label="Chuyển đến banner Saigon Retail"></button>
             </div>
           </div>
 
-          <!-- 2 ô banner phụ bên phải (xếp dọc) -->
-          <a href="#doanh-nghiep-tieu-bieu" class="sponsor-mini sponsor-mini-a" title="Xem cơ hội việc làm tại Vietcom Finance">
+          <!-- 2 ô banner phụ bên phải: Nằm cứng (static), click chuyển trang công ty -->
+          <a href="chi-tiet-cong-ty.html?company=vietcom-finance" target="_blank" rel="noopener noreferrer" class="sponsor-mini sponsor-mini-a" title="Xem cơ hội việc làm tại Vietcom Finance">
             <img src="assets/banners/employer-spotlight-finance.jpg" alt="Cơ hội việc làm - Vietcom Finance" />
           </a>
-          <a href="#doanh-nghiep-tieu-bieu" class="sponsor-mini sponsor-mini-b" title="Xem cơ hội việc làm tại Saigon Retail Corp">
+          <a href="chi-tiet-cong-ty.html?company=saigon-retail" target="_blank" rel="noopener noreferrer" class="sponsor-mini sponsor-mini-b" title="Xem cơ hội việc làm tại Saigon Retail Corp">
             <img src="assets/banners/employer-spotlight-retail.jpg" alt="Cơ hội việc làm - Saigon Retail Corp" />
           </a>
         </div>
@@ -2122,6 +2722,12 @@
 
   <!-- =========================================================================
        VÙNG 1: VIỆC LÀM NỔI BẬT (Featured / Hot Jobs)
+       - 5 Tabs lọc theo 5 nhóm ngành nghề có số việc làm lớn nhất thị trường
+       - Auto-pagination 10s / trang (hover pause)
+       - Grid tối đa 3 cột x 4 hàng = 12 thẻ / trang
+       - Huy hiệu Tia Sét ⚡ chuẩn TopCV gắn trên logo công ty
+       - Popover Preview khi hover vào tên job
+       - Thuật toán ưu tiên: Chưa login -> theo quy mô ngành nghề; Đã login -> theo hành vi/CV/profile
        ========================================================================= -->
   <section id="viec-lam-noi-bat" class="home-section featured-jobs-section">
     <div class="home-container">
@@ -2132,262 +2738,62 @@
           </h2>
         </div>
 
-        <a href="#tat-ca-viec-lam-noi-bat" class="section-view-all">
+        <a href="viec-lam.html" class="section-view-all">
           <span>Xem tất cả việc làm</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </div>
 
-      <!-- Quick Filter Pills -->
-      <div class="filter-pills-bar">
-        <button class="filter-pill-btn active" data-filter="all">Tất cả việc làm</button>
-        <button class="filter-pill-btn" data-filter="it">IT - Phần mềm & Công nghệ</button>
-        <button class="filter-pill-btn" data-filter="marketing">Marketing - Truyền thông</button>
-        <button class="filter-pill-btn" data-filter="sales">Kinh doanh - Bán hàng (B2B)</button>
-        <button class="filter-pill-btn" data-filter="finance">Tài chính - Ngân hàng</button>
-        <button class="filter-pill-btn" data-filter="remote">Làm việc từ xa (Remote)</button>
+      <!-- 5 Tabs lọc theo ngành nghề: 5 nhóm ngành có số lượng việc làm nhiều nhất -->
+      <div class="filter-pills-bar" id="featuredIndustryTabs" role="tablist" aria-label="Lọc việc làm nổi bật theo ngành nghề">
+        <button class="filter-pill-btn active" data-category="sales" role="tab" aria-selected="true">
+          <span>Kinh doanh / Bán hàng</span>
+          <span class="filter-pill-count">2,450+</span>
+        </button>
+        <button class="filter-pill-btn" data-category="it" role="tab" aria-selected="false">
+          <span>IT - Phần mềm</span>
+          <span class="filter-pill-count">1,820+</span>
+        </button>
+        <button class="filter-pill-btn" data-category="marketing" role="tab" aria-selected="false">
+          <span>Marketing / PR</span>
+          <span class="filter-pill-count">1,240+</span>
+        </button>
+        <button class="filter-pill-btn" data-category="finance" role="tab" aria-selected="false">
+          <span>Tài chính / Ngân hàng</span>
+          <span class="filter-pill-count">1,150+</span>
+        </button>
+        <button class="filter-pill-btn" data-category="hr" role="tab" aria-selected="false">
+          <span>Hành chính / Nhân sự</span>
+          <span class="filter-pill-count">980+</span>
+        </button>
       </div>
 
-      <!-- Jobs Grid -->
-      <div class="jobs-grid">
-
-        <!-- Card 1: Kiến Trúc Việt (Chính xác theo mẫu của User) -->
-        <article class="job-card" data-category="all it">
-          <div class="job-card-header">
-            <div class="job-logo-wrapper" title="Công ty Cổ phần Kiến Trúc Việt tuyển dụng tại EasyCV">
-              <img src="assets/logos/kientrucviet-logo.svg" alt="Kiến Trúc Việt" class="job-logo" title="Công ty Cổ phần Kiến Trúc Việt tuyển dụng tại EasyCV" />
-              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
-                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              </span>
-            </div>
-            <div class="job-content">
-              <a href="#job-kientrucviet" class="job-title" title="Kiến Trúc Sư - Chủ Trì Thiết Kế Kiến Trúc/Quản Lý Thiết Kế/Design...">Kiến Trúc Sư - Chủ Trì Thiết Kế Kiến Trúc/Quản Lý Thiết Kế/Design...</a>
-              <a href="#kientrucviet" class="company-name" title="CÔNG TY CỔ PHẦN KIẾN TRÚC VIỆT">CÔNG TY CỔ PHẦN KIẾN TRÚC VIỆT</a>
-            </div>
-          </div>
-
-          <div class="job-card-footer">
-            <div class="job-pills">
-              <span class="job-pill job-pill-salary">25 - 40 triệu</span>
-              <span class="job-pill job-pill-location">Hà Nội</span>
-            </div>
-            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
-              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            </button>
-          </div>
-        </article>
-
-        <!-- Card 2: Samsung SRV (Tài trợ) -->
-        <article class="job-card card-sponsored" data-category="all it">
-          <div class="job-card-header">
-            <div class="job-logo-wrapper" title="Công ty Samsung SRV tuyển dụng tại EasyCV">
-              <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=120&h=120&q=80" alt="Samsung SRV" class="job-logo" title="Công ty Samsung SRV tuyển dụng tại EasyCV" />
-              <span class="badge-lightning" title="Được tài trợ">
-                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              </span>
-            </div>
-            <div class="job-content">
-              <a href="#job-samsung-lead" class="job-title" title="Principal Software Architect (AI Camera & Mobile OS)">Principal Software Architect (AI Camera & Mobile OS)</a>
-              <a href="#samsung-srv" class="company-name" title="SAMSUNG R&D INSTITUTE VIETNAM (SRV)">SAMSUNG R&D INSTITUTE VIETNAM (SRV)</a>
-            </div>
-          </div>
-
-          <div class="job-card-footer">
-            <div class="job-pills">
-              <span class="job-pill job-pill-salary">55 - 85 triệu</span>
-              <span class="job-pill job-pill-location">Hà Nội</span>
-            </div>
-            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
-              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            </button>
-          </div>
-        </article>
-
-        <!-- Card 3: FPT Software -->
-        <article class="job-card" data-category="all it">
-          <div class="job-card-header">
-            <div class="job-logo-wrapper" title="Công ty FPT Software tuyển dụng tại EasyCV">
-              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=120&h=120&q=80" alt="FPT Software" class="job-logo" title="Công ty FPT Software tuyển dụng tại EasyCV" />
-              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
-                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              </span>
-            </div>
-            <div class="job-content">
-              <a href="#job-fpt-frontend" class="job-title" title="Senior Frontend Engineer (ReactJS, Next.js, TypeScript)">Senior Frontend Engineer (ReactJS, Next.js, TypeScript)</a>
-              <a href="#fpt-software" class="company-name" title="FPT SOFTWARE">FPT SOFTWARE</a>
-            </div>
-          </div>
-
-          <div class="job-card-footer">
-            <div class="job-pills">
-              <span class="job-pill job-pill-salary">30 - 45 triệu</span>
-              <span class="job-pill job-pill-location">Hà Nội</span>
-            </div>
-            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
-              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            </button>
-          </div>
-        </article>
-
-        <!-- Card 4: VNG Corporation -->
-        <article class="job-card" data-category="all marketing">
-          <div class="job-card-header">
-            <div class="job-logo-wrapper" title="Công ty VNG Corporation tuyển dụng tại EasyCV">
-              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&h=120&q=80" alt="VNG Corporation" class="job-logo" title="Công ty VNG Corporation tuyển dụng tại EasyCV" />
-              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
-                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              </span>
-            </div>
-            <div class="job-content">
-              <a href="#job-vng-mkt" class="job-title" title="Trưởng nhóm Digital Marketing & Performance Ads">Trưởng nhóm Digital Marketing & Performance Ads</a>
-              <a href="#vng-corp" class="company-name" title="VNG CORPORATION">VNG CORPORATION</a>
-            </div>
-          </div>
-
-          <div class="job-card-footer">
-            <div class="job-pills">
-              <span class="job-pill job-pill-salary">28 - 40 triệu</span>
-              <span class="job-pill job-pill-location">TP.HCM</span>
-            </div>
-            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
-              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            </button>
-          </div>
-        </article>
-
-        <!-- Card 5: Techcombank -->
-        <article class="job-card" data-category="all finance it">
-          <div class="job-card-header">
-            <div class="job-logo-wrapper" title="Công ty Techcombank tuyển dụng tại EasyCV">
-              <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=120&h=120&q=80" alt="Techcombank" class="job-logo" title="Công ty Techcombank tuyển dụng tại EasyCV" />
-              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
-                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              </span>
-            </div>
-            <div class="job-content">
-              <a href="#job-tcb-analyst" class="job-title" title="Chuyên viên Cao cấp Phân tích Dữ liệu (Senior Data Analyst)">Chuyên viên Cao cấp Phân tích Dữ liệu (Senior Data Analyst)</a>
-              <a href="#techcombank" class="company-name" title="NGÂN HÀNG TMCP KỸ THƯƠNG VIỆT NAM">TECHCOMBANK</a>
-            </div>
-          </div>
-
-          <div class="job-card-footer">
-            <div class="job-pills">
-              <span class="job-pill job-pill-salary">35 - 55 triệu</span>
-              <span class="job-pill job-pill-location">Hà Nội</span>
-            </div>
-            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
-              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            </button>
-          </div>
-        </article>
-
-        <!-- Card 6: Viettel Digital -->
-        <article class="job-card" data-category="all sales">
-          <div class="job-card-header">
-            <div class="job-logo-wrapper" title="Công ty Viettel Digital tuyển dụng tại EasyCV">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=120&h=120&q=80" alt="Viettel Digital" class="job-logo" title="Công ty Viettel Digital tuyển dụng tại EasyCV" />
-              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
-                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              </span>
-            </div>
-            <div class="job-content">
-              <a href="#job-viettel-sales" class="job-title" title="Giám đốc Khách hàng Doanh nghiệp (B2B Account Manager)">Giám đốc Khách hàng Doanh nghiệp (B2B Account Manager)</a>
-              <a href="#viettel-digital" class="company-name" title="TỔNG CÔNG TY DỊCH VỤ SỐ VIETTEL">TỔNG CÔNG TY DỊCH VỤ SỐ VIETTEL</a>
-            </div>
-          </div>
-
-          <div class="job-card-footer">
-            <div class="job-pills">
-              <span class="job-pill job-pill-salary">25 - 50 triệu</span>
-              <span class="job-pill job-pill-location">Hà Nội & TP.HCM</span>
-            </div>
-            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
-              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            </button>
-          </div>
-        </article>
-
-        <!-- Card 7: Shopee Vietnam (Remote) -->
-        <article class="job-card" data-category="all it remote">
-          <div class="job-card-header">
-            <div class="job-logo-wrapper" title="Công ty Shopee Vietnam tuyển dụng tại EasyCV">
-              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=120&h=120&q=80" alt="Shopee Vietnam" class="job-logo" title="Công ty Shopee Vietnam tuyển dụng tại EasyCV" />
-              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
-                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              </span>
-            </div>
-            <div class="job-content">
-              <a href="#job-shopee-golang" class="job-title" title="Backend Engineer (Golang, Microservices, Distributed Systems)">Backend Engineer (Golang, Microservices, Cloud Systems)</a>
-              <a href="#shopee" class="company-name" title="SHOPEE VIETNAM">SHOPEE VIETNAM</a>
-            </div>
-          </div>
-
-          <div class="job-card-footer">
-            <div class="job-pills">
-              <span class="job-pill job-pill-salary">1,800 - 3,200 USD</span>
-              <span class="job-pill job-pill-location">Toàn quốc (Remote)</span>
-            </div>
-            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
-              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            </button>
-          </div>
-        </article>
-
-        <!-- Card 8: VinAI Research -->
-        <article class="job-card" data-category="all it">
-          <div class="job-card-header">
-            <div class="job-logo-wrapper" title="Công ty VinAI Research tuyển dụng tại EasyCV">
-              <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=120&h=120&q=80" alt="VinAI Research" class="job-logo" title="Công ty VinAI Research tuyển dụng tại EasyCV" />
-              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
-                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              </span>
-            </div>
-            <div class="job-content">
-              <a href="#job-vinai-ml" class="job-title" title="AI Research Scientist / Computer Vision Specialist">AI Research Scientist / Computer Vision Specialist</a>
-              <a href="#vinai" class="company-name" title="VINAI RESEARCH">VINAI RESEARCH</a>
-            </div>
-          </div>
-
-          <div class="job-card-footer">
-            <div class="job-pills">
-              <span class="job-pill job-pill-salary">40 - 75 triệu</span>
-              <span class="job-pill job-pill-location">Hà Nội</span>
-            </div>
-            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
-              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            </button>
-          </div>
-        </article>
-
-        <!-- Card 9: MB Bank -->
-        <article class="job-card" data-category="all finance it">
-          <div class="job-card-header">
-            <div class="job-logo-wrapper" title="Công ty MB Bank tuyển dụng tại EasyCV">
-              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=120&h=120&q=80" alt="MB Bank" class="job-logo" title="Công ty MB Bank tuyển dụng tại EasyCV" />
-              <span class="badge-lightning" title="Ưu tiên tuyển dụng">
-                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              </span>
-            </div>
-            <div class="job-content">
-              <a href="#job-mb-uiux" class="job-title" title="Senior UI/UX Designer (Design System & App Banking)">Senior UI/UX Designer (Design System & App Banking)</a>
-              <a href="#mbbank" class="company-name" title="NGÂN HÀNG TMCP QUÂN ĐỘI (MB BANK)">NGÂN HÀNG QUÂN ĐỘI (MB BANK)</a>
-            </div>
-          </div>
-
-          <div class="job-card-footer">
-            <div class="job-pills">
-              <span class="job-pill job-pill-salary">25 - 40 triệu</span>
-              <span class="job-pill job-pill-location">Hà Nội</span>
-            </div>
-            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
-              <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            </button>
-          </div>
-        </article>
-
+      <!-- Jobs Grid: Tối đa 3 cột x 4 hàng (12 thẻ / trang) -->
+      <div class="jobs-grid" id="featuredJobsGrid" aria-live="polite">
+        <!-- Được khởi tạo và render động bởi JavaScript (có fallback tĩnh bảo toàn SEO) -->
       </div>
+
+      <!-- Thanh điều hướng phân trang 10s (Auto-pagination 10s kèm timer progress) -->
+      <div class="featured-jobs-footer-bar" id="featuredJobsFooterBar">
+        <div class="featured-jobs-pagination-controls" id="featuredPaginationControls">
+          <!-- Render các nút số trang và prev/next -->
+        </div>
+        <div class="auto-page-timer-indicator" id="autoPageTimerIndicator" title="Tự động chuyển trang sau 10 giây (Tạm dừng khi rê chuột vào danh sách)">
+          <span class="timer-label">Tự động chuyển trang sau 10s:</span>
+          <div class="auto-page-progress-track">
+            <div class="auto-page-progress-fill" id="autoPageProgressFill"></div>
+          </div>
+          <span class="timer-hint">(Tạm dừng khi rê chuột)</span>
+        </div>
+      </div>
+
     </div>
   </section>
+
+  <!-- POPUP PREVIEW FLOATING CARD KHI HOVER VÀO TÊN JOB -->
+  <div id="jobPreviewPopup" class="job-preview-popover" role="tooltip" aria-hidden="true">
+    <!-- Nội dung được cập nhật động bằng JavaScript khi hover vào job-title -->
+  </div>
 
   <!-- =========================================================================
        VÙNG 2: VIỆC LÀM HẤP DẪN (Attractive / High Perks & Best Salary Jobs)

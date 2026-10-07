@@ -34,6 +34,63 @@
     .badge-ai-match {
       display: none !important;
     }
+    /* Logo công ty to rõ ràng (100x100px) */
+    .job-company-logo {
+      width: 100px !important;
+      height: 100px !important;
+      min-width: 100px !important;
+      min-height: 100px !important;
+      border-radius: 12px !important;
+      padding: 6px !important;
+    }
+    /* Khi hover: ẨN thời gian đăng tin, HIỆN nút Ứng tuyển */
+    .job-card:hover .job-meta-unhovered,
+    .job-card.is-hovered .job-meta-unhovered {
+      display: none !important;
+    }
+    .job-card:hover .job-actions-hovered,
+    .job-card.is-hovered .job-actions-hovered {
+      display: flex !important;
+    }
+    /* Nút Ứng tuyển to rõ, nổi bật chuẩn nhận diện EasyCV */
+    .btn-card-apply {
+      height: 36px !important;
+      padding: 0 22px !important;
+      font-size: 13.5px !important;
+      font-weight: 700 !important;
+      background: linear-gradient(135deg, #FF8A34 0%, #F97316 100%) !important;
+      color: #FFFFFF !important;
+      border-radius: 9999px !important;
+      box-shadow: 0 3px 10px rgba(249, 115, 22, 0.32) !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    .btn-card-apply:hover {
+      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%) !important;
+      box-shadow: 0 5px 14px rgba(249, 115, 22, 0.45) !important;
+    }
+    .btn-card-hide,
+    .btn-card-bookmark {
+      width: 36px !important;
+      height: 36px !important;
+    }
+    /* Logo công ty trong tab VIP Employer Showcase to nổi bật hẳn (88x88px) */
+    .vip-employer-cover {
+      height: 120px !important;
+    }
+    .vip-employer-logo-wrap {
+      width: 88px !important;
+      height: 88px !important;
+      bottom: -38px !important;
+      left: 18px !important;
+      border-radius: 16px !important;
+      border: 3.5px solid #FFFFFF !important;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18) !important;
+    }
+    .vip-employer-body {
+      padding-top: 46px !important;
+    }
     /* Thanh menu không neo cố định khi cuộn màn hình trên trang tìm kiếm việc làm */
     .site-header {
       position: relative !important;
@@ -1144,7 +1201,7 @@
           <!-- Result Stat Count -->
           <div class="listings-sub-header">
             <div class="result-stat-text">
-              Tìm thấy <strong id="jobCountText">28</strong> việc làm đang tuyển dụng
+              Tìm thấy <strong id="jobCountText">28</strong> việc làm đang tuyển dụng phù hợp
             </div>
             <!-- Sắp xếp theo (TopCV Style) -->
             <div class="top-filter-sort-group">
