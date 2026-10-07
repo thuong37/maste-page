@@ -1281,13 +1281,40 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!locMatch) return false;
     }
     if (searchState.category && job.category !== searchState.category) return false;
-    if (searchState.level && job.level !== searchState.level) return false;
-    if (searchState.salary && !matchSalaryTier(job, searchState.salary)) return false;
-    if (searchState.exp && job.exp !== searchState.exp) return false;
-    if (searchState.type && job.type !== searchState.type) return false;
-    if (searchState.saturday && job.saturday !== searchState.saturday) return false;
+    // Bộ lọc chọn nhiều ("intern,junior"): khớp bất kỳ giá trị nào trong cùng tiêu chí
+    if (searchState.level && !parseMultiValue(searchState.level).includes(job.level)) return false;
+    if (searchState.salary && !parseMultiValue(searchState.salary).some(tier => matchSalaryTier(job, tier))) return false;
+    if (searchState.exp && !parseMultiValue(searchState.exp).includes(job.exp)) return false;
+    if (searchState.type && !parseMultiValue(searchState.type).includes(job.type)) return false;
+    if (searchState.saturday && !parseMultiValue(searchState.saturday).includes(job.saturday)) return false;
     return true;
   }
+
+  function parseMultiValue(value) {
+    return [...new Set(String(value || '').split(',').map(part => part.trim()).filter(Boolean))];
+  }
+
+  // Bộ lọc tiêu chí trên trang chi tiết (chi-tiet-filter.js) đổi → lọc lại danh sách bên trái ngay tại chỗ
+  document.addEventListener('easycv:detail-filters-change', (e) => {
+    const filters = e.detail || {};
+    ['exp', 'salary', 'level', 'type', 'saturday'].forEach(key => {
+      const value = parseMultiValue(filters[key]).join(',');
+      if (value) searchState[key] = value;
+      else delete searchState[key];
+    });
+    relatedJobsCache = null;
+    renderList({ focusActive: true });
+
+    // Cập nhật URL (giữ id/title của job đang xem) để tải lại / chia sẻ / quay về danh sách vẫn đúng bộ lọc
+    if (window.history && window.history.replaceState) {
+      const currentUrl = new URL(window.location.href);
+      ['exp', 'salary', 'level', 'type', 'saturday'].forEach(key => {
+        if (searchState[key]) currentUrl.searchParams.set(key, searchState[key]);
+        else currentUrl.searchParams.delete(key);
+      });
+      window.history.replaceState(window.history.state, '', currentUrl.toString());
+    }
+  });
 
   function sortLikeJobList(jobs) {
     const sortVal = searchState.sort || 'relevant';

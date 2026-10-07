@@ -72,16 +72,91 @@
     }
   }
 
+  // CHỌN NHIỀU (đồng bộ viec-lam.js): giá trị nối dấu phẩy "intern,junior"; OR trong 1 tiêu chí, AND giữa các tiêu chí
+  var MULTI_FILTER_TYPES = ['exp', 'salary', 'level', 'type', 'saturday'];
+  var CHECK_ICON_SVG = '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>';
+
+  function parseMultiValue(value) {
+    var seen = {};
+    return String(value || '').split(',').map(function(p) { return p.trim(); }).filter(function(p) {
+      if (!p || seen[p]) return false;
+      seen[p] = true;
+      return true;
+    });
+  }
+
+  function getFilterValue(type) {
+    if (type === 'exp') return selectedExp;
+    if (type === 'salary') return selectedSalary;
+    if (type === 'level') return selectedLevel;
+    if (type === 'type') return selectedType;
+    if (type === 'saturday') return selectedSaturday;
+    return '';
+  }
+
+  function setFilterValue(type, value) {
+    var joined = parseMultiValue(value).join(',');
+    if (type === 'exp') selectedExp = joined;
+    else if (type === 'salary') selectedSalary = joined;
+    else if (type === 'level') selectedLevel = joined;
+    else if (type === 'type') selectedType = joined;
+    else if (type === 'saturday') selectedSaturday = joined;
+  }
+
+  function getFilterOptionLabel(type, value) {
+    var menu = document.getElementById('ct' + cap(type) + 'DropdownMenu');
+    var option = null;
+    if (menu) {
+      menu.querySelectorAll('.dropdown-item').forEach(function(i) {
+        if ((i.getAttribute('data-value') || '') === value) option = i;
+      });
+    }
+    if (!option) return value;
+    return option.getAttribute('data-label') || (option.querySelector('span') ? option.querySelector('span').textContent.trim() : value);
+  }
+
+  // Không chọn gì → tích "Tất cả …"; có chọn → tích từng mục đã chọn
+  function syncFilterDropdownSelection(type) {
+    var values = parseMultiValue(getFilterValue(type));
+    var menu = document.getElementById('ct' + cap(type) + 'DropdownMenu');
+    if (!menu) return;
+    menu.querySelectorAll('.dropdown-item').forEach(function(i) {
+      var itemValue = i.getAttribute('data-value') || '';
+      var isSelected = itemValue ? values.indexOf(itemValue) !== -1 : values.length === 0;
+      i.classList.toggle('is-selected', isSelected);
+      i.setAttribute('aria-checked', isSelected ? 'true' : 'false');
+      var chk = i.querySelector('.check-icon');
+      if (isSelected && !chk) i.insertAdjacentHTML('beforeend', CHECK_ICON_SVG);
+      else if (!isSelected && chk) chk.remove();
+    });
+  }
+
+  // Báo cho chi-tiet-viec-lam.js lọc lại danh sách bên trái ngay trên trang (không chuyển trang)
+  function notifyDetailFiltersChanged() {
+    document.dispatchEvent(new CustomEvent('easycv:detail-filters-change', {
+      detail: { exp: selectedExp, salary: selectedSalary, level: selectedLevel, type: selectedType, saturday: selectedSaturday }
+    }));
+  }
+
+  // Nhãn pill: 0 lựa chọn → tên tiêu chí; 1 → tên lựa chọn; ≥2 → "Cấp bậc (2)"
   function updateFilterPillUI(type, value, label) {
     var btn = document.getElementById('ct' + cap(type) + 'FilterBtn');
     var labelSpan = document.getElementById('ct' + cap(type) + 'FilterLabel');
     if (!btn || !labelSpan) return;
-    if (value) {
-      btn.classList.add('is-active');
-      labelSpan.textContent = label;
-    } else {
+    var defaultLabel = FILTER_DEFAULT_LABELS[type] || 'Bộ lọc';
+    var values = MULTI_FILTER_TYPES.indexOf(type) !== -1 ? parseMultiValue(value) : (value ? [value] : []);
+    if (values.length === 0) {
       btn.classList.remove('is-active');
-      labelSpan.textContent = FILTER_DEFAULT_LABELS[type] || 'Bộ lọc';
+      labelSpan.textContent = defaultLabel;
+      btn.removeAttribute('title');
+    } else if (values.length === 1) {
+      btn.classList.add('is-active');
+      labelSpan.textContent = MULTI_FILTER_TYPES.indexOf(type) !== -1 ? getFilterOptionLabel(type, values[0]) : label;
+      btn.title = defaultLabel + ': ' + labelSpan.textContent;
+    } else {
+      btn.classList.add('is-active');
+      labelSpan.textContent = defaultLabel + ' (' + values.length + ')';
+      btn.title = defaultLabel + ': ' + values.map(function(v) { return getFilterOptionLabel(type, v); }).join(', ');
     }
   }
 
@@ -98,25 +173,13 @@
 
   function resetAllTopFilters() {
     selectedExp = ''; selectedSalary = ''; selectedLevel = ''; selectedType = ''; selectedSaturday = '';
-    ['exp', 'salary', 'level', 'type', 'saturday'].forEach(function(type) {
+    MULTI_FILTER_TYPES.forEach(function(type) {
       updateFilterPillUI(type, '', '');
-      var menu = document.getElementById('ct' + cap(type) + 'DropdownMenu');
-      if (menu) {
-        menu.querySelectorAll('.dropdown-item').forEach(function(i) {
-          i.classList.remove('is-selected');
-          var chk = i.querySelector('.check-icon');
-          if (chk) chk.remove();
-          if (i.getAttribute('data-value') === '') {
-            i.classList.add('is-selected');
-            if (!i.querySelector('.check-icon')) {
-              i.insertAdjacentHTML('beforeend', '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>');
-            }
-          }
-        });
-      }
+      syncFilterDropdownSelection(type);
     });
     syncClearBtnVisibility();
     closeAllFilterDropdowns();
+    notifyDetailFiltersChanged();
   }
 
   // Giữ nguyên trạng thái tìm kiếm khác (địa điểm, danh mục, lĩnh vực, sắp xếp) mà trang Việc làm đã truyền sang
@@ -430,29 +493,21 @@
           return;
         }
 
-        if (type === 'exp') selectedExp = value;
-        else if (type === 'salary') selectedSalary = value;
-        else if (type === 'level') selectedLevel = value;
-        else if (type === 'type') selectedType = value;
-        else if (type === 'saturday') selectedSaturday = value;
+        if (MULTI_FILTER_TYPES.indexOf(type) === -1) return;
 
-        var menu = item.closest('.filter-dropdown-menu');
-        if (menu) {
-          menu.querySelectorAll('.dropdown-item').forEach(function(i) {
-            i.classList.remove('is-selected');
-            var chk = i.querySelector('.check-icon');
-            if (chk) chk.remove();
-          });
-        }
-        item.classList.add('is-selected');
-        item.insertAdjacentHTML('beforeend', '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>');
-
-        updateFilterPillUI(type, value, label);
+        // Bấm để bật/tắt từng lựa chọn, menu giữ mở để chọn tiếp; "Tất cả …" bỏ hết lựa chọn
+        var current = parseMultiValue(getFilterValue(type));
+        var next = !value ? [] : (current.indexOf(value) !== -1
+          ? current.filter(function(v) { return v !== value; })
+          : current.concat([value]));
+        setFilterValue(type, next.join(','));
+        syncFilterDropdownSelection(type);
+        updateFilterPillUI(type, getFilterValue(type), label);
         syncClearBtnVisibility();
         updateSavedFilterCurrentState();
-        closeAllFilterDropdowns();
-        showToast('Đã chọn ' + (FILTER_DEFAULT_LABELS[type] || type) + ': ' + (value ? label : 'Tất cả'), '✓');
-        setTimeout(navigateToJobList, 700);
+        notifyDetailFiltersChanged();
+        var summary = next.length ? next.map(function(v) { return getFilterOptionLabel(type, v); }).join(', ') : 'Tất cả';
+        showToast('Đã lọc theo ' + (FILTER_DEFAULT_LABELS[type] || type) + ': ' + summary, '✓');
       });
     });
 
@@ -479,34 +534,12 @@
     initTopFilterBar();
     initSavedFiltersPanel();
     var params = new URLSearchParams(window.location.search);
-    ['exp', 'salary', 'level', 'type', 'saturday'].forEach(function(key) {
-      var val = params.get(key);
-      if (val) {
-        if (key === 'exp') selectedExp = val;
-        if (key === 'salary') selectedSalary = val;
-        if (key === 'level') selectedLevel = val;
-        if (key === 'type') selectedType = val;
-        if (key === 'saturday') selectedSaturday = val;
-      }
+    MULTI_FILTER_TYPES.forEach(function(key) {
+      // Hỗ trợ ?level=intern,junior hoặc lặp tham số ?level=intern&level=junior
+      setFilterValue(key, params.getAll(key).join(','));
       // Hiển thị đúng nhãn + dấu tích của lựa chọn hiện tại (giống syncStateFromUrl() của viec-lam.js)
-      var value = val || '';
-      var menu = document.getElementById('ct' + cap(key) + 'DropdownMenu');
-      var selectedItem = null;
-      if (menu) {
-        menu.querySelectorAll('.dropdown-item').forEach(function(i) {
-          var isMatch = (i.getAttribute('data-value') || '') === value;
-          i.classList.toggle('is-selected', isMatch);
-          var chk = i.querySelector('.check-icon');
-          if (isMatch && !chk) {
-            i.insertAdjacentHTML('beforeend', '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>');
-          } else if (!isMatch && chk) {
-            chk.remove();
-          }
-          if (isMatch) selectedItem = i;
-        });
-      }
-      var label = selectedItem ? (selectedItem.getAttribute('data-label') || (selectedItem.querySelector('span') ? selectedItem.querySelector('span').textContent.trim() : value)) : value;
-      updateFilterPillUI(key, value, label);
+      syncFilterDropdownSelection(key);
+      updateFilterPillUI(key, getFilterValue(key), '');
     });
     syncClearBtnVisibility();
   }

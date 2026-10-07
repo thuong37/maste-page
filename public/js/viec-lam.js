@@ -1185,6 +1185,55 @@ document.addEventListener('DOMContentLoaded', () => {
     saturday: 'Nghỉ thứ 7'
   };
 
+  // -------------------------------------------------------------------------
+  // CHỌN NHIỀU cho 5 bộ lọc tiêu chí: giá trị lưu dạng chuỗi nối dấu phẩy ("intern,junior")
+  // → URL, bộ lọc đã lưu và link sang trang chi tiết dùng lại nguyên cơ chế cũ.
+  // Trong cùng 1 tiêu chí: khớp BẤT KỲ giá trị nào (OR); giữa các tiêu chí: AND.
+  // -------------------------------------------------------------------------
+  const MULTI_FILTER_TYPES = ['exp', 'salary', 'level', 'type', 'saturday'];
+  const CHECK_ICON_SVG = '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>';
+
+  function parseMultiValue(value) {
+    return [...new Set(String(value || '').split(',').map(part => part.trim()).filter(Boolean))];
+  }
+
+  function getFilterValue(type) {
+    if (type === 'exp') return selectedExp;
+    if (type === 'salary') return selectedSalary;
+    if (type === 'level') return selectedLevel;
+    if (type === 'type') return selectedType;
+    if (type === 'saturday') return selectedSaturday;
+    return '';
+  }
+
+  function setFilterValue(type, value) {
+    const joined = parseMultiValue(value).join(',');
+    if (type === 'exp') selectedExp = joined;
+    else if (type === 'salary') selectedSalary = joined;
+    else if (type === 'level') selectedLevel = joined;
+    else if (type === 'type') selectedType = joined;
+    else if (type === 'saturday') selectedSaturday = joined;
+  }
+
+  function getFilterOptionLabel(type, value) {
+    const option = document.querySelector(`.dropdown-item[data-type="${type}"][data-value="${CSS.escape(value)}"]`);
+    return option?.getAttribute('data-label') || option?.querySelector('span')?.textContent.trim() || value;
+  }
+
+  // Đánh dấu các lựa chọn trong menu: không chọn gì → "Tất cả …"; có chọn → tích từng mục
+  function syncFilterDropdownSelection(type) {
+    const values = parseMultiValue(getFilterValue(type));
+    document.querySelectorAll(`.dropdown-item[data-type="${type}"]`).forEach(item => {
+      const itemValue = item.getAttribute('data-value') || '';
+      const isSelected = itemValue ? values.includes(itemValue) : values.length === 0;
+      item.classList.toggle('is-selected', isSelected);
+      item.setAttribute('aria-checked', isSelected ? 'true' : 'false');
+      const icon = item.querySelector('.check-icon');
+      if (isSelected && !icon) item.insertAdjacentHTML('beforeend', CHECK_ICON_SVG);
+      else if (!isSelected && icon) icon.remove();
+    });
+  }
+
   // Saved filter dialog elements
   const savedFiltersTrigger = document.getElementById('savedFiltersTrigger');
   const savedFiltersDialog = document.getElementById('savedFiltersDialog');
@@ -1269,9 +1318,14 @@ document.addEventListener('DOMContentLoaded', () => {
     SAVED_FILTER_PARAM_KEYS.forEach(key => {
       const rawValue = candidate[key];
       if (typeof rawValue !== 'string') return;
-      const value = rawValue.trim().slice(0, 200);
+      let value = rawValue.trim().slice(0, 200);
       if (!value) return;
-      if (SAVED_FILTER_VALUE_SETS[key] && !SAVED_FILTER_VALUE_SETS[key].has(value)) return;
+      if (SAVED_FILTER_VALUE_SETS[key]) {
+        // Bộ lọc chọn nhiều: mọi giá trị con phải hợp lệ
+        const parts = parseMultiValue(value);
+        if (parts.length === 0 || !parts.every(part => SAVED_FILTER_VALUE_SETS[key].has(part))) return;
+        value = parts.join(',');
+      }
       sanitized[key] = value;
     });
     return sanitized;
@@ -1357,8 +1411,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     let displayValue = value;
     if (SAVED_FILTER_VALUE_SETS[key]) {
-      const option = document.querySelector(`.dropdown-item[data-type="${key}"][data-value="${CSS.escape(value)}"]`);
-      displayValue = option?.getAttribute('data-label') || option?.querySelector('span')?.textContent.trim() || value;
+      displayValue = parseMultiValue(value).map(part => getFilterOptionLabel(key, part)).join(', ');
     } else if (key === 'category' && categorySelect) {
       displayValue = categorySelect.querySelector(`option[value="${CSS.escape(value)}"]`)?.textContent.trim() || value;
     }
@@ -1741,28 +1794,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // 5. Cấp bậc (Top Filter Bar)
-      if (isMatch && filterLevel && job.level !== filterLevel) {
+      // 5–9. Bộ lọc tiêu chí chọn nhiều (Top Filter Bar): khớp bất kỳ giá trị đã chọn trong cùng tiêu chí
+      // 5. Cấp bậc
+      if (isMatch && filterLevel && !parseMultiValue(filterLevel).includes(job.level)) {
         isMatch = false;
       }
 
-      // 6. Mức lương (Top Filter Bar)
-      if (isMatch && filterSalary && !matchSalaryTier(job, filterSalary)) {
+      // 6. Mức lương
+      if (isMatch && filterSalary && !parseMultiValue(filterSalary).some(tier => matchSalaryTier(job, tier))) {
         isMatch = false;
       }
 
-      // 7. Kinh nghiệm (Top Filter Bar)
-      if (isMatch && filterExp && job.exp !== filterExp) {
+      // 7. Kinh nghiệm
+      if (isMatch && filterExp && !parseMultiValue(filterExp).includes(job.exp)) {
         isMatch = false;
       }
 
-      // 8. Hình thức (Top Filter Bar)
-      if (isMatch && filterType && job.type !== filterType) {
+      // 8. Hình thức
+      if (isMatch && filterType && !parseMultiValue(filterType).includes(job.type)) {
         isMatch = false;
       }
 
-      // 9. Chế độ làm việc thứ 7 (Top Filter Bar)
-      if (isMatch && filterSaturday && job.saturday !== filterSaturday) {
+      // 9. Chế độ làm việc thứ 7
+      if (isMatch && filterSaturday && !parseMultiValue(filterSaturday).includes(job.saturday)) {
         isMatch = false;
       }
 
@@ -2535,17 +2589,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Nhãn pill: 0 lựa chọn → tên tiêu chí; 1 lựa chọn → tên lựa chọn; ≥2 → "Cấp bậc (2)"
   function updateFilterPillUI(type, value, label) {
     const btn = document.getElementById(`${type}FilterBtn`);
     const labelSpan = document.getElementById(`${type}FilterLabel`);
     if (!btn || !labelSpan) return;
 
-    if (value) {
-      btn.classList.add('is-active');
-      labelSpan.textContent = label;
-    } else {
+    const values = MULTI_FILTER_TYPES.includes(type) ? parseMultiValue(value) : (value ? [value] : []);
+    const defaultLabel = FILTER_DEFAULT_LABELS[type] || 'Bộ lọc';
+    if (values.length === 0) {
       btn.classList.remove('is-active');
-      labelSpan.textContent = FILTER_DEFAULT_LABELS[type] || 'Bộ lọc';
+      labelSpan.textContent = defaultLabel;
+      btn.removeAttribute('title');
+    } else if (values.length === 1) {
+      btn.classList.add('is-active');
+      labelSpan.textContent = MULTI_FILTER_TYPES.includes(type) ? getFilterOptionLabel(type, values[0]) : label;
+      btn.title = `${defaultLabel}: ${labelSpan.textContent}`;
+    } else {
+      btn.classList.add('is-active');
+      labelSpan.textContent = `${defaultLabel} (${values.length})`;
+      btn.title = `${defaultLabel}: ${values.map(v => getFilterOptionLabel(type, v)).join(', ')}`;
     }
   }
 
@@ -2580,19 +2643,9 @@ document.addEventListener('DOMContentLoaded', () => {
     selectedType = '';
     selectedSaturday = '';
 
-    ['exp', 'salary', 'level', 'type', 'saturday'].forEach(type => {
+    MULTI_FILTER_TYPES.forEach(type => {
       updateFilterPillUI(type, '', '');
-      document.querySelectorAll(`.dropdown-item[data-type="${type}"]`).forEach(item => {
-        if (item.getAttribute('data-value') === '') {
-          item.classList.add('is-selected');
-          if (!item.querySelector('.check-icon')) {
-            item.insertAdjacentHTML('beforeend', '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>');
-          }
-        } else {
-          item.classList.remove('is-selected');
-          item.querySelector('.check-icon')?.remove();
-        }
-      });
+      syncFilterDropdownSelection(type);
     });
 
     renderActiveFilterChips();
@@ -2678,6 +2731,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const value = item.getAttribute('data-value') || '';
         const label = item.getAttribute('data-label') || item.querySelector('span')?.textContent.trim() || '';
 
+        // Bộ lọc tiêu chí: bấm để bật/tắt từng lựa chọn, menu giữ mở để chọn tiếp
+        if (MULTI_FILTER_TYPES.includes(type)) {
+          const current = parseMultiValue(getFilterValue(type));
+          const next = !value ? [] : (current.includes(value) ? current.filter(v => v !== value) : [...current, value]);
+          setFilterValue(type, next.join(','));
+          syncFilterDropdownSelection(type);
+          updateFilterPillUI(type, getFilterValue(type), label);
+          renderActiveFilterChips();
+          applyJobFilters(true, true);
+          const summary = next.length ? next.map(v => getFilterOptionLabel(type, v)).join(', ') : 'Tất cả';
+          showToast(`Đã lọc theo ${FILTER_DEFAULT_LABELS[type]}: ${summary}`, '✓');
+          return;
+        }
+
         if (type === 'exp') selectedExp = value;
         else if (type === 'salary') selectedSalary = value;
         else if (type === 'level') selectedLevel = value;
@@ -2727,18 +2794,7 @@ document.addEventListener('DOMContentLoaded', () => {
       else if (clearType === 'saturday') selectedSaturday = '';
 
       updateFilterPillUI(clearType, '', '');
-      const menu = document.getElementById(`${clearType}DropdownMenu`);
-      menu?.querySelectorAll('.dropdown-item').forEach(i => {
-        if (i.getAttribute('data-value') === '') {
-          i.classList.add('is-selected');
-          if (!i.querySelector('.check-icon')) {
-            i.insertAdjacentHTML('beforeend', '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>');
-          }
-        } else {
-          i.classList.remove('is-selected');
-          i.querySelector('.check-icon')?.remove();
-        }
-      });
+      syncFilterDropdownSelection(clearType);
 
       renderActiveFilterChips();
       applyJobFilters(true, true);
@@ -4135,30 +4191,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const typeParam = urlParams.get('type') || '';
     const saturdayParam = urlParams.get('saturday') || '';
 
-    selectedExp = expParam;
-    selectedSalary = salaryParam;
-    selectedLevel = levelParam;
-    selectedType = typeParam;
-    selectedSaturday = saturdayParam;
+    // Hỗ trợ chọn nhiều: ?level=intern,junior (hoặc lặp tham số ?level=intern&level=junior)
+    const readMultiParam = key => parseMultiValue(urlParams.getAll(key).join(',')).join(',');
+    setFilterValue('exp', readMultiParam('exp') || expParam);
+    setFilterValue('salary', readMultiParam('salary') || salaryParam);
+    setFilterValue('level', readMultiParam('level') || levelParam);
+    setFilterValue('type', readMultiParam('type') || typeParam);
+    setFilterValue('saturday', readMultiParam('saturday') || saturdayParam);
 
-    ['exp', 'salary', 'level', 'type', 'saturday'].forEach(t => {
-      const val = t === 'exp' ? selectedExp : t === 'salary' ? selectedSalary : t === 'level' ? selectedLevel : t === 'type' ? selectedType : selectedSaturday;
-      const item = document.querySelector(`.dropdown-item[data-type="${t}"][data-value="${val}"]`);
-      const label = item ? (item.getAttribute('data-label') || item.querySelector('span')?.textContent.trim()) : val;
-      updateFilterPillUI(t, val, label);
-
-      const menu = document.getElementById(`${t}DropdownMenu`);
-      menu?.querySelectorAll('.dropdown-item').forEach(i => {
-        if (i.getAttribute('data-value') === val) {
-          i.classList.add('is-selected');
-          if (!i.querySelector('.check-icon')) {
-            i.insertAdjacentHTML('beforeend', '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>');
-          }
-        } else {
-          i.classList.remove('is-selected');
-          i.querySelector('.check-icon')?.remove();
-        }
-      });
+    MULTI_FILTER_TYPES.forEach(t => {
+      updateFilterPillUI(t, getFilterValue(t), '');
+      syncFilterDropdownSelection(t);
     });
 
     renderActiveFilterChips();
