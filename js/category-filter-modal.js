@@ -1,7 +1,7 @@
 /**
  * EasyCV - Category Filter Modal (Danh mục Nghề) Controller
  * Faithfully mirrors the reference job category filter while retaining
- * EasyCV's signature orange theme (#F97316) and design architecture.
+ * EasyCV's signature orange theme (#FF6500) and design architecture.
  */
 
 (function () {
@@ -1107,9 +1107,9 @@
       if (results.length === 0) {
         container.innerHTML = `
           <div class="category-search-empty">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
-            <div style="font-weight: 700; color: #334155; margin-top: 12px; font-size: 15px;">Không tìm thấy ngành nghề phù hợp với "${query}"</div>
-            <p style="color: #64748B; font-size: 13.5px; margin-top: 6px;">Vui lòng thử lại với các từ khóa phổ biến: "Sale", "Marketing", "Frontend", "Kế toán"...</p>
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#B0B0B0" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+            <div style="font-weight: 700; color: #333333; margin-top: 12px; font-size: 15px;">Không tìm thấy ngành nghề phù hợp với "${query}"</div>
+            <p style="color: #545454; font-size: 13.5px; margin-top: 6px;">Vui lòng thử lại với các từ khóa phổ biến: "Sale", "Marketing", "Frontend", "Kế toán"...</p>
           </div>
         `;
         if (this.scrollHintEl) this.scrollHintEl.classList.add('is-hidden');

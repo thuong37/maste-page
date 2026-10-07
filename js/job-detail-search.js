@@ -616,7 +616,6 @@
             `}
             <span class="kw-suggest-text" title="${escapeHtml(item.label)}">${highlightMatch(item.label, query)}</span>
           </div>
-          <span class="kw-suggest-badge is-${item.type}">${item.type === 'company' ? 'Công ty' : 'Việc làm'}</span>
         `;
         bindSearchAction(row, item.searchKey || item.keyword);
         keywordList.appendChild(row);

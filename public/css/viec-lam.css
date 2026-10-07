@@ -16,8 +16,8 @@
 
 /* --- Search Hero Section --- */
 .job-search-hero {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FFF7ED 50%, #F8FAFC 100%);
-  border-bottom: 1px solid #E2E8F0;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF0E6 50%, #F8FAFC 100%);
+  border-bottom: 1px solid #E6E6E6;
   padding: 32px 0 0 0;
 }
 
@@ -34,45 +34,45 @@
   align-items: center;
   gap: 8px;
   font-size: 13.5px;
-  color: #64748B;
+  color: #545454;
   margin-bottom: 16px;
 }
 
 .breadcrumb-nav a {
-  color: #64748B;
+  color: #545454;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .breadcrumb-nav a:hover {
-  color: var(--color-orange-500, #F97316);
+  color: var(--color-orange-500, #FF6500);
 }
 
 .breadcrumb-nav .sep {
   font-size: 11px;
-  color: #94A3B8;
+  color: #8A8A8A;
 }
 
 .breadcrumb-nav .current {
-  color: #0F172A;
+  color: #060E18;
   font-weight: 600;
 }
 
 .job-search-title {
   font-size: 28px;
   font-weight: 800;
-  color: #0F172A;
+  color: #060E18;
   letter-spacing: -0.02em;
   margin: 0 0 8px 0;
 }
 
 .job-search-title .text-orange {
-  color: #F97316;
+  color: #FF6500;
 }
 
 .job-search-subtitle {
   font-size: 14.5px;
-  color: #64748B;
+  color: #545454;
   margin: 0 0 20px 0;
 }
 
@@ -104,8 +104,8 @@
   -webkit-backdrop-filter: blur(16px);
   padding: 10px 0 4px;
   box-sizing: border-box;
-  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.1), 0 1px 0 rgba(249, 115, 22, 0.15);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 10px 30px -5px rgba(6, 14, 24, 0.1), 0 1px 0 rgba(255, 101, 0, 0.15);
+  border-bottom: 1px solid rgba(230, 230, 230, 0.9);
   animation: slideDownStickyBar 0.24s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -114,7 +114,7 @@
   max-width: var(--container-max-width, 1250px);
   width: calc(100% - 40px);
   margin: 0 auto;
-  box-shadow: 0 6px 24px -2px rgba(249, 115, 22, 0.24), 0 0 0 3px rgba(249, 115, 22, 0.1);
+  box-shadow: 0 6px 24px -2px rgba(255, 101, 0, 0.24), 0 0 0 3px rgba(255, 101, 0, 0.1);
 }
 
 .hero-search-sticky-bar.is-sticky .search-suggest-dropdown {
@@ -127,9 +127,9 @@
 }
 
 [data-theme="dark"] .hero-search-sticky-bar.is-sticky {
-  background: rgba(15, 23, 42, 0.96);
-  border-bottom: 1px solid rgba(51, 65, 85, 0.8);
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(249, 115, 22, 0.25);
+  background: rgba(6, 14, 24, 0.96);
+  border-bottom: 1px solid rgba(51, 51, 51, 0.8);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 101, 0, 0.25);
 }
 
 @keyframes slideDownStickyBar {
@@ -146,9 +146,9 @@
 .hero-search-box,
 .job-search-box {
   background: #FFFFFF;
-  border: 1.5px solid #F97316;
+  border: 1.5px solid #FF6500;
   border-radius: 14px;
-  box-shadow: 0 4px 20px -2px rgba(249, 115, 22, 0.16), 0 2px 6px -1px rgba(15, 23, 42, 0.06), 0 0 0 3px rgba(249, 115, 22, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(255, 101, 0, 0.16), 0 2px 6px -1px rgba(6, 14, 24, 0.06), 0 0 0 3px rgba(255, 101, 0, 0.08);
   height: 60px;
   min-height: 60px;
   padding: 5px 6px;
@@ -163,14 +163,14 @@
 
 .hero-search-box:hover,
 .job-search-box:hover {
-  border-color: #EA580C;
-  box-shadow: 0 6px 24px -2px rgba(249, 115, 22, 0.22), 0 0 0 4px rgba(249, 115, 22, 0.12);
+  border-color: #E85C00;
+  box-shadow: 0 6px 24px -2px rgba(255, 101, 0, 0.22), 0 0 0 4px rgba(255, 101, 0, 0.12);
 }
 
 .hero-search-box:focus-within,
 .job-search-box:focus-within {
-  border-color: #EA580C;
-  box-shadow: 0 8px 28px -2px rgba(249, 115, 22, 0.28), 0 0 0 4px rgba(249, 115, 22, 0.18);
+  border-color: #E85C00;
+  box-shadow: 0 8px 28px -2px rgba(255, 101, 0, 0.28), 0 0 0 4px rgba(255, 101, 0, 0.18);
 }
 
 .search-input-group,
@@ -186,7 +186,7 @@
 
 .search-input-group svg,
 .search-field svg {
-  color: #F97316;
+  color: #FF6500;
   flex-shrink: 0;
   width: 20px;
   height: 20px;
@@ -199,14 +199,14 @@
   outline: none;
   background: transparent;
   font-size: 14.5px;
-  color: #0F172A;
+  color: #060E18;
   font-family: inherit;
   line-height: 24px;
 }
 
 .search-input::placeholder,
 .search-field input::placeholder {
-  color: #94A3B8;
+  color: #8A8A8A;
 }
 
 .clear-search-btn {
@@ -215,7 +215,7 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  color: #64748B;
+  color: #545454;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -228,14 +228,14 @@
 }
 
 .clear-search-btn:hover {
-  background: #E2E8F0;
-  color: #0F172A;
+  background: #E6E6E6;
+  color: #060E18;
 }
 
 .search-divider {
   width: 1px;
   height: 28px;
-  background: #E2E8F0;
+  background: #E6E6E6;
   flex-shrink: 0;
 }
 
@@ -262,7 +262,7 @@
   padding: 8px 6px;
   border: 0;
   background: transparent;
-  color: #334155;
+  color: #333333;
   font-family: inherit;
   font-size: 14px;
   font-weight: 500;
@@ -271,7 +271,7 @@
 }
 
 .location-trigger .location-label {
-  color: #334155;
+  color: #333333;
   font-size: 14px;
   font-weight: 500;
   overflow: hidden;
@@ -284,23 +284,23 @@
 .location-trigger .location-chevron {
   width: 14px;
   height: 14px;
-  color: #94A3B8;
+  color: #8A8A8A;
   flex-shrink: 0;
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .location-trigger[aria-expanded="true"] .location-chevron {
   transform: rotate(180deg);
-  color: #F97316;
+  color: #FF6500;
 }
 
 .location-trigger:hover .location-chevron {
-  color: #EA580C;
+  color: #E85C00;
 }
 
 .btn-hero-search,
 .btn-search-submit {
-  background: linear-gradient(135deg, #FF8A34 0%, #F97316 100%);
+  background: linear-gradient(135deg, #FF8433 0%, #FF6500 100%);
   color: #FFF !important;
   border: none;
   border-radius: 10px;
@@ -316,7 +316,7 @@
   gap: 8px;
   white-space: nowrap;
   transition: all 0.2s;
-  box-shadow: 0 3px 10px rgba(249, 115, 22, 0.28);
+  box-shadow: 0 3px 10px rgba(255, 101, 0, 0.28);
   flex-shrink: 0;
 }
 
@@ -329,9 +329,9 @@
 
 .btn-hero-search:hover,
 .btn-search-submit:hover {
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  background: linear-gradient(135deg, #FF6500 0%, #E85C00 100%);
   transform: translateY(-1px);
-  box-shadow: 0 5px 16px rgba(249, 115, 22, 0.38);
+  box-shadow: 0 5px 16px rgba(255, 101, 0, 0.38);
 }
 
 /* Search Suggest Dropdown - Synchronized with Homepage 2-Column Standard */
@@ -343,9 +343,9 @@
   width: auto;
   max-width: none;
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   border-radius: 20px;
-  box-shadow: 0 24px 60px -18px rgba(15, 23, 42, 0.28);
+  box-shadow: 0 24px 60px -18px rgba(6, 14, 24, 0.28);
   padding: 22px 26px !important;
   box-sizing: border-box;
   z-index: 1050;
@@ -393,14 +393,14 @@
 .popular-keywords h3,
 .recommended-jobs h3 {
   margin: 0;
-  color: #0F172A;
+  color: #060E18;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 
 .search-format-left .btn-clear-history {
-  color: #F97316;
+  color: #FF6500;
   font-size: 12.5px;
   font-weight: 600;
   padding: 4px 8px;
@@ -412,8 +412,8 @@
 }
 
 .search-format-left .btn-clear-history:hover {
-  color: #EA580C;
-  background: #FFF7ED;
+  color: #E85C00;
+  background: #FFF0E6;
   text-decoration: none;
 }
 
@@ -440,17 +440,17 @@
 }
 
 .recent-search-row:hover {
-  background: #FFF7ED;
+  background: #FFF0E6;
 }
 
 .recent-search-row:hover .recent-search-keyword {
-  color: #EA580C;
+  color: #E85C00;
 }
 
 .recent-search-icon {
   width: 16px;
   height: 16px;
-  color: #94A3B8;
+  color: #8A8A8A;
   flex-shrink: 0;
 }
 
@@ -465,7 +465,7 @@
 .recent-search-keyword {
   font-size: 13.5px;
   font-weight: 500;
-  color: #0F172A;
+  color: #060E18;
   line-height: 1.3;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -475,7 +475,7 @@
 
 .recent-search-count {
   font-size: 11.5px;
-  color: #94A3B8;
+  color: #8A8A8A;
   line-height: 1.2;
 }
 
@@ -489,7 +489,7 @@
   border: 0;
   border-radius: 6px;
   background: transparent;
-  color: #94A3B8;
+  color: #8A8A8A;
   font-size: 13px;
   cursor: pointer;
   flex-shrink: 0;
@@ -497,13 +497,13 @@
 }
 
 .recent-search-remove:hover {
-  background: #FEE2E2;
-  color: #EF4444;
+  background: #FFE6E6;
+  color: #FF3333;
 }
 
 .recent-empty-hint {
   font-size: 13px;
-  color: #94A3B8;
+  color: #8A8A8A;
   padding: 12px 0;
   display: block;
 }
@@ -525,19 +525,19 @@
 .popular-keyword-list .suggest-trend-chip {
   min-height: 32px;
   padding: 6px 12px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   border-radius: 8px;
   background: #FFFFFF;
-  color: #334155;
+  color: #333333;
   font: 500 12.5px/1.2 inherit;
   cursor: pointer;
   transition: border-color 0.15s, color 0.15s, background 0.15s;
 }
 
 .popular-keyword-list .suggest-trend-chip:hover {
-  border-color: #F97316;
-  color: #EA580C;
-  background: #FFF7ED;
+  border-color: #FF6500;
+  color: #E85C00;
+  background: #FFF0E6;
 }
 
 /* =====================================================================
@@ -576,7 +576,7 @@
   border: 0;
   border-radius: 8px;
   background: transparent;
-  color: #0F172A;
+  color: #060E18;
   font-family: inherit;
   text-align: left;
   cursor: pointer;
@@ -585,11 +585,11 @@
 }
 
 .keyword-suggestion-row:hover {
-  background: #FFF7ED;
+  background: #FFF0E6;
 }
 
 .keyword-suggestion-row:hover .kw-suggest-text {
-  color: #EA580C;
+  color: #E85C00;
 }
 
 .kw-suggest-left {
@@ -598,31 +598,6 @@
   gap: 10px;
   min-width: 0;
   flex: 1;
-}
-
-.kw-suggest-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 2px 7px;
-  border-radius: 9999px;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1.25;
-  white-space: nowrap;
-  flex-shrink: 0;
-  letter-spacing: 0.01em;
-}
-
-.kw-suggest-badge.is-company {
-  background: #EFF6FF;
-  color: #2563EB;
-  border: 1px solid #BFDBFE;
-}
-
-.kw-suggest-badge.is-job {
-  background: #FFF7ED;
-  color: #EA580C;
-  border: 1px solid #FFEDD5;
 }
 
 .keyword-suggestion-row.is-company:hover {
@@ -638,13 +613,13 @@
 }
 
 .keyword-suggestion-row.is-job .kw-suggest-icon {
-  color: #F97316;
+  color: #FF6500;
 }
 
 .kw-suggest-icon {
   width: 16px;
   height: 16px;
-  color: #94A3B8;
+  color: #8A8A8A;
   flex-shrink: 0;
 }
 
@@ -652,7 +627,7 @@
   flex: 1;
   font-size: 13.5px;
   font-weight: 500;
-  color: #0F172A;
+  color: #060E18;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -662,12 +637,12 @@
 .kw-suggest-text em {
   font-style: normal;
   font-weight: 700;
-  color: #F97316;
+  color: #FF6500;
 }
 
 .kw-suggest-count {
   font-size: 12px;
-  color: #94A3B8;
+  color: #8A8A8A;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -675,7 +650,7 @@
 .keyword-suggestion-empty {
   padding: 12px 10px;
   font-size: 13.5px;
-  color: #64748B;
+  color: #545454;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -685,12 +660,12 @@
 }
 
 .keyword-suggestion-empty:hover {
-  background: #FFF7ED;
-  color: #EA580C;
+  background: #FFF0E6;
+  color: #E85C00;
 }
 
 .keyword-suggestion-empty strong {
-  color: #F97316;
+  color: #FF6500;
 }
 
 /* Right panel: Việc làm có thể bạn quan tâm */
@@ -704,7 +679,7 @@
 
 .recommended-jobs h3 {
   margin: 0 0 10px 0;
-  color: #0F172A;
+  color: #060E18;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -726,7 +701,7 @@
   border-bottom: 1px solid #F8FAFC;
   border-radius: 8px;
   background: transparent;
-  color: #0F172A;
+  color: #060E18;
   font-family: inherit;
   text-align: left;
   cursor: pointer;
@@ -743,7 +718,7 @@
 }
 
 .recommended-job:hover .recommended-job-title {
-  color: #EA580C;
+  color: #E85C00;
 }
 
 .recommended-job-logo {
@@ -761,7 +736,7 @@
   border: 1px solid #F1F5F9;
   overflow: hidden;
   flex-shrink: 0;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 1px 3px rgba(6, 14, 24, 0.04);
 }
 
 .recommended-job-logo img {
@@ -783,7 +758,7 @@
 .recommended-job-title {
   font-size: 13.5px;
   font-weight: 600;
-  color: #0F172A;
+  color: #060E18;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -792,7 +767,7 @@
 
 .recommended-job-company {
   font-size: 12px;
-  color: #64748B;
+  color: #545454;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -810,14 +785,14 @@
 .recommended-job-salary {
   font-size: 12px;
   font-weight: 600;
-  color: #EA580C;
+  color: #E85C00;
   line-height: 1.25;
   white-space: nowrap;
 }
 
 .recommended-job-loc {
   font-size: 11.5px;
-  color: #64748B;
+  color: #545454;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -828,13 +803,13 @@
 }
 
 [data-theme='dark'] .recommended-job-loc {
-  color: #94A3B8;
+  color: #8A8A8A;
 }
 
 /* Dark Theme Support for Search Dropdown */
 [data-theme='dark'] .search-suggest-dropdown {
-  background: #0F172A;
-  border-color: #334155;
+  background: #060E18;
+  border-color: #333333;
   box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.6);
 }
 
@@ -845,23 +820,23 @@
 }
 
 [data-theme='dark'] .recent-search-row:hover {
-  background: #1E293B;
+  background: #333333;
 }
 
 [data-theme='dark'] .recent-search-keyword {
-  color: #E2E8F0;
+  color: #E6E6E6;
 }
 
 [data-theme='dark'] .popular-keyword-list .suggest-trend-chip {
-  background: #1E293B;
-  border-color: #334155;
-  color: #CBD5E1;
+  background: #333333;
+  border-color: #333333;
+  color: #B0B0B0;
 }
 
 [data-theme='dark'] .popular-keyword-list .suggest-trend-chip:hover {
-  background: #431407;
-  border-color: #F97316;
-  color: #FDBA74;
+  background: #6B2A00;
+  border-color: #FF6500;
+  color: #FFB88A;
 }
 
 [data-theme='dark'] .keyword-suggestion-row {
@@ -869,23 +844,11 @@
 }
 
 [data-theme='dark'] .keyword-suggestion-row:hover {
-  background: #1E293B;
+  background: #333333;
 }
 
 [data-theme='dark'] .kw-suggest-text {
-  color: #E2E8F0;
-}
-
-[data-theme='dark'] .kw-suggest-badge.is-company {
-  background: rgba(37, 99, 235, 0.18);
-  color: #60A5FA;
-  border-color: rgba(96, 165, 250, 0.3);
-}
-
-[data-theme='dark'] .kw-suggest-badge.is-job {
-  background: rgba(249, 115, 22, 0.18);
-  color: #FB923C;
-  border-color: rgba(251, 146, 60, 0.3);
+  color: #E6E6E6;
 }
 
 [data-theme='dark'] .keyword-suggestion-row.is-company:hover {
@@ -897,15 +860,15 @@
 }
 
 [data-theme='dark'] .recommended-jobs {
-  border-left-color: #334155;
+  border-left-color: #333333;
 }
 
 [data-theme='dark'] .recommended-job {
-  border-bottom-color: #1E293B;
+  border-bottom-color: #333333;
 }
 
 [data-theme='dark'] .recommended-job:hover {
-  background: #1E293B;
+  background: #333333;
 }
 
 [data-theme='dark'] .recommended-job-title {
@@ -913,12 +876,12 @@
 }
 
 [data-theme='dark'] .recommended-job-company {
-  color: #94A3B8;
+  color: #8A8A8A;
 }
 
 [data-theme='dark'] .recommended-job-logo {
-  background: #1E293B;
-  border-color: #334155;
+  background: #333333;
+  border-color: #333333;
 }
 
 /* Responsive Search Suggest Panel */
@@ -956,16 +919,16 @@
 .quick-filter-label {
   font-size: 13px;
   font-weight: 600;
-  color: #64748B;
+  color: #545454;
 }
 
 .tag-btn {
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   border-radius: 9999px;
   padding: 5px 12px;
   font-size: 12.5px;
-  color: #334155;
+  color: #333333;
   cursor: pointer;
   transition: all 0.15s;
   display: inline-flex;
@@ -974,9 +937,9 @@
 }
 
 .tag-btn:hover, .tag-btn.active {
-  background: #FFF7ED;
-  border-color: #F97316;
-  color: #F97316;
+  background: #FFF0E6;
+  border-color: #FF6500;
+  color: #FF6500;
   font-weight: 600;
 }
 
@@ -992,17 +955,17 @@
 /* Filter bar khi trong job-layout-container (fallback) */
 .top-filter-bar {
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   border-radius: 16px;
   padding: 16px 20px;
   margin-bottom: 24px;
-  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+  box-shadow: 0 2px 10px rgba(6, 14, 24, 0.03);
   transition: all 0.2s ease;
 }
 
 .top-filter-bar:hover {
-  border-color: #CBD5E1;
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+  border-color: #B0B0B0;
+  box-shadow: 0 4px 16px rgba(6, 14, 24, 0.05);
 }
 
 /* Filter bar khi nằm trong hero (cùng khối với search box) */
@@ -1023,7 +986,7 @@
 
 /* Khi sticky: filter bar căn theo container giống search box */
 .hero-search-sticky-bar.is-sticky .top-filter-bar {
-  border-top: 1px solid rgba(226, 232, 240, 0.5);
+  border-top: 1px solid rgba(230, 230, 230, 0.5);
   margin-top: 8px;
   padding: 8px 0 2px;
 }
@@ -1061,11 +1024,11 @@
   gap: 6px;
   padding: 8.5px 14px;
   background: #FFFFFF;
-  border: 1.5px solid #E2E8F0;
+  border: 1.5px solid #E6E6E6;
   border-radius: 10px;
   font-size: 13.5px;
   font-weight: 500;
-  color: #334155;
+  color: #333333;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
@@ -1073,32 +1036,32 @@
 }
 
 .filter-pill-btn .pill-chevron {
-  color: #94A3B8;
+  color: #8A8A8A;
   margin-left: 2px;
   flex-shrink: 0;
   transition: transform 0.2s ease, color 0.15s;
 }
 
 .filter-pill-btn:hover {
-  border-color: #CBD5E1;
+  border-color: #B0B0B0;
   background: #F8FAFC;
-  color: #0F172A;
+  color: #060E18;
 }
 
 .filter-pill-btn:hover .pill-chevron {
-  color: #64748B;
+  color: #545454;
 }
 
 .filter-pill-btn.is-active {
-  border-color: #F97316;
-  background: #FFF7ED;
-  color: #EA580C;
+  border-color: #FF6500;
+  background: #FFF0E6;
+  color: #E85C00;
   font-weight: 600;
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
+  box-shadow: 0 0 0 3px rgba(255, 101, 0, 0.12);
 }
 
 .filter-pill-btn.is-active .pill-chevron {
-  color: #EA580C;
+  color: #E85C00;
 }
 
 .filter-dropdown-wrap.is-open .filter-pill-btn .pill-chevron {
@@ -1112,24 +1075,24 @@
   gap: 8px;
   padding: 9px 15px;
   background: #FFFFFF;
-  border: 1.5px solid #E2E8F0;
+  border: 1.5px solid #E6E6E6;
   border-radius: 10px;
   font-size: 13.5px;
   font-weight: 500;
-  color: #334155;
+  color: #333333;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
 }
 
 .filter-pill-checkbox:hover {
-  border-color: #CBD5E1;
+  border-color: #B0B0B0;
   background: #F8FAFC;
-  color: #0F172A;
+  color: #060E18;
 }
 
 .filter-pill-checkbox svg {
-  color: #64748B;
+  color: #545454;
   flex-shrink: 0;
 }
 
@@ -1144,7 +1107,7 @@
 .filter-checkbox-box {
   width: 17px;
   height: 17px;
-  border: 1.5px solid #CBD5E1;
+  border: 1.5px solid #B0B0B0;
   border-radius: 5px;
   background: #FFFFFF;
   display: flex;
@@ -1163,8 +1126,8 @@
 
 .filter-checkbox-input:checked ~ .filter-checkbox-box,
 .filter-pill-checkbox:has(.filter-checkbox-input:checked) .filter-checkbox-box {
-  background: #F97316;
-  border-color: #F97316;
+  background: #FF6500;
+  border-color: #FF6500;
 }
 
 .filter-pill-checkbox:has(.filter-checkbox-input:checked) .filter-checkbox-box .checkbox-check {
@@ -1173,15 +1136,15 @@
 }
 
 .filter-pill-checkbox:has(.filter-checkbox-input:checked) {
-  border-color: #F97316;
-  background: #FFF7ED;
-  color: #EA580C;
+  border-color: #FF6500;
+  background: #FFF0E6;
+  color: #E85C00;
   font-weight: 600;
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
+  box-shadow: 0 0 0 3px rgba(255, 101, 0, 0.12);
 }
 
 .filter-pill-checkbox:has(.filter-checkbox-input:checked) svg {
-  color: #EA580C;
+  color: #E85C00;
 }
 
 /* Dropdown Menu */
@@ -1191,10 +1154,10 @@
   left: 0;
   min-width: 240px;
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   border-radius: 12px;
   padding: 6px;
-  box-shadow: 0 12px 28px -4px rgba(15, 23, 42, 0.12), 0 4px 10px -2px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 12px 28px -4px rgba(6, 14, 24, 0.12), 0 4px 10px -2px rgba(6, 14, 24, 0.05);
   z-index: 120;
   animation: filterDropdownFade 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -1235,7 +1198,7 @@
 }
 
 .industry-search-wrap > svg {
-  color: #94A3B8;
+  color: #8A8A8A;
   flex-shrink: 0;
 }
 
@@ -1245,13 +1208,13 @@
   outline: none;
   background: transparent;
   font-size: 13px;
-  color: #0F172A;
+  color: #060E18;
   font-family: inherit;
   min-width: 0;
 }
 
 .industry-search-input::placeholder {
-  color: #CBD5E1;
+  color: #B0B0B0;
 }
 
 .industry-search-clear {
@@ -1260,18 +1223,18 @@
   justify-content: center;
   width: 20px;
   height: 20px;
-  background: #E2E8F0;
+  background: #E6E6E6;
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  color: #64748B;
+  color: #545454;
   padding: 0;
   transition: all 0.15s;
 }
 
 .industry-search-clear:hover {
-  background: #CBD5E1;
-  color: #0F172A;
+  background: #B0B0B0;
+  color: #060E18;
 }
 
 .industry-search-clear[hidden] {
@@ -1294,7 +1257,7 @@
 }
 
 .industry-dropdown-list::-webkit-scrollbar-thumb {
-  background: #E2E8F0;
+  background: #E6E6E6;
   border-radius: 9999px;
 }
 
@@ -1306,7 +1269,7 @@
   padding: 14px 16px;
   text-align: center;
   font-size: 13px;
-  color: #94A3B8;
+  color: #8A8A8A;
   font-style: italic;
 }
 
@@ -1322,7 +1285,7 @@
   padding: 9px 12px;
   border-radius: 8px;
   font-size: 13.5px;
-  color: #334155;
+  color: #333333;
   cursor: pointer;
   transition: all 0.15s ease;
   user-select: none;
@@ -1331,13 +1294,13 @@
 .filter-dropdown-menu .dropdown-item:hover,
 .industry-dropdown-list .dropdown-item:hover {
   background: #F8FAFC;
-  color: #0F172A;
+  color: #060E18;
 }
 
 .filter-dropdown-menu .dropdown-item.is-selected,
 .industry-dropdown-list .dropdown-item.is-selected {
-  background: #FFF7ED;
-  color: #EA580C;
+  background: #FFF0E6;
+  color: #E85C00;
   font-weight: 600;
 }
 
@@ -1380,7 +1343,7 @@
 }
 
 .dropdown-item .check-icon {
-  color: #EA580C;
+  color: #E85C00;
   margin-left: 8px;
   flex-shrink: 0;
 }
@@ -1391,10 +1354,10 @@
   align-items: center;
   gap: 5px;
   padding: 8px 12px;
-  background: #FEF2F2;
-  border: 1px solid #FEE2E2;
+  background: #FFE6E6;
+  border: 1px solid #FFE6E6;
   border-radius: 9px;
-  color: #DC2626;
+  color: #E80000;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -1403,9 +1366,9 @@
 }
 
 .btn-clear-top-filters:hover {
-  background: #FEE2E2;
-  border-color: #FECACA;
-  color: #B91C1C;
+  background: #FFE6E6;
+  border-color: #FFB0B0;
+  color: #B50000;
 }
 
 /* Sắp xếp theo */
@@ -1418,7 +1381,7 @@
 
 .top-filter-sort-group .sort-caption {
   font-size: 13px;
-  color: #64748B;
+  color: #545454;
   font-weight: 500;
 }
 
@@ -1432,12 +1395,12 @@
   appearance: none;
   -webkit-appearance: none;
   background: #F8FAFC;
-  border: 1.5px solid #E2E8F0;
+  border: 1.5px solid #E6E6E6;
   border-radius: 10px;
   padding: 8px 30px 8px 12px;
   font-size: 13px;
   font-weight: 600;
-  color: #1E293B;
+  color: #333333;
   cursor: pointer;
   outline: none;
   font-family: inherit;
@@ -1445,7 +1408,7 @@
 }
 
 .top-sort-select:hover, .top-sort-select:focus {
-  border-color: #F97316;
+  border-color: #FF6500;
   background: #FFFFFF;
 }
 
@@ -1453,7 +1416,7 @@
   position: absolute;
   right: 10px;
   pointer-events: none;
-  color: #94A3B8;
+  color: #8A8A8A;
 }
 
 /* Hàng Active Filter Chips (Đã ẩn theo yêu cầu người dùng) */
@@ -1486,11 +1449,11 @@
 
 .listings-sub-header .result-stat-text {
   font-size: 14.5px;
-  color: #475569;
+  color: #545454;
 }
 
 .listings-sub-header .result-stat-text strong {
-  color: #0F172A;
+  color: #060E18;
   font-weight: 700;
 }
 
@@ -1505,7 +1468,7 @@
   display: inline-block;
   width: 1px;
   height: 18px;
-  background: #CBD5E1;
+  background: #B0B0B0;
   margin: 0 4px;
 }
 
@@ -1513,18 +1476,18 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  color: #475569;
+  color: #545454;
   font-size: 13.5px;
   font-weight: 500;
 }
 
 .sort-icon {
-  color: #475569;
+  color: #545454;
   flex-shrink: 0;
 }
 
 .sort-caption {
-  color: #334155;
+  color: #333333;
   font-size: 13.5px;
   font-weight: 600;
   white-space: nowrap;
@@ -1541,20 +1504,20 @@
   justify-content: space-between;
   gap: 8px;
   border-radius: 9999px;
-  border: 1.5px solid #F97316;
+  border: 1.5px solid #FF6500;
   background: #FFFFFF;
-  color: #EA580C;
+  color: #E85C00;
   padding: 4px 14px;
   font-size: 13.5px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 1px 3px rgba(249, 115, 22, 0.08);
+  box-shadow: 0 1px 3px rgba(255, 101, 0, 0.08);
 }
 
 .sort-trigger-btn:hover {
-  background: #FFF7ED;
-  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.16);
+  background: #FFF0E6;
+  box-shadow: 0 2px 6px rgba(255, 101, 0, 0.16);
 }
 
 .sort-trigger-btn.is-open .sort-chevron-icon,
@@ -1563,7 +1526,7 @@
 }
 
 .sort-chevron-icon {
-  color: #EA580C;
+  color: #E85C00;
   transition: transform 0.2s ease;
   flex-shrink: 0;
 }
@@ -1575,8 +1538,8 @@
   min-width: 190px;
   background: #FFFFFF;
   border-radius: 12px;
-  border: 1px solid #E2E8F0;
-  box-shadow: 0 12px 28px -4px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.06);
+  border: 1px solid #E6E6E6;
+  box-shadow: 0 12px 28px -4px rgba(6, 14, 24, 0.12), 0 4px 12px -2px rgba(6, 14, 24, 0.06);
   z-index: 60;
   padding: 6px 0;
   display: none;
@@ -1605,7 +1568,7 @@
   width: 100%;
   padding: 9px 16px;
   font-size: 13.5px;
-  color: #334155;
+  color: #333333;
   background: none;
   border: none;
   text-align: left;
@@ -1615,17 +1578,17 @@
 
 .sort-menu-item:hover {
   background: #F8FAFC;
-  color: #0F172A;
+  color: #060E18;
 }
 
 .sort-menu-item.is-selected {
-  color: #EA580C;
+  color: #E85C00;
   font-weight: 700;
-  background: #FFF7ED;
+  background: #FFF0E6;
 }
 
 .sort-menu-item .sort-check-icon {
-  color: #EA580C;
+  color: #E85C00;
   opacity: 0;
   transition: opacity 0.15s;
   flex-shrink: 0;
@@ -1646,22 +1609,22 @@
 
 .ad-card {
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 2px 10px rgba(6, 14, 24, 0.04);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ad-card:hover {
-  box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.08);
-  border-color: #CBD5E1;
+  box-shadow: 0 10px 25px -4px rgba(6, 14, 24, 0.08);
+  border-color: #B0B0B0;
   transform: translateY(-2px);
 }
 
 /* 1. VIP Employer Showcase Card */
 .vip-employer-card {
-  border: 1.5px solid #FED7AA;
+  border: 1.5px solid #FFCFB0;
   background: #FFFFFF;
 }
 
@@ -1670,15 +1633,15 @@
   align-items: center;
   justify-content: flex-end;
   padding: 8px 16px;
-  background: linear-gradient(90deg, #FFF7ED 0%, #FFFDFB 100%);
-  border-bottom: 1px solid #FFEDD5;
+  background: linear-gradient(90deg, #FFF0E6 0%, #FFFDFB 100%);
+  border-bottom: 1px solid #FFCFB0;
 }
 
 .badge-vip-sponsor {
   font-size: 11.5px;
   font-weight: 800;
   letter-spacing: 0.5px;
-  color: #EA580C;
+  color: #E85C00;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -1686,7 +1649,7 @@
 
 .badge-ad-tag {
   font-size: 11px;
-  color: #94A3B8;
+  color: #8A8A8A;
   background: #F1F5F9;
   padding: 1px 7px;
   border-radius: 4px;
@@ -1696,7 +1659,7 @@
 .vip-employer-cover {
   position: relative;
   height: 120px;
-  background: #0F172A;
+  background: #060E18;
 }
 
 .vip-cover-img {
@@ -1744,14 +1707,14 @@
 .vip-employer-name {
   font-size: 16px;
   font-weight: 800;
-  color: #0F172A;
+  color: #060E18;
   margin: 0;
   line-height: 1.3;
 }
 
 .vip-employer-slogan {
   font-size: 12px;
-  color: #64748B;
+  color: #545454;
   margin: 0 0 10px 0;
   line-height: 1.4;
 }
@@ -1777,7 +1740,7 @@
 .vip-job-title {
   font-size: 12px;
   font-weight: 600;
-  color: #1E293B;
+  color: #333333;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1787,8 +1750,8 @@
 .vip-job-salary {
   font-size: 11.5px;
   font-weight: 700;
-  color: #16A34A;
-  background: #F0FDF4;
+  color: #2C9661;
+  background: #EAF6F0;
   padding: 1px 6px;
   border-radius: 4px;
   flex-shrink: 0;
@@ -1801,20 +1764,20 @@
   gap: 6px;
   width: 100%;
   padding: 8px 14px;
-  background: linear-gradient(135deg, #FF8A34 0%, #F97316 100%);
+  background: linear-gradient(135deg, #FF8433 0%, #FF6500 100%);
   color: #FFFFFF;
   border-radius: 8px;
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 3px 10px rgba(249, 115, 22, 0.22);
+  box-shadow: 0 3px 10px rgba(255, 101, 0, 0.22);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   box-sizing: border-box;
 }
 
 .btn-vip-explore:hover {
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
-  box-shadow: 0 5px 14px rgba(249, 115, 22, 0.32);
+  background: linear-gradient(135deg, #FF6500 0%, #E85C00 100%);
+  box-shadow: 0 5px 14px rgba(255, 101, 0, 0.32);
   transform: translateY(-1px);
 }
 
@@ -1829,10 +1792,10 @@
 /* 2. B2B Recruiter Ad Card */
 .b2b-recruiter-card {
   position: relative;
-  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  background: linear-gradient(135deg, #060E18 0%, #333333 100%);
   color: #FFFFFF;
   padding: 22px 20px;
-  border: 1px solid #334155;
+  border: 1px solid #333333;
 }
 
 .b2b-card-glow {
@@ -1841,7 +1804,7 @@
   right: -40px;
   width: 130px;
   height: 130px;
-  background: radial-gradient(circle, rgba(249, 115, 22, 0.35) 0%, rgba(249, 115, 22, 0) 70%);
+  background: radial-gradient(circle, rgba(255, 101, 0, 0.35) 0%, rgba(255, 101, 0, 0) 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -1851,9 +1814,9 @@
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.5px;
-  background: rgba(249, 115, 22, 0.2);
-  color: #FB923C;
-  border: 1px solid rgba(249, 115, 22, 0.4);
+  background: rgba(255, 101, 0, 0.2);
+  color: #FF8433;
+  border: 1px solid rgba(255, 101, 0, 0.4);
   padding: 3px 8px;
   border-radius: 6px;
   margin-bottom: 12px;
@@ -1869,7 +1832,7 @@
 
 .b2b-card-desc {
   font-size: 13px;
-  color: #94A3B8;
+  color: #8A8A8A;
   margin: 0 0 16px 0;
   line-height: 1.5;
 }
@@ -1898,12 +1861,12 @@
 .b2b-stat-num {
   font-size: 15px;
   font-weight: 800;
-  color: #FB923C;
+  color: #FF8433;
 }
 
 .b2b-stat-lbl {
   font-size: 11px;
-  color: #94A3B8;
+  color: #8A8A8A;
 }
 
 .btn-b2b-post {
@@ -1913,20 +1876,20 @@
   gap: 8px;
   width: 100%;
   padding: 11px 16px;
-  background: #F97316;
+  background: #FF6500;
   color: #FFFFFF;
   border-radius: 10px;
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4);
+  box-shadow: 0 4px 14px rgba(255, 101, 0, 0.4);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   box-sizing: border-box;
 }
 
 .btn-b2b-post:hover {
-  background: #EA580C;
-  box-shadow: 0 6px 18px rgba(249, 115, 22, 0.5);
+  background: #E85C00;
+  box-shadow: 0 6px 18px rgba(255, 101, 0, 0.5);
   transform: translateY(-1px);
 }
 
@@ -1941,8 +1904,8 @@
 /* 3. AI CV Coach Card */
 .cv-coach-card {
   padding: 18px;
-  background: linear-gradient(135deg, #FFF7ED 0%, #FFFFFF 100%);
-  border: 1px solid #FFEDD5;
+  background: linear-gradient(135deg, #FFF0E6 0%, #FFFFFF 100%);
+  border: 1px solid #FFCFB0;
 }
 
 .cv-coach-header {
@@ -1955,7 +1918,7 @@
 .cv-coach-icon-wrap {
   width: 42px;
   height: 42px;
-  background: #FFE8D6;
+  background: #FFF0E6;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -1966,7 +1929,7 @@
 .cv-coach-title {
   font-size: 15px;
   font-weight: 800;
-  color: #0F172A;
+  color: #060E18;
   margin: 0 0 2px 0;
 }
 
@@ -1974,9 +1937,9 @@
   display: inline-block;
   font-size: 12px;
   font-weight: 700;
-  color: #EA580C;
-  background: #FFF7ED;
-  border: 1px solid #FED7AA;
+  color: #E85C00;
+  background: #FFF0E6;
+  border: 1px solid #FFCFB0;
   padding: 2px 8px;
   border-radius: 9999px;
   margin-top: 2px;
@@ -1984,7 +1947,7 @@
 
 .cv-coach-desc {
   font-size: 13px;
-  color: #64748B;
+  color: #545454;
   margin: 0 0 14px 0;
   line-height: 1.45;
 }
@@ -1994,9 +1957,9 @@
   text-align: center;
   padding: 9px 14px;
   background: #FFFFFF;
-  border: 1.5px solid #F97316;
+  border: 1.5px solid #FF6500;
   border-radius: 8px;
-  color: #F97316;
+  color: #FF6500;
   font-size: 13.5px;
   font-weight: 700;
   text-decoration: none;
@@ -2005,8 +1968,8 @@
 }
 
 .btn-cv-coach:hover {
-  background: #FFF7ED;
-  color: #EA580C;
+  background: #FFF0E6;
+  color: #E85C00;
 }
 
 /* Job Card */
@@ -2018,7 +1981,7 @@
 
 .job-card {
   background: #FFFFFF;
-  border: 1.5px solid #86EFAC;
+  border: 1.5px solid #A0D6BB;
   border-radius: 16px;
   padding: 12px 18px;
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2032,13 +1995,13 @@
 
 .job-card:hover,
 .job-card.is-hovered {
-  border-color: var(--color-primary, #F97316);
-  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.12);
+  border-color: var(--color-primary, #FF6500);
+  box-shadow: 0 6px 20px rgba(255, 101, 0, 0.12);
   transform: translateY(-2px);
 }
 
 .job-card.is-featured {
-  border-left: 4px solid var(--color-primary, #F97316);
+  border-left: 4px solid var(--color-primary, #FF6500);
 }
 
 .job-card-top {
@@ -2053,7 +2016,7 @@
   min-width: 100px;
   min-height: 100px;
   border-radius: 12px;
-  border: 1.5px solid #E5E7EB;
+  border: 1.5px solid #E6E6E6;
   background: #FFFFFF;
   object-fit: contain;
   padding: 6px;
@@ -2064,8 +2027,8 @@
 
 .job-card:hover .job-company-logo,
 .job-card.is-hovered .job-company-logo {
-  border-color: var(--color-primary, #F97316);
-  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
+  border-color: var(--color-primary, #FF6500);
+  box-shadow: 0 4px 12px rgba(255, 101, 0, 0.15);
 }
 
 .job-info-main {
@@ -2088,7 +2051,7 @@
 .job-title {
   font-size: 16px;
   font-weight: 700;
-  color: #0F172A;
+  color: #060E18;
   margin: 0 0 6px 0;
   line-height: 1.35;
   transition: color 0.15s ease;
@@ -2104,7 +2067,7 @@
 .job-card:hover .job-title-link,
 .job-card.is-hovered .job-title,
 .job-card.is-hovered .job-title-link {
-  color: var(--color-primary, #F97316);
+  color: var(--color-primary, #FF6500);
 }
 
 .job-company-row {
@@ -2113,12 +2076,12 @@
   gap: 6px;
   font-size: 13px;
   font-weight: 600;
-  color: #64748B;
+  color: #545454;
   margin-bottom: 8px;
 }
 
 .job-company-name {
-  color: #64748B;
+  color: #545454;
   font-weight: 600;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -2139,7 +2102,7 @@
 
 .job-quick-pill {
   background: #F1F5F9;
-  color: #475569;
+  color: #545454;
   font-size: 12px;
   font-weight: 500;
   padding: 3px 9px;
@@ -2168,7 +2131,7 @@
 .job-salary-text {
   font-size: 15.5px;
   font-weight: 700;
-  color: var(--color-primary, #F97316);
+  color: var(--color-primary, #FF6500);
   white-space: nowrap;
 }
 
@@ -2177,8 +2140,8 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: var(--color-surface-raised, #FFF7ED);
-  color: var(--color-primary, #F97316);
+  background: var(--color-surface-raised, #FFF0E6);
+  color: var(--color-primary, #FF6500);
   border: none;
   border-radius: 9999px;
   padding: 4px 12px;
@@ -2194,7 +2157,7 @@
 }
 
 .btn-quick-view:hover {
-  background: #FFEDD5;
+  background: #FFCFB0;
   transform: translateY(0) scale(1.02);
 }
 
@@ -2236,7 +2199,7 @@
   flex: 1;
   min-width: 0;
   font-size: 13px;
-  color: #64748B;
+  color: #545454;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2265,13 +2228,13 @@
 
 .job-post-time {
   font-size: 12.5px;
-  color: #64748B;
+  color: #545454;
   white-space: nowrap;
 }
 
 .badge-viewed {
   background: #F1F5F9;
-  color: #64748B;
+  color: #545454;
   font-size: 11.5px;
   font-weight: 600;
   padding: 2px 8px;
@@ -2293,7 +2256,7 @@
 
 /* Apply button: To đẹp như các nút chính khác trên hệ thống */
 .btn-card-apply {
-  background: linear-gradient(135deg, #FF8A34 0%, #F97316 100%);
+  background: linear-gradient(135deg, #FF8433 0%, #FF6500 100%);
   color: #FFFFFF !important;
   border: none;
   border-radius: 9999px;
@@ -2302,7 +2265,7 @@
   font-size: 13.5px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 3px 10px rgba(249, 115, 22, 0.32);
+  box-shadow: 0 3px 10px rgba(255, 101, 0, 0.32);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2312,8 +2275,8 @@
 }
 
 .btn-card-apply:hover {
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
-  box-shadow: 0 5px 14px rgba(249, 115, 22, 0.45);
+  background: linear-gradient(135deg, #FF6500 0%, #E85C00 100%);
+  box-shadow: 0 5px 14px rgba(255, 101, 0, 0.45);
   transform: translateY(-1px);
 }
 
@@ -2326,9 +2289,9 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1.5px solid #CBD5E1;
+  border: 1.5px solid #B0B0B0;
   background: #FFFFFF;
-  color: #64748B;
+  color: #545454;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2339,8 +2302,8 @@
 }
 
 .btn-card-hide:hover {
-  border-color: #94A3B8;
-  color: #0F172A;
+  border-color: #8A8A8A;
+  color: #060E18;
   background: #F8FAFC;
   transform: scale(1.05);
 }
@@ -2350,9 +2313,9 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1.5px solid var(--color-primary, #F97316);
+  border: 1.5px solid var(--color-primary, #FF6500);
   background: #FFFFFF;
-  color: var(--color-primary, #F97316);
+  color: var(--color-primary, #FF6500);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2365,26 +2328,26 @@
 .btn-card-bookmark svg {
   width: 17px;
   height: 17px;
-  stroke: var(--color-primary, #F97316);
+  stroke: var(--color-primary, #FF6500);
   fill: none;
   stroke-width: 2;
   transition: all 0.18s ease;
 }
 
 .btn-card-bookmark:hover {
-  background: var(--color-surface-raised, #FFF7ED);
+  background: var(--color-surface-raised, #FFF0E6);
   transform: scale(1.08);
 }
 
 .btn-card-bookmark.saved {
-  background: var(--color-surface-raised, #FFF7ED);
-  border-color: var(--color-primary, #F97316);
-  color: var(--color-primary, #F97316);
+  background: var(--color-surface-raised, #FFF0E6);
+  border-color: var(--color-primary, #FF6500);
+  color: var(--color-primary, #FF6500);
 }
 
 .btn-card-bookmark.saved svg {
-  fill: var(--color-primary, #F97316);
-  stroke: var(--color-primary, #F97316);
+  fill: var(--color-primary, #FF6500);
+  stroke: var(--color-primary, #FF6500);
 }
 
 /* Pagination */
@@ -2400,9 +2363,9 @@
   min-width: 38px;
   height: 38px;
   border-radius: 8px;
-  border: 1px solid #CBD5E1;
+  border: 1px solid #B0B0B0;
   background: #FFFFFF;
-  color: #334155;
+  color: #333333;
   font-size: 14px;
   font-weight: 600;
   display: flex;
@@ -2414,13 +2377,13 @@
 }
 
 .page-btn:hover {
-  border-color: #F97316;
-  color: #F97316;
+  border-color: #FF6500;
+  color: #FF6500;
 }
 
 .page-btn.active {
-  background: #F97316;
-  border-color: #F97316;
+  background: #FF6500;
+  border-color: #FF6500;
   color: #FFFFFF;
 }
 
@@ -2429,15 +2392,15 @@
   cursor: not-allowed;
   pointer-events: none;
   background: #F8FAFC;
-  border-color: #E2E8F0;
-  color: #94A3B8;
+  border-color: #E6E6E6;
+  color: #8A8A8A;
 }
 
 /* Detail Modal / Drawer */
 .job-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(6, 14, 24, 0.6);
   backdrop-filter: blur(4px);
   z-index: 1000;
   opacity: 0;
@@ -2461,7 +2424,7 @@
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(6, 14, 24, 0.25);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -2469,7 +2432,7 @@
 
 .job-modal-header {
   padding: 24px;
-  border-bottom: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E6E6E6;
   position: sticky;
   top: 0;
   background: #FFFFFF;
@@ -2490,33 +2453,33 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #64748B;
+  color: #545454;
   transition: background 0.15s;
   flex-shrink: 0;
 }
 
 .job-modal-close:hover {
-  background: #E2E8F0;
-  color: #0F172A;
+  background: #E6E6E6;
+  color: #060E18;
 }
 
 .job-modal-body {
   padding: 24px;
   font-size: 14.5px;
   line-height: 1.65;
-  color: #334155;
+  color: #333333;
 }
 
 .job-modal-section-title {
   font-size: 16px;
   font-weight: 700;
-  color: #0F172A;
+  color: #060E18;
   margin: 20px 0 10px 0;
 }
 
 .job-modal-footer {
   padding: 16px 24px;
-  border-top: 1px solid #E2E8F0;
+  border-top: 1px solid #E6E6E6;
   background: #F8FAFC;
   display: flex;
   justify-content: flex-end;
@@ -2529,7 +2492,7 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: #0F172A;
+  background: #060E18;
   color: #FFFFFF;
   padding: 12px 20px;
   border-radius: 12px;
@@ -2580,9 +2543,9 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #FFF7ED;
-  color: #EA580C;
-  border: 1px solid #FFEDD5;
+  background: #FFF0E6;
+  color: #E85C00;
+  border: 1px solid #FFCFB0;
   font-size: 13.5px;
   font-weight: 600;
   padding: 4px 10px;
@@ -2594,7 +2557,7 @@
 .active-keyword-badge button {
   background: none;
   border: none;
-  color: #EA580C;
+  color: #E85C00;
   cursor: pointer;
   padding: 0;
   font-size: 13px;
@@ -2609,13 +2572,13 @@
 }
 
 .active-keyword-badge button:hover {
-  background: #FED7AA;
+  background: #FFCFB0;
 }
 
 /* No Results Empty State */
 .no-results-box {
   background: #FFFFFF;
-  border: 1px dashed #CBD5E1;
+  border: 1px dashed #B0B0B0;
   border-radius: 16px;
   padding: 48px 24px;
   text-align: center;
@@ -2627,8 +2590,8 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #FFF7ED;
-  color: #EA580C;
+  background: #FFF0E6;
+  color: #E85C00;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2638,13 +2601,13 @@
 .no-results-title {
   font-size: 18px;
   font-weight: 700;
-  color: #0F172A;
+  color: #060E18;
   margin: 0 0 8px 0;
 }
 
 .no-results-desc {
   font-size: 14.5px;
-  color: #64748B;
+  color: #545454;
   margin: 0 0 20px 0;
   max-width: 480px;
   margin-left: auto;
@@ -2664,7 +2627,7 @@
   align-items: center;
   gap: 8px;
   padding: 10px 22px;
-  background: #F97316;
+  background: #FF6500;
   color: #FFFFFF;
   border: none;
   border-radius: 10px;
@@ -2675,7 +2638,7 @@
 }
 
 .btn-reset-all-jobs:hover {
-  background: #EA580C;
+  background: #E85C00;
   transform: translateY(-1px);
 }
 
@@ -2694,7 +2657,7 @@
 .btn-view-mode {
   border: none;
   background: transparent;
-  color: #64748B;
+  color: #545454;
   font-size: 13px;
   font-weight: 600;
   padding: 6px 12px;
@@ -2707,12 +2670,12 @@
 }
 
 .btn-view-mode:hover {
-  color: #0F172A;
+  color: #060E18;
 }
 
 .btn-view-mode.active {
   background: #FFFFFF;
-  color: #F97316;
+  color: #FF6500;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
@@ -2735,15 +2698,60 @@
    -------------------------------------------------------------------------- */
 .split-detail-pane {
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   border-radius: 20px;
-  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 4px 20px -4px rgba(6, 14, 24, 0.06);
   overflow: hidden;
+  /* Dính ngay dưới thanh tìm kiếm sticky; --detail-sticky-top do JS đo theo chiều cao thực của thanh */
   position: sticky;
-  top: 145px;
-  max-height: calc(100vh - 165px);
+  top: var(--detail-sticky-top, 148px);
+  max-height: calc(100vh - var(--detail-sticky-top, 148px) - 16px);
   display: flex;
   flex-direction: column;
+}
+
+/* Thanh mục lục trong khung chi tiết: dính ở đầu vùng cuộn, tự đánh dấu mục đang đọc */
+.detail-section-nav {
+  position: sticky;
+  top: -24px;
+  z-index: 3;
+  display: flex;
+  gap: 4px;
+  margin: 0 -24px 20px;
+  padding: 0 24px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #F1F5F9;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.detail-section-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.detail-section-nav a {
+  flex-shrink: 0;
+  padding: 12px 10px 11px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #545454;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.detail-section-nav a:hover {
+  color: #060E18;
+}
+
+.detail-section-nav a.is-active {
+  color: #FF6500;
+  border-bottom-color: #FF6500;
+}
+
+.detail-section {
+  scroll-margin-top: 56px;
 }
 
 /* Top Navigation Bar */
@@ -2753,7 +2761,7 @@
   justify-content: space-between;
   padding: 14px 22px;
   background: #F8FAFC;
-  border-bottom: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E6E6E6;
   flex-shrink: 0;
 }
 
@@ -2762,8 +2770,8 @@
   align-items: center;
   gap: 8px;
   background: #FFFFFF;
-  border: 1px solid #CBD5E1;
-  color: #334155;
+  border: 1px solid #B0B0B0;
+  color: #333333;
   font-size: 13.5px;
   font-weight: 600;
   padding: 7px 14px;
@@ -2773,9 +2781,9 @@
 }
 
 .btn-back-to-grid:hover {
-  background: #FFF7ED;
-  border-color: #F97316;
-  color: #EA580C;
+  background: #FFF0E6;
+  border-color: #FF6500;
+  color: #E85C00;
 }
 
 .detail-top-actions {
@@ -2789,8 +2797,8 @@
   align-items: center;
   gap: 6px;
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  color: #475569;
+  border: 1px solid #E6E6E6;
+  color: #545454;
   font-size: 13px;
   font-weight: 500;
   padding: 7px 12px;
@@ -2801,15 +2809,15 @@
 }
 
 .btn-detail-action:hover {
-  border-color: #CBD5E1;
-  color: #0F172A;
+  border-color: #B0B0B0;
+  color: #060E18;
   background: #F1F5F9;
 }
 
 .btn-detail-action.btn-bookmark-action.saved {
-  color: #EF4444;
-  border-color: #FECACA;
-  background: #FEF2F2;
+  color: #FF3333;
+  border-color: #FFB0B0;
+  background: #FFE6E6;
 }
 
 /* Scrollable Detail Body */
@@ -2818,7 +2826,7 @@
   overflow-y: auto;
   flex: 1;
   scrollbar-width: thin;
-  scrollbar-color: #CBD5E1 transparent;
+  scrollbar-color: #B0B0B0 transparent;
 }
 
 .detail-scroll-area::-webkit-scrollbar {
@@ -2830,18 +2838,19 @@
 }
 
 .detail-scroll-area::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #B0B0B0;
   border-radius: 9999px;
 }
 
 /* Detail Hero Section */
+/* Phần đầu nằm phẳng trong khung trang chi tiết (bỏ khung cam lồng trong khung) */
 .detail-hero-box {
-  background: linear-gradient(180deg, #FFFDFB 0%, #FFFFFF 100%);
-  border: 1px solid #FED7AA;
-  border-radius: 16px;
-  padding: 22px;
-  margin-bottom: 22px;
-  box-shadow: 0 4px 14px -2px rgba(249, 115, 22, 0.08);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 4px 2px 0;
+  margin-bottom: 20px;
+  box-shadow: none;
 }
 
 .detail-hero-header {
@@ -2852,15 +2861,22 @@
 }
 
 .detail-company-logo {
-  width: 72px;
-  height: 72px;
-  border-radius: 16px;
-  border: 1.5px solid #FED7AA;
+  width: 96px;
+  height: 96px;
+  border-radius: 18px;
+  border: 1px solid #E6E6E6;
   background: #FFFFFF;
   object-fit: contain;
-  padding: 6px;
+  padding: 4px;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 640px) {
+  .detail-company-logo {
+    width: 88px;
+    height: 88px;
+    border-radius: 16px;
+  }
 }
 
 .detail-hero-info {
@@ -2870,7 +2886,7 @@
 .detail-job-title {
   font-size: 22px;
   font-weight: 800;
-  color: #0F172A;
+  color: #060E18;
   line-height: 1.3;
   margin: 0 0 6px 0;
   letter-spacing: -0.01em;
@@ -2881,13 +2897,13 @@
   align-items: center;
   gap: 8px;
   font-size: 14.5px;
-  color: #334155;
+  color: #333333;
   margin-bottom: 10px;
 }
 
 .detail-company-line strong {
   font-weight: 700;
-  color: #F97316;
+  color: #FF6500;
 }
 
 .detail-badges-row {
@@ -2902,12 +2918,11 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding-top: 16px;
-  border-top: 1px dashed #FED7AA;
+  padding-top: 4px;
 }
 
 .btn-detail-apply-main {
-  background: linear-gradient(135deg, #FF8A34 0%, #F97316 100%);
+  background: linear-gradient(135deg, #FF8433 0%, #FF6500 100%);
   color: #FFFFFF;
   border: none;
   border-radius: 12px;
@@ -2919,22 +2934,22 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.35);
+  box-shadow: 0 6px 20px rgba(255, 101, 0, 0.35);
   transition: all 0.2s;
   flex: 1;
   justify-content: center;
 }
 
 .btn-detail-apply-main:hover {
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  background: linear-gradient(135deg, #FF6500 0%, #E85C00 100%);
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.45);
+  box-shadow: 0 8px 24px rgba(255, 101, 0, 0.45);
 }
 
 .btn-detail-save-main {
   background: #FFFFFF;
-  border: 1.5px solid #CBD5E1;
-  color: #334155;
+  border: 1.5px solid #B0B0B0;
+  color: #333333;
   border-radius: 12px;
   padding: 13px 20px;
   font-size: 14.5px;
@@ -2947,21 +2962,21 @@
 }
 
 .btn-detail-save-main:hover {
-  border-color: #F97316;
-  color: #F97316;
-  background: #FFF7ED;
+  border-color: #FF6500;
+  color: #FF6500;
+  background: #FFF0E6;
 }
 
 .btn-detail-save-main.saved {
-  background: #FEF2F2;
-  border-color: #FCA5A5;
-  color: #EF4444;
+  background: #FFE6E6;
+  border-color: #FF8A8A;
+  color: #FF3333;
 }
 
 .btn-detail-share-btn {
   background: #FFFFFF;
-  border: 1.5px solid #CBD5E1;
-  color: #334155;
+  border: 1.5px solid #B0B0B0;
+  color: #333333;
   border-radius: 12px;
   padding: 13px 18px;
   font-size: 14.5px;
@@ -2976,114 +2991,39 @@
 }
 
 .btn-detail-share-btn:hover {
-  border-color: #F97316;
-  color: #F97316;
-  background: #FFF7ED;
+  border-color: #FF6500;
+  color: #FF6500;
+  background: #FFF0E6;
 }
 
-/* Quick Metrics Cards (4 Ô tóm tắt) */
-/* Quick Metrics: 1 panel liền khối, chia cột bằng vạch mảnh; tự về 2x2 khi khung chi tiết hẹp */
-.split-detail-pane {
-  container-type: inline-size;
-  container-name: job-detail;
+/* Kinh nghiệm / Cấp bậc / Hình thức: nhãn nhỏ ngay trong phần đầu (thay cho thanh Quick Metrics cũ) */
+.detail-quick-pills {
+  margin-top: 10px;
 }
 
-.detail-metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-bottom: 24px;
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-/* Icon + nhãn trên 1 dòng, giá trị bên dưới chiếm trọn bề rộng ô; toàn bộ nội dung căn giữa ô */
-.detail-metric-card {
-  display: flex;
-  flex-wrap: wrap;
+.detail-quick-pills .job-quick-pill {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
-  column-gap: 8px;
-  row-gap: 6px;
-  min-width: 0;
-  padding: 14px 16px;
-  box-shadow: -1px 0 0 #E2E8F0;
+  gap: 5px;
+  font-size: 12.5px;
+  padding: 4px 10px;
 }
 
-.metric-icon-wrap {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: #FFF7ED;
-  color: #F97316;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.detail-quick-pills .job-quick-pill svg {
+  color: #FF6500;
   flex-shrink: 0;
 }
 
-.metric-icon-wrap svg {
-  width: 15px;
-  height: 15px;
-}
-
-.metric-info {
-  display: contents;
-}
-
-.metric-label {
-  flex: 0 1 auto;
-  min-width: 0;
-  font-size: 12.5px;
-  font-weight: 500;
-  color: #64748B;
-  line-height: 1.3;
-  white-space: nowrap;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.metric-value {
-  flex-basis: 100%;
-  font-size: 14.5px;
-  font-weight: 700;
-  color: #0F172A;
-  line-height: 1.4;
-  overflow-wrap: break-word;
-}
-
-.metric-value.is-salary {
-  color: #F97316;
-}
-
-@container job-detail (max-width: 720px) {
-  .detail-metrics-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .detail-metric-card:nth-child(n + 3) {
-    border-top: 1px solid #E2E8F0;
-  }
-}
-
-@container job-detail (max-width: 420px) {
-  .detail-metric-card {
-    padding: 12px;
-  }
-  .metric-label {
-    white-space: normal;
-  }
-}
-
-@container job-detail (max-width: 220px) {
-  .detail-metrics-grid {
-    grid-template-columns: 1fr;
-  }
-  .detail-metric-card + .detail-metric-card {
-    border-top: 1px solid #E2E8F0;
-  }
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Detail Section */
@@ -3094,7 +3034,7 @@
 .detail-section-title {
   font-size: 16.5px;
   font-weight: 800;
-  color: #0F172A;
+  color: #060E18;
   margin: 0 0 12px 0;
   display: flex;
   align-items: center;
@@ -3106,14 +3046,14 @@
   display: inline-block;
   width: 4px;
   height: 18px;
-  background: #F97316;
+  background: #FF6500;
   border-radius: 2px;
 }
 
 .detail-bullet-list {
   padding-left: 20px;
   margin: 0;
-  color: #334155;
+  color: #333333;
   font-size: 14.5px;
   line-height: 1.7;
 }
@@ -3133,9 +3073,9 @@
 }
 
 .detail-skill-tag {
-  background: #FFF7ED;
-  border: 1px solid #FFEDD5;
-  color: #EA580C;
+  background: #FFF0E6;
+  border: 1px solid #FFCFB0;
+  color: #E85C00;
   font-size: 13px;
   font-weight: 600;
   padding: 5px 12px;
@@ -3145,7 +3085,7 @@
 /* Company Spotlight Card */
 .detail-company-card {
   background: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   border-radius: 14px;
   padding: 16px;
   display: flex;
@@ -3163,13 +3103,13 @@
 .company-card-info h4 {
   font-size: 15px;
   font-weight: 700;
-  color: #0F172A;
+  color: #060E18;
   margin: 0 0 4px 0;
 }
 
 .company-card-info p {
   font-size: 13px;
-  color: #64748B;
+  color: #545454;
   margin: 0;
 }
 
@@ -3180,7 +3120,7 @@
   justify-content: space-between;
   padding: 12px 22px;
   background: #FFFFFF;
-  border-top: 1px solid #E2E8F0;
+  border-top: 1px solid #E6E6E6;
   box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
   flex-shrink: 0;
 }
@@ -3193,7 +3133,7 @@
 .sticky-bar-title {
   font-size: 14px;
   font-weight: 700;
-  color: #0F172A;
+  color: #060E18;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3203,7 +3143,7 @@
 .sticky-bar-salary {
   font-size: 13px;
   font-weight: 700;
-  color: #16A34A;
+  color: #2C9661;
 }
 
 /* --------------------------------------------------------------------------
@@ -3211,17 +3151,23 @@
    -------------------------------------------------------------------------- */
 .split-list-pane {
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   border-radius: 20px;
   padding: 0;
-  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.06);
-  position: sticky;
-  top: 145px;
-  max-height: calc(100vh - 165px);
+  box-shadow: 0 4px 20px -4px rgba(6, 14, 24, 0.06);
+  /* Danh sách chạy theo luồng trang (không cuộn lồng), chia trang ở cuối khung */
+  position: static;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   overflow: hidden;
+}
+
+.split-list-pagination {
+  margin: 0;
+  padding: 16px 12px 20px;
+  background: #F1F5F9;
+  flex-wrap: wrap;
 }
 
 /* Right List Header */
@@ -3231,7 +3177,7 @@
   justify-content: space-between;
   padding: 18px 20px 14px 20px;
   background: #FFFFFF;
-  border-bottom: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E6E6E6;
   margin-bottom: 0;
   flex-shrink: 0;
   z-index: 2;
@@ -3240,17 +3186,17 @@
 .split-list-title-group h3 {
   font-size: 16px;
   font-weight: 800;
-  color: #0F172A;
+  color: #060E18;
   margin: 0 0 2px 0;
 }
 
 .split-list-count {
   font-size: 13px;
-  color: #64748B;
+  color: #545454;
 }
 
 .split-list-count strong {
-  color: #F97316;
+  color: #FF6500;
 }
 
 /* Right Scrollable Feed (Ẩn hoàn toàn scrollbar, phân tách các thẻ bằng rãnh màu nền) */
@@ -3275,7 +3221,7 @@
 /* Compact Job Card inside Right Column (Bo góc mềm mại, viền sắc nét, nhận diện rõ rệt từng thẻ) */
 .split-job-card {
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   border-left: 4px solid transparent;
   border-radius: 14px;
   padding: 14px 16px;
@@ -3287,7 +3233,7 @@
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 1px 3px rgba(6, 14, 24, 0.04);
   flex-shrink: 0;
   height: auto;
   min-height: fit-content;
@@ -3295,26 +3241,26 @@
 
 .split-job-card:hover {
   background: #FFFFFF;
-  border-color: #CBD5E1;
-  border-left: 4px solid #FED7AA;
+  border-color: #B0B0B0;
+  border-left: 4px solid #FFCFB0;
   border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 14px rgba(6, 14, 24, 0.08);
   transform: translateY(-2px);
   z-index: 1;
 }
 
 /* Card Active / Selected Highlight */
 .split-job-card.is-selected {
-  background: linear-gradient(90deg, #FFF7ED 0%, #FFFFFF 100%) !important;
-  border: 1px solid #FED7AA !important;
-  border-left: 5px solid #F97316 !important;
+  background: linear-gradient(90deg, #FFF0E6 0%, #FFFFFF 100%) !important;
+  border: 1px solid #FFCFB0 !important;
+  border-left: 5px solid #FF6500 !important;
   border-radius: 14px !important;
-  box-shadow: 0 3px 12px rgba(249, 115, 22, 0.12) !important;
+  box-shadow: 0 3px 12px rgba(255, 101, 0, 0.12) !important;
   z-index: 2;
 }
 
 .split-job-card.is-selected .split-card-title a {
-  color: #EA580C;
+  color: #E85C00;
 }
 
 .split-active-badge {
@@ -3334,7 +3280,7 @@
   min-width: 81px;
   min-height: 81px;
   border-radius: 12px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   background: #FFFFFF;
   object-fit: contain;
   padding: 6px;
@@ -3350,7 +3296,7 @@
 .split-card-title {
   font-size: 14.5px;
   font-weight: 700;
-  color: #0F172A;
+  color: #060E18;
   margin: 0 0 3px 0;
   line-height: 1.35;
   display: -webkit-box;
@@ -3360,12 +3306,12 @@
 }
 
 .split-job-card.is-selected .split-card-title {
-  color: #EA580C;
+  color: #E85C00;
 }
 
 .split-card-company {
   font-size: 12.5px;
-  color: #475569;
+  color: #545454;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3387,7 +3333,7 @@
   padding-top: 2px;
   border-top: none;
   font-size: 12px;
-  color: #64748B;
+  color: #545454;
 }
 
 .split-card-location {
@@ -3412,8 +3358,15 @@
     position: static;
     max-height: none;
   }
-  .split-list-feed {
-    max-height: 480px;
+  /* Mobile/tablet: xem chi tiết job trước, danh sách việc làm phù hợp ở bên dưới */
+  .split-detail-pane {
+    order: -1;
+  }
+  .detail-scroll-area {
+    overflow: visible;
+  }
+  .detail-section-nav {
+    position: static;
   }
 }
 
@@ -3441,15 +3394,15 @@
 }
 
 .sample-data-banner.match-success {
-  background: #F0FDF4;
-  border: 1px solid #BBF7D0;
-  color: #166534;
+  background: #EAF6F0;
+  border: 1px solid #BFE3D1;
+  color: #1A5B3B;
 }
 
 .sample-data-banner.match-fallback {
-  background: #FFF7ED;
-  border: 1px solid #FED7AA;
-  color: #9A3412;
+  background: #FFF0E6;
+  border: 1px solid #FFCFB0;
+  color: #8C3800;
 }
 
 .banner-flex {
@@ -3475,12 +3428,12 @@
 .job-count-subtext {
   font-size: 13.5px;
   font-weight: 600;
-  color: #16A34A;
+  color: #2C9661;
   margin-left: 6px;
 }
 
 .job-count-subtext.orange {
-  color: #EA580C;
+  color: #E85C00;
 }
 
 .badge-search-match,
@@ -3546,7 +3499,7 @@
   }
   .search-location-group,
   .search-location-field {
-    border-top: 1px solid #E2E8F0;
+    border-top: 1px solid #E6E6E6;
     padding-top: 8px;
     max-width: 100% !important;
     width: 100%;
@@ -3837,9 +3790,9 @@ body.in-simulator *::-webkit-scrollbar,
   gap: 6px;
   padding: 12px 18px;
   background: #FFFFFF;
-  border: 1.5px solid #E2E8F0;
+  border: 1.5px solid #E6E6E6;
   border-radius: 12px;
-  color: #475569;
+  color: #545454;
   font-size: 14.5px;
   font-weight: 600;
   cursor: pointer;
@@ -3847,9 +3800,9 @@ body.in-simulator *::-webkit-scrollbar,
   font-family: inherit;
 }
 .btn-detail-share-btn:hover {
-  border-color: #F97316;
-  color: #EA580C;
-  background: #FFF7ED;
+  border-color: #FF6500;
+  color: #E85C00;
+  background: #FFF0E6;
 }
 
 /* =========================================================================
@@ -3862,10 +3815,10 @@ body.in-simulator *::-webkit-scrollbar,
   justify-content: center;
   gap: 8px;
   padding: 8px 12px;
-  border: 1px solid #FED7AA;
+  border: 1px solid #FFCFB0;
   border-radius: 10px;
-  background: #FFF7ED;
-  color: #C2410C;
+  background: #FFF0E6;
+  color: #B54800;
   font: inherit;
   font-size: 13px;
   font-weight: 700;
@@ -3875,9 +3828,9 @@ body.in-simulator *::-webkit-scrollbar,
 }
 
 .btn-saved-filters:hover {
-  border-color: #FB923C;
-  background: #FFEDD5;
-  color: #9A3412;
+  border-color: #FF8433;
+  background: #FFCFB0;
+  color: #8C3800;
 }
 
 .saved-filter-count {
@@ -3888,7 +3841,7 @@ body.in-simulator *::-webkit-scrollbar,
   justify-content: center;
   padding: 0 6px;
   border-radius: 999px;
-  background: #F97316;
+  background: #FF6500;
   color: #FFFFFF;
   font-size: 11px;
   line-height: 1;
@@ -3914,7 +3867,7 @@ body.saved-filter-dialog-open {
 .saved-filters-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.58);
+  background: rgba(6, 14, 24, 0.58);
   backdrop-filter: blur(3px);
 }
 
@@ -3925,11 +3878,11 @@ body.saved-filter-dialog-open {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   border-radius: 20px;
   background: #FFFFFF;
-  color: #0F172A;
-  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.28);
+  color: #060E18;
+  box-shadow: 0 28px 80px rgba(6, 14, 24, 0.28);
 }
 
 .saved-filters-header {
@@ -3938,13 +3891,13 @@ body.saved-filter-dialog-open {
   justify-content: space-between;
   gap: 20px;
   padding: 24px;
-  border-bottom: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E6E6E6;
 }
 
 .saved-filters-header h2,
 .saved-filter-section-heading h3 {
   margin: 0;
-  color: #0F172A;
+  color: #060E18;
 }
 
 .saved-filters-header h2 {
@@ -3954,13 +3907,13 @@ body.saved-filter-dialog-open {
 
 .saved-filters-header > div > p:last-child {
   margin: 6px 0 0;
-  color: #475569;
+  color: #545454;
   font-size: 14px;
 }
 
 .saved-filters-eyebrow {
   margin: 0 0 5px;
-  color: #EA580C;
+  color: #E85C00;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -3975,18 +3928,18 @@ body.saved-filter-dialog-open {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   border-radius: 12px;
   background: #FFFFFF;
-  color: #475569;
+  color: #545454;
   cursor: pointer;
 }
 
 .saved-filters-close:hover,
 .saved-filter-delete:hover {
-  border-color: #FDBA74;
-  background: #FFF7ED;
-  color: #C2410C;
+  border-color: #FFB88A;
+  background: #FFF0E6;
+  color: #B54800;
 }
 
 .saved-filters-body {
@@ -3996,9 +3949,9 @@ body.saved-filter-dialog-open {
 
 .saved-filter-create {
   padding: 20px;
-  border: 1px solid #FED7AA;
+  border: 1px solid #FFCFB0;
   border-radius: 16px;
-  background: #FFF7ED;
+  background: #FFF0E6;
 }
 
 .saved-filter-section-heading {
@@ -4014,7 +3967,7 @@ body.saved-filter-dialog-open {
 
 .saved-filter-current-summary {
   margin: 6px 0 0;
-  color: #475569;
+  color: #545454;
   font-size: 13px;
   line-height: 1.55;
 }
@@ -4026,7 +3979,7 @@ body.saved-filter-dialog-open {
 #savedFilterForm label {
   display: block;
   margin-bottom: 7px;
-  color: #334155;
+  color: #333333;
   font-size: 13px;
   font-weight: 700;
 }
@@ -4041,16 +3994,16 @@ body.saved-filter-dialog-open {
   min-width: 0;
   height: 44px;
   padding: 0 13px;
-  border: 1px solid #CBD5E1;
+  border: 1px solid #B0B0B0;
   border-radius: 10px;
   background: #FFFFFF;
-  color: #0F172A;
+  color: #060E18;
   font: inherit;
   font-size: 14px;
 }
 
 #savedFilterName[aria-invalid="true"] {
-  border-color: #DC2626;
+  border-color: #E80000;
 }
 
 .saved-filter-submit,
@@ -4069,19 +4022,19 @@ body.saved-filter-dialog-open {
 .saved-filter-submit,
 .saved-filter-apply,
 .saved-filter-confirm-delete {
-  background: #F97316;
+  background: #FF6500;
   color: #FFFFFF;
 }
 
 .saved-filter-submit:hover:not(:disabled),
 .saved-filter-apply:hover,
 .saved-filter-confirm-delete:hover {
-  background: #EA580C;
+  background: #E85C00;
 }
 
 .saved-filter-submit:disabled {
-  background: #E2E8F0;
-  color: #64748B;
+  background: #E6E6E6;
+  color: #545454;
   cursor: not-allowed;
 }
 
@@ -4093,11 +4046,11 @@ body.saved-filter-dialog-open {
 }
 
 .saved-filter-name-hint {
-  color: #64748B;
+  color: #545454;
 }
 
 .saved-filter-error {
-  color: #B91C1C;
+  color: #B50000;
   font-weight: 650;
 }
 
@@ -4106,7 +4059,7 @@ body.saved-filter-dialog-open {
 }
 
 .saved-filter-library-count {
-  color: #64748B;
+  color: #545454;
   font-size: 12px;
   font-weight: 700;
 }
@@ -4120,10 +4073,10 @@ body.saved-filter-dialog-open {
   justify-content: center;
   gap: 6px;
   padding: 24px;
-  border: 1px dashed #CBD5E1;
+  border: 1px dashed #B0B0B0;
   border-radius: 14px;
   background: #F8FAFC;
-  color: #64748B;
+  color: #545454;
   text-align: center;
 }
 
@@ -4132,7 +4085,7 @@ body.saved-filter-dialog-open {
 }
 
 .saved-filter-empty strong {
-  color: #334155;
+  color: #333333;
   font-size: 14px;
 }
 
@@ -4155,7 +4108,7 @@ body.saved-filter-dialog-open {
   align-items: center;
   gap: 16px;
   padding: 15px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   border-radius: 14px;
   background: #FFFFFF;
 }
@@ -4167,13 +4120,13 @@ body.saved-filter-dialog-open {
 .saved-filter-item-content strong {
   display: block;
   overflow-wrap: anywhere;
-  color: #0F172A;
+  color: #060E18;
   font-size: 14px;
 }
 
 .saved-filter-item-content p {
   margin: 5px 0 0;
-  color: #64748B;
+  color: #545454;
   font-size: 12px;
   line-height: 1.5;
 }
@@ -4191,20 +4144,20 @@ body.saved-filter-dialog-open {
   justify-content: flex-end;
   gap: 8px;
   padding-top: 12px;
-  border-top: 1px solid #FECACA;
-  color: #991B1B;
+  border-top: 1px solid #FFB0B0;
+  color: #8C0000;
   font-size: 13px;
   font-weight: 700;
 }
 
 .saved-filter-delete-confirmation button:not(.saved-filter-confirm-delete) {
-  border-color: #CBD5E1;
+  border-color: #B0B0B0;
   background: #FFFFFF;
-  color: #334155;
+  color: #333333;
 }
 
 .saved-filter-delete-confirmation .saved-filter-confirm-delete {
-  background: #DC2626;
+  background: #E80000;
 }
 
 .btn-saved-filters:focus-visible,
@@ -4215,7 +4168,7 @@ body.saved-filter-dialog-open {
 .saved-filter-delete:focus-visible,
 .saved-filter-delete-confirmation button:focus-visible,
 #savedFilterName:focus-visible {
-  outline: 3px solid rgba(249, 115, 22, 0.42);
+  outline: 3px solid rgba(255, 101, 0, 0.42);
   outline-offset: 2px;
 }
 
@@ -4289,26 +4242,26 @@ body.saved-filter-dialog-open {
   .saved-filter-delete,
   #savedFilterName,
   .saved-filter-delete-confirmation button:not(.saved-filter-confirm-delete) {
-    border-color: #475569;
-    background: #0F172A;
+    border-color: #545454;
+    background: #060E18;
     color: #F8FAFC;
   }
 
   .saved-filters-header,
   .saved-filter-delete-confirmation {
-    border-color: #334155;
+    border-color: #333333;
   }
 
   .saved-filter-create,
   .btn-saved-filters {
-    border-color: #9A3412;
-    background: #431407;
-    color: #FDBA74;
+    border-color: #8C3800;
+    background: #6B2A00;
+    color: #FFB88A;
   }
 
   .saved-filter-empty {
-    border-color: #475569;
-    background: #1E293B;
+    border-color: #545454;
+    background: #333333;
   }
 
   .saved-filters-header h2,
@@ -4324,10 +4277,252 @@ body.saved-filter-dialog-open {
   .saved-filter-library-count,
   .saved-filter-name-hint,
   .saved-filter-empty {
-    color: #CBD5E1;
+    color: #B0B0B0;
   }
 
   #savedFilterForm label {
-    color: #E2E8F0;
+    color: #E6E6E6;
+  }
+}
+
+/* =========================================================================
+   MOBILE RESPONSIVE PASS (≤ 768px) — dùng chung viec-lam.html & chi-tiet-viec-lam.html
+   Đặt cuối file + selector cụ thể hơn để thắng các rule mobile cũ chồng chéo.
+   ========================================================================= */
+@media (max-width: 768px) {
+  /* --- Ô tìm kiếm: form xếp dọc nên flex-basis 220px của ô địa điểm biến thành CHIỀU CAO → khoảng trắng lớn --- */
+  form.job-search-box .search-location-group,
+  form.hero-search-box .search-location-group {
+    flex: 0 0 auto !important;
+    height: 44px !important;
+    min-height: 44px;
+    padding: 0 8px !important;
+  }
+  form.job-search-box .search-input-group:not(.search-location-group),
+  form.hero-search-box .search-input-group:not(.search-location-group) {
+    flex: 0 0 auto !important;
+    height: 44px !important;
+  }
+  form.job-search-box .category-filter-trigger,
+  form.hero-search-box .category-filter-trigger {
+    height: 44px;
+    padding: 0 8px;
+    border-bottom: 1px solid #F1F5F9;
+    border-radius: 0;
+  }
+  form.job-search-box .location-trigger .location-label {
+    max-width: none;
+  }
+
+  /* --- Hàng "Tìm thấy N việc làm…" + Sắp xếp (trang Việc làm) --- */
+  .listings-sub-header {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px 12px !important;
+  }
+  .listings-sub-header .result-stat-text {
+    flex: 1 1 100% !important;
+    min-width: 0 !important;
+    white-space: normal !important;
+    font-size: 13.5px;
+  }
+  .listings-sub-header .top-filter-sort-group {
+    flex: 0 1 auto !important;
+    margin-left: 0 !important;
+  }
+  .listings-sub-header .sort-divider {
+    display: none !important;
+  }
+
+  /* --- Card job (cả trang Việc làm và danh sách bên trái trang chi tiết) --- */
+  body .job-card {
+    padding: 14px !important;
+  }
+  body .job-card .job-card-top {
+    gap: 12px !important;
+    align-items: flex-start !important;
+  }
+  body .job-card .job-company-logo {
+    width: 64px !important;
+    height: 64px !important;
+    min-width: 64px !important;
+    min-height: 64px !important;
+    border-radius: 12px !important;
+    padding: 3px !important;
+  }
+  body .job-card .job-header-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 6px !important;
+  }
+  body .job-card .job-title-wrap {
+    width: 100%;
+  }
+  body .job-card .job-title {
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 4px !important;
+  }
+  body .job-card .job-company-row {
+    font-size: 12px;
+    flex-wrap: nowrap;
+    min-width: 0;
+  }
+  body .job-card .job-company-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+  body .job-card .job-quick-pill {
+    white-space: nowrap;
+  }
+  body .job-card .job-top-right {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+  body .job-card .job-salary-text {
+    font-size: 15px !important;
+  }
+  body .job-card .btn-quick-view {
+    display: none !important;
+  }
+  body .job-card .job-card-divider {
+    margin: 10px 0 !important;
+  }
+  body .job-card .job-card-bottom {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+  }
+  body .job-card .job-bottom-left {
+    flex: 1 1 100% !important;
+    font-size: 12px !important;
+  }
+  body .job-card .job-bottom-right {
+    flex: 1 1 100% !important;
+    justify-content: space-between !important;
+  }
+  /* Màn cảm ứng không có hover: luôn hiện thời gian đăng, ẩn cụm nút chỉ dành cho hover */
+  body .job-card .job-meta-unhovered {
+    display: flex !important;
+  }
+  body .job-card .job-actions-hovered {
+    display: none !important;
+  }
+  body .job-card .btn-card-bookmark {
+    margin-left: auto;
+  }
+
+  /* --- Khung chi tiết việc làm (trang chi tiết) --- */
+  body .split-detail-pane {
+    padding: 0 !important;
+    border-radius: 16px !important;
+  }
+  body .detail-scroll-area {
+    padding: 16px !important;
+  }
+  body .detail-section-nav {
+    margin: 0 -16px 16px !important;
+    padding: 0 8px !important;
+  }
+  body .detail-hero-box {
+    padding: 0 !important;
+    margin-bottom: 16px !important;
+  }
+  body .detail-hero-header {
+    gap: 12px !important;
+    margin-bottom: 14px !important;
+  }
+  body .detail-company-logo {
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 14px !important;
+    padding: 3px !important;
+  }
+  body .detail-hero-info {
+    min-width: 0;
+  }
+  body .detail-job-title {
+    font-size: 18px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 4px !important;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+  body .detail-company-line {
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+  body .detail-badges-row {
+    flex-wrap: wrap !important;
+    gap: 4px 10px !important;
+  }
+  body .detail-quick-pills {
+    margin-top: 8px;
+  }
+  /* Nút: "Ứng tuyển ngay" chiếm cả hàng, "Lưu" + "Chia sẻ" chia đôi hàng dưới */
+  body .detail-cta-group {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px !important;
+  }
+  body .detail-cta-group .btn-detail-apply-main {
+    grid-column: 1 / -1;
+    width: 100%;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 12px 16px !important;
+  }
+  body .detail-cta-group .btn-detail-save-main,
+  body .detail-cta-group .btn-detail-share-btn {
+    width: 100%;
+    justify-content: center;
+    white-space: nowrap;
+  }
+  body .detail-company-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  /* Thanh "Ứng tuyển ngay" cố định ở đáy màn hình */
+  body .detail-sticky-apply-bar {
+    position: fixed !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)) !important;
+    border-radius: 0;
+  }
+  body .detail-sticky-apply-bar .sticky-bar-left {
+    min-width: 0;
+  }
+  body .detail-sticky-apply-bar .sticky-bar-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  body:has(.detail-sticky-apply-bar) {
+    padding-bottom: 72px;
+  }
+
+  /* --- Danh sách bên trái trang chi tiết --- */
+  body .split-list-header {
+    padding: 14px 16px 12px !important;
+  }
+  body .split-list-feed {
+    padding: 10px 10px 4px !important;
+    /* Rule mobile cũ giới hạn 380px khiến danh sách bị cắt và phân trang đè lên card */
+    max-height: none !important;
+  }
+  body .split-list-pagination .page-btn {
+    min-width: 36px;
+    padding: 0 10px;
   }
 }

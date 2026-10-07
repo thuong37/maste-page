@@ -441,7 +441,7 @@ ${relatedCardsHtml}
               </button>
               <button type="button" class="btn-detail-save-main" id="btnDetailSaveCard">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
-                <span id="detailSaveBtnText">Lưu việc làm</span>
+                <span id="detailSaveBtnText">Lưu</span>
               </button>
               <button type="button" class="btn-detail-share-btn" id="btnCopyJobLink" title="Sao chép liên kết công việc">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>

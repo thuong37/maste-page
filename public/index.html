@@ -9,11 +9,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/design-tokens.css?v=2.0_tokens">
-  <link rel="stylesheet" href="css/navbar.css?v=9.0_left_align">
-  <link rel="stylesheet" href="css/home.css?v=8.2_compact_job_cards">
-  <link rel="stylesheet" href="css/location-picker.css?v=3.0_clean">
-  <link rel="stylesheet" href="css/category-filter-modal.css?v=1.3_home_clear_backdrop">
+  <link rel="stylesheet" href="assets/design-tokens.css?v=eb_colors_20261007">
+  <link rel="stylesheet" href="css/navbar.css?v=eb_colors_20261007">
+  <link rel="stylesheet" href="css/home.css?v=eb_colors_20261007">
+  <link rel="stylesheet" href="css/location-picker.css?v=eb_colors_20261007">
+  <link rel="stylesheet" href="css/category-filter-modal.css?v=eb_colors_20261007">
   <style>
     /* Menu dropdown luôn căn trái 100% */
     .site-header .dropdown-menu {
@@ -52,10 +52,10 @@
        ========================================================================= */
     .hero-mock-section {
       position: relative;
-      background: radial-gradient(ellipse at 80% 20%, rgba(249, 115, 22, 0.07), transparent 50%),
+      background: radial-gradient(ellipse at 80% 20%, rgba(255, 101, 0, 0.07), transparent 50%),
                   radial-gradient(ellipse at 15% 70%, rgba(14, 165, 233, 0.05), transparent 50%),
                   #FFFFFF;
-      border-bottom: 1px solid #E2E8F0;
+      border-bottom: 1px solid #E6E6E6;
       padding: 34px 0 28px 0;
       overflow: visible;
     }
@@ -107,15 +107,15 @@
       -webkit-backdrop-filter: blur(16px);
       padding: 10px 0;
       box-sizing: border-box;
-      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.1), 0 1px 0 rgba(249, 115, 22, 0.15);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 10px 30px -5px rgba(6, 14, 24, 0.1), 0 1px 0 rgba(255, 101, 0, 0.15);
+      border-bottom: 1px solid rgba(230, 230, 230, 0.9);
       animation: slideDownStickyBar 0.24s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .hero-search-sticky-bar.is-sticky .hero-search-box {
       max-width: var(--container-max-width, 1250px);
       width: calc(100% - 40px);
       margin: 0 auto;
-      box-shadow: 0 6px 24px -2px rgba(249, 115, 22, 0.24), 0 0 0 3px rgba(249, 115, 22, 0.1);
+      box-shadow: 0 6px 24px -2px rgba(255, 101, 0, 0.24), 0 0 0 3px rgba(255, 101, 0, 0.1);
     }
     .hero-search-sticky-bar.is-sticky .search-suggest-dropdown {
       left: var(--search-suggest-left, 210px);
@@ -126,9 +126,9 @@
       top: calc(100% + 8px);
     }
     [data-theme="dark"] .hero-search-sticky-bar.is-sticky {
-      background: rgba(15, 23, 42, 0.96);
-      border-bottom: 1px solid rgba(51, 65, 85, 0.8);
-      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(249, 115, 22, 0.25);
+      background: rgba(6, 14, 24, 0.96);
+      border-bottom: 1px solid rgba(51, 51, 51, 0.8);
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 101, 0, 0.25);
     }
     @keyframes slideDownStickyBar {
       from {
@@ -142,9 +142,9 @@
     }
     .hero-search-box {
       background: #FFFFFF;
-      border: 1.5px solid #F97316;
+      border: 1.5px solid #FF6500;
       border-radius: 14px;
-      box-shadow: 0 4px 20px -2px rgba(249, 115, 22, 0.16), 0 2px 6px -1px rgba(15, 23, 42, 0.06), 0 0 0 3px rgba(249, 115, 22, 0.08);
+      box-shadow: 0 4px 20px -2px rgba(255, 101, 0, 0.16), 0 2px 6px -1px rgba(6, 14, 24, 0.06), 0 0 0 3px rgba(255, 101, 0, 0.08);
       height: 60px;
       min-height: 60px;
       padding: 5px 6px;
@@ -157,12 +157,12 @@
       position: relative;
     }
     .hero-search-box:hover {
-      border-color: #EA580C;
-      box-shadow: 0 6px 24px -2px rgba(249, 115, 22, 0.22), 0 0 0 4px rgba(249, 115, 22, 0.12);
+      border-color: #E85C00;
+      box-shadow: 0 6px 24px -2px rgba(255, 101, 0, 0.22), 0 0 0 4px rgba(255, 101, 0, 0.12);
     }
     .hero-search-box:focus-within {
-      border-color: #EA580C;
-      box-shadow: 0 8px 28px -2px rgba(249, 115, 22, 0.28), 0 0 0 4px rgba(249, 115, 22, 0.18);
+      border-color: #E85C00;
+      box-shadow: 0 8px 28px -2px rgba(255, 101, 0, 0.28), 0 0 0 4px rgba(255, 101, 0, 0.18);
     }
     .search-input-group {
       display: flex;
@@ -174,7 +174,7 @@
       box-sizing: border-box;
     }
     .search-input-group svg {
-      color: #F97316;
+      color: #FF6500;
       flex-shrink: 0;
       width: 20px;
       height: 20px;
@@ -185,7 +185,7 @@
       outline: none;
       background: transparent;
       font-size: 14.5px;
-      color: #0F172A;
+      color: #060E18;
       font-family: inherit;
       line-height: 24px;
     }
@@ -195,7 +195,7 @@
       width: 22px;
       height: 22px;
       border-radius: 50%;
-      color: #64748B;
+      color: #545454;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -207,13 +207,13 @@
       flex-shrink: 0;
     }
     .clear-search-btn:hover {
-      background: #E2E8F0;
-      color: #0F172A;
+      background: #E6E6E6;
+      color: #060E18;
     }
     .search-divider {
       width: 1px;
       height: 28px;
-      background: #E2E8F0;
+      background: #E6E6E6;
       flex-shrink: 0;
     }
     .search-location-group {
@@ -236,7 +236,7 @@
       padding: 8px 6px;
       border: 0;
       background: transparent;
-      color: #334155;
+      color: #333333;
       font-family: inherit;
       font-size: 14px;
       font-weight: 500;
@@ -244,7 +244,7 @@
       cursor: pointer;
     }
     .location-trigger .location-label {
-      color: #334155;
+      color: #333333;
       font-size: 14px;
       font-weight: 500;
       overflow: hidden;
@@ -258,14 +258,14 @@
       outline: none;
       background: transparent;
       font-size: 14px;
-      color: #0F172A;
+      color: #060E18;
       font-family: inherit;
       cursor: pointer;
       padding: 6px 8px;
       width: 100%;
     }
     .btn-hero-search {
-      background: linear-gradient(135deg, #FF8A34 0%, #F97316 100%);
+      background: linear-gradient(135deg, #FF8433 0%, #FF6500 100%);
       color: #FFF !important;
       border: none;
       border-radius: 10px;
@@ -280,7 +280,7 @@
       gap: 8px;
       white-space: nowrap;
       transition: all 0.2s;
-      box-shadow: 0 3px 10px rgba(249, 115, 22, 0.28);
+      box-shadow: 0 3px 10px rgba(255, 101, 0, 0.28);
       flex-shrink: 0;
     }
     .btn-hero-search svg {
@@ -289,9 +289,9 @@
       flex-shrink: 0;
     }
     .btn-hero-search:hover {
-      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+      background: linear-gradient(135deg, #FF6500 0%, #E85C00 100%);
       transform: translateY(-1px);
-      box-shadow: 0 5px 16px rgba(249, 115, 22, 0.38);
+      box-shadow: 0 5px 16px rgba(255, 101, 0, 0.38);
     }
     .quick-tags {
       display: flex;
@@ -302,13 +302,13 @@
       margin-bottom: 2px !important;
     }
     .quick-tag-label {
-      color: #64748B;
+      color: #545454;
       font-weight: 600;
     }
     .quick-tag-link {
-      color: #0F172A !important;
+      color: #060E18 !important;
       background: #FFFFFF;
-      border: 1px solid #E2E8F0;
+      border: 1px solid #E6E6E6;
       padding: 4px 12px;
       border-radius: 9999px;
       text-decoration: none !important;
@@ -317,19 +317,19 @@
       cursor: pointer;
     }
     .quick-tag-link:hover {
-      border-color: #F97316;
-      color: #F97316 !important;
-      background: #FFF7ED;
+      border-color: #FF6500;
+      color: #FF6500 !important;
+      background: #FFF0E6;
     }
     .quick-tag-link.tag-highlight {
-      background: #FFF7ED;
-      border-color: #FED7AA;
-      color: #EA580C !important;
+      background: #FFF0E6;
+      border-color: #FFCFB0;
+      color: #E85C00 !important;
       font-weight: 700;
     }
     .quick-tag-link.tag-highlight:hover {
-      background: #FED7AA;
-      border-color: #F97316;
+      background: #FFCFB0;
+      border-color: #FF6500;
     }
 
     /* =========================================================================
@@ -343,9 +343,9 @@
       /* Thu gọn bên trái (căn từ ô input tìm kiếm), bên phải giữ nguyên kéo dài hết thanh search */
       width: auto;
       background: #FFFFFF;
-      border: 1.5px solid #FED7AA;
+      border: 1.5px solid #FFCFB0;
       border-radius: 18px;
-      box-shadow: 0 24px 50px -10px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(249, 115, 22, 0.12);
+      box-shadow: 0 24px 50px -10px rgba(6, 14, 24, 0.22), 0 0 0 1px rgba(255, 101, 0, 0.12);
       padding: 20px 24px;
       box-sizing: border-box;
       z-index: 100;
@@ -375,22 +375,22 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      color: #334155;
+      color: #333333;
     }
     .suggest-title-group svg {
-      color: #F97316;
+      color: #FF6500;
       flex-shrink: 0;
     }
     .suggest-title {
       font-size: 13.5px;
       font-weight: 700;
-      color: #1E293B;
+      color: #333333;
       letter-spacing: 0.02em;
     }
     .btn-clear-history {
       background: none;
       border: none;
-      color: #94A3B8;
+      color: #8A8A8A;
       font-size: 12px;
       font-weight: 600;
       cursor: pointer;
@@ -399,12 +399,12 @@
       transition: color 0.2s;
     }
     .btn-clear-history:hover {
-      color: #EF4444;
+      color: #FF3333;
       text-decoration: underline;
     }
     .suggest-hint-tag {
       font-size: 11px;
-      color: #94A3B8;
+      color: #8A8A8A;
       font-weight: 500;
     }
     .recent-chips-list {
@@ -418,24 +418,24 @@
       align-items: center;
       gap: 6px;
       background: #F8FAFC;
-      border: 1px solid #E2E8F0;
+      border: 1px solid #E6E6E6;
       border-radius: 9999px;
       padding: 5px 12px;
       font-size: 13px;
-      color: #334155;
+      color: #333333;
       font-weight: 500;
       cursor: pointer;
       transition: all 0.2s ease;
     }
     .recent-chip:hover {
-      background: #FFF7ED;
-      border-color: #F97316;
-      color: #EA580C;
+      background: #FFF0E6;
+      border-color: #FF6500;
+      color: #E85C00;
     }
     .recent-chip-remove {
       background: none;
       border: none;
-      color: #94A3B8;
+      color: #8A8A8A;
       cursor: pointer;
       font-size: 11px;
       padding: 0;
@@ -449,12 +449,12 @@
       transition: all 0.2s;
     }
     .recent-chip-remove:hover {
-      background: #FEE2E2;
-      color: #EF4444;
+      background: #FFE6E6;
+      color: #FF3333;
     }
     .recent-empty-hint {
       font-size: 13px;
-      color: #94A3B8;
+      color: #8A8A8A;
       font-style: italic;
       padding: 4px 0;
     }
@@ -466,17 +466,17 @@
     /* --- BỘ LỌC NGÀNH NGHỀ MEGA MENU 2 CỘT CHUẨN TOPCV --- */
     .industry-mega-panel {
       display: flex;
-      border: 1.5px solid #E2E8F0;
+      border: 1.5px solid #E6E6E6;
       border-radius: 14px;
       background: #FFFFFF;
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+      box-shadow: 0 4px 16px rgba(6, 14, 24, 0.04);
       min-height: 290px;
     }
     .industry-mega-nav {
       width: 250px;
       flex-shrink: 0;
-      border-right: 1px solid #E2E8F0;
+      border-right: 1px solid #E6E6E6;
       background: #FFFFFF;
       display: flex;
       flex-direction: column;
@@ -499,7 +499,7 @@
       cursor: pointer;
       font-size: 13.5px;
       font-weight: 500;
-      color: #334155;
+      color: #333333;
       transition: all 0.18s ease;
       border-left: 3.5px solid transparent;
       outline: none;
@@ -507,16 +507,16 @@
     }
     .industry-nav-item:hover {
       background: #F8FAFC;
-      color: #F97316;
+      color: #FF6500;
     }
     .industry-nav-item.active {
-      background: #FFF7ED;
-      color: #F97316;
+      background: #FFF0E6;
+      color: #FF6500;
       font-weight: 700;
-      border-left-color: #F97316;
+      border-left-color: #FF6500;
     }
     .industry-nav-item .nav-item-chevron {
-      color: #94A3B8;
+      color: #8A8A8A;
       transition: transform 0.18s, color 0.18s;
       flex-shrink: 0;
       display: flex;
@@ -524,7 +524,7 @@
     }
     .industry-nav-item:hover .nav-item-chevron,
     .industry-nav-item.active .nav-item-chevron {
-      color: #F97316;
+      color: #FF6500;
       transform: translateX(2px);
     }
     .industry-nav-pagination {
@@ -532,14 +532,14 @@
       align-items: center;
       justify-content: space-between;
       padding: 10px 16px;
-      border-top: 1px solid #E2E8F0;
+      border-top: 1px solid #E6E6E6;
       background: #FAFAFA;
       box-sizing: border-box;
     }
     .pagination-page-info {
       font-size: 13px;
       font-weight: 700;
-      color: #64748B;
+      color: #545454;
     }
     .pagination-buttons {
       display: flex;
@@ -550,9 +550,9 @@
       width: 26px;
       height: 26px;
       border-radius: 50%;
-      border: 1.5px solid #F97316;
+      border: 1.5px solid #FF6500;
       background: #FFFFFF;
-      color: #F97316;
+      color: #FF6500;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -561,13 +561,13 @@
       padding: 0;
     }
     .btn-page-nav:hover:not(:disabled) {
-      background: #F97316;
+      background: #FF6500;
       color: #FFFFFF;
-      box-shadow: 0 2px 6px rgba(249, 115, 22, 0.25);
+      box-shadow: 0 2px 6px rgba(255, 101, 0, 0.25);
     }
     .btn-page-nav:disabled {
-      border-color: #E2E8F0;
-      color: #CBD5E1;
+      border-color: #E6E6E6;
+      color: #B0B0B0;
       cursor: not-allowed;
       background: #F8FAFC;
     }
@@ -591,11 +591,11 @@
       background: #F8FAFC;
     }
     .industry-mega-content::-webkit-scrollbar-thumb {
-      background: #CBD5E1;
+      background: #B0B0B0;
       border-radius: 4px;
     }
     .industry-mega-content::-webkit-scrollbar-thumb:hover {
-      background: #94A3B8;
+      background: #8A8A8A;
     }
     .mega-section-hot {
       display: flex;
@@ -607,7 +607,7 @@
     .mega-hot-label {
       font-size: 13px;
       font-weight: 700;
-      color: #1E293B;
+      color: #333333;
       min-width: 155px;
       line-height: 1.4;
       flex-shrink: 0;
@@ -624,27 +624,27 @@
       align-items: center;
       gap: 6px;
       padding: 5px 13px;
-      border: 1px solid #FECACA;
-      background: #FEF2F2;
+      border: 1px solid #FFB0B0;
+      background: #FFE6E6;
       border-radius: 9999px;
       font-size: 12.5px;
       font-weight: 600;
-      color: #DC2626;
+      color: #E80000;
       cursor: pointer;
       transition: all 0.18s ease;
       white-space: nowrap;
     }
     .hot-search-pill:hover {
-      background: #FEE2E2;
-      border-color: #EF4444;
+      background: #FFE6E6;
+      border-color: #FF3333;
       transform: translateY(-1px);
-      box-shadow: 0 2px 6px rgba(239, 68, 68, 0.15);
+      box-shadow: 0 2px 6px rgba(255, 51, 51, 0.15);
     }
     .hot-fire-icon {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      color: #EF4444;
+      color: #FF3333;
       flex-shrink: 0;
     }
     .mega-subgroup-row {
@@ -655,7 +655,7 @@
     .mega-subgroup-title {
       font-size: 13px;
       font-weight: 700;
-      color: #1E293B;
+      color: #333333;
       min-width: 155px;
       line-height: 1.4;
       flex-shrink: 0;
@@ -676,15 +676,15 @@
       border-radius: 9999px;
       font-size: 12.5px;
       font-weight: 500;
-      color: #334155;
+      color: #333333;
       cursor: pointer;
       transition: all 0.18s ease;
       white-space: nowrap;
     }
     .subgroup-tag-pill:hover {
-      background: #E2E8F0;
-      border-color: #CBD5E1;
-      color: #0F172A;
+      background: #E6E6E6;
+      border-color: #B0B0B0;
+      color: #060E18;
       transform: translateY(-1px);
     }
     .industry-scroll-badge {
@@ -692,13 +692,13 @@
       bottom: 4px;
       margin-left: auto;
       align-self: flex-end;
-      background: #D1FAE5;
-      border: 1px solid #A7F3D0;
+      background: #BFE3D1;
+      border: 1px solid #BFE3D1;
       border-radius: 9999px;
       padding: 4px 12px;
       font-size: 11.5px;
       font-weight: 600;
-      color: #059669;
+      color: #2C9661;
       display: inline-flex;
       align-items: center;
       gap: 5px;
@@ -708,8 +708,8 @@
       z-index: 5;
     }
     .industry-scroll-badge:hover {
-      background: #A7F3D0;
-      color: #047857;
+      background: #BFE3D1;
+      color: #22754C;
     }
     .industry-scroll-badge.is-hidden {
       opacity: 0;
@@ -723,20 +723,20 @@
     }
     .suggest-trend-chip {
       background: #F8FAFC;
-      border: 1px solid #E2E8F0;
+      border: 1px solid #E6E6E6;
       border-radius: 9999px;
       padding: 4px 12px;
       font-size: 12.5px;
       font-weight: 600;
-      color: #334155;
+      color: #333333;
       text-decoration: none;
       cursor: pointer;
       transition: all 0.2s;
     }
     .suggest-trend-chip:hover {
-      background: #FFF7ED;
-      border-color: #F97316;
-      color: #EA580C;
+      background: #FFF0E6;
+      border-color: #FF6500;
+      color: #E85C00;
     }
     .suggest-footer {
       display: flex;
@@ -746,7 +746,7 @@
       padding-top: 12px;
       border-top: 1px solid #F1F5F9;
       font-size: 12px;
-      color: #94A3B8;
+      color: #8A8A8A;
     }
     .suggest-footer-tip {
       display: flex;
@@ -760,13 +760,13 @@
       padding: 4px 10px;
       font-size: 11.5px;
       font-weight: 600;
-      color: #64748B;
+      color: #545454;
       cursor: pointer;
       transition: all 0.2s;
     }
     .btn-close-suggest:hover {
-      background: #E2E8F0;
-      color: #0F172A;
+      background: #E6E6E6;
+      color: #060E18;
     }
 
     /* =========================================================================
@@ -802,17 +802,17 @@
       min-height: 0 !important;
       border-radius: 16px;
       overflow: hidden;
-      border: 1.5px solid #FED7AA;
-      box-shadow: 0 10px 28px -6px rgba(15, 23, 42, 0.1);
-      background: #0F172A;
+      border: 1.5px solid #FFCFB0;
+      box-shadow: 0 10px 28px -6px rgba(6, 14, 24, 0.1);
+      background: #060E18;
       text-decoration: none;
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
       user-select: none;
     }
     .sponsor-primary:hover {
       transform: translateY(-2px);
-      border-color: #F97316;
-      box-shadow: 0 16px 36px -6px rgba(249, 115, 22, 0.22);
+      border-color: #FF6500;
+      box-shadow: 0 16px 36px -6px rgba(255, 101, 0, 0.22);
     }
 
     /* Slides Wrapper & Items */
@@ -877,12 +877,12 @@
       background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
-      color: #334155;
+      color: #333333;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.12);
+      box-shadow: 0 2px 10px rgba(6, 14, 24, 0.12);
       transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
       padding: 0;
       opacity: 0.88;
@@ -891,11 +891,11 @@
       opacity: 1;
     }
     .sponsor-slider-btn:hover {
-      background: #F97316;
-      border-color: #F97316;
+      background: #FF6500;
+      border-color: #FF6500;
       color: #FFFFFF;
       width: 32px;
-      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
+      box-shadow: 0 4px 14px rgba(255, 101, 0, 0.35);
     }
     .sponsor-slider-btn:active {
       transform: translateY(-50%) scale(0.96);
@@ -924,7 +924,7 @@
       align-items: center;
       gap: 7px;
       padding: 5px 12px;
-      background: rgba(15, 23, 42, 0.45);
+      background: rgba(6, 14, 24, 0.45);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
       border-radius: 999px;
@@ -947,8 +947,8 @@
     .sponsor-dot.active {
       width: 22px;
       border-radius: 6px;
-      background: #F97316;
-      box-shadow: 0 0 8px rgba(249, 115, 22, 0.6);
+      background: #FF6500;
+      box-shadow: 0 0 8px rgba(255, 101, 0, 0.6);
     }
 
     /* 2 ô banner phụ: xếp dọc bên phải, chỉ hiển thị ảnh banner */
@@ -958,9 +958,9 @@
       padding: 0 !important;
       border-radius: 14px;
       overflow: hidden;
-      border: 1.5px solid #FED7AA;
-      box-shadow: 0 8px 20px -6px rgba(15, 23, 42, 0.08);
-      background: #0F172A;
+      border: 1.5px solid #FFCFB0;
+      box-shadow: 0 8px 20px -6px rgba(6, 14, 24, 0.08);
+      background: #060E18;
       text-decoration: none;
       height: 100% !important;
       min-height: 0 !important;
@@ -968,8 +968,8 @@
     }
     .sponsor-mini:hover {
       transform: translateY(-2px);
-      border-color: #F97316;
-      box-shadow: 0 14px 30px -6px rgba(249, 115, 22, 0.2);
+      border-color: #FF6500;
+      box-shadow: 0 14px 30px -6px rgba(255, 101, 0, 0.2);
     }
     .sponsor-mini img {
       width: 100%;
@@ -1045,7 +1045,7 @@
         flex: 1 1 auto;
         width: 100%;
         max-width: none;
-        border-top: 1px solid #E2E8F0;
+        border-top: 1px solid #E6E6E6;
         padding-top: 8px;
       }
       .btn-hero-search {
@@ -1067,7 +1067,7 @@
       .industry-mega-nav {
         width: 100%;
         border-right: none;
-        border-bottom: 1px solid #E2E8F0;
+        border-bottom: 1px solid #E6E6E6;
       }
       .industry-nav-list {
         display: grid;
@@ -1163,18 +1163,18 @@
       box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.12);
     }
     .promo-banner-primary {
-      background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%) !important;
-      border: 1px solid #334155 !important;
+      background: linear-gradient(135deg, #333333 0%, #060E18 100%) !important;
+      border: 1px solid #333333 !important;
       color: #FFFFFF !important;
     }
     .promo-banner-accent {
-      background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%) !important;
-      border: 1px solid #FED7AA !important;
-      color: #0F172A !important;
+      background: linear-gradient(135deg, #FFF0E6 0%, #FFCFB0 100%) !important;
+      border: 1px solid #FFCFB0 !important;
+      color: #060E18 !important;
     }
     [data-theme="dark"] .promo-banner-accent {
       background: linear-gradient(135deg, #2A1B10 0%, #1E1711 100%) !important;
-      border-color: #7C2D12 !important;
+      border-color: #6B2A00 !important;
       color: #F8FAFC !important;
     }
     .promo-banner-top {
@@ -1194,16 +1194,16 @@
       padding: 3px 8px;
       border-radius: 6px;
       background: rgba(255, 255, 255, 0.15);
-      color: #E2E8F0;
+      color: #E6E6E6;
     }
     .ad-label-pill.ad-label-orange {
-      background: #F97316;
+      background: #FF6500;
       color: #FFFFFF;
     }
     .promo-countdown-pill {
       font-size: 11.5px;
       font-weight: 600;
-      color: #FB923C;
+      color: #FF8433;
       display: flex;
       align-items: center;
       gap: 5px;
@@ -1240,26 +1240,26 @@
       transition: all 160ms cubic-bezier(0.16, 1, 0.3, 1);
     }
     .btn-promo-primary {
-      background: linear-gradient(135deg, #FF8A34 0%, #F97316 100%) !important;
+      background: linear-gradient(135deg, #FF8433 0%, #FF6500 100%) !important;
       color: #FFFFFF !important;
     }
     .btn-promo-primary:hover {
-      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%) !important;
+      background: linear-gradient(135deg, #FF6500 0%, #E85C00 100%) !important;
       transform: translateX(2px);
     }
     .btn-promo-outline {
       background: #FFFFFF !important;
-      color: #0F172A !important;
-      border: 1px solid #CBD5E1 !important;
+      color: #060E18 !important;
+      border: 1px solid #B0B0B0 !important;
     }
     [data-theme="dark"] .btn-promo-outline {
-      background: #1E293B !important;
+      background: #333333 !important;
       color: #FFFFFF !important;
-      border-color: #475569 !important;
+      border-color: #545454 !important;
     }
     .btn-promo-outline:hover {
-      border-color: #F97316 !important;
-      color: #F97316 !important;
+      border-color: #FF6500 !important;
+      color: #FF6500 !important;
     }
     /* ==========================================================================
        CSS BỔ TRỢ KHỐI IV: VIỆC LÀM NỔI BẬT & HUY HIỆU TIA SÉT TOPCV & PREVIEW POPUP
@@ -1284,27 +1284,27 @@
       gap: 8px;
       padding: 10px 18px;
       border-radius: 9999px;
-      border: 1.5px solid var(--border-color, #E2E8F0);
+      border: 1.5px solid var(--border-color, #E6E6E6);
       background: var(--bg-primary, #FFFFFF);
-      color: var(--text-secondary, #475569);
+      color: var(--text-secondary, #545454);
       font-size: 13.5px;
       font-weight: 600;
       cursor: pointer;
       white-space: nowrap;
       transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+      box-shadow: 0 1px 3px rgba(6, 14, 24, 0.04);
     }
     .filter-pill-btn:hover {
-      border-color: #F97316;
-      color: #EA580C;
-      background: #FFF7ED;
+      border-color: #FF6500;
+      color: #E85C00;
+      background: #FFF0E6;
       transform: translateY(-1px);
     }
     .filter-pill-btn.active {
-      background: #F97316;
-      border-color: #F97316;
+      background: #FF6500;
+      border-color: #FF6500;
       color: #FFFFFF;
-      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.32);
+      box-shadow: 0 4px 14px rgba(255, 101, 0, 0.32);
       transform: translateY(-1px);
     }
     .filter-pill-count {
@@ -1313,8 +1313,8 @@
       font-size: 11.5px;
       font-weight: 700;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.06);
-      color: var(--text-muted, #64748B);
+      background: rgba(6, 14, 24, 0.06);
+      color: var(--text-muted, #545454);
       transition: all 0.2s ease;
     }
     .filter-pill-btn.active .filter-pill-count {
@@ -1322,23 +1322,23 @@
       color: #FFFFFF;
     }
     [data-theme="dark"] .filter-pill-btn {
-      background: #1E293B;
-      border-color: #334155;
-      color: #CBD5E1;
+      background: #333333;
+      border-color: #333333;
+      color: #B0B0B0;
     }
     [data-theme="dark"] .filter-pill-btn:hover {
       background: #2A1B10;
-      border-color: #EA580C;
-      color: #FDBA74;
+      border-color: #E85C00;
+      color: #FFB88A;
     }
     [data-theme="dark"] .filter-pill-btn.active {
-      background: #F97316;
-      border-color: #F97316;
+      background: #FF6500;
+      border-color: #FF6500;
       color: #FFFFFF;
     }
     [data-theme="dark"] .filter-pill-count {
       background: rgba(255, 255, 255, 0.1);
-      color: #94A3B8;
+      color: #8A8A8A;
     }
 
     /* Grid 3 cột x tối đa 4 hàng (12 thẻ) */
@@ -1366,7 +1366,7 @@
     .job-card,
     .attractive-card {
       background: var(--bg-primary, #FFFFFF);
-      border: 1px solid var(--border-color, #E2E8F0);
+      border: 1px solid var(--border-color, #E6E6E6);
       border-radius: 10px;
       padding: 12px 14px;
       display: flex;
@@ -1383,18 +1383,18 @@
     .job-card:hover,
     .attractive-card:hover {
       transform: translateY(-2px);
-      border-color: var(--color-primary, #F97316);
-      box-shadow: 0 8px 18px -4px rgba(249, 115, 22, 0.14), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+      border-color: var(--color-primary, #FF6500);
+      box-shadow: 0 8px 18px -4px rgba(255, 101, 0, 0.14), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
     }
 
     [data-theme="dark"] .job-card,
     [data-theme="dark"] .attractive-card {
-      background: #1E293B;
-      border-color: #334155;
+      background: #333333;
+      border-color: #333333;
     }
     [data-theme="dark"] .job-card:hover,
     [data-theme="dark"] .attractive-card:hover {
-      border-color: #F97316;
+      border-color: #FF6500;
       box-shadow: 0 8px 18px -4px rgba(0, 0, 0, 0.45);
     }
 
@@ -1417,7 +1417,7 @@
       min-height: 52px;
       flex-shrink: 0;
       border-radius: 8px;
-      border: 1px solid var(--border-color, #E2E8F0);
+      border: 1px solid var(--border-color, #E6E6E6);
       background: #FFFFFF;
       display: flex;
       align-items: center;
@@ -1429,8 +1429,8 @@
     }
     .job-card:hover .job-logo-wrapper,
     .attractive-card:hover .job-logo-wrapper {
-      border-color: #F97316;
-      box-shadow: 0 2px 8px rgba(249, 115, 22, 0.15);
+      border-color: #FF6500;
+      box-shadow: 0 2px 8px rgba(255, 101, 0, 0.15);
     }
     .job-logo,
     .company-logo {
@@ -1483,7 +1483,7 @@
     .job-title {
       font-size: 14px;
       font-weight: 600;
-      color: var(--text-main, #0F172A);
+      color: var(--text-main, #060E18);
       line-height: 1.35;
       text-decoration: none;
       display: -webkit-box;
@@ -1494,19 +1494,19 @@
       transition: color 0.18s ease;
     }
     .job-title:hover {
-      color: var(--color-primary, #F97316);
+      color: var(--color-primary, #FF6500);
     }
     [data-theme="dark"] .job-title {
       color: #F8FAFC;
     }
     [data-theme="dark"] .job-title:hover {
-      color: #FB923C;
+      color: #FF8433;
     }
 
     .company-name {
       font-size: 12px;
       font-weight: 500;
-      color: var(--text-muted, #64748B);
+      color: var(--text-muted, #545454);
       text-transform: uppercase;
       letter-spacing: 0.15px;
       white-space: nowrap;
@@ -1518,10 +1518,10 @@
       transition: color 0.18s ease;
     }
     .company-name:hover {
-      color: var(--color-primary, #F97316);
+      color: var(--color-primary, #FF6500);
     }
     [data-theme="dark"] .company-name {
-      color: #94A3B8;
+      color: #8A8A8A;
     }
 
     /* Footer: Hàng thẻ tag bên trái & Trái tim bên phải */
@@ -1559,23 +1559,23 @@
     }
     .job-pill-salary {
       font-weight: 600;
-      color: var(--text-main, #1E293B);
+      color: var(--text-main, #333333);
     }
     .job-pill-location {
       font-weight: 500;
-      color: var(--text-muted, #64748B);
+      color: var(--text-muted, #545454);
       max-width: 140px;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     [data-theme="dark"] .job-pill {
-      background: #0F172A;
+      background: #060E18;
     }
     [data-theme="dark"] .job-pill-salary {
-      color: #E2E8F0;
+      color: #E6E6E6;
     }
     [data-theme="dark"] .job-pill-location {
-      color: #94A3B8;
+      color: #8A8A8A;
     }
 
     /* Cụm hành động bên phải footer thẻ: Bookmark */
@@ -1596,9 +1596,9 @@
       width: 28px;
       height: 28px;
       border-radius: 50%;
-      border: 1px solid var(--border-color, #CBD5E1);
+      border: 1px solid var(--border-color, #B0B0B0);
       background: transparent;
-      color: #64748B;
+      color: #545454;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -1608,9 +1608,9 @@
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .btn-bookmark:hover {
-      border-color: var(--color-primary, #F97316);
-      color: var(--color-primary, #F97316);
-      background: var(--color-surface-raised, #FFF7ED);
+      border-color: var(--color-primary, #FF6500);
+      color: var(--color-primary, #FF6500);
+      background: var(--color-surface-raised, #FFF0E6);
       transform: scale(1.06);
     }
     .btn-bookmark svg {
@@ -1622,31 +1622,31 @@
       transition: fill 0.15s ease, stroke 0.15s ease;
     }
     .btn-bookmark.active {
-      border-color: #EF4444;
-      color: #EF4444;
-      background: rgba(239, 68, 68, 0.08);
+      border-color: #FF3333;
+      color: #FF3333;
+      background: rgba(255, 51, 51, 0.08);
     }
     .btn-bookmark.active svg {
-      fill: #EF4444;
-      stroke: #EF4444;
+      fill: #FF3333;
+      stroke: #FF3333;
     }
     [data-theme="dark"] .btn-bookmark {
-      border-color: #475569;
-      color: #94A3B8;
+      border-color: #545454;
+      color: #8A8A8A;
     }
     [data-theme="dark"] .btn-bookmark:hover {
-      border-color: #F97316;
-      color: #F97316;
-      background: rgba(249, 115, 22, 0.15);
+      border-color: #FF6500;
+      color: #FF6500;
+      background: rgba(255, 101, 0, 0.15);
     }
     [data-theme="dark"] .btn-bookmark.active {
-      border-color: #EF4444;
-      color: #EF4444;
-      background: rgba(239, 68, 68, 0.15);
+      border-color: #FF3333;
+      color: #FF3333;
+      background: rgba(255, 51, 51, 0.15);
     }
     [data-theme="dark"] .btn-bookmark.active svg {
-      fill: #EF4444;
-      stroke: #EF4444;
+      fill: #FF3333;
+      stroke: #FF3333;
     }
 
     /* Tooltip Tia Sét chuẩn TopCV */
@@ -1655,7 +1655,7 @@
       bottom: calc(100% + 8px);
       left: -10px;
       width: 310px;
-      background: #0F172A;
+      background: #060E18;
       color: #F8FAFC;
       border: 1px solid rgba(245, 158, 11, 0.4);
       border-radius: 10px;
@@ -1677,7 +1677,7 @@
       left: 18px;
       border-width: 6px;
       border-style: solid;
-      border-color: #0F172A transparent transparent transparent;
+      border-color: #060E18 transparent transparent transparent;
     }
     .badge-lightning:hover .lightning-tooltip-box {
       opacity: 1;
@@ -1706,7 +1706,7 @@
     }
     .lightning-tooltip-rules {
       font-size: 11px;
-      color: #CBD5E1;
+      color: #B0B0B0;
       display: flex;
       flex-direction: column;
       gap: 4px;
@@ -1729,9 +1729,9 @@
       width: 38px;
       height: 38px;
       border-radius: 8px;
-      border: 1px solid var(--border-color, #E2E8F0);
+      border: 1px solid var(--border-color, #E6E6E6);
       background: var(--bg-primary, #FFFFFF);
-      color: var(--text-primary, #0F172A);
+      color: var(--text-primary, #060E18);
       font-weight: 600;
       font-size: 13.5px;
       display: inline-flex;
@@ -1741,15 +1741,15 @@
       transition: all 0.18s ease;
     }
     .featured-page-btn:hover:not(:disabled) {
-      border-color: #F97316;
-      color: #F97316;
-      background: #FFF7ED;
+      border-color: #FF6500;
+      color: #FF6500;
+      background: #FFF0E6;
     }
     .featured-page-btn.active {
-      background: #F97316;
-      border-color: #F97316;
+      background: #FF6500;
+      border-color: #FF6500;
       color: #FFFFFF;
-      box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+      box-shadow: 0 4px 10px rgba(255, 101, 0, 0.3);
     }
     .featured-page-btn:disabled {
       opacity: 0.4;
@@ -1763,8 +1763,8 @@
       width: 380px;
       background: #FFFFFF;
       border-radius: 14px;
-      border: 1.5px solid #FED7AA;
-      box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.22), 0 8px 18px -4px rgba(15, 23, 42, 0.1);
+      border: 1.5px solid #FFCFB0;
+      box-shadow: 0 20px 45px -10px rgba(6, 14, 24, 0.22), 0 8px 18px -4px rgba(6, 14, 24, 0.1);
       padding: 18px;
       pointer-events: auto;
       opacity: 0;
@@ -1778,8 +1778,8 @@
       transform: translateY(0);
     }
     [data-theme="dark"] .job-preview-popover {
-      background: #1E293B;
-      border-color: #7C2D12;
+      background: #333333;
+      border-color: #6B2A00;
       color: #F8FAFC;
       box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.7);
     }
@@ -1792,13 +1792,13 @@
       border-bottom: 1px solid #F1F5F9;
     }
     [data-theme="dark"] .job-preview-header {
-      border-bottom-color: #334155;
+      border-bottom-color: #333333;
     }
     .job-preview-logo {
       width: 48px;
       height: 48px;
       border-radius: 8px;
-      border: 1px solid #E2E8F0;
+      border: 1px solid #E6E6E6;
       object-fit: contain;
       background: #FFFFFF;
       padding: 2px;
@@ -1811,13 +1811,13 @@
     .job-preview-title {
       font-size: 14.5px;
       font-weight: 700;
-      color: var(--text-primary, #0F172A);
+      color: var(--text-primary, #060E18);
       line-height: 1.35;
       margin-bottom: 4px;
     }
     .job-preview-company {
       font-size: 12px;
-      color: var(--text-muted, #64748B);
+      color: var(--text-muted, #545454);
       font-weight: 500;
       text-transform: uppercase;
     }
@@ -1837,13 +1837,13 @@
       font-weight: 600;
     }
     .job-preview-badge-salary {
-      background: #FFF7ED;
-      color: #EA580C;
-      border: 1px solid #FDBA74;
+      background: #FFF0E6;
+      color: #E85C00;
+      border: 1px solid #FFB88A;
     }
     .job-preview-badge-loc {
       background: #F1F5F9;
-      color: #475569;
+      color: #545454;
     }
     .job-preview-badge-exp {
       background: #EFF6FF;
@@ -1860,7 +1860,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.4px;
-      color: #94A3B8;
+      color: #8A8A8A;
       margin-bottom: 6px;
     }
     .job-preview-desc-list {
@@ -1868,10 +1868,10 @@
       padding-left: 18px;
       font-size: 12px;
       line-height: 1.5;
-      color: #334155;
+      color: #333333;
     }
     [data-theme="dark"] .job-preview-desc-list {
-      color: #CBD5E1;
+      color: #B0B0B0;
     }
     .job-preview-skills-wrap {
       display: flex;
@@ -1884,12 +1884,12 @@
       padding: 2px 7px;
       border-radius: 4px;
       background: #F1F5F9;
-      color: #475569;
+      color: #545454;
       font-weight: 500;
     }
     [data-theme="dark"] .job-preview-skill-pill {
-      background: #334155;
-      color: #E2E8F0;
+      background: #333333;
+      color: #E6E6E6;
     }
     .job-preview-actions {
       display: flex;
@@ -1900,13 +1900,13 @@
       border-top: 1px solid #F1F5F9;
     }
     [data-theme="dark"] .job-preview-actions {
-      border-top-color: #334155;
+      border-top-color: #333333;
     }
     .job-preview-btn-apply {
       flex: 1;
       padding: 8px 14px;
       border-radius: 8px;
-      background: #F97316;
+      background: #FF6500;
       color: #FFFFFF;
       font-weight: 700;
       font-size: 12.5px;
@@ -1919,22 +1919,22 @@
       gap: 6px;
     }
     .job-preview-btn-apply:hover {
-      background: #EA580C;
+      background: #E85C00;
     }
     .job-preview-btn-detail {
       padding: 8px 14px;
       border-radius: 8px;
-      border: 1px solid var(--border-color, #CBD5E1);
+      border: 1px solid var(--border-color, #B0B0B0);
       background: transparent;
-      color: var(--text-primary, #334155);
+      color: var(--text-primary, #333333);
       font-weight: 600;
       font-size: 12.5px;
       text-decoration: none;
       transition: all 0.18s ease;
     }
     .job-preview-btn-detail:hover {
-      border-color: #F97316;
-      color: #F97316;
+      border-color: #FF6500;
+      color: #FF6500;
     }
   </style>
   <!-- Khử triệt để thanh cuộn dọc/ngang xám trên Mobile Web và Simulator -->
@@ -2193,7 +2193,7 @@
             </div>
             <div class="popover-body">
               <a href="index.html#notif-1" class="popover-item unread">
-                <div class="popover-item-icon" style="background: #F97316;">
+                <div class="popover-item-icon" style="background: #FF6500;">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
                 </div>
                 <div>
@@ -2202,7 +2202,7 @@
                 </div>
               </a>
               <a href="index.html#notif-2" class="popover-item unread">
-                <div class="popover-item-icon" style="background: #16A34A;">
+                <div class="popover-item-icon" style="background: #2C9661;">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
                 </div>
                 <div>
@@ -2244,7 +2244,7 @@
             </div>
             <div class="popover-body">
               <a href="index.html#chat-1" class="popover-item unread">
-                <div class="popover-item-icon" style="background: #1E293B;">
+                <div class="popover-item-icon" style="background: #333333;">
                   <span style="font-weight: 700; font-size: 13px;">HR</span>
                 </div>
                 <div>
@@ -2916,7 +2916,7 @@
               <span class="job-pill job-pill-salary" style="color: #D97706;">60 - 90 triệu</span>
               <span class="job-pill job-pill-location">Hà Nội</span>
             </div>
-            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu việc làm">
+            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </button>
           </div>
@@ -2942,7 +2942,7 @@
               <span class="job-pill job-pill-salary" style="color: #D97706;">45 - 70 triệu</span>
               <span class="job-pill job-pill-location">TP.HCM</span>
             </div>
-            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu việc làm">
+            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </button>
           </div>
@@ -2968,7 +2968,7 @@
               <span class="job-pill job-pill-salary" style="color: #D97706;">55 - 80 triệu</span>
               <span class="job-pill job-pill-location">TP.HCM & Hybrid</span>
             </div>
-            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu việc làm">
+            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </button>
           </div>
@@ -2993,7 +2993,7 @@
               <span class="job-pill job-pill-salary" style="color: #D97706;">70 - 100 triệu</span>
               <span class="job-pill job-pill-location">Hà Nội</span>
             </div>
-            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu việc làm">
+            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </button>
           </div>
@@ -3019,7 +3019,7 @@
               <span class="job-pill job-pill-salary" style="color: #D97706;">65 - 95 triệu</span>
               <span class="job-pill job-pill-location">TP.HCM & Hybrid</span>
             </div>
-            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu việc làm">
+            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </button>
           </div>
@@ -3045,7 +3045,7 @@
               <span class="job-pill job-pill-salary" style="color: #D97706;">50 - 85 triệu</span>
               <span class="job-pill job-pill-location">Hà Nội</span>
             </div>
-            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu việc làm">
+            <button class="btn-bookmark" style="border-color: #F59E0B; color: #F59E0B;" aria-label="Lưu công việc này" title="Lưu">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </button>
           </div>
@@ -3298,7 +3298,7 @@
               <span class="job-pill job-pill-salary">2,500 - 4,000 USD</span>
               <span class="job-pill job-pill-location">TP.HCM</span>
             </div>
-            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </button>
           </div>
@@ -3324,7 +3324,7 @@
               <span class="job-pill job-pill-salary">32 - 50 triệu</span>
               <span class="job-pill job-pill-location">TP.HCM</span>
             </div>
-            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </button>
           </div>
@@ -3350,7 +3350,7 @@
               <span class="job-pill job-pill-salary">1,500 - 2,500 USD</span>
               <span class="job-pill job-pill-location">Remote</span>
             </div>
-            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </button>
           </div>
@@ -3376,7 +3376,7 @@
               <span class="job-pill job-pill-salary">25 - 40 triệu</span>
               <span class="job-pill job-pill-location">Hà Nội</span>
             </div>
-            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </button>
           </div>
@@ -3402,7 +3402,7 @@
               <span class="job-pill job-pill-salary">40 - 65 triệu</span>
               <span class="job-pill job-pill-location">Hà Nội</span>
             </div>
-            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </button>
           </div>
@@ -3428,7 +3428,7 @@
               <span class="job-pill job-pill-salary">35 - 60 triệu</span>
               <span class="job-pill job-pill-location">TP.HCM & Remote</span>
             </div>
-            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu việc làm">
+            <button class="btn-bookmark" aria-label="Lưu công việc này" title="Lưu">
               <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </button>
           </div>
@@ -3634,7 +3634,7 @@
       <div id="popular-industries-track" class="categories-grid">
 
         <a href="#nganh-it" class="category-card">
-          <div class="category-icon" style="background: rgba(249, 115, 22, 0.1); color: var(--easycv-orange);">
+          <div class="category-icon" style="background: rgba(255, 101, 0, 0.1); color: var(--easycv-orange);">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <div class="category-info">
@@ -3644,7 +3644,7 @@
         </a>
 
         <a href="#nganh-sales" class="category-card">
-          <div class="category-icon" style="background: rgba(34, 197, 94, 0.1); color: var(--green-600);">
+          <div class="category-icon" style="background: rgba(48, 165, 107, 0.1); color: var(--green-600);">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><line x1="12" y1="6" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="18"/></svg>
           </div>
           <div class="category-info">
@@ -3684,7 +3684,7 @@
         </a>
 
         <a href="#nganh-hr" class="category-card">
-          <div class="category-icon" style="background: rgba(239, 68, 68, 0.1); color: #EF4444;">
+          <div class="category-icon" style="background: rgba(255, 51, 51, 0.1); color: #FF3333;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
           </div>
           <div class="category-info">
@@ -3734,7 +3734,7 @@
         </a>
 
         <a href="#nganh-manufacturing" class="category-card">
-          <div class="category-icon" style="background: rgba(100, 116, 139, 0.12); color: #475569;">
+          <div class="category-icon" style="background: rgba(100, 116, 139, 0.12); color: #545454;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V9l6 3V9l6 3V5h4v16H3Z"/><path d="M7 17h2M12 17h2M17 17h2"/></svg>
           </div>
           <div class="category-info">
@@ -3784,7 +3784,7 @@
         </a>
 
         <a href="#nganh-general-labor" class="category-card">
-          <div class="category-icon" style="background: rgba(34, 197, 94, 0.1); color: #16A34A;">
+          <div class="category-icon" style="background: rgba(48, 165, 107, 0.1); color: #2C9661;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2M8 14l4 3 4-3"/></svg>
           </div>
           <div class="category-info">
@@ -3875,7 +3875,7 @@
             <strong>EasyCV</strong> là hệ sinh thái công nghệ nhân sự và sàn giao dịch việc làm thông minh hàng đầu tại Việt Nam. 
             Ứng dụng trí tuệ nhân tạo (AI Match Engine) giúp ứng viên kết nối nhanh chóng với hơn 50.000+ doanh nghiệp uy tín trong và ngoài nước.
           </p>
-          <div style="font-size: 12px; color: #64748B; line-height: 1.6;">
+          <div style="font-size: 12px; color: #545454; line-height: 1.6;">
             Giấy phép hoạt động dịch vụ việc làm số: <strong>128/GP-SLĐTBXH</strong> do Sở Lao động - Thương binh và Xã hội cấp.
           </div>
           <div class="accreditation-badges">
@@ -3963,7 +3963,7 @@
 
       <!-- Bottom Copyright & Social Bar -->
       <div class="footer-bottom-bar">
-        <div style="color: #64748B;">
+        <div style="color: #545454;">
           © 2026 <strong>EasyCV Vietnam JSC</strong>. Tất cả quyền được bảo lưu. Nền tảng kết nối nhân tài hàng đầu.
         </div>
         <div class="footer-social-links">
@@ -3985,8 +3985,8 @@
     </div>
   </footer>
 
-  <script src="js/navbar.js?v=7.0_synced_navbar"></script>
-  <script src="js/category-filter-modal.js?v=1.0"></script>
+  <script src="js/navbar.js?v=7.1_mobile_float"></script>
+  <script src="js/category-filter-modal.js?v=eb_colors_20261007"></script>
   <script src="js/home.js?v=20261007_remove_floating_ai"></script>
   <script src="js/location-picker.js?v=3.0_clean"></script>
 

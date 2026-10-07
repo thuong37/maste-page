@@ -23,7 +23,7 @@
 - **Giải pháp:**
   - Gỡ bỏ hoàn toàn phần tử `.detail-top-nav` khỏi mã nguồn HTML và DOM.
   - Cột chi tiết bên phải (`.split-detail-pane`) bắt đầu ngay lập tức từ `.detail-hero-box` với logo công ty, tiêu đề công việc, các badge lương, địa điểm, thời gian.
-  - Chuyển nút **"Chia sẻ"** (`.btn-detail-share-btn` / `#btnCopyJobLink`) vào hàng CTA chính của `.detail-hero-box` cùng với **"Ứng tuyển ngay"** và **"Lưu việc làm"**.
+  - Chuyển nút **"Chia sẻ"** (`.btn-detail-share-btn` / `#btnCopyJobLink`) vào hàng CTA chính của `.detail-hero-box` cùng với **"Ứng tuyển ngay"** và **"Lưu"**.
   - Bổ sung quy tắc CSS cho `.btn-detail-share-btn`:
     ```css
     .btn-detail-share-btn {
