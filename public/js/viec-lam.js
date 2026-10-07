@@ -1876,14 +1876,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderCurrentPage() {
     const totalJobs = currentFilteredJobs.length;
 
-    // Update job count header
+    // Update job count header: Luôn hiển thị số lượng việc làm tìm thấy phù hợp
     if (jobCountText) {
-      const matchCount = currentFilteredJobs.filter(j => j._isSearchMatch).length;
-      if (matchCount > 0) {
-        jobCountText.innerHTML = `${totalJobs} <span class="job-count-subtext">(${matchCount} việc làm khớp tiêu chí)</span>`;
-      } else {
-        jobCountText.textContent = totalJobs;
-      }
+      jobCountText.textContent = totalJobs;
     }
 
     // Empty state handling
