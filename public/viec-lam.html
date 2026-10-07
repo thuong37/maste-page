@@ -994,65 +994,10 @@
               <span>Xóa lọc</span>
             </button>
 
-            <button type="button" class="btn-saved-filters" id="savedFiltersTrigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="savedFiltersDialog">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-              <span>Lưu bộ lọc</span>
-              <span class="saved-filter-count" id="savedFilterCount" aria-label="0 bộ lọc đã lưu">0</span>
-            </button>
-
           </div>
         </div>
 
       </section>
-
-      <div class="saved-filters-overlay" id="savedFiltersDialog" role="dialog" aria-modal="true" aria-labelledby="savedFiltersTitle" aria-describedby="savedFiltersDescription" hidden>
-        <div class="saved-filters-backdrop" data-saved-filter-close></div>
-        <div class="saved-filters-panel" tabindex="-1">
-          <div class="saved-filters-header">
-            <div>
-              <p class="saved-filters-eyebrow">Tìm việc nhanh hơn</p>
-              <h2 id="savedFiltersTitle">Bộ lọc đã lưu</h2>
-              <p id="savedFiltersDescription">Lưu các tiêu chí hiện tại để dùng lại trên trình duyệt này.</p>
-            </div>
-            <button type="button" class="saved-filters-close" id="savedFiltersClose" aria-label="Đóng hộp thoại bộ lọc đã lưu">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
-            </button>
-          </div>
-
-          <div class="saved-filters-body">
-            <section class="saved-filter-create" aria-labelledby="saveCurrentFilterTitle">
-              <div class="saved-filter-section-heading">
-                <div>
-                  <h3 id="saveCurrentFilterTitle">Lưu tiêu chí hiện tại</h3>
-                  <p class="saved-filter-current-summary" id="savedFilterCurrentSummary" aria-live="polite"></p>
-                </div>
-              </div>
-              <form id="savedFilterForm" novalidate>
-                <label for="savedFilterName">Tên bộ lọc</label>
-                <div class="saved-filter-form-row">
-                  <input type="text" id="savedFilterName" name="savedFilterName" maxlength="60" autocomplete="off" aria-describedby="savedFilterNameHint savedFilterNameError" placeholder="Ví dụ: Việc Hybrid cho Junior" />
-                  <button type="submit" class="saved-filter-submit" id="savedFilterSubmit">Lưu bộ lọc</button>
-                </div>
-                <p class="saved-filter-name-hint" id="savedFilterNameHint">Tối đa 60 ký tự. Cần có ít nhất một tiêu chí.</p>
-                <p class="saved-filter-error" id="savedFilterNameError" role="alert" hidden></p>
-              </form>
-            </section>
-
-            <section class="saved-filter-library" aria-labelledby="savedFilterLibraryTitle">
-              <div class="saved-filter-section-heading">
-                <h3 id="savedFilterLibraryTitle">Danh sách của bạn</h3>
-                <span class="saved-filter-library-count" id="savedFilterLibraryCount"></span>
-              </div>
-              <div class="saved-filter-empty" id="savedFilterEmpty">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-                <strong>Chưa có bộ lọc đã lưu</strong>
-                <span>Các bộ lọc bạn lưu sẽ xuất hiện tại đây.</span>
-              </div>
-              <ul class="saved-filter-list" id="savedFilterList" aria-live="polite"></ul>
-            </section>
-          </div>
-        </div>
-      </div>
           </div>
         </div>
 
