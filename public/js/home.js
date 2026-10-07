@@ -3557,7 +3557,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <span>${job.updated}</span>
                 </span>
                 <!-- Nút Ứng tuyển: To đẹp như các nút khác, ẨN khi chưa hover, HIỂN THỊ khi hover -->
-                <a href="viec-lam.html?apply=${job.id}" class="btn-card-apply" target="_blank" rel="noopener noreferrer" title="Nộp hồ sơ ứng tuyển ngay">
+                <a href="viec-lam.html?apply=${job.id}" class="btn-card-apply" target="_blank" rel="noopener noreferrer" title="Ứng tuyển ngay">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
                   <span>Ứng tuyển</span>
                 </a>

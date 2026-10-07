@@ -437,7 +437,7 @@ ${relatedCardsHtml}
             <div class="detail-cta-group">
               <button type="button" class="btn-detail-apply-main" id="btnDetailApply">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                <span>Nộp hồ sơ ứng tuyển ngay</span>
+                <span>Ứng tuyển ngay</span>
               </button>
               <button type="button" class="btn-detail-save-main" id="btnDetailSaveCard">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
