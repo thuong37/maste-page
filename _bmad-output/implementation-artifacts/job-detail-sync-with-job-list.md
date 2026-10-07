@@ -33,3 +33,15 @@ Ngày: 2026-10-07 · Trang: `chi-tiet-viec-lam.html` ↔ `viec-lam.html`
 | 10  | Nút "Ứng tuyển" trên card bị `home.css` ẩn                                             | Override `display: inline-flex !important` như inline style của trang gốc                                                                                  |
 
 Kết quả: thứ tự 25 job đầu giống hệt trang gốc với `keyword=sele` và với `keyword=sele&exp=1-3&location=Hà Nội`; console sạch; mobile không tràn.
+
+## Đợt 3 (2026-10-07): Tái cấu trúc khung + phân trang
+
+| # | Lỗi / thiếu | Giải pháp |
+|---|-------------|-----------|
+| 11 | 2 khung `sticky` không có tác dụng (lưới cao bằng khung) → thanh tìm kiếm dính 132px đè phần đầu 2 khung | Cột trái theo luồng trang; chỉ khung chi tiết sticky với `top = chiều cao thanh + 16px` (đo bằng JS) |
+| 12 | Cuộn lồng (trang + 2 ô cuộn), 28 job trong 1 ô | Phân trang 10 job/trang, mở đúng trang chứa job đang xem |
+| 13 | JD dài khó điều hướng | Thanh mục lục sticky + scrollspy |
+| 14 | Mobile: danh sách đứng trước chi tiết; thanh tìm kiếm dính cao ~480px che màn hình | Chi tiết lên trước; không neo thanh tìm kiếm ≤768px; bấm card cuộn về chi tiết |
+| 15 | Back khi mở trực tiếp mất trạng thái tìm kiếm | URL danh sách kèm keyword/bộ lọc |
+
+Tồn: `viec-lam.html` cũng neo thanh tìm kiếm ~480px trên mobile – chưa sửa.

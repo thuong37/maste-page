@@ -1449,7 +1449,53 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Render Khối Bên Phải: Danh Sách Job
-  function renderList() {
+  // Phân trang danh sách bên trái (markup giống renderPagination() của viec-lam.js)
+  const LIST_PAGE_SIZE = 10;
+  let currentListPage = 1;
+
+  function renderListPagination(totalPages) {
+    const wrap = document.getElementById('splitListPagination');
+    if (!wrap) return;
+    if (totalPages <= 1) {
+      wrap.style.display = 'none';
+      wrap.innerHTML = '';
+      return;
+    }
+    wrap.style.display = 'flex';
+    const prevDisabled = currentListPage === 1 ? 'disabled' : '';
+    const nextDisabled = currentListPage === totalPages ? 'disabled' : '';
+    let html = `<button type="button" class="page-btn ${prevDisabled}" data-page="prev" ${prevDisabled ? 'disabled' : ''} aria-label="Trang trước">« Trước</button>`;
+    for (let p = 1; p <= totalPages; p++) {
+      html += `<button type="button" class="page-btn ${p === currentListPage ? 'active' : ''}" data-page="${p}" ${p === currentListPage ? 'aria-current="page"' : ''}>${p}</button>`;
+    }
+    html += `<button type="button" class="page-btn ${nextDisabled}" data-page="next" ${nextDisabled ? 'disabled' : ''} aria-label="Trang sau">Sau »</button>`;
+    wrap.innerHTML = html;
+
+    wrap.querySelectorAll('.page-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const action = btn.getAttribute('data-page');
+        let target = currentListPage;
+        if (action === 'prev') target = currentListPage - 1;
+        else if (action === 'next') target = currentListPage + 1;
+        else target = parseInt(action, 10);
+        if (!target || target < 1 || target > totalPages || target === currentListPage) return;
+        currentListPage = target;
+        renderList();
+        scrollListIntoView();
+      });
+    });
+  }
+
+  // Cuộn trang về đầu danh sách, chừa chỗ cho thanh tìm kiếm sticky
+  function scrollListIntoView() {
+    const pane = document.getElementById('splitListPane');
+    if (!pane) return;
+    const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--detail-sticky-top'), 10) || 148;
+    const top = pane.getBoundingClientRect().top + window.scrollY - offset;
+    if (pane.getBoundingClientRect().top < offset) window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  }
+
+  function renderList({ focusActive = false } = {}) {
     const listFeed = document.getElementById('splitListFeed');
     const jobCount = document.getElementById('splitJobCount');
     if (!listFeed) return;
@@ -1457,9 +1503,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const relatedJobs = getRelatedJobs().filter(job => !hiddenJobIds.has(job.id) || job.id === activeJobId);
     if (jobCount) jobCount.textContent = relatedJobs.length;
 
+    const totalPages = Math.max(1, Math.ceil(relatedJobs.length / LIST_PAGE_SIZE));
+    if (focusActive) {
+      const activeIndex = relatedJobs.findIndex(job => job.id === activeJobId);
+      if (activeIndex >= 0) currentListPage = Math.floor(activeIndex / LIST_PAGE_SIZE) + 1;
+    }
+    currentListPage = Math.min(Math.max(1, currentListPage), totalPages);
+    const pageJobs = relatedJobs.slice((currentListPage - 1) * LIST_PAGE_SIZE, currentListPage * LIST_PAGE_SIZE);
+
     // Markup giống hệt card trong renderCurrentPage() của viec-lam.js (+ trạng thái "đang xem")
     const savedIds = getSavedJobs();
-    const itemsHtml = relatedJobs.map(job => {
+    const itemsHtml = pageJobs.map(job => {
       const isSelected = job.id === activeJobId;
       const isSaved = savedIds.includes(job.id);
       const featuredClass = job.isFeatured ? 'is-featured' : '';
@@ -1531,6 +1585,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join('');
 
     listFeed.innerHTML = itemsHtml;
+    renderListPagination(totalPages);
 
     // Heart bookmark trên từng thẻ (dùng chung localStorage với trang Việc làm)
     listFeed.querySelectorAll('.btn-card-bookmark').forEach(btn => {
@@ -1591,6 +1646,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const scrollArea = document.getElementById('detailScrollArea');
             if (scrollArea) scrollArea.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Mobile/tablet: khung chi tiết nằm phía trên danh sách → đưa người dùng lên xem job vừa chọn
+            const detailPane = document.getElementById('splitDetailPane');
+            if (detailPane && getComputedStyle(detailPane).position === 'static') {
+              const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--detail-sticky-top'), 10) || 148;
+              window.scrollTo({ top: Math.max(0, detailPane.getBoundingClientRect().top + window.scrollY - offset), behavior: 'smooth' });
+            }
           }
         }
       });
@@ -1808,12 +1870,16 @@ document.addEventListener('DOMContentLoaded', () => {
       // nên khi cuộn màn hình xuống, thanh tìm kiếm và bộ lọc neo trực tiếp sát mép trên cùng (top: 0).
       stickyBar.style.setProperty('--sticky-search-top', '0px');
 
+      // Mobile: thanh tìm kiếm + bộ lọc cao ~480px, nếu dính sẽ che gần hết màn hình → không neo
+      const isCompactScreen = window.matchMedia('(max-width: 768px)').matches;
+
       const wrapperRect = wrapper.getBoundingClientRect();
-      if (wrapperRect.top <= 0) {
+      if (!isCompactScreen && wrapperRect.top <= 0) {
         if (!stickyBar.classList.contains('is-sticky')) {
           // Dùng chiều cao thực của stickyBar (gồm cả filter bar bên trong)
           wrapper.style.minHeight = stickyBar.offsetHeight + 'px';
           stickyBar.classList.add('is-sticky');
+          syncDetailStickyTop();
         }
       } else {
         if (stickyBar.classList.contains('is-sticky')) {
@@ -1821,6 +1887,7 @@ document.addEventListener('DOMContentLoaded', () => {
           wrapper.style.minHeight = '';
         }
       }
+      syncDetailStickyTop();
       ticking = false;
     }
 
@@ -1831,24 +1898,89 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, { passive: true });
 
-    window.addEventListener('resize', updateStickyState, { passive: true });
+    // Khung chi tiết (sticky) neo ngay dưới thanh tìm kiếm: đo chiều cao thực của thanh (gồm cả bộ lọc)
+    // ở trạng thái đã dính — đó là lúc khung chi tiết cần né thanh này
+    let measuredStickyHeight = 0;
+    function syncDetailStickyTop() {
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        document.documentElement.style.setProperty('--detail-sticky-top', '16px');
+        return;
+      }
+      if (stickyBar.classList.contains('is-sticky')) measuredStickyHeight = stickyBar.offsetHeight;
+      const barHeight = measuredStickyHeight || Math.max(stickyBar.offsetHeight, 132);
+      document.documentElement.style.setProperty('--detail-sticky-top', `${barHeight + 16}px`);
+    }
+
+    window.addEventListener('resize', () => { updateStickyState(); syncDetailStickyTop(); }, { passive: true });
+    // Thanh đổi chiều cao có hiệu ứng khi chuyển sang trạng thái dính → đo lại khi kích thước thực sự thay đổi
+    if ('ResizeObserver' in window) new ResizeObserver(syncDetailStickyTop).observe(stickyBar);
     updateStickyState();
+    syncDetailStickyTop();
   }
 
   initStickySearch();
 
+  // Mục lục trong khung chi tiết: bấm để cuộn tới mục, tự đánh dấu mục đang đọc
+  function initSectionNav() {
+    const nav = document.getElementById('detailSectionNav');
+    const scrollArea = document.getElementById('detailScrollArea');
+    if (!nav || !scrollArea) return;
+    const links = [...nav.querySelectorAll('a[href^="#"]')];
+    const sections = links.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+
+    // Desktop: vùng cuộn là khung chi tiết; mobile/tablet (khung tĩnh): cuộn cả trang
+    const usesInnerScroll = () => getComputedStyle(scrollArea).overflowY !== 'visible' && scrollArea.scrollHeight > scrollArea.clientHeight;
+
+    function setActive(id) {
+      links.forEach(link => link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`));
+    }
+
+    // Sau khi bấm mục lục: giữ mục vừa chọn trong lúc cuộn mượt (mục ở cuối có thể không cuộn lên tới đỉnh)
+    let lockUntil = 0;
+
+    function updateActive() {
+      if (Date.now() < lockUntil) return;
+      const inner = usesInnerScroll();
+      const baseTop = inner
+        ? scrollArea.getBoundingClientRect().top + nav.offsetHeight + 24
+        : (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--detail-sticky-top'), 10) || 148) + 24;
+      let current = sections[0];
+      sections.forEach(section => {
+        if (section.getBoundingClientRect().top - baseTop <= 0) current = section;
+      });
+      // Cuộn tới đáy vùng chi tiết thì đánh dấu mục cuối
+      if (inner && scrollArea.scrollTop + scrollArea.clientHeight >= scrollArea.scrollHeight - 4) current = sections[sections.length - 1];
+      if (current) setActive(current.id);
+    }
+
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        if (usesInnerScroll()) {
+          const top = target.getBoundingClientRect().top - scrollArea.getBoundingClientRect().top + scrollArea.scrollTop - nav.offsetHeight - 8;
+          scrollArea.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+        } else {
+          const offset = (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--detail-sticky-top'), 10) || 148);
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+        }
+        setActive(target.id);
+        lockUntil = Date.now() + 900;
+      });
+    });
+
+    scrollArea.addEventListener('scroll', updateActive, { passive: true });
+    window.addEventListener('scroll', updateActive, { passive: true });
+    updateActive();
+  }
+
   // Initial Load
   const initialJob = JOBS_DATA.find(j => j.id === activeJobId) || JOBS_DATA[0];
   renderDetail(initialJob);
-  renderList();
-
-  // Cuộn danh sách bên trái tới đúng job đang xem (danh sách giữ nguyên thứ tự như trang Việc làm)
-  const initialListFeed = document.getElementById('splitListFeed');
-  const initialActiveCard = initialListFeed?.querySelector('.job-card.is-selected');
-  if (initialListFeed && initialActiveCard) {
-    const offset = initialActiveCard.getBoundingClientRect().top - initialListFeed.getBoundingClientRect().top;
-    initialListFeed.scrollTop = Math.max(0, initialListFeed.scrollTop + offset - 12);
-  }
+  // Mở đúng trang danh sách chứa job đang xem (danh sách giữ nguyên thứ tự như trang Việc làm)
+  renderList({ focusActive: true });
+  initSectionNav();
 
   // =========================================================================
   // XỬ LÝ LỊCH SỬ DUYỆT TRÌNH DUYỆT (BROWSER BACK / FORWARD NAVIGATION)
@@ -1861,7 +1993,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Nếu người dùng mở tab mới độc lập hoặc vào link trực tiếp mà không có trang trước trong lịch sử tab
     if (!cameFromViecLam && window.history.length <= 1) {
       const currentUrl = window.location.href;
-      window.history.replaceState({ page: 'job_list_root' }, '', 'viec-lam.html');
+      const listQuery = getSearchStateQuery().slice(1);
+      window.history.replaceState({ page: 'job_list_root' }, '', `viec-lam.html${listQuery ? `?${listQuery}` : ''}`);
       window.history.pushState({ page: 'job_detail', id: activeJobId, title: initialJob.title }, '', currentUrl);
     } else if (!window.history.state) {
       window.history.replaceState({ page: 'job_detail', id: activeJobId, title: initialJob.title }, '', window.location.href);
@@ -1871,8 +2004,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Lắng nghe sự kiện Popstate khi người dùng nhấn nút Back / Forward trên trình duyệt
   window.addEventListener('popstate', (e) => {
     // 1. Nếu quay về mốc lịch sử gốc hoặc URL chuyển sang viec-lam.html
+    const listQuery = getSearchStateQuery().slice(1);
+    const listUrl = `viec-lam.html${listQuery ? `?${listQuery}` : ''}`;
     if (e.state?.page === 'job_list_root' || window.location.pathname.endsWith('viec-lam.html') || window.location.pathname === '/viec-lam') {
-      window.location.href = 'viec-lam.html';
+      // URL lịch sử đã là trang danh sách (kèm trạng thái tìm kiếm) thì tải lại đúng URL đó
+      window.location.href = window.location.pathname.includes('viec-lam') ? window.location.href : listUrl;
       return;
     }
 
@@ -1884,7 +2020,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (matchedJob) {
         activeJobId = targetPopId;
         renderDetail(matchedJob);
-        renderList();
+        renderList({ focusActive: true });
         const scrollArea = document.getElementById('detailScrollArea');
         if (scrollArea) scrollArea.scrollTo({ top: 0, behavior: 'smooth' });
         return;
@@ -1893,7 +2029,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Fallback: Nếu không còn id hợp lệ trên chi tiết việc làm, quay về trang danh sách
     if (!currentParams.get('id') && !currentParams.get('jobId') && !currentParams.get('title')) {
-      window.location.href = 'viec-lam.html';
+      window.location.href = listUrl;
     }
   });
 });

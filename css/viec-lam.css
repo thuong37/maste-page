@@ -2739,11 +2739,56 @@
   border-radius: 20px;
   box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.06);
   overflow: hidden;
+  /* Dính ngay dưới thanh tìm kiếm sticky; --detail-sticky-top do JS đo theo chiều cao thực của thanh */
   position: sticky;
-  top: 145px;
-  max-height: calc(100vh - 165px);
+  top: var(--detail-sticky-top, 148px);
+  max-height: calc(100vh - var(--detail-sticky-top, 148px) - 16px);
   display: flex;
   flex-direction: column;
+}
+
+/* Thanh mục lục trong khung chi tiết: dính ở đầu vùng cuộn, tự đánh dấu mục đang đọc */
+.detail-section-nav {
+  position: sticky;
+  top: -24px;
+  z-index: 3;
+  display: flex;
+  gap: 4px;
+  margin: 0 -24px 20px;
+  padding: 0 24px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #F1F5F9;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.detail-section-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.detail-section-nav a {
+  flex-shrink: 0;
+  padding: 12px 10px 11px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #64748B;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.detail-section-nav a:hover {
+  color: #0F172A;
+}
+
+.detail-section-nav a.is-active {
+  color: #F97316;
+  border-bottom-color: #F97316;
+}
+
+.detail-section {
+  scroll-margin-top: 56px;
 }
 
 /* Top Navigation Bar */
@@ -3147,13 +3192,19 @@
   border-radius: 20px;
   padding: 0;
   box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.06);
-  position: sticky;
-  top: 145px;
-  max-height: calc(100vh - 165px);
+  /* Danh sách chạy theo luồng trang (không cuộn lồng), chia trang ở cuối khung */
+  position: static;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   overflow: hidden;
+}
+
+.split-list-pagination {
+  margin: 0;
+  padding: 16px 12px 20px;
+  background: #F1F5F9;
+  flex-wrap: wrap;
 }
 
 /* Right List Header */
@@ -3344,8 +3395,15 @@
     position: static;
     max-height: none;
   }
-  .split-list-feed {
-    max-height: 480px;
+  /* Mobile/tablet: xem chi tiết job trước, danh sách việc làm phù hợp ở bên dưới */
+  .split-detail-pane {
+    order: -1;
+  }
+  .detail-scroll-area {
+    overflow: visible;
+  }
+  .detail-section-nav {
+    position: static;
   }
 }
 
