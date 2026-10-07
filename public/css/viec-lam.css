@@ -4284,3 +4284,245 @@ body.saved-filter-dialog-open {
     color: #E2E8F0;
   }
 }
+
+/* =========================================================================
+   MOBILE RESPONSIVE PASS (≤ 768px) — dùng chung viec-lam.html & chi-tiet-viec-lam.html
+   Đặt cuối file + selector cụ thể hơn để thắng các rule mobile cũ chồng chéo.
+   ========================================================================= */
+@media (max-width: 768px) {
+  /* --- Ô tìm kiếm: form xếp dọc nên flex-basis 220px của ô địa điểm biến thành CHIỀU CAO → khoảng trắng lớn --- */
+  form.job-search-box .search-location-group,
+  form.hero-search-box .search-location-group {
+    flex: 0 0 auto !important;
+    height: 44px !important;
+    min-height: 44px;
+    padding: 0 8px !important;
+  }
+  form.job-search-box .search-input-group:not(.search-location-group),
+  form.hero-search-box .search-input-group:not(.search-location-group) {
+    flex: 0 0 auto !important;
+    height: 44px !important;
+  }
+  form.job-search-box .category-filter-trigger,
+  form.hero-search-box .category-filter-trigger {
+    height: 44px;
+    padding: 0 8px;
+    border-bottom: 1px solid #F1F5F9;
+    border-radius: 0;
+  }
+  form.job-search-box .location-trigger .location-label {
+    max-width: none;
+  }
+
+  /* --- Hàng "Tìm thấy N việc làm…" + Sắp xếp (trang Việc làm) --- */
+  .listings-sub-header {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px 12px !important;
+  }
+  .listings-sub-header .result-stat-text {
+    flex: 1 1 100% !important;
+    min-width: 0 !important;
+    white-space: normal !important;
+    font-size: 13.5px;
+  }
+  .listings-sub-header .top-filter-sort-group {
+    flex: 0 1 auto !important;
+    margin-left: 0 !important;
+  }
+  .listings-sub-header .sort-divider {
+    display: none !important;
+  }
+
+  /* --- Card job (cả trang Việc làm và danh sách bên trái trang chi tiết) --- */
+  body .job-card {
+    padding: 14px !important;
+  }
+  body .job-card .job-card-top {
+    gap: 12px !important;
+    align-items: flex-start !important;
+  }
+  body .job-card .job-company-logo {
+    width: 64px !important;
+    height: 64px !important;
+    min-width: 64px !important;
+    min-height: 64px !important;
+    border-radius: 12px !important;
+    padding: 3px !important;
+  }
+  body .job-card .job-header-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 6px !important;
+  }
+  body .job-card .job-title-wrap {
+    width: 100%;
+  }
+  body .job-card .job-title {
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 4px !important;
+  }
+  body .job-card .job-company-row {
+    font-size: 12px;
+    flex-wrap: nowrap;
+    min-width: 0;
+  }
+  body .job-card .job-company-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+  body .job-card .job-quick-pill {
+    white-space: nowrap;
+  }
+  body .job-card .job-top-right {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+  body .job-card .job-salary-text {
+    font-size: 15px !important;
+  }
+  body .job-card .btn-quick-view {
+    display: none !important;
+  }
+  body .job-card .job-card-divider {
+    margin: 10px 0 !important;
+  }
+  body .job-card .job-card-bottom {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+  }
+  body .job-card .job-bottom-left {
+    flex: 1 1 100% !important;
+    font-size: 12px !important;
+  }
+  body .job-card .job-bottom-right {
+    flex: 1 1 100% !important;
+    justify-content: space-between !important;
+  }
+  /* Màn cảm ứng không có hover: luôn hiện thời gian đăng, ẩn cụm nút chỉ dành cho hover */
+  body .job-card .job-meta-unhovered {
+    display: flex !important;
+  }
+  body .job-card .job-actions-hovered {
+    display: none !important;
+  }
+  body .job-card .btn-card-bookmark {
+    margin-left: auto;
+  }
+
+  /* --- Khung chi tiết việc làm (trang chi tiết) --- */
+  body .split-detail-pane {
+    padding: 0 !important;
+    border-radius: 16px !important;
+  }
+  body .detail-scroll-area {
+    padding: 16px !important;
+  }
+  body .detail-section-nav {
+    margin: 0 -16px 16px !important;
+    padding: 0 8px !important;
+  }
+  body .detail-hero-box {
+    padding: 0 !important;
+    margin-bottom: 16px !important;
+  }
+  body .detail-hero-header {
+    gap: 12px !important;
+    margin-bottom: 14px !important;
+  }
+  body .detail-company-logo {
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 14px !important;
+    padding: 3px !important;
+  }
+  body .detail-hero-info {
+    min-width: 0;
+  }
+  body .detail-job-title {
+    font-size: 18px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 4px !important;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+  body .detail-company-line {
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+  body .detail-badges-row {
+    flex-wrap: wrap !important;
+    gap: 4px 10px !important;
+  }
+  body .detail-quick-pills {
+    margin-top: 8px;
+  }
+  /* Nút: "Ứng tuyển ngay" chiếm cả hàng, "Lưu" + "Chia sẻ" chia đôi hàng dưới */
+  body .detail-cta-group {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px !important;
+  }
+  body .detail-cta-group .btn-detail-apply-main {
+    grid-column: 1 / -1;
+    width: 100%;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 12px 16px !important;
+  }
+  body .detail-cta-group .btn-detail-save-main,
+  body .detail-cta-group .btn-detail-share-btn {
+    width: 100%;
+    justify-content: center;
+    white-space: nowrap;
+  }
+  body .detail-company-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  /* Thanh "Ứng tuyển ngay" cố định ở đáy màn hình */
+  body .detail-sticky-apply-bar {
+    position: fixed !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)) !important;
+    border-radius: 0;
+  }
+  body .detail-sticky-apply-bar .sticky-bar-left {
+    min-width: 0;
+  }
+  body .detail-sticky-apply-bar .sticky-bar-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  body:has(.detail-sticky-apply-bar) {
+    padding-bottom: 72px;
+  }
+
+  /* --- Danh sách bên trái trang chi tiết --- */
+  body .split-list-header {
+    padding: 14px 16px 12px !important;
+  }
+  body .split-list-feed {
+    padding: 10px 10px 4px !important;
+    /* Rule mobile cũ giới hạn 380px khiến danh sách bị cắt và phân trang đè lên card */
+    max-height: none !important;
+  }
+  body .split-list-pagination .page-btn {
+    min-width: 36px;
+    padding: 0 10px;
+  }
+}

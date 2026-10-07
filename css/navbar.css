@@ -2672,3 +2672,14 @@ body.in-simulator *::-webkit-scrollbar,
     background: transparent !important;
   }
 }
+
+/* Điện thoại: hộp "Chế độ xem" nằm góc dưới bên phải (không che giữa màn hình),
+   chừa chỗ cho thanh "Ứng tuyển ngay" cố định ở đáy trang chi tiết */
+@media (max-width: 768px) {
+  .floating-view-mode-box {
+    top: auto;
+    bottom: 84px;
+    right: 12px;
+    transform: none;
+  }
+}

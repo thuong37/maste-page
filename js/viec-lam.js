@@ -4106,8 +4106,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // nên khi cuộn màn hình xuống, thanh tìm kiếm neo trực tiếp sát mép trên cùng (top: 0).
       stickyBar.style.setProperty('--sticky-search-top', '0px');
 
+      // Điện thoại: ô tìm kiếm + bộ lọc xếp dọc cao ~300px, nếu dính sẽ che phần lớn màn hình → không neo
+      const isCompactScreen = window.matchMedia('(max-width: 768px)').matches;
+
       const wrapperRect = wrapper.getBoundingClientRect();
-      if (wrapperRect.top <= 0) {
+      if (!isCompactScreen && wrapperRect.top <= 0) {
         if (!stickyBar.classList.contains('is-sticky')) {
           // Dùng chiều cao thực của stickyBar (gồm cả filter bar bên trong)
           wrapper.style.minHeight = stickyBar.offsetHeight + 'px';

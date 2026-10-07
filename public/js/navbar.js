@@ -239,6 +239,10 @@ document.addEventListener('DOMContentLoaded', () => {
     miniPill?.addEventListener('click', () => {
       box.classList.remove('is-minimized');
     });
+    // Màn hình hẹp (điện thoại): mặc định thu nhỏ thành viên thuốc để không che nội dung trang
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      box.classList.add('is-minimized');
+    }
 
     // Event: Mode buttons
     const btnWeb = box.querySelector('#floatingBtnWeb');
