@@ -1982,7 +1982,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
                 </button>
               </div>
-              <button type="button" class="btn-card-bookmark ${isSaved ? 'saved' : ''}" data-id="${job.id}" aria-label="Lưu công việc" title="${isSaved ? 'Đã lưu việc làm' : 'Lưu công việc'}">
+              <button type="button" class="btn-card-bookmark ${isSaved ? 'saved' : ''}" data-id="${job.id}" aria-label="Lưu công việc" title="${isSaved ? 'Đã Lưu' : 'Lưu công việc'}">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="${isSaved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
               </button>
             </div>
@@ -2062,10 +2062,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Giữ từ khóa tìm kiếm khi mở trang chi tiết để thanh tìm kiếm & danh sách liên quan đồng bộ
+  // Giữ toàn bộ trạng thái tìm kiếm (từ khóa, địa điểm, bộ lọc, sắp xếp) khi mở trang chi tiết
+  // để thanh tìm kiếm, bộ lọc và danh sách bên trái trang chi tiết hiển thị giống hệt trang này
   function getDetailKeywordParam() {
+    const params = new URLSearchParams();
     const keyword = searchInput ? searchInput.value.trim() : '';
-    return keyword ? `&keyword=${encodeURIComponent(keyword)}` : '';
+    const locValue = locationSelect ? locationSelect.value.trim() : '';
+    const catValue = categorySelect ? categorySelect.value.trim() : '';
+    const sortValue = sortSelect ? sortSelect.value : '';
+    if (keyword) params.set('keyword', keyword);
+    if (locValue) params.set('location', locValue);
+    if (catValue) params.set('category', catValue);
+    if (activeIndustryQuery) params.set('industry', activeIndustryQuery);
+    if (selectedExp) params.set('exp', selectedExp);
+    if (selectedSalary) params.set('salary', selectedSalary);
+    if (selectedLevel) params.set('level', selectedLevel);
+    if (selectedType) params.set('type', selectedType);
+    if (selectedSaturday) params.set('saturday', selectedSaturday);
+    if (sortValue && sortValue !== 'relevant') params.set('sort', sortValue);
+    const query = params.toString();
+    return query ? `&${query}` : '';
   }
 
   function scrollToListingTop() {
@@ -2411,7 +2427,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         btnDetailSaveCard.classList.remove('saved');
         btnDetailSaveCard.querySelector('svg')?.setAttribute('fill', 'none');
-        if (detailSaveBtnText) detailSaveBtnText.textContent = 'Lưu việc làm';
+        if (detailSaveBtnText) detailSaveBtnText.textContent = 'Lưu';
       }
     }
   }
@@ -4146,6 +4162,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     renderActiveFilterChips();
+
+    // Khôi phục kiểu sắp xếp được trang chi tiết truyền về (?sort=)
+    const sortParam = urlParams.get('sort') || '';
+    const sortItem = sortParam ? document.querySelector(`#sortMenuDropdown .sort-menu-item[data-val="${sortParam}"]`) : null;
+    if (sortItem && sortSelect) {
+      sortSelect.value = sortParam;
+      document.querySelectorAll('#sortMenuDropdown .sort-menu-item').forEach(it => {
+        it.classList.toggle('is-selected', it === sortItem);
+        it.setAttribute('aria-selected', it === sortItem ? 'true' : 'false');
+      });
+      const sortLabel = document.getElementById('sortCurrentLabel');
+      if (sortLabel) sortLabel.textContent = sortItem.querySelector('span')?.textContent.trim() || sortLabel.textContent;
+    }
 
     applyJobFilters(true, false);
 

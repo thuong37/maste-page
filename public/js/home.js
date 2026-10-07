@@ -3794,7 +3794,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="job-pill ${salaryClass}">${job.salaryBadge}</span>
                 <span class="job-pill job-pill-location">${job.city || job.location.split('&')[0].split('(')[0].trim()}</span>
               </div>
-              <button type="button" class="btn-bookmark ${isSaved ? 'active' : ''}" data-job-id="${job.id}" aria-label="${isSaved ? 'Bỏ lưu việc làm' : 'Lưu công việc này'}" title="${isSaved ? 'Đã lưu việc làm' : 'Lưu việc làm'}">
+              <button type="button" class="btn-bookmark ${isSaved ? 'active' : ''}" data-job-id="${job.id}" aria-label="${isSaved ? 'Bỏ Lưu' : 'Lưu công việc này'}" title="${isSaved ? 'Đã Lưu' : 'Lưu'}">
                 <svg viewBox="0 0 24 24" fill="${isSaved ? '#EF4444' : 'none'}" stroke="${isSaved ? '#EF4444' : 'currentColor'}"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
               </button>
             </div>
@@ -4046,7 +4046,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-      // Click Bookmark -> Lưu việc làm vào localStorage
+      // Click Bookmark -> Lưu vào localStorage
       gridEl.querySelectorAll('.btn-bookmark').forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();

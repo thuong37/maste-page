@@ -1198,44 +1198,158 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   let activeJobId = activeJob.id;
 
-  // Đồng bộ với trang Việc làm: giữ từ khóa tìm kiếm (?keyword=) khi chuyển sang trang chi tiết
+  // =========================================================================
+  // ĐỒNG BỘ VỚI TRANG GỐC viec-lam.html: cùng trạng thái tìm kiếm, cùng engine lọc + sắp xếp, cùng card
+  // =========================================================================
   const EXP_LABELS = { '0': 'Không yêu cầu', 'under1': 'Dưới 1 năm', '1-3': '1 - 3 năm', '3-5': '3 - 5 năm', 'over5': 'Trên 5 năm' };
-  const searchKeyword = (urlParams.get('keyword') || '').trim();
 
-  function jobMatchesKeyword(job, keyword) {
-    const normKeyword = normalizeText(keyword);
-    if (!normKeyword) return false;
-    const haystack = [job.title, job.company, ...(job.skills || [])].map(normalizeText).join(' ');
-    return haystack.includes(normKeyword);
+  // Dữ liệu "Nghỉ thứ 7" (giống JOBS_DATA của viec-lam.js) để bộ lọc saturday cho kết quả giống trang gốc
+  const SATURDAY_BY_ID = {
+    1: 'off_sat', 2: 'work_sat', 3: 'off_sat', 4: 'off_sat', 5: 'work_sat', 6: 'off_sat', 7: 'off_sat',
+    8: 'work_sat', 9: 'work_sat', 10: 'off_sat', 11: 'off_sat', 12: 'off_sat', 13: 'off_sat', 14: 'unmentioned',
+    15: 'work_sat', 16: 'off_sat', 17: 'off_sat', 18: 'off_sat', 19: 'unmentioned', 20: 'off_sat', 21: 'off_sat',
+    22: 'unmentioned', 23: 'work_sat', 24: 'off_sat', 25: 'off_sat', 26: 'off_sat', 27: 'work_sat', 28: 'work_sat'
+  };
+  JOBS_DATA.forEach(job => {
+    if (!job.saturday) job.saturday = SATURDAY_BY_ID[job.id] || 'unmentioned';
+  });
+
+  // Các tham số tìm kiếm / bộ lọc được trang Việc làm truyền sang (và truyền ngược lại khi quay về)
+  const SEARCH_STATE_KEYS = ['keyword', 'location', 'category', 'industry', 'exp', 'salary', 'level', 'type', 'saturday', 'sort'];
+  const searchState = {};
+  SEARCH_STATE_KEYS.forEach(key => {
+    const value = (urlParams.get(key) || (key === 'keyword' ? urlParams.get('q') : '') || '').trim();
+    if (value) searchState[key] = value;
+  });
+  const searchKeyword = searchState.keyword || '';
+
+  function getSearchStateQuery() {
+    const params = new URLSearchParams();
+    SEARCH_STATE_KEYS.forEach(key => { if (searchState[key]) params.set(key, searchState[key]); });
+    const query = params.toString();
+    return query ? `&${query}` : '';
+  }
+
+  // Logo hiển thị 88–96px: lấy ảnh Unsplash 240px để không bị mờ trên màn hình retina
+  function getHiResLogo(url) {
+    return typeof url === 'string' && url.includes('images.unsplash.com')
+      ? url.replace(/([?&])w=\d+/, '$1w=240').replace(/([?&])h=\d+/, '$1h=240')
+      : url;
   }
 
   function buildDetailHref(job) {
-    const keywordParam = searchKeyword ? `&keyword=${encodeURIComponent(searchKeyword)}` : '';
-    return `chi-tiet-viec-lam.html?id=${job.id}&title=${encodeURIComponent(job.title)}${keywordParam}`;
+    return `chi-tiet-viec-lam.html?id=${job.id}&title=${encodeURIComponent(job.title)}${getSearchStateQuery()}`;
   }
 
-  // Thứ tự "Việc làm liên quan" được tính 1 lần theo job mở đầu tiên để danh sách không nhảy vị trí khi chọn job khác:
-  // job đang xem → job khớp từ khóa → job cùng ngành nghề → các job còn lại
+  // Port của matchSalaryTier() trong viec-lam.js
+  function matchSalaryTier(job, tier) {
+    if (tier === 'under10') return job.salaryMin < 10;
+    if (tier === '10-15') return (job.salaryMin <= 15 && job.salaryMax >= 10);
+    if (tier === '15-25') return (job.salaryMin <= 25 && job.salaryMax >= 15);
+    if (tier === '25-50') return (job.salaryMin <= 50 && job.salaryMax >= 25);
+    if (tier === 'over50') return job.salaryMax >= 50;
+    if (tier === 'negotiable') return true;
+    return false;
+  }
+
+  // Port của applyJobFilters() + sortJobs() trong viec-lam.js: danh sách bên trái có cùng thứ tự với trang gốc
+  function isJobMatchingSearch(job) {
+    const normQuery = normalizeText(searchState.keyword);
+    const normIndustry = normalizeText(searchState.industry);
+    const normLoc = normalizeText(searchState.location);
+    const normAllText = normalizeText(`${job.title} ${job.company} ${job.location} ${job.city} ${job.skills.join(' ')}`);
+
+    if (normQuery) {
+      const tokens = normQuery.split(/\s+/).filter(Boolean);
+      if (!tokens.every(token => normAllText.includes(token)) && !normAllText.includes(normQuery)) return false;
+    }
+    if (normIndustry) {
+      const tokens = normIndustry.split(/\s+/).filter(Boolean);
+      if (!tokens.every(token => normAllText.includes(token)) && !normAllText.includes(normIndustry)) return false;
+    }
+    if (normLoc && normLoc !== 'tat ca dia diem') {
+      const normJobLoc = normalizeText(job.location);
+      const normJobCity = normalizeText(job.city);
+      const locMatch = normLoc.split(/[;|,]/).map(t => t.trim()).filter(Boolean).some(tok => {
+        const cleanTok = tok.split(':')[0].trim();
+        const districtTok = tok.includes(':') ? tok.split(':')[1].trim() : '';
+        if (cleanTok === 'remote') return normJobLoc.includes('remote') || job.type === 'remote';
+        const matchProvince = normJobLoc.includes(cleanTok) || normJobCity.includes(cleanTok) || cleanTok.includes(normJobCity);
+        if (districtTok) return matchProvince && (normJobLoc.includes(districtTok) || districtTok.includes(normJobLoc));
+        return matchProvince;
+      });
+      if (!locMatch) return false;
+    }
+    if (searchState.category && job.category !== searchState.category) return false;
+    if (searchState.level && job.level !== searchState.level) return false;
+    if (searchState.salary && !matchSalaryTier(job, searchState.salary)) return false;
+    if (searchState.exp && job.exp !== searchState.exp) return false;
+    if (searchState.type && job.type !== searchState.type) return false;
+    if (searchState.saturday && job.saturday !== searchState.saturday) return false;
+    return true;
+  }
+
+  function sortLikeJobList(jobs) {
+    const sortVal = searchState.sort || 'relevant';
+    return jobs.sort((a, b) => {
+      if (a._isSearchMatch && !b._isSearchMatch) return -1;
+      if (!a._isSearchMatch && b._isSearchMatch) return 1;
+      if (sortVal === 'salary_high') return b.salaryMax - a.salaryMax;
+      if (sortVal === 'newest' || sortVal === 'post_date') return b.id - a.id;
+      if (sortVal === 'update_date') {
+        const aToday = a.updated && (a.updated.includes('Hôm nay') || a.updated.includes('giờ'));
+        const bToday = b.updated && (b.updated.includes('Hôm nay') || b.updated.includes('giờ'));
+        if (aToday && !bToday) return -1;
+        if (!aToday && bToday) return 1;
+        return b.id - a.id;
+      }
+      if (sortVal === 'urgent') {
+        if (a.isFeatured && !b.isFeatured) return -1;
+        if (!a.isFeatured && b.isFeatured) return 1;
+        return b.id - a.id;
+      }
+      if (sortVal === 'views') return b.aiMatch - a.aiMatch;
+      if (a.isFeatured && !b.isFeatured) return -1;
+      if (!a.isFeatured && b.isFeatured) return 1;
+      return b.aiMatch - a.aiMatch;
+    });
+  }
+
+  // Tính 1 lần (dữ liệu tĩnh) để danh sách không nhảy vị trí khi chọn job khác
   let relatedJobsCache = null;
   function getRelatedJobs() {
     if (!relatedJobsCache) {
-      const score = job => {
-        if (job.id === activeJob.id) return 10;
-        return (jobMatchesKeyword(job, searchKeyword) ? 2 : 0) + (job.category === activeJob.category ? 1 : 0);
-      };
-      relatedJobsCache = JOBS_DATA
-        .map((job, index) => ({ job, index, score: score(job) }))
-        .sort((a, b) => b.score - a.score || a.index - b.index)
-        .map(item => item.job);
+      const hasFilter = Object.keys(searchState).some(key => key !== 'sort');
+      const realJobs = JOBS_DATA.filter(job => job.id !== 9999);
+      realJobs.forEach(job => { job._isSearchMatch = hasFilter && isJobMatchingSearch(job); });
+      relatedJobsCache = sortLikeJobList([...realJobs]);
+      // Job tạo tạm từ ?title= (không có trong dữ liệu) vẫn được hiển thị ở đầu danh sách
+      const mockJob = JOBS_DATA.find(job => job.id === 9999);
+      if (mockJob) relatedJobsCache.unshift(mockJob);
     }
     return relatedJobsCache;
   }
+
+  // Ẩn tạm việc làm trong phiên xem (nút "Ẩn việc làm" trên card, giống trang gốc)
+  const hiddenJobIds = new Set();
 
   const detailSearchInput = document.getElementById('jobSearchInput');
   if (detailSearchInput && searchKeyword && !detailSearchInput.value.trim()) {
     detailSearchInput.value = searchKeyword;
     const clearSearchInputBtn = document.getElementById('clearSearchInputBtn');
     if (clearSearchInputBtn) clearSearchInputBtn.style.display = 'flex';
+  }
+
+  // Địa điểm & danh mục nghề: khôi phục giống syncStateFromUrl() của viec-lam.js
+  if (searchState.location) {
+    if (window.EasyCVLocationPicker) window.EasyCVLocationPicker.setSelected(searchState.location);
+    const detailLocationSelect = document.getElementById('jobLocationSelect');
+    if (detailLocationSelect) detailLocationSelect.value = searchState.location;
+  }
+  if (window.EasyCVCategoryModal && (searchState.category || searchState.industry)) {
+    window.EasyCVCategoryModal.setSelection(searchState.category
+      ? { groups: [searchState.category], subgroups: [], roles: [] }
+      : { groups: [], subgroups: [], roles: [searchState.industry] });
   }
 
   // Toggle Full Width mode
@@ -1278,7 +1392,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const locText = document.getElementById('detailLocationText');
     const updatedText = document.getElementById('detailUpdatedText');
 
-    if (logo) { logo.src = job.logo; logo.alt = job.company; }
+    if (logo) { logo.src = getHiResLogo(job.logo); logo.alt = job.company; }
     if (title) title.textContent = job.title;
     if (compName) compName.textContent = job.company;
     if (salaryBadge) {
@@ -1289,16 +1403,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (locText) locText.textContent = job.location;
     if (updatedText) updatedText.textContent = `Cập nhật ${job.updated}`;
 
-    // Metrics
-    const metricSalary = document.getElementById('metricSalary');
+    // Nhãn Kinh nghiệm / Cấp bậc / Hình thức ở phần đầu (lương đã hiển thị ở #detailSalaryBadge)
     const metricExp = document.getElementById('metricExp');
     const metricLevel = document.getElementById('metricLevel');
     const metricType = document.getElementById('metricType');
 
-    if (metricSalary) metricSalary.textContent = job.salaryBadge;
     if (metricExp) {
-      const expMap = { '0': 'Không yêu cầu', 'under1': 'Dưới 1 năm', '1-3': '1 - 3 năm', '3-5': '3 - 5 năm', 'over5': 'Trên 5 năm' };
-      metricExp.textContent = expMap[job.exp] || `${job.exp} năm`;
+      const expMap = { '0': 'Không yêu cầu kinh nghiệm', 'under1': 'Dưới 1 năm kinh nghiệm', '1-3': '1 - 3 năm kinh nghiệm', '3-5': '3 - 5 năm kinh nghiệm', 'over5': 'Trên 5 năm kinh nghiệm' };
+      metricExp.textContent = expMap[job.exp] || `${job.exp} năm kinh nghiệm`;
     }
     if (metricLevel) {
       const levelMap = { 'intern': 'Thực tập sinh', 'junior': 'Nhân viên', 'senior': 'Trưởng nhóm / Senior', 'manager': 'Trưởng phòng / Manager' };
@@ -1342,50 +1454,79 @@ document.addEventListener('DOMContentLoaded', () => {
     const jobCount = document.getElementById('splitJobCount');
     if (!listFeed) return;
 
-    const relatedJobs = getRelatedJobs();
+    const relatedJobs = getRelatedJobs().filter(job => !hiddenJobIds.has(job.id) || job.id === activeJobId);
     if (jobCount) jobCount.textContent = relatedJobs.length;
 
+    // Markup giống hệt card trong renderCurrentPage() của viec-lam.js (+ trạng thái "đang xem")
     const savedIds = getSavedJobs();
     const itemsHtml = relatedJobs.map(job => {
       const isSelected = job.id === activeJobId;
       const isSaved = savedIds.includes(job.id);
+      const featuredClass = job.isFeatured ? 'is-featured' : '';
       const expText = EXP_LABELS[job.exp] || '2 năm';
       const cityPill = job.city || job.location.split('(')[0].trim();
-      const detailHref = buildDetailHref(job);
+      const firstSkill = job.skills && job.skills.length > 0 ? job.skills[0] : '';
+      const remainingCount = job.skills && job.skills.length > 1 ? ` | +${job.skills.length - 1}` : '';
+      const skillsSummary = `${expText} kinh nghiệm chuyên môn${firstSkill ? ' | ' + firstSkill : ''}${remainingCount}`;
+      const isViewed = job.id <= 3;
 
       return `
-        <div class="split-job-card ${isSelected ? 'is-selected' : ''}" data-id="${job.id}">
-          <div class="split-card-top">
-            <img src="${job.logo}" alt="${job.company}" class="split-company-logo" loading="lazy" />
-            <div class="split-card-info">
-              <h4 class="split-card-title">
-                <a href="${detailHref}" class="job-title-link" title="${job.title}">${job.title}</a>
-              </h4>
-              <div class="job-company-row">
-                <span class="job-company-name" title="${job.company}">${job.company.toUpperCase()}</span>
-                ${job.verified ? `
-                  <span class="badge-verified" title="Doanh nghiệp xác thực">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg>
-                  </span>
-                ` : ''}
-              </div>
-              <span class="job-salary-text split-card-salary">${job.salaryBadge}</span>
-              <div class="job-quick-pills">
-                <span class="job-quick-pill">${cityPill}</span>
-                <span class="job-quick-pill">${expText}</span>
+        <article class="job-card ${featuredClass} ${isSelected ? 'is-selected' : ''}" data-id="${job.id}" ${isSelected ? 'aria-current="true"' : ''}>
+          <div class="job-card-top">
+            <img src="${getHiResLogo(job.logo)}" alt="${job.company}" class="job-company-logo" loading="lazy" />
+            <div class="job-info-main">
+              <div class="job-header-row">
+                <div class="job-title-wrap">
+                  <h3 class="job-title">
+                    <a href="${buildDetailHref(job)}" class="job-title-link" title="${job.title}">${job.title}</a>
+                  </h3>
+                  <div class="job-company-row">
+                    <span class="job-company-name" title="${job.company}">${job.company.toUpperCase()}</span>
+                    ${job.verified ? `
+                      <span class="badge-verified" title="Doanh nghiệp xác thực">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg>
+                      </span>
+                    ` : ''}
+                  </div>
+                  <div class="job-quick-pills">
+                    <span class="job-quick-pill">${cityPill}</span>
+                    <span class="job-quick-pill">${expText}</span>
+                  </div>
+                </div>
+                <div class="job-top-right">
+                  <div class="job-salary-wrap">
+                    <span class="job-salary-text">${job.salaryBadge}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="split-card-bottom">
-            <span class="job-post-time">Đăng ${job.updated}</span>
-            <div class="split-card-bottom-right">
-              ${isSelected ? '<span class="split-viewing-badge">Đang xem</span>' : ''}
-              <button type="button" class="btn-card-bookmark ${isSaved ? 'saved' : ''}" data-id="${job.id}" aria-label="Lưu công việc" title="${isSaved ? 'Đã lưu việc làm' : 'Lưu công việc'}">
+
+          <div class="job-card-divider"></div>
+
+          <div class="job-card-bottom">
+            <div class="job-bottom-left">
+              ${skillsSummary}
+            </div>
+            <div class="job-bottom-right">
+              <div class="job-meta-unhovered">
+                ${isSelected
+                  ? '<span class="split-viewing-badge">Đang xem</span>'
+                  : `<span class="job-post-time">Đăng ${job.updated}</span>${isViewed ? '<span class="badge-viewed">Đã xem</span>' : ''}`}
+              </div>
+              <div class="job-actions-hovered">
+                <button type="button" class="btn-card-apply" data-id="${job.id}">Ứng tuyển</button>
+                ${isSelected ? '' : `
+                <button type="button" class="btn-card-hide" data-id="${job.id}" aria-label="Ẩn việc làm này" title="Ẩn việc làm">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+                </button>`}
+              </div>
+              <button type="button" class="btn-card-bookmark ${isSaved ? 'saved' : ''}" data-id="${job.id}" aria-label="Lưu công việc" title="${isSaved ? 'Đã Lưu' : 'Lưu công việc'}">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="${isSaved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
               </button>
             </div>
           </div>
-        </div>
+        </article>
       `;
     }).join('');
 
@@ -1399,8 +1540,35 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Attach Click Handler on Left List Items (Việc làm liên quan khác)
-    listFeed.querySelectorAll('.split-job-card').forEach(card => {
+    // Nút "Ứng tuyển" khi hover (giống trang gốc)
+    listFeed.querySelectorAll('.btn-card-apply').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const job = JOBS_DATA.find(j => j.id === parseInt(btn.getAttribute('data-id'), 10));
+        showToast(`Ứng tuyển thành công vị trí "${job?.title || 'công việc'}"! Nhà tuyển dụng sẽ phản hồi sớm.`, '🚀');
+      });
+    });
+
+    // Nút "Ẩn việc làm" khi hover (giống trang gốc)
+    listFeed.querySelectorAll('.btn-card-hide').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const card = btn.closest('.job-card');
+        hiddenJobIds.add(parseInt(btn.getAttribute('data-id'), 10));
+        if (card) {
+          card.style.transition = 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.95)';
+        }
+        setTimeout(() => {
+          renderList();
+          showToast('Đã ẩn việc làm này khỏi danh sách gợi ý', '✓');
+        }, 300);
+      });
+    });
+
+    // Attach Click Handler on Left List Items
+    listFeed.querySelectorAll('.job-card').forEach(card => {
       card.addEventListener('click', (e) => {
         // Click thẳng vào tên job: cho phép mở tab mới (Ctrl/Cmd + click) như trang Việc làm
         if (e.target.closest('.job-title-link') && (e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1)) return;
@@ -1447,7 +1615,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnHeroBookmark) {
       btnHeroBookmark.classList.toggle('saved', isSaved);
       btnHeroBookmark.querySelector('svg')?.setAttribute('fill', isSaved ? 'currentColor' : 'none');
-      if (heroText) heroText.textContent = isSaved ? 'Đã lưu việc làm' : 'Lưu việc làm';
+      if (heroText) heroText.textContent = isSaved ? 'Đã Lưu' : 'Lưu';
     }
   }
 
@@ -1673,6 +1841,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const initialJob = JOBS_DATA.find(j => j.id === activeJobId) || JOBS_DATA[0];
   renderDetail(initialJob);
   renderList();
+
+  // Cuộn danh sách bên trái tới đúng job đang xem (danh sách giữ nguyên thứ tự như trang Việc làm)
+  const initialListFeed = document.getElementById('splitListFeed');
+  const initialActiveCard = initialListFeed?.querySelector('.job-card.is-selected');
+  if (initialListFeed && initialActiveCard) {
+    const offset = initialActiveCard.getBoundingClientRect().top - initialListFeed.getBoundingClientRect().top;
+    initialListFeed.scrollTop = Math.max(0, initialListFeed.scrollTop + offset - 12);
+  }
 
   // =========================================================================
   // XỬ LÝ LỊCH SỬ DUYỆT TRÌNH DUYỆT (BROWSER BACK / FORWARD NAVIGATION)

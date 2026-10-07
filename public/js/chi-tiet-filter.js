@@ -81,7 +81,7 @@
       labelSpan.textContent = label;
     } else {
       btn.classList.remove('is-active');
-      labelSpan.textContent = FILTER_DEFAULT_LABELS[type] || 'Bo loc';
+      labelSpan.textContent = FILTER_DEFAULT_LABELS[type] || 'Bộ lọc';
     }
   }
 
@@ -119,10 +119,21 @@
     closeAllFilterDropdowns();
   }
 
-  function navigateToJobList() {
+  // Giữ nguyên trạng thái tìm kiếm khác (địa điểm, danh mục, lĩnh vực, sắp xếp) mà trang Việc làm đã truyền sang
+  function getCarriedSearchParams() {
+    var current = new URLSearchParams(window.location.search);
     var params = new URLSearchParams();
     var keywordInput = document.getElementById('jobSearchInput');
-    if (keywordInput && keywordInput.value.trim()) params.set('keyword', keywordInput.value.trim());
+    var keyword = keywordInput ? keywordInput.value.trim() : (current.get('keyword') || '');
+    if (keyword) params.set('keyword', keyword);
+    ['location', 'category', 'industry', 'sort'].forEach(function(key) {
+      if (current.get(key)) params.set(key, current.get(key));
+    });
+    return params;
+  }
+
+  function navigateToJobList() {
+    var params = getCarriedSearchParams();
     if (selectedExp) params.set('exp', selectedExp);
     if (selectedSalary) params.set('salary', selectedSalary);
     if (selectedLevel) params.set('level', selectedLevel);
@@ -160,7 +171,7 @@
 
   function persistSavedFilters() {
     try { localStorage.setItem(SAVED_FILTER_STORAGE_KEY, JSON.stringify({ filters: savedFilters })); }
-    catch(e) { setSavedFilterError('Khong the luu tren trinh duyet nay.'); }
+    catch(e) { setSavedFilterError('Không thể lưu trên trình duyệt này. Vui lòng kiểm tra quyền lưu trữ.'); }
   }
 
   function createSavedFilterId() {
@@ -173,11 +184,11 @@
 
   function getSavedFilterCriterionLabel(key, value) {
     var maps = {
-      exp: { '0': 'Khong can KN', under1: 'Duoi 1 nam', '1-3': '1-3 nam', '3-5': '3-5 nam', over5: 'Tren 5 nam' },
-      salary: { under10: 'Duoi 10tr', '10-15': '10-15tr', '15-25': '15-25tr', '25-50': '25-50tr', over50: 'Tren 50tr', negotiable: 'Thoa thuan' },
-      level: { intern: 'Thuc tap sinh', junior: 'Nhan vien', senior: 'Truong nhom', manager: 'Quan ly' },
-      type: { fulltime: 'Toan thoi gian', hybrid: 'Hybrid', remote: 'Remote', parttime: 'Ban thoi gian' },
-      saturday: { work_sat: 'Lam thu 7', off_sat: 'Nghi thu 7', unmentioned: 'Khong de cap' }
+      exp: { '0': 'Không cần KN', under1: 'Dưới 1 năm', '1-3': '1-3 năm', '3-5': '3-5 năm', over5: 'Trên 5 năm' },
+      salary: { under10: 'Dưới 10tr', '10-15': '10-15tr', '15-25': '15-25tr', '25-50': '25-50tr', over50: 'Trên 50tr', negotiable: 'Thỏa thuận' },
+      level: { intern: 'Thực tập sinh', junior: 'Nhân viên', senior: 'Trưởng nhóm', manager: 'Quản lý' },
+      type: { fulltime: 'Toàn thời gian', hybrid: 'Hybrid', remote: 'Remote', parttime: 'Bán thời gian' },
+      saturday: { work_sat: 'Làm thứ 7', off_sat: 'Nghỉ thứ 7', unmentioned: 'Không đề cập' }
     };
     var label = (maps[key] && maps[key][value]) ? maps[key][value] : value;
     return (FILTER_DEFAULT_LABELS[key] || key) + ': ' + label;
@@ -206,7 +217,7 @@
     var descriptions = describeSavedFilter(snapshot);
     submitBtn.disabled = !hasCriteria;
     submitBtn.title = hasCriteria ? '' : 'Hay chon it nhat mot tieu chi truoc khi luu';
-    summary.textContent = hasCriteria ? descriptions.join(' • ') : 'Chua co tieu chi nao duoc chon.';
+    summary.textContent = hasCriteria ? descriptions.join(' • ') : 'Chưa có tiêu chí nào. Hãy chọn ít nhất một bộ lọc trước khi lưu.';
   }
 
   function renderSavedFilters() {
@@ -216,8 +227,8 @@
     var libCount = document.getElementById('ctSavedFilterLibraryCount');
     if (!list) return;
     var n = savedFilters.length;
-    if (badgeCount) { badgeCount.textContent = n; badgeCount.setAttribute('aria-label', n + ' bo loc da luu'); }
-    if (libCount) libCount.textContent = n ? n + ' bo loc' : '';
+    if (badgeCount) { badgeCount.textContent = n; badgeCount.setAttribute('aria-label', n + ' bộ lọc đã lưu'); }
+    if (libCount) libCount.textContent = n ? n + ' bộ lọc' : '';
     if (empty) empty.hidden = n > 0;
     list.innerHTML = '';
     savedFilters.forEach(function(filter) {
@@ -225,11 +236,11 @@
       var li = document.createElement('li');
       li.className = 'saved-filter-item';
       li.innerHTML =
-        '<button type="button" class="saved-filter-apply-btn" data-id="' + filter.id + '" title="Ap dung bo loc: ' + filter.name + '">' +
+        '<button type="button" class="saved-filter-apply-btn" data-id="' + filter.id + '" title="Áp dụng bộ lọc: ' + filter.name + '">' +
           '<span class="saved-filter-name">' + filter.name + '</span>' +
-          '<span class="saved-filter-desc">' + (labels.join(' • ') || 'Khong co tieu chi') + '</span>' +
+          '<span class="saved-filter-desc">' + (labels.join(' • ') || 'Không có tiêu chí') + '</span>' +
         '</button>' +
-        '<button type="button" class="saved-filter-delete-btn" data-id="' + filter.id + '" aria-label="Xoa bo loc ' + filter.name + '" title="Xoa bo loc nay">' +
+        '<button type="button" class="saved-filter-delete-btn" data-id="' + filter.id + '" aria-label="Xóa bộ lọc ' + filter.name + '" title="Xóa bộ lọc này">' +
           '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
         '</button>';
       list.appendChild(li);
@@ -267,11 +278,11 @@
   }
 
   var LABEL_MAPS = {
-    exp: { '0': 'Khong can KN', under1: 'Duoi 1 nam', '1-3': '1-3 nam', '3-5': '3-5 nam', over5: 'Tren 5 nam' },
-    salary: { under10: 'Duoi 10 trieu', '10-15': '10 - 15 trieu', '15-25': '15 - 25 trieu', '25-50': '25 - 50 trieu', over50: 'Tren 50 trieu', negotiable: 'Thoa thuan' },
-    level: { intern: 'Thuc tap sinh', junior: 'Nhan vien', senior: 'Truong nhom/Lead', manager: 'Truong phong/Manager' },
-    type: { fulltime: 'Toan thoi gian', hybrid: 'Hybrid (Linh hoat)', remote: 'Remote 100%', parttime: 'Ban thoi gian' },
-    saturday: { work_sat: 'Lam thu 7', off_sat: 'Nghi thu 7', unmentioned: 'Khong de cap' }
+    exp: { '0': 'Không cần KN', under1: 'Dưới 1 năm', '1-3': '1-3 năm', '3-5': '3-5 năm', over5: 'Trên 5 năm' },
+    salary: { under10: 'Dưới 10 triệu', '10-15': '10 - 15 triệu', '15-25': '15 - 25 triệu', '25-50': '25 - 50 triệu', over50: 'Trên 50 triệu', negotiable: 'Thỏa thuận' },
+    level: { intern: 'Thực tập sinh', junior: 'Nhân viên', senior: 'Trưởng nhóm/Lead', manager: 'Trưởng phòng/Manager' },
+    type: { fulltime: 'Toàn thời gian', hybrid: 'Hybrid (Linh hoạt)', remote: 'Remote 100%', parttime: 'Bán thời gian' },
+    saturday: { work_sat: 'Làm thứ 7', off_sat: 'Nghỉ thứ 7', unmentioned: 'Không đề cập' }
   };
 
   function applySavedFilter(filterId) {
@@ -287,7 +298,7 @@
     });
     syncClearBtnVisibility();
     closeSavedFiltersDialog();
-    showToast('Da ap dung bo loc: ' + filter.name, '📂');
+    showToast('Đã áp dụng bộ lọc: ' + filter.name, '📂');
     setTimeout(navigateToJobList, 600);
   }
 
@@ -307,18 +318,18 @@
           e.preventDefault();
           var nameInput = document.getElementById('ctSavedFilterName');
           var name = nameInput ? nameInput.value.trim() : '';
-          if (!name) { setSavedFilterError('Vui long nhap ten bo loc.'); return; }
+          if (!name) { setSavedFilterError('Vui lòng nhập tên bộ lọc.'); return; }
           var snapshot = getCurrentFilterSnapshot();
           if (!Object.keys(snapshot).some(function(k) { return snapshot[k]; })) {
             setSavedFilterError('Hay chon it nhat mot tieu chi truoc khi luu.'); return;
           }
           if (savedFilters.length >= 10) {
-            setSavedFilterError('Ban da luu toi da 10 bo loc.'); return;
+            setSavedFilterError('Bạn đã lưu tối đa 10 bộ lọc.'); return;
           }
           savedFilters.unshift({ id: createSavedFilterId(), name: name, params: snapshot });
           persistSavedFilters(); renderSavedFilters(); updateSavedFilterCurrentState(); setSavedFilterError();
           if (nameInput) nameInput.value = '';
-          showToast('Da luu bo loc: ' + name, '🔖');
+          showToast('Đã lưu bộ lọc: ' + name, '🔖');
         });
       }
       var savedList = document.getElementById('ctSavedFilterList');
@@ -331,7 +342,7 @@
             var id = deleteBtn.getAttribute('data-id');
             savedFilters = savedFilters.filter(function(f) { return f.id !== id; });
             persistSavedFilters(); renderSavedFilters(); updateSavedFilterCurrentState();
-            showToast('Da xoa bo loc', '🗑');
+            showToast('Đã xóa bộ lọc', '🗑');
           }
         });
       }
@@ -405,9 +416,14 @@
 
         if (type === 'industry') {
           closeAllFilterDropdowns();
-          var p2 = new URLSearchParams();
+          var p2 = getCarriedSearchParams();
           if (value) p2.set('industry', value);
-          showToast('Dang chuyen sang: ' + (label || 'Tat ca linh vuc'), '🔍');
+          else p2.delete('industry');
+          ['exp', 'salary', 'level', 'type', 'saturday'].forEach(function(key) {
+            var v = key === 'exp' ? selectedExp : key === 'salary' ? selectedSalary : key === 'level' ? selectedLevel : key === 'type' ? selectedType : selectedSaturday;
+            if (v) p2.set(key, v);
+          });
+          showToast('Đang chuyển sang: ' + (label || 'Tất cả lĩnh vực'), '🔍');
           setTimeout(function() {
             window.location.href = 'viec-lam.html' + (p2.toString() ? '?' + p2.toString() : '');
           }, 600);
@@ -435,7 +451,7 @@
         syncClearBtnVisibility();
         updateSavedFilterCurrentState();
         closeAllFilterDropdowns();
-        showToast('Da chon ' + (FILTER_DEFAULT_LABELS[type] || type) + ': ' + (value ? label : 'Tat ca'), '✓');
+        showToast('Đã chọn ' + (FILTER_DEFAULT_LABELS[type] || type) + ': ' + (value ? label : 'Tất cả'), '✓');
         setTimeout(navigateToJobList, 700);
       });
     });
@@ -444,7 +460,7 @@
     if (clearBtn2) {
       clearBtn2.addEventListener('click', function() {
         resetAllTopFilters();
-        showToast('Da xoa tat ca bo loc tieu chi', '✓');
+        showToast('Đã xóa tất cả bộ lọc tiêu chí', '✓');
       });
     }
 
@@ -471,9 +487,26 @@
         if (key === 'level') selectedLevel = val;
         if (key === 'type') selectedType = val;
         if (key === 'saturday') selectedSaturday = val;
-        var btn = document.getElementById('ct' + cap(key) + 'FilterBtn');
-        if (btn) btn.classList.add('is-active');
       }
+      // Hiển thị đúng nhãn + dấu tích của lựa chọn hiện tại (giống syncStateFromUrl() của viec-lam.js)
+      var value = val || '';
+      var menu = document.getElementById('ct' + cap(key) + 'DropdownMenu');
+      var selectedItem = null;
+      if (menu) {
+        menu.querySelectorAll('.dropdown-item').forEach(function(i) {
+          var isMatch = (i.getAttribute('data-value') || '') === value;
+          i.classList.toggle('is-selected', isMatch);
+          var chk = i.querySelector('.check-icon');
+          if (isMatch && !chk) {
+            i.insertAdjacentHTML('beforeend', '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>');
+          } else if (!isMatch && chk) {
+            chk.remove();
+          }
+          if (isMatch) selectedItem = i;
+        });
+      }
+      var label = selectedItem ? (selectedItem.getAttribute('data-label') || (selectedItem.querySelector('span') ? selectedItem.querySelector('span').textContent.trim() : value)) : value;
+      updateFilterPillUI(key, value, label);
     });
     syncClearBtnVisibility();
   }
