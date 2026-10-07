@@ -1816,7 +1816,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!recentSearchList) return;
     const items = getRecentSearches();
     if (!items.length) {
-      recentSearchList.innerHTML = '<span style="font-size: 13px; color: #94A3B8;">Chưa có lịch sử tìm kiếm</span>';
+      recentSearchList.innerHTML = '<span style="font-size: 13px; color: #8A8A8A;">Chưa có lịch sử tìm kiếm</span>';
       return;
     }
     recentSearchList.innerHTML = items.map(text => `

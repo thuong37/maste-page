@@ -3,21 +3,21 @@
 /* ==========================================================================
    EasyCV - Category Filter Modal (Danh mục Nghề)
    Faithfully engineered to match the reference TopCV-style industry taxonomy
-   while adhering strictly to EasyCV brand identity (#F97316, Inter, #F8FAFC).
+   while adhering strictly to EasyCV brand identity (#FF6500, Inter, #F8FAFC).
    ========================================================================== */
 
 :root {
-  --cat-primary: #F97316;
-  --cat-primary-hover: #EA580C;
-  --cat-primary-light: #FFF7ED;
-  --cat-primary-border: #FDBA74;
-  --cat-primary-text: #C2410C;
-  --cat-text-main: #0F172A;
-  --cat-text-muted: #64748B;
-  --cat-border: #E2E8F0;
+  --cat-primary: #FF6500;
+  --cat-primary-hover: #E85C00;
+  --cat-primary-light: #FFF0E6;
+  --cat-primary-border: #FFB88A;
+  --cat-primary-text: #B54800;
+  --cat-text-main: #060E18;
+  --cat-text-muted: #545454;
+  --cat-border: #E6E6E6;
   --cat-bg-gray: #F8FAFC;
   --cat-pill-bg: #F1F5F9;
-  --cat-pill-text: #334155;
+  --cat-pill-text: #333333;
   --cat-radius-sm: 6px;
   --cat-radius-md: 10px;
   --cat-radius-lg: 16px;
@@ -38,7 +38,7 @@
   border: 0;
   border-radius: 10px;
   background: transparent;
-  color: #334155;
+  color: #333333;
   font: 500 14px/1 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   white-space: nowrap;
   cursor: pointer;
@@ -50,18 +50,18 @@
 .category-filter-trigger:hover,
 .category-filter-trigger[aria-expanded="true"] {
   background: transparent;
-  color: #334155;
+  color: #333333;
 }
 
 .category-filter-trigger .category-icon {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  color: #F97316;
+  color: #FF6500;
 }
 
 .category-filter-trigger .category-label {
-  color: #334155;
+  color: #333333;
   font-size: 14px;
   font-weight: 500;
   overflow: hidden;
@@ -77,8 +77,8 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: rgba(249, 115, 22, 0.18);
-  color: #EA580C;
+  background: rgba(255, 101, 0, 0.18);
+  color: #E85C00;
   font-size: 11px;
   font-weight: 700;
   line-height: 1;
@@ -86,18 +86,18 @@
   flex-shrink: 0;
   cursor: pointer;
   transition: all 0.15s ease;
-  border: 1px solid rgba(249, 115, 22, 0.3);
+  border: 1px solid rgba(255, 101, 0, 0.3);
 }
 
 .category-filter-trigger .category-clear-btn:hover {
-  background: #EA580C;
+  background: #E85C00;
   color: #FFFFFF;
-  border-color: #EA580C;
+  border-color: #E85C00;
   transform: scale(1.12);
 }
 
 .category-filter-trigger .category-clear-btn:focus-visible {
-  outline: 2px solid #F97316;
+  outline: 2px solid #FF6500;
   outline-offset: 1px;
 }
 
@@ -106,20 +106,20 @@
   height: 14px;
   flex-shrink: 0;
   transition: transform 0.2s ease, color 0.2s ease;
-  color: #94A3B8;
+  color: #8A8A8A;
 }
 
 .category-filter-trigger[aria-expanded="true"] .category-chevron {
   transform: rotate(180deg);
-  color: #F97316;
+  color: #FF6500;
 }
 
 .category-filter-trigger:hover .category-chevron {
-  color: #EA580C;
+  color: #E85C00;
 }
 
 .category-filter-trigger:focus-visible {
-  outline: 3px solid rgba(249, 115, 22, 0.35);
+  outline: 3px solid rgba(255, 101, 0, 0.35);
   outline-offset: 2px;
 }
 
@@ -149,7 +149,7 @@
 .category-modal-backdrop {
   position: fixed !important;
   inset: 0 !important;
-  background: rgba(15, 23, 42, 0.45) !important;
+  background: rgba(6, 14, 24, 0.45) !important;
   backdrop-filter: blur(4px) !important;
   -webkit-backdrop-filter: blur(4px) !important;
   z-index: 1 !important;
@@ -177,9 +177,9 @@ body.job-detail-page .category-modal-backdrop {
   height: var(--cat-modal-height, calc((100vh - var(--cat-modal-top, 173px) - 20px) * 2 / 3)) !important;
   max-height: var(--cat-modal-height, calc((100vh - var(--cat-modal-top, 173px) - 20px) * 2 / 3)) !important;
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   border-radius: 20px;
-  box-shadow: 0 25px 65px -15px rgba(15, 23, 42, 0.35);
+  box-shadow: 0 25px 65px -15px rgba(6, 14, 24, 0.35);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -212,7 +212,7 @@ body.job-detail-page .category-modal-backdrop {
 .category-modal-title {
   font-size: 17px;
   font-weight: 750;
-  color: #0F172A;
+  color: #060E18;
   margin: 0;
   letter-spacing: -0.01em;
 }
@@ -223,7 +223,7 @@ body.job-detail-page .category-modal-backdrop {
   border-radius: 50%;
   border: none;
   background: #F1F5F9;
-  color: #64748B;
+  color: #545454;
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -237,12 +237,12 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .category-modal-close:hover {
-  background: #E2E8F0;
-  color: #0F172A;
+  background: #E6E6E6;
+  color: #060E18;
 }
 
 .category-modal-close:focus-visible {
-  outline: 3px solid rgba(249, 115, 22, 0.35);
+  outline: 3px solid rgba(255, 101, 0, 0.35);
   outline-offset: 2px;
 }
 
@@ -262,7 +262,7 @@ body.job-detail-page .category-modal-backdrop {
   gap: 10px;
   height: 40px;
   padding: 0 14px;
-  border: 1.5px solid #CBD5E1;
+  border: 1.5px solid #B0B0B0;
   border-radius: 999px;
   background: #FFFFFF;
   transition: border-color 0.18s, box-shadow 0.18s;
@@ -273,7 +273,7 @@ body.job-detail-page .category-modal-backdrop {
   display: none;
   background: transparent;
   border: none;
-  color: #EA580C;
+  color: #E85C00;
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
@@ -285,7 +285,7 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .btn-category-search-close:hover {
-  color: #C2410C;
+  color: #B54800;
   text-decoration: underline;
 }
 
@@ -295,15 +295,15 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .category-modal-search-box:focus-within {
-  border-color: #F97316;
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.14);
+  border-color: #FF6500;
+  box-shadow: 0 0 0 3px rgba(255, 101, 0, 0.14);
 }
 
 .category-modal-search-box .search-icon {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  color: #94A3B8;
+  color: #8A8A8A;
 }
 
 .category-modal-search-box input {
@@ -313,7 +313,7 @@ body.job-detail-page .category-modal-backdrop {
   background: transparent;
   font-size: 14px;
   font-family: inherit;
-  color: #0F172A;
+  color: #060E18;
 }
 
 .category-modal-search-box input::-webkit-search-cancel-button,
@@ -324,7 +324,7 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .category-modal-search-box input::placeholder {
-  color: #94A3B8;
+  color: #8A8A8A;
 }
 
 .category-search-clear {
@@ -332,8 +332,8 @@ body.job-detail-page .category-modal-backdrop {
   height: 22px;
   border-radius: 50%;
   border: none;
-  background: #E2E8F0;
-  color: #64748B;
+  background: #E6E6E6;
+  color: #545454;
   font-size: 11px;
   font-weight: 700;
   cursor: pointer;
@@ -345,8 +345,8 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .category-search-clear:hover {
-  background: #CBD5E1;
-  color: #0F172A;
+  background: #B0B0B0;
+  color: #060E18;
 }
 
 /* Popular keywords (Được tìm kiếm nhiều) - Highlight tập trung vào từng thẻ chuyên môn */
@@ -374,7 +374,7 @@ body.job-detail-page .category-modal-backdrop {
   flex-shrink: 0;
   font-size: 13.5px;
   font-weight: 700;
-  color: #EA580C;
+  color: #E85C00;
   line-height: 1.4;
   margin: 0;
 }
@@ -390,38 +390,38 @@ body.job-detail-page .category-modal-backdrop {
 .category-popular-chip {
   padding: 6px 14px;
   border-radius: 999px;
-  background: #FFF7ED;
-  color: #C2410C;
+  background: #FFF0E6;
+  color: #B54800;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  border: 1.5px solid #FDBA74;
+  border: 1.5px solid #FFB88A;
   transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   line-height: 1.35;
   user-select: none;
   font-family: inherit;
   white-space: nowrap;
-  box-shadow: 0 1px 3px rgba(249, 115, 22, 0.12);
+  box-shadow: 0 1px 3px rgba(255, 101, 0, 0.12);
 }
 
 .category-popular-chip:hover {
-  background: #F97316;
+  background: #FF6500;
   color: #FFFFFF;
-  border-color: #EA580C;
-  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+  border-color: #E85C00;
+  box-shadow: 0 4px 12px rgba(255, 101, 0, 0.3);
   transform: translateY(-1.5px);
 }
 
 .category-popular-chip.is-active,
 .category-popular-chip.is-selected {
-  background: #EA580C;
+  background: #E85C00;
   color: #FFFFFF;
-  border-color: #C2410C;
-  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.35);
+  border-color: #B54800;
+  box-shadow: 0 2px 8px rgba(232, 92, 0, 0.35);
 }
 
 .category-popular-wrap .category-popular-chip:focus-visible {
-  outline: 2px solid #EA580C;
+  outline: 2px solid #E85C00;
   outline-offset: 2px;
 }
 
@@ -470,14 +470,14 @@ body.job-detail-page .category-modal-backdrop {
 .category-search-suggest-title {
   font-size: 13px;
   font-weight: 700;
-  color: #334155;
+  color: #333333;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
 .category-search-suggest-title svg {
-  color: #F97316;
+  color: #FF6500;
   width: 16px;
   height: 16px;
 }
@@ -492,8 +492,8 @@ body.job-detail-page .category-modal-backdrop {
   padding: 6px 14px;
   border-radius: 999px;
   background: #F8FAFC;
-  border: 1px solid #E2E8F0;
-  color: #334155;
+  border: 1px solid #E6E6E6;
+  color: #333333;
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
@@ -505,9 +505,9 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .category-suggest-chip:hover {
-  background: #FFF7ED;
-  border-color: #F97316;
-  color: #EA580C;
+  background: #FFF0E6;
+  border-color: #FF6500;
+  color: #E85C00;
   transform: translateY(-1px);
 }
 
@@ -553,7 +553,7 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .category-search-result-item.is-selected {
-  background-color: #FFF7ED;
+  background-color: #FFF0E6;
 }
 
 .category-search-result-item .cat-checkbox {
@@ -562,7 +562,7 @@ body.job-detail-page .category-modal-backdrop {
   width: 19px;
   height: 19px;
   border-radius: 5px;
-  border: 1.5px solid #CBD5E1;
+  border: 1.5px solid #B0B0B0;
   background: #FFFFFF;
   display: flex;
   align-items: center;
@@ -571,12 +571,12 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .category-search-result-item:hover .cat-checkbox {
-  border-color: #F97316;
+  border-color: #FF6500;
 }
 
 .category-search-result-item .cat-checkbox.is-checked {
-  background: #EA580C;
-  border-color: #EA580C;
+  background: #E85C00;
+  border-color: #E85C00;
 }
 
 .category-search-result-item .cat-checkbox svg {
@@ -605,20 +605,20 @@ body.job-detail-page .category-modal-backdrop {
 .category-search-result-name {
   font-size: 15px;
   font-weight: 600;
-  color: #1E293B;
+  color: #333333;
   line-height: 1.35;
   transition: color 0.15s ease;
 }
 
 .category-search-result-item.is-selected .category-search-result-name {
-  color: #EA580C;
+  color: #E85C00;
   font-weight: 700;
 }
 
 .category-search-result-breadcrumb {
   font-size: 11.5px;
   font-weight: 600;
-  color: #94A3B8;
+  color: #8A8A8A;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   line-height: 1.3;
@@ -629,14 +629,14 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .category-search-result-breadcrumb .breadcrumb-separator {
-  color: #CBD5E1;
+  color: #B0B0B0;
   font-size: 12px;
 }
 
 .category-search-empty {
   padding: 48px 24px;
   text-align: center;
-  color: #64748B;
+  color: #545454;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -661,7 +661,7 @@ body.job-detail-page .category-modal-backdrop {
 .category-column-header {
   font-size: 12px;
   font-weight: 750;
-  color: #64748B;
+  color: #545454;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -670,7 +670,7 @@ body.job-detail-page .category-modal-backdrop {
 .cat-checkbox {
   width: 18px;
   height: 18px;
-  border: 1.5px solid #CBD5E1;
+  border: 1.5px solid #B0B0B0;
   border-radius: 4px;
   background: #FFFFFF;
   display: grid;
@@ -690,8 +690,8 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .cat-checkbox.is-checked {
-  background: #F97316;
-  border-color: #F97316;
+  background: #FF6500;
+  border-color: #FF6500;
 }
 
 .cat-checkbox.is-checked svg {
@@ -699,8 +699,8 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .cat-checkbox.is-indeterminate {
-  background: #F97316;
-  border-color: #F97316;
+  background: #FF6500;
+  border-color: #FF6500;
 }
 
 .cat-checkbox.is-indeterminate svg {
@@ -717,7 +717,7 @@ body.job-detail-page .category-modal-backdrop {
 
 /* --- Left Panel: NHÓM NGHỀ --- */
 .category-panel-left {
-  border-right: 1px solid #E2E8F0;
+  border-right: 1px solid #E6E6E6;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -767,7 +767,7 @@ body.job-detail-page .category-modal-backdrop {
 .category-group-title {
   font-size: 13.5px;
   font-weight: 600;
-  color: #334155;
+  color: #333333;
   line-height: 1.35;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -777,24 +777,24 @@ body.job-detail-page .category-modal-backdrop {
 .cat-group-chevron {
   width: 14px;
   height: 14px;
-  color: #94A3B8;
+  color: #8A8A8A;
   flex-shrink: 0;
   transition: all 0.15s ease;
 }
 
 /* Active (Currently Selected/Previewed Category) */
 .category-group-item.is-active {
-  background: #FFF7ED;
-  border-left-color: #F97316;
+  background: #FFF0E6;
+  border-left-color: #FF6500;
 }
 
 .category-group-item.is-active .category-group-title {
-  color: #EA580C;
+  color: #E85C00;
   font-weight: 750;
 }
 
 .category-group-item.is-active .cat-group-chevron {
-  color: #F97316;
+  color: #FF6500;
   transform: translateX(2px);
 }
 
@@ -854,13 +854,13 @@ body.job-detail-page .category-modal-backdrop {
 .category-role-title {
   font-size: 13.5px;
   font-weight: 700;
-  color: #1E293B;
+  color: #333333;
   line-height: 1.4;
   margin-top: -1px;
 }
 
 .category-role-title:hover {
-  color: #EA580C;
+  color: #E85C00;
 }
 
 .category-specialty-pills {
@@ -873,7 +873,7 @@ body.job-detail-page .category-modal-backdrop {
   padding: 6px 14px;
   border-radius: 999px;
   background: #F1F5F9;
-  color: #334155;
+  color: #333333;
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
@@ -885,16 +885,16 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .category-specialty-pill:hover {
-  background: #E2E8F0;
-  color: #0F172A;
+  background: #E6E6E6;
+  color: #060E18;
 }
 
 .category-specialty-pill.is-selected {
-  background: #FFF7ED;
-  color: #C2410C;
-  border-color: #F97316;
+  background: #FFF0E6;
+  color: #B54800;
+  border-color: #FF6500;
   font-weight: 600;
-  box-shadow: 0 1px 3px rgba(249, 115, 22, 0.15);
+  box-shadow: 0 1px 3px rgba(255, 101, 0, 0.15);
 }
 
 /* Floating Scroll Hint */
@@ -908,13 +908,13 @@ body.job-detail-page .category-modal-backdrop {
   gap: 6px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: #FFF7ED;
-  color: #EA580C;
-  border: 1px solid #FDBA74;
+  background: #FFF0E6;
+  color: #E85C00;
+  border: 1px solid #FFB88A;
   font-size: 12px;
   font-weight: 650;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.16);
+  box-shadow: 0 4px 14px rgba(255, 101, 0, 0.16);
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
@@ -924,7 +924,7 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .category-scroll-hint:hover {
-  background: #FFEDD5;
+  background: #FFCFB0;
   transform: translateY(-1px);
 }
 
@@ -939,7 +939,7 @@ body.job-detail-page .category-modal-backdrop {
   display: grid;
   place-items: center;
   padding: 60px 20px;
-  color: #64748B;
+  color: #545454;
   font-size: 14px;
   text-align: center;
   grid-column: 1 / -1;
@@ -947,7 +947,7 @@ body.job-detail-page .category-modal-backdrop {
 
 .category-search-empty p {
   margin: 8px 0 0 0;
-  color: #94A3B8;
+  color: #8A8A8A;
   font-size: 13px;
 }
 
@@ -956,7 +956,7 @@ body.job-detail-page .category-modal-backdrop {
    ========================================================================== */
 .category-modal-footer {
   padding: 10px 24px;
-  border-top: 1px solid #E2E8F0;
+  border-top: 1px solid #E6E6E6;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -965,12 +965,12 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .category-footer-feedback {
-  color: #64748B;
+  color: #545454;
   font-size: 13px;
 }
 
 .category-feedback-link {
-  color: #F97316;
+  color: #FF6500;
   font-weight: 600;
   text-decoration: none;
   margin-left: 4px;
@@ -978,7 +978,7 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .category-feedback-link:hover {
-  color: #EA580C;
+  color: #E85C00;
   text-decoration: underline;
 }
 
@@ -991,7 +991,7 @@ body.job-detail-page .category-modal-backdrop {
 .btn-category-clear-all {
   background: none;
   border: none;
-  color: #64748B;
+  color: #545454;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -1001,21 +1001,21 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .btn-category-clear-all:hover {
-  color: #0F172A;
+  color: #060E18;
 }
 
 .category-footer-actions .action-divider {
   width: 1px;
   height: 18px;
-  background: #E2E8F0;
+  background: #E6E6E6;
 }
 
 .btn-category-cancel {
   padding: 9px 24px;
   border-radius: 999px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E6E6E6;
   background: #F8FAFC;
-  color: #334155;
+  color: #333333;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -1024,20 +1024,20 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 .btn-category-cancel:hover {
-  background: #E2E8F0;
-  color: #0F172A;
+  background: #E6E6E6;
+  color: #060E18;
 }
 
 .btn-category-submit {
   padding: 9px 28px;
   border-radius: 999px;
   border: none;
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  background: linear-gradient(135deg, #FF6500 0%, #E85C00 100%);
   color: #FFFFFF;
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 4px 14px rgba(255, 101, 0, 0.3);
   transition: all 0.18s ease;
   font-family: inherit;
   min-width: 90px;
@@ -1046,7 +1046,7 @@ body.job-detail-page .category-modal-backdrop {
 .btn-category-submit:hover {
   filter: brightness(1.05);
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(249, 115, 22, 0.38);
+  box-shadow: 0 6px 18px rgba(255, 101, 0, 0.38);
 }
 
 .btn-category-submit:active {
@@ -1057,8 +1057,8 @@ body.job-detail-page .category-modal-backdrop {
    6. DARK THEME SUPPORT
    ========================================================================== */
 [data-theme='dark'] .category-modal-dialog {
-  background: #0F172A;
-  border-color: #334155;
+  background: #060E18;
+  border-color: #333333;
 }
 
 [data-theme='dark'] .category-modal-title {
@@ -1066,18 +1066,18 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 [data-theme='dark'] .category-modal-close {
-  background: #1E293B;
-  color: #94A3B8;
+  background: #333333;
+  color: #8A8A8A;
 }
 
 [data-theme='dark'] .category-modal-close:hover {
-  background: #334155;
+  background: #333333;
   color: #F8FAFC;
 }
 
 [data-theme='dark'] .category-modal-search-box {
-  background: #1E293B;
-  border-color: #334155;
+  background: #333333;
+  border-color: #333333;
 }
 
 [data-theme='dark'] .category-modal-search-box input {
@@ -1086,55 +1086,55 @@ body.job-detail-page .category-modal-backdrop {
 
 [data-theme='dark'] .category-popular-wrap {
   background: transparent;
-  border-bottom-color: #334155;
+  border-bottom-color: #333333;
   box-shadow: none;
 }
 
 [data-theme='dark'] .category-popular-label {
-  color: #94A3B8;
+  color: #8A8A8A;
 }
 
 [data-theme='dark'] .category-popular-chip {
-  background: rgba(249, 115, 22, 0.15);
-  color: #FDBA74;
-  border-color: rgba(249, 115, 22, 0.45);
+  background: rgba(255, 101, 0, 0.15);
+  color: #FFB88A;
+  border-color: rgba(255, 101, 0, 0.45);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme='dark'] .category-popular-chip:hover,
 [data-theme='dark'] .category-popular-chip.is-active {
-  background: #F97316;
+  background: #FF6500;
   color: #FFFFFF;
-  border-color: #FB923C;
-  box-shadow: 0 3px 12px rgba(249, 115, 22, 0.45);
+  border-color: #FF8433;
+  box-shadow: 0 3px 12px rgba(255, 101, 0, 0.45);
 }
 
 [data-theme='dark'] .category-panel-left {
   background: #0B1120;
-  border-right-color: #1E293B;
+  border-right-color: #333333;
 }
 
 [data-theme='dark'] .category-group-title {
-  color: #CBD5E1;
+  color: #B0B0B0;
 }
 
 [data-theme='dark'] .category-group-item:hover {
-  background: #1E293B;
+  background: #333333;
 }
 
 [data-theme='dark'] .category-group-item.is-active {
-  background: #431407;
+  background: #6B2A00;
 }
 
 [data-theme='dark'] .category-group-item.is-active .category-group-title {
-  color: #FDBA74;
+  color: #FFB88A;
 }
 
 [data-theme='dark'] .category-panel-right,
 [data-theme='dark'] .category-right-headers,
 [data-theme='dark'] .category-modal-footer {
-  background: #0F172A;
-  border-color: #1E293B;
+  background: #060E18;
+  border-color: #333333;
 }
 
 [data-theme='dark'] .category-role-title {
@@ -1142,25 +1142,25 @@ body.job-detail-page .category-modal-backdrop {
 }
 
 [data-theme='dark'] .category-specialty-pill {
-  background: #1E293B;
-  color: #CBD5E1;
+  background: #333333;
+  color: #B0B0B0;
 }
 
 [data-theme='dark'] .category-specialty-pill:hover {
-  background: #334155;
+  background: #333333;
   color: #FFFFFF;
 }
 
 [data-theme='dark'] .category-specialty-pill.is-selected {
-  background: #431407;
-  color: #FDBA74;
-  border-color: #F97316;
+  background: #6B2A00;
+  color: #FFB88A;
+  border-color: #FF6500;
 }
 
 [data-theme='dark'] .btn-category-cancel {
-  background: #1E293B;
-  border-color: #334155;
-  color: #CBD5E1;
+  background: #333333;
+  border-color: #333333;
+  color: #B0B0B0;
 }
 
 /* ==========================================================================
@@ -1239,7 +1239,7 @@ body.job-detail-page .category-modal-backdrop {
 
   .category-panel-left {
     border-right: none;
-    border-bottom: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E6E6E6;
     max-height: 180px;
     flex-shrink: 0;
   }
@@ -1256,15 +1256,15 @@ body.job-detail-page .category-modal-backdrop {
     border-bottom: 2px solid transparent;
     border-radius: 8px;
     background: #FFFFFF;
-    border: 1px solid #E2E8F0;
+    border: 1px solid #E6E6E6;
     padding: 6px 12px;
     white-space: nowrap;
     flex-shrink: 0;
   }
 
   .category-group-item.is-active {
-    background: #FFF7ED;
-    border-color: #F97316;
+    background: #FFF0E6;
+    border-color: #FF6500;
   }
 
   .cat-group-chevron {

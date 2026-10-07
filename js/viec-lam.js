@@ -2384,7 +2384,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (splitJobCount) {
       const matchCount = currentFilteredJobs.filter(j => j._isSearchMatch).length;
       if (matchCount > 0) {
-        splitJobCount.innerHTML = `${currentFilteredJobs.length} <span style="font-size: 11.5px; font-weight: 600; color: #16A34A;">(${matchCount} khớp)</span>`;
+        splitJobCount.innerHTML = `${currentFilteredJobs.length} <span style="font-size: 11.5px; font-weight: 600; color: #2C9661;">(${matchCount} khớp)</span>`;
       } else {
         splitJobCount.textContent = currentFilteredJobs.length;
       }
@@ -2392,7 +2392,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (currentFilteredJobs.length === 0) {
       splitListFeed.innerHTML = `
-        <div style="padding: 36px 16px; text-align: center; color: #64748B;">
+        <div style="padding: 36px 16px; text-align: center; color: #545454;">
           <p style="margin: 0 0 10px 0; font-weight: 600;">Không có việc làm phù hợp</p>
           <button type="button" class="btn-reset-filters" id="btnResetSplitSearch" style="font-size: 13px;">Xem lại tất cả việc làm</button>
         </div>
@@ -2429,7 +2429,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
               <span>${job.city}</span>
             </span>
-            <span style="font-size: 11.5px; color: #94A3B8;">${job.updated}</span>
+            <span style="font-size: 11.5px; color: #8A8A8A;">${job.updated}</span>
           </div>
         </div>
       `;

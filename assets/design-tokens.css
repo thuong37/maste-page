@@ -4,7 +4,7 @@
  * Brand: EasyCV (Sàn tuyển dụng & Khám phá việc làm thông minh)
  * Visual Style: structured, tokenized, content-first
  * Font Primary: Inter (14px base, 500 weight, 22px line-height)
- * Brand Palette: EasyCV Orange (#F97316), Slate (#1E293B / #475569), Soft Peach (#FFF7ED)
+ * Brand Palette: EasyCV Orange (#FF6500), Slate (#333333 / #545454), Soft Peach (#FFF0E6)
  * ==========================================================================
  */
 
@@ -43,43 +43,54 @@
      2. Color Palette (EasyCV Brand Alignment — Non-Copying Architecture)
      ========================================================================== */
   /* EasyCV Brand Primitives (Orange Signature) */
-  --color-orange-50: #FFF7ED;
-  --color-orange-100: #FFEDD5;
-  --color-orange-200: #FED7AA;
-  --color-orange-300: #FDBA74;
-  --color-orange-400: #FB923C;
-  --color-orange-500: #F97316; /* EasyCV Core Brand Color */
-  --color-orange-600: #EA580C; /* Hover */
-  --color-orange-700: #C2410C; /* Active / Pressed */
-  --color-orange-800: #9A3412;
-  --color-orange-900: #7C2D12;
+  --color-orange-50: #FFF0E6;
+  --color-orange-100: #FFCFB0;
+  --color-orange-200: #FFCFB0;
+  --color-orange-300: #FFB88A;
+  --color-orange-400: #FF8433;
+  --color-orange-500: #FF6500; /* EasyCV Core Brand Color */
+  --color-orange-600: #E85C00; /* Hover */
+  --color-orange-700: #B54800; /* Active / Pressed */
+  --color-orange-800: #8C3800;
+  --color-orange-900: #6B2A00;
+
+  /* Figma "Color system EasyBooks" (node 8-896) — nguồn chuẩn cho toàn bộ màu web.
+     Primary = giá trị nhãn trong Figma; Secondary/Error/Text = màu thực của ô (nhãn trong Figma bị chép sai). */
+  --eb-primary-50: #FFF0E6;  --eb-primary-100: #FFCFB0; --eb-primary-200: #FFB88A; --eb-primary-300: #FF9854; --eb-primary-400: #FF8433;
+  --eb-primary-500: #FF6500; --eb-primary-600: #E85C00; --eb-primary-700: #B54800; --eb-primary-800: #8C3800; --eb-primary-900: #6B2A00;
+  --eb-secondary-50: #EAF6F0;  --eb-secondary-100: #BFE3D1; --eb-secondary-200: #A0D6BB; --eb-secondary-300: #74C39C; --eb-secondary-400: #59B789;
+  --eb-secondary-500: #30A56B; --eb-secondary-600: #2C9661; --eb-secondary-700: #22754C; --eb-secondary-800: #1A5B3B; --eb-secondary-900: #14452D;
+  --eb-error-50: #FFE6E6;  --eb-error-100: #FFB0B0; --eb-error-200: #FF8A8A; --eb-error-300: #FF5454; --eb-error-400: #FF3333;
+  --eb-error-500: #FF0000; --eb-error-600: #E80000; --eb-error-700: #B50000; --eb-error-800: #8C0000; --eb-error-900: #6B0000;
+  --eb-text-100: #E6E6E6; --eb-text-200: #B0B0B0; --eb-text-300: #8A8A8A; --eb-text-400: #545454; --eb-text-500: #333333;
+  --eb-text-800: #060E18; --eb-text-900: #000000;
 
   /* Slate Neutrals */
   --color-slate-50: #F8FAFC;
   --color-slate-100: #F1F5F9;
-  --color-slate-200: #E2E8F0;
-  --color-slate-300: #CBD5E1;
-  --color-slate-400: #94A3B8;
-  --color-slate-500: #64748B;
-  --color-slate-600: #475569;
-  --color-slate-700: #334155;
-  --color-slate-800: #1E293B;
-  --color-slate-900: #0F172A;
+  --color-slate-200: #E6E6E6;
+  --color-slate-300: #B0B0B0;
+  --color-slate-400: #8A8A8A;
+  --color-slate-500: #545454;
+  --color-slate-600: #545454;
+  --color-slate-700: #333333;
+  --color-slate-800: #333333;
+  --color-slate-900: #060E18;
   --color-slate-950: #020617;
 
   /* Semantic UI Tokens Mapped from Foundations */
   /* Text */
-  --color-text-primary: #1E293B;      /* Content-first deep slate */
-  --color-text-secondary: #475569;    /* Clean slate neutral */
-  --color-text-tertiary: #F97316;     /* EasyCV Brand Orange signature highlight */
-  --color-text-inverse: #64748B;      /* Inverse subtle caption */
-  --color-text-muted: #94A3B8;
+  --color-text-primary: #333333;      /* Content-first deep slate */
+  --color-text-secondary: #545454;    /* Clean slate neutral */
+  --color-text-tertiary: #FF6500;     /* EasyCV Brand Orange signature highlight */
+  --color-text-inverse: #545454;      /* Inverse subtle caption */
+  --color-text-muted: #8A8A8A;
   --color-text-white: #FFFFFF;
 
   /* Surface */
   --color-surface-base: #FFFFFF;      /* Clean card/modal base */
   --color-surface-muted: #F8FAFC;     /* Subtle light background */
-  --color-surface-raised: #FFF7ED;    /* Warm peach raised surface */
+  --color-surface-raised: #FFF0E6;    /* Warm peach raised surface */
   --color-surface-strong: #F1F5F9;    /* Structural slate container */
   --color-surface-card: #FFFFFF;
   --color-surface: var(--color-surface-muted);
@@ -91,7 +102,7 @@
   --color-primary-active: var(--color-orange-700);
   --color-primary-light: var(--color-orange-50);
   --color-primary-border: var(--color-orange-200);
-  --color-primary-glow: rgba(249, 115, 22, 0.25);
+  --color-primary-glow: rgba(255, 101, 0, 0.25);
   --color-on-primary: #FFFFFF;
 
   /* Brand Secondary */
@@ -104,14 +115,14 @@
   --color-border-strong: var(--color-slate-300);
 
   /* Status & Accents */
-  --color-green-500: #22C55E;
-  --color-green-600: #16A34A;
+  --color-green-500: #30A56B;
+  --color-green-600: #2C9661;
   --color-accent: var(--color-green-600); /* Objective CV Match & Verified badge */
-  --color-accent-light: #F0FDF4;
+  --color-accent-light: #EAF6F0;
   --color-on-accent: #FFFFFF;
   --color-blue-500: #0EA5E9;
   --color-blue-600: #0284C7;
-  --color-red-500: #EF4444;
+  --color-red-500: #FF3333;
 
   /* Backward Compatibility Aliases for TopCV Variables */
   --tc-green: var(--color-orange-500);
@@ -165,9 +176,9 @@
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
-  --shadow-card: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05);
-  --shadow-card-hover: 0 8px 24px -4px rgba(249, 115, 22, 0.14), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
-  --shadow-dropdown: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+  --shadow-card: 0 1px 3px 0 rgba(6, 14, 24, 0.05), 0 1px 2px -1px rgba(6, 14, 24, 0.05);
+  --shadow-card-hover: 0 8px 24px -4px rgba(255, 101, 0, 0.14), 0 4px 8px -2px rgba(6, 14, 24, 0.04);
+  --shadow-dropdown: 0 20px 25px -5px rgba(6, 14, 24, 0.1), 0 8px 10px -6px rgba(6, 14, 24, 0.08);
 
   /* ==========================================================================
      6. Motion Tokens (Snappy & Responsive)

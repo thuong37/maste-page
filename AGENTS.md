@@ -7,7 +7,8 @@ Phương pháp luận quản trị: **BMAD (BMM Method)**
 
 ## 1. Nguyên Tắc Cốt Lõi (Core Principles)
 - Mọi phân tích và triển khai đều đối soát trực tiếp với [`_bmad-output/planning-artifacts/prd.md`](_bmad-output/planning-artifacts/prd.md).
-- Giữ vững chuẩn nhận diện thương hiệu EasyCV: Màu cam chủ đạo (`#F97316`), nền sáng tinh tế (`#F8FAFC`), font chữ chuẩn Inter, UI cao cấp.
+- Giữ vững chuẩn nhận diện thương hiệu EasyCV: Màu cam chủ đạo (`#FF6500`), nền sáng tinh tế (`#F8FAFC`), font chữ chuẩn Inter, UI cao cấp.
+- Bảng màu chuẩn lấy theo Figma "Color system EasyBooks" (file `pyFKXDCPtBvDqwOYTdGXI3`, node `8-896`), đã khai báo thành token `--eb-primary-*`, `--eb-secondary-*`, `--eb-error-*`, `--eb-text-*` trong [`assets/design-tokens.css`](assets/design-tokens.css). Không dùng lại thang màu Tailwind cũ (`#F97316`, `#EA580C`, `#0F172A`, `#64748B`, `#16A34A`, `#EF4444`…).
 
 ---
 

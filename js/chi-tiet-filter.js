@@ -33,10 +33,10 @@
     if (!toast) {
       toast = document.createElement('div');
       toast.id = 'chiTietFilterToast';
-      toast.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(16px);background:rgba(15,23,42,0.93);color:#fff;padding:10px 20px;border-radius:100px;font-size:13.5px;font-weight:500;display:flex;align-items:center;gap:8px;box-shadow:0 4px 24px rgba(0,0,0,0.18);transition:opacity 0.25s,transform 0.25s;opacity:0;pointer-events:none;z-index:9999';
+      toast.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(16px);background:rgba(6, 14, 24,0.93);color:#fff;padding:10px 20px;border-radius:100px;font-size:13.5px;font-weight:500;display:flex;align-items:center;gap:8px;box-shadow:0 4px 24px rgba(0,0,0,0.18);transition:opacity 0.25s,transform 0.25s;opacity:0;pointer-events:none;z-index:9999';
       document.body.appendChild(toast);
     }
-    toast.innerHTML = '<span style="color:#F97316">' + icon + '</span> ' + message;
+    toast.innerHTML = '<span style="color:#FF6500">' + icon + '</span> ' + message;
     toast.style.opacity = '1';
     toast.style.transform = 'translateX(-50%) translateY(0)';
     clearTimeout(toast._hideTimer);
