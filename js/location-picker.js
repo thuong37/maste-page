@@ -191,11 +191,33 @@
     select.value = value;
     // Dispatch change event to sync with job search filters
     select.dispatchEvent(new Event('change', { bubbles: true }));
-    if (trigger.firstChild) {
-      trigger.firstChild.textContent = labels.length === 0 ? 'Tất cả địa điểm ' : labels.length === 1 ? `${labels[0]} ` : `${labels.length} địa điểm `;
-    }
+    const labelText = labels.length === 0 ? 'Tất cả địa điểm' : labels.length === 1 ? labels[0] : `${labels.length} địa điểm`;
+    updateTriggerLabel(labelText);
     close();
     trigger.focus();
+  }
+
+  function updateTriggerLabel(text) {
+    if (!trigger) return;
+    // Khử triệt để mọi text node tự do nằm trực tiếp bên trong trigger tránh lặp chữ
+    Array.from(trigger.childNodes).forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        node.remove();
+      }
+    });
+    let labelSpan = trigger.querySelector('.location-label') || trigger.querySelector('#heroLocationLabel');
+    if (!labelSpan) {
+      labelSpan = document.createElement('span');
+      labelSpan.className = 'location-label';
+      labelSpan.id = 'heroLocationLabel';
+      const chevron = trigger.querySelector('.location-chevron');
+      if (chevron) {
+        trigger.insertBefore(labelSpan, chevron);
+      } else {
+        trigger.appendChild(labelSpan);
+      }
+    }
+    labelSpan.textContent = text;
   }
 
   trigger.addEventListener('click', event => {
@@ -239,7 +261,7 @@
         select.replaceChildren(new Option('Tất cả địa điểm', ''));
         select.value = '';
       }
-      if (trigger && trigger.firstChild) trigger.firstChild.textContent = 'Tất cả địa điểm ';
+      updateTriggerLabel('Tất cả địa điểm');
       render();
     },
     setSelected(cityName) {
@@ -251,19 +273,23 @@
           select.replaceChildren(new Option(cityName, cityName));
           select.value = cityName;
         }
-        if (trigger && trigger.firstChild) trigger.firstChild.textContent = `${cityName} `;
+        updateTriggerLabel(cityName);
       } else {
         committed.clear();
         if (select) {
           select.replaceChildren(new Option('Tất cả địa điểm', ''));
           select.value = '';
         }
-        if (trigger && trigger.firstChild) trigger.firstChild.textContent = 'Tất cả địa điểm ';
+        updateTriggerLabel('Tất cả địa điểm');
       }
       render();
     },
     close
   };
+
+  // Dọn dẹp DOM ngay khi khởi chạy để loại bỏ mọi text thừa do cache/markup
+  const initialText = trigger.querySelector('.location-label')?.textContent?.trim() || 'Tất cả địa điểm';
+  updateTriggerLabel(initialText);
 
   render();
 })();

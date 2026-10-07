@@ -1143,6 +1143,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const clearSearchInputBtn = document.getElementById('clearSearchInputBtn');
   const locationSelect = document.getElementById('jobLocationSelect') || document.getElementById('heroLocationSelect');
   const heroLocationTrigger = document.getElementById('heroLocationTrigger') || document.getElementById('jobLocationTrigger');
+  if (heroLocationTrigger) {
+    Array.from(heroLocationTrigger.childNodes).forEach(n => {
+      if (n.nodeType === Node.TEXT_NODE) n.remove();
+    });
+  }
   const categorySelect = document.getElementById('jobCategorySelect');
   const sortSelect = document.getElementById('sortSelect');
   const jobSearchForm = document.getElementById('jobSearchForm');
@@ -4062,8 +4067,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (locationParam) {
       if (window.EasyCVLocationPicker) {
         window.EasyCVLocationPicker.setSelected(locationParam);
-      } else if (heroLocationTrigger && heroLocationTrigger.firstChild) {
-        heroLocationTrigger.firstChild.textContent = `${locationParam} `;
+      } else if (heroLocationTrigger) {
+        Array.from(heroLocationTrigger.childNodes).forEach(n => {
+          if (n.nodeType === Node.TEXT_NODE) n.remove();
+        });
+        const labelEl = heroLocationTrigger.querySelector('.location-label');
+        if (labelEl) {
+          labelEl.textContent = locationParam;
+        }
       }
       if (locationSelect) {
         locationSelect.value = locationParam;
@@ -4071,8 +4082,14 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       if (window.EasyCVLocationPicker) {
         window.EasyCVLocationPicker.reset();
-      } else if (heroLocationTrigger && heroLocationTrigger.firstChild) {
-        heroLocationTrigger.firstChild.textContent = 'Tất cả địa điểm ';
+      } else if (heroLocationTrigger) {
+        Array.from(heroLocationTrigger.childNodes).forEach(n => {
+          if (n.nodeType === Node.TEXT_NODE) n.remove();
+        });
+        const labelEl = heroLocationTrigger.querySelector('.location-label');
+        if (labelEl) {
+          labelEl.textContent = 'Tất cả địa điểm';
+        }
       }
       if (locationSelect) {
         locationSelect.value = '';

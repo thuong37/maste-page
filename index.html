@@ -10,11 +10,42 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/design-tokens.css?v=2.0_tokens">
-  <link rel="stylesheet" href="css/navbar.css?v=8.0_tokens">
+  <link rel="stylesheet" href="css/navbar.css?v=9.0_left_align">
   <link rel="stylesheet" href="css/home.css?v=8.0_tokens">
-  <link rel="stylesheet" href="css/location-picker.css?v=1">
+  <link rel="stylesheet" href="css/location-picker.css?v=3.0_clean">
   <link rel="stylesheet" href="css/category-filter-modal.css?v=1.3_home_clear_backdrop">
   <style>
+    /* Menu dropdown luôn căn trái 100% */
+    .site-header .dropdown-menu {
+      left: 0 !important;
+      right: auto !important;
+      text-align: left !important;
+    }
+    .site-header .dropdown-menu .dropdown-item {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 12px !important;
+      text-align: left !important;
+    }
+    .site-header .dropdown-menu .dropdown-item .dropdown-item-content {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: center !important;
+      text-align: left !important;
+      flex: 0 1 auto !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+    }
+    .site-header .dropdown-menu .dropdown-item .dropdown-item-title {
+      text-align: left !important;
+      width: auto !important;
+    }
+    .site-header .dropdown-menu .dropdown-item .badge-pill {
+      margin-left: 8px !important;
+      margin-right: 0 !important;
+    }
     /* =========================================================================
        CRITICAL INLINE CSS: HERO SPLIT LAYOUT & SPONSORED RECRUITER SHOWCASE
        (Bypass Browser Cache & Ensure 100% Reliable Rendering)
@@ -195,11 +226,12 @@
       padding: 0 4px;
     }
     .location-trigger {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      width: 100%;
+      justify-content: flex-start;
+      gap: 6px;
+      width: auto;
+      max-width: 100%;
       min-width: 0;
       padding: 8px 6px;
       border: 0;
@@ -211,10 +243,15 @@
       text-align: left;
       cursor: pointer;
     }
-    .location-trigger span {
-      color: #64748B;
-      font-size: 17px;
-      line-height: 1;
+    .location-trigger .location-label {
+      color: #334155;
+      font-size: 14px;
+      font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex: 0 1 auto;
+      max-width: 150px;
     }
     .search-select {
       border: none;
@@ -1877,7 +1914,7 @@
 
             <div class="search-input-group search-location-group">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <button type="button" class="location-trigger" id="heroLocationTrigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="heroLocationPicker">Tất cả địa điểm <span aria-hidden="true">⌄</span></button>
+              <button type="button" class="location-trigger" id="heroLocationTrigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="heroLocationPicker"><span class="location-label" id="heroLocationLabel">Tất cả địa điểm</span><svg class="location-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
               <select class="search-select" id="heroLocationSelect" hidden aria-hidden="true">
                 <option value="">Tất cả địa điểm</option>
                 <option value="Hà Nội">Hà Nội</option>
@@ -3424,8 +3461,8 @@
 
   <script src="js/navbar.js?v=7.0_synced_navbar"></script>
   <script src="js/category-filter-modal.js?v=1.0"></script>
-  <script src="js/home.js?v=20261005_cv_carousel"></script>
-  <script src="js/location-picker.js?v=1"></script>
+  <script src="js/home.js?v=20261007_clean"></script>
+  <script src="js/location-picker.js?v=3.0_clean"></script>
 
   <!-- Floating View Mode Switcher Box (Rìa bên phải màn hình) -->
   <div class="floating-view-mode-box" id="floatingViewModeBox" role="region" aria-label="Bộ chuyển đổi chế độ xem Web và Mobile Web">
