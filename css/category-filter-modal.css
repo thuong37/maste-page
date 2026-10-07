@@ -649,6 +649,8 @@ body.job-detail-page .category-modal-backdrop {
 .category-modal-body {
   display: grid;
   grid-template-columns: 290px minmax(0, 1fr);
+  /* Hàng grid phải vừa khung (không cao theo nội dung) để 2 cột bên trong cuộn được */
+  grid-template-rows: minmax(0, 1fr);
   flex: 1;
   min-height: 0;
   overflow: hidden;
@@ -719,6 +721,7 @@ body.job-detail-page .category-modal-backdrop {
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 0;
   background: #FAFAFA;
 }
 
@@ -728,7 +731,9 @@ body.job-detail-page .category-modal-backdrop {
 
 .category-group-list {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 4px 10px 16px 10px;
   display: flex;
   flex-direction: column;
@@ -798,6 +803,7 @@ body.job-detail-page .category-modal-backdrop {
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 0;
   position: relative;
   overflow: hidden;
   background: #FFFFFF;
@@ -816,7 +822,9 @@ body.job-detail-page .category-modal-backdrop {
 
 .category-subgroup-list {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 8px 24px 48px 24px;
   display: flex;
   flex-direction: column;

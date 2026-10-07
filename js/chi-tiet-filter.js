@@ -419,12 +419,47 @@
     var bar = document.getElementById('chiTietTopFilterBar');
     if (!bar) return;
 
+    // Desktop: rê chuột vào nút lọc là mở menu để chọn luôn; rời khỏi (nút + menu) 200ms thì đóng (đồng bộ viec-lam.js)
+    var canHoverOpen = function() { return window.matchMedia('(hover: hover) and (pointer: fine)').matches; };
+    bar.querySelectorAll('.filter-dropdown-wrap').forEach(function(wrap) {
+      var pillBtn = wrap.querySelector('.filter-pill-btn');
+      var pillMenu = wrap.querySelector('.filter-dropdown-menu');
+      if (!pillBtn || !pillMenu) return;
+      var closeTimer = null;
+      wrap.addEventListener('mouseenter', function() {
+        if (!canHoverOpen()) return;
+        clearTimeout(closeTimer);
+        if (!pillMenu.hidden) return;
+        closeAllFilterDropdowns();
+        pillMenu.hidden = false;
+        pillBtn.setAttribute('aria-expanded', 'true');
+        wrap.classList.add('is-open');
+        wrap.dataset.hoverOpenedAt = String(Date.now());
+      });
+      wrap.addEventListener('mouseleave', function() {
+        if (!canHoverOpen() || pillMenu.hidden) return;
+        // Đang gõ tìm lĩnh vực thì không tự đóng
+        if (wrap.contains(document.activeElement) && document.activeElement.tagName === 'INPUT') return;
+        closeTimer = setTimeout(function() {
+          if (!pillMenu.hidden) closeAllFilterDropdowns();
+        }, 200);
+      });
+    });
+
     bar.querySelectorAll('.filter-pill-btn').forEach(function(btn) {
       btn.addEventListener('click', function(e) {
         e.stopPropagation();
         var wrap = btn.closest('.filter-dropdown-wrap');
         var menu = wrap ? wrap.querySelector('.filter-dropdown-menu') : null;
         if (!menu) return;
+        // Vừa mở bằng hover thì cú click ngay sau đó không đóng menu lại
+        if (!menu.hidden && Date.now() - Number(wrap.dataset.hoverOpenedAt || 0) < 600) {
+          if (menu.id === 'ctIndustryDropdownMenu') {
+            var ctInput = document.getElementById('ctIndustrySearchInput');
+            if (ctInput) ctInput.focus();
+          }
+          return;
+        }
         var isOpen = !menu.hidden;
         closeAllFilterDropdowns();
         if (!isOpen) {

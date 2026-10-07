@@ -2657,6 +2657,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function initTopFilterBar() {
+    // 1a. Desktop: rê chuột vào nút lọc là mở menu để chọn luôn; rời khỏi (nút + menu) 200ms thì đóng
+    const canHoverOpen = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    document.querySelectorAll('.top-filter-bar .filter-dropdown-wrap').forEach(wrap => {
+      const btn = wrap.querySelector('.filter-pill-btn');
+      const menu = wrap.querySelector('.filter-dropdown-menu');
+      if (!btn || !menu) return;
+      let closeTimer = null;
+      wrap.addEventListener('mouseenter', () => {
+        if (!canHoverOpen()) return;
+        clearTimeout(closeTimer);
+        if (!menu.hidden) return;
+        closeAllFilterDropdowns();
+        menu.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+        wrap.classList.add('is-open');
+        wrap.dataset.hoverOpenedAt = String(Date.now());
+      });
+      wrap.addEventListener('mouseleave', () => {
+        if (!canHoverOpen() || menu.hidden) return;
+        // Đang gõ tìm lĩnh vực thì không tự đóng
+        if (wrap.contains(document.activeElement) && document.activeElement.tagName === 'INPUT') return;
+        closeTimer = setTimeout(() => {
+          if (!menu.hidden) closeAllFilterDropdowns();
+        }, 200);
+      });
+    });
+
     // 1. Dropdown Pill Buttons click
     document.querySelectorAll('.filter-pill-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -2664,6 +2691,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const wrap = btn.closest('.filter-dropdown-wrap');
         const menu = wrap?.querySelector('.filter-dropdown-menu');
         if (!menu) return;
+
+        // Vừa mở bằng hover thì cú click ngay sau đó không đóng menu lại
+        if (!menu.hidden && Date.now() - Number(wrap.dataset.hoverOpenedAt || 0) < 600) {
+          if (menu.id === 'industryDropdownMenu') document.getElementById('industrySearchInput')?.focus();
+          return;
+        }
 
         const isCurrentlyOpen = !menu.hidden;
         closeAllFilterDropdowns();
