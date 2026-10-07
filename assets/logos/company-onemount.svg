@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="16" fill="#FFFFFF"/>
+  <rect x="1" y="1" width="118" height="118" rx="15" fill="none" stroke="#E2E8F0" stroke-width="2"/>
+  <g transform="translate(60, 46)">
+    <!-- Origami 1 mark -->
+    <polygon points="-18,-24 0,-34 0,22 -18,12" fill="#E52331"/>
+    <polygon points="0,-34 18,-24 18,12 0,22" fill="#A8101E"/>
+    <polygon points="0,-10 18,-20 0,-30 -18,-20" fill="#FF4D5E"/>
+  </g>
+  <text x="60" y="86" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="11" fill="#0F172A" text-anchor="middle" letter-spacing="1">ONE MOUNT</text>
+  <text x="60" y="98" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="9" fill="#E52331" text-anchor="middle" letter-spacing="2">GROUP</text>
+</svg>

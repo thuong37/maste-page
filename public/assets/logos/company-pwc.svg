@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="16" fill="#FFFFFF"/>
+  <rect x="1" y="1" width="118" height="118" rx="15" fill="none" stroke="#E2E8F0" stroke-width="2"/>
+  <g transform="translate(60, 46)">
+    <!-- PwC colored cubes -->
+    <rect x="-18" y="-18" width="12" height="12" fill="#DC6900"/>
+    <rect x="-4" y="-18" width="12" height="12" fill="#EB8C00"/>
+    <rect x="10" y="-18" width="12" height="12" fill="#F3BE00"/>
+    <rect x="-18" y="-4" width="12" height="12" fill="#E0301E"/>
+    <rect x="-4" y="-4" width="12" height="12" fill="#D04A02"/>
+  </g>
+  <text x="60" y="88" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="22" fill="#2D2D2D" text-anchor="middle" letter-spacing="1">pwc</text>
+</svg>

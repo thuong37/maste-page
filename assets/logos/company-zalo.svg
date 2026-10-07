@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="16" fill="#0068FF"/>
+  <rect x="1" y="1" width="118" height="118" rx="15" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <g transform="translate(60, 56)">
+    <!-- White speech bubble shape -->
+    <path d="M-40 -26 C-40 -40, -22 -44, 0 -44 C22 -44, 40 -40, 40 -26 C40 -12, 22 2, 0 2 C-8 2, -18 0, -26 -4 L-36 6 L-34 -8 C-38 -13, -40 -19, -40 -26 Z" fill="#FFFFFF" opacity="0.15"/>
+  </g>
+  <text x="60" y="68" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="34" fill="#FFFFFF" text-anchor="middle" letter-spacing="-1">Zalo</text>
+  <circle cx="94" cy="48" r="4.5" fill="#FFFFFF"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="16" fill="#E52421"/>
+  <rect x="1" y="1" width="118" height="118" rx="15" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <g transform="translate(60, 48)">
+    <circle cx="0" cy="0" r="24" fill="#C21A17" stroke="#FFC72C" stroke-width="2"/>
+    <polygon points="0,-16 4,-4 16,-4 7,3 10,15 0,8 -10,15 -7,3 -16,-4 -4,-4" fill="#FFC72C"/>
+  </g>
+  <text x="60" y="96" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="14" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">ORION</text>
+</svg>

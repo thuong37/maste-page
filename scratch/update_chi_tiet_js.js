@@ -1,159 +1,76 @@
 const fs = require('fs');
 
-let content = fs.readFileSync('js/chi-tiet-viec-lam.js', 'utf8');
-
-// We want to replace the param parsing logic and renderList click handling
-const oldParamSection = `  // Lấy ID công việc từ Query Param
-  const urlParams = new URLSearchParams(window.location.search);
-  const targetId = parseInt(urlParams.get('id') || urlParams.get('jobId') || '1', 10);
-  let activeJobId = JOBS_DATA.some(j => j.id === targetId) ? targetId : JOBS_DATA[0].id;`;
-
-const newParamSection = `  // Helper chuẩn hóa tiếng Việt để so khớp tìm kiếm chính xác
-  function normalizeText(text) {
-    if (!text) return '';
-    return text.normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').replace(/[đĐ]/g, 'd').toLowerCase().trim();
-  }
-
-  // Lấy ID và Tên công việc từ Query Param
-  const urlParams = new URLSearchParams(window.location.search);
-  const targetId = parseInt(urlParams.get('id') || urlParams.get('jobId') || '0', 10);
-  const targetTitle = (urlParams.get('title') || urlParams.get('jobTitle') || urlParams.get('q') || '').trim();
-
-  let activeJob = null;
-  if (targetId && JOBS_DATA.some(j => j.id === targetId)) {
-    activeJob = JOBS_DATA.find(j => j.id === targetId);
-  } else if (targetTitle) {
-    const normTarget = normalizeText(targetTitle);
-    activeJob = JOBS_DATA.find(j => {
-      const normJ = normalizeText(j.title);
-      return normJ === normTarget || normJ.includes(normTarget) || normTarget.includes(normJ);
-    });
-  }
-
-  // Nếu người dùng click vào một job có tên mới hoặc không có trong ID, tạo ngay mock data chuẩn xác lấy đúng tên job đó
-  if (!activeJob && targetTitle) {
-    activeJob = {
-      id: 9999,
-      title: targetTitle,
-      company: 'Doanh Nghiệp Tuyển Dụng Hàng Đầu',
-      logo: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=120&h=120&q=80',
-      verified: true,
-      salaryBadge: '25 - 45 triệu',
-      salaryIsOrange: true,
-      salaryMin: 25,
-      salaryMax: 45,
-      location: 'Hà Nội & TP. Hồ Chí Minh',
-      city: 'Toàn quốc',
-      category: 'it',
-      level: 'senior',
-      exp: '3-5',
-      type: 'hybrid',
-      isFeatured: true,
-      isUrgent: true,
-      updated: 'Vừa xong',
-      aiMatch: 96,
-      skills: ['Chuyên môn cao', 'Làm việc nhóm', 'Giao tiếp tốt', 'Quản lý dự án'],
-      jd: {
-        desc: [
-          \`Đảm nhận vai trò then chốt tại vị trí \${targetTitle}, trực tiếp tham gia xây dựng và tối ưu các dự án trọng điểm của doanh nghiệp.\`,
-          'Phối hợp cùng các bộ phận liên quan để thiết kế giải pháp kỹ thuật và cải tiến quy trình nghiệp vụ.',
-          'Quản lý tiến độ công việc, đảm bảo chất lượng đầu ra đạt tiêu chuẩn cao nhất và báo cáo trực tiếp ban giám đốc.'
-        ],
-        reqs: [
-          \`Tối thiểu 2 - 5 năm kinh nghiệm thực chiến trong các dự án tương đương vị trí \${targetTitle}.\`,
-          'Tư duy giải quyết vấn đề sắc bén, tinh thần trách nhiệm cao và khả năng chịu áp lực tốt.',
-          'Kỹ năng giao tiếp và làm việc nhóm hiệu quả, sẵn sàng tiếp thu công nghệ và phương pháp mới.'
-        ],
-        perks: [
-          'Thu nhập cạnh tranh từ 25 - 45 triệu/tháng + Thưởng hiệu suất dự án theo quý và thưởng tháng lương 13.',
-          'Môi trường làm việc năng động, chuyên nghiệp, hỗ trợ tối đa lộ trình thăng tiến nghề nghiệp.',
-          'Gói bảo hiểm chăm sóc sức khỏe cao cấp và đầy đủ các chế độ phúc lợi theo quy định nhà nước.'
-        ]
-      }
-    };
-    JOBS_DATA.unshift(activeJob);
-  }
-
-  if (!activeJob) {
-    activeJob = JOBS_DATA[0];
-  }
-  let activeJobId = activeJob.id;`;
-
-if (content.includes(oldParamSection)) {
-  content = content.replace(oldParamSection, newParamSection);
-  console.log('Replaced query param logic in js/chi-tiet-viec-lam.js');
-} else {
-  console.error('Cannot find oldParamSection');
+function getCompanyLogo(company) {
+  if (!company) return 'assets/logos/company-fpt.svg';
+  const c = company.toLowerCase();
+  if (c.includes('fpt')) return 'assets/logos/company-fpt.svg';
+  if (c.includes('techcombank') || c.includes('kỹ thương')) return 'assets/logos/company-techcombank.svg';
+  if (c.includes('zalo')) return 'assets/logos/company-zalo.svg';
+  if (c.includes('vng')) return 'assets/logos/company-vng.svg';
+  if (c.includes('viettel')) return 'assets/logos/company-viettel.svg';
+  if (c.includes('shopee')) return 'assets/logos/company-shopee.svg';
+  if (c.includes('momo') || c.includes('m-service') || c.includes('di động trực tuyến')) return 'assets/logos/company-momo.svg';
+  if (c.includes('vnpay')) return 'assets/logos/company-vnpay.svg';
+  if (c.includes('vinai')) return 'assets/logos/company-vinai.svg';
+  if (c.includes('vinfast')) return 'assets/logos/company-vinfast.svg';
+  if (c.includes('vingroup') || c.includes('vinhomes')) return 'assets/logos/company-vingroup.svg';
+  if (c.includes('vinamilk') || c.includes('sữa việt nam')) return 'assets/logos/company-vinamilk.svg';
+  if (c.includes('cmc')) return 'assets/logos/company-cmc.svg';
+  if (c.includes('base.vn')) return 'assets/logos/company-basevn.svg';
+  if (c.includes('one mount') || c.includes('vinid')) return 'assets/logos/company-onemount.svg';
+  if (c.includes('kms')) return 'assets/logos/company-kms.svg';
+  if (c.includes('tiki')) return 'assets/logos/company-tiki.svg';
+  if (c.includes('masan')) return 'assets/logos/company-masan.svg';
+  if (c.includes('nashtech')) return 'assets/logos/company-nashtech.svg';
+  if (c.includes('mb bank') || c.includes('mbbank') || c.includes('quân đội')) return 'assets/logos/company-mbbank.svg';
+  if (c.includes('bosch')) return 'assets/logos/company-bosch.svg';
+  if (c.includes('unilever')) return 'assets/logos/company-unilever.svg';
+  if (c.includes('vpbank') || c.includes('thịnh vượng')) return 'assets/logos/company-vpbank.svg';
+  if (c.includes('gemadept')) return 'assets/logos/company-gemadept.svg';
+  if (c.includes('vnpt')) return 'assets/logos/company-vnpt.svg';
+  if (c.includes('samsung')) return 'assets/logos/company-samsung.svg';
+  if (c.includes('orion')) return 'assets/logos/company-orion.svg';
+  if (c.includes('ssi')) return 'assets/logos/company-ssi.svg';
+  if (c.includes('thế giới di động') || c.includes('mwg')) return 'assets/logos/company-mwg.svg';
+  if (c.includes('sun group')) return 'assets/logos/company-sungroup.svg';
+  if (c.includes('vccorp')) return 'assets/logos/company-vccorp.svg';
+  if (c.includes('mai linh')) return 'assets/logos/company-mailinh.svg';
+  if (c.includes('đất xanh')) return 'assets/logos/company-datxanh.svg';
+  if (c.includes('pwc')) return 'assets/logos/company-pwc.svg';
+  if (c.includes('vietcom') || c.includes('ngoại thương')) return 'assets/logos/company-vietcombank.svg';
+  if (c.includes('dentsu')) return 'assets/logos/company-dentsu.svg';
+  if (c.includes('tân á đại thành')) return 'assets/logos/company-tanadaithanh.svg';
+  if (c.includes('bee logistics')) return 'assets/logos/company-beelogistics.svg';
+  if (c.includes('saigon') || c.includes('co.op')) return 'assets/logos/company-saigonretail.svg';
+  if (c.includes('vikimco')) return 'assets/logos/company-vikimco-64.svg';
+  if (c.includes('mùa hè')) return 'assets/logos/company-mua-he-64.png';
+  if (c.includes('kimmari')) return 'assets/logos/company-kimmari-64.svg';
+  if (c.includes('tân việt')) return 'assets/logos/company-tanviet-64.svg';
+  if (c.includes('bitexco')) return 'assets/logos/company-bitexco.svg';
+  return 'assets/logos/easycv-icon.png';
 }
 
-// Update renderList function
-const oldRenderList = `    // Attach Click Handler on Right List Items
-    listFeed.querySelectorAll('.split-job-card').forEach(card => {
-      card.addEventListener('click', (e) => {
-        const id = parseInt(card.getAttribute('data-id'), 10);
-        if (id && id !== activeJobId) {
-          activeJobId = id;
-          const currentJob = JOBS_DATA.find(j => j.id === id);
-          renderDetail(currentJob);
-          renderList();
+function updateChiTietJs(filePath) {
+  let content = fs.readFileSync(filePath, 'utf8');
+  const lines = content.split('\n');
+  let currentCompany = '';
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const compMatch = line.match(/company:\s*['"]([^'"]+)['"]/);
+    if (compMatch) {
+      currentCompany = compMatch[1];
+    }
+    const logoMatch = line.match(/(logo:\s*)['"]https:\/\/images\.unsplash\.com\/[^'"]+['"]/);
+    if (logoMatch) {
+      const realLogo = getCompanyLogo(currentCompany);
+      lines[i] = line.replace(/(logo:\s*)['"]https:\/\/images\.unsplash\.com\/[^'"]+['"]/, `$1'${realLogo}'`);
+    }
+  }
 
-          // Update URL
-          if (window.history && window.history.pushState) {
-            const currentUrl = new URL(window.location.href);
-            currentUrl.searchParams.set('id', id);
-            window.history.pushState({ id }, '', currentUrl.toString());
-          }
-
-          const scrollArea = document.getElementById('detailScrollArea');
-          if (scrollArea) scrollArea.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      });
-    });`;
-
-const newRenderList = `    // Attach Click Handler on Left List Items (Việc làm liên quan khác)
-    listFeed.querySelectorAll('.split-job-card').forEach(card => {
-      card.addEventListener('click', (e) => {
-        e.preventDefault();
-        const id = parseInt(card.getAttribute('data-id'), 10);
-        if (id && id !== activeJobId) {
-          activeJobId = id;
-          const currentJob = JOBS_DATA.find(j => j.id === id);
-          if (currentJob) {
-            renderDetail(currentJob);
-            renderList();
-
-            // Update URL
-            if (window.history && window.history.pushState) {
-              const currentUrl = new URL(window.location.href);
-              currentUrl.searchParams.set('id', id);
-              currentUrl.searchParams.set('title', currentJob.title);
-              window.history.pushState({ id }, '', currentUrl.toString());
-            }
-
-            const scrollArea = document.getElementById('detailScrollArea');
-            if (scrollArea) scrollArea.scrollTo({ top: 0, behavior: 'smooth' });
-          }
-        }
-      });
-    });`;
-
-if (content.includes(oldRenderList)) {
-  content = content.replace(oldRenderList, newRenderList);
-  console.log('Replaced list click handler in js/chi-tiet-viec-lam.js');
-} else {
-  console.error('Cannot find oldRenderList');
+  content = lines.join('\n');
+  fs.writeFileSync(filePath, content, 'utf8');
+  console.log(`Updated ${filePath}`);
 }
 
-// Also update link href inside renderList item template to include &title=
-const oldLinkTmpl = '<a href="chi-tiet-viec-lam.html?id=${job.id}" class="job-title-link">${job.title}</a>';
-const newLinkTmpl = '<a href="chi-tiet-viec-lam.html?id=${job.id}&title=${encodeURIComponent(job.title)}" class="job-title-link">${job.title}</a>';
-
-if (content.includes(oldLinkTmpl)) {
-  content = content.replace(oldLinkTmpl, newLinkTmpl);
-  console.log('Updated link template in renderList');
-}
-
-// Write to both js/chi-tiet-viec-lam.js and public/js/chi-tiet-viec-lam.js
-fs.writeFileSync('js/chi-tiet-viec-lam.js', content, 'utf8');
-fs.writeFileSync('public/js/chi-tiet-viec-lam.js', content, 'utf8');
-console.log('Saved js/chi-tiet-viec-lam.js and public/js/chi-tiet-viec-lam.js successfully');
+updateChiTietJs('js/chi-tiet-viec-lam.js');
+updateChiTietJs('public/js/chi-tiet-viec-lam.js');

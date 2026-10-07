@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="16" fill="#FFFFFF"/>
+  <rect x="1" y="1" width="118" height="118" rx="15" fill="none" stroke="#E2E8F0" stroke-width="2"/>
+  <g transform="translate(60, 46)">
+    <!-- Interlocking blocks -->
+    <rect x="-18" y="-18" width="16" height="16" rx="2" fill="#C8102E"/>
+    <rect x="2" y="-18" width="16" height="16" rx="2" fill="#EAAA00"/>
+    <rect x="-18" y="2" width="16" height="16" rx="2" fill="#EAAA00"/>
+    <rect x="2" y="2" width="16" height="16" rx="2" fill="#C8102E"/>
+  </g>
+  <text x="60" y="92" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="18" fill="#C8102E" text-anchor="middle" letter-spacing="2">SSI</text>
+</svg>

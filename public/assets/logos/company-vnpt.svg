@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="16" fill="#0072CE"/>
+  <rect x="1" y="1" width="118" height="118" rx="15" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <g transform="translate(60, 46)">
+    <!-- Globe lines -->
+    <circle cx="0" cy="0" r="22" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+    <ellipse cx="0" cy="0" rx="12" ry="22" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+    <line x1="-22" y1="0" x2="22" y2="0" stroke="#FFFFFF" stroke-width="2.5"/>
+  </g>
+  <text x="60" y="96" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="16" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">VNPT</text>
+</svg>

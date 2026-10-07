@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="16" fill="#FFFFFF"/>
+  <rect x="1" y="1" width="118" height="118" rx="15" fill="none" stroke="#E2E8F0" stroke-width="2"/>
+  <g transform="translate(14, 20)">
+    <!-- FPT 3-color curves -->
+    <path d="M6 38 C6 20, 20 10, 32 10 C32 19, 23 27, 23 38 C23 48, 30 52, 24 58 C14 58, 6 50, 6 38 Z" fill="#005A9C"/>
+    <path d="M34 10 C46 10, 56 20, 56 34 C56 46, 46 54, 36 54 C36 44, 44 38, 44 30 C44 20, 36 18, 34 10 Z" fill="#F37021"/>
+    <path d="M58 34 C68 22, 82 24, 88 34 C82 42, 74 42, 70 50 C66 56, 68 62, 58 60 C58 50, 64 42, 58 34 Z" fill="#009639"/>
+    <!-- FPT Letters -->
+    <text x="46" y="44" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="28" fill="#FFFFFF" text-anchor="middle" font-style="italic" letter-spacing="1">FPT</text>
+  </g>
+  <text x="60" y="98" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="12" fill="#005A9C" text-anchor="middle" letter-spacing="1.5">SOFTWARE</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="16" fill="#008000"/>
+  <rect x="1" y="1" width="118" height="118" rx="15" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <g transform="translate(60, 48)">
+    <circle cx="0" cy="0" r="24" fill="#006800" stroke="#FFD700" stroke-width="2.5"/>
+    <text x="0" y="8" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="20" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">ML</text>
+  </g>
+  <text x="60" y="96" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="12" fill="#FFD700" text-anchor="middle" letter-spacing="1">MAI LINH</text>
+</svg>

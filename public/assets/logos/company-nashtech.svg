@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="16" fill="#FFFFFF"/>
+  <rect x="1" y="1" width="118" height="118" rx="15" fill="none" stroke="#E2E8F0" stroke-width="2"/>
+  <g transform="translate(60, 52)">
+    <!-- Red Chevron/Rhombus mark -->
+    <polygon points="-12,-20 0,-32 12,-20 0,-8" fill="#D32F2F"/>
+    <polygon points="-24,-8 -12,-20 0,-8 -12,4" fill="#212121"/>
+    <polygon points="0,-8 12,-20 24,-8 12,4" fill="#212121"/>
+  </g>
+  <text x="60" y="88" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="14" fill="#212121" text-anchor="middle" letter-spacing="0.5">Nash<tspan fill="#D32F2F">Tech</tspan></text>
+</svg>
