@@ -1379,20 +1379,6 @@
   margin-right: 0 !important;
 }
 
-.dropdown-item .item-count {
-  font-size: 12px;
-  color: #94A3B8;
-  background: #F1F5F9;
-  padding: 2px 7px;
-  border-radius: 9999px;
-  font-weight: 500;
-}
-
-.dropdown-item.is-selected .item-count {
-  background: #FFEDD5;
-  color: #EA580C;
-}
-
 .dropdown-item .check-icon {
   color: #EA580C;
   margin-left: 8px;
@@ -2996,27 +2982,41 @@
 }
 
 /* Quick Metrics Cards (4 Ô tóm tắt) */
-.detail-metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-bottom: 24px;
+/* Quick Metrics: 1 panel liền khối, chia cột bằng vạch mảnh; tự về 2x2 khi khung chi tiết hẹp */
+.split-detail-pane {
+  container-type: inline-size;
+  container-name: job-detail;
 }
 
-.detail-metric-card {
-  background: #F8FAFC;
+.detail-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 24px;
+  background: #FFFFFF;
   border: 1px solid #E2E8F0;
-  border-radius: 12px;
-  padding: 12px 14px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* Icon + nhãn trên 1 dòng, giá trị bên dưới chiếm trọn bề rộng ô; toàn bộ nội dung căn giữa ô */
+.detail-metric-card {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  column-gap: 8px;
+  row-gap: 6px;
+  min-width: 0;
+  padding: 14px 16px;
+  box-shadow: -1px 0 0 #E2E8F0;
 }
 
 .metric-icon-wrap {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
   background: #FFF7ED;
   color: #F97316;
   display: flex;
@@ -3025,23 +3025,65 @@
   flex-shrink: 0;
 }
 
+.metric-icon-wrap svg {
+  width: 15px;
+  height: 15px;
+}
+
 .metric-info {
-  display: flex;
-  flex-direction: column;
+  display: contents;
 }
 
 .metric-label {
-  font-size: 11.5px;
+  flex: 0 1 auto;
+  min-width: 0;
+  font-size: 12.5px;
+  font-weight: 500;
   color: #64748B;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .metric-value {
-  font-size: 13.5px;
+  flex-basis: 100%;
+  font-size: 14.5px;
   font-weight: 700;
   color: #0F172A;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+}
+
+.metric-value.is-salary {
+  color: #F97316;
+}
+
+@container job-detail (max-width: 720px) {
+  .detail-metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .detail-metric-card:nth-child(n + 3) {
+    border-top: 1px solid #E2E8F0;
+  }
+}
+
+@container job-detail (max-width: 420px) {
+  .detail-metric-card {
+    padding: 12px;
+  }
+  .metric-label {
+    white-space: normal;
+  }
+}
+
+@container job-detail (max-width: 220px) {
+  .detail-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  .detail-metric-card + .detail-metric-card {
+    border-top: 1px solid #E2E8F0;
+  }
 }
 
 /* Detail Section */
@@ -3359,9 +3401,6 @@
   .job-split-container {
     grid-template-columns: 380px minmax(0, 1fr);
     gap: 16px;
-  }
-  .detail-metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 

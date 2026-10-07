@@ -1198,6 +1198,46 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   let activeJobId = activeJob.id;
 
+  // Đồng bộ với trang Việc làm: giữ từ khóa tìm kiếm (?keyword=) khi chuyển sang trang chi tiết
+  const EXP_LABELS = { '0': 'Không yêu cầu', 'under1': 'Dưới 1 năm', '1-3': '1 - 3 năm', '3-5': '3 - 5 năm', 'over5': 'Trên 5 năm' };
+  const searchKeyword = (urlParams.get('keyword') || '').trim();
+
+  function jobMatchesKeyword(job, keyword) {
+    const normKeyword = normalizeText(keyword);
+    if (!normKeyword) return false;
+    const haystack = [job.title, job.company, ...(job.skills || [])].map(normalizeText).join(' ');
+    return haystack.includes(normKeyword);
+  }
+
+  function buildDetailHref(job) {
+    const keywordParam = searchKeyword ? `&keyword=${encodeURIComponent(searchKeyword)}` : '';
+    return `chi-tiet-viec-lam.html?id=${job.id}&title=${encodeURIComponent(job.title)}${keywordParam}`;
+  }
+
+  // Thứ tự "Việc làm liên quan" được tính 1 lần theo job mở đầu tiên để danh sách không nhảy vị trí khi chọn job khác:
+  // job đang xem → job khớp từ khóa → job cùng ngành nghề → các job còn lại
+  let relatedJobsCache = null;
+  function getRelatedJobs() {
+    if (!relatedJobsCache) {
+      const score = job => {
+        if (job.id === activeJob.id) return 10;
+        return (jobMatchesKeyword(job, searchKeyword) ? 2 : 0) + (job.category === activeJob.category ? 1 : 0);
+      };
+      relatedJobsCache = JOBS_DATA
+        .map((job, index) => ({ job, index, score: score(job) }))
+        .sort((a, b) => b.score - a.score || a.index - b.index)
+        .map(item => item.job);
+    }
+    return relatedJobsCache;
+  }
+
+  const detailSearchInput = document.getElementById('jobSearchInput');
+  if (detailSearchInput && searchKeyword && !detailSearchInput.value.trim()) {
+    detailSearchInput.value = searchKeyword;
+    const clearSearchInputBtn = document.getElementById('clearSearchInputBtn');
+    if (clearSearchInputBtn) clearSearchInputBtn.style.display = 'flex';
+  }
+
   // Toggle Full Width mode
   const mainContainer = document.getElementById('mainContainer');
   const btnToggleFullWidth = document.getElementById('btnToggleFullWidth');
@@ -1234,7 +1274,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const logo = document.getElementById('detailCompanyLogo');
     const title = document.getElementById('detailJobTitle');
     const compName = document.getElementById('detailCompanyName');
-    const aiBadge = document.getElementById('detailAiMatchBadge');
     const salaryBadge = document.getElementById('detailSalaryBadge');
     const locText = document.getElementById('detailLocationText');
     const updatedText = document.getElementById('detailUpdatedText');
@@ -1242,7 +1281,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (logo) { logo.src = job.logo; logo.alt = job.company; }
     if (title) title.textContent = job.title;
     if (compName) compName.textContent = job.company;
-    if (aiBadge) aiBadge.textContent = `🎯 ${job.aiMatch}% Match`;
     if (salaryBadge) {
       salaryBadge.textContent = job.salaryBadge;
       if (job.salaryIsOrange) salaryBadge.classList.add('orange');
@@ -1304,11 +1342,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const jobCount = document.getElementById('splitJobCount');
     if (!listFeed) return;
 
-    if (jobCount) jobCount.textContent = JOBS_DATA.length;
+    const relatedJobs = getRelatedJobs();
+    if (jobCount) jobCount.textContent = relatedJobs.length;
 
-    const itemsHtml = JOBS_DATA.map(job => {
+    const savedIds = getSavedJobs();
+    const itemsHtml = relatedJobs.map(job => {
       const isSelected = job.id === activeJobId;
-      const salaryOrangeClass = job.salaryIsOrange ? 'orange' : '';
+      const isSaved = savedIds.includes(job.id);
+      const expText = EXP_LABELS[job.exp] || '2 năm';
+      const cityPill = job.city || job.location.split('(')[0].trim();
+      const detailHref = buildDetailHref(job);
 
       return `
         <div class="split-job-card ${isSelected ? 'is-selected' : ''}" data-id="${job.id}">
@@ -1316,21 +1359,31 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="${job.logo}" alt="${job.company}" class="split-company-logo" loading="lazy" />
             <div class="split-card-info">
               <h4 class="split-card-title">
-                <a href="chi-tiet-viec-lam.html?id=${job.id}&title=${encodeURIComponent(job.title)}" class="job-title-link">${job.title}</a>
+                <a href="${detailHref}" class="job-title-link" title="${job.title}">${job.title}</a>
               </h4>
-              <div class="split-card-company">${job.company}</div>
-              <div class="split-card-badges">
-                <span class="job-salary-badge ${salaryOrangeClass}" style="font-size: 12px; padding: 2px 7px;">${job.salaryBadge}</span>
-                <span class="badge-ai-match" style="font-size: 11px; padding: 2px 6px;">🎯 ${job.aiMatch}%</span>
+              <div class="job-company-row">
+                <span class="job-company-name" title="${job.company}">${job.company.toUpperCase()}</span>
+                ${job.verified ? `
+                  <span class="badge-verified" title="Doanh nghiệp xác thực">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg>
+                  </span>
+                ` : ''}
+              </div>
+              <span class="job-salary-text split-card-salary">${job.salaryBadge}</span>
+              <div class="job-quick-pills">
+                <span class="job-quick-pill">${cityPill}</span>
+                <span class="job-quick-pill">${expText}</span>
               </div>
             </div>
           </div>
           <div class="split-card-bottom">
-            <span class="split-card-location">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>${job.city}</span>
-            </span>
-            <span style="font-size: 11.5px; color: #94A3B8;">${job.updated}</span>
+            <span class="job-post-time">Đăng ${job.updated}</span>
+            <div class="split-card-bottom-right">
+              ${isSelected ? '<span class="split-viewing-badge">Đang xem</span>' : ''}
+              <button type="button" class="btn-card-bookmark ${isSaved ? 'saved' : ''}" data-id="${job.id}" aria-label="Lưu công việc" title="${isSaved ? 'Đã lưu việc làm' : 'Lưu công việc'}">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="${isSaved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </div>
           </div>
         </div>
       `;
@@ -1338,9 +1391,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     listFeed.innerHTML = itemsHtml;
 
+    // Heart bookmark trên từng thẻ (dùng chung localStorage với trang Việc làm)
+    listFeed.querySelectorAll('.btn-card-bookmark').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleBookmark(parseInt(btn.getAttribute('data-id'), 10));
+      });
+    });
+
     // Attach Click Handler on Left List Items (Việc làm liên quan khác)
     listFeed.querySelectorAll('.split-job-card').forEach(card => {
       card.addEventListener('click', (e) => {
+        // Click thẳng vào tên job: cho phép mở tab mới (Ctrl/Cmd + click) như trang Việc làm
+        if (e.target.closest('.job-title-link') && (e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1)) return;
         e.preventDefault();
         const id = parseInt(card.getAttribute('data-id'), 10);
         if (id && id !== activeJobId) {
@@ -1396,14 +1459,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedIds.includes(jobId)) {
       savedIds = savedIds.filter(id => id !== jobId);
       setSavedJobs(savedIds);
-      updateBookmarks(jobId);
       showToast(`Đã bỏ lưu "${title}"`, 'ℹ️');
     } else {
       savedIds.push(jobId);
       setSavedJobs(savedIds);
-      updateBookmarks(jobId);
       showToast(`Đã lưu "${title}" vào mục yêu thích!`, '❤️');
     }
+    updateBookmarks(activeJobId);
+    renderList(); // đồng bộ nút tim trên danh sách việc làm liên quan
   }
 
   document.getElementById('btnDetailBookmark')?.addEventListener('click', () => toggleBookmark(activeJobId));

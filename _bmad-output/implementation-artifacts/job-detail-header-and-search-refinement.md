@@ -3,7 +3,7 @@
 **Dự án:** EasyCV — Nền tảng Tuyển dụng & Khám phá Việc làm Thông minh  
 **Ngày thực hiện:** 03/10/2026  
 **Trạng thái:** Hoàn thành & Đã kiểm thử tự động (Verified via Chrome Headless CDP)  
-**Phương pháp:** BMAD / BMM Framework  
+**Phương pháp:** BMAD / BMM Framework
 
 ---
 
@@ -18,16 +18,17 @@
 ## 2. Giải Pháp Kỹ Thuật (Architecture & Implementation)
 
 ### 2.1. Loại Bỏ `.detail-top-nav` & Tối Ưu Hóa Cụm Nút CTA
+
 - **Vấn đề:** Khối `.detail-top-nav` lặp lại nút "Quay lại trang tìm việc" (đã có ở breadcrumb và nút back trên hero) và nút "Lưu tin" (đã có ở `.detail-hero-box`), chiếm dụng 62px chiều cao quý giá ở đầu cột chi tiết.
 - **Giải pháp:**
   - Gỡ bỏ hoàn toàn phần tử `.detail-top-nav` khỏi mã nguồn HTML và DOM.
   - Cột chi tiết bên phải (`.split-detail-pane`) bắt đầu ngay lập tức từ `.detail-hero-box` với logo công ty, tiêu đề công việc, các badge lương, địa điểm, thời gian.
-  - Chuyển nút **"Chia sẻ"** (`.btn-detail-share-btn` / `#btnCopyJobLink`) vào hàng CTA chính của `.detail-hero-box` cùng với **"Nộp hồ sơ ứng tuyển ngay"** và **"Lưu việc làm"**.
+  - Chuyển nút **"Chia sẻ"** (`.btn-detail-share-btn` / `#btnCopyJobLink`) vào hàng CTA chính của `.detail-hero-box` cùng với **"Ứng tuyển ngay"** và **"Lưu việc làm"**.
   - Bổ sung quy tắc CSS cho `.btn-detail-share-btn`:
     ```css
     .btn-detail-share-btn {
-      background: #FFFFFF;
-      border: 1.5px solid #CBD5E1;
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
       color: #334155;
       border-radius: 12px;
       padding: 13px 18px;
@@ -42,13 +43,14 @@
       flex-shrink: 0;
     }
     .btn-detail-share-btn:hover {
-      border-color: #F97316;
-      color: #F97316;
-      background: #FFF7ED;
+      border-color: #f97316;
+      color: #f97316;
+      background: #fff7ed;
     }
     ```
 
 ### 2.2. Khối Việc Làm Liên Quan Tràn Viền Vừa Khít (Edge-to-Edge Flush Cards)
+
 - **Vấn đề:** Các thẻ job con trong khối gợi ý bên trái trước đây bị thụt lề 2 bên do padding của container và margin của thẻ con, tạo cảm giác thẻ bị lọt thỏm và lãng phí diện tích hiển thị.
 - **Giải pháp:**
   - Thiết lập `.split-list-pane` có `padding: 18px 0 0 0; overflow: hidden;`.
@@ -58,6 +60,7 @@
   - Thẻ được chọn (`.is-selected`) hiển thị vạch cam đặc trưng `border-left: 4px solid #F97316 !important;` và nền chuyển sắc nhẹ `linear-gradient(90deg, #FFF7ED 0%, #FFFFFF 100%)`.
 
 ### 2.3. Kế Thừa Thanh Tìm Kiếm Thông Minh (Search Bar Inheritance)
+
 - **Markup & Styling:**
   - Bổ sung khối `#heroSearchWrapper` và `#heroSearchStickyBar` vào Hero của `chi-tiet-viec-lam.html`.
   - Nút trigger `#categoryFilterTrigger` với icon danh mục và nhãn "Danh mục Nghề".
@@ -74,11 +77,11 @@
 
 ## 3. Ma Trận Thay Đổi Tệp Tin (File Matrix)
 
-| Tệp Tin | Bản Sao Đồng Bộ | Thay Đổi Chính |
-|---|---|---|
-| `chi-tiet-viec-lam.html` | `public/chi-tiet-viec-lam.html` | Gỡ bỏ `.detail-top-nav`; thêm `#btnCopyJobLink` vào CTA group; chèn khối search hero hoàn chỉnh, modal category, location picker và suggest dropdown; nhúng các stylesheet và script cần thiết. |
-| `css/viec-lam.css` | `public/css/viec-lam.css` | Thiết lập `.split-list-pane` và `.split-job-card` tràn viền 100% không padding ngoài; bổ sung `.btn-detail-share-btn` hover cam và `white-space: nowrap`. |
-| `js/chi-tiet-viec-lam.js` | `public/js/chi-tiet-viec-lam.js` | Tích hợp `initStickySearch()`, logic clear search input, render recent search chips, và lắng nghe sự kiện `easycv:category-applied`. |
+| Tệp Tin                   | Bản Sao Đồng Bộ                  | Thay Đổi Chính                                                                                                                                                                                  |
+| ------------------------- | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `chi-tiet-viec-lam.html`  | `public/chi-tiet-viec-lam.html`  | Gỡ bỏ `.detail-top-nav`; thêm `#btnCopyJobLink` vào CTA group; chèn khối search hero hoàn chỉnh, modal category, location picker và suggest dropdown; nhúng các stylesheet và script cần thiết. |
+| `css/viec-lam.css`        | `public/css/viec-lam.css`        | Thiết lập `.split-list-pane` và `.split-job-card` tràn viền 100% không padding ngoài; bổ sung `.btn-detail-share-btn` hover cam và `white-space: nowrap`.                                       |
+| `js/chi-tiet-viec-lam.js` | `public/js/chi-tiet-viec-lam.js` | Tích hợp `initStickySearch()`, logic clear search input, render recent search chips, và lắng nghe sự kiện `easycv:category-applied`.                                                            |
 
 ---
 
@@ -101,16 +104,16 @@
 
 ## 5. Đồng Bộ Đầy Đủ Tính Năng Tìm Kiếm — 2026-10-06
 
-| Hạng mục | Trạng thái cũ | Giải pháp kỹ thuật | Kết quả kiểm thử |
-|---|---|---|---|
-| Popup gợi ý | Chỉ hiển thị chip lịch sử đơn giản | Bổ sung controller `job-detail-search.js` dựng popup 2 cột theo chuẩn hiện tại | Hiển thị 5 lịch sử, 6 từ khóa phổ biến và 5 việc làm gợi ý |
-| Gợi ý khi nhập | Không có chế độ gợi ý động | Lọc kho từ khóa không phân biệt dấu, hiển thị số việc làm và tô đậm phần khớp | Gõ `Product` trả 2 kết quả và highlight đúng |
-| Quản lý lịch sử | Dùng key cũ, chỉ xóa tất cả | Dùng chung `easycv_recent_searches_v2`, hỗ trợ xóa từng dòng và xóa toàn bộ | Từ khóa submit được đưa lên đầu và còn nguyên khi quay lại trang |
-| Điều hướng tìm kiếm | Form cơ bản, chưa xác nhận đủ tham số | Tạo URLSearchParams từ keyword, location, category và industry | Chuyển sang `viec-lam.html` với đủ 4 tham số |
-| Phối hợp popup | Gợi ý và modal có thể hoạt động độc lập | Đóng popup gợi ý khi mở Danh mục nghề/Địa điểm; đóng Danh mục nghề khi focus từ khóa | Không chồng lớp popup |
-| Accessibility | Chưa đồng bộ trạng thái expanded | Bổ sung `role=dialog`, `aria-controls`, `aria-haspopup`, `aria-expanded` và keyboard Enter/Space/Escape | Trạng thái ARIA và bàn phím PASS |
-| Responsive | Chưa có kiểm thử popup giàu nội dung trên màn nhỏ | Căn lại popup theo viewport tại breakpoint 900px | Mobile 375px: popup rộng 335px, không tràn |
-| Đồng bộ triển khai | Controller chỉ nằm trong file chi tiết lớn | Tách module và mirror sang `public/`; guard controller cũ làm fallback | Root/public có SHA-256 trùng khớp |
+| Hạng mục            | Trạng thái cũ                                     | Giải pháp kỹ thuật                                                                                      | Kết quả kiểm thử                                                 |
+| ------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| Popup gợi ý         | Chỉ hiển thị chip lịch sử đơn giản                | Bổ sung controller `job-detail-search.js` dựng popup 2 cột theo chuẩn hiện tại                          | Hiển thị 5 lịch sử, 6 từ khóa phổ biến và 5 việc làm gợi ý       |
+| Gợi ý khi nhập      | Không có chế độ gợi ý động                        | Lọc kho từ khóa không phân biệt dấu, hiển thị số việc làm và tô đậm phần khớp                           | Gõ `Product` trả 2 kết quả và highlight đúng                     |
+| Quản lý lịch sử     | Dùng key cũ, chỉ xóa tất cả                       | Dùng chung `easycv_recent_searches_v2`, hỗ trợ xóa từng dòng và xóa toàn bộ                             | Từ khóa submit được đưa lên đầu và còn nguyên khi quay lại trang |
+| Điều hướng tìm kiếm | Form cơ bản, chưa xác nhận đủ tham số             | Tạo URLSearchParams từ keyword, location, category và industry                                          | Chuyển sang `viec-lam.html` với đủ 4 tham số                     |
+| Phối hợp popup      | Gợi ý và modal có thể hoạt động độc lập           | Đóng popup gợi ý khi mở Danh mục nghề/Địa điểm; đóng Danh mục nghề khi focus từ khóa                    | Không chồng lớp popup                                            |
+| Accessibility       | Chưa đồng bộ trạng thái expanded                  | Bổ sung `role=dialog`, `aria-controls`, `aria-haspopup`, `aria-expanded` và keyboard Enter/Space/Escape | Trạng thái ARIA và bàn phím PASS                                 |
+| Responsive          | Chưa có kiểm thử popup giàu nội dung trên màn nhỏ | Căn lại popup theo viewport tại breakpoint 900px                                                        | Mobile 375px: popup rộng 335px, không tràn                       |
+| Đồng bộ triển khai  | Controller chỉ nằm trong file chi tiết lớn        | Tách module và mirror sang `public/`; guard controller cũ làm fallback                                  | Root/public có SHA-256 trùng khớp                                |
 
 Kiểm thử tự động: `scratch/verify_job_detail_search_sync.js` — Chrome headless PASS trên URL công việc `id=3`, root/public, desktop/mobile và luồng redirect đầy đủ.
 
@@ -120,9 +123,9 @@ Popup Danh mục nghề trên màn Chi tiết đã được đồng bộ hoàn t
 
 ## 6. Related-list Edge Alignment and Breadcrumb Removal — 2026-10-06
 
-| Hạng mục | Trạng thái trước | Giải pháp | Kết quả |
-|---|---|---|---|
-| Lề ngang danh sách liên quan | Override nội tuyến đặt lại `14px` hai bên, làm các thẻ thụt vào | Đặt padding feed thành `12px 0 20px`; giữ nguyên padding nội dung từng card và padding header | Desktop: card/feed 458px; mobile: 333px; hai bên 0px |
-| Breadcrumb dưới thanh tìm kiếm | Vẫn hiển thị “Trang chủ / Tìm kiếm việc làm / …” | Xóa toàn bộ `<nav>` breadcrumb, CSS nội tuyến và hook cập nhật tiêu đề không còn dùng | Không còn phần tử breadcrumb trong DOM |
-| Cache và mirror | Trang Chi tiết dùng cache key CSS cũ | Nâng `viec-lam.css` lên `v=13.1_detail_list_flush`; đồng bộ root/public | SHA-256 parity PASS |
-| Regression coverage | Test cũ chỉ log và đọc sai cấu trúc kết quả CDP | Thêm assertion cứng, sửa `result.value`, bổ sung breakpoint 375px | Toàn bộ suite Chrome headless PASS |
+| Hạng mục                       | Trạng thái trước                                                | Giải pháp                                                                                     | Kết quả                                              |
+| ------------------------------ | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| Lề ngang danh sách liên quan   | Override nội tuyến đặt lại `14px` hai bên, làm các thẻ thụt vào | Đặt padding feed thành `12px 0 20px`; giữ nguyên padding nội dung từng card và padding header | Desktop: card/feed 458px; mobile: 333px; hai bên 0px |
+| Breadcrumb dưới thanh tìm kiếm | Vẫn hiển thị “Trang chủ / Tìm kiếm việc làm / …”                | Xóa toàn bộ `<nav>` breadcrumb, CSS nội tuyến và hook cập nhật tiêu đề không còn dùng         | Không còn phần tử breadcrumb trong DOM               |
+| Cache và mirror                | Trang Chi tiết dùng cache key CSS cũ                            | Nâng `viec-lam.css` lên `v=13.1_detail_list_flush`; đồng bộ root/public                       | SHA-256 parity PASS                                  |
+| Regression coverage            | Test cũ chỉ log và đọc sai cấu trúc kết quả CDP                 | Thêm assertion cứng, sửa `result.value`, bổ sung breakpoint 375px                             | Toàn bộ suite Chrome headless PASS                   |

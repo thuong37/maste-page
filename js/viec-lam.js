@@ -1828,8 +1828,6 @@ document.addEventListener('DOMContentLoaded', () => {
       window.history.pushState(null, '', newUrl);
     }
 
-    // Update dynamic filter counts based on current full dataset
-    updateFilterCounts();
     updateSavedFilterCurrentState();
   }
 
@@ -1907,6 +1905,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Build Cards HTML
     const savedIds = getSavedJobs();
+    const detailKeywordParam = getDetailKeywordParam();
     const cardsHtml = pageJobs.map(job => {
       const isSaved = savedIds.includes(job.id);
       const featuredClass = job.isFeatured ? 'is-featured' : '';
@@ -1938,7 +1937,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="job-header-row">
                 <div class="job-title-wrap">
                   <h3 class="job-title">
-                    <a href="chi-tiet-viec-lam.html?id=${job.id}&title=${encodeURIComponent(job.title)}" class="job-title-link" title="${job.title}">${job.title}</a>
+                    <a href="chi-tiet-viec-lam.html?id=${job.id}&title=${encodeURIComponent(job.title)}${detailKeywordParam}" class="job-title-link" title="${job.title}">${job.title}</a>
                   </h3>
                   <div class="job-company-row">
                     <span class="job-company-name">${job.company.toUpperCase()}</span>
@@ -2063,6 +2062,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Giữ từ khóa tìm kiếm khi mở trang chi tiết để thanh tìm kiếm & danh sách liên quan đồng bộ
+  function getDetailKeywordParam() {
+    const keyword = searchInput ? searchInput.value.trim() : '';
+    return keyword ? `&keyword=${encodeURIComponent(keyword)}` : '';
+  }
+
   function scrollToListingTop() {
     const target = document.querySelector('.listings-topbar');
     if (target) {
@@ -2095,7 +2100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (jobSplitContainer && getComputedStyle(jobSplitContainer).display !== 'none') {
           openSplitView(id);
         } else {
-          window.location.href = `chi-tiet-viec-lam.html?id=${id}&title=${encodeURIComponent(job?.title || '')}`;
+          window.location.href = `chi-tiet-viec-lam.html?id=${id}&title=${encodeURIComponent(job?.title || '')}${getDetailKeywordParam()}`;
         }
       });
     });
@@ -2488,31 +2493,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 8. DYNAMIC FILTER COUNTS & TOP FILTER BAR CONTROLLER
+  // 8. TOP FILTER BAR CONTROLLER
   // =========================================================================
-  function updateFilterCounts() {
-    document.querySelectorAll('[data-count-exp]').forEach(el => {
-      const val = el.getAttribute('data-count-exp');
-      el.textContent = JOBS_DATA.filter(j => j.exp === val).length;
-    });
-    document.querySelectorAll('[data-count-salary]').forEach(el => {
-      const val = el.getAttribute('data-count-salary');
-      el.textContent = JOBS_DATA.filter(j => matchSalaryTier(j, val)).length;
-    });
-    document.querySelectorAll('[data-count-level]').forEach(el => {
-      const val = el.getAttribute('data-count-level');
-      el.textContent = JOBS_DATA.filter(j => j.level === val).length;
-    });
-    document.querySelectorAll('[data-count-type]').forEach(el => {
-      const val = el.getAttribute('data-count-type');
-      el.textContent = JOBS_DATA.filter(j => j.type === val).length;
-    });
-    document.querySelectorAll('[data-count-saturday]').forEach(el => {
-      const val = el.getAttribute('data-count-saturday');
-      el.textContent = JOBS_DATA.filter(j => j.saturday === val).length;
-    });
-  }
-
   function closeAllFilterDropdowns() {
     document.querySelectorAll('.filter-dropdown-menu').forEach(menu => {
       menu.hidden = true;
@@ -2760,9 +2742,6 @@ document.addEventListener('DOMContentLoaded', () => {
         closeAllFilterDropdowns();
       }
     });
-
-    // 7. Update counts
-    updateFilterCounts();
   }
 
   // =========================================================================
