@@ -1412,16 +1412,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pageHeaderTitle) pageHeaderTitle.textContent = job.title;
 
     // Hero
-    const logo = document.getElementById('detailCompanyLogo');
     const title = document.getElementById('detailJobTitle');
-    const compName = document.getElementById('detailCompanyName');
     const salaryBadge = document.getElementById('detailSalaryBadge');
     const locText = document.getElementById('detailLocationText');
     const updatedText = document.getElementById('detailUpdatedText');
 
-    if (logo) { logo.src = getHiResLogo(job.logo); logo.alt = job.company; }
     if (title) title.textContent = job.title;
-    if (compName) compName.textContent = job.company;
     if (salaryBadge) {
       salaryBadge.textContent = job.salaryBadge;
       if (job.salaryIsOrange) salaryBadge.classList.add('orange');
@@ -1538,7 +1534,7 @@ document.addEventListener('DOMContentLoaded', () => {
     currentListPage = Math.min(Math.max(1, currentListPage), totalPages);
     const pageJobs = relatedJobs.slice((currentListPage - 1) * LIST_PAGE_SIZE, currentListPage * LIST_PAGE_SIZE);
 
-    // Markup giống hệt card trong renderCurrentPage() của viec-lam.js (+ trạng thái "đang xem")
+    // Markup giống hệt card trong renderCurrentPage() của viec-lam.js.
     const savedIds = getSavedJobs();
     const itemsHtml = pageJobs.map(job => {
       const isSelected = job.id === activeJobId;
@@ -1591,12 +1587,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="job-bottom-right">
               <div class="job-meta-unhovered">
-                ${isSelected
-                  ? '<span class="split-viewing-badge">Đang xem</span>'
-                  : `<span class="job-post-time">Đăng ${job.updated}</span>${isViewed ? '<span class="badge-viewed">Đã xem</span>' : ''}`}
+                <span class="job-post-time">Đăng ${job.updated}</span>${isViewed ? '<span class="badge-viewed">Đã xem</span>' : ''}
               </div>
               <div class="job-actions-hovered">
-                <button type="button" class="btn-card-apply" data-id="${job.id}">Ứng tuyển</button>
                 ${isSelected ? '' : `
                 <button type="button" class="btn-card-hide" data-id="${job.id}" aria-label="Ẩn việc làm này" title="Ẩn việc làm">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
@@ -1619,15 +1612,6 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         toggleBookmark(parseInt(btn.getAttribute('data-id'), 10));
-      });
-    });
-
-    // Nút "Ứng tuyển" khi hover (giống trang gốc)
-    listFeed.querySelectorAll('.btn-card-apply').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const job = JOBS_DATA.find(j => j.id === parseInt(btn.getAttribute('data-id'), 10));
-        showToast(`Ứng tuyển thành công vị trí "${job?.title || 'công việc'}"! Nhà tuyển dụng sẽ phản hồi sớm.`, '🚀');
       });
     });
 
@@ -1736,15 +1720,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   document.getElementById('btnDetailApply')?.addEventListener('click', applyAction);
   document.getElementById('btnStickyApply')?.addEventListener('click', applyAction);
-
-  // Copy Link
-  document.getElementById('btnCopyJobLink')?.addEventListener('click', () => {
-    navigator.clipboard?.writeText(window.location.href).then(() => {
-      showToast('Đã sao chép liên kết việc làm vào bộ nhớ tạm!', '🔗');
-    }).catch(() => {
-      showToast('Đã sao chép liên kết việc làm!', '🔗');
-    });
-  });
 
   // --- Kế thừa Search Bar Functionality từ Trang Chủ ---
   if (!window.EasyCVDetailSearchV2) {

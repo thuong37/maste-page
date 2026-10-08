@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/design-tokens.css?v=eb_colors_20261007">
-  <link rel="stylesheet" href="css/navbar.css?v=eb_colors_20261007">
+  <link rel="stylesheet" href="css/navbar.css?v=eb_colors_20261008">
   <link rel="stylesheet" href="css/home.css?v=eb_colors_20261007">
   <link rel="stylesheet" href="css/location-picker.css?v=eb_colors_20261007">
   <link rel="stylesheet" href="css/category-filter-modal.css?v=eb_colors_20261007">
@@ -133,13 +133,6 @@
     .split-list-feed .job-post-time {
       font-size: 12px;
     }
-    /* home.css ẩn .btn-card-apply (card trang chủ); trang gốc viec-lam.html bật lại bằng inline style tương tự */
-    .split-list-feed .btn-card-apply {
-      display: inline-flex !important;
-      height: 32px;
-      padding: 0 16px;
-      font-size: 13px;
-    }
     .split-list-feed .btn-card-hide,
     .split-list-feed .btn-card-bookmark {
       width: 32px;
@@ -150,15 +143,7 @@
       height: 15px;
     }
     .split-viewing-badge {
-      display: inline-flex;
-      align-items: center;
-      background: #FFF0E6;
-      color: #E85C00;
-      border: 1px solid #FFCFB0;
-      font-size: 11.5px;
-      font-weight: 600;
-      padding: 2px 8px;
-      border-radius: 6px;
+      display: none !important;
       white-space: nowrap;
     }
     .full-width-mode .job-split-container {
@@ -197,6 +182,9 @@
         display: none !important;
         width: 0 !important;
         height: 0 !important;
+      }
+      .detail-cta-group .btn-detail-save-main {
+        grid-column: 1 / -1;
       }
     }
     html.in-simulator,
@@ -1578,15 +1566,8 @@
           <!-- Hero Section -->
           <div class="detail-hero-box">
             <div class="detail-hero-header">
-              <img id="detailCompanyLogo" src="assets/logos/company-fpt.svg" alt="FPT Software" class="detail-company-logo" />
               <div class="detail-hero-info">
                 <h2 id="detailJobTitle" class="detail-job-title">Senior Fullstack Developer (ReactJS / Node.js)</h2>
-                <div class="detail-company-line">
-                  <span id="detailCompanyName">FPT Software</span>
-                  <span class="badge-verified" title="Doanh nghiệp xác thực">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg>
-                  </span>
-                </div>
                 <div class="detail-badges-row">
                   <span id="detailSalaryBadge" class="job-salary-badge">28 - 45 triệu</span>
                   <span class="job-meta-item" style="font-size: 13px; color: #545454;">
@@ -1624,21 +1605,8 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
                 <span id="detailSaveBtnText">Lưu</span>
               </button>
-              <button type="button" class="btn-detail-share-btn" id="btnCopyJobLink" title="Sao chép liên kết công việc">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-                <span>Chia sẻ</span>
-              </button>
             </div>
           </div>
-
-          <!-- Mục lục chi tiết công việc (sticky trong vùng cuộn) -->
-          <nav class="detail-section-nav" id="detailSectionNav" aria-label="Mục lục chi tiết công việc">
-            <a href="#jdSectionDesc" class="is-active">Mô tả</a>
-            <a href="#jdSectionReqs">Yêu cầu</a>
-            <a href="#jdSectionPerks">Quyền lợi</a>
-            <a href="#jdSectionSkills">Kỹ năng</a>
-            <a href="#jdSectionCompany">Công ty</a>
-          </nav>
 
           <!-- Section: Mô tả công việc (JD) -->
           <div class="detail-section" id="jdSectionDesc">
@@ -1846,7 +1814,7 @@
   <script src="js/navbar.js?v=7.1_mobile_float"></script>
   <script src="js/job-detail-search.js?v=1.1_no_kw_badge"></script>
   <script src="js/chi-tiet-filter.js?v=eb_colors_20261007"></script>
-  <script src="js/preview-viec-lam.js?v=eb_colors_20261007"></script>
+  <script src="js/preview-viec-lam.js?v=remove_card_apply_20261008"></script>
 
   <!-- Floating View Mode Switcher Box (Rìa bên phải màn hình) -->
   <div class="floating-view-mode-box" id="floatingViewModeBox" role="region" aria-label="Bộ chuyển đổi chế độ xem Web và Mobile Web">
