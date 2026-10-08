@@ -1036,6 +1036,25 @@ document.addEventListener('DOMContentLoaded', () => {
       return Array.from(keywordsSet);
     }
 
+    function buildJobDetailHref(job, keyword = '') {
+      const title = String(job?.title || '').trim();
+      const normalizedTitle = normalizeIndustryText(title);
+      const normalizedCompany = normalizeIndustryText(job?.company || '');
+      const canonicalJobs = Array.isArray(window.EASYCV_JOBS) ? window.EASYCV_JOBS : [];
+      const titleMatches = canonicalJobs.filter(item => normalizeIndustryText(item.title) === normalizedTitle);
+      const canonicalJob = titleMatches.find(item => normalizeIndustryText(item.company) === normalizedCompany)
+        || (titleMatches.length === 1 ? titleMatches[0] : null);
+      const params = [];
+
+      if (canonicalJob?.id) params.push(`id=${encodeURIComponent(canonicalJob.id)}`);
+      if (title) params.push(`title=${encodeURIComponent(title)}`);
+
+      const cleanKeyword = String(keyword || '').trim();
+      if (cleanKeyword) params.push(new URLSearchParams({ keyword: cleanKeyword }).toString());
+
+      return `chi-tiet-viec-lam.html${params.length ? `?${params.join('&')}` : ''}`;
+    }
+
     function renderRecommendedJobs(query = '', container = recommendedJobListEl) {
       if (!container) return;
       const clean = normalizeIndustryText(query || '');
@@ -1140,7 +1159,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       container.innerHTML = jobsToDisplay.map(job => `
-        <button type="button" class="recommended-job" data-keyword="${escapeHtml(job.title)}" aria-label="Tìm ${escapeHtml(job.title)}, công ty ${escapeHtml(job.company)}, mức lương ${escapeHtml(job.salary)}, địa điểm ${escapeHtml(job.location || 'Toàn quốc')}">
+        <a href="${escapeHtml(buildJobDetailHref(job, query))}" class="recommended-job" data-keyword="${escapeHtml(job.title)}" aria-label="Xem chi tiết việc làm ${escapeHtml(job.title)}, công ty ${escapeHtml(job.company)}, mức lương ${escapeHtml(job.salary)}, địa điểm ${escapeHtml(job.location || 'Toàn quốc')}">
           <span class="recommended-job-logo" aria-hidden="true" title="Công ty ${escapeHtml(job.company)} tuyển dụng tại EasyCV">
             <img src="${escapeHtml(job.logo)}" alt="${escapeHtml(job.company)}" width="50" height="50" loading="lazy" title="Công ty ${escapeHtml(job.company)} tuyển dụng tại EasyCV">
           </span>
@@ -1152,14 +1171,14 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="recommended-job-loc" title="${escapeHtml(job.location || 'Toàn quốc')}">📍 ${escapeHtml(job.location || 'Toàn quốc')}</span>
             </div>
           </div>
-        </button>
+        </a>
       `).join('');
 
-      container.querySelectorAll('.recommended-job').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const kw = btn.getAttribute('data-keyword') || '';
-          executeSearch(kw);
+      container.querySelectorAll('.recommended-job').forEach(link => {
+        const title = link.getAttribute('data-keyword') || '';
+        link.addEventListener('click', () => {
+          const selectedJob = RECOMMENDED_JOBS_POOL.find(item => item.title === title);
+          if (selectedJob) link.href = buildJobDetailHref(selectedJob, heroSearchInput?.value || query);
         });
       });
     }
@@ -1170,14 +1189,6 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         const kw = btn.getAttribute('data-keyword') || btn.textContent.trim();
-        executeSearch(kw);
-      });
-    });
-
-    compactSearchPanel.querySelectorAll('.recommended-job').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const kw = btn.getAttribute('data-keyword') || '';
         executeSearch(kw);
       });
     });
@@ -2529,16 +2540,6 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const kw = chip.getAttribute('data-keyword') || chip.textContent.trim().replace(/^🔥\s*/, '');
         executeSearch(kw);
-      });
-    });
-
-    // Recommended jobs click
-    const recommendedJobBtns = document.querySelectorAll('.recommended-job');
-    recommendedJobBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const kw = btn.getAttribute('data-keyword') || btn.querySelector('.recommended-job-title')?.textContent.trim();
-        if (kw) executeSearch(kw);
       });
     });
 
@@ -7658,7 +7659,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${lightningBadgeHtml}
               </div>
               <div class="job-content">
-                <a href="chi-tiet-viec-lam.html?id=${job.id}" class="job-title" data-job-id="${job.id}" title="${job.title}">${job.title}</a>
+                <a href="${buildJobDetailHref(job, heroSearchInput?.value)}" class="job-title" data-job-id="${job.id}" title="${job.title}">${job.title}</a>
                 <a href="chi-tiet-cong-ty.html?company=${encodeURIComponent(job.company)}" class="company-name" title="${job.company}">${job.company}</a>
               </div>
             </div>
@@ -7797,7 +7798,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
             <span>Ứng tuyển ngay</span>
           </a>
-          <a href="chi-tiet-viec-lam.html?id=${job.id}" class="job-preview-btn-detail" target="_blank" rel="noopener noreferrer">
+          <a href="${buildJobDetailHref(job, heroSearchInput?.value)}" class="job-preview-btn-detail">
             <span>Xem chi tiết JD</span>
           </a>
         </div>
@@ -7851,6 +7852,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function bindJobCardEvents() {
       // Hover tên job -> hiển thị Popover Preview
       gridEl.querySelectorAll('.job-title').forEach(titleEl => {
+        titleEl.addEventListener('click', (e) => {
+          const jobId = titleEl.getAttribute('data-job-id');
+          const selectedJob = FEATURED_JOBS_DATA.find(item => item.id === parseInt(jobId, 10));
+          if (selectedJob) titleEl.href = buildJobDetailHref(selectedJob, heroSearchInput?.value);
+          e.stopPropagation();
+        });
         titleEl.addEventListener('mouseenter', (e) => {
           const jobId = titleEl.getAttribute('data-job-id');
           if (jobId) {
@@ -7903,12 +7910,13 @@ document.addEventListener('DOMContentLoaded', () => {
       // Click Thẻ job -> Mở trang chi tiết việc làm
       gridEl.querySelectorAll('.job-card').forEach(card => {
         card.addEventListener('click', (e) => {
-          if (e.target.closest('.btn-bookmark') || e.target.closest('.company-name') || e.target.closest('.badge-lightning')) {
+          if (e.target.closest('.job-title') || e.target.closest('.btn-bookmark') || e.target.closest('.company-name') || e.target.closest('.badge-lightning')) {
             return;
           }
           const jobId = card.getAttribute('data-job-id');
-          if (jobId) {
-            window.location.href = `chi-tiet-viec-lam.html?id=${jobId}`;
+          const selectedJob = FEATURED_JOBS_DATA.find(item => item.id === parseInt(jobId, 10));
+          if (selectedJob) {
+            window.location.href = buildJobDetailHref(selectedJob, heroSearchInput?.value);
           }
         });
       });

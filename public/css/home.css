@@ -222,6 +222,7 @@
   background: transparent;
   color: #060E18;
   font-family: inherit;
+  text-decoration: none;
   text-align: left;
   cursor: pointer;
   box-sizing: border-box;
@@ -431,7 +432,8 @@
 [data-theme='dark'] .recommended-job-loc {
   color: #8A8A8A;
 }
-.search-suggest-dropdown button:focus-visible {
+.search-suggest-dropdown button:focus-visible,
+.recommended-job:focus-visible {
   outline: 3px solid rgba(255, 101, 0, 0.28);
   outline-offset: 2px;
 }
