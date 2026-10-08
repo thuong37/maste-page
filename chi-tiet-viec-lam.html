@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/location-picker.css?v=eb_colors_20261007">
   <link rel="stylesheet" href="css/category-filter-modal.css?v=eb_colors_20261007">
   <link rel="stylesheet" href="css/viec-lam.css?v=eb_colors_20261007">
-  <link rel="stylesheet" href="css/chi-tiet.css?v=detail_20261009">
+  <link rel="stylesheet" href="css/chi-tiet.css?v=detail_rating_20261008">
   <style>
     /* Thanh menu không neo cố định khi cuộn màn hình trên trang chi tiết việc làm */
     .site-header {
@@ -1169,8 +1169,15 @@
                 </div>
 
                 <div class="jd-rating-box">
-                  <h3 class="jd-rating-title">Bạn thấy độ tin cậy &amp; Rõ ràng của tin tuyển dụng này thế nào?</h3>
-                  <div class="jd-rating-options" id="jdRating" role="radiogroup" aria-label="Đánh giá độ tin cậy"></div>
+                  <div class="jd-rating-head">
+                    <div>
+                      <span class="jd-rating-eyebrow">Đánh giá riêng tư</span>
+                      <h3 class="jd-rating-title">Tin tuyển dụng này minh bạch đến đâu?</h3>
+                      <p class="jd-rating-hint" id="jdRatingHint">Lựa chọn chỉ được lưu trên thiết bị này và bạn có thể thay đổi bất cứ lúc nào.</p>
+                    </div>
+                    <span class="jd-rating-status" id="jdRatingStatus" aria-live="polite">Chưa chọn</span>
+                  </div>
+                  <div class="jd-rating-options" id="jdRating" role="radiogroup" aria-label="Đánh giá mức độ rõ ràng của tin tuyển dụng" aria-describedby="jdRatingHint jdRatingStatus"></div>
                 </div>
               </div>
             </section>
@@ -1290,7 +1297,7 @@
   <script src="js/navbar.js?v=7.1_mobile_float"></script>
   <script src="js/job-detail-search.js?v=1.1_no_kw_badge"></script>
   <script src="js/jobs-data.js?v=detail_20261007"></script>
-  <script src="js/chi-tiet-viec-lam.js?v=detail_20261009"></script>
+  <script src="js/chi-tiet-viec-lam.js?v=detail_rating_20261008"></script>
 
   <!-- Floating View Mode Switcher Box (Rìa bên phải màn hình) -->
   <div class="floating-view-mode-box" id="floatingViewModeBox" role="region" aria-label="Bộ chuyển đổi chế độ xem Web và Mobile Web">

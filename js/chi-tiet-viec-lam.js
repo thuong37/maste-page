@@ -7,7 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const JOBS = Array.isArray(window.EASYCV_JOBS) ? window.EASYCV_JOBS : [];
   const SAVED_KEY = 'easycv_saved_job_ids';
-  const RATING_KEY = 'easycv_job_trust_ratings';
+  const RATING_KEY = 'easycv_job_transparency_ratings_v2';
 
   const $ = id => document.getElementById(id);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => (
@@ -316,22 +316,26 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && !competeModal.hidden) closeCompete(); });
 
   const RATINGS = [
-    ['😠', 'Không đáng tin cậy & rõ ràng'],
-    ['😵', 'Ít đáng tin cậy & rõ ràng'],
-    ['😐', 'Bình thường'],
-    ['😊', 'Đáng tin cậy & rõ ràng'],
-    ['😍', 'Rất đáng tin cậy & rõ ràng']
+    { label: 'Rất mơ hồ', detail: 'Thông tin rất mơ hồ và khó kiểm chứng' },
+    { label: 'Còn thiếu', detail: 'Thông tin còn thiếu nhiều nội dung cần thiết' },
+    { label: 'Tạm ổn', detail: 'Thông tin có đủ nội dung cơ bản' },
+    { label: 'Khá minh bạch', detail: 'Thông tin khá đầy đủ và dễ kiểm chứng' },
+    { label: 'Rất minh bạch', detail: 'Thông tin đầy đủ, rõ ràng và dễ kiểm chứng' }
   ];
   const ratingBox = $('jdRating');
+  const ratingStatus = $('jdRatingStatus');
   const savedRating = (readJson(RATING_KEY, {}))[jobKey];
-  ratingBox.innerHTML = RATINGS.map(([face, label], i) => `
-    <button type="button" class="jd-rating-btn${savedRating === i ? ' is-active' : ''}" role="radio" aria-checked="${savedRating === i}" data-rating="${i}">
-      <span class="jd-face" aria-hidden="true">${face}</span>
-      <span>${esc(label)}</span>
+  const hasSavedRating = Number.isInteger(savedRating) && savedRating >= 0 && savedRating < RATINGS.length;
+  ratingBox.innerHTML = RATINGS.map(({ label, detail }, i) => `
+    <button type="button" class="jd-rating-btn${savedRating === i ? ' is-active' : ''}" role="radio" aria-checked="${savedRating === i}" aria-label="Mức ${i + 1} trên 5: ${esc(detail)}" tabindex="${savedRating === i || (!hasSavedRating && i === 0) ? '0' : '-1'}" data-rating="${i}">
+      <span class="jd-rating-marker" aria-hidden="true">${i + 1}</span>
+      <span class="jd-rating-label">${esc(label)}</span>
     </button>`).join('');
-  ratingBox.addEventListener('click', event => {
-    const btn = event.target.closest('.jd-rating-btn');
-    if (!btn) return;
+  if (hasSavedRating) {
+    ratingStatus.textContent = `Đã chọn: ${RATINGS[savedRating].label}`;
+    ratingStatus.classList.add('is-active');
+  }
+  function selectRating(btn, shouldFocus = false) {
     const value = parseInt(btn.dataset.rating, 10);
     const all = readJson(RATING_KEY, {});
     all[jobKey] = value;
@@ -340,8 +344,28 @@ document.addEventListener('DOMContentLoaded', () => {
       const active = b === btn;
       b.classList.toggle('is-active', active);
       b.setAttribute('aria-checked', String(active));
+      b.tabIndex = active ? 0 : -1;
     });
-    showToast('Cảm ơn bạn đã đánh giá tin tuyển dụng này!', '⭐');
+    ratingStatus.textContent = `Đã chọn: ${RATINGS[value].label}`;
+    ratingStatus.classList.add('is-active');
+    if (shouldFocus) btn.focus();
+    showToast('Đã lưu đánh giá trên thiết bị này.', '✓');
+  }
+  ratingBox.addEventListener('click', event => {
+    const btn = event.target.closest('.jd-rating-btn');
+    if (btn) selectRating(btn);
+  });
+  ratingBox.addEventListener('keydown', event => {
+    if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].includes(event.key)) return;
+    event.preventDefault();
+    const buttons = [...ratingBox.querySelectorAll('.jd-rating-btn')];
+    const current = buttons.indexOf(document.activeElement);
+    let next = current;
+    if (event.key === 'Home') next = 0;
+    else if (event.key === 'End') next = buttons.length - 1;
+    else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = (current - 1 + buttons.length) % buttons.length;
+    else next = (current + 1) % buttons.length;
+    selectRating(buttons[next], true);
   });
 
   // -----------------------------------------------------------------------
