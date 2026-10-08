@@ -1,6 +1,6 @@
 // Single-source build: inject shared header/drawer into pages, then mirror to public/.
 // Usage: node tools/build.js          (inject + sync)
-//        node tools/build.js --init   (one-time: add markers around existing header/drawer)
+//        node tools/build.js --init   (one-time legacy: markers for header/drawer; footer markers are already in the pages)
 //        node tools/build.js --check  (exit 1 if pages or public/ are out of date)
 const fs = require('fs');
 const path = require('path');
@@ -17,6 +17,11 @@ const BLOCKS = {
     gen: (page) => partial('header.html')
       .replace('{{TIM_VIEC_CURRENT_CLASS}}', CURRENT.has(page) ? ' is-current' : '')
       .replace('{{TIM_VIEC_CURRENT_LABEL}}', CURRENT.has(page) ? ' (Trang hiện tại)' : ''),
+  },
+  footer: {
+    begin: '<!-- @include:footer -->', end: '<!-- @end:footer -->',
+    // in-page anchors only exist on the homepage
+    gen: (page) => (page === 'index' ? partial('footer.html') : partial('footer.html').replace(/href="#/g, 'href="index.html#')),
   },
   drawer: { begin: '<!-- @include:drawer -->', end: '<!-- @end:drawer -->', gen: () => partial('drawer.html') },
 };
