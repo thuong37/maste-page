@@ -7,12 +7,16 @@
       "destination": "/viec-lam.html"
     },
     {
-      "source": "/((?!assets/|css/|js/|.*\\..*).*)",
-      "destination": "/index.html"
+      "source": "/chi-tiet-viec-lam",
+      "destination": "/chi-tiet-viec-lam.html"
     },
     {
       "source": "/job-preview",
       "destination": "/job-preview.html"
+    },
+    {
+      "source": "/((?!assets/|css/|js/|.*\\..*).*)",
+      "destination": "/index.html"
     }
   ]
 }

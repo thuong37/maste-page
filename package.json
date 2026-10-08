@@ -1,0 +1,9 @@
+{
+  "name": "easycv-master-page",
+  "private": true,
+  "scripts": {
+    "build": "node tools/build.js",
+    "check": "node tools/build.js --check",
+    "verify": "node tools/verify.js"
+  }
+}
