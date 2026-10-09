@@ -1168,7 +1168,7 @@ body {
 .hero-search-box {
   background: var(--bg-primary);
   border: 1.5px solid var(--easycv-orange);
-  border-radius: 14px;
+  border-radius: 30px;
   box-shadow: 0 4px 20px -2px rgba(255, 101, 0, 0.16), 0 2px 6px -1px rgba(6, 14, 24, 0.06), 0 0 0 3px rgba(255, 101, 0, 0.08);
   height: 60px;
   min-height: 60px;
@@ -1250,7 +1250,7 @@ body {
   background: linear-gradient(135deg, #FF8433 0%, #FF6500 100%);
   color: #FFF;
   border: none;
-  border-radius: 10px;
+  border-radius: 999px;
   padding: 0 24px;
   height: 46px;
   font-size: 15px;

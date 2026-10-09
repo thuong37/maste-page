@@ -10,12 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/design-tokens.css?v=eb_colors_20261007">
-  <link rel="stylesheet" href="css/navbar.css?v=eb_colors_20261008">
-  <link rel="stylesheet" href="css/home.css?v=eb_colors_20261007">
+  <link rel="stylesheet" href="css/navbar.css?v=pill_20261009">
+  <link rel="stylesheet" href="css/home.css?v=pill_20261009">
   <link rel="stylesheet" href="css/location-picker.css?v=eb_colors_20261007">
-  <link rel="stylesheet" href="css/category-filter-modal.css?v=eb_colors_20261007">
-  <link rel="stylesheet" href="css/viec-lam.css?v=eb_colors_20261007">
-  <link rel="stylesheet" href="css/chi-tiet.css?v=detail_rating_20261008">
+  <link rel="stylesheet" href="css/category-filter-modal.css?v=mobile_hide_20261009">
+  <link rel="stylesheet" href="css/viec-lam.css?v=pill_20261009">
+  <link rel="stylesheet" href="css/chi-tiet.css?v=compete_box_gap_20261009">
+  <link rel="stylesheet" href="css/mobile-typography.css?v=mobile_type_20261011">
   <style>
     /* Thanh menu không neo cố định khi cuộn màn hình trên trang chi tiết việc làm */
     .site-header {
@@ -1006,14 +1007,6 @@
     <div class="jd-page" id="jdPage">
       <div class="jd-container">
 
-        <nav class="jd-breadcrumb" aria-label="Đường dẫn">
-          <a href="index.html">Trang chủ</a>
-          <span aria-hidden="true">/</span>
-          <a href="viec-lam.html" id="jdBackLink">Việc làm</a>
-          <span aria-hidden="true">/</span>
-          <span id="jdBreadcrumbCurrent" aria-current="page">Chi tiết việc làm</span>
-        </nav>
-
         <div class="jd-layout">
 
           <!-- ================= CỘT TRÁI: NỘI DUNG CHÍNH ================= -->
@@ -1061,12 +1054,6 @@
                 </button>
               </div>
             </section>
-
-            <!-- Banner xác thực -->
-            <div class="jd-verified-banner">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5Z" fill="var(--eb-secondary-500)"/><path d="m8.5 12 2.5 2.5L15.5 9.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>100% tin đăng tải trên EasyCV được <strong>cung cấp bởi các Nhà tuyển dụng đã được xác thực thông tin.</strong></span>
-            </div>
 
             <!-- Thẻ nội dung -->
             <section class="jd-card jd-content">
@@ -1173,15 +1160,71 @@
                 </div>
 
                 <div class="jd-rating-box">
-                  <div class="jd-rating-head">
-                    <div>
-                      <span class="jd-rating-eyebrow">Đánh giá riêng tư</span>
-                      <h3 class="jd-rating-title">Tin tuyển dụng này minh bạch đến đâu?</h3>
-                      <p class="jd-rating-hint" id="jdRatingHint">Lựa chọn chỉ được lưu trên thiết bị này và bạn có thể thay đổi bất cứ lúc nào.</p>
-                    </div>
-                    <span class="jd-rating-status" id="jdRatingStatus" aria-live="polite">Chưa chọn</span>
-                  </div>
-                  <div class="jd-rating-options" id="jdRating" role="radiogroup" aria-label="Đánh giá mức độ rõ ràng của tin tuyển dụng" aria-describedby="jdRatingHint jdRatingStatus"></div>
+                  <h3 class="jd-rating-title">Tin tuyển dụng này minh bạch đến đâu?</h3>
+                  <p class="jd-rating-hint" id="jdRatingHint">Lựa chọn chỉ được lưu trên thiết bị này và bạn có thể thay đổi bất cứ lúc nào.</p>
+                  <div class="jd-rating-options" id="jdRating" role="radiogroup" aria-label="Đánh giá mức độ rõ ràng của tin tuyển dụng" aria-describedby="jdRatingHint"></div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Thông tin công ty -->
+            <section class="jd-card jd-company-profile" aria-labelledby="jdCompanyProfileTitle">
+              <div class="jd-company-profile-head">
+                <h2 class="jd-section-title" id="jdCompanyProfileTitle">Thông tin công ty</h2>
+              </div>
+
+              <div class="jd-company-profile-intro">
+                <h3 class="jd-company-profile-name" id="jdCompanyProfileName"></h3>
+                <p class="jd-company-profile-desc">
+                  <span id="jdCompanyProfileDesc"></span>
+                  <a href="#" class="jd-company-more-inline" id="jdCompanyDescMore" title="Xem thêm thông tin công ty">Xem thêm</a>
+                </p>
+              </div>
+
+              <div class="jd-company-profile-subtitle-head">
+                <h3 class="jd-company-profile-subtitle">Hồ sơ doanh nghiệp</h3>
+                <a href="#" class="jd-company-more-link" id="jdCompanyProfileMore" title="Xem thêm hồ sơ doanh nghiệp">
+                  <span>Xem thêm</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+              <dl class="jd-company-profile-grid">
+                <div><dt>Tên công ty</dt><dd id="jdCompanyLegalName"></dd></div>
+                <div><dt>Lĩnh vực</dt><dd id="jdCompanyProfileIndustry"></dd></div>
+                <div><dt>Quy mô</dt><dd id="jdCompanyProfileSize"></dd></div>
+                <div><dt>Loại hình</dt><dd>Doanh nghiệp</dd></div>
+                <div><dt>Trạng thái hồ sơ</dt><dd class="jd-company-verified"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Đã xác thực</dd></div>
+                <div><dt>Khu vực hoạt động</dt><dd id="jdCompanyProfileCity"></dd></div>
+              </dl>
+
+              <h3 class="jd-company-profile-subtitle">Địa chỉ làm việc</h3>
+              <div class="jd-company-location-card">
+                <div class="jd-company-location-line">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                  <span id="jdCompanyProfileAddress"></span>
+                </div>
+                <div class="jd-company-map" role="img" aria-label="Bản đồ minh họa vị trí công ty">
+                  <svg viewBox="0 0 900 220" preserveAspectRatio="none" aria-hidden="true">
+                    <rect width="900" height="220" fill="var(--eb-text-25, #FAFAFA)"/>
+                    <g fill="none" stroke="var(--eb-text-100, #E6E6E6)" stroke-width="18">
+                      <path d="M-20 44C150 80 210 10 390 60s280 80 540 20"/>
+                      <path d="M80-20c30 90 0 150 65 260M440-20c-50 85-35 170 25 260M770-20c-40 80-15 155 50 260"/>
+                    </g>
+                    <g fill="none" stroke="#fff" stroke-width="7">
+                      <path d="M-20 44C150 80 210 10 390 60s280 80 540 20"/>
+                      <path d="M80-20c30 90 0 150 65 260M440-20c-50 85-35 170 25 260M770-20c-40 80-15 155 50 260"/>
+                    </g>
+                    <g fill="var(--eb-secondary-50, #EAF8F3)">
+                      <rect x="205" y="102" width="110" height="58" rx="12"/><rect x="565" y="112" width="145" height="68" rx="12"/>
+                    </g>
+                  </svg>
+                  <span class="jd-company-map-pin" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+                  </span>
+                  <a href="#" class="jd-company-map-link" id="jdCompanyMapLink" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3Z"/><path d="M9 3v15M15 6v15"/></svg>
+                    Xem trên bản đồ
+                  </a>
                 </div>
               </div>
             </section>
@@ -1396,7 +1439,7 @@
   <script src="js/navbar.js?v=7.1_mobile_float"></script>
   <script src="js/job-detail-search.js?v=1.1_no_kw_badge"></script>
   <script src="js/jobs-data.js?v=detail_20261007"></script>
-  <script src="js/chi-tiet-viec-lam.js?v=detail_rating_20261008"></script>
+  <script src="js/chi-tiet-viec-lam.js?v=company_profile_20261009"></script>
 
   <!-- Floating View Mode Switcher Box (Rìa bên phải màn hình) -->
   <div class="floating-view-mode-box" id="floatingViewModeBox" role="region" aria-label="Bộ chuyển đổi chế độ xem Web và Mobile Web">

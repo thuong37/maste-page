@@ -91,6 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   const COMPANY_SIZES = ['25 - 99 nhân viên', '100 - 499 nhân viên', '500 - 999 nhân viên', '1.000 - 4.999 nhân viên', '5.000+ nhân viên'];
 
+  function companyIntroduction(j, industry) {
+    const city = j.city || 'Việt Nam';
+    return `${j.company} hoạt động trong lĩnh vực ${industry.toLowerCase()}, với đội ngũ chuyên môn giàu kinh nghiệm và môi trường làm việc chú trọng sự phát triển lâu dài. Doanh nghiệp đang mở rộng hoạt động tại ${city}, đồng thời tìm kiếm những ứng viên phù hợp để cùng xây dựng các sản phẩm và dịch vụ có giá trị.`;
+  }
+
   function expLabel(j) {
     return EXP_LABEL[j.exp] || (j.exp ? `${j.exp} năm` : 'Không yêu cầu');
   }
@@ -128,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) metaDesc.setAttribute('content', `${job.title} tại ${job.company}. Mức lương ${job.salaryBadge}, địa điểm ${job.city}. Xem mô tả công việc và ứng tuyển trên EasyCV.`);
 
-  $('jdBreadcrumbCurrent').textContent = job.title;
   $('jdTitle').textContent = job.title;
   $('jdSalary').textContent = job.salaryBadge;
   $('jdSalaryLink').href = searchUrl(job.title);
@@ -164,9 +168,50 @@ document.addEventListener('DOMContentLoaded', () => {
   nameLink.href = companyUrl;
   nameLink.textContent = job.company;
   $('jdCompanyPageBtn').href = companyUrl;
-  $('jdCompanySize').textContent = COMPANY_SIZES[(job.id || 0) % COMPANY_SIZES.length];
+  const companySize = COMPANY_SIZES[(job.id || 0) % COMPANY_SIZES.length];
+  const companyIndustry = INDUSTRY_BY_CATEGORY[job.category] || 'Đa ngành';
+  $('jdCompanySize').textContent = companySize;
   $('jdCompanyAddress').textContent = job.location;
-  $('jdCompanyIndustry').textContent = INDUSTRY_BY_CATEGORY[job.category] || 'Đa ngành';
+  $('jdCompanyIndustry').textContent = companyIndustry;
+
+  // Khối hồ sơ công ty trong nội dung chính
+  const profileNameEl = $('jdCompanyProfileName');
+  if (profileNameEl) profileNameEl.textContent = job.company;
+
+  const profileDescEl = $('jdCompanyProfileDesc');
+  if (profileDescEl) profileDescEl.textContent = companyIntroduction(job, companyIndustry);
+
+  const descMoreLink = $('jdCompanyDescMore');
+  if (descMoreLink) {
+    descMoreLink.href = companyUrl;
+    descMoreLink.title = `Xem thêm thông tin ${job.company}`;
+  }
+
+  const profileMoreLink = $('jdCompanyProfileMore');
+  if (profileMoreLink) {
+    profileMoreLink.href = companyUrl;
+    profileMoreLink.title = `Xem thêm hồ sơ ${job.company}`;
+  }
+
+  const legalNameEl = $('jdCompanyLegalName');
+  if (legalNameEl) legalNameEl.textContent = job.company;
+
+  const industryEl = $('jdCompanyProfileIndustry');
+  if (industryEl) industryEl.textContent = companyIndustry;
+
+  const sizeEl = $('jdCompanyProfileSize');
+  if (sizeEl) sizeEl.textContent = companySize;
+
+  const cityEl = $('jdCompanyProfileCity');
+  if (cityEl) cityEl.textContent = job.city || 'Toàn quốc';
+
+  const addressEl = $('jdCompanyProfileAddress');
+  if (addressEl) addressEl.textContent = job.location;
+
+  const mapLinkEl = $('jdCompanyMapLink');
+  if (mapLinkEl) {
+    mapLinkEl.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(job.location)}`;
+  }
 
   // Sidebar: thông tin chung
   $('jdGenLevel').textContent = LEVEL_LABEL[job.level] || 'Nhân viên';
@@ -323,7 +368,6 @@ document.addEventListener('DOMContentLoaded', () => {
     { label: 'Rất minh bạch', detail: 'Thông tin đầy đủ, rõ ràng và dễ kiểm chứng' }
   ];
   const ratingBox = $('jdRating');
-  const ratingStatus = $('jdRatingStatus');
   const savedRating = (readJson(RATING_KEY, {}))[jobKey];
   const hasSavedRating = Number.isInteger(savedRating) && savedRating >= 0 && savedRating < RATINGS.length;
   ratingBox.innerHTML = RATINGS.map(({ label, detail }, i) => `
@@ -331,10 +375,6 @@ document.addEventListener('DOMContentLoaded', () => {
       <span class="jd-rating-marker" aria-hidden="true">${i + 1}</span>
       <span class="jd-rating-label">${esc(label)}</span>
     </button>`).join('');
-  if (hasSavedRating) {
-    ratingStatus.textContent = `Đã chọn: ${RATINGS[savedRating].label}`;
-    ratingStatus.classList.add('is-active');
-  }
   function selectRating(btn, shouldFocus = false) {
     const value = parseInt(btn.dataset.rating, 10);
     const all = readJson(RATING_KEY, {});
@@ -346,8 +386,6 @@ document.addEventListener('DOMContentLoaded', () => {
       b.setAttribute('aria-checked', String(active));
       b.tabIndex = active ? 0 : -1;
     });
-    ratingStatus.textContent = `Đã chọn: ${RATINGS[value].label}`;
-    ratingStatus.classList.add('is-active');
     if (shouldFocus) btn.focus();
     showToast('Đã lưu đánh giá trên thiết bị này.', '✓');
   }
@@ -370,7 +408,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // -----------------------------------------------------------------------
   function renderNotFound() {
-    $('jdBreadcrumbCurrent').textContent = 'Không tìm thấy việc làm';
     document.title = 'Không tìm thấy việc làm | EasyCV';
     document.querySelector('.jd-layout').innerHTML = `
       <section class="jd-card jd-empty" style="grid-column: 1 / -1;">

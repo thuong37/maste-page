@@ -1426,6 +1426,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (locText) locText.textContent = job.location;
     if (updatedText) updatedText.textContent = `Cập nhật ${job.updated}`;
 
+    const detailViewLink = document.getElementById('btnDetailView');
+    if (detailViewLink) detailViewLink.href = buildDetailHref(job);
+
     // Nhãn Kinh nghiệm / Cấp bậc / Hình thức ở phần đầu (lương đã hiển thị ở #detailSalaryBadge)
     const metricExp = document.getElementById('metricExp');
     const metricLevel = document.getElementById('metricLevel');

@@ -1304,3 +1304,16 @@ body.job-detail-page .category-modal-backdrop {
     flex: 1;
   }
 }
+
+/* Mobile web: tạm ẩn lọc Danh mục nghề & Địa điểm trên thanh tìm kiếm (chỉ còn ô từ khóa + nút Tìm kiếm) */
+@media (max-width: 768px) {
+  .category-filter-trigger,
+  .search-location-group,
+  .search-divider,
+  form.job-search-box .category-filter-trigger,
+  form.hero-search-box .category-filter-trigger,
+  form.job-search-box .search-location-group,
+  form.hero-search-box .search-location-group {
+    display: none !important;
+  }
+}

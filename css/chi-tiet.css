@@ -22,27 +22,6 @@
   box-sizing: border-box;
 }
 
-/* ---------- Breadcrumb ---------- */
-.jd-breadcrumb {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 14px;
-  font-size: 13px;
-  color: var(--jd-muted);
-}
-.jd-breadcrumb a { color: var(--jd-muted); text-decoration: none; }
-.jd-breadcrumb a:hover { color: var(--eb-primary-500, #FF6500); }
-.jd-breadcrumb [aria-current] {
-  color: var(--jd-ink);
-  font-weight: 500;
-  max-width: 480px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 /* ---------- Layout ---------- */
 .jd-layout {
   display: grid;
@@ -154,20 +133,6 @@
 .jd-btn-icon { width: 46px; padding: 0; flex: none; }
 .jd-actions .jd-btn-outline { min-width: 130px; }
 
-/* ---------- Banner xác thực ---------- */
-.jd-verified-banner {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 24px;
-  border-radius: var(--jd-radius);
-  background: #FFFFFF;
-  box-shadow: 0 1px 3px rgba(6, 14, 24, 0.05);
-  font-size: 14px;
-  color: var(--eb-text-700, #374151);
-}
-.jd-verified-banner svg { flex-shrink: 0; }
-
 /* ---------- Nội dung ---------- */
 .jd-content { padding: 28px 24px; }
 .jd-section + .jd-section { margin-top: 28px; }
@@ -231,6 +196,7 @@
 .jd-deadline-line strong { color: var(--jd-ink); }
 
 .jd-report-box {
+  margin-top: 16px;
   display: flex;
   gap: 10px;
   align-items: flex-start;
@@ -245,7 +211,7 @@
 .jd-report-box a:hover { color: var(--eb-primary-500, #FF6500); }
 
 /* ---------- Mức độ cạnh tranh hồ sơ ---------- */
-.jd-compete-box { margin-top: 16px; padding: 20px; border: 1px solid var(--jd-border); border-radius: 12px; background: #FFFFFF; }
+.jd-compete-box { margin: 16px 0; padding: 20px; border: 1px solid var(--jd-border); border-radius: 12px; background: #FFFFFF; }
 .jd-compete-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .jd-compete-title { margin: 0; font-size: 16px; font-weight: 700; }
 .jd-compete-badge { padding: 4px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; white-space: nowrap; }
@@ -287,37 +253,13 @@
 
 .jd-rating-box {
   margin-top: 16px;
-  padding: 22px 24px 20px;
-  border: 1px solid var(--eb-primary-100);
-  border-radius: 16px;
-  background: linear-gradient(135deg, #FFFFFF 0%, var(--eb-primary-50) 145%);
-  box-shadow: 0 10px 30px -24px var(--color-primary-glow);
-}
-.jd-rating-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
-.jd-rating-eyebrow {
-  display: block;
-  margin-bottom: 5px;
-  color: var(--eb-primary-700);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.jd-rating-title { margin: 0; color: var(--eb-text-500); font-size: 17px; font-weight: 750; line-height: 1.35; }
-.jd-rating-hint { margin: 5px 0 0; color: var(--eb-text-400); font-size: 12px; line-height: 1.5; }
-.jd-rating-status {
-  flex: 0 0 auto;
-  min-width: 88px;
-  padding: 6px 10px;
-  border: 1px solid var(--eb-text-100);
-  border-radius: 999px;
+  padding: 20px;
+  border: 1px solid var(--jd-border);
+  border-radius: 12px;
   background: #FFFFFF;
-  color: var(--eb-text-400);
-  font-size: 11px;
-  font-weight: 700;
-  text-align: center;
 }
-.jd-rating-status.is-active { border-color: var(--eb-primary-200); background: var(--eb-primary-50); color: var(--eb-primary-700); }
+.jd-rating-title { margin: 0; color: var(--eb-text-800, #060E18); font-size: 16px; font-weight: 700; line-height: 1.4; }
+.jd-rating-hint { margin: 6px 0 0; color: var(--jd-muted); font-size: 13px; line-height: 1.5; }
 .jd-rating-options {
   position: relative;
   display: grid;
@@ -371,6 +313,143 @@
 .jd-rating-btn.is-active .jd-rating-marker { border-color: var(--eb-primary-700); background: var(--eb-primary-700); color: #FFFFFF; box-shadow: 0 0 0 5px var(--eb-primary-50); }
 .jd-rating-btn:focus-visible { outline: none; }
 .jd-rating-btn:focus-visible .jd-rating-marker { outline: 3px solid var(--eb-primary-700); outline-offset: 3px; }
+
+/* ---------- Hồ sơ công ty trong nội dung chính ---------- */
+.jd-company-profile { padding: 28px 24px; }
+.jd-company-profile-head {
+  margin-bottom: 20px;
+}
+.jd-company-profile-head .jd-section-title { margin-bottom: 0; }
+.jd-company-profile-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--jd-border);
+}
+.jd-company-profile-intro h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--eb-text-800, #060E18);
+  line-height: 1.4;
+}
+.jd-company-profile-intro p {
+  margin: 0;
+  color: var(--eb-text-500, #333333);
+  font-size: 14px;
+  line-height: 1.75;
+}
+.jd-company-more-inline {
+  display: inline-block;
+  margin-left: 6px;
+  color: var(--eb-primary-600, #E85C00);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.18s ease;
+}
+.jd-company-more-inline:hover {
+  color: var(--eb-primary-700, #B54800);
+  text-decoration: underline;
+}
+.jd-company-more-inline:focus-visible {
+  outline: 2px solid var(--eb-primary-500, #FF6500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.jd-company-profile-subtitle-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 24px 0 14px;
+}
+.jd-company-profile-subtitle {
+  margin: 24px 0 14px;
+  font-size: 17px;
+  line-height: 1.4;
+}
+.jd-company-profile-subtitle-head .jd-company-profile-subtitle {
+  margin: 0;
+}
+.jd-company-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  color: var(--eb-primary-600, #E85C00);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+.jd-company-more-link svg {
+  transition: transform 0.18s ease;
+}
+.jd-company-more-link:hover {
+  color: var(--eb-primary-700, #B54800);
+  text-decoration: underline;
+}
+.jd-company-more-link:hover svg {
+  transform: translateX(3px);
+}
+.jd-company-more-link:focus-visible {
+  outline: 2px solid var(--eb-primary-500, #FF6500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.jd-company-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px 28px;
+  margin: 0;
+  padding: 20px;
+  border: 1px solid var(--eb-text-100, #E6E6E6);
+  border-radius: 12px;
+  background: #FAFAFA;
+}
+.jd-company-profile-grid div { min-width: 0; }
+.jd-company-profile-grid dt { margin-bottom: 7px; color: var(--eb-text-300, #8A8A8A); font-size: 12px; line-height: 1.4; }
+.jd-company-profile-grid dd { margin: 0; color: var(--eb-text-800, #060E18); font-size: 14px; font-weight: 500; line-height: 1.5; overflow-wrap: anywhere; }
+.jd-company-profile-grid .jd-company-verified { display: flex; align-items: center; gap: 6px; color: var(--eb-secondary-700, #22754C); font-weight: 600; }
+.jd-company-location-card { overflow: hidden; border: 1px solid var(--jd-border); border-radius: 12px; }
+.jd-company-location-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 52px;
+  padding: 14px 18px;
+  color: var(--eb-text-800, #060E18);
+  font-size: 14px;
+  line-height: 1.55;
+  box-sizing: border-box;
+}
+.jd-company-location-line svg { flex: none; margin-top: 1px; color: var(--eb-secondary-600, #2C9661); }
+.jd-company-map { position: relative; height: 190px; overflow: hidden; border-top: 1px solid var(--jd-border); background: #FAFAFA; }
+.jd-company-map > svg { display: block; width: 100%; height: 100%; }
+.jd-company-map-pin { position: absolute; top: 50%; left: 50%; color: var(--eb-primary-500, #FF6500); filter: drop-shadow(0 3px 4px rgba(6, 14, 24, 0.2)); transform: translate(-50%, -70%); }
+.jd-company-map-link {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--jd-border);
+  border-radius: 10px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(6, 14, 24, 0.08);
+  color: var(--eb-text-800, #060E18);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.jd-company-map-link:hover { color: var(--eb-primary-600, #E85C00); border-color: var(--eb-primary-200, #FFB88A); }
 
 /* ---------- Việc làm liên quan ---------- */
 .jd-related-list { display: flex; flex-direction: column; gap: 12px; }
@@ -474,14 +553,15 @@
   .jd-overview-row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
   .jd-overview dt { padding-top: 0; }
   .jd-actions-inline { max-width: none; }
-  .jd-rating-box { padding: 18px 14px 16px; }
-  .jd-rating-head { flex-direction: column; gap: 10px; }
-  .jd-rating-status { align-self: flex-start; }
+  .jd-rating-box { padding: 16px; }
   .jd-rating-options { grid-template-columns: minmax(0, 1fr); gap: 6px; margin-top: 16px; }
   .jd-rating-options::before { top: 17px; right: auto; bottom: 17px; left: 16px; width: 3px; height: auto; }
   .jd-rating-btn { min-height: 44px; flex-direction: row; justify-content: flex-start; gap: 12px; padding: 3px 0; font-size: 12px; text-align: left; }
   .jd-rating-marker { width: 34px; height: 34px; }
   .jd-rating-label { max-width: none; }
+  .jd-company-profile-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 16px; }
+  .jd-company-map { height: 160px; }
+  .jd-company-map-link { right: 10px; bottom: 10px; }
   .jd-related-top { flex-direction: column; gap: 2px; }
   .jd-related-logo { width: 56px; height: 56px; }
   .jd-section-head { flex-direction: column; align-items: flex-start; }

@@ -10,10 +10,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/design-tokens.css?v=eb_colors_20261007">
-  <link rel="stylesheet" href="css/navbar.css?v=eb_colors_20261008">
-  <link rel="stylesheet" href="css/home.css?v=8.9_ecosystem_wheel">
+  <link rel="stylesheet" href="css/navbar.css?v=pill_20261009">
+  <link rel="stylesheet" href="css/home.css?v=pill_20261009">
   <link rel="stylesheet" href="css/location-picker.css?v=eb_colors_20261007">
-  <link rel="stylesheet" href="css/category-filter-modal.css?v=eb_colors_20261007">
+  <link rel="stylesheet" href="css/category-filter-modal.css?v=mobile_hide_20261009">
+  <link rel="stylesheet" href="css/mobile-typography.css?v=mobile_type_20261011">
   <style>
     /* Menu dropdown luôn căn trái 100% */
     .site-header .dropdown-menu {
@@ -143,7 +144,7 @@
     .hero-search-box {
       background: #FFFFFF;
       border: 1.5px solid #FF6500;
-      border-radius: 14px;
+      border-radius: 30px;
       box-shadow: 0 4px 20px -2px rgba(255, 101, 0, 0.16), 0 2px 6px -1px rgba(6, 14, 24, 0.06), 0 0 0 3px rgba(255, 101, 0, 0.08);
       height: 60px;
       min-height: 60px;
@@ -268,7 +269,7 @@
       background: linear-gradient(135deg, #FF8433 0%, #FF6500 100%);
       color: #FFF !important;
       border: none;
-      border-radius: 10px;
+      border-radius: 999px;
       padding: 0 24px;
       height: 46px;
       font-size: 15px;
@@ -1013,9 +1014,14 @@
         height: auto !important;
         border-radius: 14px !important;
       }
-      .sponsor-mini-a { grid-column: 1; grid-row: 2; min-height: 120px; aspect-ratio: 16 / 10; height: auto !important; }
-      .sponsor-mini-b { grid-column: 2; grid-row: 2; min-height: 120px; aspect-ratio: 16 / 10; height: auto !important; }
-      .sponsor-mini-wide { grid-column: 1 / 3; grid-row: 3; min-height: 120px; aspect-ratio: 21 / 9; height: auto !important; }
+      /* Mobile: chỉ hiển thị 1 banner (slider), người dùng bấm nút/chấm để chuyển */
+      .sponsor-mini { display: none !important; }
+      .hero-ad-showcase.bento-sponsor-grid { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
+      .sponsor-primary { grid-column: 1; }
+      .sponsor-slider-btn { opacity: 1; width: 32px; height: 44px; }
+      .sponsor-slider-dots { padding: 8px 12px; }
+      .sponsor-dot { width: 10px; height: 10px; }
+      .sponsor-dot.active { width: 24px; }
       .hero-search-sticky-bar.is-sticky {
         padding: 6px 0;
       }
@@ -1756,21 +1762,24 @@
       cursor: not-allowed;
     }
 
-    /* POPUP PREVIEW KHI HOVER VÀO TÊN JOB */
+    /* POPUP PREVIEW KHI HOVER VÀO TÊN JOB (Được thiết kế lại tinh tế, chuẩn EasyCV, trực quan) */
     .job-preview-popover {
       position: fixed;
       z-index: 99999;
-      width: 380px;
+      width: min(490px, calc(100vw - 32px));
+      max-height: min(680px, calc(100vh - 36px));
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
       background: #FFFFFF;
-      border-radius: 14px;
-      border: 1.5px solid #FFCFB0;
-      box-shadow: 0 20px 45px -10px rgba(6, 14, 24, 0.22), 0 8px 18px -4px rgba(6, 14, 24, 0.1);
-      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid #FFE2D1;
+      box-shadow: 0 20px 48px -10px rgba(15, 23, 42, 0.18), 0 6px 18px -4px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(255, 101, 0, 0.1);
       pointer-events: auto;
       opacity: 0;
       visibility: hidden;
       transform: translateY(6px);
-      transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
+      transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
     }
     .job-preview-popover.is-visible {
       opacity: 1;
@@ -1778,163 +1787,404 @@
       transform: translateY(0);
     }
     [data-theme="dark"] .job-preview-popover {
-      background: #333333;
-      border-color: #6B2A00;
+      background: #1A1D21;
+      border-color: rgba(255, 101, 0, 0.25);
       color: #F8FAFC;
-      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 101, 0, 0.15);
+    }
+    .job-preview-body {
+      flex: 1 1 auto;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding: 18px 20px 10px 20px;
+    }
+    .job-preview-body::-webkit-scrollbar {
+      width: 5px;
+    }
+    .job-preview-body::-webkit-scrollbar-track {
+      background: #F8FAFC;
+      border-radius: 10px;
+    }
+    .job-preview-body::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 10px;
+    }
+    .job-preview-body::-webkit-scrollbar-thumb:hover {
+      background: #94A3B8;
+    }
+    [data-theme="dark"] .job-preview-body::-webkit-scrollbar-track {
+      background: #22262B;
+    }
+    [data-theme="dark"] .job-preview-body::-webkit-scrollbar-thumb {
+      background: #3E454F;
     }
     .job-preview-header {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
+      gap: 14px;
       margin-bottom: 12px;
       padding-bottom: 12px;
       border-bottom: 1px solid #F1F5F9;
     }
     [data-theme="dark"] .job-preview-header {
-      border-bottom-color: #333333;
+      border-bottom-color: #2D333B;
+    }
+    .job-preview-logo-wrapper {
+      position: relative;
+      flex-shrink: 0;
     }
     .job-preview-logo {
-      width: 48px;
-      height: 48px;
-      border-radius: 8px;
-      border: 1px solid #E6E6E6;
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      border: 1px solid #E2E8F0;
       object-fit: contain;
       background: #FFFFFF;
-      padding: 2px;
-      flex-shrink: 0;
+      padding: 5px;
+      display: block;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+    }
+    [data-theme="dark"] .job-preview-logo {
+      background: #252A30;
+      border-color: #383F47;
     }
     .job-preview-title-box {
       flex: 1;
       min-width: 0;
     }
     .job-preview-title {
-      font-size: 14.5px;
+      font-size: 16px;
       font-weight: 700;
-      color: var(--text-primary, #060E18);
+      color: var(--text-primary, #0F172A);
       line-height: 1.35;
-      margin-bottom: 4px;
+      margin: 0 0 5px 0;
+      letter-spacing: -0.01em;
+    }
+    .job-preview-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .job-preview-title a:hover {
+      color: #FF6500;
+    }
+    [data-theme="dark"] .job-preview-title {
+      color: #FFFFFF;
+    }
+    .job-preview-company-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 7px;
+      font-size: 13px;
     }
     .job-preview-company {
+      font-size: 13px;
+      color: var(--text-secondary, #475569);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .job-preview-company:hover {
+      color: #FF6500;
+    }
+    [data-theme="dark"] .job-preview-company {
+      color: #94A3B8;
+    }
+    .job-preview-dot {
+      color: #94A3B8;
+      font-size: 11px;
+      user-select: none;
+      line-height: 1;
+    }
+    .job-preview-time {
       font-size: 12px;
-      color: var(--text-muted, #545454);
+      color: #64748B;
+      display: inline-flex;
+      align-items: center;
+      gap: 3.5px;
       font-weight: 500;
-      text-transform: uppercase;
+    }
+    [data-theme="dark"] .job-preview-time {
+      color: #94A3B8;
     }
     .job-preview-quick-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 12px;
+      gap: 7px;
+      margin-bottom: 14px;
+      align-items: center;
     }
     .job-preview-badge {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 11.5px;
+      gap: 5.5px;
+      padding: 5px 11px;
+      border-radius: 8px;
+      font-size: 12.5px;
       font-weight: 600;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+    .job-preview-badge svg {
+      flex-shrink: 0;
     }
     .job-preview-badge-salary {
-      background: #FFF0E6;
-      color: #E85C00;
-      border: 1px solid #FFB88A;
+      background: #FFF7ED;
+      color: #EA580C;
+      border: 1px solid #FFEDD5;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    [data-theme="dark"] .job-preview-badge-salary {
+      background: rgba(255, 101, 0, 0.14);
+      color: #FF9854;
+      border-color: rgba(255, 101, 0, 0.3);
     }
     .job-preview-badge-loc {
-      background: #F1F5F9;
-      color: #545454;
+      background: #F8FAFC;
+      color: #334155;
+      border: 1px solid #E2E8F0;
+      font-weight: 500;
+    }
+    [data-theme="dark"] .job-preview-badge-loc {
+      background: #252A30;
+      color: #CBD5E1;
+      border-color: #383F47;
     }
     .job-preview-badge-exp {
       background: #EFF6FF;
-      color: #2563EB;
+      color: #1D4ED8;
+      border: 1px solid #DBEAFE;
+      font-weight: 500;
     }
-    .job-preview-badge-lightning {
-      background: #FEF3C7;
-      color: #D97706;
-      border: 1px solid #FCD34D;
-      font-weight: 700;
+    [data-theme="dark"] .job-preview-badge-exp {
+      background: rgba(29, 78, 216, 0.15);
+      color: #60A5FA;
+      border-color: rgba(29, 78, 216, 0.32);
+    }
+    .job-preview-section {
+      margin-bottom: 12px;
+    }
+    .job-preview-section:last-child {
+      margin-bottom: 4px;
     }
     .job-preview-section-title {
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.4px;
-      color: #8A8A8A;
+      letter-spacing: 0.04em;
+      color: #475569;
       margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .job-preview-section-title svg {
+      flex-shrink: 0;
+    }
+    .job-preview-section-desc .job-preview-section-title svg {
+      color: #FF6500;
+    }
+    .job-preview-section-perks .job-preview-section-title svg {
+      color: #10B981;
+    }
+    .job-preview-section-skills .job-preview-section-title svg {
+      color: #6366F1;
+    }
+    [data-theme="dark"] .job-preview-section-perks .job-preview-section-title svg {
+      color: #34D399;
+    }
+    [data-theme="dark"] .job-preview-section-skills .job-preview-section-title svg {
+      color: #818CF8;
+    }
+    [data-theme="dark"] .job-preview-section-title {
+      color: #94A3B8;
     }
     .job-preview-desc-list {
-      margin: 0 0 12px 0;
-      padding-left: 18px;
-      font-size: 12px;
-      line-height: 1.5;
-      color: #333333;
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
     }
-    [data-theme="dark"] .job-preview-desc-list {
-      color: #B0B0B0;
+    .job-preview-desc-list li {
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #334155;
+      position: relative;
+      padding-left: 15px;
+    }
+    [data-theme="dark"] .job-preview-desc-list li {
+      color: #CBD5E1;
+    }
+    .job-preview-desc-list li::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 7px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #FF6500;
+    }
+    .job-preview-perks-list {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .job-preview-perks-list li {
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #334155;
+      position: relative;
+      padding-left: 18px;
+    }
+    [data-theme="dark"] .job-preview-perks-list li {
+      color: #CBD5E1;
+    }
+    .job-preview-perks-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 2px;
+      top: 0;
+      color: #10B981;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    [data-theme="dark"] .job-preview-perks-list li::before {
+      color: #34D399;
     }
     .job-preview-skills-wrap {
       display: flex;
       flex-wrap: wrap;
-      gap: 5px;
-      margin-bottom: 14px;
+      gap: 6px;
     }
     .job-preview-skill-pill {
-      font-size: 11px;
-      padding: 2px 7px;
-      border-radius: 4px;
+      font-size: 12px;
+      padding: 3.5px 9px;
+      border-radius: 6px;
       background: #F1F5F9;
-      color: #545454;
+      color: #334155;
+      border: 1px solid #E2E8F0;
       font-weight: 500;
+      transition: background-color 0.15s ease;
     }
     [data-theme="dark"] .job-preview-skill-pill {
-      background: #333333;
-      color: #E6E6E6;
+      background: #252A30;
+      border-color: #383F47;
+      color: #CBD5E1;
     }
     .job-preview-actions {
+      flex: 0 0 auto;
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-top: 12px;
-      padding-top: 12px;
+      gap: 10px;
+      padding: 12px 20px 14px 20px;
       border-top: 1px solid #F1F5F9;
+      background: #FAFAFA;
     }
     [data-theme="dark"] .job-preview-actions {
-      border-top-color: #333333;
+      background: #15181C;
+      border-top-color: #2D333B;
     }
     .job-preview-btn-apply {
       flex: 1;
-      padding: 8px 14px;
-      border-radius: 8px;
+      height: 42px;
+      padding: 0 16px;
+      border-radius: 9px;
       background: #FF6500;
       color: #FFFFFF;
       font-weight: 700;
-      font-size: 12.5px;
+      font-size: 13.5px;
       text-align: center;
       text-decoration: none;
-      transition: background 0.18s ease;
+      transition: all 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      box-shadow: 0 3px 10px rgba(255, 101, 0, 0.28);
+    }
+    .job-preview-btn-apply:hover {
+      background: #E65100;
+      transform: translateY(-1px);
+      box-shadow: 0 5px 14px rgba(255, 101, 0, 0.38);
+    }
+    .job-preview-btn-detail {
+      height: 42px;
+      padding: 0 16px;
+      border-radius: 9px;
+      border: 1.5px solid #FFD8BE;
+      background: #FFF7ED;
+      color: #EA580C;
+      font-weight: 700;
+      font-size: 13.5px;
+      text-decoration: none;
+      transition: all 0.18s ease;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
     }
-    .job-preview-btn-apply:hover {
-      background: #E85C00;
-    }
-    .job-preview-btn-detail {
-      padding: 8px 14px;
-      border-radius: 8px;
-      border: 1px solid var(--border-color, #B0B0B0);
-      background: transparent;
-      color: var(--text-primary, #333333);
-      font-weight: 600;
-      font-size: 12.5px;
-      text-decoration: none;
-      transition: all 0.18s ease;
-    }
     .job-preview-btn-detail:hover {
+      background: #FFEDD5;
+      border-color: #FDBA74;
+      color: #C2410C;
+      transform: translateY(-1px);
+    }
+    [data-theme="dark"] .job-preview-btn-detail {
+      background: rgba(255, 101, 0, 0.12);
+      border-color: rgba(255, 101, 0, 0.3);
+      color: #FF9854;
+    }
+    [data-theme="dark"] .job-preview-btn-detail:hover {
+      background: rgba(255, 101, 0, 0.22);
+      border-color: rgba(255, 101, 0, 0.5);
+      color: #FFA96B;
+    }
+    .job-preview-btn-save {
+      width: 42px;
+      height: 42px;
+      border-radius: 9px;
+      border: 1.5px solid #E2E8F0;
+      background: #FFFFFF;
+      color: #64748B;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      flex-shrink: 0;
+    }
+    .job-preview-btn-save:hover {
       border-color: #FF6500;
       color: #FF6500;
+      background: #FFF7ED;
+    }
+    .job-preview-btn-save.active {
+      border-color: #FECACA;
+      background: #FEF2F2;
+      color: #EF4444;
+    }
+    [data-theme="dark"] .job-preview-btn-save {
+      background: #252A30;
+      border-color: #383F47;
+      color: #94A3B8;
+    }
+    [data-theme="dark"] .job-preview-btn-save:hover {
+      border-color: #FF6500;
+      color: #FF6500;
+      background: #352317;
+    }
+    [data-theme="dark"] .job-preview-btn-save.active {
+      background: #3A1B1B;
+      border-color: #7F1D1D;
+      color: #F87171;
     }
   </style>
   <!-- Khử triệt để thanh cuộn dọc/ngang xám trên Mobile Web và Simulator -->
@@ -4126,7 +4376,7 @@
   <script src="js/navbar.js?v=7.1_mobile_float"></script>
   <script src="js/category-filter-modal.js?v=eb_colors_20261007"></script>
   <script src="js/jobs-data.js?v=homepage_detail_links_20261008"></script>
-  <script src="js/home.js?v=20261008_homepage_detail_links"></script>
+  <script src="js/home.js?v=20261009_preview_redesign"></script>
   <script src="js/location-picker.js?v=3.0_clean"></script>
 
   <!-- Floating View Mode Switcher Box (Rìa bên phải màn hình) -->

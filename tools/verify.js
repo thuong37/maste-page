@@ -2,7 +2,7 @@
 // Usage: node tools/verify.js <page> [width ...]   e.g.  node tools/verify.js viec-lam 1440 375
 // Env: VERIFY_H=<px> window height; VERIFY_FULL=1 removes min-heights so a tall window shows the footer
 // Output: scratch/shot-<page>-<width>.png  (scratch/ is git-ignored)
-const http = require('http'), fs = require('fs'), path = require('path');
+const http = require('http'), fs = require('fs'), os = require('os'), path = require('path');
 const { execFile } = require('child_process');
 const ROOT = path.resolve(__dirname, '..');
 const CHROME = process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Application/chrome.exe';
@@ -23,11 +23,19 @@ const server = http.createServer((req, res) => {
 }).listen(0, async () => {
   const port = server.address().port;
   fs.mkdirSync(path.join(ROOT, 'scratch'), { recursive: true });
-  for (const width of widths) {
-    const out = path.join(ROOT, 'scratch', `shot-${page}-${width}.png`);
-    await run(CHROME, ['--headless=new', '--disable-gpu', '--no-first-run', `--user-data-dir=${path.join(require('os').tmpdir(), 'easycv-verify-profile')}`, '--hide-scrollbars', `--window-size=${width},${process.env.VERIFY_H || 900}`,
-      '--virtual-time-budget=4000', `--screenshot=${out}`, `http://localhost:${port}/${page}.html`], { timeout: 30000 });
-    console.log('saved', path.relative(ROOT, out));
+  const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'easycv-verify-'));
+  const [pageBase, query = ''] = page.split('?');
+  const pageUrl = `${pageBase}.html${query ? '?' + query : ''}`;
+  const pageSlug = page.replace(/[?&=]/g, '_');
+  try {
+    for (const width of widths) {
+      const out = path.join(ROOT, 'scratch', `shot-${pageSlug}-${width}.png`);
+      await run(CHROME, ['--headless=new', '--no-sandbox', '--disable-gpu', '--no-first-run', `--user-data-dir=${profile}`, '--hide-scrollbars', `--window-size=${width},${process.env.VERIFY_H || 900}`,
+        '--virtual-time-budget=4000', `--screenshot=${out}`, `http://localhost:${port}/${pageUrl}`], { timeout: 30000 });
+      console.log('saved', path.relative(ROOT, out));
+    }
+  } finally {
+    server.close();
+    fs.rmSync(profile, { recursive: true, force: true });
   }
-  server.close();
 });

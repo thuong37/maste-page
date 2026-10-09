@@ -147,7 +147,7 @@
 .job-search-box {
   background: #FFFFFF;
   border: 1.5px solid #FF6500;
-  border-radius: 14px;
+  border-radius: 30px;
   box-shadow: 0 4px 20px -2px rgba(255, 101, 0, 0.16), 0 2px 6px -1px rgba(6, 14, 24, 0.06), 0 0 0 3px rgba(255, 101, 0, 0.08);
   height: 60px;
   min-height: 60px;
@@ -303,7 +303,7 @@
   background: linear-gradient(135deg, #FF8433 0%, #FF6500 100%);
   color: #FFF !important;
   border: none;
-  border-radius: 10px;
+  border-radius: 999px;
   padding: 0 24px;
   height: 46px;
   font-size: 15px;
@@ -490,7 +490,7 @@
   border-radius: 6px;
   background: transparent;
   color: #8A8A8A;
-  font-size: 13px;
+  font-size: 14.5px;
   cursor: pointer;
   flex-shrink: 0;
   transition: all 0.15s ease;
@@ -2865,7 +2865,7 @@
   display: flex;
   gap: 18px;
   align-items: flex-start;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .detail-company-logo {
@@ -2967,6 +2967,35 @@
   align-items: center;
   gap: 8px;
   transition: all 0.15s;
+}
+
+.btn-detail-view-main {
+  margin-left: auto;
+  background: transparent;
+  border: 0;
+  color: var(--eb-secondary-700, #22754C);
+  border-radius: 4px;
+  padding: 3px 0 3px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-detail-view-main:hover {
+  background: transparent;
+  color: var(--eb-secondary-800, #1A5B3B);
+}
+
+.btn-detail-view-main svg {
+  flex-shrink: 0;
 }
 
 .btn-detail-save-main:hover {
@@ -3494,7 +3523,7 @@
     align-items: stretch;
     padding: 10px;
     gap: 8px;
-    border-radius: 14px;
+    border-radius: 24px;
     width: 100%;
     box-sizing: border-box;
   }
@@ -3532,7 +3561,7 @@
     justify-content: center;
     height: 44px;
     font-size: 15px;
-    border-radius: 10px;
+    border-radius: 999px;
   }
   .quick-filter-tags {
     display: flex;
@@ -4474,7 +4503,7 @@ body.saved-filter-dialog-open {
   body .detail-quick-pills {
     margin-top: 8px;
   }
-  /* Nút: "Ứng tuyển ngay" chiếm cả hàng, "Lưu" + "Chia sẻ" chia đôi hàng dưới */
+  /* Nút ứng tuyển và lưu xếp thành hai hàng trên màn hình nhỏ */
   body .detail-cta-group {
     display: grid !important;
     grid-template-columns: 1fr 1fr;
@@ -4489,6 +4518,7 @@ body.saved-filter-dialog-open {
   }
   body .detail-cta-group .btn-detail-save-main,
   body .detail-cta-group .btn-detail-share-btn {
+    grid-column: 1 / -1;
     width: 100%;
     justify-content: center;
     white-space: nowrap;
