@@ -92,7 +92,7 @@
       // 1. Sales & Kinh doanh
       {
         id: 1,
-        logo: 'assets/logos/company-vikimco-64.svg',
+        logo: 'assets/logos/companies/company-vikimco-64.svg',
         title: 'Giám Đốc Kinh Doanh Vikimco Toàn Quốc',
         company: 'CÔNG TY CỔ PHẦN TẬP ĐOÀN VIKIMCO',
         salary: '$1,000–1,500 / tháng',
@@ -105,7 +105,7 @@
       },
       {
         id: 2,
-        logo: 'assets/logos/company-vikimco-64.svg',
+        logo: 'assets/logos/companies/company-vikimco-64.svg',
         title: 'Chuyên Viên Khách Hàng Doanh Nghiệp (RM)',
         company: 'Ngân hàng Techcombank',
         salary: '20 - 35 triệu',
@@ -118,7 +118,7 @@
       },
       {
         id: 3,
-        logo: 'assets/logos/company-techcombank.svg',
+        logo: 'assets/logos/companies/company-techcombank.svg',
         title: 'Trưởng Phòng Kinh Doanh (B2B Sales Lead)',
         company: 'Tập đoàn Mai Linh',
         salary: '25 - 40 triệu',
@@ -131,7 +131,7 @@
       },
       {
         id: 4,
-        logo: 'assets/logos/company-mailinh.svg',
+        logo: 'assets/logos/companies/company-mailinh.svg',
         title: 'Telesales Chuyên Nghiệp (Kinh Doanh & CSKH)',
         company: 'Công ty Cổ phần VNPAY',
         salary: '12 - 22 triệu',
@@ -144,7 +144,7 @@
       },
       {
         id: 5,
-        logo: 'assets/logos/company-vnpay.svg',
+        logo: 'assets/logos/companies/company-vnpay.svg',
         title: 'Sales Logistics & Cước Vận Tải Quốc Tế',
         company: 'Bee Logistics Corporation',
         salary: '15 - 30 triệu',
@@ -157,7 +157,7 @@
       },
       {
         id: 6,
-        logo: 'assets/logos/company-beelogistics.svg',
+        logo: 'assets/logos/companies/company-beelogistics.svg',
         title: 'Chuyên Viên Kinh Doanh Bất Động Sản',
         company: 'Tập đoàn Đất Xanh',
         salary: '15 - 50 triệu',
@@ -171,7 +171,7 @@
       // 2. IT & Phần mềm
       {
         id: 10,
-        logo: 'assets/logos/company-fpt-64.svg',
+        logo: 'assets/logos/companies/company-fpt.png',
         title: 'Senior IT Infrastructure Officer',
         company: 'TẬP ĐOÀN CÔNG NGHỆ FPT',
         salary: 'Thương lượng',
@@ -184,7 +184,7 @@
       },
       {
         id: 11,
-        logo: 'assets/logos/company-fpt.svg',
+        logo: 'assets/logos/companies/company-fpt.png',
         title: 'Senior ReactJS Frontend Developer',
         company: 'KMS Technology',
         salary: '30 - 45 triệu',
@@ -197,7 +197,7 @@
       },
       {
         id: 14,
-        logo: 'assets/logos/company-kms.svg',
+        logo: 'assets/logos/companies/company-kms.svg',
         title: 'Backend Java / Spring Boot Engineer',
         company: 'Tiki Corporation',
         salary: '35 - 50 triệu',
@@ -210,7 +210,7 @@
       },
       {
         id: 12,
-        logo: 'assets/logos/company-tiki.svg',
+        logo: 'assets/logos/companies/company-tiki.svg',
         title: 'Senior UI/UX & Product Designer',
         company: 'MoMo E-Wallet',
         salary: '25 - 40 triệu',
@@ -224,7 +224,7 @@
       // 3. Kế toán & Tài chính
       {
         id: 7,
-        logo: 'assets/logos/company-mua-he-64.png',
+        logo: 'assets/logos/companies/company-mua-he-64.png',
         title: 'Kế Toán Tổng Hợp (Mảng Giải Trí)',
         company: 'CÔNG TY TNHH TRUYỀN THÔNG MÙA HÈ',
         salary: '20 - 25 triệu',
@@ -237,7 +237,7 @@
       },
       {
         id: 8,
-        logo: 'assets/logos/company-mua-he-64.png',
+        logo: 'assets/logos/companies/company-mua-he-64.png',
         title: 'Kế Toán Thuế & Kiểm Toán Nội Bộ',
         company: 'PwC Vietnam',
         salary: '22 - 32 triệu',
@@ -251,7 +251,7 @@
       // 4. Marketing & Truyền thông
       {
         id: 15,
-        logo: 'assets/logos/company-pwc.svg',
+        logo: 'assets/logos/companies/company-pwc.svg',
         title: 'Trưởng Phòng Marketing & Truyền Thông',
         company: 'Masan Consumer Holdings',
         salary: '35 - 55 triệu',
@@ -264,7 +264,7 @@
       },
       {
         id: 16,
-        logo: 'assets/logos/company-masan.svg',
+        logo: 'assets/logos/companies/company-masan.png',
         title: 'Digital Marketing & Performance Ads Lead',
         company: 'VinFast Auto',
         salary: '25 - 40 triệu',
@@ -277,7 +277,7 @@
       },
       {
         id: 17,
-        logo: 'assets/logos/company-vinfast.svg',
+        logo: 'assets/logos/companies/company-vinfast.svg',
         title: 'Content Marketing Lead & Sáng Tạo Nội Dung',
         company: 'VCCorp Corporation',
         salary: '18 - 28 triệu',
@@ -291,7 +291,7 @@
       // 5. Ngành nghề khác
       {
         id: 18,
-        logo: 'assets/logos/company-kimmari-64.svg',
+        logo: 'assets/logos/companies/company-kimmari-64.svg',
         title: 'Quản Lý Nhà Hàng Kimmari Chicken',
         company: 'CHUỖI NHÀ HÀNG KIMMARI CHICKEN',
         salary: '15–25tr ₫/tháng',
@@ -304,7 +304,7 @@
       },
       {
         id: 19,
-        logo: 'assets/logos/company-tanviet-64.svg',
+        logo: 'assets/logos/companies/company-tanviet-64.svg',
         title: 'Technical Service Engineer – Industrial Printer',
         company: 'CÔNG TY TNHH THIẾT BỊ CÔNG NGHIỆP TÂN VIỆT',
         salary: 'Thương lượng',
@@ -317,7 +317,7 @@
       },
       {
         id: 20,
-        logo: 'assets/logos/company-tanviet-64.svg',
+        logo: 'assets/logos/companies/company-tanviet-64.svg',
         title: 'Chuyên Viên Tuyển Dụng & Đào Tạo (HR Specialist)',
         company: 'Vinamilk Corporation',
         salary: '18 - 26 triệu',

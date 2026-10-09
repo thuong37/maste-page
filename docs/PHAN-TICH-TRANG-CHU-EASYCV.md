@@ -40,12 +40,11 @@ Trước khi sửa mã, Agent **PHẢI** đối chiếu lại các tệp nguồn
 
 | Mức | Nguồn | Vai trò |
 |---:|---|---|
-| 1 | `_bmad-output/planning-artifacts/prd.md` | Tầm nhìn, hành trình, phạm vi MVP và yêu cầu chức năng nền |
-| 2 | Quyết định mới của người dùng và implementation artifacts | Thay đổi có chủ đích sau PRD |
-| 3 | `index.html`, `css/home.css`, `css/navbar.css`, `css/location-picker.css`, `css/category-filter-modal.css` | Cấu trúc và giao diện as-is |
-| 4 | `js/home.js`, `js/navbar.js`, `js/location-picker.js`, `js/category-filter-modal.js` | Hành vi as-is |
-| 5 | `assets/design-tokens.css`, `docs/brand-guidelines.md` | Token và chuẩn nhận diện |
-| 6 | Thư mục `public/` | Bản mirror triển khai tĩnh; phải đồng bộ khi sửa mã tương ứng |
+| 1 | Quyết định mới nhất của người dùng | Yêu cầu và thay đổi có chủ đích cần ưu tiên |
+| 2 | `index.html`, `css/home.css`, `css/navbar.css`, `css/location-picker.css`, `css/category-filter-modal.css` | Cấu trúc và giao diện as-is |
+| 3 | `js/home.js`, `js/navbar.js`, `js/location-picker.js`, `js/category-filter-modal.js` | Hành vi as-is |
+| 4 | `assets/design-tokens.css`, `docs/brand-guidelines.md` | Token và chuẩn nhận diện |
+| 5 | Thư mục `public/` | Bản mirror triển khai tĩnh; phải đồng bộ khi sửa mã tương ứng |
 
 ### 2.1. Xử lý mâu thuẫn
 

@@ -201,8 +201,8 @@
   /* ==========================================================================
      8. Official EasyCV Brand Asset References
      ========================================================================== */
-  --easycv-logo-light: url('/assets/logo/easycv-logo-transparent.png');
-  --easycv-logo-dark: url('/assets/logo/easycv-logo-dark.png');
-  --easycv-logo-icon: url('/assets/logo/easycv-icon.png');
-  --easycv-logo-svg: url('/assets/logo/easycv-logo.svg');
+  --easycv-logo-light: url('/assets/logos/easycv-logo-transparent.png');
+  --easycv-logo-dark: url('/assets/logos/easycv-logo-dark.png');
+  --easycv-logo-icon: url('/assets/logos/easycv-icon.png');
+  --easycv-logo-svg: url('/assets/logos/easycv-logo.svg');
 }

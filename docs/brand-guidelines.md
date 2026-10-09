@@ -102,12 +102,12 @@ Logo EasyCV bao gồm 2 thành phần chính:
 
 | Asset Type | Canonical Workspace Path | Public Web Path (HTML / Next / Vite) | Best Use Case |
 |------------|---------------------------|--------------------------------------|---------------|
-| **Full Horizontal (Transparent)** | `assets/logos/easycv-logo-transparent.png` | `public/assets/logo/easycv-logo-transparent.png` | Navbar nền sáng, Hero banner, Footer sáng |
-| **Full Horizontal (Dark Mode)** | `assets/logos/easycv-logo-dark.png` | `public/assets/logo/easycv-logo-dark.png` | Navbar nền tối (`#0F172A`), Banner sự kiện tuyển dụng |
-| **Full Horizontal (Original)** | `assets/logos/easycv-logo.png` | `public/assets/logo/easycv-logo.png` | In ấn, tài liệu PDF, đối tác tuyển dụng |
-| **Icon Only (Square 256x256)** | `assets/logos/easycv-icon.png` | `public/assets/logo/easycv-icon.png` | Favicon (`public/favicon.png`), Mobile App icon, Avatar |
-| **Vector Scalable (SVG)** | `assets/logos/easycv-logo.svg` | `public/assets/logo/easycv-logo.svg` | Hiển thị responsive không vỡ nét mọi độ phân giải |
-| **Vector Icon (SVG)** | `assets/logos/easycv-icon.svg` | `public/assets/logo/easycv-icon.svg` | Compact Header, Sidebar thu gọn, App Header |
+| **Full Horizontal (Transparent)** | `assets/logos/easycv-logo-transparent.png` | `public/assets/logos/easycv-logo-transparent.png` | Navbar nền sáng, Hero banner, Footer sáng |
+| **Full Horizontal (Dark Mode)** | `assets/logos/easycv-logo-dark.png` | `public/assets/logos/easycv-logo-dark.png` | Navbar nền tối (`#0F172A`), Banner sự kiện tuyển dụng |
+| **Full Horizontal (Original)** | `assets/logos/easycv-logo.png` | `public/assets/logos/easycv-logo.png` | In ấn, tài liệu PDF, đối tác tuyển dụng |
+| **Icon Only (Square 256x256)** | `assets/logos/easycv-icon.png` | `public/assets/logos/easycv-icon.png` | Favicon (`public/favicon.png`), Mobile App icon, Avatar |
+| **Vector Scalable (SVG)** | `assets/logos/easycv-logo.svg` | `public/assets/logos/easycv-logo.svg` | Hiển thị responsive không vỡ nét mọi độ phân giải |
+| **Vector Icon (SVG)** | `assets/logos/easycv-icon.svg` | `public/assets/logos/easycv-icon.svg` | Compact Header, Sidebar thu gọn, App Header |
 | **Original Anchor File** | `EASYCV_LOGO_EXACT_FROM_USER_ANCHOR.png` | *(Root Workspace)* | File gốc do user cung cấp |
 
 ### Clear Space & Minimum Sizes

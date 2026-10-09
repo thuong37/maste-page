@@ -77,6 +77,28 @@ function mirror(rel) {
   }
 }
 
+function pruneMirror(rel) {
+  const from = path.join(ROOT, rel), to = path.join(ROOT, 'public', rel);
+  if (!fs.existsSync(to) || !fs.statSync(to).isDirectory()) return;
+  for (const entry of fs.readdirSync(to)) {
+    const sourceEntry = path.join(from, entry);
+    const publicEntry = path.join(to, entry);
+    if (!fs.existsSync(sourceEntry)) {
+      if (mode === '--check') {
+        dirty = true;
+        console.log('STALE:', path.relative(ROOT, publicEntry));
+      } else {
+        fs.rmSync(publicEntry, { recursive: true, force: true });
+        console.log('removed stale', path.relative(ROOT, publicEntry));
+      }
+      continue;
+    }
+    if (fs.statSync(sourceEntry).isDirectory() && fs.statSync(publicEntry).isDirectory()) {
+      pruneMirror(path.join(rel, entry));
+    }
+  }
+}
+
 for (const p of PAGES) {
   const f = path.join(ROOT, `${p}.html`);
   let src = read(f);
@@ -85,6 +107,7 @@ for (const p of PAGES) {
   if (next !== src) write(f, next);
 }
 if (mode !== '--init') {
+  COPY_DIRS.forEach(pruneMirror);
   [...PAGES.map((p) => `${p}.html`), ...COPY_DIRS, ...COPY_FILES].forEach(mirror);
   if (mode === '--check' && dirty) process.exit(1);
   console.log(dirty ? '' : 'build OK');
