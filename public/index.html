@@ -830,40 +830,30 @@
       height: 100%;
       opacity: 0;
       visibility: hidden;
-      transform: scale(1.02);
-      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
       z-index: 1;
       pointer-events: none;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
       text-decoration: none;
     }
     .sponsor-slide.active {
       opacity: 1;
       visibility: visible;
-      transform: scale(1);
       z-index: 2;
       pointer-events: auto;
     }
     .sponsor-slide img {
       width: 100%;
       height: 100%;
+      max-width: 100%;
+      max-height: 100%;
       object-fit: cover;
       object-position: center;
       display: block;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    /* Căn trọng tâm vào con người cho tấm ảnh thứ 2 (cụm kỹ sư trẻ sáng tạo) */
-    .sponsor-slide img.sponsor-img-focus-people,
-    .sponsor-slide-innovation img {
-      object-position: 16% 68% !important;
-      transform: scale(1.12) !important;
-      transform-origin: 18% 65% !important;
-    }
-    .sponsor-primary:hover .sponsor-slide-innovation.active img {
-      transform: scale(1.15) !important;
-    }
-    .sponsor-primary:hover .sponsor-slide.active img {
-      transform: scale(1.02);
+      background: #FFFFFF;
     }
 
     /* 2 Nút chuyển đổi thanh mảnh dính sát mép rìa (bán nguyệt tinh tế) */
@@ -955,13 +945,15 @@
     /* 2 ô banner phụ: xếp dọc bên phải, chỉ hiển thị ảnh banner */
     .sponsor-mini {
       position: relative;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 0 !important;
       border-radius: 14px;
       overflow: hidden;
       border: 1.5px solid #FFCFB0;
       box-shadow: 0 8px 20px -6px rgba(6, 14, 24, 0.08);
-      background: #060E18;
+      background: #FFFFFF;
       text-decoration: none;
       height: 100% !important;
       min-height: 0 !important;
@@ -975,13 +967,12 @@
     .sponsor-mini img {
       width: 100%;
       height: 100%;
+      max-width: 100%;
+      max-height: 100%;
       object-fit: cover;
       object-position: center;
       display: block;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .sponsor-mini:hover img {
-      transform: scale(1.03);
+      background: #FFFFFF;
     }
 
     .sponsor-mini-a { grid-column: 2; grid-row: 1; }
@@ -3004,29 +2995,8 @@
 
           <!-- Ô chính: Banner tiêu biểu ngoài cùng bên trái (Slider tự động chuyển sau 5s, animation 300ms, hover pause, click chuyển trang công ty) -->
           <div class="sponsor-primary sponsor-slider-container" id="heroSponsorSlider" title="Khám phá cơ hội nghề nghiệp tại các doanh nghiệp hàng đầu">
-            <!-- Danh sách 5 Slide Doanh Nghiệp Tiêu Biểu -->
-            <div class="sponsor-slides-wrapper">
-              <!-- Slide 1: Orion Technologies -->
-              <a href="chi-tiet-cong-ty.html?company=orion" target="_blank" rel="noopener noreferrer" class="sponsor-slide active" title="Xem trang chủ công ty Orion Technologies" data-slide-index="0">
-                <img src="assets/banners/employer-spotlight-banner.jpg" alt="Doanh nghiệp tiêu biểu EasyCV - Orion Technologies" />
-              </a>
-              <!-- Slide 2: Viettel Digital Solutions -->
-              <a href="chi-tiet-cong-ty.html?company=viettel" target="_blank" rel="noopener noreferrer" class="sponsor-slide sponsor-slide-innovation" title="Xem trang chủ Tổng Công ty Dịch vụ Số Viettel" data-slide-index="1">
-                <img src="assets/banners/employer-spotlight-innovation.png" class="sponsor-img-focus-people" alt="Doanh nghiệp tiêu biểu EasyCV - Tổng Công ty Dịch vụ Số Viettel" />
-              </a>
-              <!-- Slide 3: FPT Software Global -->
-              <a href="chi-tiet-cong-ty.html?company=fpt" target="_blank" rel="noopener noreferrer" class="sponsor-slide" title="Xem trang chủ công ty FPT Software" data-slide-index="2">
-                <img src="assets/banners/employer-spotlight-team.png" alt="Doanh nghiệp tiêu biểu EasyCV - FPT Software" />
-              </a>
-              <!-- Slide 4: Techcombank -->
-              <a href="chi-tiet-cong-ty.html?company=techcombank" target="_blank" rel="noopener noreferrer" class="sponsor-slide" title="Xem trang chủ Ngân hàng TMCP Kỹ Thương Việt Nam (Techcombank)" data-slide-index="3">
-                <img src="assets/banners/employer-spotlight-finance.jpg" alt="Doanh nghiệp tiêu biểu EasyCV - Techcombank" />
-              </a>
-              <!-- Slide 5: Saigon Retail Corp -->
-              <a href="chi-tiet-cong-ty.html?company=saigon-retail" target="_blank" rel="noopener noreferrer" class="sponsor-slide" title="Xem trang chủ Saigon Retail Corp" data-slide-index="4">
-                <img src="assets/banners/employer-spotlight-retail.jpg" alt="Doanh nghiệp tiêu biểu EasyCV - Saigon Retail Corp" />
-              </a>
-            </div>
+            <!-- Danh sách banner được tạo từ một nguồn duy nhất trong js/home.js -->
+            <div class="sponsor-slides-wrapper"></div>
 
             <!-- 2 Nút chuyển đổi thanh mảnh dính sát mép rìa (Prev / Next) -->
             <button type="button" class="sponsor-slider-btn sponsor-slider-prev" id="sponsorSliderPrev" aria-label="Banner trước" title="Banner trước">
@@ -3040,22 +3010,15 @@
               </svg>
             </button>
 
-            <!-- Chỉ số 5 chấm (Dots Indicator) -->
-            <div class="sponsor-slider-dots" id="sponsorSliderDots">
-              <button type="button" class="sponsor-dot active" data-index="0" aria-label="Chuyển đến banner Orion Technologies"></button>
-              <button type="button" class="sponsor-dot" data-index="1" aria-label="Chuyển đến banner Viettel Digital"></button>
-              <button type="button" class="sponsor-dot" data-index="2" aria-label="Chuyển đến banner FPT Software"></button>
-              <button type="button" class="sponsor-dot" data-index="3" aria-label="Chuyển đến banner Techcombank"></button>
-              <button type="button" class="sponsor-dot" data-index="4" aria-label="Chuyển đến banner Saigon Retail"></button>
-            </div>
+            <div class="sponsor-slider-dots" id="sponsorSliderDots"></div>
           </div>
 
-          <!-- 2 ô banner phụ bên phải: Nằm cứng (static), click chuyển trang công ty -->
-          <a href="chi-tiet-cong-ty.html?company=vietcom-finance" target="_blank" rel="noopener noreferrer" class="sponsor-mini sponsor-mini-a" title="Xem cơ hội việc làm tại Vietcom Finance">
-            <img src="assets/banners/employer-spotlight-finance.jpg" alt="Cơ hội việc làm - Vietcom Finance" />
+          <!-- Hai ô phụ dùng hai ảnh kế tiếp trong cùng danh sách banner -->
+          <a href="#" target="_blank" rel="noopener noreferrer" class="sponsor-mini sponsor-mini-a">
+            <img alt="Banner doanh nghiệp nổi bật" />
           </a>
-          <a href="chi-tiet-cong-ty.html?company=saigon-retail" target="_blank" rel="noopener noreferrer" class="sponsor-mini sponsor-mini-b" title="Xem cơ hội việc làm tại Saigon Retail Corp">
-            <img src="assets/banners/employer-spotlight-retail.jpg" alt="Cơ hội việc làm - Saigon Retail Corp" />
+          <a href="#" target="_blank" rel="noopener noreferrer" class="sponsor-mini sponsor-mini-b">
+            <img alt="Banner doanh nghiệp nổi bật" />
           </a>
         </div>
 

@@ -2621,6 +2621,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const sliderContainer = document.getElementById('heroSponsorSlider');
     if (!sliderContainer) return;
 
+    const heroBanners = [
+      { src: 'assets/banners/home-carousel/01-mbbank-app.png', company: 'mbbank', label: 'Ứng dụng MBBank siêu tiện, siêu nhanh' },
+      { src: 'assets/banners/home-carousel/02-mbbank-mfast.jpg', company: 'mbbank', label: 'Mở bát Say Hi cùng MBBank Nam Sài Gòn' },
+      { src: 'assets/banners/home-carousel/03-myviettel-ads.png', company: 'viettel', label: 'Quảng cáo với MyViettel' },
+      { src: 'assets/banners/home-carousel/04-myviettel-58.jpg', company: 'viettel', label: 'My Viettel phiên bản 5.8' },
+      { src: 'assets/banners/home-carousel/05-vpbank-diamond.jpg', company: 'vpbank', label: 'VPBank NEO - Lướt app chạm kim cương' },
+      { src: 'assets/banners/home-carousel/06-vpbank-brand.jpg', company: 'vpbank', label: 'Giá trị thương hiệu VPBank' },
+      { src: 'assets/banners/home-carousel/07-vpbank-commission.jpg', company: 'vpbank', label: 'VPBank tăng hoa hồng chiến dịch' },
+      { src: 'assets/banners/home-carousel/08-fpt-buy3.webp', company: 'fpt', label: 'FPT mua một được ba' },
+      { src: 'assets/banners/home-carousel/09-fpt-polytechnic.jpg', company: 'fpt', label: 'Tuyển sinh FPT Polytechnic' },
+      { src: 'assets/banners/home-carousel/10-fpt-play.png', company: 'fpt', label: 'Ưu đãi Ngoại hạng Anh trên FPT Play' },
+      { src: 'assets/banners/home-carousel/11-techcombank-referral.jpg', company: 'techcombank', label: 'Techcombank nhận thưởng khi giới thiệu bạn' },
+      { src: 'assets/banners/home-carousel/12-techcombank-spring.jpg', company: 'techcombank', label: 'Techcombank ưu đãi mùa xuân cho doanh nghiệp' },
+      { src: 'assets/banners/home-carousel/13-techcombank-home-loan.png', company: 'techcombank', label: 'Techcombank - Sản phẩm cho vay mua nhà tốt nhất' },
+      { src: 'assets/banners/home-carousel/14-techcombank-inspire.png', company: 'techcombank', label: 'Techcombank Inspire - Ngân hàng dành cho thế hệ Why Not' }
+    ];
+
+    const slidesWrapper = sliderContainer.querySelector('.sponsor-slides-wrapper');
+    const dotsContainer = document.getElementById('sponsorSliderDots');
+    const miniBanners = Array.from(document.querySelectorAll('.sponsor-mini'));
+    if (!slidesWrapper || !dotsContainer) return;
+
+    slidesWrapper.innerHTML = heroBanners.map((banner, index) => `
+      <a href="chi-tiet-cong-ty.html?company=${banner.company}" target="_blank" rel="noopener noreferrer" class="sponsor-slide${index === 0 ? ' active' : ''}" title="${banner.label}" data-slide-index="${index}">
+        <img src="${banner.src}" alt="${banner.label}" />
+      </a>
+    `).join('');
+
+    dotsContainer.innerHTML = heroBanners.map((banner, index) => `
+      <button type="button" class="sponsor-dot${index === 0 ? ' active' : ''}" data-index="${index}" aria-label="Chuyển đến banner ${banner.label}"></button>
+    `).join('');
+
     const slides = Array.from(sliderContainer.querySelectorAll('.sponsor-slide'));
     const dots = Array.from(sliderContainer.querySelectorAll('.sponsor-dot'));
     const prevBtn = document.getElementById('sponsorSliderPrev');
@@ -2646,6 +2678,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === currentIndex);
+      });
+
+      miniBanners.forEach((miniBanner, offset) => {
+        const banner = heroBanners[(currentIndex + offset + 1) % heroBanners.length];
+        const image = miniBanner.querySelector('img');
+        miniBanner.href = `chi-tiet-cong-ty.html?company=${banner.company}`;
+        miniBanner.title = banner.label;
+        if (image) {
+          image.src = banner.src;
+          image.alt = banner.label;
+        }
       });
     }
 
@@ -2705,7 +2748,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sliderContainer.addEventListener('mouseenter', stopAutoPlay);
     sliderContainer.addEventListener('mouseleave', startAutoPlay);
 
-    // Kích hoạt auto play
+    goToSlide(0);
     startAutoPlay();
   }
 
