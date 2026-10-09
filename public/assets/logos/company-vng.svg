@@ -1,15 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="VNG Corporation">
   <rect width="120" height="120" rx="16" fill="#FFFFFF"/>
-  <rect x="1" y="1" width="118" height="118" rx="15" fill="none" stroke="#E2E8F0" stroke-width="2"/>
-  <defs>
-    <linearGradient id="vngGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FF7A00"/>
-      <stop offset="100%" stop-color="#FF3D00"/>
-    </linearGradient>
-  </defs>
-  <g transform="translate(60, 48)">
-    <path d="M-28 -24 L-8 22 L8 22 L28 -24 L14 -24 L0 10 L-14 -24 Z" fill="url(#vngGrad)"/>
-    <circle cx="0" cy="-14" r="5" fill="#FF7A00"/>
+  <rect x="1" y="1" width="118" height="118" rx="15" fill="none" stroke="#E6E6E6" stroke-width="2"/>
+  <g transform="translate(12 40) scale(.66667)">
+    <path d="M43 0v25.38C43.02 43.37 28.61 57.98 10.82 58H0V0h10.75v47.26c11.93 0 21.6-9.78 21.6-21.85V0Z" fill="#E65A26"/>
+    <path d="M94 16.33V58H83V16.3c0-3-2.45-5.42-5.48-5.42H61V58H50V0h27.48c1.88-.01 3.75.31 5.52.93 4.65 1.68 8.3 5.33 9.95 9.95.66 1.74 1.01 3.59 1.05 5.45Z" fill="#E65A26"/>
+    <path d="M118.88 34.54h14.34v7.26c0 3.01-2.42 5.46-5.4 5.46h-10.68c-2.92 0-5.32-2.36-5.39-5.32V16.37c0-2.99 2.4-5.42 5.36-5.42h19.72V0h-19.72c-1.83-.01-3.64.3-5.36.93-4.59 1.66-8.21 5.31-9.86 9.95-.6 1.76-.9 3.6-.89 5.46v25.32c-.01 1.86.29 3.7.89 5.46 1.63 4.65 5.26 8.31 9.86 9.95 1.72.62 3.53.94 5.36.93h10.75c1.82.01 3.64-.31 5.36-.93 4.6-1.64 8.23-5.29 9.86-9.95.59-1.72.9-3.53.92-5.36V23.63h-25.12Z" fill="#E65A26"/>
   </g>
-  <text x="60" y="95" font-family="'Inter', -apple-system, sans-serif" font-weight="900" font-size="18" fill="#FF5500" text-anchor="middle" letter-spacing="2">VNG</text>
 </svg>
