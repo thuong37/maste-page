@@ -6,6 +6,7 @@ Phương pháp luận quản trị: **BMAD (BMM Method)** — chỉ áp dụng �
 ---
 
 ## 1. Nguyên Tắc Cốt Lõi (Core Principles)
+
 - Phân tích và triển khai tính năng đối soát với [`_bmad-output/planning-artifacts/prd.md`](_bmad-output/planning-artifacts/prd.md).
 - Giữ vững chuẩn nhận diện thương hiệu EasyCV: Màu cam chủ đạo (`#FF6500`), nền sáng tinh tế (`#F8FAFC`), font chữ chuẩn Inter, UI cao cấp.
 - Bảng màu chuẩn lấy theo Figma "Color system EasyBooks" (file `pyFKXDCPtBvDqwOYTdGXI3`, node `8-896`), đã khai báo thành token `--eb-primary-*`, `--eb-secondary-*`, `--eb-error-*`, `--eb-text-*` trong [`assets/design-tokens.css`](assets/design-tokens.css). Không dùng lại thang màu Tailwind cũ (`#F97316`, `#EA580C`, `#0F172A`, `#64748B`, `#16A34A`, `#EF4444`…).
@@ -14,11 +15,11 @@ Phương pháp luận quản trị: **BMAD (BMM Method)** — chỉ áp dụng �
 
 ## 2. Phân Tầng Tác Vụ (Task Tiers) — chọn tầng nhỏ nhất đủ dùng
 
-| Tầng | Ví dụ | Quy trình |
-|---|---|---|
+| Tầng        | Ví dụ                                                                              | Quy trình                                                                                                                                                                           |
+| ----------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **S — nhỏ** | Đổi chữ/màu/khoảng cách, sửa menu, sửa bố cục một component, sửa lỗi CSS/JS cục bộ | Sửa trực tiếp. **Không** gọi skill `bmad-build`/`bmad-review`/`bmad-code-review`. Kiểm tra bằng `npm run build`, `git diff`, `node --check` (nếu có JS). Ghi **1 dòng** vào memlog. |
-| **M — vừa** | Component/section mới, đổi hành vi một trang, thay đổi dữ liệu dùng chung | Sửa trực tiếp, tự kiểm tra bằng `npm run verify -- <trang> 1440 375` (ảnh chụp ở `scratch/`). Ghi 1–3 dòng memlog. Chỉ review khi người dùng yêu cầu. |
-| **L — lớn** | Tính năng/trang mới, thay đổi kiến trúc, thay đổi PRD | Dùng BMAD đầy đủ (build/review). Ghi memlog và tạo 1 file trong `_bmad-output/implementation-artifacts/`. |
+| **M — vừa** | Component/section mới, đổi hành vi một trang, thay đổi dữ liệu dùng chung          | Sửa trực tiếp, tự kiểm tra bằng `npm run verify -- <trang> 1440 375` (ảnh chụp ở `scratch/`). Ghi 1–3 dòng memlog. Chỉ review khi người dùng yêu cầu.                               |
+| **L — lớn** | Tính năng/trang mới, thay đổi kiến trúc, thay đổi PRD                              | Dùng BMAD đầy đủ (build/review). Ghi memlog và tạo 1 file trong `_bmad-output/implementation-artifacts/`.                                                                           |
 
 Nếu không chắc tầng nào: chọn tầng thấp hơn và hỏi lại khi phát sinh rủi ro. Người dùng có thể nâng tầng bằng cách nói rõ ("review kỹ", "dùng BMAD").
 

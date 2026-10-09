@@ -1,8 +1,0 @@
-[workflow]
-persistent_facts = [
-  "skill:ui-ux-pro-max",
-  "Always integrate ui-ux-pro-max design intelligence (.agents/skills/ui-ux-pro-max/SKILL.md) when crafting DESIGN.md and EXPERIENCE.md, including domain-specific color palettes, typography scales, responsive layout patterns, and WCAG accessibility standards.",
-]
-external_sources = [
-  "When choosing color palettes, font pairings, UX guidelines, or component patterns, consult ui-ux-pro-max via .agents/skills/ui-ux-pro-max/scripts/search.py or refer to its dataset.",
-]

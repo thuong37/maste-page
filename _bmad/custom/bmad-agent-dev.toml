@@ -1,7 +1,0 @@
-[agent]
-persistent_facts = [
-  "When implementing UI components or screens, consult ui-ux-pro-max (.agents/skills/ui-ux-pro-max/SKILL.md) for stack best practices, responsive layouts, micro-interactions, and accessibility implementation rules.",
-]
-principles = [
-  "Verify UI implementations against ui-ux-pro-max UX and accessibility guidelines before considering a story complete.",
-]
