@@ -119,6 +119,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const rows = Array.isArray(items) && items.length ? items : [fallback];
     return rows.map(item => `<li>${esc(item)}</li>`).join('');
   }
+  function cleanSummary(value) {
+    return String(value || '').trim().replace(/[.!?]+$/, '');
+  }
+  function firstSummary(items, fallback) {
+    return cleanSummary(Array.isArray(items) && items.length ? items[0] : fallback);
+  }
 
   // -----------------------------------------------------------------------
   // 3. Render
@@ -153,6 +159,12 @@ document.addEventListener('DOMContentLoaded', () => {
   $('jdOvSkills').innerHTML = (job.skills && job.skills.length ? job.skills : [INDUSTRY_BY_CATEGORY[job.category] || 'Đa ngành']).map(chip).join('');
 
   // Nội dung mô tả
+  $('jdDescSummary').textContent = firstSummary(jd.desc, `${job.title} tại ${job.company}`);
+  $('jdReqsSummary').textContent = [
+    expLabel(job) === 'Không yêu cầu' ? 'Không yêu cầu kinh nghiệm' : `${expLabel(job)} kinh nghiệm`,
+    ...(job.skills || []).slice(0, 3)
+  ].join(' · ');
+  $('jdPerksSummary').textContent = firstSummary(jd.perks, `Thu nhập ${job.salaryBadge} và bảo hiểm đầy đủ`);
   $('jdDescList').innerHTML = listItems(jd.desc, 'Nhà tuyển dụng đang cập nhật mô tả công việc.');
   $('jdReqsList').innerHTML = listItems(jd.reqs, 'Nhà tuyển dụng đang cập nhật yêu cầu ứng viên.');
   $('jdPerksList').innerHTML = listItems(jd.perks, 'Nhà tuyển dụng đang cập nhật quyền lợi.');

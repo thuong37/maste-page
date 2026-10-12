@@ -2117,10 +2117,12 @@
         color: #ff6500;
       }
       .job-preview-section-perks .job-preview-section-title svg {
-        color: #10b981;
+        color: var(--eb-secondary-500);
       }
-      .job-preview-section-skills .job-preview-section-title svg {
-        color: #6366f1;
+      .job-preview-section-requirements .job-preview-section-title svg,
+      .job-preview-section-address .job-preview-section-title svg,
+      .job-preview-section-schedule .job-preview-section-title svg {
+        color: var(--eb-primary-500);
       }
       [data-theme='dark']
         .job-preview-section-perks
@@ -2129,10 +2131,10 @@
         color: #34d399;
       }
       [data-theme='dark']
-        .job-preview-section-skills
+        .job-preview-section-requirements
         .job-preview-section-title
         svg {
-        color: #818cf8;
+        color: var(--eb-primary-300);
       }
       [data-theme='dark'] .job-preview-section-title {
         color: #94a3b8;
@@ -2195,6 +2197,34 @@
       [data-theme='dark'] .job-preview-perks-list li::before {
         color: #34d399;
       }
+      .job-preview-requirements-list {
+        margin: 0 0 8px;
+        padding-left: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .job-preview-requirements-list li {
+        position: relative;
+        padding-left: 17px;
+        color: var(--eb-text-500);
+        font-size: 12.5px;
+        line-height: 1.5;
+      }
+      .job-preview-requirements-list li::before {
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 2px;
+        width: 7px;
+        height: 7px;
+        border: 1.5px solid var(--eb-primary-500);
+        border-radius: 50%;
+      }
+      [data-theme='dark'] .job-preview-requirements-list li {
+        color: var(--eb-text-100);
+      }
       .job-preview-skills-wrap {
         display: flex;
         flex-wrap: wrap;
@@ -2214,6 +2244,16 @@
         background: #252a30;
         border-color: #383f47;
         color: #cbd5e1;
+      }
+      .job-preview-info-text {
+        margin: 0;
+        color: var(--eb-text-500);
+        font-size: 12.5px;
+        font-weight: 500;
+        line-height: 1.5;
+      }
+      [data-theme='dark'] .job-preview-info-text {
+        color: var(--eb-text-100);
       }
       .job-preview-actions {
         flex: 0 0 auto;
@@ -5792,20 +5832,20 @@
 
           <div class="keywords-cloud">
             <a
-              href="#search-java"
+              href="#search-tienganh"
               class="keyword-badge-link"
-              data-keyword="Java Developer"
+              data-keyword="Việc làm tiếng Anh"
             >
-              <span>Java Developer</span>
-              <span class="keyword-count">1.4k việc</span>
+              <span>Việc làm yêu cầu tiếng Anh</span>
+              <span class="keyword-count">4.5k việc</span>
             </a>
             <a
-              href="#search-react"
+              href="#search-sales"
               class="keyword-badge-link"
-              data-keyword="ReactJS Frontend"
+              data-keyword="Nhân viên kinh doanh"
             >
-              <span>Frontend ReactJS</span>
-              <span class="keyword-count">2.1k việc</span>
+              <span>Nhân viên kinh doanh</span>
+              <span class="keyword-count">4.2k việc</span>
             </a>
             <a
               href="#search-salesb2b"
@@ -5816,20 +5856,28 @@
               <span class="keyword-count">3.8k việc</span>
             </a>
             <a
-              href="#search-mkt"
+              href="#search-ketoanvien"
               class="keyword-badge-link"
-              data-keyword="Digital Marketing Specialist"
+              data-keyword="Kế toán viên"
             >
-              <span>Chuyên viên Digital Marketing</span>
-              <span class="keyword-count">1.9k việc</span>
+              <span>Kế toán viên</span>
+              <span class="keyword-count">3.3k việc</span>
             </a>
             <a
-              href="#search-data"
+              href="#search-cskh"
               class="keyword-badge-link"
-              data-keyword="Data Analyst"
+              data-keyword="Chăm sóc khách hàng"
             >
-              <span>Data Analyst (SQL / Python)</span>
-              <span class="keyword-count">920 việc</span>
+              <span>Chăm sóc khách hàng</span>
+              <span class="keyword-count">2.9k việc</span>
+            </a>
+            <a
+              href="#search-hcns"
+              class="keyword-badge-link"
+              data-keyword="Hành chính nhân sự"
+            >
+              <span>Hành chính nhân sự</span>
+              <span class="keyword-count">2.7k việc</span>
             </a>
             <a
               href="#search-ketoan"
@@ -5840,12 +5888,76 @@
               <span class="keyword-count">2.4k việc</span>
             </a>
             <a
-              href="#search-uiux"
+              href="#search-backend"
               class="keyword-badge-link"
-              data-keyword="UI/UX Designer"
+              data-keyword="Backend Developer"
             >
-              <span>UI/UX Product Designer</span>
-              <span class="keyword-count">850 việc</span>
+              <span>Backend Developer</span>
+              <span class="keyword-count">2.2k việc</span>
+            </a>
+            <a
+              href="#search-react"
+              class="keyword-badge-link"
+              data-keyword="ReactJS Frontend"
+            >
+              <span>Frontend ReactJS</span>
+              <span class="keyword-count">2.1k việc</span>
+            </a>
+            <a
+              href="#search-mkt"
+              class="keyword-badge-link"
+              data-keyword="Digital Marketing Specialist"
+            >
+              <span>Chuyên viên Digital Marketing</span>
+              <span class="keyword-count">1.9k việc</span>
+            </a>
+            <a
+              href="#search-content"
+              class="keyword-badge-link"
+              data-keyword="Content Marketing"
+            >
+              <span>Content Marketing</span>
+              <span class="keyword-count">1.8k việc</span>
+            </a>
+            <a
+              href="#search-thuctapsinh"
+              class="keyword-badge-link"
+              data-keyword="Thực tập sinh Intern"
+            >
+              <span>Thực tập sinh (Intern có lương)</span>
+              <span class="keyword-count">1.6k việc</span>
+            </a>
+            <a
+              href="#search-telesales"
+              class="keyword-badge-link"
+              data-keyword="Telesales"
+            >
+              <span>Nhân viên Telesales</span>
+              <span class="keyword-count">1.5k việc</span>
+            </a>
+            <a
+              href="#search-java"
+              class="keyword-badge-link"
+              data-keyword="Java Developer"
+            >
+              <span>Java Developer</span>
+              <span class="keyword-count">1.4k việc</span>
+            </a>
+            <a
+              href="#search-qa"
+              class="keyword-badge-link"
+              data-keyword="Tester QA QC"
+            >
+              <span>Tester / QA QC</span>
+              <span class="keyword-count">1.3k việc</span>
+            </a>
+            <a
+              href="#search-xuatnhapkhau"
+              class="keyword-badge-link"
+              data-keyword="Nhân viên xuất nhập khẩu"
+            >
+              <span>Nhân viên xuất nhập khẩu</span>
+              <span class="keyword-count">1.2k việc</span>
             </a>
             <a
               href="#search-hr"
@@ -5856,12 +5968,44 @@
               <span class="keyword-count">1.1k việc</span>
             </a>
             <a
-              href="#search-flutter"
+              href="#search-seo"
               class="keyword-badge-link"
-              data-keyword="Flutter Developer"
+              data-keyword="SEO Specialist"
             >
-              <span>Flutter Mobile Developer</span>
-              <span class="keyword-count">640 việc</span>
+              <span>SEO Specialist</span>
+              <span class="keyword-count">1.0k việc</span>
+            </a>
+            <a
+              href="#search-graphic"
+              class="keyword-badge-link"
+              data-keyword="Graphic Designer"
+            >
+              <span>Graphic Designer</span>
+              <span class="keyword-count">980 việc</span>
+            </a>
+            <a
+              href="#search-data"
+              class="keyword-badge-link"
+              data-keyword="Data Analyst"
+            >
+              <span>Data Analyst (SQL / Python)</span>
+              <span class="keyword-count">920 việc</span>
+            </a>
+            <a
+              href="#search-uiux"
+              class="keyword-badge-link"
+              data-keyword="UI/UX Designer"
+            >
+              <span>UI/UX Product Designer</span>
+              <span class="keyword-count">850 việc</span>
+            </a>
+            <a
+              href="#search-devops"
+              class="keyword-badge-link"
+              data-keyword="DevOps Engineer"
+            >
+              <span>DevOps Engineer</span>
+              <span class="keyword-count">820 việc</span>
             </a>
             <a
               href="#search-pm"
@@ -5872,20 +6016,44 @@
               <span class="keyword-count">780 việc</span>
             </a>
             <a
-              href="#search-tienganh"
+              href="#search-flutter"
               class="keyword-badge-link"
-              data-keyword="Việc làm tiếng Anh"
+              data-keyword="Flutter Developer"
             >
-              <span>Việc làm yêu cầu tiếng Anh</span>
-              <span class="keyword-count">4.5k việc</span>
+              <span>Flutter Mobile Developer</span>
+              <span class="keyword-count">640 việc</span>
             </a>
             <a
-              href="#search-thuctapsinh"
+              href="#search-xaydung"
               class="keyword-badge-link"
-              data-keyword="Thực tập sinh Intern"
+              data-keyword="Kỹ sư xây dựng"
             >
-              <span>Thực tập sinh (Intern có lương)</span>
-              <span class="keyword-count">1.6k việc</span>
+              <span>Kỹ sư xây dựng</span>
+              <span class="keyword-count">590 việc</span>
+            </a>
+            <a
+              href="#search-tiengtrung"
+              class="keyword-badge-link"
+              data-keyword="Phiên dịch tiếng Trung"
+            >
+              <span>Phiên dịch tiếng Trung</span>
+              <span class="keyword-count">560 việc</span>
+            </a>
+            <a
+              href="#search-quanlynhahang"
+              class="keyword-badge-link"
+              data-keyword="Quản lý nhà hàng"
+            >
+              <span>Quản lý nhà hàng</span>
+              <span class="keyword-count">520 việc</span>
+            </a>
+            <a
+              href="#search-nhanvienkho"
+              class="keyword-badge-link"
+              data-keyword="Nhân viên kho"
+            >
+              <span>Nhân viên kho</span>
+              <span class="keyword-count">480 việc</span>
             </a>
           </div>
         </div>

@@ -1682,10 +1682,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Sections
+    const overviewRequirements = document.getElementById(
+      'detailOverviewRequirements',
+    );
+    const overviewBenefits = document.getElementById('detailOverviewBenefits');
+    const overviewSkills = document.getElementById('detailOverviewSkills');
     const descList = document.getElementById('detailDescList');
     const reqsList = document.getElementById('detailReqsList');
     const perksList = document.getElementById('detailPerksList');
     const skillsWrap = document.getElementById('detailSkillsWrap');
+    const workLocation = document.getElementById('detailWorkLocation');
+    const workTime = document.getElementById('detailWorkTime');
+
+    const expOverviewMap = {
+      0: 'Không yêu cầu kinh nghiệm',
+      under1: 'Dưới 1 năm kinh nghiệm',
+      '1-3': '1 - 3 năm kinh nghiệm',
+      '3-5': '3 - 5 năm kinh nghiệm',
+      over5: 'Trên 5 năm kinh nghiệm',
+    };
+    const renderOverviewTags = (target, values) => {
+      if (!target) return;
+      target.innerHTML = values
+        .filter(Boolean)
+        .map((value) => `<span class="detail-overview-tag">${value}</span>`)
+        .join('');
+    };
+
+    renderOverviewTags(overviewRequirements, [
+      expOverviewMap[job.exp] || `${job.exp} năm kinh nghiệm`,
+      job.education || 'Đại học trở lên',
+      job.gender || 'Không yêu cầu giới tính',
+    ]);
+    renderOverviewTags(
+      overviewBenefits,
+      job.overviewBenefits || [
+        'Bảo hiểm xã hội',
+        'Bảo hiểm sức khỏe',
+        'Khám sức khỏe định kỳ',
+      ],
+    );
+    renderOverviewTags(overviewSkills, (job.skills || []).slice(0, 5));
 
     if (descList && job.jd?.desc)
       descList.innerHTML = job.jd.desc.map((d) => `<li>${d}</li>`).join('');
@@ -1697,6 +1734,23 @@ document.addEventListener('DOMContentLoaded', () => {
       skillsWrap.innerHTML = job.skills
         .map((s) => `<span class="detail-skill-tag">${s}</span>`)
         .join('');
+
+    if (workLocation) {
+      workLocation.textContent =
+        job.workLocation || `Văn phòng tại ${job.location}.`;
+    }
+    if (workTime) {
+      const workTimeBySaturday = {
+        off_sat: 'Thứ 2 - Thứ 6, 08:30 - 17:30; nghỉ Thứ 7 và Chủ Nhật.',
+        work_sat: 'Thứ 2 - Thứ 7, 08:30 - 17:30; nghỉ Chủ Nhật.',
+        unmentioned:
+          'Thời gian làm việc trao đổi trực tiếp trong quá trình phỏng vấn.',
+      };
+      workTime.textContent =
+        job.workTime ||
+        workTimeBySaturday[job.saturday] ||
+        workTimeBySaturday.unmentioned;
+    }
 
     // Company Spotlight
     const compLogo = document.getElementById('detailCompanyCardLogo');

@@ -2961,7 +2961,15 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  column-gap: 16px;
+  row-gap: 8px;
+}
+
+.detail-badges-row #detailSalaryBadge {
+  padding: 2px 0;
+  color: var(--eb-primary-600);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Detail CTA Bar */
@@ -3144,6 +3152,77 @@
 
 .detail-bullet-list li:last-child {
   margin-bottom: 0;
+}
+
+.detail-overview-section {
+  padding: var(--space-9);
+  background: var(--color-surface-muted);
+  border: 1px solid var(--eb-text-100);
+  border-radius: var(--radius-md);
+}
+
+.detail-overview-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin: 0;
+}
+
+.detail-overview-row {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.detail-overview-row dt {
+  padding-top: 6px;
+  color: var(--eb-text-500);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+}
+
+.detail-overview-row dd {
+  margin: 0;
+}
+
+.detail-overview-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+.detail-overview-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 4px 11px;
+  color: var(--eb-text-500);
+  background: var(--color-surface-base);
+  border: 1px solid var(--eb-text-100);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.detail-fact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-6);
+  color: var(--eb-text-500);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.detail-fact-row svg {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  color: var(--eb-primary-500);
+}
+
+.detail-fact-row p {
+  margin: 0;
 }
 
 .detail-skills-wrap {
@@ -3448,6 +3527,21 @@
   }
   .detail-section-nav {
     position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .detail-overview-section {
+    padding: var(--space-8);
+  }
+
+  .detail-overview-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-5);
+  }
+
+  .detail-overview-row dt {
+    padding-top: 0;
   }
 }
 
@@ -4551,7 +4645,7 @@ body.saved-filter-dialog-open {
   }
   body .detail-badges-row {
     flex-wrap: wrap !important;
-    gap: 4px 10px !important;
+    gap: 6px 14px !important;
   }
   body .detail-quick-pills {
     margin-top: 8px;

@@ -1409,6 +1409,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    const STORAGE_KEY = 'easycv_recent_searches_v2';
+    const DEFAULT_HISTORY = [
+      { keyword: 'ReactJS Developer', count: 156 },
+      { keyword: 'Telesales', count: 280 },
+      { keyword: 'Marketing Leader', count: 92 },
+      { keyword: 'UI/UX Designer', count: 143 },
+      { keyword: 'Java Spring Boot', count: 67 },
+      { keyword: 'Kế toán tổng hợp', count: 184 },
+    ];
+
     renderRecommendedJobs('', recommendedJobListEl);
 
     compactSearchPanel
@@ -1420,16 +1430,6 @@ document.addEventListener('DOMContentLoaded', () => {
           executeSearch(kw);
         });
       });
-
-    const STORAGE_KEY = 'easycv_recent_searches_v2';
-    const DEFAULT_HISTORY = [
-      { keyword: 'ReactJS Developer', count: 156 },
-      { keyword: 'Telesales', count: 280 },
-      { keyword: 'Marketing Leader', count: 92 },
-      { keyword: 'UI/UX Designer', count: 143 },
-      { keyword: 'Java Spring Boot', count: 67 },
-      { keyword: 'Kế toán tổng hợp', count: 184 },
-    ];
 
     // Dữ liệu 5 trang Danh mục ngành nghề (mỗi trang 6 ngành) chuẩn Mega-Menu TopCV
     const INDUSTRY_PAGES = [
@@ -2439,19 +2439,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
       return null;
-    }
-
-    function getHistory() {
-      try {
-        const stored = localStorage.getItem(STORAGE_KEY);
-        if (stored) {
-          const parsed = JSON.parse(stored);
-          if (Array.isArray(parsed)) return parsed;
-        }
-      } catch (e) {
-        console.warn('Cannot read history from localStorage', e);
-      }
-      return [...DEFAULT_HISTORY];
     }
 
     function getKeywordJobCount(keyword) {
@@ -3982,6 +3969,13 @@ document.addEventListener('DOMContentLoaded', () => {
           'Thưởng hoa hồng không giới hạn theo doanh số',
           'Gói bảo hiểm sức khỏe Viettel Care toàn diện',
         ],
+        requirements: [
+          'Tối thiểu 3 năm kinh nghiệm kinh doanh B2B hoặc quản lý khách hàng doanh nghiệp.',
+          'Có khả năng tư vấn giải pháp, đàm phán và làm việc trực tiếp với khách hàng cấp cao.',
+        ],
+        workAddress:
+          'Tòa nhà Viettel, số 1 Giang Văn Minh, Ba Đình, Hà Nội hoặc văn phòng Viettel tại TP.HCM.',
+        workTime: 'Thứ Hai - Thứ Sáu, 08:00 - 17:30',
         aiMatch: 96,
       },
       {
@@ -9028,6 +9022,25 @@ document.addEventListener('DOMContentLoaded', () => {
           ? job.perks.map((p) => `<li>${esc(p)}</li>`).join('')
           : '';
 
+      const requirements =
+        job.requirements && job.requirements.length > 0
+          ? job.requirements
+          : [
+              job.exp ? `Có ${job.exp} kinh nghiệm ở vị trí tương đương.` : '',
+              job.skills && job.skills.length > 0
+                ? `Có năng lực chuyên môn về ${job.skills.slice(0, 3).join(', ')}.`
+                : '',
+              'Chủ động, giao tiếp tốt và phối hợp hiệu quả với các bên liên quan.',
+            ].filter(Boolean);
+      const requirementsHtml = requirements
+        .map((requirement) => `<li>${esc(requirement)}</li>`)
+        .join('');
+      const workAddress =
+        job.workAddress || job.location || job.city || 'Trao đổi khi phỏng vấn';
+      const workTime =
+        job.workTime ||
+        `${job.type || 'Toàn thời gian'} · Lịch làm việc trao đổi khi phỏng vấn`;
+
       let updatedTime = '';
       if (job.updated) {
         updatedTime = `<span class="job-preview-time" title="Thời gian cập nhật tin đăng"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>${esc(job.updated)}</span></span>`;
@@ -9115,20 +9128,41 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           ${
-            skillsHtml
+            requirementsHtml
               ? `
-          <div class="job-preview-section job-preview-section-skills">
+          <div class="job-preview-section job-preview-section-requirements">
             <div class="job-preview-section-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <span>Kỹ năng yêu cầu</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg>
+              <span>Yêu cầu ứng viên</span>
             </div>
-            <div class="job-preview-skills-wrap">
-              ${skillsHtml}
-            </div>
+            <ul class="job-preview-requirements-list">
+              ${requirementsHtml}
+            </ul>
+            ${
+              skillsHtml
+                ? `<div class="job-preview-skills-wrap" aria-label="Kỹ năng chuyên môn">${skillsHtml}</div>`
+                : ''
+            }
           </div>
           `
               : ''
           }
+
+          <div class="job-preview-section job-preview-section-address">
+            <div class="job-preview-section-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Địa chỉ làm việc</span>
+            </div>
+            <p class="job-preview-info-text">${esc(workAddress)}</p>
+          </div>
+
+          <div class="job-preview-section job-preview-section-schedule">
+            <div class="job-preview-section-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <span>Thời gian làm việc</span>
+            </div>
+            <p class="job-preview-info-text">${esc(workTime)}</p>
+          </div>
         </div>
 
         <div class="job-preview-actions">
