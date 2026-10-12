@@ -22,7 +22,7 @@
       href="assets/design-tokens.css?v=eb_colors_20261007"
     />
     <link rel="stylesheet" href="css/navbar.css?v=noswitch_20261012" />
-    <link rel="stylesheet" href="css/home.css?v=hscroll3_20261012" />
+    <link rel="stylesheet" href="css/home.css?v=onebanner2_20261012" />
     <link
       rel="stylesheet"
       href="css/location-picker.css?v=eb_colors_20261007"
@@ -1064,31 +1064,21 @@
         }
         .hero-ad-showcase.bento-sponsor-grid {
           height: auto !important;
-          grid-template-columns: 1fr 1fr !important;
-          grid-template-rows: auto auto auto !important;
+          grid-template-columns: 1fr !important;
+          grid-template-rows: auto !important;
           gap: 10px !important;
         }
         .sponsor-primary {
-          grid-column: 1 / 3;
+          grid-column: 1;
           grid-row: 1;
           min-height: 200px;
           aspect-ratio: 16 / 9;
           height: auto !important;
           border-radius: 14px !important;
         }
-        /* Mobile: giữ đủ 3 banner như bản web — slider trên, 2 banner phụ chia 2 cột bên dưới */
-        .sponsor-mini-a,
-        .sponsor-mini-b {
-          grid-row: 2;
-          min-height: 0;
-          aspect-ratio: 16 / 9;
-          height: auto !important;
-        }
-        .sponsor-mini-a {
-          grid-column: 1;
-        }
-        .sponsor-mini-b {
-          grid-column: 2;
+        /* Mobile: chỉ hiển thị 1 banner chính (tự chuyển, vuốt được); 2 banner phụ chỉ có trên desktop */
+        .sponsor-mini {
+          display: none !important;
         }
         .sponsor-slider-btn {
           opacity: 1;
@@ -1192,25 +1182,13 @@
       }
       @media (max-width: 480px) {
         .bento-sponsor-grid {
-          grid-template-columns: 1fr 1fr !important;
-          grid-template-rows: auto auto !important;
+          grid-template-columns: 1fr !important;
+          grid-template-rows: auto !important;
         }
         .sponsor-primary {
-          grid-column: 1 / 3;
+          grid-column: 1;
           grid-row: 1;
           min-height: 180px;
-          aspect-ratio: 16 / 9;
-        }
-        .sponsor-mini-a {
-          grid-column: 1;
-          grid-row: 2;
-          min-height: 0;
-          aspect-ratio: 16 / 9;
-        }
-        .sponsor-mini-b {
-          grid-column: 2;
-          grid-row: 2;
-          min-height: 0;
           aspect-ratio: 16 / 9;
         }
         .sponsor-slider-btn {

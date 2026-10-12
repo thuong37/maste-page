@@ -5663,3 +5663,26 @@ img.vip-logo-img { padding: 0 !important; }
     scroll-snap-align: start;
   }
 }
+
+/* Điện thoại: phân trang "Việc làm nổi bật" có nhiều trang → nút nhỏ lại, không tràn màn hình hẹp */
+@media (max-width: 480px) {
+  .featured-jobs-pagination-controls {
+    gap: 6px !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .featured-jobs-pagination-controls .featured-page-btn {
+    width: 34px !important;
+    height: 34px !important;
+  }
+}
+@media (max-width: 360px) {
+  .featured-jobs-pagination-controls {
+    gap: 4px !important;
+  }
+  .featured-jobs-pagination-controls .featured-page-btn {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 13px;
+  }
+}
