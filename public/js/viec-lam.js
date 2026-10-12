@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let selectedSaturday = '';
 
   const FILTER_DEFAULT_LABELS = {
+    industry: 'Lĩnh vực công ty',
     exp: 'Kinh nghiệm',
     salary: 'Mức lương',
     level: 'Cấp bậc',
@@ -82,11 +83,28 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // -------------------------------------------------------------------------
-  // CHỌN NHIỀU cho 5 bộ lọc tiêu chí: giá trị lưu dạng chuỗi nối dấu phẩy ("intern,junior")
+  // CHỌN NHIỀU cho các bộ lọc tiêu chí: giá trị lưu dạng chuỗi nối dấu phẩy ("intern,junior")
   // → URL, bộ lọc đã lưu và link sang trang chi tiết dùng lại nguyên cơ chế cũ.
   // Trong cùng 1 tiêu chí: khớp BẤT KỲ giá trị nào (OR); giữa các tiêu chí: AND.
   // -------------------------------------------------------------------------
-  const MULTI_FILTER_TYPES = ['exp', 'salary', 'level', 'type', 'saturday'];
+  const MULTI_FILTER_TYPES = [
+    'industry',
+    'exp',
+    'salary',
+    'level',
+    'type',
+    'saturday',
+  ];
+  const INDUSTRY_CATEGORY_MAP = {
+    tech: ['it'],
+    finance: ['finance'],
+    marketing: ['marketing'],
+    education: ['education'],
+    retail: ['sales'],
+    healthcare: ['healthcare'],
+    construction: ['construction'],
+    manufacturing: ['manufacturing'],
+  };
   const CHECK_ICON_SVG =
     '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>';
 
@@ -102,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getFilterValue(type) {
+    if (type === 'industry') return activeIndustryQuery;
     if (type === 'exp') return selectedExp;
     if (type === 'salary') return selectedSalary;
     if (type === 'level') return selectedLevel;
@@ -112,7 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function setFilterValue(type, value) {
     const joined = parseMultiValue(value).join(',');
-    if (type === 'exp') selectedExp = joined;
+    if (type === 'industry') {
+      activeIndustryQuery = joined;
+      const industryHidden = document.getElementById('jobIndustryHidden');
+      if (industryHidden) industryHidden.value = joined;
+    } else if (type === 'exp') selectedExp = joined;
     else if (type === 'salary') selectedSalary = joined;
     else if (type === 'level') selectedLevel = joined;
     else if (type === 'type') selectedType = joined;
@@ -704,7 +727,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const locValue = locationSelect ? locationSelect.value.trim() : '';
     const normLoc = normalizeText(locValue);
     const catValue = categorySelect ? categorySelect.value.trim() : '';
-    const normIndustry = normalizeText(activeIndustryQuery);
+    const selectedIndustries = parseMultiValue(activeIndustryQuery).map(
+      (value) => ({
+        value,
+        normalized: normalizeText(value),
+      }),
+    );
 
     // Quick tag buttons
     const activeTags = Array.from(
@@ -720,7 +748,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const hasFilter = Boolean(
       normQuery ||
-      normIndustry ||
+      selectedIndustries.length ||
       (normLoc && normLoc !== 'tat ca dia diem') ||
       catValue ||
       activeTags.length > 0 ||
@@ -751,11 +779,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // 1b. Independent industry / specialty filter from the homepage picker
-      if (isMatch && normIndustry) {
-        const industryTokens = normIndustry.split(/\s+/).filter(Boolean);
-        const industryMatch =
-          industryTokens.every((token) => normAllText.includes(token)) ||
-          normAllText.includes(normIndustry);
+      if (isMatch && selectedIndustries.length) {
+        const industryMatch = selectedIndustries.some(({ value, normalized }) => {
+          const mappedCategories = INDUSTRY_CATEGORY_MAP[value] || [];
+          if (mappedCategories.includes(job.category)) return true;
+          const industryTokens = normalized.split(/\s+/).filter(Boolean);
+          return (
+            industryTokens.every((token) => normAllText.includes(token)) ||
+            normAllText.includes(normalized)
+          );
+        });
         if (!industryMatch) isMatch = false;
       }
 
@@ -1803,6 +1836,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (chipsList) chipsList.innerHTML = '';
 
     const activeFilters = [
+      { type: 'industry', value: activeIndustryQuery },
       { type: 'exp', value: selectedExp },
       { type: 'salary', value: selectedSalary },
       { type: 'level', value: selectedLevel },
@@ -1818,6 +1852,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function resetAllTopFilters(triggerFilter = true) {
+    activeIndustryQuery = '';
     selectedExp = '';
     selectedSalary = '';
     selectedLevel = '';
@@ -1828,6 +1863,9 @@ document.addEventListener('DOMContentLoaded', () => {
       updateFilterPillUI(type, '', '');
       syncFilterDropdownSelection(type);
     });
+
+    const industryHidden = document.getElementById('jobIndustryHidden');
+    if (industryHidden) industryHidden.value = '';
 
     renderActiveFilterChips();
     closeAllFilterDropdowns();
@@ -3555,7 +3593,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const locationParam =
       urlParams.get('location') || urlParams.get('locations') || '';
     const categoryParam = urlParams.get('category') || '';
-    const industryParam = urlParams.get('industry') || '';
+    const industryParam = parseMultiValue(
+      urlParams.getAll('industry').join(','),
+    ).join(',');
     const jobIdParam = urlParams.get('jobId') || urlParams.get('id');
 
     if (searchInput) {
