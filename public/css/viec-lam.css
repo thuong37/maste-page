@@ -3007,8 +3007,8 @@
 
 .btn-detail-save-main {
   background: #ffffff;
-  border: 1.5px solid #b0b0b0;
-  color: #333333;
+  border: 1.5px solid var(--color-primary, #ff6500);
+  color: var(--color-primary, #ff6500);
   border-radius: 12px;
   padding: 13px 20px;
   font-size: 14.5px;
@@ -3056,9 +3056,9 @@
 }
 
 .btn-detail-save-main.saved {
-  background: #ffe6e6;
-  border-color: #ff8a8a;
-  color: #ff3333;
+  background: #fff0e6;
+  border-color: #ff6500;
+  color: #ff6500;
 }
 
 .btn-detail-share-btn {
@@ -3828,27 +3828,7 @@
   }
 }
 
-/* =========================================================================
-   HIDE VERTICAL & HORIZONTAL SCROLLBARS IN MOBILE SIMULATOR / MOBILE VIEW
-   (Mang lại trải nghiệm vuốt chạm mượt mà chuẩn iOS / Android)
-   ========================================================================= */
-html.in-simulator,
-body.in-simulator,
-html.in-simulator *,
-body.in-simulator * {
-  scrollbar-width: none !important; /* Firefox */
-  -ms-overflow-style: none !important; /* IE and Edge */
-}
 
-html.in-simulator::-webkit-scrollbar,
-body.in-simulator::-webkit-scrollbar,
-html.in-simulator *::-webkit-scrollbar,
-body.in-simulator *::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-  background: transparent !important;
-}
 /* =========================================================================
    RESPONSIVE STYLES FOR TOP FILTER BAR & ADS SIDEBAR
    ========================================================================= */
@@ -3917,28 +3897,7 @@ body.in-simulator *::-webkit-scrollbar {
   }
 }
 
-/* =========================================================================
-   HIDE VERTICAL & HORIZONTAL SCROLLBARS IN MOBILE SIMULATOR / MOBILE VIEW
-   (Mang lại trải nghiệm vuốt chạm mượt mà chuẩn iOS / Android, loại bỏ hoàn toàn scrollbar xám)
-   ========================================================================= */
-html.in-simulator,
-body.in-simulator,
-html.in-simulator *,
-body.in-simulator * {
-  scrollbar-width: none !important; /* Firefox */
-  -ms-overflow-style: none !important; /* IE and Edge */
-}
 
-html.in-simulator::-webkit-scrollbar,
-body.in-simulator::-webkit-scrollbar,
-html.in-simulator *::-webkit-scrollbar,
-body.in-simulator *::-webkit-scrollbar,
-.in-simulator ::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-  background: transparent !important;
-}
 
 @media (max-width: 1024px) {
   html,

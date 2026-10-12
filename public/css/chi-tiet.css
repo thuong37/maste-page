@@ -616,3 +616,18 @@
   .jd-related-logo { width: 56px; height: 56px; }
   .jd-section-head { flex-direction: column; align-items: flex-start; }
 }
+
+/* Mobile/tablet: đưa "Thông tin chung" lên ngay sau thẻ tiêu đề, thẻ công ty đứng trước phần giới thiệu công ty
+   (trước đây cả cột phải bị đẩy xuống cuối trang, sau "Việc làm liên quan") */
+@media (max-width: 992px) {
+  .jd-layout { display: flex; flex-direction: column; align-items: stretch; gap: 16px; }
+  .jd-main,
+  .jd-side { display: contents; }
+  .jd-head { order: 1; }
+  .jd-general { order: 2; }
+  .jd-content { order: 3; }
+  .jd-company { order: 4; }
+  .jd-company-profile { order: 5; }
+  .jd-related { order: 6; }
+  .jd-page { padding-bottom: 80px; }
+}

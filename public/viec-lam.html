@@ -13,12 +13,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/design-tokens.css?v=eb_colors_20261007">
-  <link rel="stylesheet" href="css/navbar.css?v=ipadmenu2_20261012">
-  <link rel="stylesheet" href="css/home.css?v=apphero3_20261012">
-  <link rel="stylesheet" href="css/viec-lam.css?v=mfix6_20261012">
+  <link rel="stylesheet" href="css/navbar.css?v=noswitch_20261012">
+  <link rel="stylesheet" href="css/home.css?v=mpolish_20261012">
+  <link rel="stylesheet" href="css/viec-lam.css?v=noswitch_20261012">
   <link rel="stylesheet" href="css/location-picker.css?v=eb_colors_20261007">
-  <link rel="stylesheet" href="css/category-filter-modal.css?v=mobile_hide_20261009">
-  <link rel="stylesheet" href="css/mobile-typography.css?v=mfix_20261012">
+  <link rel="stylesheet" href="css/category-filter-modal.css?v=sync3_20261012">
+  <link rel="stylesheet" href="css/mobile-typography.css?v=mui_20261012">
   <!-- Critical Style: EasyCV Card Hover & Unhover Mode Definitions (Brand Orange System) -->
   <style id="easycv-job-card-hover-style">
     :root {
@@ -148,21 +148,7 @@
         height: 0 !important;
       }
     }
-    html.in-simulator,
-    body.in-simulator,
-    html.in-simulator *,
-    body.in-simulator * {
-      scrollbar-width: none !important;
-      -ms-overflow-style: none !important;
-    }
-    html.in-simulator::-webkit-scrollbar,
-    body.in-simulator::-webkit-scrollbar,
-    .in-simulator ::-webkit-scrollbar {
-      display: none !important;
-      width: 0 !important;
-      height: 0 !important;
-      background: transparent !important;
-    }
+
   </style>
 </head>
 <body class="job-list-page">
@@ -682,6 +668,32 @@
       </div>
 
       <div class="mobile-drawer-body">
+        <!-- Tài khoản: trên mobile header chỉ còn ☰ + logo + chuông, các mục tài khoản nằm ở đây -->
+        <div class="drawer-account">
+          <a href="index.html#ho-so-cua-toi" class="drawer-account-user">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80" alt="" class="drawer-account-avatar" width="44" height="44" />
+            <span class="drawer-account-meta">
+              <strong>Nguyễn Văn A</strong>
+              <span>nguyen.vana@easycv.vn</span>
+            </span>
+          </a>
+          <div class="drawer-account-links">
+            <a href="index.html#hop-thu-den">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span>Tin nhắn</span>
+              <span class="drawer-account-badge">2</span>
+            </a>
+            <a href="index.html#ho-so-cua-toi">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+              <span>Hồ sơ</span>
+            </a>
+            <a href="index.html#dang-xuat" class="drawer-account-logout">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+              <span>Đăng xuất</span>
+            </a>
+          </div>
+        </div>
+
         <!-- 1. Tìm việc -->
         <div class="mobile-nav-item">
           <div class="mobile-nav-title">
@@ -754,8 +766,6 @@
     <!-- Search Hero Header -->
     <section class="job-search-hero">
       <div class="job-search-container">
-        
-
 
         <!-- Search Input Form (Kế thừa thanh tìm kiếm thông minh từ Trang chủ) -->
         <div class="hero-search-wrapper job-search-wrapper" id="heroSearchWrapper">
@@ -1161,11 +1171,7 @@
           </div>
         </div>
 
-
-
       <!-- 0. Thanh Bộ Lọc Thông Minh (ngay dưới ô tìm kiếm) -->
-
-
 
       <!-- 2. Bố cục 2 Cột: Danh sách việc làm (Trái) + Khối Banner Quảng Cáo Doanh Nghiệp (Phải) -->
       <div class="job-main-columns">
@@ -1218,7 +1224,6 @@
               </div>
             </div>
           </div>
-
 
           <!-- Job Cards Grid -->
           <div class="job-listing-grid" id="jobListingGrid">
@@ -2694,7 +2699,6 @@
           </div>
         </div>
 
-
         <!-- 3. AI CV Coach Service Card -->
         <div class="ad-card cv-coach-card">
           <div class="cv-coach-header">
@@ -2921,69 +2925,11 @@
   </nav>
   <!-- @end:tabbar -->
 
-  <script src="js/navbar.js?v=7.1_mobile_float"></script>
+  <script src="js/navbar.js?v=noswitch_20261012"></script>
   <script src="js/category-filter-modal.js?v=eb_colors_20261007"></script>
   <script src="js/location-picker.js?v=3.0_clean"></script>
   <script src="js/jobs-data.js?v=detail_20261007"></script>
   <script src="js/viec-lam.js?v=mfix2_20261012"></script>
-
-  <!-- Floating View Mode Switcher Box (Rìa bên phải màn hình) -->
-  <div class="floating-view-mode-box" id="floatingViewModeBox" role="region" aria-label="Bộ chuyển đổi chế độ xem Web và Mobile Web">
-    <div class="floating-box-header">
-      <div class="floating-box-title">
-        <span class="floating-box-status-dot" id="floatingStatusDot"></span>
-        <span>Chế độ xem</span>
-      </div>
-      <button type="button" class="floating-box-min-btn" id="floatingMinBtn" title="Thu gọn box">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg>
-      </button>
-    </div>
-
-    <div class="floating-minimized-pill" id="floatingMinimizedPill" title="Bấm để mở rộng bảng điều khiển">
-      <span class="floating-box-status-dot" id="floatingMiniStatusDot"></span>
-      <span id="floatingMiniLabel">Web</span>
-    </div>
-
-    <div class="floating-mode-switcher">
-      <button type="button" class="floating-mode-btn active" data-mode="web" id="floatingBtnWeb" title="Xem phiên bản Web Desktop">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
-        <span>Web</span>
-      </button>
-      <button type="button" class="floating-mode-btn" data-mode="mobile" id="floatingBtnMobile" title="Xem phiên bản Mobile Web">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>
-        <span>Mobile Web</span>
-      </button>
-    </div>
-
-    <div class="floating-mobile-controls" id="floatingMobileControls">
-      <div class="floating-preset-label">Thiết bị mô phỏng</div>
-      <div class="floating-presets-grid">
-        <button type="button" class="floating-preset-item active" data-width="390" data-height="844" title="iPhone 16 Pro (390 x 844)">
-          <span>iPhone 16</span>
-          <small>390×844</small>
-        </button>
-        <button type="button" class="floating-preset-item" data-width="412" data-height="915" title="Galaxy S24 (412 x 915)">
-          <span>Galaxy S24</span>
-          <small>412×915</small>
-        </button>
-        <button type="button" class="floating-preset-item" data-width="375" data-height="667" title="iPhone SE (375 x 667)">
-          <span>iPhone SE</span>
-          <small>375×667</small>
-        </button>
-      </div>
-
-      <div class="floating-actions-row">
-        <button type="button" class="floating-action-mini-btn" id="floatingRotateBtn" title="Xoay thiết bị ngang / dọc">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-          <span>Xoay</span>
-        </button>
-        <button type="button" class="floating-action-mini-btn" id="floatingRefreshBtn" title="Tải lại trang mobile">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
-          <span>Tải lại</span>
-        </button>
-      </div>
-    </div>
-  </div>
 
 </body>
 </html>

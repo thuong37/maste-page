@@ -147,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
       card.cloneNode(true),
     );
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobileSwipe = window.matchMedia('(max-width: 768px)'); // điện thoại: vuốt tay, không tự chạy
     let timer;
     let isTransitioning = false;
     let cancelActiveMove = () => {};
@@ -288,6 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (
         !document.hidden &&
         !reducedMotion.matches &&
+        !mobileSwipe.matches &&
         !cvSection.matches(':hover, :focus-within')
       ) {
         timer = setInterval(step, 2000);
@@ -464,6 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
     companiesTrack.children.length > 1
   ) {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobileSwipe = window.matchMedia('(max-width: 768px)'); // điện thoại: vuốt tay, không tự chạy
     let timer;
     let isTransitioning = false;
     let cancelActiveMove = () => {};
@@ -588,6 +591,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (
         !document.hidden &&
         !reducedMotion.matches &&
+        !mobileSwipe.matches &&
         !companiesSection.matches(':hover, :focus-within')
       ) {
         timer = setInterval(step, 2000);
@@ -3834,6 +3838,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sliderContainer.addEventListener('mouseenter', stopAutoPlay);
     sliderContainer.addEventListener('mouseleave', startAutoPlay);
+
+    // Vuốt ngang trên màn cảm ứng để chuyển banner
+    let touchStartX = 0;
+    let touchStartY = 0;
+    sliderContainer.addEventListener(
+      'touchstart',
+      (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      },
+      { passive: true },
+    );
+    sliderContainer.addEventListener(
+      'touchend',
+      (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+        if (dx < 0) nextSlide();
+        else prevSlide();
+      },
+      { passive: true },
+    );
 
     goToSlide(0);
     startAutoPlay();

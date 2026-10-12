@@ -195,7 +195,7 @@
   }
 }
 
-/* Ô tìm kiếm mobile: ô nhập + nút "Tìm việc" cùng 1 hàng (ô nghề/địa điểm đã ẩn ở mobile) */
+/* Ô tìm kiếm mobile: chỉ ô nhập + nút tìm kiếm trên 1 hàng (Danh mục nghề & Địa điểm ẩn trên mobile) */
 @media (max-width: 768px) {
   body .hero-search-box,
   body form.job-search-box,
@@ -228,6 +228,15 @@
     white-space: nowrap;
     gap: 6px;
     font-size: 14px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body .hero-search-box .category-filter-trigger,
+  body .hero-search-box .search-location-group,
+  body form.job-search-box .category-filter-trigger,
+  body form.job-search-box .search-location-group {
+    display: none !important;
   }
 }
 

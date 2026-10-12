@@ -2023,224 +2023,33 @@ body {
   }
 }
 
-/* ==========================================================================
-   FLOATING VIEW MODE SWITCHER BOX (Box lơ lửng ở rìa bên phải màn hình)
-   ========================================================================== */
-.floating-view-mode-box {
-  position: fixed;
-  right: 18px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2000000;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(230, 230, 230, 0.9);
-  border-radius: 18px;
-  padding: 14px;
-  box-shadow: 0 12px 36px rgba(6, 14, 24, 0.14), 0 2px 8px rgba(255, 101, 0, 0.08);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  width: 200px;
-  user-select: none;
-}
 
-[data-theme="dark"] .floating-view-mode-box {
-  background: rgba(17, 24, 39, 0.92);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
-}
 
-.floating-box-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(230, 230, 230, 0.7);
-}
 
-[data-theme="dark"] .floating-box-header {
-  border-bottom-color: rgba(255, 255, 255, 0.08);
-}
 
-.floating-box-title {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 11.5px;
-  font-weight: 700;
-  color: #060E18;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
 
-[data-theme="dark"] .floating-box-title {
-  color: #F8FAFC;
-}
 
-.floating-box-status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #30A56B;
-  box-shadow: 0 0 6px rgba(48, 165, 107, 0.6);
-  animation: pulseDot 2s infinite;
-}
 
-.floating-box-status-dot.mobile {
-  background: #FF6500;
-  box-shadow: 0 0 8px rgba(255, 101, 0, 0.8);
-}
 
-.floating-box-min-btn {
-  background: transparent;
-  border: none;
-  color: #8A8A8A;
-  cursor: pointer;
-  padding: 2px 4px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.15s;
-}
 
-.floating-box-min-btn:hover {
-  color: #060E18;
-  background: rgba(0, 0, 0, 0.05);
-}
 
-.floating-mode-switcher {
-  display: flex;
-  background: #F1F5F9;
-  border: 1px solid #E6E6E6;
-  border-radius: 12px;
-  padding: 3px;
-  gap: 3px;
-  margin-bottom: 8px;
-}
 
-[data-theme="dark"] .floating-mode-switcher {
-  background: #333333;
-  border-color: #333333;
-}
 
-.floating-mode-btn {
-  flex: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 8px 6px;
-  border: none;
-  background: transparent;
-  border-radius: 9px;
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 600;
-  color: #545454;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  white-space: nowrap;
-}
 
-[data-theme="dark"] .floating-mode-btn {
-  color: #8A8A8A;
-}
 
-.floating-mode-btn:hover:not(.active) {
-  color: #060E18;
-  background: rgba(0, 0, 0, 0.04);
-}
 
-.floating-mode-btn.active[data-mode="web"] {
-  background: #FFFFFF;
-  color: #060E18;
-  font-weight: 700;
-  box-shadow: 0 2px 6px rgba(6, 14, 24, 0.08);
-}
 
-[data-theme="dark"] .floating-mode-btn.active[data-mode="web"] {
-  background: #333333;
-  color: #FFFFFF;
-}
 
-.floating-mode-btn.active[data-mode="mobile"] {
-  background: linear-gradient(135deg, #FF8433 0%, #FF6500 100%);
-  color: #FFFFFF;
-  font-weight: 700;
-  box-shadow: 0 2px 8px rgba(255, 101, 0, 0.35);
-}
 
-.floating-mobile-controls {
-  display: none;
-  flex-direction: column;
-  gap: 8px;
-  padding-top: 4px;
-}
 
-.floating-view-mode-box.mode-mobile .floating-mobile-controls {
-  display: flex;
-}
 
-.floating-preset-label {
-  font-size: 11px;
-  font-weight: 600;
-  color: #8A8A8A;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
 
-.floating-presets-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
 
-.floating-preset-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 6px 10px;
-  background: #F8FAFC;
-  border: 1px solid #E6E6E6;
-  border-radius: 8px;
-  font-size: 11.5px;
-  font-weight: 600;
-  color: #333333;
-  cursor: pointer;
-  transition: all 0.15s;
-}
 
-[data-theme="dark"] .floating-preset-item {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.08);
-  color: #B0B0B0;
-}
 
-.floating-preset-item small {
-  color: #8A8A8A;
-  font-size: 10px;
-}
 
-.floating-preset-item:hover {
-  border-color: #FF6500;
-  color: #FF6500;
-  background: #FFF0E6;
-}
 
-.floating-preset-item.active {
-  background: rgba(255, 101, 0, 0.12);
-  border-color: #FF6500;
-  color: #E85C00;
-  font-weight: 700;
-}
 
-.floating-preset-item.active small {
-  color: #E85C00;
-  font-weight: 600;
-}
 
 .floating-actions-row {
   display: flex;
@@ -2277,134 +2086,24 @@ body {
   border-color: #B0B0B0;
 }
 
-/* Minimized Floating Box State */
-.floating-view-mode-box.is-minimized {
-  width: auto;
-  padding: 8px 12px;
-  border-radius: 9999px;
-  right: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
 
-.floating-view-mode-box.is-minimized .floating-box-header,
-.floating-view-mode-box.is-minimized .floating-mobile-controls,
-.floating-view-mode-box.is-minimized .floating-mode-switcher {
-  display: none !important;
-}
 
-.floating-minimized-pill {
-  display: none !important;
-}
 
-.floating-view-mode-box.is-minimized .floating-minimized-pill {
-  display: flex !important;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 700;
-  color: #060E18;
-}
 
-[data-theme="dark"] .floating-view-mode-box.is-minimized .floating-minimized-pill {
-  color: #F8FAFC;
-}
 
-/* Hide floating box inside simulator iframe */
-body.in-simulator .floating-view-mode-box {
-  display: none !important;
-}
 
-/* ==========================================================================
-   Mobile Web Device Simulator Overlay
-   ========================================================================== */
-.mobile-simulator-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 999999;
-  background: rgba(11, 15, 25, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
-}
 
-.mobile-simulator-overlay.is-active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
 
-.simulator-top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 10px 24px;
-  background: #060E18;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  color: #F8FAFC;
-  flex-shrink: 0;
-}
 
-.simulator-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
 
-.simulator-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 101, 0, 0.15);
-  border: 1px solid rgba(255, 101, 0, 0.35);
-  color: #FF8433;
-  font-size: 12.5px;
-  font-weight: 700;
-  padding: 5px 12px;
-  border-radius: 9999px;
-  letter-spacing: 0.01em;
-}
 
-.simulator-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #FF6500;
-  box-shadow: 0 0 8px #FF6500;
-  animation: pulseDot 2s infinite;
-}
 
 @keyframes pulseDot {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(0.85); }
 }
 
-.simulator-url {
-  font-size: 13px;
-  color: #8A8A8A;
-  font-family: 'JetBrains Mono', monospace;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 4px 10px;
-  border-radius: 6px;
-}
 
-.simulator-device-presets {
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.06);
-  padding: 3px;
-  border-radius: 10px;
-  gap: 2px;
-}
 
 .preset-btn {
   display: flex;
@@ -2440,71 +2139,12 @@ body.in-simulator .floating-view-mode-box {
   color: rgba(255, 255, 255, 0.85);
 }
 
-.simulator-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
-.simulator-action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #E6E6E6;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 7px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
 
-.simulator-action-btn:hover {
-  background: rgba(255, 255, 255, 0.14);
-  color: #FFFFFF;
-}
 
-.simulator-close-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #FFFFFF;
-  border: none;
-  color: #060E18;
-  font-size: 13px;
-  font-weight: 700;
-  padding: 7px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  transition: all 0.2s ease;
-}
 
-.simulator-close-btn:hover {
-  background: #F1F5F9;
-  transform: translateY(-1px);
-}
 
-.simulator-close-btn kbd {
-  background: #E6E6E6;
-  color: #545454;
-  font-size: 10.5px;
-  font-weight: 700;
-  padding: 2px 6px;
-  border-radius: 4px;
-  border: 1px solid #B0B0B0;
-}
 
-.simulator-stage {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 20px 24px;
-  overflow: hidden;
-}
 
 .smartphone-frame {
   width: 390px;
@@ -2585,41 +2225,10 @@ body.in-simulator .floating-view-mode-box {
   border-radius: 3px;
 }
 
-/* When inside iframe, hide simulator overlay elements */
-body.in-simulator .mobile-simulator-overlay {
-  display: none !important;
-}
 
-@media (max-width: 640px) {
-  .view-mode-btn span {
-    display: none;
-  }
-  .view-mode-btn {
-    padding: 6px 8px;
-  }
-}
 
-/* =========================================================================
-   HIDE VERTICAL & HORIZONTAL SCROLLBARS IN MOBILE SIMULATOR / MOBILE VIEW
-   (Mang lại trải nghiệm vuốt chạm mượt mà chuẩn iOS / Android)
-   ========================================================================= */
-html.in-simulator,
-body.in-simulator,
-html.in-simulator *,
-body.in-simulator * {
-  scrollbar-width: none !important; /* Firefox */
-  -ms-overflow-style: none !important; /* IE and Edge */
-}
 
-html.in-simulator::-webkit-scrollbar,
-body.in-simulator::-webkit-scrollbar,
-html.in-simulator *::-webkit-scrollbar,
-body.in-simulator *::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-  background: transparent !important;
-}
+
 
 @media (max-width: 768px) {
   html,
@@ -2639,28 +2248,7 @@ body.in-simulator *::-webkit-scrollbar {
   }
 }
 
-/* =========================================================================
-   HIDE VERTICAL & HORIZONTAL SCROLLBARS IN MOBILE SIMULATOR / MOBILE VIEW
-   (Mang lại trải nghiệm vuốt chạm mượt mà chuẩn iOS / Android, loại bỏ hoàn toàn scrollbar xám)
-   ========================================================================= */
-html.in-simulator,
-body.in-simulator,
-html.in-simulator *,
-body.in-simulator * {
-  scrollbar-width: none !important; /* Firefox */
-  -ms-overflow-style: none !important; /* IE and Edge */
-}
 
-html.in-simulator::-webkit-scrollbar,
-body.in-simulator::-webkit-scrollbar,
-html.in-simulator *::-webkit-scrollbar,
-body.in-simulator *::-webkit-scrollbar,
-.in-simulator ::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-  background: transparent !important;
-}
 
 @media (max-width: 1024px) {
   html,
@@ -2687,16 +2275,7 @@ body.in-simulator *::-webkit-scrollbar,
   }
 }
 
-/* Điện thoại: hộp "Chế độ xem" nằm góc dưới bên phải (không che giữa màn hình),
-   chừa chỗ cho thanh "Ứng tuyển ngay" cố định ở đáy trang chi tiết */
-@media (max-width: 768px) {
-  .floating-view-mode-box {
-    top: auto;
-    bottom: 84px;
-    right: 12px;
-    transform: none;
-  }
-}
+
 
 /* Điện thoại nhỏ (≤374px): thu gọn cụm nút header để nút menu ☰ không bị đẩy ra ngoài màn hình */
 @media (max-width: 374px) {
@@ -2788,8 +2367,8 @@ body.in-simulator *::-webkit-scrollbar,
     gap: 6px;
   }
 }
-/* iPad / tablet: nút ☰ nằm góc trên bên trái, cạnh logo */
-@media (min-width: 600px) and (max-width: 1100px) {
+/* Tablet + điện thoại: nút ☰ nằm góc trên bên trái, cạnh logo (giống bố cục app) */
+@media (max-width: 1100px) {
   .navbar {
     justify-content: flex-start;
     gap: 12px;
@@ -2797,5 +2376,98 @@ body.in-simulator *::-webkit-scrollbar,
   .mobile-toggle-btn {
     order: -1;
     margin-left: 0;
+  }
+}
+
+/* Điện thoại: header tối giản ☰ + logo + chuông thông báo.
+   Tin nhắn & tài khoản đã có trong menu ☰ (khối .drawer-account) và mục "Cá nhân" ở thanh đáy */
+.drawer-account {
+  display: none;
+}
+@media (max-width: 768px) {
+  .navbar-actions > div:has(#message-btn),
+  .navbar-actions .account-logged-view {
+    display: none !important;
+  }
+  .drawer-account {
+    display: block;
+    margin: 0 0 16px;
+    padding: 14px;
+    border-radius: 14px;
+    background: var(--eb-primary-50, #FFF0E6);
+  }
+  .drawer-account-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--eb-text-800, #060E18);
+  }
+  .drawer-account-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    flex: none;
+  }
+  .drawer-account-meta {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .drawer-account-meta strong {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .drawer-account-meta span {
+    font-size: 12.5px;
+    color: var(--eb-text-400, #545454);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .drawer-account-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .drawer-account-links a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 4px;
+    border-radius: 10px;
+    background: #fff;
+    color: var(--eb-text-500, #333333);
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .drawer-account-links svg {
+    width: 20px;
+    height: 20px;
+    color: var(--eb-primary-500, #FF6500);
+  }
+  .drawer-account-links .drawer-account-logout svg {
+    color: var(--eb-text-400, #545454);
+  }
+  .drawer-account-badge {
+    position: absolute;
+    top: 6px;
+    right: calc(50% - 22px);
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 999px;
+    background: var(--eb-primary-500, #FF6500);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
   }
 }
