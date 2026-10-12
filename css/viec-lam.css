@@ -2583,13 +2583,6 @@
     border-radius: 0;
     overflow-y: auto;
   }
-  .job-search-box {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .search-divider {
-    display: none;
-  }
 }
 
 /* Active Search Filter Badge */
