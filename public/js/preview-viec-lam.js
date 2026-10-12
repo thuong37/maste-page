@@ -1817,7 +1817,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ? ` | +${job.skills.length - 1}`
             : '';
         const skillsSummary = `${expText} kinh nghiệm chuyên môn${firstSkill ? ' | ' + firstSkill : ''}${remainingCount}`;
-        const isViewed = job.id <= 3;
 
         return `
         <article class="job-card ${featuredClass} ${isSelected ? 'is-selected' : ''}" data-id="${job.id}" ${isSelected ? 'aria-current="true"' : ''}>
@@ -1863,7 +1862,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="job-bottom-right">
               <div class="job-meta-unhovered">
-                <span class="job-post-time">Đăng ${job.updated}</span>${isViewed ? '<span class="badge-viewed">Đã xem</span>' : ''}
+                <span class="job-post-time">Đăng ${job.updated}</span>
               </div>
               <div class="job-actions-hovered">
                 ${

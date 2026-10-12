@@ -1099,8 +1099,6 @@ document.addEventListener('DOMContentLoaded', () => {
             : '';
         const skillsSummary = `${expText} kinh nghiệm chuyên môn${firstSkill ? ' | ' + firstSkill : ''}${remainingCount}`;
 
-        // Viewed status: sample viewed jobs on page 1
-        const isViewed = job.id <= 3;
 
         return `
         <article class="job-card ${featuredClass}" data-id="${job.id}">
@@ -1153,7 +1151,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="job-bottom-right">
               <div class="job-meta-unhovered">
                 <span class="job-post-time">Đăng ${job.updated}</span>
-                ${isViewed ? '<span class="badge-viewed">Đã xem</span>' : ''}
               </div>
               <div class="job-actions-hovered">
                 <button type="button" class="btn-card-apply" data-id="${job.id}">Ứng tuyển</button>
