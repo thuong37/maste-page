@@ -1953,10 +1953,14 @@ body {
     width: 34px;
     height: 34px;
   }
+  .account-logged-view {
+    display: none;
+  }
   .mobile-toggle-btn {
+    order: -1;
     width: 38px;
     height: 38px;
-    margin-left: 2px;
+    margin-left: 0;
   }
   .hero-container {
     padding: 0 var(--container-padding-mobile, 16px);

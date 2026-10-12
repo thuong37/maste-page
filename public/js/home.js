@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3200);
   }
 
-  // --- 2. Job grids: maximum 12 cards (3 columns x 4 rows) per page ---
+  // --- 2. Job grids: 4 cards/page on mobile, 12 cards/page on larger screens ---
   function createJobPaginator(sectionSelector, cardSelector) {
     const section = document.querySelector(sectionSelector);
     if (
@@ -363,7 +363,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!grid) return null;
 
     const cards = [...grid.querySelectorAll(cardSelector)];
-    const pageSize = 12;
+    const mobilePageQuery = window.matchMedia('(max-width: 768px)');
+    const getPageSize = () => (mobilePageQuery.matches ? 4 : 12);
     let currentPage = 1;
     let filterPredicate = () => true;
 
@@ -388,6 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageInfo = pagination.querySelector('.job-list-page-info');
 
     const render = () => {
+      const pageSize = getPageSize();
       const filteredCards = cards.filter(filterPredicate);
       const totalPages = Math.max(
         1,
@@ -417,6 +419,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     nextButton.addEventListener('click', () => {
+      const pageSize = getPageSize();
       const totalPages = Math.max(
         1,
         Math.ceil(cards.filter(filterPredicate).length / pageSize),
@@ -425,6 +428,11 @@ document.addEventListener('DOMContentLoaded', () => {
         currentPage += 1;
         render();
       }
+    });
+
+    mobilePageQuery.addEventListener('change', () => {
+      currentPage = 1;
+      render();
     });
 
     render();
@@ -3952,6 +3960,9 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     const previewPopup = document.getElementById('jobPreviewPopup');
     const sectionContainer = document.getElementById('viec-lam-noi-bat');
+    const matchingGridEl = document.querySelector(
+      '#viec-lam-phu-hop .jobs-grid',
+    );
     const tabsPrevious = sectionContainer?.querySelector('.featured-tabs-prev');
     const tabsNext = sectionContainer?.querySelector('.featured-tabs-next');
 
@@ -8661,10 +8672,201 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     ];
 
+    // Dữ liệu preview cho các việc làm phù hợp đang được render tĩnh trên trang chủ.
+    // Dùng chung cấu trúc với FEATURED_JOBS_DATA để popup có cùng giao diện và hành vi.
+    const MATCHING_JOBS_DATA = [
+      {
+        id: 901,
+        title:
+          'Staff AI / Machine Learning Specialist (Ranking & Recommendation)',
+        company: 'SHOPEE / SEA MONEY',
+        logo: 'assets/logos/companies/company-shopee.svg',
+        salaryBadge: '2,500 - 4,000 USD',
+        location: 'TP.HCM',
+        city: 'TP.HCM',
+        exp: '4+ năm',
+        type: 'Toàn thời gian',
+        updated: '35 phút trước',
+        skills: ['Machine Learning', 'Ranking', 'Recommendation', 'Python'],
+        jdSummary: [
+          'Phát triển mô hình xếp hạng và gợi ý sản phẩm cho hệ sinh thái Shopee.',
+          'Tối ưu pipeline huấn luyện, đánh giá và triển khai mô hình ở quy mô lớn.',
+          'Phối hợp cùng Product và Data để cải thiện trải nghiệm khám phá sản phẩm.',
+        ],
+        perks: [
+          'Thưởng hiệu suất và cổ phiếu theo chính sách',
+          'Bảo hiểm sức khỏe mở rộng cho nhân viên',
+        ],
+        requirements: [
+          'Tối thiểu 4 năm kinh nghiệm Machine Learning hoặc hệ thống gợi ý.',
+          'Thành thạo Python và có kinh nghiệm xử lý dữ liệu lớn.',
+        ],
+        workAddress: 'Tòa nhà Saigon Centre, Quận 1, TP.HCM.',
+        workTime: 'Thứ Hai - Thứ Sáu, giờ làm việc linh hoạt',
+      },
+      {
+        id: 902,
+        title: 'Senior React Native / Mobile App Engineer',
+        company: 'TIKI CORPORATION',
+        logo: 'assets/logos/companies/company-tiki.svg',
+        salaryBadge: '32 - 50 triệu',
+        location: 'TP.HCM',
+        city: 'TP.HCM',
+        exp: '3+ năm',
+        type: 'Toàn thời gian',
+        updated: '1 giờ trước',
+        skills: ['React Native', 'TypeScript', 'Mobile Performance', 'CI/CD'],
+        jdSummary: [
+          'Phát triển các tính năng mua sắm trên ứng dụng Tiki bằng React Native.',
+          'Tối ưu hiệu năng, độ ổn định và trải nghiệm trên iOS và Android.',
+          'Xây dựng thư viện component dùng chung cùng đội ngũ Mobile Platform.',
+        ],
+        perks: ['Thưởng theo hiệu quả công việc', 'Gói chăm sóc sức khỏe cao cấp'],
+        requirements: [
+          'Có ít nhất 3 năm phát triển ứng dụng di động, ưu tiên React Native.',
+          'Nắm vững TypeScript, state management và quy trình phát hành ứng dụng.',
+        ],
+        workAddress: '52 Út Tịch, Phường 4, Quận Tân Bình, TP.HCM.',
+        workTime: 'Thứ Hai - Thứ Sáu, 09:00 - 18:00',
+      },
+      {
+        id: 903,
+        title: 'Fullstack Developer (Node.js & React/Next.js)',
+        company: 'KMS TECHNOLOGY',
+        logo: 'assets/logos/companies/company-kms.svg',
+        salaryBadge: '1,500 - 2,500 USD',
+        location: 'Remote',
+        city: 'Remote',
+        exp: '3-5 năm',
+        type: 'Toàn thời gian',
+        updated: '2 giờ trước',
+        skills: ['Node.js', 'React', 'Next.js', 'AWS'],
+        jdSummary: [
+          'Phát triển sản phẩm web end-to-end với Node.js và React/Next.js.',
+          'Thiết kế API, mô hình dữ liệu và các luồng tích hợp với dịch vụ cloud.',
+          'Tham gia review code và cải tiến chất lượng kỹ thuật của đội dự án.',
+        ],
+        perks: ['Làm việc từ xa linh hoạt', 'Ngân sách học tập và thi chứng chỉ'],
+        requirements: [
+          'Có từ 3 năm kinh nghiệm phát triển ứng dụng web fullstack.',
+          'Hiểu rõ REST API, cơ sở dữ liệu và quy trình CI/CD.',
+        ],
+        workAddress: 'Làm việc từ xa hoặc tại văn phòng KMS TP.HCM.',
+        workTime: 'Thứ Hai - Thứ Sáu, giờ làm việc linh hoạt',
+      },
+      {
+        id: 904,
+        title: 'Senior UI/UX Designer (Design System & App Banking)',
+        company: 'NGÂN HÀNG QUÂN ĐỘI (MB BANK)',
+        logo: 'assets/logos/companies/company-mbbank.svg',
+        salaryBadge: '25 - 40 triệu',
+        location: 'Hà Nội',
+        city: 'Hà Nội',
+        exp: '3+ năm',
+        type: 'Toàn thời gian',
+        updated: '3 giờ trước',
+        skills: ['Figma', 'Design System', 'UX Research', 'Mobile Banking'],
+        jdSummary: [
+          'Thiết kế trải nghiệm cho các luồng giao dịch trên ứng dụng ngân hàng số.',
+          'Phát triển và quản trị design system dùng chung cho hệ sinh thái MB.',
+          'Phối hợp với Product và Engineering để kiểm soát chất lượng triển khai.',
+        ],
+        perks: [
+          'Thưởng kinh doanh theo chính sách ngân hàng',
+          'Vay ưu đãi dành cho CBNV',
+        ],
+        requirements: [
+          'Có portfolio sản phẩm số và ít nhất 3 năm kinh nghiệm UI/UX.',
+          'Thành thạo Figma, prototyping và xây dựng design system.',
+        ],
+        workAddress: 'Số 18 Lê Văn Lương, Cầu Giấy, Hà Nội.',
+        workTime: 'Thứ Hai - Thứ Sáu, 08:00 - 17:30',
+      },
+      {
+        id: 905,
+        title: 'Cloud Solutions Architect (AWS / Azure Enterprise)',
+        company: 'FPT SOFTWARE',
+        logo: 'assets/logos/companies/company-fpt.png',
+        salaryBadge: '40 - 65 triệu',
+        location: 'Hà Nội',
+        city: 'Hà Nội',
+        exp: '5+ năm',
+        type: 'Toàn thời gian',
+        updated: '4 giờ trước',
+        skills: ['AWS', 'Azure', 'Cloud Architecture', 'DevOps'],
+        jdSummary: [
+          'Thiết kế kiến trúc cloud cho các hệ thống doanh nghiệp quy mô lớn.',
+          'Tư vấn lộ trình chuyển đổi và tối ưu chi phí vận hành trên AWS/Azure.',
+          'Dẫn dắt kỹ thuật, review giải pháp và hỗ trợ đội dự án triển khai.',
+        ],
+        perks: [
+          'Thưởng dự án và chứng chỉ quốc tế',
+          'Cơ hội làm việc với khách hàng toàn cầu',
+        ],
+        requirements: [
+          'Có từ 5 năm kinh nghiệm hạ tầng hoặc kiến trúc cloud doanh nghiệp.',
+          'Ưu tiên ứng viên có chứng chỉ AWS Solutions Architect hoặc Azure tương đương.',
+        ],
+        workAddress: 'FPT Tower, số 10 Phạm Văn Bạch, Cầu Giấy, Hà Nội.',
+        workTime: 'Thứ Hai - Thứ Sáu, 08:30 - 17:30',
+      },
+      {
+        id: 906,
+        title: 'Senior Backend Engineer (Golang & High-Load Systems)',
+        company: 'VNG CORPORATION',
+        logo: 'assets/logos/companies/company-vng.svg',
+        salaryBadge: '35 - 60 triệu',
+        location: 'TP.HCM & Remote',
+        city: 'TP.HCM',
+        exp: '3+ năm',
+        type: 'Toàn thời gian',
+        updated: '5 giờ trước',
+        skills: ['Golang', 'Microservices', 'Kafka', 'Kubernetes'],
+        jdSummary: [
+          'Xây dựng dịch vụ backend Golang có lưu lượng truy cập lớn.',
+          'Thiết kế kiến trúc microservices, luồng sự kiện và cơ chế giám sát hệ thống.',
+          'Tối ưu độ trễ, khả năng chịu tải và tính sẵn sàng của nền tảng.',
+        ],
+        perks: ['Mô hình làm việc hybrid linh hoạt', 'Bảo hiểm sức khỏe mở rộng'],
+        requirements: [
+          'Có ít nhất 3 năm phát triển backend và kinh nghiệm thực tế với Golang.',
+          'Hiểu sâu hệ thống phân tán, message queue và container orchestration.',
+        ],
+        workAddress: 'VNG Campus, Khu chế xuất Tân Thuận, Quận 7, TP.HCM.',
+        workTime: 'Thứ Hai - Thứ Sáu, giờ làm việc linh hoạt',
+      },
+    ];
+
+    const getJobById = (jobId) => {
+      const numericId = parseInt(jobId, 10);
+      return (
+        FEATURED_JOBS_DATA.find((job) => job.id === numericId) ||
+        MATCHING_JOBS_DATA.find((job) => job.id === numericId)
+      );
+    };
+
+    // Gắn định danh và đường dẫn thật cho các card phù hợp để dùng chung popup.
+    if (matchingGridEl) {
+      matchingGridEl.querySelectorAll('.job-card').forEach((card, index) => {
+        const job = MATCHING_JOBS_DATA[index];
+        if (!job) return;
+        const titleEl = card.querySelector('.job-title');
+        const bookmarkBtn = card.querySelector('.btn-bookmark');
+        card.dataset.jobId = String(job.id);
+        if (titleEl) {
+          titleEl.dataset.jobId = String(job.id);
+          titleEl.href = buildJobDetailHref(job, heroSearchInput?.value);
+        }
+        if (bookmarkBtn) bookmarkBtn.dataset.jobId = String(job.id);
+      });
+    }
+
     // Trạng thái vận hành (mặc định tab Tất cả)
     let currentCategory = 'all';
     let currentPage = 1;
-    const JOBS_PER_PAGE = 12; // Tối đa 3 cột thẻ, tối đa 4 hàng thẻ = 12 thẻ/trang
+    const featuredMobilePageQuery = window.matchMedia('(max-width: 768px)');
+    const getJobsPerPage = () =>
+      featuredMobilePageQuery.matches ? 4 : 12;
     let previewHideTimeout = null;
     let previewShowTimeout = null;
     let isHoveringPopup = false;
@@ -8851,12 +9053,13 @@ document.addEventListener('DOMContentLoaded', () => {
       hideJobPreview(true);
       const rankedJobs = getRankedJobsForCategory(currentCategory);
       const totalJobs = rankedJobs.length;
-      const totalPages = Math.max(1, Math.ceil(totalJobs / JOBS_PER_PAGE));
+      const jobsPerPage = getJobsPerPage();
+      const totalPages = Math.max(1, Math.ceil(totalJobs / jobsPerPage));
 
       if (currentPage > totalPages) currentPage = 1;
 
-      const startIndex = (currentPage - 1) * JOBS_PER_PAGE;
-      const pageJobs = rankedJobs.slice(startIndex, startIndex + JOBS_PER_PAGE);
+      const startIndex = (currentPage - 1) * jobsPerPage;
+      const pageJobs = rankedJobs.slice(startIndex, startIndex + jobsPerPage);
 
       let savedJobs = [];
       try {
@@ -9008,7 +9211,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clearTimeout(previewHideTimeout);
       clearTimeout(previewShowTimeout);
 
-      const job = FEATURED_JOBS_DATA.find((j) => j.id === parseInt(jobId, 10));
+      const job = getJobById(jobId);
       if (!job) return;
 
       const esc = (s) =>
@@ -9222,7 +9425,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentSaved = [];
           }
           const sIndex = currentSaved.indexOf(job.id);
-          const cardBookmarkBtn = gridEl.querySelector(
+          const cardBookmarkBtn = document.querySelector(
             `.btn-bookmark[data-job-id="${job.id}"]`,
           );
           if (sIndex > -1) {
@@ -9371,79 +9574,92 @@ document.addEventListener('DOMContentLoaded', () => {
     // Gắn sự kiện cho các elements trên thẻ job
     function bindJobCardEvents() {
       // Hover tên job -> hiển thị Popover Preview sau 350ms
-      gridEl.querySelectorAll('.job-title').forEach((titleEl) => {
-        titleEl.addEventListener('click', (e) => {
-          clearTimeout(previewShowTimeout);
-          isHoveringTitle = false;
-          hideJobPreview(true);
-          const jobId = titleEl.getAttribute('data-job-id');
-          const selectedJob = FEATURED_JOBS_DATA.find(
-            (item) => item.id === parseInt(jobId, 10),
-          );
-          if (selectedJob)
-            titleEl.href = buildJobDetailHref(
-              selectedJob,
-              heroSearchInput?.value,
-            );
-          e.stopPropagation();
+      document
+        .querySelectorAll(
+          '#featuredJobsGrid .job-title, #viec-lam-phu-hop .job-title',
+        )
+        .forEach((titleEl) => {
+          if (titleEl.dataset.previewBound === 'true') return;
+          titleEl.dataset.previewBound = 'true';
+          titleEl.addEventListener('click', (e) => {
+            clearTimeout(previewShowTimeout);
+            isHoveringTitle = false;
+            hideJobPreview(true);
+            const jobId = titleEl.getAttribute('data-job-id');
+            const selectedJob = getJobById(jobId);
+            if (selectedJob)
+              titleEl.href = buildJobDetailHref(
+                selectedJob,
+                heroSearchInput?.value,
+              );
+            e.stopPropagation();
+          });
+          titleEl.addEventListener('mouseenter', () => {
+            isHoveringTitle = true;
+            clearTimeout(previewShowTimeout);
+            hideJobPreview(true);
+            const jobId = titleEl.getAttribute('data-job-id');
+            if (jobId) {
+              previewShowTimeout = setTimeout(() => {
+                showJobPreview(jobId, titleEl);
+              }, 350);
+            }
+          });
+          titleEl.addEventListener('mouseleave', () => {
+            isHoveringTitle = false;
+            clearTimeout(previewShowTimeout);
+            hideJobPreview(false);
+          });
         });
-        titleEl.addEventListener('mouseenter', () => {
-          isHoveringTitle = true;
-          clearTimeout(previewShowTimeout);
-          hideJobPreview(true);
-          const jobId = titleEl.getAttribute('data-job-id');
-          if (jobId) {
-            previewShowTimeout = setTimeout(() => {
-              showJobPreview(jobId, titleEl);
-            }, 350);
-          }
-        });
-        titleEl.addEventListener('mouseleave', () => {
-          isHoveringTitle = false;
-          clearTimeout(previewShowTimeout);
-          hideJobPreview(false);
-        });
-      });
 
       // Click Bookmark -> Lưu vào localStorage
-      gridEl.querySelectorAll('.btn-bookmark').forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          const jobId = parseInt(btn.getAttribute('data-job-id'), 10);
-          if (!jobId) return;
+      document
+        .querySelectorAll(
+          '#featuredJobsGrid .btn-bookmark, #viec-lam-phu-hop .btn-bookmark',
+        )
+        .forEach((btn) => {
+          if (btn.dataset.bookmarkBound === 'true') return;
+          btn.dataset.bookmarkBound = 'true';
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const jobId = parseInt(btn.getAttribute('data-job-id'), 10);
+            if (!jobId) return;
 
-          let savedJobs = [];
-          try {
-            savedJobs = JSON.parse(
-              localStorage.getItem('easycv_saved_jobs') || '[]',
+            let savedJobs = [];
+            try {
+              savedJobs = JSON.parse(
+                localStorage.getItem('easycv_saved_jobs') || '[]',
+              );
+            } catch (err) {
+              savedJobs = [];
+            }
+
+            const idx = savedJobs.indexOf(jobId);
+            if (idx > -1) {
+              savedJobs.splice(idx, 1);
+              btn.classList.remove('active');
+              const svg = btn.querySelector('svg');
+              if (svg) {
+                svg.setAttribute('fill', 'none');
+                svg.setAttribute('stroke', 'currentColor');
+              }
+            } else {
+              savedJobs.push(jobId);
+              btn.classList.add('active');
+              const svg = btn.querySelector('svg');
+              if (svg) {
+                svg.setAttribute('fill', '#FF3333');
+                svg.setAttribute('stroke', '#FF3333');
+              }
+            }
+
+            localStorage.setItem(
+              'easycv_saved_jobs',
+              JSON.stringify(savedJobs),
             );
-          } catch (err) {
-            savedJobs = [];
-          }
-
-          const idx = savedJobs.indexOf(jobId);
-          if (idx > -1) {
-            savedJobs.splice(idx, 1);
-            btn.classList.remove('active');
-            const svg = btn.querySelector('svg');
-            if (svg) {
-              svg.setAttribute('fill', 'none');
-              svg.setAttribute('stroke', 'currentColor');
-            }
-          } else {
-            savedJobs.push(jobId);
-            btn.classList.add('active');
-            const svg = btn.querySelector('svg');
-            if (svg) {
-              svg.setAttribute('fill', '#FF3333');
-              svg.setAttribute('stroke', '#FF3333');
-            }
-          }
-
-          localStorage.setItem('easycv_saved_jobs', JSON.stringify(savedJobs));
+          });
         });
-      });
 
       // Click Thẻ job -> Mở trang chi tiết việc làm
       gridEl.querySelectorAll('.job-card').forEach((card) => {
@@ -9513,6 +9729,10 @@ document.addEventListener('DOMContentLoaded', () => {
       passive: true,
     });
     window.addEventListener('resize', updateTabsNavigation);
+    featuredMobilePageQuery.addEventListener('change', () => {
+      currentPage = 1;
+      renderJobsGrid();
+    });
 
     tabBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
