@@ -1,6 +1,6 @@
 /**
  * EasyCV - Màn Chi tiết việc làm (chi-tiet.css)
- * Layout 2 cột: nội dung chính + sidebar công ty / thông tin chung.
+ * Layout 2 cột: nội dung chính + sidebar công ty / việc làm khác của công ty.
  * Màu lấy từ token Figma "Color system EasyBooks" (--eb-*) trong assets/design-tokens.css.
  */
 
@@ -543,23 +543,35 @@
 .jd-company-facts svg { flex-shrink: 0; margin-top: 3px; color: var(--jd-muted); }
 .jd-company-facts strong { color: var(--jd-ink); font-weight: 600; }
 
-.jd-general-title { margin: 0 0 18px; font-size: 18px; font-weight: 700; }
-.jd-general-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
-.jd-general-list li { display: flex; gap: 14px; align-items: center; }
-.jd-general-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: #F3F4F6;
-  color: var(--jd-muted);
+/* Việc làm khác của công ty: thẻ gọn, không lặp logo/tên công ty đã có ở thẻ phía trên */
+.jd-company-jobs-list { display: flex; flex-direction: column; gap: 10px; }
+.jd-company-job {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px;
+  border: 1px solid var(--eb-secondary-100, #D5EEE2);
+  border-radius: 12px;
+  background: var(--eb-secondary-50, #EAF6F0);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.18s ease, border-color 0.18s ease;
 }
-.jd-general-list li > span:last-child { display: flex; flex-direction: column; gap: 2px; }
-.jd-general-label { font-size: 13px; color: var(--jd-muted); }
-.jd-general-list strong { font-size: 14px; font-weight: 600; }
+.jd-company-job:hover { border-color: var(--eb-primary-500, #FF6500); box-shadow: 0 4px 14px rgba(255, 101, 0, 0.12); }
+.jd-company-job:hover .jd-company-job-title { color: var(--eb-primary-500, #FF6500); }
+.jd-company-job:focus-visible { outline: 2px solid var(--eb-primary-500, #FF6500); outline-offset: 2px; }
+.jd-company-job-title {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.jd-company-job-salary { font-size: 14px; font-weight: 700; color: var(--eb-secondary-600, #1F8A55); }
+.jd-company-job .jd-related-tags { margin-top: 0; }
 
 /* ---------- Trạng thái không tìm thấy ---------- */
 .jd-empty { text-align: center; padding: 40px 16px; }
@@ -617,7 +629,7 @@
   .jd-section-head { flex-direction: column; align-items: flex-start; }
 }
 
-/* Mobile/tablet: đưa "Thông tin chung" lên ngay sau thẻ tiêu đề, thẻ công ty đứng trước phần giới thiệu công ty
+/* Mobile/tablet: thẻ công ty đứng trước phần giới thiệu công ty, "Việc làm khác của công ty" ngay trên "Việc làm liên quan"
    (trước đây cả cột phải bị đẩy xuống cuối trang, sau "Việc làm liên quan") */
 @media (max-width: 992px) {
   .jd-layout { display: flex; flex-direction: column; align-items: stretch; gap: 16px; }
@@ -625,10 +637,10 @@
   .jd-side { display: contents; }
   .jd-head { order: 1; }
   .jd-tabs { order: 2; }
-  .jd-general { order: 3; }
-  .jd-content { order: 4; }
-  .jd-company { order: 5; }
-  .jd-company-profile { order: 6; }
+  .jd-content { order: 3; }
+  .jd-company { order: 4; }
+  .jd-company-profile { order: 5; }
+  .jd-company-jobs { order: 6; }
   .jd-related { order: 7; }
   .jd-page { padding-bottom: 80px; }
 }
@@ -682,9 +694,6 @@
   .jd-overview .jd-chips::-webkit-scrollbar { display: none; }
   .jd-overview .jd-chip { flex: 0 0 auto; white-space: nowrap; }
 
-  /* Thông tin chung: 1 cột nhưng gọn hơn (icon nhỏ, khoảng cách hẹp) */
-  .jd-general-list { gap: 10px !important; }
-  .jd-general-icon { width: 34px !important; height: 34px !important; flex: none; }
   /* Hồ sơ doanh nghiệp: lưới 2 cột gọn */
   .jd-company-profile-grid {
     display: grid !important;

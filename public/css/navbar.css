@@ -2400,42 +2400,10 @@ body {
     border-radius: 14px;
     background: var(--eb-primary-50, #FFF0E6);
   }
-  .drawer-account-user {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: var(--eb-text-800, #060E18);
-  }
-  .drawer-account-avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #fff;
-    flex: none;
-  }
-  .drawer-account-meta {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-  }
-  .drawer-account-meta strong {
-    font-size: 15px;
-    font-weight: 700;
-  }
-  .drawer-account-meta span {
-    font-size: 12.5px;
-    color: var(--eb-text-400, #545454);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
   .drawer-account-links {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
-    margin-top: 12px;
   }
   .drawer-account-links a {
     position: relative;

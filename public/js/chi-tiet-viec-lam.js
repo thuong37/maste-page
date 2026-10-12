@@ -1,7 +1,8 @@
 /**
  * EasyCV - Màn Chi tiết việc làm (chi-tiet-viec-lam.js)
- * Đọc dữ liệu dùng chung từ js/jobs-data.js (window.EASYCV_JOBS), tra theo ?id= (hoặc ?title=)
- * và render layout 2 cột: nội dung chính + sidebar công ty / thông tin chung.
+ * Đọc dữ liệu dùng chung từ js/jobs-data.js (window.EASYCV_JOBS), tra theo ?id= (hoặc ?title=,
+ * kèm ?company= với job mẫu của công ty) và render layout 2 cột: nội dung chính + sidebar công ty /
+ * việc làm khác của công ty.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -39,6 +40,93 @@ document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   const targetId = parseInt(params.get('id') || params.get('jobId') || '0', 10);
   const targetTitle = (params.get('title') || params.get('jobTitle') || '').trim();
+  const targetCompany = (params.get('company') || '').trim();
+
+  // Job mẫu cho "Việc làm khác của công ty": dữ liệu chung mỗi công ty chỉ có 1 job, nên sinh thêm
+  // 3 vị trí theo ngành (ổn định theo id job gốc). Chỉ dùng trên trang này, không thêm vào jobs-data.js;
+  // trang chi tiết của job mẫu là bản rút gọn (chưa có mô tả công việc).
+  const COMPANY_ROLE_POOL = {
+    it: [
+      { title: 'Java Backend Developer (Spring Boot)', level: 'senior', exp: '3-5', salary: '25 - 40 triệu', skills: ['Java', 'Spring Boot', 'MySQL'] },
+      { title: 'Frontend Developer (ReactJS)', level: 'junior', exp: '1-3', salary: '18 - 30 triệu', skills: ['ReactJS', 'TypeScript', 'HTML/CSS'] },
+      { title: 'QA/QC Automation Engineer', level: 'junior', exp: '1-3', salary: '15 - 25 triệu', skills: ['Selenium', 'Cypress', 'API Testing'] },
+      { title: 'DevOps Engineer (AWS / Kubernetes)', level: 'senior', exp: '3-5', salary: '30 - 50 triệu', skills: ['AWS', 'Kubernetes', 'CI/CD'] },
+      { title: 'Business Analyst (IT)', level: 'junior', exp: '1-3', salary: '18 - 28 triệu', skills: ['Phân tích nghiệp vụ', 'SQL', 'Jira'] },
+      { title: 'Thực tập sinh Lập trình Web', level: 'intern', exp: '0', salary: '4 - 6 triệu', skills: ['JavaScript', 'Git'] }
+    ],
+    sales: [
+      { title: 'Chuyên viên Kinh doanh B2B', level: 'junior', exp: '1-3', salary: '12 - 20 triệu', skills: ['Bán hàng B2B', 'Đàm phán', 'CRM'] },
+      { title: 'Trưởng nhóm Kinh doanh Khu vực', level: 'manager', exp: '3-5', salary: '25 - 35 triệu', skills: ['Quản lý đội nhóm', 'Lập kế hoạch kinh doanh'] },
+      { title: 'Nhân viên Chăm sóc Khách hàng', level: 'junior', exp: 'under1', salary: '9 - 12 triệu', skills: ['Giao tiếp', 'Xử lý khiếu nại'] },
+      { title: 'Chuyên viên Phát triển Thị trường', level: 'junior', exp: '1-3', salary: '12 - 18 triệu', skills: ['Nghiên cứu thị trường', 'Phát triển đại lý'] },
+      { title: 'Thực tập sinh Kinh doanh', level: 'intern', exp: '0', salary: '3 - 5 triệu', skills: ['Giao tiếp', 'Tin học văn phòng'] }
+    ],
+    marketing: [
+      { title: 'Digital Marketing Executive', level: 'junior', exp: '1-3', salary: '12 - 18 triệu', skills: ['Facebook Ads', 'Google Ads', 'SEO'] },
+      { title: 'Content Marketing Specialist', level: 'junior', exp: '1-3', salary: '10 - 16 triệu', skills: ['Copywriting', 'Social Media'] },
+      { title: 'Performance Marketing Lead', level: 'senior', exp: '3-5', salary: '25 - 35 triệu', skills: ['Performance Ads', 'Google Analytics'] },
+      { title: 'Chuyên viên Thương hiệu (Brand Executive)', level: 'junior', exp: '1-3', salary: '15 - 22 triệu', skills: ['Brand Management', 'Truyền thông'] },
+      { title: 'Thực tập sinh Marketing', level: 'intern', exp: '0', salary: '3 - 5 triệu', skills: ['Canva', 'Social Media'] }
+    ],
+    finance: [
+      { title: 'Chuyên viên Phân tích Tài chính (FP&A)', level: 'junior', exp: '1-3', salary: '18 - 28 triệu', skills: ['Phân tích tài chính', 'Excel', 'Power BI'] },
+      { title: 'Kế toán Tổng hợp', level: 'junior', exp: '3-5', salary: '14 - 20 triệu', skills: ['Kế toán thuế', 'MISA', 'Báo cáo tài chính'] },
+      { title: 'Chuyên viên Kiểm soát Nội bộ', level: 'senior', exp: '3-5', salary: '22 - 32 triệu', skills: ['Kiểm soát nội bộ', 'Quy trình tài chính'] },
+      { title: 'Kế toán Công nợ', level: 'junior', exp: '1-3', salary: '10 - 15 triệu', skills: ['Đối chiếu công nợ', 'Excel'] },
+      { title: 'Thực tập sinh Tài chính - Kế toán', level: 'intern', exp: '0', salary: '4 - 6 triệu', skills: ['Excel', 'Nguyên lý kế toán'] }
+    ],
+    hr: [
+      { title: 'Chuyên viên Tuyển dụng (Talent Acquisition)', level: 'junior', exp: '1-3', salary: '14 - 20 triệu', skills: ['Tuyển dụng', 'Phỏng vấn', 'Employer Branding'] },
+      { title: 'Chuyên viên C&B (Lương - Phúc lợi)', level: 'junior', exp: '1-3', salary: '15 - 22 triệu', skills: ['Tính lương', 'Bảo hiểm xã hội', 'Excel'] },
+      { title: 'HR Business Partner', level: 'senior', exp: '3-5', salary: '25 - 35 triệu', skills: ['HRBP', 'Quan hệ lao động'] },
+      { title: 'Chuyên viên Đào tạo & Phát triển', level: 'junior', exp: '1-3', salary: '14 - 20 triệu', skills: ['Đào tạo nội bộ', 'L&D'] },
+      { title: 'Thực tập sinh Nhân sự', level: 'intern', exp: '0', salary: '3 - 5 triệu', skills: ['Tin học văn phòng', 'Giao tiếp'] }
+    ],
+    logistics: [
+      { title: 'Chuyên viên Điều phối Vận tải', level: 'junior', exp: '1-3', salary: '12 - 18 triệu', skills: ['Điều phối', 'TMS'] },
+      { title: 'Trưởng ca Vận hành Kho', level: 'senior', exp: '3-5', salary: '15 - 22 triệu', skills: ['Quản lý kho', 'WMS', '5S'] },
+      { title: 'Chuyên viên Xuất nhập khẩu', level: 'junior', exp: '1-3', salary: '12 - 20 triệu', skills: ['Thủ tục hải quan', 'Incoterms'] },
+      { title: 'Chuyên viên Kế hoạch Chuỗi cung ứng', level: 'junior', exp: '1-3', salary: '15 - 22 triệu', skills: ['Supply Chain', 'Dự báo nhu cầu'] },
+      { title: 'Thực tập sinh Logistics', level: 'intern', exp: '0', salary: '3 - 5 triệu', skills: ['Tin học văn phòng', 'Tiếng Anh'] }
+    ]
+  };
+
+  const firstJobOfCompany = name => JOBS.find(j => normalize(j.company) === normalize(name));
+
+  // Vị trí mẫu gần trùng job gốc (>= 75% số từ trong tên, tính cả khi bỏ phần trong ngoặc) thì bỏ qua,
+  // vd. "QA/QC Automation Engineer" với "QA / QC Automation Test Engineer (Selenium & CI/CD)"
+  const titleWords = text => normalize(text).split(/[^a-z0-9]+/).filter(Boolean);
+  function overlapsTitle(roleTitle, baseTitle) {
+    const baseWords = new Set(titleWords(baseTitle));
+    return [roleTitle, roleTitle.replace(/\(.*?\)/g, '')].some(text => {
+      const words = titleWords(text);
+      return words.length > 0 && words.filter(w => baseWords.has(w)).length >= words.length * 0.75;
+    });
+  }
+
+  function companyOpenings(base) {
+    const pool = COMPANY_ROLE_POOL[base.category] || COMPANY_ROLE_POOL.it;
+    const start = (base.id || 0) % pool.length;
+    return [...pool.slice(start), ...pool.slice(0, start)]
+      .filter(role => !overlapsTitle(role.title, base.title))
+      .slice(0, 3)
+      .map(role => ({
+        id: 0,
+        title: role.title,
+        company: base.company,
+        logo: base.logo,
+        salaryBadge: role.salary,
+        location: base.location,
+        city: base.city,
+        category: base.category,
+        level: role.level,
+        exp: role.exp,
+        type: base.type,
+        saturday: base.saturday,
+        skills: role.skills,
+        jd: {}
+      }));
+  }
 
   function buildFallbackJob(title) {
     return {
@@ -61,7 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let job = targetId ? JOBS.find(j => j.id === targetId) : null;
   if (!job && targetTitle) {
     const wanted = normalize(targetTitle);
-    job = JOBS.find(j => normalize(j.title) === wanted) || buildFallbackJob(targetTitle);
+    const sourceJob = targetCompany ? firstJobOfCompany(targetCompany) : null;
+    job = JOBS.find(j => normalize(j.title) === wanted && (!sourceJob || j.company === sourceJob.company))
+      || (sourceJob && companyOpenings(sourceJob).find(j => normalize(j.title) === wanted))
+      || buildFallbackJob(targetTitle);
   }
 
   if (!job) {
@@ -75,14 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const EXP_LABEL = {
     '0': 'Không yêu cầu', under1: 'Dưới 1 năm', '1-3': '1 - 3 năm', '3-5': '3 - 5 năm', over5: 'Trên 5 năm'
   };
-  const LEVEL_LABEL = {
-    intern: 'Thực tập sinh', junior: 'Nhân viên', senior: 'Chuyên viên / Senior', manager: 'Quản lý / Trưởng phòng'
-  };
   const EDU_BY_LEVEL = {
     intern: 'Đang học Cao đẳng / Đại học', junior: 'Cao đẳng trở lên', senior: 'Đại học trở lên', manager: 'Đại học trở lên'
-  };
-  const WORK_FORM = {
-    fulltime: 'Làm việc tại văn phòng / Onsite', hybrid: 'Kết hợp (Hybrid)', remote: 'Làm việc từ xa (Remote)', parttime: 'Làm việc tại văn phòng / Onsite'
   };
   const INDUSTRY_BY_CATEGORY = {
     it: 'Công nghệ thông tin', sales: 'Kinh doanh / Bán hàng', marketing: 'Marketing / Truyền thông',
@@ -133,6 +218,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const jobKey = job.id || `t:${normalize(job.title)}`;
   const searchUrl = keyword => `viec-lam.html?keyword=${encodeURIComponent(keyword)}`;
   const companyUrl = searchUrl(job.company);
+  const jobUrl = j => (j.id
+    ? `chi-tiet-viec-lam.html?id=${j.id}&title=${encodeURIComponent(j.title)}`
+    : `chi-tiet-viec-lam.html?title=${encodeURIComponent(j.title)}&company=${encodeURIComponent(j.company)}`);
   const deadline = deadlineOf(job);
 
   document.title = `${job.title} | ${job.company} - Tuyển dụng EasyCV`;
@@ -180,7 +268,9 @@ document.addEventListener('DOMContentLoaded', () => {
   nameLink.href = companyUrl;
   nameLink.textContent = job.company;
   $('jdCompanyPageBtn').href = companyUrl;
-  const companySize = COMPANY_SIZES[(job.id || 0) % COMPANY_SIZES.length];
+  // Job mẫu dùng chung hồ sơ công ty với job gốc; job dựng từ ?title= không rõ công ty thì không có job gốc
+  const companySource = firstJobOfCompany(job.company);
+  const companySize = COMPANY_SIZES[((companySource || job).id || 0) % COMPANY_SIZES.length];
   const companyIndustry = INDUSTRY_BY_CATEGORY[job.category] || 'Đa ngành';
   $('jdCompanySize').textContent = companySize;
   $('jdCompanyAddress').textContent = job.location;
@@ -225,18 +315,29 @@ document.addEventListener('DOMContentLoaded', () => {
     mapLinkEl.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(job.location)}`;
   }
 
-  // Sidebar: thông tin chung
-  $('jdGenLevel').textContent = LEVEL_LABEL[job.level] || 'Nhân viên';
-  $('jdGenEdu').textContent = EDU_BY_LEVEL[job.level] || 'Không yêu cầu';
-  $('jdGenHeadcount').textContent = `${1 + ((job.id || 0) % 5)} người`;
-  $('jdGenWorkForm').textContent = WORK_FORM[job.type] || WORK_FORM.fulltime;
-  $('jdGenJobType').textContent = job.level === 'intern' ? 'Thực tập' : job.type === 'parttime' ? 'Bán thời gian' : 'Toàn thời gian';
+  // Sidebar: việc làm khác của công ty (job thật cùng công ty trước, rồi tới job mẫu)
+  const companyJobsList = $('jdCompanyJobsList');
+  if (companyJobsList) {
+    const companyJobs = companySource
+      ? [...JOBS.filter(j => j.company === job.company), ...companyOpenings(companySource)]
+        .filter(j => normalize(j.title) !== normalize(job.title))
+        .slice(0, 3)
+      : [];
+    companyJobsList.innerHTML = companyJobs.map(j => `
+      <a class="jd-company-job" href="${jobUrl(j)}">
+        <h3 class="jd-company-job-title">${esc(j.title)}</h3>
+        <span class="jd-company-job-salary">${esc(j.salaryBadge)}</span>
+        <span class="jd-related-tags"><span>${esc(j.city)}</span><span>${esc(expLabel(j))}</span></span>
+      </a>`).join('');
+    if (!companyJobs.length) companyJobsList.closest('.jd-company-jobs').hidden = true;
+  }
 
   // -----------------------------------------------------------------------
   // 4. Việc làm liên quan
   // -----------------------------------------------------------------------
+  // Bỏ job cùng công ty: đã có ở khối "Việc làm khác của công ty"
   const related = JOBS
-    .filter(j => j.id !== job.id)
+    .filter(j => j.id !== job.id && j.company !== job.company)
     .sort((a, b) => (b.category === job.category) - (a.category === job.category))
     .slice(0, 5);
   $('jdRelatedList').innerHTML = related.map(j => {
@@ -246,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `<span>${esc(expLabel(j))}</span>`
     ].join('');
     return `
-      <a class="jd-related-card" href="chi-tiet-viec-lam.html?id=${j.id}&title=${encodeURIComponent(j.title)}">
+      <a class="jd-related-card" href="${jobUrl(j)}">
         <img class="jd-related-logo" src="${esc(j.logo)}" alt="${esc(j.company)}" loading="lazy" />
         <div class="jd-related-body">
           <div class="jd-related-top">
