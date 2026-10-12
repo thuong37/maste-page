@@ -76,7 +76,7 @@
   --space-8: 12px;
 
   /* Radius Tokens */
-  --navbar-height: 72px;
+  --navbar-height: 60px;
   --radius-xs: 6px;
   --radius-sm: 8px;
   --radius-md: 10px;
@@ -176,7 +176,7 @@ body {
 }
 
 .brand-logo-img {
-  height: 54px;
+  height: 44px;
   width: auto;
   display: block;
 }

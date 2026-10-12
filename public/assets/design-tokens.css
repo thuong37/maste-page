@@ -231,7 +231,7 @@
   /* ==========================================================================
      7. Layout & Container Standards
      ========================================================================== */
-  --navbar-height: 72px;
+  --navbar-height: 60px;
   --navbar-max-width: 1360px;
   --container-max-width: 1250px;
   --container-padding: 20px;

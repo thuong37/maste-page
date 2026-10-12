@@ -5326,3 +5326,11 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Thanh tìm kiếm khi neo dưới header: thu gọn chiều cao */
+#heroSearchStickyBar.is-sticky { padding: 6px 0; }
+#heroSearchStickyBar.is-sticky .hero-search-box { height: 48px; min-height: 48px; padding: 3px 4px; margin-bottom: 0; }
+#heroSearchStickyBar.is-sticky .search-input-group { height: 40px; }
+#heroSearchStickyBar.is-sticky .category-filter-trigger { height: 38px; }
+#heroSearchStickyBar.is-sticky .location-trigger { height: 34px; }
+#heroSearchStickyBar.is-sticky .btn-hero-search { height: 38px; }
