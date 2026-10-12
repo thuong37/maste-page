@@ -2643,13 +2643,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const miniBanners = Array.from(document.querySelectorAll('.sponsor-mini'));
     if (!slidesWrapper || !dotsContainer) return;
 
-    slidesWrapper.innerHTML = heroBanners.map((banner, index) => `
+    const fixedMiniBanners = heroBanners.slice(1, 3);
+    const primaryBanners = heroBanners.filter((_, index) => index < 1 || index > 2);
+
+    slidesWrapper.innerHTML = primaryBanners.map((banner, index) => `
       <a href="chi-tiet-cong-ty.html?company=${banner.company}" target="_blank" rel="noopener noreferrer" class="sponsor-slide${index === 0 ? ' active' : ''}" title="${banner.label}" data-slide-index="${index}">
         <img src="${banner.src}" alt="${banner.label}" />
       </a>
     `).join('');
 
-    dotsContainer.innerHTML = heroBanners.map((banner, index) => `
+    dotsContainer.innerHTML = primaryBanners.map((banner, index) => `
       <button type="button" class="sponsor-dot${index === 0 ? ' active' : ''}" data-index="${index}" aria-label="Chuyển đến banner ${banner.label}"></button>
     `).join('');
 
@@ -2662,6 +2665,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentIndex = 0;
     let autoPlayTimer = null;
+
+    // Hai banner phụ bên phải được cố định, không đổi theo banner chính.
+    miniBanners.forEach((miniBanner, offset) => {
+      const banner = fixedMiniBanners[offset];
+      const image = miniBanner.querySelector('img');
+      if (!banner) return;
+
+      miniBanner.href = `chi-tiet-cong-ty.html?company=${banner.company}`;
+      miniBanner.title = banner.label;
+      if (image) {
+        image.src = banner.src;
+        image.alt = banner.label;
+      }
+    });
 
     function goToSlide(index) {
       if (index < 0) {
@@ -2678,17 +2695,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === currentIndex);
-      });
-
-      miniBanners.forEach((miniBanner, offset) => {
-        const banner = heroBanners[(currentIndex + offset + 1) % heroBanners.length];
-        const image = miniBanner.querySelector('img');
-        miniBanner.href = `chi-tiet-cong-ty.html?company=${banner.company}`;
-        miniBanner.title = banner.label;
-        if (image) {
-          image.src = banner.src;
-          image.alt = banner.label;
-        }
       });
     }
 
@@ -2730,7 +2736,7 @@ document.addEventListener('DOMContentLoaded', () => {
       stopAutoPlay();
       autoPlayTimer = setInterval(() => {
         goToSlide(currentIndex + 1);
-      }, 5000);
+      }, 10000);
     }
 
     function stopAutoPlay() {
@@ -2821,6 +2827,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const paginationControls = document.getElementById('featuredPaginationControls');
     const previewPopup = document.getElementById('jobPreviewPopup');
     const sectionContainer = document.getElementById('viec-lam-noi-bat');
+    const tabsPrevious = sectionContainer?.querySelector('.featured-tabs-prev');
+    const tabsNext = sectionContainer?.querySelector('.featured-tabs-next');
 
     if (!gridEl || !tabsContainer) return;
 
@@ -7635,8 +7643,26 @@ document.addEventListener('DOMContentLoaded', () => {
         return selected.slice(0, 24);
       }
 
-      // Lọc theo nhóm ngành đã chọn (mỗi ngành đúng 24 việc làm = 2 trang x 12 thẻ)
-      const filtered = FEATURED_JOBS_DATA.filter(job => job.category === categoryKey);
+      // Các tab chuyên môn mới dùng nội dung thật trong title/skills/JD thay vì tạo nhóm dữ liệu rỗng.
+      const specialtyKeywords = {
+        'real-estate': ['bất động sản', 'địa ốc', 'vinhomes'],
+        accounting: ['kế toán', 'kiểm toán', 'thuế', 'chief accountant'],
+        logistics: ['logistics', 'xuất nhập khẩu', 'vận tải', 'cước tàu', 'chuỗi cung ứng'],
+        recruitment: ['tuyển dụng', 'đào tạo', 'recruiter', 'talent acquisition', 'hr specialist']
+      };
+      const normalizeFeaturedText = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+      const specialtyTerms = specialtyKeywords[categoryKey];
+      const filtered = specialtyTerms
+        ? FEATURED_JOBS_DATA.filter(job => {
+            const searchable = normalizeFeaturedText([
+              job.title,
+              job.company,
+              ...(job.skills || []),
+              ...(job.jdSummary || [])
+            ].join(' '));
+            return specialtyTerms.some(term => searchable.includes(normalizeFeaturedText(term)));
+          })
+        : FEATURED_JOBS_DATA.filter(job => job.category === categoryKey);
 
       // Tính điểm và sắp xếp giảm dần theo điểm ưu tiên
       const scoredList = filtered.map(job => ({
@@ -8176,6 +8202,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Xử lý chuyển đổi 5 Tabs ngành nghề
     const tabBtns = tabsContainer.querySelectorAll('.filter-pill-btn');
+
+    function updateTabsNavigation() {
+      const maxScroll = Math.max(0, tabsContainer.scrollWidth - tabsContainer.clientWidth);
+      if (tabsPrevious) tabsPrevious.disabled = tabsContainer.scrollLeft <= 2;
+      if (tabsNext) tabsNext.disabled = tabsContainer.scrollLeft >= maxScroll - 2;
+    }
+
+    function moveTabs(direction) {
+      tabsContainer.scrollBy({ left: direction * Math.max(220, tabsContainer.clientWidth * 0.72), behavior: 'smooth' });
+    }
+
+    tabsPrevious?.addEventListener('click', () => moveTabs(-1));
+    tabsNext?.addEventListener('click', () => moveTabs(1));
+    tabsContainer.addEventListener('scroll', updateTabsNavigation, { passive: true });
+    window.addEventListener('resize', updateTabsNavigation);
+
     tabBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const cat = btn.getAttribute('data-category');
@@ -8191,11 +8233,14 @@ document.addEventListener('DOMContentLoaded', () => {
         currentCategory = cat;
         currentPage = 1;
         renderJobsGrid();
+        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        window.setTimeout(updateTabsNavigation, 280);
       });
     });
 
     // Khởi tạo ban đầu
     renderJobsGrid();
+    updateTabsNavigation();
   }
 
   // Khởi động toàn bộ các modules
