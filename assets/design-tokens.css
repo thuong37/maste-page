@@ -232,7 +232,7 @@
      7. Layout & Container Standards
      ========================================================================== */
   --navbar-height: 60px;
-  --navbar-max-width: 1360px;
+  --navbar-max-width: none; /* header dàn hết bề ngang: logo sát trái, cụm nút sát phải */
   --container-max-width: 1250px;
   --container-padding: 20px;
   --container-padding-mobile: 16px;

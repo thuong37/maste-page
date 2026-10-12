@@ -141,11 +141,24 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 1px 8px 0 rgba(24, 24, 27, 0.04);
   transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
+/* Vạch sáng cam mảnh chạy dọc đáy header, nhạt dần về hai mép */
+.site-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255, 101, 0, 0.45), transparent);
+}
+
 .navbar {
-  max-width: var(--navbar-max-width, 1360px);
+  max-width: var(--navbar-max-width, none);
   margin: 0 auto;
   height: var(--navbar-height);
   padding: 0 24px;
@@ -154,6 +167,12 @@ body {
   justify-content: space-between;
   gap: 20px;
   box-sizing: border-box;
+}
+
+@media (min-width: 1536px) {
+  .navbar {
+    padding: 0 32px;
+  }
 }
 
 /* Logo Area */
@@ -194,6 +213,27 @@ body {
   display: block;
 }
 
+/* Vạch chéo chấm cam giữa logo và menu (chỉ hiện ở màn ≥1280px) */
+.navbar-brand-divider {
+  display: none;
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 32px;
+  margin: 0 -4px;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  background-image: radial-gradient(circle, var(--eb-primary-500, #FF6500) 1px, transparent 1.5px);
+  background-size: 6px 6px;
+  opacity: 0.35;
+  transform: skewX(-12deg);
+}
+
+@media (min-width: 1280px) {
+  .navbar-brand-divider {
+    display: block;
+  }
+}
+
 /* Navigation Left Menu */
 .navbar-nav {
   display: flex;
@@ -224,6 +264,22 @@ body {
   background: transparent;
   cursor: pointer;
   transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.nav-link {
+  white-space: nowrap;
+}
+
+.nav-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--easycv-orange-glow);
+}
+
+.nav-link-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--eb-primary-500, #FF6500);
 }
 
 .nav-link:hover,
@@ -282,10 +338,37 @@ body {
 }
 
 .nav-item:hover .dropdown-menu,
-.nav-item.open .dropdown-menu {
+.nav-item.open .dropdown-menu,
+.nav-item:not(.is-dismissed):has(:focus-visible) .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0) scale(1);
+}
+
+/* Bảng "Công cụ": 2 cột */
+.dropdown-menu--grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px;
+  width: 580px;
+}
+
+/* Màn hẹp: bảng 2 cột căn phải theo nút "Công cụ" để không tràn ra ngoài màn hình
+   (các trang ép .dropdown-menu căn trái bằng !important nên cần selector cụ thể hơn) */
+@media (max-width: 1279px) {
+  .site-header .nav-item .dropdown-menu--grid {
+    left: auto !important;
+    right: 0 !important;
+    transform-origin: top right;
+  }
+}
+
+.dropdown-group-label {
+  margin: 0;
+  padding: 2px 14px 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-subtle);
 }
 
 .dropdown-item {
@@ -302,10 +385,15 @@ body {
   transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
 }
 
-.dropdown-item:hover {
+.dropdown-item:hover,
+.dropdown-item[aria-current="page"] {
   background: var(--easycv-orange-50);
   color: var(--easycv-orange-hover);
-  transform: translateX(3px);
+}
+
+.dropdown-item:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--eb-primary-300, #FF9854);
 }
 
 [data-theme="dark"] .dropdown-item:hover {
@@ -317,13 +405,13 @@ body {
   width: 32px;
   height: 32px;
   border-radius: var(--radius-sm);
-  background: var(--slate-100);
-  color: var(--slate-700);
+  background: var(--eb-primary-50, #FFF0E6);
+  color: var(--eb-primary-500, #FF6500);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: all var(--transition-fast);
+  transition: background var(--transition-fast), color var(--transition-fast);
 }
 
 [data-theme="dark"] .dropdown-item-icon {
@@ -331,9 +419,15 @@ body {
   color: var(--slate-300);
 }
 
-.dropdown-item:hover .dropdown-item-icon {
+.dropdown-item:hover .dropdown-item-icon,
+.dropdown-item[aria-current="page"] .dropdown-item-icon {
   background: var(--easycv-orange);
   color: #FFFFFF;
+}
+
+.dropdown-item-icon svg {
+  width: 17px;
+  height: 17px;
 }
 
 .dropdown-item-content {
@@ -387,26 +481,41 @@ body {
   margin: 6px 8px;
 }
 
+/* Nhãn nhỏ trong menu: dạng viên tông nhạt, chữ thường (AI Match, Miễn phí, 1 mới...) */
 .badge-pill {
-  font-size: 10.5px;
+  flex-shrink: 0;
+  font-size: 11px;
   font-weight: 700;
-  padding: 2px 7px;
+  line-height: 16px;
+  padding: 1px 8px;
+  border: 1px solid var(--eb-primary-100, #FFCFB0);
   border-radius: var(--radius-full);
   margin-left: 8px;
-  text-transform: uppercase;
+  background: var(--eb-primary-50, #FFF0E6);
+  color: var(--eb-primary-600, #E85C00);
+  white-space: nowrap;
 }
 
 .badge-hot {
-  background: #FFE6E6;
-  color: #E80000;
+  background: var(--eb-error-50, #FFE6E6);
+  border-color: var(--eb-error-100, #FFB0B0);
+  color: var(--eb-error-600, #E80000);
 }
 
 .badge-new {
-  background: var(--easycv-orange-100);
-  color: var(--easycv-orange-active);
+  background: var(--eb-secondary-50, #EAF6F0);
+  border-color: var(--eb-secondary-100, #BFE3D1);
+  color: var(--eb-secondary-700, #22754C);
 }
 
+/* Số đếm: chấm tròn cam đặc */
 .badge-count {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border: 0;
+  line-height: 20px;
+  text-align: center;
   background: var(--easycv-orange);
   color: #FFF;
 }
@@ -421,25 +530,85 @@ body {
   margin-left: auto;
 }
 
-/* Quick Employer CTA Button */
+/* Lối sang khu vực Nhà tuyển dụng: ô icon tòa nhà + 2 dòng chữ, ngăn bằng vạch trái */
 .btn-employer {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 4px;
+  padding: 4px 0 4px 16px;
+  border-left: 1px solid var(--border-color);
   text-decoration: none;
-  padding: 8px 14px;
-  border-radius: var(--radius-md);
-  transition: all var(--transition-fast);
   white-space: nowrap;
 }
 
-.btn-employer:hover {
-  color: var(--easycv-orange);
-  background: var(--slate-100);
+.btn-employer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--eb-primary-50, #FFF0E6);
+  color: var(--eb-primary-500, #FF6500);
+  transition: background var(--transition-fast), color var(--transition-fast);
 }
 
-[data-theme="dark"] .btn-employer:hover {
-  background: var(--slate-800);
+.btn-employer-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.btn-employer-kicker {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-subtle);
+}
+
+.btn-employer-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: 2px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-main);
+  transition: color var(--transition-fast);
+}
+
+.btn-employer:hover .btn-employer-icon {
+  background: var(--easycv-orange);
+  color: #FFFFFF;
+}
+
+.btn-employer:hover .btn-employer-label {
+  color: var(--easycv-orange);
+}
+
+.btn-employer:focus-visible {
+  outline: none;
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 0 3px var(--easycv-orange-glow);
+}
+
+/* Màn desktop hẹp: lối Nhà tuyển dụng chỉ còn ô icon (chữ vẫn đọc được bằng trình đọc màn hình),
+   dưới 1200px nút tài khoản chỉ còn avatar để menu chính không bị xuống dòng */
+@media (max-width: 1359px) {
+  .btn-employer-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 1199px) {
+  .user-profile-btn .user-meta {
+    display: none;
+  }
 }
 
 /* Action Icons (Notifications & Messages) */
@@ -482,14 +651,14 @@ body {
   height: 18px;
   padding: 0 4px;
   border-radius: 9px;
-  background: var(--easycv-orange);
+  background: var(--eb-error-600, #E80000);
   color: #FFFFFF;
   font-size: 11px;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--bg-header);
+  border: 2px solid var(--bg-primary);
 }
 
 /* ==========================================================================
@@ -503,12 +672,32 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 5px 12px 5px 6px;
+  padding: 4px 12px 4px 4px;
   border-radius: var(--radius-full);
-  background: var(--slate-100);
+  background: var(--bg-primary);
   border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
   cursor: pointer;
   transition: all var(--transition-fast);
+}
+
+.user-profile-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--easycv-orange-glow);
+}
+
+.account-logged-view.open .user-profile-btn {
+  box-shadow: 0 0 0 3px rgba(255, 101, 0, 0.15);
+}
+
+.user-profile-chevron {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: transform var(--transition-fast);
+}
+
+.account-logged-view.open .user-profile-chevron {
+  transform: rotate(180deg);
 }
 
 [data-theme="dark"] .user-profile-btn {
@@ -615,6 +804,42 @@ body {
 
 .dropdown-user-info {
   flex: 1;
+  min-width: 0;
+}
+
+/* Dòng trạng thái: "Tài khoản ứng viên" + "● Đã xác thực" */
+.dropdown-user-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.dropdown-user-role {
+  padding: 1px 8px;
+  border-radius: var(--radius-xs);
+  background: var(--eb-primary-50, #FFF0E6);
+  color: var(--eb-primary-600, #E85C00);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.dropdown-user-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--eb-secondary-600, #2C9661);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.dropdown-user-verified::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
 }
 
 .dropdown-user-name {
@@ -905,15 +1130,27 @@ body {
    ========================================================================== */
 .mobile-toggle-btn {
   display: none;
-  width: 40px;
-  height: 40px;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
-  background: var(--bg-primary);
-  color: var(--text-main);
+  border: none;
+  background: transparent;
+  color: var(--eb-primary-500, #FF6500);
   cursor: pointer;
   align-items: center;
   justify-content: center;
+  transition: background var(--transition-fast);
+}
+
+.mobile-toggle-btn:hover,
+.mobile-toggle-btn[aria-expanded="true"] {
+  background: var(--eb-primary-50, #FFF0E6);
+}
+
+.mobile-toggle-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--easycv-orange-glow);
 }
 
 .mobile-drawer-overlay {
@@ -924,12 +1161,15 @@ body {
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
-  transition: all var(--transition-smooth);
+  /* Đóng: mờ dần rồi mới ẩn hẳn */
+  transition: opacity var(--transition-smooth), visibility 0s linear var(--transition-smooth);
 }
 
 .mobile-drawer-overlay.open {
   opacity: 1;
   visibility: visible;
+  /* Mở: hiện ngay để focus được vào nút đóng */
+  transition: opacity var(--transition-smooth), visibility 0s;
 }
 
 .mobile-drawer {
@@ -953,71 +1193,280 @@ body {
 }
 
 .mobile-drawer-header {
-  padding: 18px 20px;
+  flex-shrink: 0;
+  height: var(--navbar-height, 60px);
+  padding: 0 12px 0 16px;
   border-bottom: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
+}
+
+.mobile-drawer-logo img {
+  display: block;
+  height: 32px;
+  width: auto;
+}
+
+/* Nút "‹ Việc làm" thay chỗ logo khi đang ở danh sách con */
+.mobile-drawer-back {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  margin-left: -8px;
+  padding: 0 12px 0 6px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-main);
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.mobile-drawer-back svg {
+  color: var(--eb-primary-500, #FF6500);
+}
+
+.mobile-drawer-back:hover {
+  background: var(--slate-100);
+}
+
+.mobile-drawer-back[hidden],
+.mobile-drawer-logo[hidden] {
+  display: none;
 }
 
 .mobile-drawer-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
   background: none;
   border: none;
-  font-size: 20px;
+  border-radius: var(--radius-full);
   color: var(--text-muted);
   cursor: pointer;
-  padding: 4px;
+}
+
+.mobile-drawer-close:hover {
+  background: var(--slate-100);
+  color: var(--text-main);
+}
+
+.mobile-drawer-back:focus-visible,
+.mobile-drawer-close:focus-visible,
+.drawer-row:focus-visible,
+.drawer-link:focus-visible,
+.drawer-cta:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--easycv-orange-glow);
 }
 
 .mobile-drawer-body {
   flex: 1;
   overflow-y: auto;
-  padding: 16px;
+  padding: 12px;
 }
 
-.mobile-nav-item {
-  margin-bottom: 8px;
+/* Chuyển giữa màn chính và danh sách con */
+.drawer-view.is-active {
+  animation: drawer-view-in 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.mobile-nav-title {
-  font-weight: 700;
-  font-size: 15px;
-  color: var(--text-main);
-  padding: 10px 12px;
+@keyframes drawer-view-in {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer-view.is-active {
+    animation: none;
+  }
+}
+
+/* Màn chính: mỗi nhóm là một dòng cao 56px, ô icon + tên + mũi tên */
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.drawer-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-radius: var(--radius-md);
-  cursor: pointer;
-}
-
-.mobile-nav-title:hover {
-  background: var(--easycv-orange-50);
-  color: var(--easycv-orange);
-}
-
-.mobile-sub-menu {
-  display: none;
-  padding-left: 12px;
-  margin-top: 4px;
-}
-
-.mobile-nav-item.open .mobile-sub-menu {
-  display: block;
-}
-
-.mobile-sub-link {
-  display: block;
-  padding: 8px 12px;
-  font-size: 14px;
-  color: var(--text-muted);
+  gap: 12px;
+  width: 100%;
+  min-height: 56px;
+  padding: 0 10px 0 12px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--text-main);
+  font-family: inherit;
+  text-align: left;
   text-decoration: none;
-  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition-fast);
 }
 
-.mobile-sub-link:hover {
-  color: var(--easycv-orange);
+.drawer-row:hover {
   background: var(--slate-100);
+}
+
+.drawer-row-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--eb-primary-50, #FFF0E6);
+  color: var(--eb-primary-500, #FF6500);
+}
+
+.drawer-row-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.drawer-row-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.drawer-row-chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--text-subtle);
+  transition: color var(--transition-fast);
+}
+
+.drawer-row:hover .drawer-row-chevron {
+  color: var(--eb-primary-500, #FF6500);
+}
+
+/* Dòng nổi bật đầu tiên (Việc làm) */
+.drawer-row.is-featured {
+  background: var(--eb-primary-50, #FFF0E6);
+}
+
+.drawer-row.is-featured:hover {
+  background: rgba(255, 101, 0, 0.14);
+}
+
+.drawer-row.is-featured .drawer-row-icon {
+  background: var(--eb-primary-500, #FF6500);
+  color: #FFFFFF;
+}
+
+.drawer-row.is-featured .drawer-row-title {
+  color: var(--eb-primary-600, #E85C00);
+  font-weight: 800;
+}
+
+.drawer-row.is-featured .drawer-row-chevron {
+  color: var(--eb-primary-500, #FF6500);
+}
+
+.drawer-footer {
+  margin-top: 12px;
+  padding: 20px 4px 8px;
+  border-top: 1px solid var(--border-color);
+}
+
+.drawer-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1.5px solid var(--eb-primary-500, #FF6500);
+  border-radius: var(--radius-full);
+  color: var(--eb-primary-500, #FF6500);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.drawer-cta:hover {
+  background: var(--eb-primary-500, #FF6500);
+  color: #FFFFFF;
+}
+
+.drawer-tagline {
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--text-subtle);
+}
+
+/* Danh sách con */
+.drawer-group-label {
+  margin: 0;
+  padding: 14px 8px 6px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text-subtle);
+}
+
+.drawer-group-label:first-child {
+  padding-top: 4px;
+}
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 12px;
+  border-radius: 12px;
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.drawer-link > svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--text-subtle);
+}
+
+.drawer-link > span:not(.badge-pill) {
+  flex: 1;
+  min-width: 0;
+}
+
+.drawer-link:hover {
+  background: var(--slate-100);
+}
+
+.drawer-link[aria-current="page"] {
+  background: var(--eb-primary-50, #FFF0E6);
+  color: var(--eb-primary-600, #E85C00);
+}
+
+.drawer-link[aria-current="page"] > svg {
+  color: var(--eb-primary-500, #FF6500);
 }
 
 /* ==========================================================================
@@ -2383,13 +2832,12 @@ body {
   }
 }
 
-/* Điện thoại: header tối giản ☰ + logo + chuông thông báo.
-   Tin nhắn & tài khoản đã có trong menu ☰ (khối .drawer-account) và mục "Cá nhân" ở thanh đáy */
+/* Điện thoại: header gọn ☰ + logo + chuông thông báo + tin nhắn.
+   Tài khoản đã có trong menu ☰ (khối .drawer-account) và mục "Cá nhân" ở thanh đáy */
 .drawer-account {
   display: none;
 }
 @media (max-width: 768px) {
-  .navbar-actions > div:has(#message-btn),
   .navbar-actions .account-logged-view {
     display: none !important;
   }

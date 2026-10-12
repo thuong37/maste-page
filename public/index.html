@@ -19,9 +19,9 @@
     />
     <link
       rel="stylesheet"
-      href="assets/design-tokens.css?v=eb_colors_20261007"
+      href="assets/design-tokens.css?v=fullnav_20261012"
     />
-    <link rel="stylesheet" href="css/navbar.css?v=noswitch_20261012" />
+    <link rel="stylesheet" href="css/navbar.css?v=fullnav_20261012" />
     <link rel="stylesheet" href="css/home.css?v=onebanner2_20261012" />
     <link
       rel="stylesheet"
@@ -2440,54 +2440,75 @@
   <header class="site-header">
     <nav class="navbar" aria-label="Menu chính">
 
+      <!-- Nút ☰ (≤1100px): mở ngăn kéo điều hướng, nằm cạnh logo như bố cục app -->
+      <button id="mobile-toggle-btn" class="mobile-toggle-btn" type="button" aria-label="Mở menu điều hướng" aria-controls="mobile-drawer-overlay" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+
       <!-- 1. Logo Brand -->
       <a href="index.html" class="navbar-brand" id="navbarBrandLogo" aria-label="Trang chủ EasyCV">
         <img src="assets/logos/easycv-logo-transparent.png" alt="EasyCV Logo" class="brand-logo-img logo-light" />
         <img src="assets/logos/easycv-logo-dark.png" alt="EasyCV Logo Dark" class="brand-logo-img logo-dark" />
       </a>
 
-      <!-- 2. Primary Nav Items (Left Menu) -->
-                        <ul class="navbar-nav">
+      <!-- Vạch chéo chấm cam ngăn logo và menu (chỉ màn rộng) -->
+      <span class="navbar-brand-divider" aria-hidden="true"></span>
 
-        <!-- Cột 1: Tìm việc -->
+      <!-- 2. Primary Nav Items (Left Menu) -->
+      <ul class="navbar-nav">
+
+        <!-- Cột 1: Việc làm -->
         <li class="nav-item">
-          <a href="viec-lam.html" class="nav-link" id="navLinkTimViec" aria-label="Tìm Việc" title="Tìm Việc">
-            <span>Tìm Việc</span>
-            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          <a href="viec-lam.html" class="nav-link" id="navLinkTimViec" aria-haspopup="true" aria-expanded="false">
+            <svg class="nav-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+            <span>Việc làm</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="viec-lam.html" class="dropdown-item" id="dropdownItemTimKiemViecLam" title="Tìm kiếm việc làm">
+            <a href="viec-lam.html" class="dropdown-item" id="dropdownItemTimKiemViecLam">
               <div class="dropdown-item-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
               </div>
               <div class="dropdown-item-content">
                 <span class="dropdown-item-title">Tìm kiếm việc làm</span>
               </div>
             </a>
 
-            <a href="index.html#viec-lam-goi-y" class="dropdown-item" title="Việc làm gợi ý">
+            <a href="index.html#viec-lam-goi-y" class="dropdown-item">
               <div class="dropdown-item-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
               </div>
               <div class="dropdown-item-content">
                 <span class="dropdown-item-title">Việc làm gợi ý</span>
               </div>
+              <span class="badge-pill">AI Match</span>
             </a>
 
-            <a href="index.html#viec-lam-da-luu" class="dropdown-item" title="Việc làm đã lưu">
+            <a href="index.html#viec-lam-da-luu" class="dropdown-item">
               <div class="dropdown-item-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/><path d="m9 10 2 2 4-4"/></svg>
               </div>
               <div class="dropdown-item-content">
                 <span class="dropdown-item-title">Việc làm đã lưu</span>
               </div>
+              <span class="badge-pill badge-count">12</span>
+            </a>
+
+            <a href="index.html#thong-bao-viec-lam" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Thông báo việc làm</span>
+              </div>
             </a>
 
             <div class="dropdown-divider"></div>
+            <p class="dropdown-group-label">Công ty</p>
 
-            <a href="index.html#kham-pha-cong-ty" class="dropdown-item" title="Khám phá công ty">
+            <a href="index.html#kham-pha-cong-ty" class="dropdown-item">
               <div class="dropdown-item-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
               </div>
               <div class="dropdown-item-content">
                 <span class="dropdown-item-title">Khám phá công ty</span>
@@ -2498,45 +2519,47 @@
 
         <!-- Cột 2: Hồ sơ & CV -->
         <li class="nav-item">
-          <button class="nav-link" aria-expanded="false" title="Hồ Sơ & CV">
-            <span>Hồ Sơ & CV</span>
-            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
+            <svg class="nav-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M8 13h2"/><path d="M14 13h2"/><path d="M8 17h2"/><path d="M14 17h2"/></svg>
+            <span>Hồ sơ &amp; CV</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="dropdown-menu">
-            <a href="index.html#ho-so-cua-toi" class="dropdown-item" title="Hồ sơ của tôi">
+            <a href="index.html#ho-so-cua-toi" class="dropdown-item">
               <div class="dropdown-item-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
               </div>
               <div class="dropdown-item-content">
                 <span class="dropdown-item-title">Hồ sơ của tôi</span>
               </div>
             </a>
 
-            <a href="index.html#tao-cv-theo-mau" class="dropdown-item" title="Tạo CV theo mẫu">
+            <a href="index.html#tao-cv-theo-mau" class="dropdown-item">
               <div class="dropdown-item-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>
               </div>
               <div class="dropdown-item-content">
-                <span class="dropdown-item-title">Tạo CV theo mẫu</span>
+                <span class="dropdown-item-title">Mẫu CV chuẩn ATS</span>
               </div>
-              <span class="badge-pill badge-hot">Hot</span>
+              <span class="badge-pill">Miễn phí</span>
             </a>
 
-            <a href="index.html#quan-ly-cv" class="dropdown-item" title="Quản lý CV">
+            <a href="index.html#quan-ly-cv" class="dropdown-item">
               <div class="dropdown-item-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg>
               </div>
               <div class="dropdown-item-content">
                 <span class="dropdown-item-title">Quản lý CV</span>
               </div>
+              <span class="badge-pill">CV chính</span>
             </a>
 
-            <a href="index.html#tai-len-cv" class="dropdown-item" title="Tải lên CV">
+            <a href="index.html#tai-len-cv" class="dropdown-item">
               <div class="dropdown-item-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M12 12v6"/><path d="m15 15-3-3-3 3"/></svg>
               </div>
               <div class="dropdown-item-content">
-                <span class="dropdown-item-title">Tải lên CV</span>
+                <span class="dropdown-item-title">Tải lên &amp; phân tích CV</span>
               </div>
             </a>
           </div>
@@ -2544,24 +2567,25 @@
 
         <!-- Cột 3: Ứng tuyển -->
         <li class="nav-item">
-          <button class="nav-link" aria-expanded="false" title="Ứng Tuyển">
-            <span>Ứng Tuyển</span>
-            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
+            <svg class="nav-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>
+            <span>Ứng tuyển</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="dropdown-menu">
-            <a href="index.html#danh-sach-don-ung-tuyen" class="dropdown-item" title="Danh sách đơn ứng tuyển">
+            <a href="index.html#danh-sach-don-ung-tuyen" class="dropdown-item">
               <div class="dropdown-item-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="m9 14 2 2 4-4"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="m9 14 2 2 4-4"/></svg>
               </div>
               <div class="dropdown-item-content">
-                <span class="dropdown-item-title">Danh sách đơn ứng tuyển</span>
+                <span class="dropdown-item-title">Đơn ứng tuyển của tôi</span>
               </div>
               <span class="badge-pill badge-count">3</span>
             </a>
 
-            <a href="index.html#lich-phong-van" class="dropdown-item" title="Lịch phỏng vấn">
+            <a href="index.html#lich-phong-van" class="dropdown-item">
               <div class="dropdown-item-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
               </div>
               <div class="dropdown-item-content">
                 <span class="dropdown-item-title">Lịch phỏng vấn</span>
@@ -2569,9 +2593,9 @@
               <span class="badge-pill badge-new">1 mới</span>
             </a>
 
-            <a href="index.html#bai-kiem-tra-nang-luc" class="dropdown-item" title="Bài kiểm tra năng lực">
+            <a href="index.html#bai-kiem-tra-nang-luc" class="dropdown-item">
               <div class="dropdown-item-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
               </div>
               <div class="dropdown-item-content">
                 <span class="dropdown-item-title">Bài kiểm tra năng lực</span>
@@ -2580,43 +2604,80 @@
           </div>
         </li>
 
-        <!-- Cột 4: Công cụ nghề nghiệp -->
+        <!-- Cột 4: Công cụ nghề nghiệp (2 cột) -->
         <li class="nav-item">
-          <button class="nav-link" aria-expanded="false" title="Công Cụ Nghề Nghiệp">
-            <span>Công Cụ Nghề Nghiệp</span>
-            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
+            <svg class="nav-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+            <span>Công cụ</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </button>
-          <div class="dropdown-menu">
-            <a href="index.html#tinh-luong-gross-net" class="dropdown-item" title="Tính lương Gross - Net">
+          <div class="dropdown-menu dropdown-menu--grid">
+            <a href="index.html#khao-sat-muc-luong" class="dropdown-item">
               <div class="dropdown-item-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 8h10"/><path d="M7 12h10"/><path d="M7 16h10"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Tra cứu lương thị trường</span>
+              </div>
+            </a>
+
+            <a href="index.html#luyen-phong-van-ai" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Luyện phỏng vấn AI</span>
+              </div>
+            </a>
+
+            <a href="index.html#tinh-luong-gross-net" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
               </div>
               <div class="dropdown-item-content">
                 <span class="dropdown-item-title">Tính lương Gross - Net</span>
               </div>
             </a>
 
-            <a href="index.html#tinh-bao-hiem-xa-hoi" class="dropdown-item" title="Tính bảo hiểm xã hội">
+            <a href="index.html#tinh-thue-tncn" class="dropdown-item">
               <div class="dropdown-item-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Tính thuế thu nhập cá nhân</span>
+              </div>
+            </a>
+
+            <a href="index.html#tinh-bao-hiem-xa-hoi" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
               <div class="dropdown-item-content">
                 <span class="dropdown-item-title">Tính bảo hiểm xã hội</span>
               </div>
             </a>
 
-            <a href="index.html#khao-sat-muc-luong" class="dropdown-item" title="Báo cáo thị trường lương">
+            <a href="index.html#tinh-bao-hiem-that-nghiep" class="dropdown-item">
               <div class="dropdown-item-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12a10.06 10.06 1 0 0-20 0Z"/><path d="M12 12v8a2 2 0 0 0 4 0"/><path d="M12 2v1"/></svg>
               </div>
               <div class="dropdown-item-content">
-                <span class="dropdown-item-title">Báo cáo thị trường lương</span>
+                <span class="dropdown-item-title">Tính bảo hiểm thất nghiệp</span>
               </div>
             </a>
 
-            <a href="index.html#trac-nghiem-tinh-cach" class="dropdown-item" title="Trắc nghiệm MBTI / DISC">
+            <a href="index.html#lap-ke-hoach-tiet-kiem" class="dropdown-item">
               <div class="dropdown-item-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3.08A2.49 2.49 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3.08A2.49 2.49 0 0 0 14.5 2Z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"/><path d="M2 9v1c0 1.1.9 2 2 2h1"/><path d="M16 11h.01"/></svg>
+              </div>
+              <div class="dropdown-item-content">
+                <span class="dropdown-item-title">Lập kế hoạch tiết kiệm</span>
+              </div>
+            </a>
+
+            <a href="index.html#trac-nghiem-tinh-cach" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3.08A2.49 2.49 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3.08A2.49 2.49 0 0 0 14.5 2Z"/></svg>
               </div>
               <div class="dropdown-item-content">
                 <span class="dropdown-item-title">Trắc nghiệm MBTI / DISC</span>
@@ -2627,13 +2688,8 @@
 
       </ul>
 
-      <!-- 3. Actions Right (Notifications, Messages, Account / Login) -->
+      <!-- 3. Actions Right (Notifications, Messages, Account, Employer) -->
       <div class="navbar-actions">
-
-        <!-- Employer Portal Quick Link (TopCV/ITviec style) -->
-        <a href="index.html#nha-tuyen-dung" class="btn-employer" title="Dành cho nhà tuyển dụng">
-          Dành cho Nhà tuyển dụng
-        </a>
 
         <!-- Cột 5: Thông báo (Notification Icon & Flyout) -->
         <div style="position: relative;">
@@ -2730,7 +2786,7 @@
 
         <!-- Cột 7: Tài khoản (ĐÃ ĐĂNG NHẬP) -->
         <div id="account-logged-view" class="account-logged-view">
-          <button id="user-profile-btn" class="user-profile-btn" aria-expanded="false" aria-label="Menu tài khoản cá nhân">
+          <button id="user-profile-btn" class="user-profile-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Menu tài khoản cá nhân">
             <div class="user-avatar-wrap">
               <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80" alt="Avatar" class="user-avatar" />
               <span class="avatar-badge-online" title="Đang trực tuyến"></span>
@@ -2738,7 +2794,7 @@
             <div class="user-meta">
               <span class="user-name">Nguyễn Văn A</span>
             </div>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--text-muted);"><path d="M6 9l6 6 6-6"/></svg>
+            <svg class="user-profile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </button>
 
           <!-- User Mega Dropdown Menu -->
@@ -2748,6 +2804,10 @@
             <div class="user-dropdown-header">
               <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80" alt="Avatar lớn" class="dropdown-user-avatar" />
               <div class="dropdown-user-info">
+                <div class="dropdown-user-status">
+                  <span class="dropdown-user-role">Tài khoản ứng viên</span>
+                  <span class="dropdown-user-verified">Đã xác thực</span>
+                </div>
                 <div class="dropdown-user-name">Nguyễn Văn A</div>
                 <div class="dropdown-user-email">nguyen.vana@easycv.vn</div>
                 <div class="profile-completion-wrap">
@@ -2925,12 +2985,21 @@
           </div>
         </div>
 
+        <!-- Lối sang khu vực Nhà tuyển dụng (màn rộng) -->
+        <a href="index.html#nha-tuyen-dung" class="btn-employer" title="Chuyển sang khu vực Nhà tuyển dụng">
+          <span class="btn-employer-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+          </span>
+          <span class="btn-employer-text">
+            <span class="btn-employer-kicker">Bạn là nhà tuyển dụng?</span>
+            <span class="btn-employer-label">
+              Đăng tuyển ngay
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+            </span>
+          </span>
+        </a>
 
       </div>
-      <!-- Mobile Menu Toggle Button (Hamburger) -->
-      <button id="mobile-toggle-btn" class="mobile-toggle-btn" aria-label="Mở menu trên điện thoại">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-      </button>
     </nav>
   </header>
   <!-- @end:header -->
@@ -2938,98 +3007,185 @@
     <!-- Mobile Navigation Drawer -->
     <!-- @include:drawer -->
   <div id="mobile-drawer-overlay" class="mobile-drawer-overlay">
-    <div class="mobile-drawer">
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menu điều hướng">
       <div class="mobile-drawer-header">
-        <a href="index.html" aria-label="Trang chủ EasyCV">
-          <img src="assets/logos/easycv-logo-transparent.png" alt="EasyCV Logo" style="height: 32px; width: auto;" />
+        <a href="index.html" class="mobile-drawer-logo" aria-label="Trang chủ EasyCV">
+          <img src="assets/logos/easycv-logo-transparent.png" alt="EasyCV Logo" />
         </a>
-        <button id="mobile-drawer-close" class="mobile-drawer-close" aria-label="Đóng menu">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+        <button type="button" id="mobile-drawer-back" class="mobile-drawer-back" hidden>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          <span id="mobile-drawer-back-label">Quay lại</span>
+        </button>
+        <button type="button" id="mobile-drawer-close" class="mobile-drawer-close" aria-label="Đóng menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
         </button>
       </div>
 
       <div class="mobile-drawer-body">
-        <!-- Tài khoản: trên mobile header chỉ còn ☰ + logo + chuông, các mục tài khoản nằm ở đây -->
-        <div class="drawer-account">
-          <div class="drawer-account-links">
-            <a href="index.html#hop-thu-den">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              <span>Tin nhắn</span>
-              <span class="drawer-account-badge">2</span>
+
+        <!-- Màn chính: mỗi nhóm là một dòng lớn, bấm để mở danh sách con -->
+        <div class="drawer-view is-active" data-drawer-view="main">
+          <!-- Tài khoản: trên mobile header chỉ còn ☰ + logo + chuông, các mục tài khoản nằm ở đây -->
+          <div class="drawer-account">
+            <div class="drawer-account-links">
+              <a href="index.html#hop-thu-den">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <span>Tin nhắn</span>
+                <span class="drawer-account-badge">2</span>
+              </a>
+              <a href="index.html#ho-so-cua-toi">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+                <span>Hồ sơ</span>
+              </a>
+              <a href="index.html#dang-xuat" class="drawer-account-logout">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+                <span>Đăng xuất</span>
+              </a>
+            </div>
+          </div>
+
+          <nav class="drawer-nav" aria-label="Điều hướng chính">
+            <button type="button" class="drawer-row is-featured" data-drawer-open="jobs">
+              <span class="drawer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg></span>
+              <span class="drawer-row-title">Việc làm</span>
+              <svg class="drawer-row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <button type="button" class="drawer-row" data-drawer-open="cv">
+              <span class="drawer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M8 13h2"/><path d="M14 13h2"/><path d="M8 17h2"/><path d="M14 17h2"/></svg></span>
+              <span class="drawer-row-title">Hồ sơ &amp; CV</span>
+              <svg class="drawer-row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <button type="button" class="drawer-row" data-drawer-open="apply">
+              <span class="drawer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg></span>
+              <span class="drawer-row-title">Ứng tuyển</span>
+              <svg class="drawer-row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <button type="button" class="drawer-row" data-drawer-open="tools">
+              <span class="drawer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></span>
+              <span class="drawer-row-title">Công cụ nghề nghiệp</span>
+              <svg class="drawer-row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <a href="index.html#kham-pha-cong-ty" class="drawer-row">
+              <span class="drawer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span>
+              <span class="drawer-row-title">Khám phá công ty</span>
+              <svg class="drawer-row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
             </a>
-            <a href="index.html#ho-so-cua-toi">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-              <span>Hồ sơ</span>
-            </a>
-            <a href="index.html#dang-xuat" class="drawer-account-logout">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
-              <span>Đăng xuất</span>
-            </a>
+          </nav>
+
+          <div class="drawer-footer">
+            <a href="index.html#nha-tuyen-dung" class="drawer-cta">Đăng tuyển &amp; tìm hồ sơ</a>
+            <p class="drawer-tagline">EasyCV · Đồng hành cùng sự nghiệp của bạn</p>
           </div>
         </div>
 
-        <!-- 1. Tìm việc -->
-        <div class="mobile-nav-item">
-          <div class="mobile-nav-title">
-            <span>Tìm Việc</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="mobile-sub-menu">
-            <a href="viec-lam.html" class="mobile-sub-link" id="mobileLinkTimKiemViecLam">Tìm kiếm việc làm</a>
-            <a href="index.html#viec-lam-goi-y" class="mobile-sub-link">Việc làm gợi ý</a>
-            <a href="index.html#viec-lam-da-luu" class="mobile-sub-link">Việc làm đã lưu</a>
-            <a href="index.html#kham-pha-cong-ty" class="mobile-sub-link">Khám phá công ty</a>
-          </div>
-        </div>
-
-        <!-- 2. Hồ sơ & CV -->
-        <div class="mobile-nav-item">
-          <div class="mobile-nav-title">
-            <span>Hồ Sơ & CV</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="mobile-sub-menu">
-            <a href="index.html#ho-so-cua-toi" class="mobile-sub-link">Hồ sơ của tôi</a>
-            <a href="index.html#tao-cv-theo-mau" class="mobile-sub-link">Tạo CV theo mẫu</a>
-            <a href="index.html#quan-ly-cv" class="mobile-sub-link">Quản lý CV</a>
-            <a href="index.html#tai-len-cv" class="mobile-sub-link">Tải lên CV</a>
-          </div>
-        </div>
-
-        <!-- 3. Ứng tuyển -->
-        <div class="mobile-nav-item">
-          <div class="mobile-nav-title">
-            <span>Ứng Tuyển</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="mobile-sub-menu">
-            <a href="index.html#danh-sach-don-ung-tuyen" class="mobile-sub-link">Danh sách đơn ứng tuyển</a>
-            <a href="index.html#lich-phong-van" class="mobile-sub-link">Lịch phỏng vấn</a>
-            <a href="index.html#bai-kiem-tra-nang-luc" class="mobile-sub-link">Bài kiểm tra năng lực</a>
-          </div>
-        </div>
-
-        <!-- 4. Công cụ nghề nghiệp -->
-        <div class="mobile-nav-item">
-          <div class="mobile-nav-title">
-            <span>Công Cụ Nghề Nghiệp</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="mobile-sub-menu">
-            <a href="index.html#tinh-luong-gross-net" class="mobile-sub-link">Tính lương Gross - Net</a>
-            <a href="index.html#tinh-bao-hiem-xa-hoi" class="mobile-sub-link">Tính bảo hiểm xã hội</a>
-            <a href="index.html#khao-sat-muc-luong" class="mobile-sub-link">Khảo sát mức lương</a>
-            <a href="index.html#trac-nghiem-tinh-cach" class="mobile-sub-link">Trắc nghiệm tính cách MBTI</a>
-          </div>
-        </div>
-
-        <div style="margin: 20px 0; border-top: 1px solid var(--border-color);"></div>
-
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-          <a href="index.html#nha-tuyen-dung" class="btn-employer" style="text-align: center; border: 1px solid var(--border-color);">
-            Dành cho Nhà tuyển dụng
+        <!-- Danh sách con: Việc làm -->
+        <nav class="drawer-view" data-drawer-view="jobs" aria-label="Việc làm" hidden>
+          <p class="drawer-group-label">Việc làm</p>
+          <a href="viec-lam.html" class="drawer-link" id="mobileLinkTimKiemViecLam">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <span>Tìm kiếm việc làm</span>
           </a>
-        </div>
+          <a href="index.html#viec-lam-goi-y" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            <span>Việc làm gợi ý</span>
+            <span class="badge-pill">AI Match</span>
+          </a>
+          <a href="index.html#viec-lam-da-luu" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/><path d="m9 10 2 2 4-4"/></svg>
+            <span>Việc làm đã lưu</span>
+            <span class="badge-pill badge-count">12</span>
+          </a>
+          <a href="index.html#thong-bao-viec-lam" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+            <span>Thông báo việc làm</span>
+          </a>
+          <p class="drawer-group-label">Công ty</p>
+          <a href="index.html#kham-pha-cong-ty" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+            <span>Khám phá công ty</span>
+          </a>
+        </nav>
+
+        <!-- Danh sách con: Hồ sơ & CV -->
+        <nav class="drawer-view" data-drawer-view="cv" aria-label="Hồ sơ &amp; CV" hidden>
+          <p class="drawer-group-label">Hồ sơ &amp; CV</p>
+          <a href="index.html#ho-so-cua-toi" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+            <span>Hồ sơ của tôi</span>
+          </a>
+          <a href="index.html#tao-cv-theo-mau" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>
+            <span>Mẫu CV chuẩn ATS</span>
+            <span class="badge-pill">Miễn phí</span>
+          </a>
+          <a href="index.html#quan-ly-cv" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg>
+            <span>Quản lý CV</span>
+            <span class="badge-pill">CV chính</span>
+          </a>
+          <a href="index.html#tai-len-cv" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M12 12v6"/><path d="m15 15-3-3-3 3"/></svg>
+            <span>Tải lên &amp; phân tích CV</span>
+          </a>
+        </nav>
+
+        <!-- Danh sách con: Ứng tuyển -->
+        <nav class="drawer-view" data-drawer-view="apply" aria-label="Ứng tuyển" hidden>
+          <p class="drawer-group-label">Ứng tuyển</p>
+          <a href="index.html#danh-sach-don-ung-tuyen" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="m9 14 2 2 4-4"/></svg>
+            <span>Đơn ứng tuyển của tôi</span>
+            <span class="badge-pill badge-count">3</span>
+          </a>
+          <a href="index.html#lich-phong-van" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            <span>Lịch phỏng vấn</span>
+            <span class="badge-pill badge-new">1 mới</span>
+          </a>
+          <a href="index.html#bai-kiem-tra-nang-luc" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            <span>Bài kiểm tra năng lực</span>
+          </a>
+        </nav>
+
+        <!-- Danh sách con: Công cụ nghề nghiệp -->
+        <nav class="drawer-view" data-drawer-view="tools" aria-label="Công cụ nghề nghiệp" hidden>
+          <p class="drawer-group-label">Tra cứu &amp; luyện tập</p>
+          <a href="index.html#khao-sat-muc-luong" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            <span>Tra cứu lương thị trường</span>
+          </a>
+          <a href="index.html#luyen-phong-van-ai" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+            <span>Luyện phỏng vấn AI</span>
+          </a>
+          <a href="index.html#trac-nghiem-tinh-cach" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3.08A2.49 2.49 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3.08A2.49 2.49 0 0 0 14.5 2Z"/></svg>
+            <span>Trắc nghiệm MBTI / DISC</span>
+          </a>
+          <p class="drawer-group-label">Tính toán tài chính</p>
+          <a href="index.html#tinh-luong-gross-net" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+            <span>Tính lương Gross - Net</span>
+          </a>
+          <a href="index.html#tinh-thue-tncn" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>
+            <span>Tính thuế thu nhập cá nhân</span>
+          </a>
+          <a href="index.html#tinh-bao-hiem-xa-hoi" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Tính bảo hiểm xã hội</span>
+          </a>
+          <a href="index.html#tinh-bao-hiem-that-nghiep" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12a10.06 10.06 1 0 0-20 0Z"/><path d="M12 12v8a2 2 0 0 0 4 0"/><path d="M12 2v1"/></svg>
+            <span>Tính bảo hiểm thất nghiệp</span>
+          </a>
+          <a href="index.html#lap-ke-hoach-tiet-kiem" class="drawer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"/><path d="M2 9v1c0 1.1.9 2 2 2h1"/><path d="M16 11h.01"/></svg>
+            <span>Lập kế hoạch tiết kiệm</span>
+          </a>
+        </nav>
+
       </div>
     </div>
   </div>
@@ -6670,7 +6826,7 @@
   </nav>
   <!-- @end:tabbar -->
 
-    <script src="js/navbar.js?v=noswitch_20261012"></script>
+    <script src="js/navbar.js?v=header2_20261012"></script>
     <script src="js/category-filter-modal.js?v=eb_colors_20261007"></script>
     <script src="js/jobs-data.js?v=homepage_detail_links_20261008"></script>
     <script src="js/home.js?v=tidy2_20261012"></script>

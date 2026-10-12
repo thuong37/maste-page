@@ -208,14 +208,16 @@ Agent **KHÔNG ĐƯỢC** phục hồi các khối trên nếu không có yêu c
 
 ### H01. Header và điều hướng
 
-**Desktop:** Header sticky; thứ tự trái sang phải: logo, bốn menu, employer link, thông báo, tin nhắn, tài khoản. Bốn menu là Tìm việc, Hồ sơ & CV, Ứng tuyển, Công cụ nghề nghiệp.
+**Desktop:** Header sticky (riêng trang tìm việc không sticky); thứ tự trái sang phải: logo, vạch chéo chấm cam (≥1280px), bốn menu có icon, thông báo, tin nhắn, tài khoản, lối sang Nhà tuyển dụng. Bốn menu là Việc làm, Hồ sơ & CV, Ứng tuyển, Công cụ (bảng 2 cột). Bố cục học theo header của `easy-web-candidate` nhưng dùng token màu `--eb-*` của dự án.
 
 - Logo cuộn về đầu trang.
-- “Tìm việc”/“Tìm kiếm việc làm” cuộn tới search và focus input.
-- Notification/message dùng fixture; badge hiện tại là 3 và 2.
-- Account menu thể hiện người dùng đã đăng nhập, hồ sơ 85%.
+- “Việc làm”/“Tìm kiếm việc làm” cuộn tới search và focus input.
+- Menu mở khi rê chuột, bấm (màn cảm ứng) hoặc Tab bàn phím; Esc đóng và trả focus về nút; nút có `aria-expanded`, mục đang xem có `aria-current`.
+- Notification/message dùng fixture; badge đỏ hiện tại là 3 và 2.
+- Account menu thể hiện người dùng đã đăng nhập (“Tài khoản ứng viên · Đã xác thực”), hồ sơ 85%.
+- Màn hẹp: ≤1359px lối Nhà tuyển dụng chỉ còn ô icon; ≤1199px nút tài khoản chỉ còn avatar; ≤1279px bảng Công cụ căn phải để không tràn.
 
-**Mobile:** Ẩn desktop nav, dùng hamburger; drawer trượt từ trái, rộng `320px`, tối đa `85vw`, có overlay và accordion. Mở drawer phải khóa cuộn; Escape/click overlay đóng và quản lý focus.
+**Mobile (≤1100px):** Ẩn desktop nav, dùng nút ☰ cam cạnh logo; drawer trượt từ trái, rộng `320px`, tối đa `85vw`, có overlay. Drawer 2 cấp: màn chính gồm các dòng 56px (ô icon + tên + mũi tên, “Việc làm” nổi bật), bấm vào thì sang danh sách con có nút “‹ Tên nhóm” để quay lại; cuối màn chính là nút “Đăng tuyển & tìm hồ sơ”. Mở drawer khóa cuộn và đưa focus vào nút đóng; Escape/click overlay/bấm link đóng và trả focus về ☰.
 
 **Không được:** Tạo lại DemoBar, tự thêm guest variant, hoặc coi employer link là recruiter portal hoàn chỉnh.
 

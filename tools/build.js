@@ -16,7 +16,7 @@ const BLOCKS = {
     begin: '<!-- @include:header -->', end: '<!-- @end:header -->',
     gen: (page) => partial('header.html')
       .replace('{{TIM_VIEC_CURRENT_CLASS}}', CURRENT.has(page) ? ' is-current' : '')
-      .replace('{{TIM_VIEC_CURRENT_LABEL}}', CURRENT.has(page) ? ' (Trang hiện tại)' : ''),
+      .replace('{{TIM_VIEC_CURRENT_ARIA}}', CURRENT.has(page) ? ' aria-current="true"' : ''),
   },
   footer: {
     begin: '<!-- @include:footer -->', end: '<!-- @end:footer -->',
