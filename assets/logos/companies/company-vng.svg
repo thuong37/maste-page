@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="VNG Corporation">
   <rect width="120" height="120" rx="16" fill="#FFFFFF"/>
-  <rect x="1" y="1" width="118" height="118" rx="15" fill="none" stroke="#E6E6E6" stroke-width="2"/>
   <g transform="translate(12 40) scale(.66667)">
     <path d="M43 0v25.38C43.02 43.37 28.61 57.98 10.82 58H0V0h10.75v47.26c11.93 0 21.6-9.78 21.6-21.85V0Z" fill="#E65A26"/>
     <path d="M94 16.33V58H83V16.3c0-3-2.45-5.42-5.48-5.42H61V58H50V0h27.48c1.88-.01 3.75.31 5.52.93 4.65 1.68 8.3 5.33 9.95 9.95.66 1.74 1.01 3.59 1.05 5.45Z" fill="#E65A26"/>

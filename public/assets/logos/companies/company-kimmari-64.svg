@@ -1,6 +1,5 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="64" height="64" rx="10" fill="#FFF1F2"/>
-  <rect x="0.5" y="0.5" width="63" height="63" rx="9.5" stroke="#FECDD3"/>
   <!-- Restaurant / Hospitality building & dining icon -->
   <path d="M17 48V30C17 28.8954 17.8954 28 19 28H45C46.1046 28 47 28.8954 47 30V48H17Z" fill="#FDA4AF"/>
   <path d="M14 30L32 18L50 30H14Z" fill="#F43F5E"/>

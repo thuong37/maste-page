@@ -1,6 +1,5 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="64" height="64" rx="10" fill="#F8FAFC"/>
-  <rect x="0.5" y="0.5" width="63" height="63" rx="9.5" stroke="#CBD5E1"/>
   <!-- Industrial & Technology Engineering structure -->
   <path d="M15 48V32H27V48H15Z" fill="#94A3B8"/>
   <path d="M27 24L39 18V48H27V24Z" fill="#64748B"/>

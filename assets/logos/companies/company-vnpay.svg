@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
   <rect width="120" height="120" rx="16" fill="#FFFFFF"/>
-  <rect x="1" y="1" width="118" height="118" rx="15" fill="none" stroke="#E2E8F0" stroke-width="2"/>
   <g transform="translate(60, 48)">
     <!-- VNPAY curved ribbons -->
     <path d="M-30 -20 C-10 -28, 10 -20, 26 -4 L16 4 C6 -8, -10 -12, -24 -6 Z" fill="#005BAA"/>

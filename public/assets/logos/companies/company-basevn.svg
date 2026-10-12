@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
   <rect width="120" height="120" rx="16" fill="#183B7E"/>
-  <rect x="1" y="1" width="118" height="118" rx="15" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
   <g transform="translate(60, 50)">
     <!-- Base.vn stylized B -->
     <path d="M-16 -24 L4 -24 C14 -24, 22 -18, 22 -8 C22 0, 16 6, 8 8 C18 10, 24 18, 24 28 C24 38, 14 44, 2 44 L-16 44 Z" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linejoin="round"/>

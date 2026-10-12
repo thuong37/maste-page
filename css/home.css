@@ -5335,3 +5335,42 @@
 #heroSearchStickyBar.is-sticky .category-filter-trigger { height: 38px; }
 #heroSearchStickyBar.is-sticky .location-trigger { height: 34px; }
 #heroSearchStickyBar.is-sticky .btn-hero-search { height: 38px; }
+
+/* Logo công ty: thống nhất chỉ 1 viền xám mỏng, không bóng đổ (dùng chung mọi trang) */
+.job-company-logo,
+.job-logo-wrapper,
+.recommended-job-logo,
+.company-card-logo-wrap,
+.jd-company-logo-wrap,
+.jd-related-logo,
+.vip-employer-logo-wrap {
+  border: 1px solid var(--eb-text-100, #E6E6E6) !important;
+  box-shadow: none !important;
+}
+/* Ảnh logo lấp kín khung (không khoảng đệm) để chỉ còn 1 viền */
+img.job-company-logo,
+img.jd-related-logo { padding: 0 !important; }
+.job-logo-wrapper,
+.recommended-job-logo,
+.company-card-logo-wrap,
+.jd-company-logo-wrap,
+.vip-employer-logo-wrap { padding: 0 !important; }
+.job-logo-wrapper > img,
+.recommended-job-logo > img,
+.company-card-logo-wrap > img,
+.jd-company-logo-wrap > img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+  background: #fff;
+  border: 0 !important;
+  border-radius: inherit !important;
+  box-shadow: none !important;
+}
+/* Logo nhà tuyển dụng VIP: trang việc làm có style inline !important nên cần độ ưu tiên cao hơn */
+div.vip-employer-logo-wrap {
+  border: 1px solid var(--eb-text-100, #E6E6E6) !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+img.vip-logo-img { padding: 0 !important; }
