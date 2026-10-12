@@ -5608,3 +5608,58 @@ img.vip-logo-img { padding: 0 !important; }
     text-wrap: balance;
   }
 }
+
+/* ===== Gọn khoảng cách các khối (desktop + mobile) ===== */
+/* "Xem tất cả" căn giữa theo chiều dọc với tiêu đề mục */
+.home-section .section-header {
+  align-items: center;
+}
+/* Phân trang chỉ có 1 trang (cả 2 nút đều mờ) thì ẩn đi cho đỡ thừa */
+.job-list-pagination:has(.job-list-page-prev:disabled):has(.job-list-page-next:disabled) {
+  display: none;
+}
+/* Hệ sinh thái: lề trên/dưới đồng bộ với các mục khác */
+.eco-section {
+  padding: 48px 0 56px;
+}
+@media (max-width: 768px) {
+  .eco-section {
+    padding: 32px 0 36px;
+  }
+  .eco-head {
+    margin-bottom: 16px !important;
+  }
+  .eco-stats {
+    margin-top: 16px;
+  }
+  /* Thẻ "Công ty nổi bật": bỏ khoảng trống thừa dưới tên công ty */
+  .company-card {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+}
+
+/* Trang chủ (mobile): "Việc làm phù hợp với bạn" thành dải thẻ vuốt ngang (mục "Việc làm nổi bật" phía trên đã là danh sách dọc) */
+@media (max-width: 768px) {
+  #viec-lam-phu-hop .jobs-grid {
+    position: relative;
+    display: grid !important;
+    grid-auto-flow: column;
+    grid-template-columns: none !important;
+    grid-auto-columns: 84%;
+    gap: 12px !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 16px;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 2px 16px 6px;
+    scrollbar-width: none;
+  }
+  #viec-lam-phu-hop .jobs-grid::-webkit-scrollbar {
+    display: none;
+  }
+  #viec-lam-phu-hop .jobs-grid > * {
+    scroll-snap-align: start;
+  }
+}

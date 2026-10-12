@@ -624,10 +624,95 @@
   .jd-main,
   .jd-side { display: contents; }
   .jd-head { order: 1; }
-  .jd-general { order: 2; }
-  .jd-content { order: 3; }
-  .jd-company { order: 4; }
-  .jd-company-profile { order: 5; }
-  .jd-related { order: 6; }
+  .jd-tabs { order: 2; }
+  .jd-general { order: 3; }
+  .jd-content { order: 4; }
+  .jd-company { order: 5; }
+  .jd-company-profile { order: 6; }
+  .jd-related { order: 7; }
   .jd-page { padding-bottom: 80px; }
+}
+
+/* ===== Trang chi tiết trên mobile/tablet: gọn kiểu app (tham khảo TopCV) ===== */
+.jd-tabs { display: none; }
+@media (max-width: 992px) {
+  /* Thanh tab nhảy nhanh, dính trên cùng khi cuộn */
+  .jd-tabs {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    gap: 4px;
+    padding: 0 8px;
+    background: #FFFFFF;
+    border: 1px solid var(--jd-border, #E6E6E6);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(6, 14, 24, 0.06);
+  }
+  .jd-tab {
+    flex: 1;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--eb-text-400, #545454);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+  }
+  .jd-tab.is-active {
+    color: var(--eb-primary-500, #FF6500);
+    border-bottom-color: var(--eb-primary-500, #FF6500);
+  }
+  #jdSecInfo,
+  #jdSecCompany,
+  #jdSecRelated { scroll-margin-top: 64px; }
+
+  /* Nhóm thẻ Yêu cầu / Quyền lợi / Chuyên môn: 1 hàng vuốt ngang thay vì xuống nhiều dòng */
+  .jd-overview .jd-chips {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    margin-right: -16px;
+    padding-right: 16px;
+    scrollbar-width: none;
+  }
+  .jd-overview .jd-chips::-webkit-scrollbar { display: none; }
+  .jd-overview .jd-chip { flex: 0 0 auto; white-space: nowrap; }
+
+  /* Thông tin chung: 1 cột nhưng gọn hơn (icon nhỏ, khoảng cách hẹp) */
+  .jd-general-list { gap: 10px !important; }
+  .jd-general-icon { width: 34px !important; height: 34px !important; flex: none; }
+  /* Hồ sơ doanh nghiệp: lưới 2 cột gọn */
+  .jd-company-profile-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  /* Việc làm liên quan: thẻ vuốt ngang */
+  .jd-related-list {
+    position: relative;
+    flex-direction: row !important;
+    gap: 12px !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 16px;
+    margin: 0 -16px;
+    padding: 2px 16px 6px;
+    scrollbar-width: none;
+  }
+  .jd-related-list::-webkit-scrollbar { display: none; }
+  .jd-related-card {
+    flex: 0 0 78% !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+  }
+  .jd-related-card .jd-related-logo { width: 48px !important; height: 48px !important; }
+  .jd-related-card .jd-related-body { width: 100%; }
 }

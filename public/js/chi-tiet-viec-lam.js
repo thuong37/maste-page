@@ -430,3 +430,23 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.jd-sticky-bar')?.remove();
   }
 });
+
+// Thanh tab nhảy nhanh (mobile/tablet): tô sáng tab theo phần đang xem
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = [...document.querySelectorAll('.jd-tabs .jd-tab')];
+  if (!tabs.length || !('IntersectionObserver' in window)) return;
+  const setActive = (id) =>
+    tabs.forEach((t) => t.classList.toggle('is-active', t.getAttribute('href') === `#${id}`));
+  tabs.forEach((t) => t.addEventListener('click', () => setActive(t.getAttribute('href').slice(1))));
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (visible[0]) setActive(visible[0].target.id);
+    },
+    { rootMargin: '-70px 0px -60% 0px' },
+  );
+  tabs.forEach((t) => {
+    const target = document.querySelector(t.getAttribute('href'));
+    if (target) observer.observe(target);
+  });
+});
