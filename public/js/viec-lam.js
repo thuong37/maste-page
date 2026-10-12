@@ -5,7 +5,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-
   // =========================================================================
   // 1. DATASET: 16 Việc Làm Chuẩn Hóa Theo Mô Hình PRD EasyCV
   // =========================================================================
@@ -18,19 +17,27 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentPage = 1;
   let currentFilteredJobs = [];
 
-  const searchInput = document.getElementById('jobSearchInput') || document.getElementById('heroSearchInput');
+  const searchInput =
+    document.getElementById('jobSearchInput') ||
+    document.getElementById('heroSearchInput');
   const clearSearchInputBtn = document.getElementById('clearSearchInputBtn');
-  const locationSelect = document.getElementById('jobLocationSelect') || document.getElementById('heroLocationSelect');
-  const heroLocationTrigger = document.getElementById('heroLocationTrigger') || document.getElementById('jobLocationTrigger');
+  const locationSelect =
+    document.getElementById('jobLocationSelect') ||
+    document.getElementById('heroLocationSelect');
+  const heroLocationTrigger =
+    document.getElementById('heroLocationTrigger') ||
+    document.getElementById('jobLocationTrigger');
   if (heroLocationTrigger) {
-    Array.from(heroLocationTrigger.childNodes).forEach(n => {
+    Array.from(heroLocationTrigger.childNodes).forEach((n) => {
       if (n.nodeType === Node.TEXT_NODE) n.remove();
     });
   }
   const categorySelect = document.getElementById('jobCategorySelect');
   const sortSelect = document.getElementById('sortSelect');
   const jobSearchForm = document.getElementById('jobSearchForm');
-  const btnJobSearch = document.getElementById('btnJobSearch') || document.getElementById('btnHeroSearch');
+  const btnJobSearch =
+    document.getElementById('btnJobSearch') ||
+    document.getElementById('btnHeroSearch');
   const jobCountText = document.getElementById('jobCountText');
   const activeSearchTag = document.getElementById('activeSearchTag');
   const activeKeywordText = document.getElementById('activeKeywordText');
@@ -38,15 +45,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const noResultsBox = document.getElementById('noResultsBox');
   const btnResetSearch = document.getElementById('btnResetSearch');
   const jobListingGrid = document.getElementById('jobListingGrid');
-  const paginationWrapper = document.getElementById('paginationWrapper') || document.querySelector('.pagination-wrapper');
+  const paginationWrapper =
+    document.getElementById('paginationWrapper') ||
+    document.querySelector('.pagination-wrapper');
   const toast = document.getElementById('toastMsg');
   const btnResetFilters = document.getElementById('btnResetFilters');
-  const searchSuggestDropdown = document.getElementById('searchSuggestDropdown');
+  const searchSuggestDropdown = document.getElementById(
+    'searchSuggestDropdown',
+  );
   const recentSearchList = document.getElementById('recentSearchList');
-  const btnClearSearchHistory = document.getElementById('btnClearSearchHistory');
+  const btnClearSearchHistory = document.getElementById(
+    'btnClearSearchHistory',
+  );
   const btnCloseSuggest = document.getElementById('btnCloseSuggest');
-  const heroSearchWrapper = document.getElementById('heroSearchWrapper') || document.getElementById('jobSearchWrapper');
-  const heroSearchStickyBar = document.getElementById('heroSearchStickyBar') || document.getElementById('jobSearchStickyBar');
+  const heroSearchWrapper =
+    document.getElementById('heroSearchWrapper') ||
+    document.getElementById('jobSearchWrapper');
+  const heroSearchStickyBar =
+    document.getElementById('heroSearchStickyBar') ||
+    document.getElementById('jobSearchStickyBar');
   let activeIndustryQuery = '';
 
   // Top Filter Bar State
@@ -61,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     salary: 'Mức lương',
     level: 'Cấp bậc',
     type: 'Hình thức',
-    saturday: 'Nghỉ thứ 7'
+    saturday: 'Nghỉ thứ 7',
   };
 
   // -------------------------------------------------------------------------
@@ -70,10 +87,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // Trong cùng 1 tiêu chí: khớp BẤT KỲ giá trị nào (OR); giữa các tiêu chí: AND.
   // -------------------------------------------------------------------------
   const MULTI_FILTER_TYPES = ['exp', 'salary', 'level', 'type', 'saturday'];
-  const CHECK_ICON_SVG = '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>';
+  const CHECK_ICON_SVG =
+    '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>';
 
   function parseMultiValue(value) {
-    return [...new Set(String(value || '').split(',').map(part => part.trim()).filter(Boolean))];
+    return [
+      ...new Set(
+        String(value || '')
+          .split(',')
+          .map((part) => part.trim())
+          .filter(Boolean),
+      ),
+    ];
   }
 
   function getFilterValue(type) {
@@ -95,38 +120,55 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getFilterOptionLabel(type, value) {
-    const option = document.querySelector(`.dropdown-item[data-type="${type}"][data-value="${CSS.escape(value)}"]`);
-    return option?.getAttribute('data-label') || option?.querySelector('span')?.textContent.trim() || value;
+    const option = document.querySelector(
+      `.dropdown-item[data-type="${type}"][data-value="${CSS.escape(value)}"]`,
+    );
+    return (
+      option?.getAttribute('data-label') ||
+      option?.querySelector('span')?.textContent.trim() ||
+      value
+    );
   }
 
   // Đánh dấu các lựa chọn trong menu: không chọn gì → "Tất cả …"; có chọn → tích từng mục
   function syncFilterDropdownSelection(type) {
     const values = parseMultiValue(getFilterValue(type));
-    document.querySelectorAll(`.dropdown-item[data-type="${type}"]`).forEach(item => {
-      const itemValue = item.getAttribute('data-value') || '';
-      const isSelected = itemValue ? values.includes(itemValue) : values.length === 0;
-      item.classList.toggle('is-selected', isSelected);
-      item.setAttribute('aria-checked', isSelected ? 'true' : 'false');
-      const icon = item.querySelector('.check-icon');
-      if (isSelected && !icon) item.insertAdjacentHTML('beforeend', CHECK_ICON_SVG);
-      else if (!isSelected && icon) icon.remove();
-    });
+    document
+      .querySelectorAll(`.dropdown-item[data-type="${type}"]`)
+      .forEach((item) => {
+        const itemValue = item.getAttribute('data-value') || '';
+        const isSelected = itemValue
+          ? values.includes(itemValue)
+          : values.length === 0;
+        item.classList.toggle('is-selected', isSelected);
+        item.setAttribute('aria-checked', isSelected ? 'true' : 'false');
+        const icon = item.querySelector('.check-icon');
+        if (isSelected && !icon)
+          item.insertAdjacentHTML('beforeend', CHECK_ICON_SVG);
+        else if (!isSelected && icon) icon.remove();
+      });
   }
 
   // Saved filter dialog elements
   const savedFiltersTrigger = document.getElementById('savedFiltersTrigger');
   const savedFiltersDialog = document.getElementById('savedFiltersDialog');
-  const savedFiltersPanel = savedFiltersDialog?.querySelector('.saved-filters-panel');
+  const savedFiltersPanel = savedFiltersDialog?.querySelector(
+    '.saved-filters-panel',
+  );
   const savedFiltersClose = document.getElementById('savedFiltersClose');
   const savedFilterForm = document.getElementById('savedFilterForm');
   const savedFilterName = document.getElementById('savedFilterName');
   const savedFilterNameError = document.getElementById('savedFilterNameError');
   const savedFilterSubmit = document.getElementById('savedFilterSubmit');
-  const savedFilterCurrentSummary = document.getElementById('savedFilterCurrentSummary');
+  const savedFilterCurrentSummary = document.getElementById(
+    'savedFilterCurrentSummary',
+  );
   const savedFilterList = document.getElementById('savedFilterList');
   const savedFilterEmpty = document.getElementById('savedFilterEmpty');
   const savedFilterCount = document.getElementById('savedFilterCount');
-  const savedFilterLibraryCount = document.getElementById('savedFilterLibraryCount');
+  const savedFilterLibraryCount = document.getElementById(
+    'savedFilterLibraryCount',
+  );
 
   // Split View & View Mode elements
   let activeViewMode = 'grid'; // 'grid' | 'split'
@@ -177,24 +219,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const SAVED_FILTER_STORAGE_KEY = 'easycv_saved_job_filters_v1';
   const SAVED_FILTER_STORAGE_VERSION = 1;
   const SAVED_FILTER_PARAM_KEYS = [
-    'keyword', 'location', 'category', 'industry',
-    'exp', 'salary', 'level', 'type', 'saturday'
+    'keyword',
+    'location',
+    'category',
+    'industry',
+    'exp',
+    'salary',
+    'level',
+    'type',
+    'saturday',
   ];
   const SAVED_FILTER_VALUE_SETS = {
     exp: new Set(['0', 'under1', '1-3', '3-5', 'over5']),
-    salary: new Set(['under10', '10-15', '15-25', '25-50', 'over50', 'negotiable']),
+    salary: new Set([
+      'under10',
+      '10-15',
+      '15-25',
+      '25-50',
+      'over50',
+      'negotiable',
+    ]),
     level: new Set(['intern', 'junior', 'senior', 'manager']),
     type: new Set(['fulltime', 'hybrid', 'remote', 'parttime']),
-    saturday: new Set(['work_sat', 'off_sat', 'unmentioned'])
+    saturday: new Set(['work_sat', 'off_sat', 'unmentioned']),
   };
   let savedFilters = [];
   let savedFilterReturnFocus = null;
   let pendingDeleteFilterId = null;
 
   function sanitizeSavedFilterParams(candidate) {
-    if (!candidate || typeof candidate !== 'object' || Array.isArray(candidate)) return {};
+    if (!candidate || typeof candidate !== 'object' || Array.isArray(candidate))
+      return {};
     const sanitized = {};
-    SAVED_FILTER_PARAM_KEYS.forEach(key => {
+    SAVED_FILTER_PARAM_KEYS.forEach((key) => {
       const rawValue = candidate[key];
       if (typeof rawValue !== 'string') return;
       let value = rawValue.trim().slice(0, 200);
@@ -202,7 +259,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (SAVED_FILTER_VALUE_SETS[key]) {
         // Bộ lọc chọn nhiều: mọi giá trị con phải hợp lệ
         const parts = parseMultiValue(value);
-        if (parts.length === 0 || !parts.every(part => SAVED_FILTER_VALUE_SETS[key].has(part))) return;
+        if (
+          parts.length === 0 ||
+          !parts.every((part) => SAVED_FILTER_VALUE_SETS[key].has(part))
+        )
+          return;
         value = parts.join(',');
       }
       sanitized[key] = value;
@@ -214,20 +275,33 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!rawValue) return [];
     try {
       const parsed = JSON.parse(rawValue);
-      if (!parsed || parsed.version !== SAVED_FILTER_STORAGE_VERSION || !Array.isArray(parsed.filters)) return [];
+      if (
+        !parsed ||
+        parsed.version !== SAVED_FILTER_STORAGE_VERSION ||
+        !Array.isArray(parsed.filters)
+      )
+        return [];
       const seenIds = new Set();
       return parsed.filters.reduce((records, record) => {
         if (!record || typeof record !== 'object') return records;
         const id = typeof record.id === 'string' ? record.id.trim() : '';
         const name = typeof record.name === 'string' ? record.name.trim() : '';
         const params = sanitizeSavedFilterParams(record.params);
-        if (!id || seenIds.has(id) || !name || name.length > 60 || Object.keys(params).length === 0) return records;
+        if (
+          !id ||
+          seenIds.has(id) ||
+          !name ||
+          name.length > 60 ||
+          Object.keys(params).length === 0
+        )
+          return records;
         seenIds.add(id);
         records.push({
           id,
           name,
           params,
-          createdAt: typeof record.createdAt === 'string' ? record.createdAt : ''
+          createdAt:
+            typeof record.createdAt === 'string' ? record.createdAt : '',
         });
         return records;
       }, []);
@@ -238,7 +312,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function readSavedFilters() {
     try {
-      return normalizeSavedFilterStore(localStorage.getItem(SAVED_FILTER_STORAGE_KEY));
+      return normalizeSavedFilterStore(
+        localStorage.getItem(SAVED_FILTER_STORAGE_KEY),
+      );
     } catch {
       return [];
     }
@@ -246,13 +322,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function persistSavedFilters() {
     try {
-      localStorage.setItem(SAVED_FILTER_STORAGE_KEY, JSON.stringify({
-        version: SAVED_FILTER_STORAGE_VERSION,
-        filters: savedFilters
-      }));
+      localStorage.setItem(
+        SAVED_FILTER_STORAGE_KEY,
+        JSON.stringify({
+          version: SAVED_FILTER_STORAGE_VERSION,
+          filters: savedFilters,
+        }),
+      );
       return true;
     } catch {
-      setSavedFilterError('Không thể lưu trên trình duyệt này. Vui lòng kiểm tra quyền lưu trữ.');
+      setSavedFilterError(
+        'Không thể lưu trên trình duyệt này. Vui lòng kiểm tra quyền lưu trữ.',
+      );
       return false;
     }
   }
@@ -267,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function getCanonicalFilterSnapshot() {
     const currentParams = new URLSearchParams(window.location.search);
     const candidate = {};
-    SAVED_FILTER_PARAM_KEYS.forEach(key => {
+    SAVED_FILTER_PARAM_KEYS.forEach((key) => {
       let value = currentParams.get(key);
       if (!value && key === 'keyword') value = currentParams.get('q');
       if (!value && key === 'location') value = currentParams.get('locations');
@@ -286,21 +367,26 @@ document.addEventListener('DOMContentLoaded', () => {
       salary: 'Mức lương',
       level: 'Cấp bậc',
       type: 'Hình thức',
-      saturday: 'Thứ 7'
+      saturday: 'Thứ 7',
     };
     let displayValue = value;
     if (SAVED_FILTER_VALUE_SETS[key]) {
-      displayValue = parseMultiValue(value).map(part => getFilterOptionLabel(key, part)).join(', ');
+      displayValue = parseMultiValue(value)
+        .map((part) => getFilterOptionLabel(key, part))
+        .join(', ');
     } else if (key === 'category' && categorySelect) {
-      displayValue = categorySelect.querySelector(`option[value="${CSS.escape(value)}"]`)?.textContent.trim() || value;
+      displayValue =
+        categorySelect
+          .querySelector(`option[value="${CSS.escape(value)}"]`)
+          ?.textContent.trim() || value;
     }
     return `${prefixes[key]}: ${displayValue}`;
   }
 
   function describeSavedFilter(params) {
-    return SAVED_FILTER_PARAM_KEYS
-      .filter(key => params[key])
-      .map(key => getSavedFilterCriterionLabel(key, params[key]));
+    return SAVED_FILTER_PARAM_KEYS.filter((key) => params[key]).map((key) =>
+      getSavedFilterCriterionLabel(key, params[key]),
+    );
   }
 
   function setSavedFilterError(message = '') {
@@ -316,7 +402,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const descriptions = describeSavedFilter(snapshot);
     const hasCriteria = descriptions.length > 0;
     savedFilterSubmit.disabled = !hasCriteria;
-    savedFilterSubmit.title = hasCriteria ? '' : 'Hãy chọn ít nhất một tiêu chí trước khi lưu';
+    savedFilterSubmit.title = hasCriteria
+      ? ''
+      : 'Hãy chọn ít nhất một tiêu chí trước khi lưu';
     savedFilterCurrentSummary.textContent = hasCriteria
       ? descriptions.join(' · ')
       : 'Chưa có tiêu chí nào. Hãy chọn ít nhất một bộ lọc trước khi lưu.';
@@ -328,13 +416,16 @@ document.addEventListener('DOMContentLoaded', () => {
     savedFilterEmpty.hidden = savedFilters.length > 0;
     if (savedFilterCount) {
       savedFilterCount.textContent = String(savedFilters.length);
-      savedFilterCount.setAttribute('aria-label', `${savedFilters.length} bộ lọc đã lưu`);
+      savedFilterCount.setAttribute(
+        'aria-label',
+        `${savedFilters.length} bộ lọc đã lưu`,
+      );
     }
     if (savedFilterLibraryCount) {
       savedFilterLibraryCount.textContent = `${savedFilters.length} bộ lọc`;
     }
 
-    savedFilters.forEach(record => {
+    savedFilters.forEach((record) => {
       const item = document.createElement('li');
       item.className = 'saved-filter-item';
       item.dataset.filterId = record.id;
@@ -360,7 +451,8 @@ document.addEventListener('DOMContentLoaded', () => {
       deleteButton.className = 'saved-filter-delete';
       deleteButton.dataset.action = 'request-delete';
       deleteButton.setAttribute('aria-label', `Xóa bộ lọc ${record.name}`);
-      deleteButton.innerHTML = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m-9 0 1 14h8l1-14M10 11v5m4-5v5"></path></svg>';
+      deleteButton.innerHTML =
+        '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m-9 0 1 14h8l1-14M10 11v5m4-5v5"></path></svg>';
       actions.append(applyButton, deleteButton);
       item.append(content, actions);
 
@@ -418,10 +510,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function applySavedFilter(record) {
     const params = sanitizeSavedFilterParams(record.params);
     if (Object.keys(params).length === 0) return;
-    document.querySelectorAll('.quick-filter-tags .tag-btn.active').forEach(button => button.classList.remove('active'));
-    document.querySelectorAll('.filter-sidebar input[type="checkbox"]').forEach(input => { input.checked = false; });
+    document
+      .querySelectorAll('.quick-filter-tags .tag-btn.active')
+      .forEach((button) => button.classList.remove('active'));
+    document
+      .querySelectorAll('.filter-sidebar input[type="checkbox"]')
+      .forEach((input) => {
+        input.checked = false;
+      });
     const nextParams = new URLSearchParams();
-    SAVED_FILTER_PARAM_KEYS.forEach(key => {
+    SAVED_FILTER_PARAM_KEYS.forEach((key) => {
       if (params[key]) nextParams.set(key, params[key]);
     });
     const nextUrl = `${window.location.pathname}?${nextParams.toString()}`;
@@ -438,17 +536,22 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSavedFilterCurrentState();
 
     savedFiltersTrigger?.addEventListener('click', openSavedFiltersDialog);
-    savedFiltersClose?.addEventListener('click', () => closeSavedFiltersDialog(true));
-    savedFiltersDialog.querySelector('[data-saved-filter-close]')?.addEventListener('click', () => closeSavedFiltersDialog(true));
+    savedFiltersClose?.addEventListener('click', () =>
+      closeSavedFiltersDialog(true),
+    );
+    savedFiltersDialog
+      .querySelector('[data-saved-filter-close]')
+      ?.addEventListener('click', () => closeSavedFiltersDialog(true));
 
     savedFilterName?.addEventListener('input', () => setSavedFilterError(''));
     savedFilterName?.addEventListener('blur', () => {
       const name = savedFilterName.value.trim();
       if (!name) setSavedFilterError('Vui lòng nhập tên bộ lọc.');
-      else if (name.length > 60) setSavedFilterError('Tên bộ lọc không được vượt quá 60 ký tự.');
+      else if (name.length > 60)
+        setSavedFilterError('Tên bộ lọc không được vượt quá 60 ký tự.');
     });
 
-    savedFilterForm.addEventListener('submit', event => {
+    savedFilterForm.addEventListener('submit', (event) => {
       event.preventDefault();
       const name = savedFilterName.value.trim();
       const params = getCanonicalFilterSnapshot();
@@ -471,7 +574,7 @@ document.addEventListener('DOMContentLoaded', () => {
         id: createSavedFilterId(),
         name,
         params,
-        createdAt: new Date().toISOString()
+        createdAt: new Date().toISOString(),
       };
       savedFilters.unshift(record);
       if (!persistSavedFilters()) {
@@ -486,11 +589,13 @@ document.addEventListener('DOMContentLoaded', () => {
       savedFilterName.focus();
     });
 
-    savedFilterList.addEventListener('click', event => {
+    savedFilterList.addEventListener('click', (event) => {
       const button = event.target.closest('button[data-action]');
       const item = event.target.closest('.saved-filter-item');
       if (!button || !item) return;
-      const record = savedFilters.find(filter => filter.id === item.dataset.filterId);
+      const record = savedFilters.find(
+        (filter) => filter.id === item.dataset.filterId,
+      );
       if (!record) return;
       const action = button.dataset.action;
       if (action === 'apply') {
@@ -498,13 +603,21 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (action === 'request-delete') {
         pendingDeleteFilterId = record.id;
         renderSavedFilters();
-        savedFilterList.querySelector(`[data-filter-id="${CSS.escape(record.id)}"] [data-action="cancel-delete"]`)?.focus();
+        savedFilterList
+          .querySelector(
+            `[data-filter-id="${CSS.escape(record.id)}"] [data-action="cancel-delete"]`,
+          )
+          ?.focus();
       } else if (action === 'cancel-delete') {
         pendingDeleteFilterId = null;
         renderSavedFilters();
-        savedFilterList.querySelector(`[data-filter-id="${CSS.escape(record.id)}"] [data-action="request-delete"]`)?.focus();
+        savedFilterList
+          .querySelector(
+            `[data-filter-id="${CSS.escape(record.id)}"] [data-action="request-delete"]`,
+          )
+          ?.focus();
       } else if (action === 'confirm-delete') {
-        savedFilters = savedFilters.filter(filter => filter.id !== record.id);
+        savedFilters = savedFilters.filter((filter) => filter.id !== record.id);
         if (!persistSavedFilters()) return;
         pendingDeleteFilterId = null;
         renderSavedFilters();
@@ -513,16 +626,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    savedFiltersDialog.addEventListener('keydown', event => {
+    savedFiltersDialog.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
         event.preventDefault();
         closeSavedFiltersDialog(true);
         return;
       }
       if (event.key !== 'Tab') return;
-      const focusable = Array.from(savedFiltersDialog.querySelectorAll(
-        'button:not([disabled]), input:not([disabled]), [href], [tabindex]:not([tabindex="-1"])'
-      )).filter(element => !element.hidden && element.getClientRects().length > 0);
+      const focusable = Array.from(
+        savedFiltersDialog.querySelectorAll(
+          'button:not([disabled]), input:not([disabled]), [href], [tabindex]:not([tabindex="-1"])',
+        ),
+      ).filter(
+        (element) => !element.hidden && element.getClientRects().length > 0,
+      );
       if (focusable.length === 0) {
         event.preventDefault();
         savedFiltersPanel?.focus();
@@ -539,7 +656,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    window.addEventListener('storage', event => {
+    window.addEventListener('storage', (event) => {
       if (event.key !== SAVED_FILTER_STORAGE_KEY) return;
       savedFilters = normalizeSavedFilterStore(event.newValue);
       pendingDeleteFilterId = null;
@@ -573,9 +690,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   function matchSalaryTier(job, tier) {
     if (tier === 'under10') return job.salaryMin < 10;
-    if (tier === '10-15') return (job.salaryMin <= 15 && job.salaryMax >= 10);
-    if (tier === '15-25') return (job.salaryMin <= 25 && job.salaryMax >= 15);
-    if (tier === '25-50') return (job.salaryMin <= 50 && job.salaryMax >= 25);
+    if (tier === '10-15') return job.salaryMin <= 15 && job.salaryMax >= 10;
+    if (tier === '15-25') return job.salaryMin <= 25 && job.salaryMax >= 15;
+    if (tier === '25-50') return job.salaryMin <= 50 && job.salaryMax >= 25;
     if (tier === 'over50') return job.salaryMax >= 50;
     if (tier === 'negotiable') return true;
     return false;
@@ -590,8 +707,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const normIndustry = normalizeText(activeIndustryQuery);
 
     // Quick tag buttons
-    const activeTags = Array.from(document.querySelectorAll('.quick-filter-tags .tag-btn.active'))
-      .map(btn => btn.getAttribute('data-tag'));
+    const activeTags = Array.from(
+      document.querySelectorAll('.quick-filter-tags .tag-btn.active'),
+    ).map((btn) => btn.getAttribute('data-tag'));
 
     // Top Filter Bar Criteria
     const filterExp = selectedExp;
@@ -600,13 +718,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterType = selectedType;
     const filterSaturday = selectedSaturday;
 
-    const hasFilter = Boolean(normQuery || normIndustry || (normLoc && normLoc !== 'tat ca dia diem') || catValue || activeTags.length > 0 || filterLevel || filterSalary || filterExp || filterType || filterSaturday);
+    const hasFilter = Boolean(
+      normQuery ||
+      normIndustry ||
+      (normLoc && normLoc !== 'tat ca dia diem') ||
+      catValue ||
+      activeTags.length > 0 ||
+      filterLevel ||
+      filterSalary ||
+      filterExp ||
+      filterType ||
+      filterSaturday,
+    );
 
     const matchingJobs = [];
     const nonMatchingJobs = [];
 
     // Phân loại Job: khớp tiêu chí vs không khớp tiêu chí
-    JOBS_DATA.forEach(job => {
+    JOBS_DATA.forEach((job) => {
       const allText = `${job.title} ${job.company} ${job.location} ${job.city} ${job.skills.join(' ')}`;
       const normAllText = normalizeText(allText);
 
@@ -615,7 +744,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // 1. Keyword search
       if (normQuery) {
         const tokens = normQuery.split(/\s+/).filter(Boolean);
-        const tokenMatch = tokens.every(token => normAllText.includes(token));
+        const tokenMatch = tokens.every((token) => normAllText.includes(token));
         if (!tokenMatch && !normAllText.includes(normQuery)) {
           isMatch = false;
         }
@@ -624,7 +753,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // 1b. Independent industry / specialty filter from the homepage picker
       if (isMatch && normIndustry) {
         const industryTokens = normIndustry.split(/\s+/).filter(Boolean);
-        const industryMatch = industryTokens.every(token => normAllText.includes(token)) || normAllText.includes(normIndustry);
+        const industryMatch =
+          industryTokens.every((token) => normAllText.includes(token)) ||
+          normAllText.includes(normIndustry);
         if (!industryMatch) isMatch = false;
       }
 
@@ -632,16 +763,26 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isMatch && normLoc && normLoc !== 'tat ca dia diem') {
         const normJobLoc = normalizeText(job.location);
         const normJobCity = normalizeText(job.city);
-        const locTokens = normLoc.split(/[;|,]/).map(t => t.trim()).filter(Boolean);
-        const locMatch = locTokens.some(tok => {
+        const locTokens = normLoc
+          .split(/[;|,]/)
+          .map((t) => t.trim())
+          .filter(Boolean);
+        const locMatch = locTokens.some((tok) => {
           const cleanTok = tok.split(':')[0].trim();
           const districtTok = tok.includes(':') ? tok.split(':')[1].trim() : '';
           if (cleanTok === 'remote' || tok === 'remote') {
             return normJobLoc.includes('remote') || job.type === 'remote';
           }
-          const matchProvince = normJobLoc.includes(cleanTok) || normJobCity.includes(cleanTok) || cleanTok.includes(normJobCity);
+          const matchProvince =
+            normJobLoc.includes(cleanTok) ||
+            normJobCity.includes(cleanTok) ||
+            cleanTok.includes(normJobCity);
           if (districtTok) {
-            return matchProvince && (normJobLoc.includes(districtTok) || districtTok.includes(normJobLoc));
+            return (
+              matchProvince &&
+              (normJobLoc.includes(districtTok) ||
+                districtTok.includes(normJobLoc))
+            );
           }
           return matchProvince;
         });
@@ -657,45 +798,100 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isMatch && activeTags.length > 0) {
         for (let tag of activeTags) {
           if (tag === 'remote') {
-            if (job.type !== 'remote' && !job.location.toLowerCase().includes('remote')) { isMatch = false; break; }
+            if (
+              job.type !== 'remote' &&
+              !job.location.toLowerCase().includes('remote')
+            ) {
+              isMatch = false;
+              break;
+            }
           } else if (tag === 'high-salary') {
-            if (job.salaryMax < 30 && job.salaryMin < 25) { isMatch = false; break; }
+            if (job.salaryMax < 30 && job.salaryMin < 25) {
+              isMatch = false;
+              break;
+            }
           } else if (tag === 'fresher') {
-            if (job.level === 'senior' || job.level === 'manager') { isMatch = false; break; }
-            if (job.exp !== '0' && job.exp !== 'under1' && !job.title.toLowerCase().includes('fresher') && !job.title.toLowerCase().includes('intern')) { isMatch = false; break; }
+            if (job.level === 'senior' || job.level === 'manager') {
+              isMatch = false;
+              break;
+            }
+            if (
+              job.exp !== '0' &&
+              job.exp !== 'under1' &&
+              !job.title.toLowerCase().includes('fresher') &&
+              !job.title.toLowerCase().includes('intern')
+            ) {
+              isMatch = false;
+              break;
+            }
           } else if (tag === 'urgent') {
-            if (!job.isUrgent) { isMatch = false; break; }
+            if (!job.isUrgent) {
+              isMatch = false;
+              break;
+            }
           } else if (tag === 'english') {
-            const hasEnglish = job.skills.some(s => s.toLowerCase().includes('english') || s.toLowerCase().includes('tiếng anh')) ||
-              ['FPT Software', 'KMS Technology', 'NashTech'].some(c => job.company.includes(c));
-            if (!hasEnglish) { isMatch = false; break; }
+            const hasEnglish =
+              job.skills.some(
+                (s) =>
+                  s.toLowerCase().includes('english') ||
+                  s.toLowerCase().includes('tiếng anh'),
+              ) ||
+              ['FPT Software', 'KMS Technology', 'NashTech'].some((c) =>
+                job.company.includes(c),
+              );
+            if (!hasEnglish) {
+              isMatch = false;
+              break;
+            }
           }
         }
       }
 
       // 5–9. Bộ lọc tiêu chí chọn nhiều (Top Filter Bar): khớp bất kỳ giá trị đã chọn trong cùng tiêu chí
       // 5. Cấp bậc
-      if (isMatch && filterLevel && !parseMultiValue(filterLevel).includes(job.level)) {
+      if (
+        isMatch &&
+        filterLevel &&
+        !parseMultiValue(filterLevel).includes(job.level)
+      ) {
         isMatch = false;
       }
 
       // 6. Mức lương
-      if (isMatch && filterSalary && !parseMultiValue(filterSalary).some(tier => matchSalaryTier(job, tier))) {
+      if (
+        isMatch &&
+        filterSalary &&
+        !parseMultiValue(filterSalary).some((tier) =>
+          matchSalaryTier(job, tier),
+        )
+      ) {
         isMatch = false;
       }
 
       // 7. Kinh nghiệm
-      if (isMatch && filterExp && !parseMultiValue(filterExp).includes(job.exp)) {
+      if (
+        isMatch &&
+        filterExp &&
+        !parseMultiValue(filterExp).includes(job.exp)
+      ) {
         isMatch = false;
       }
 
       // 8. Hình thức
-      if (isMatch && filterType && !parseMultiValue(filterType).includes(job.type)) {
+      if (
+        isMatch &&
+        filterType &&
+        !parseMultiValue(filterType).includes(job.type)
+      ) {
         isMatch = false;
       }
 
       // 9. Chế độ làm việc thứ 7
-      if (isMatch && filterSaturday && !parseMultiValue(filterSaturday).includes(job.saturday)) {
+      if (
+        isMatch &&
+        filterSaturday &&
+        !parseMultiValue(filterSaturday).includes(job.saturday)
+      ) {
         isMatch = false;
       }
 
@@ -735,15 +931,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // If split view active, synchronize right list and left detail
     if (activeViewMode === 'split') {
-      if (!currentFilteredJobs.some(j => j.id === selectedJobId) && currentFilteredJobs.length > 0) {
+      if (
+        !currentFilteredJobs.some((j) => j.id === selectedJobId) &&
+        currentFilteredJobs.length > 0
+      ) {
         selectedJobId = currentFilteredJobs[0].id;
       }
       renderSplitList();
-      const currentJob = JOBS_DATA.find(j => j.id === selectedJobId) || currentFilteredJobs[0];
+      const currentJob =
+        JOBS_DATA.find((j) => j.id === selectedJobId) || currentFilteredJobs[0];
       if (currentJob) renderSplitDetail(currentJob);
     }
-
-
 
     // Update URL query string
     if (updateUrl && window.history && window.history.pushState) {
@@ -781,8 +979,12 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (val === 'newest' || val === 'post_date') {
         return b.id - a.id;
       } else if (val === 'update_date') {
-        const aToday = a.updated && (a.updated.includes('Hôm nay') || a.updated.includes('giờ'));
-        const bToday = b.updated && (b.updated.includes('Hôm nay') || b.updated.includes('giờ'));
+        const aToday =
+          a.updated &&
+          (a.updated.includes('Hôm nay') || a.updated.includes('giờ'));
+        const bToday =
+          b.updated &&
+          (b.updated.includes('Hôm nay') || b.updated.includes('giờ'));
         if (aToday && !bToday) return -1;
         if (!aToday && bToday) return 1;
         return b.id - a.id;
@@ -819,7 +1021,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Remove existing job cards but preserve noResultsBox
       const existingCards = jobListingGrid.querySelectorAll('.job-card');
-      existingCards.forEach(card => card.remove());
+      existingCards.forEach((card) => card.remove());
       return;
     }
 
@@ -839,30 +1041,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Build Cards HTML
     const savedIds = getSavedJobs();
     const detailKeywordParam = getDetailKeywordParam();
-    const cardsHtml = pageJobs.map(job => {
-      const isSaved = savedIds.includes(job.id);
-      const featuredClass = job.isFeatured ? 'is-featured' : '';
-      
-      // Determine exp display
-      let expText = '2 năm';
-      if (job.exp === '0') expText = 'Không yêu cầu';
-      else if (job.exp === 'under1') expText = 'Dưới 1 năm';
-      else if (job.exp === '1-3') expText = '1 - 3 năm';
-      else if (job.exp === '3-5') expText = '3 - 5 năm';
-      else if (job.exp === 'over5') expText = 'Trên 5 năm';
+    const cardsHtml = pageJobs
+      .map((job) => {
+        const isSaved = savedIds.includes(job.id);
+        const featuredClass = job.isFeatured ? 'is-featured' : '';
 
-      // City short pill
-      const cityPill = job.city || job.location.split('(')[0].trim();
+        // Determine exp display
+        let expText = '2 năm';
+        if (job.exp === '0') expText = 'Không yêu cầu';
+        else if (job.exp === 'under1') expText = 'Dưới 1 năm';
+        else if (job.exp === '1-3') expText = '1 - 3 năm';
+        else if (job.exp === '3-5') expText = '3 - 5 năm';
+        else if (job.exp === 'over5') expText = 'Trên 5 năm';
 
-      // Skills summary line: e.g. "2 năm kinh nghiệm chuyên môn | Backend Deve... | +4"
-      const firstSkill = job.skills && job.skills.length > 0 ? job.skills[0] : '';
-      const remainingCount = job.skills && job.skills.length > 1 ? ` | +${job.skills.length - 1}` : '';
-      const skillsSummary = `${expText} kinh nghiệm chuyên môn${firstSkill ? ' | ' + firstSkill : ''}${remainingCount}`;
+        // City short pill
+        const cityPill = job.city || job.location.split('(')[0].trim();
 
-      // Viewed status: sample viewed jobs on page 1
-      const isViewed = job.id <= 3;
+        // Skills summary line: e.g. "2 năm kinh nghiệm chuyên môn | Backend Deve... | +4"
+        const firstSkill =
+          job.skills && job.skills.length > 0 ? job.skills[0] : '';
+        const remainingCount =
+          job.skills && job.skills.length > 1
+            ? ` | +${job.skills.length - 1}`
+            : '';
+        const skillsSummary = `${expText} kinh nghiệm chuyên môn${firstSkill ? ' | ' + firstSkill : ''}${remainingCount}`;
 
-      return `
+        // Viewed status: sample viewed jobs on page 1
+        const isViewed = job.id <= 3;
+
+        return `
         <article class="job-card ${featuredClass}" data-id="${job.id}">
           <div class="job-card-top">
             <a href="chi-tiet-viec-lam.html?id=${job.id}&title=${encodeURIComponent(job.title)}${detailKeywordParam}" class="job-logo-link" aria-label="Xem chi tiết ${job.title}" tabindex="-1">
@@ -876,11 +1083,15 @@ document.addEventListener('DOMContentLoaded', () => {
                   </h3>
                   <div class="job-company-row">
                     <span class="job-company-name">${job.company.toUpperCase()}</span>
-                    ${job.verified ? `
+                    ${
+                      job.verified
+                        ? `
                       <span class="badge-verified" title="Doanh nghiệp xác thực">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg>
                       </span>
-                    ` : ''}
+                    `
+                        : ''
+                    }
                   </div>
                   <div class="job-quick-pills">
                     <span class="job-quick-pill">${cityPill}</span>
@@ -924,11 +1135,12 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </article>
       `;
-    }).join('');
+      })
+      .join('');
 
     // Remove existing cards and insert newly built ones before noResultsBox
     const existingCards = jobListingGrid.querySelectorAll('.job-card');
-    existingCards.forEach(c => c.remove());
+    existingCards.forEach((c) => c.remove());
     jobListingGrid.insertAdjacentHTML('afterbegin', cardsHtml);
 
     // Attach card interactions
@@ -970,7 +1182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     paginationWrapper.innerHTML = buttonsHtml;
 
     // Attach pagination click handlers
-    paginationWrapper.querySelectorAll('.page-btn').forEach(btn => {
+    paginationWrapper.querySelectorAll('.page-btn').forEach((btn) => {
       btn.addEventListener('click', () => {
         const action = btn.getAttribute('data-page');
         if (action === 'prev') {
@@ -1022,7 +1234,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function scrollToListingTop() {
     const target = document.querySelector('.listings-topbar');
     if (target) {
-      const topOffset = target.getBoundingClientRect().top + window.scrollY - 80;
+      const topOffset =
+        target.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top: topOffset, behavior: 'smooth' });
     }
   }
@@ -1032,29 +1245,38 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // Click vị trí trống của thẻ / nút Xem nhanh -> mở màn Preview job (job-preview.html)
   function openPreviewPage(id) {
-    const job = JOBS_DATA.find(j => j.id === id);
+    const job = JOBS_DATA.find((j) => j.id === id);
     window.location.href = `job-preview.html?id=${id}&title=${encodeURIComponent(job?.title || '')}${getDetailKeywordParam()}`;
   }
 
   function attachCardListeners() {
     // Card Click -> Open 2-Block Split View (Bên Phải: Danh Sách Job, Bên Trái: Mô Tả Job)
-    jobListingGrid.querySelectorAll('.job-card').forEach(card => {
+    jobListingGrid.querySelectorAll('.job-card').forEach((card) => {
       card.addEventListener('click', (e) => {
         // Nếu click thẳng vào tên job, cho phép trình duyệt mở tab chi tiết độc lập
         if (e.target.closest('.job-title-link, .job-logo-link')) return;
-        if (e.target.closest('.btn-card-bookmark') || e.target.closest('.btn-card-apply') || e.target.closest('.btn-quick-view') || e.target.closest('.btn-card-hide')) return;
+        if (
+          e.target.closest('.btn-card-bookmark') ||
+          e.target.closest('.btn-card-apply') ||
+          e.target.closest('.btn-quick-view') ||
+          e.target.closest('.btn-card-hide')
+        )
+          return;
         const id = parseInt(card.getAttribute('data-id'), 10);
         openPreviewPage(id);
       });
     });
 
     // Quick View Button -> Open Split View or Detail Page
-    jobListingGrid.querySelectorAll('.btn-quick-view').forEach(btn => {
+    jobListingGrid.querySelectorAll('.btn-quick-view').forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const id = parseInt(btn.getAttribute('data-id'), 10);
-        const job = JOBS_DATA.find(j => j.id === id);
-        if (jobSplitContainer && getComputedStyle(jobSplitContainer).display !== 'none') {
+        const job = JOBS_DATA.find((j) => j.id === id);
+        if (
+          jobSplitContainer &&
+          getComputedStyle(jobSplitContainer).display !== 'none'
+        ) {
           openSplitView(id);
         } else {
           openPreviewPage(id);
@@ -1063,7 +1285,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Hide Button -> Fade out card with feedback
-    jobListingGrid.querySelectorAll('.btn-card-hide').forEach(btn => {
+    jobListingGrid.querySelectorAll('.btn-card-hide').forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const card = btn.closest('.job-card');
@@ -1080,26 +1302,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Apply Button -> Fast Action feedback
-    jobListingGrid.querySelectorAll('.btn-card-apply').forEach(btn => {
+    jobListingGrid.querySelectorAll('.btn-card-apply').forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const id = parseInt(btn.getAttribute('data-id'), 10);
-        const job = JOBS_DATA.find(j => j.id === id);
-        showToast(`Ứng tuyển thành công vị trí "${job?.title || 'công việc'}"! Nhà tuyển dụng sẽ phản hồi sớm.`, '🚀');
+        const job = JOBS_DATA.find((j) => j.id === id);
+        showToast(
+          `Ứng tuyển thành công vị trí "${job?.title || 'công việc'}"! Nhà tuyển dụng sẽ phản hồi sớm.`,
+          '🚀',
+        );
       });
     });
 
     // Bookmark Toggle with LocalStorage persistence
-    jobListingGrid.querySelectorAll('.btn-card-bookmark').forEach(btn => {
+    jobListingGrid.querySelectorAll('.btn-card-bookmark').forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const id = parseInt(btn.getAttribute('data-id'), 10);
         let savedIds = getSavedJobs();
         const card = btn.closest('.job-card');
-        const title = card?.querySelector('.job-title')?.textContent.trim() || 'công việc';
+        const title =
+          card?.querySelector('.job-title')?.textContent.trim() || 'công việc';
 
         if (savedIds.includes(id)) {
-          savedIds = savedIds.filter(item => item !== id);
+          savedIds = savedIds.filter((item) => item !== id);
           btn.classList.remove('saved');
           const svg = btn.querySelector('svg');
           if (svg) svg.setAttribute('fill', 'none');
@@ -1123,7 +1349,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // 7. 2-BLOCK SPLIT VIEW ENGINE (BÊN TRÁI: DANH SÁCH JOB - BÊN PHẢI: MÔ TẢ JOB)
   // =========================================================================
   function openSplitView(jobId) {
-    const job = JOBS_DATA.find(j => j.id === jobId) || currentFilteredJobs[0] || JOBS_DATA[0];
+    const job =
+      JOBS_DATA.find((j) => j.id === jobId) ||
+      currentFilteredJobs[0] ||
+      JOBS_DATA[0];
     if (!job) return;
 
     selectedJobId = job.id;
@@ -1147,7 +1376,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.history && window.history.pushState) {
       const currentUrl = new URL(window.location.href);
       currentUrl.searchParams.set('jobId', job.id);
-      window.history.pushState({ jobId: job.id, view: 'split' }, '', currentUrl.toString());
+      window.history.pushState(
+        { jobId: job.id, view: 'split' },
+        '',
+        currentUrl.toString(),
+      );
     }
 
     // Cuộn mượt lên vị trí split container
@@ -1195,8 +1428,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const detailPerksList = document.getElementById('detailPerksList');
     const detailSkillsWrap = document.getElementById('detailSkillsWrap');
 
-    const detailCompanyCardLogo = document.getElementById('detailCompanyCardLogo');
-    const detailCompanyCardTitle = document.getElementById('detailCompanyCardTitle');
+    const detailCompanyCardLogo = document.getElementById(
+      'detailCompanyCardLogo',
+    );
+    const detailCompanyCardTitle = document.getElementById(
+      'detailCompanyCardTitle',
+    );
 
     const stickyJobTitle = document.getElementById('stickyJobTitle');
     const stickySalary = document.getElementById('stickySalary');
@@ -1215,40 +1452,66 @@ document.addEventListener('DOMContentLoaded', () => {
       else detailSalaryBadge.classList.remove('orange');
     }
     if (detailLocationText) detailLocationText.textContent = job.location;
-    if (detailUpdatedText) detailUpdatedText.textContent = `Cập nhật ${job.updated}`;
+    if (detailUpdatedText)
+      detailUpdatedText.textContent = `Cập nhật ${job.updated}`;
 
     // Metrics
     if (metricSalary) metricSalary.textContent = job.salaryBadge;
     if (metricExp) {
-      const expMap = { '0': 'Không yêu cầu', 'under1': 'Dưới 1 năm', '1-3': '1 - 3 năm', '3-5': '3 - 5 năm', 'over5': 'Trên 5 năm' };
+      const expMap = {
+        0: 'Không yêu cầu',
+        under1: 'Dưới 1 năm',
+        '1-3': '1 - 3 năm',
+        '3-5': '3 - 5 năm',
+        over5: 'Trên 5 năm',
+      };
       metricExp.textContent = expMap[job.exp] || `${job.exp} năm`;
     }
     if (metricLevel) {
-      const levelMap = { 'intern': 'Thực tập sinh', 'junior': 'Nhân viên', 'senior': 'Trưởng nhóm / Senior', 'manager': 'Trưởng phòng / Manager' };
+      const levelMap = {
+        intern: 'Thực tập sinh',
+        junior: 'Nhân viên',
+        senior: 'Trưởng nhóm / Senior',
+        manager: 'Trưởng phòng / Manager',
+      };
       metricLevel.textContent = levelMap[job.level] || job.level;
     }
     if (metricType) {
-      const typeMap = { 'fulltime': 'Toàn thời gian', 'hybrid': 'Kết hợp (Hybrid)', 'remote': 'Từ xa (Remote 100%)', 'parttime': 'Bán thời gian' };
+      const typeMap = {
+        fulltime: 'Toàn thời gian',
+        hybrid: 'Kết hợp (Hybrid)',
+        remote: 'Từ xa (Remote 100%)',
+        parttime: 'Bán thời gian',
+      };
       metricType.textContent = typeMap[job.type] || job.type;
     }
 
     // JD sections
     if (detailDescList && job.jd && job.jd.desc) {
-      detailDescList.innerHTML = job.jd.desc.map(d => `<li>${d}</li>`).join('');
+      detailDescList.innerHTML = job.jd.desc
+        .map((d) => `<li>${d}</li>`)
+        .join('');
     }
     if (detailReqsList && job.jd && job.jd.reqs) {
-      detailReqsList.innerHTML = job.jd.reqs.map(r => `<li>${r}</li>`).join('');
+      detailReqsList.innerHTML = job.jd.reqs
+        .map((r) => `<li>${r}</li>`)
+        .join('');
     }
     if (detailPerksList && job.jd && job.jd.perks) {
-      detailPerksList.innerHTML = job.jd.perks.map(p => `<li>${p}</li>`).join('');
+      detailPerksList.innerHTML = job.jd.perks
+        .map((p) => `<li>${p}</li>`)
+        .join('');
     }
     if (detailSkillsWrap && job.skills) {
-      detailSkillsWrap.innerHTML = job.skills.map(s => `<span class="detail-skill-tag">${s}</span>`).join('');
+      detailSkillsWrap.innerHTML = job.skills
+        .map((s) => `<span class="detail-skill-tag">${s}</span>`)
+        .join('');
     }
 
     // Company Card
     if (detailCompanyCardLogo) detailCompanyCardLogo.src = job.logo;
-    if (detailCompanyCardTitle) detailCompanyCardTitle.textContent = job.company;
+    if (detailCompanyCardTitle)
+      detailCompanyCardTitle.textContent = job.company;
 
     // Sticky bar
     if (stickyJobTitle) stickyJobTitle.textContent = job.title;
@@ -1269,7 +1532,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!splitListFeed) return;
 
     if (splitJobCount) {
-      const matchCount = currentFilteredJobs.filter(j => j._isSearchMatch).length;
+      const matchCount = currentFilteredJobs.filter(
+        (j) => j._isSearchMatch,
+      ).length;
       if (matchCount > 0) {
         splitJobCount.innerHTML = `${currentFilteredJobs.length} <span style="font-size: 11.5px; font-weight: 600; color: #2C9661;">(${matchCount} khớp)</span>`;
       } else {
@@ -1284,19 +1549,22 @@ document.addEventListener('DOMContentLoaded', () => {
           <button type="button" class="btn-reset-filters" id="btnResetSplitSearch" style="font-size: 13px;">Xem lại tất cả việc làm</button>
         </div>
       `;
-      document.getElementById('btnResetSplitSearch')?.addEventListener('click', () => {
-        if (searchInput) searchInput.value = '';
-        applyJobFilters(true, true);
-      });
+      document
+        .getElementById('btnResetSplitSearch')
+        ?.addEventListener('click', () => {
+          if (searchInput) searchInput.value = '';
+          applyJobFilters(true, true);
+        });
       return;
     }
 
     const savedIds = getSavedJobs();
-    const itemsHtml = currentFilteredJobs.map(job => {
-      const isSelected = job.id === selectedJobId;
-      const salaryOrangeClass = job.salaryIsOrange ? 'orange' : '';
+    const itemsHtml = currentFilteredJobs
+      .map((job) => {
+        const isSelected = job.id === selectedJobId;
+        const salaryOrangeClass = job.salaryIsOrange ? 'orange' : '';
 
-      return `
+        return `
         <div class="split-job-card ${isSelected ? 'is-selected' : ''}" data-id="${job.id}">
           ${isSelected ? `<span class="split-active-badge">👁 Đang xem</span>` : ''}
           <div class="split-card-top">
@@ -1320,12 +1588,13 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
       `;
-    }).join('');
+      })
+      .join('');
 
     splitListFeed.innerHTML = itemsHtml;
 
     // Attach card click handlers in the left list feed
-    splitListFeed.querySelectorAll('.split-job-card').forEach(card => {
+    splitListFeed.querySelectorAll('.split-job-card').forEach((card) => {
       card.addEventListener('click', (e) => {
         // If clicking directly on title link, allow default tab opening
         if (e.target.closest('.job-title-link')) return;
@@ -1351,7 +1620,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnDetailBookmark) {
       if (isSaved) {
         btnDetailBookmark.classList.add('saved');
-        btnDetailBookmark.querySelector('svg')?.setAttribute('fill', 'currentColor');
+        btnDetailBookmark
+          .querySelector('svg')
+          ?.setAttribute('fill', 'currentColor');
         if (detailBookmarkText) detailBookmarkText.textContent = 'Đã lưu';
       } else {
         btnDetailBookmark.classList.remove('saved');
@@ -1363,8 +1634,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnDetailSaveCard) {
       if (isSaved) {
         btnDetailSaveCard.classList.add('saved');
-        btnDetailSaveCard.querySelector('svg')?.setAttribute('fill', 'currentColor');
-        if (detailSaveBtnText) detailSaveBtnText.textContent = 'Đã lưu công việc';
+        btnDetailSaveCard
+          .querySelector('svg')
+          ?.setAttribute('fill', 'currentColor');
+        if (detailSaveBtnText)
+          detailSaveBtnText.textContent = 'Đã lưu công việc';
       } else {
         btnDetailSaveCard.classList.remove('saved');
         btnDetailSaveCard.querySelector('svg')?.setAttribute('fill', 'none');
@@ -1375,11 +1649,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function toggleDetailBookmark(jobId) {
     let savedIds = getSavedJobs();
-    const job = JOBS_DATA.find(j => j.id === jobId);
+    const job = JOBS_DATA.find((j) => j.id === jobId);
     const title = job ? job.title : 'công việc';
 
     if (savedIds.includes(jobId)) {
-      savedIds = savedIds.filter(id => id !== jobId);
+      savedIds = savedIds.filter((id) => id !== jobId);
       setSavedJobs(savedIds);
       updateDetailBookmarkButtons(jobId);
       renderCurrentPage(); // sync with grid
@@ -1397,7 +1671,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 7. DETAIL MODAL (DYNAMIC CONTENT INJECTION)
   // =========================================================================
   function openJobModalById(id) {
-    const job = JOBS_DATA.find(j => j.id === id);
+    const job = JOBS_DATA.find((j) => j.id === id);
     if (!job || !jobModalBackdrop) return;
 
     if (modalJobTitle) modalJobTitle.textContent = job.title;
@@ -1408,18 +1682,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (modalBadgesRow) {
       modalBadgesRow.innerHTML = job.skills
-        .map(s => `<span class="job-skill-chip" style="font-size: 12.5px; padding: 4px 10px;">${s}</span>`)
+        .map(
+          (s) =>
+            `<span class="job-skill-chip" style="font-size: 12.5px; padding: 4px 10px;">${s}</span>`,
+        )
         .join('');
     }
 
     if (modalJobDescList) {
-      modalJobDescList.innerHTML = job.jd.desc.map(d => `<li>${d}</li>`).join('');
+      modalJobDescList.innerHTML = job.jd.desc
+        .map((d) => `<li>${d}</li>`)
+        .join('');
     }
     if (modalJobReqsList) {
-      modalJobReqsList.innerHTML = job.jd.reqs.map(r => `<li>${r}</li>`).join('');
+      modalJobReqsList.innerHTML = job.jd.reqs
+        .map((r) => `<li>${r}</li>`)
+        .join('');
     }
     if (modalJobPerksList) {
-      modalJobPerksList.innerHTML = job.jd.perks.map(p => `<li>${p}</li>`).join('');
+      modalJobPerksList.innerHTML = job.jd.perks
+        .map((p) => `<li>${p}</li>`)
+        .join('');
     }
 
     jobModalBackdrop.classList.add('open');
@@ -1445,7 +1728,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btnModalApply?.addEventListener('click', () => {
     const title = modalJobTitle ? modalJobTitle.textContent : 'vị trí';
-    showToast(`Ứng tuyển thành công vị trí "${title}"! Nhà tuyển dụng sẽ phản hồi sớm.`, '🚀');
+    showToast(
+      `Ứng tuyển thành công vị trí "${title}"! Nhà tuyển dụng sẽ phản hồi sớm.`,
+      '🚀',
+    );
     closeJobModal();
   });
 
@@ -1453,13 +1739,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // 8. TOP FILTER BAR CONTROLLER
   // =========================================================================
   function closeAllFilterDropdowns() {
-    document.querySelectorAll('.filter-dropdown-menu').forEach(menu => {
+    document.querySelectorAll('.filter-dropdown-menu').forEach((menu) => {
       menu.hidden = true;
     });
-    document.querySelectorAll('.filter-pill-btn').forEach(btn => {
+    document.querySelectorAll('.filter-pill-btn').forEach((btn) => {
       btn.setAttribute('aria-expanded', 'false');
     });
-    document.querySelectorAll('.filter-dropdown-wrap').forEach(wrap => {
+    document.querySelectorAll('.filter-dropdown-wrap').forEach((wrap) => {
       wrap.classList.remove('is-open');
     });
     // Reset industry search khi đóng
@@ -1468,7 +1754,9 @@ document.addEventListener('DOMContentLoaded', () => {
       industryInput.value = '';
       // Hiện lại tất cả items
       const list = document.getElementById('industryDropdownList');
-      list?.querySelectorAll('.dropdown-item').forEach(i => { i.hidden = false; });
+      list?.querySelectorAll('.dropdown-item').forEach((i) => {
+        i.hidden = false;
+      });
       const noRes = document.getElementById('industryNoResults');
       if (noRes) noRes.hidden = true;
       const clearBtn = document.getElementById('industrySearchClear');
@@ -1482,7 +1770,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const labelSpan = document.getElementById(`${type}FilterLabel`);
     if (!btn || !labelSpan) return;
 
-    const values = MULTI_FILTER_TYPES.includes(type) ? parseMultiValue(value) : (value ? [value] : []);
+    const values = MULTI_FILTER_TYPES.includes(type)
+      ? parseMultiValue(value)
+      : value
+        ? [value]
+        : [];
     const defaultLabel = FILTER_DEFAULT_LABELS[type] || 'Bộ lọc';
     if (values.length === 0) {
       btn.classList.remove('is-active');
@@ -1490,12 +1782,14 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.removeAttribute('title');
     } else if (values.length === 1) {
       btn.classList.add('is-active');
-      labelSpan.textContent = MULTI_FILTER_TYPES.includes(type) ? getFilterOptionLabel(type, values[0]) : label;
+      labelSpan.textContent = MULTI_FILTER_TYPES.includes(type)
+        ? getFilterOptionLabel(type, values[0])
+        : label;
       btn.title = `${defaultLabel}: ${labelSpan.textContent}`;
     } else {
       btn.classList.add('is-active');
       labelSpan.textContent = `${defaultLabel} (${values.length})`;
-      btn.title = `${defaultLabel}: ${values.map(v => getFilterOptionLabel(type, v)).join(', ')}`;
+      btn.title = `${defaultLabel}: ${values.map((v) => getFilterOptionLabel(type, v)).join(', ')}`;
     }
   }
 
@@ -1513,10 +1807,10 @@ document.addEventListener('DOMContentLoaded', () => {
       { type: 'salary', value: selectedSalary },
       { type: 'level', value: selectedLevel },
       { type: 'type', value: selectedType },
-      { type: 'saturday', value: selectedSaturday }
+      { type: 'saturday', value: selectedSaturday },
     ];
 
-    const activeCount = activeFilters.filter(f => Boolean(f.value)).length;
+    const activeCount = activeFilters.filter((f) => Boolean(f.value)).length;
 
     if (clearBtn) {
       clearBtn.style.display = activeCount > 0 ? 'inline-flex' : 'none';
@@ -1530,7 +1824,7 @@ document.addEventListener('DOMContentLoaded', () => {
     selectedType = '';
     selectedSaturday = '';
 
-    MULTI_FILTER_TYPES.forEach(type => {
+    MULTI_FILTER_TYPES.forEach((type) => {
       updateFilterPillUI(type, '', '');
       syncFilterDropdownSelection(type);
     });
@@ -1545,34 +1839,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function initTopFilterBar() {
     // 1a. Desktop: rê chuột vào nút lọc là mở menu để chọn luôn; rời khỏi (nút + menu) 200ms thì đóng
-    const canHoverOpen = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    document.querySelectorAll('.top-filter-bar .filter-dropdown-wrap').forEach(wrap => {
-      const btn = wrap.querySelector('.filter-pill-btn');
-      const menu = wrap.querySelector('.filter-dropdown-menu');
-      if (!btn || !menu) return;
-      let closeTimer = null;
-      wrap.addEventListener('mouseenter', () => {
-        if (!canHoverOpen()) return;
-        clearTimeout(closeTimer);
-        if (!menu.hidden) return;
-        closeAllFilterDropdowns();
-        menu.hidden = false;
-        btn.setAttribute('aria-expanded', 'true');
-        wrap.classList.add('is-open');
-        wrap.dataset.hoverOpenedAt = String(Date.now());
+    const canHoverOpen = () =>
+      window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    document
+      .querySelectorAll('.top-filter-bar .filter-dropdown-wrap')
+      .forEach((wrap) => {
+        const btn = wrap.querySelector('.filter-pill-btn');
+        const menu = wrap.querySelector('.filter-dropdown-menu');
+        if (!btn || !menu) return;
+        let closeTimer = null;
+        wrap.addEventListener('mouseenter', () => {
+          if (!canHoverOpen()) return;
+          clearTimeout(closeTimer);
+          if (!menu.hidden) return;
+          closeAllFilterDropdowns();
+          menu.hidden = false;
+          btn.setAttribute('aria-expanded', 'true');
+          wrap.classList.add('is-open');
+          wrap.dataset.hoverOpenedAt = String(Date.now());
+        });
+        wrap.addEventListener('mouseleave', () => {
+          if (!canHoverOpen() || menu.hidden) return;
+          // Đang gõ tìm lĩnh vực thì không tự đóng
+          if (
+            wrap.contains(document.activeElement) &&
+            document.activeElement.tagName === 'INPUT'
+          )
+            return;
+          closeTimer = setTimeout(() => {
+            if (!menu.hidden) closeAllFilterDropdowns();
+          }, 200);
+        });
       });
-      wrap.addEventListener('mouseleave', () => {
-        if (!canHoverOpen() || menu.hidden) return;
-        // Đang gõ tìm lĩnh vực thì không tự đóng
-        if (wrap.contains(document.activeElement) && document.activeElement.tagName === 'INPUT') return;
-        closeTimer = setTimeout(() => {
-          if (!menu.hidden) closeAllFilterDropdowns();
-        }, 200);
-      });
-    });
 
     // 1. Dropdown Pill Buttons click
-    document.querySelectorAll('.filter-pill-btn').forEach(btn => {
+    document.querySelectorAll('.filter-pill-btn').forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const wrap = btn.closest('.filter-dropdown-wrap');
@@ -1580,8 +1881,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!menu) return;
 
         // Vừa mở bằng hover thì cú click ngay sau đó không đóng menu lại
-        if (!menu.hidden && Date.now() - Number(wrap.dataset.hoverOpenedAt || 0) < 600) {
-          if (menu.id === 'industryDropdownMenu') document.getElementById('industrySearchInput')?.focus();
+        if (
+          !menu.hidden &&
+          Date.now() - Number(wrap.dataset.hoverOpenedAt || 0) < 600
+        ) {
+          if (menu.id === 'industryDropdownMenu')
+            document.getElementById('industrySearchInput')?.focus();
           return;
         }
 
@@ -1606,28 +1911,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1b. Industry search input logic
     (function setupIndustrySearch() {
-      const searchInput  = document.getElementById('industrySearchInput');
-      const clearBtn     = document.getElementById('industrySearchClear');
-      const list         = document.getElementById('industryDropdownList');
-      const noResults    = document.getElementById('industryNoResults');
+      const searchInput = document.getElementById('industrySearchInput');
+      const clearBtn = document.getElementById('industrySearchClear');
+      const list = document.getElementById('industryDropdownList');
+      const noResults = document.getElementById('industryNoResults');
       if (!searchInput || !list) return;
 
       function filterIndustryItems(q) {
         const query = q.trim().toLowerCase();
         const items = list.querySelectorAll('.dropdown-item');
         let visibleCount = 0;
-        items.forEach(item => {
-          const label = (item.getAttribute('data-label') || item.querySelector('span')?.textContent || '').toLowerCase();
+        items.forEach((item) => {
+          const label = (
+            item.getAttribute('data-label') ||
+            item.querySelector('span')?.textContent ||
+            ''
+          ).toLowerCase();
           const match = !query || label.includes(query);
           item.hidden = !match;
           if (match) visibleCount++;
         });
         if (noResults) noResults.hidden = visibleCount > 0;
-        if (clearBtn)  clearBtn.hidden  = !query;
+        if (clearBtn) clearBtn.hidden = !query;
       }
 
-      searchInput.addEventListener('input', () => filterIndustryItems(searchInput.value));
-      searchInput.addEventListener('keydown', e => e.stopPropagation()); // chặn phím tắt
+      searchInput.addEventListener('input', () =>
+        filterIndustryItems(searchInput.value),
+      );
+      searchInput.addEventListener('keydown', (e) => e.stopPropagation()); // chặn phím tắt
 
       if (clearBtn) {
         clearBtn.addEventListener('click', (e) => {
@@ -1644,82 +1955,108 @@ document.addEventListener('DOMContentLoaded', () => {
     })();
 
     // 2. Dropdown Items click
-    document.querySelectorAll('.filter-dropdown-menu .dropdown-item').forEach(item => {
-      item.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const type = item.getAttribute('data-type');
-        const value = item.getAttribute('data-value') || '';
-        const label = item.getAttribute('data-label') || item.querySelector('span')?.textContent.trim() || '';
+    document
+      .querySelectorAll('.filter-dropdown-menu .dropdown-item')
+      .forEach((item) => {
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const type = item.getAttribute('data-type');
+          const value = item.getAttribute('data-value') || '';
+          const label =
+            item.getAttribute('data-label') ||
+            item.querySelector('span')?.textContent.trim() ||
+            '';
 
-        // Bộ lọc tiêu chí: bấm để bật/tắt từng lựa chọn, menu giữ mở để chọn tiếp
-        if (MULTI_FILTER_TYPES.includes(type)) {
-          const current = parseMultiValue(getFilterValue(type));
-          const next = !value ? [] : (current.includes(value) ? current.filter(v => v !== value) : [...current, value]);
-          setFilterValue(type, next.join(','));
-          syncFilterDropdownSelection(type);
-          updateFilterPillUI(type, getFilterValue(type), label);
+          // Bộ lọc tiêu chí: bấm để bật/tắt từng lựa chọn, menu giữ mở để chọn tiếp
+          if (MULTI_FILTER_TYPES.includes(type)) {
+            const current = parseMultiValue(getFilterValue(type));
+            const next = !value
+              ? []
+              : current.includes(value)
+                ? current.filter((v) => v !== value)
+                : [...current, value];
+            setFilterValue(type, next.join(','));
+            syncFilterDropdownSelection(type);
+            updateFilterPillUI(type, getFilterValue(type), label);
+            renderActiveFilterChips();
+            applyJobFilters(true, true);
+            const summary = next.length
+              ? next.map((v) => getFilterOptionLabel(type, v)).join(', ')
+              : 'Tất cả';
+            showToast(
+              `Đã lọc theo ${FILTER_DEFAULT_LABELS[type]}: ${summary}`,
+              '✓',
+            );
+            return;
+          }
+
+          if (type === 'exp') selectedExp = value;
+          else if (type === 'salary') selectedSalary = value;
+          else if (type === 'level') selectedLevel = value;
+          else if (type === 'type') selectedType = value;
+          else if (type === 'saturday') selectedSaturday = value;
+
+          // Update selection UI inside menu
+          const menu = item.closest('.filter-dropdown-menu');
+          menu?.querySelectorAll('.dropdown-item').forEach((i) => {
+            i.classList.remove('is-selected');
+            i.querySelector('.check-icon')?.remove();
+          });
+          item.classList.add('is-selected');
+          item.insertAdjacentHTML(
+            'beforeend',
+            '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>',
+          );
+
+          updateFilterPillUI(type, value, label);
+          closeAllFilterDropdowns();
           renderActiveFilterChips();
           applyJobFilters(true, true);
-          const summary = next.length ? next.map(v => getFilterOptionLabel(type, v)).join(', ') : 'Tất cả';
-          showToast(`Đã lọc theo ${FILTER_DEFAULT_LABELS[type]}: ${summary}`, '✓');
-          return;
-        }
 
-        if (type === 'exp') selectedExp = value;
-        else if (type === 'salary') selectedSalary = value;
-        else if (type === 'level') selectedLevel = value;
-        else if (type === 'type') selectedType = value;
-        else if (type === 'saturday') selectedSaturday = value;
-
-        // Update selection UI inside menu
-        const menu = item.closest('.filter-dropdown-menu');
-        menu?.querySelectorAll('.dropdown-item').forEach(i => {
-          i.classList.remove('is-selected');
-          i.querySelector('.check-icon')?.remove();
+          showToast(
+            `Đã lọc theo ${FILTER_DEFAULT_LABELS[type]}: ${value ? label : 'Tất cả'}`,
+            '✓',
+          );
         });
-        item.classList.add('is-selected');
-        item.insertAdjacentHTML('beforeend', '<svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>');
-
-        updateFilterPillUI(type, value, label);
-        closeAllFilterDropdowns();
-        renderActiveFilterChips();
-        applyJobFilters(true, true);
-
-        showToast(`Đã lọc theo ${FILTER_DEFAULT_LABELS[type]}: ${value ? label : 'Tất cả'}`, '✓');
       });
-    });
 
     // 3. Clear All button & Clear inline button
-    document.getElementById('btnClearTopFilters')?.addEventListener('click', () => {
-      resetAllTopFilters(true);
-      showToast('Đã xóa tất cả bộ lọc tiêu chí', '✓');
-    });
+    document
+      .getElementById('btnClearTopFilters')
+      ?.addEventListener('click', () => {
+        resetAllTopFilters(true);
+        showToast('Đã xóa tất cả bộ lọc tiêu chí', '✓');
+      });
 
-    document.getElementById('btnClearChipsInline')?.addEventListener('click', () => {
-      resetAllTopFilters(true);
-      showToast('Đã xóa tất cả bộ lọc tiêu chí', '✓');
-    });
+    document
+      .getElementById('btnClearChipsInline')
+      ?.addEventListener('click', () => {
+        resetAllTopFilters(true);
+        showToast('Đã xóa tất cả bộ lọc tiêu chí', '✓');
+      });
 
     // 4. Delegate click on chip remove
-    document.getElementById('activeChipsList')?.addEventListener('click', (e) => {
-      const removeBtn = e.target.closest('.filter-chip-remove');
-      if (!removeBtn) return;
-      const clearType = removeBtn.getAttribute('data-clear-type');
-      if (!clearType) return;
+    document
+      .getElementById('activeChipsList')
+      ?.addEventListener('click', (e) => {
+        const removeBtn = e.target.closest('.filter-chip-remove');
+        if (!removeBtn) return;
+        const clearType = removeBtn.getAttribute('data-clear-type');
+        if (!clearType) return;
 
-      if (clearType === 'exp') selectedExp = '';
-      else if (clearType === 'salary') selectedSalary = '';
-      else if (clearType === 'level') selectedLevel = '';
-      else if (clearType === 'type') selectedType = '';
-      else if (clearType === 'saturday') selectedSaturday = '';
+        if (clearType === 'exp') selectedExp = '';
+        else if (clearType === 'salary') selectedSalary = '';
+        else if (clearType === 'level') selectedLevel = '';
+        else if (clearType === 'type') selectedType = '';
+        else if (clearType === 'saturday') selectedSaturday = '';
 
-      updateFilterPillUI(clearType, '', '');
-      syncFilterDropdownSelection(clearType);
+        updateFilterPillUI(clearType, '', '');
+        syncFilterDropdownSelection(clearType);
 
-      renderActiveFilterChips();
-      applyJobFilters(true, true);
-      showToast(`Đã bỏ lọc ${FILTER_DEFAULT_LABELS[clearType]}`, '✓');
-    });
+        renderActiveFilterChips();
+        applyJobFilters(true, true);
+        showToast(`Đã bỏ lọc ${FILTER_DEFAULT_LABELS[clearType]}`, '✓');
+      });
 
     // 5. Click outside to close
     document.addEventListener('click', (e) => {
@@ -1740,7 +2077,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 9. EVENT LISTENERS & POPSTATE (BACK / FORWARD SUPPORT)
   // =========================================================================
 
-    // =========================================================================
+  // =========================================================================
   // RECENT SEARCHES & SUGGEST DROPDOWN (Đồng bộ hoàn chỉnh từ Trang chủ)
   // =========================================================================
   const RECENT_SEARCH_KEY = 'easycv_recent_searches_v2';
@@ -1750,29 +2087,56 @@ document.addEventListener('DOMContentLoaded', () => {
     { keyword: 'Marketing Leader', count: 92 },
     { keyword: 'UI/UX Designer', count: 143 },
     { keyword: 'Java Spring Boot', count: 67 },
-    { keyword: 'Kế toán tổng hợp', count: 184 }
+    { keyword: 'Kế toán tổng hợp', count: 184 },
   ];
 
-  const POPULAR_KEYWORDS = ['Telesales', 'Kinh doanh', 'Java Spring', 'Marketing', 'Kế toán'];
+  const POPULAR_KEYWORDS = [
+    'Telesales',
+    'Kinh doanh',
+    'Java Spring',
+    'Marketing',
+    'Kế toán',
+  ];
 
   const POPULAR_COMPANIES = [
-    { name: 'Tập đoàn Công nghiệp - Viễn thông Quân đội (Viettel)', shortName: 'Viettel' },
+    {
+      name: 'Tập đoàn Công nghiệp - Viễn thông Quân đội (Viettel)',
+      shortName: 'Viettel',
+    },
     { name: 'Tập đoàn Công nghiệp Viettel', shortName: 'Viettel' },
-    { name: 'Tổng Công ty Viễn thông Viettel (Viettel Telecom)', shortName: 'Viettel Telecom' },
-    { name: 'Tổng Công ty Cổ phần Bưu chính Viettel (Viettel Post)', shortName: 'Viettel Post' },
-    { name: 'Tổng Công ty Giải pháp Doanh nghiệp Viettel (Viettel Solutions)', shortName: 'Viettel Solutions' },
+    {
+      name: 'Tổng Công ty Viễn thông Viettel (Viettel Telecom)',
+      shortName: 'Viettel Telecom',
+    },
+    {
+      name: 'Tổng Công ty Cổ phần Bưu chính Viettel (Viettel Post)',
+      shortName: 'Viettel Post',
+    },
+    {
+      name: 'Tổng Công ty Giải pháp Doanh nghiệp Viettel (Viettel Solutions)',
+      shortName: 'Viettel Solutions',
+    },
     { name: 'FPT Software', shortName: 'FPT Software' },
     { name: 'TẬP ĐOÀN CÔNG NGHỆ FPT', shortName: 'FPT' },
-    { name: 'Công ty Cổ phần Viễn thông FPT (FPT Telecom)', shortName: 'FPT Telecom' },
+    {
+      name: 'Công ty Cổ phần Viễn thông FPT (FPT Telecom)',
+      shortName: 'FPT Telecom',
+    },
     { name: 'FPT Digital (Tập đoàn FPT)', shortName: 'FPT Digital' },
     { name: 'VNG Corporation (Zalo Team)', shortName: 'VNG' },
     { name: 'Zalo Group (VNG)', shortName: 'Zalo' },
     { name: 'Ngân hàng Techcombank', shortName: 'Techcombank' },
     { name: 'Ngân hàng TMCP Quân Đội (MB Bank)', shortName: 'MB Bank' },
-    { name: 'Ngân Hàng TMCP Việt Nam Thịnh Vượng (VPBank)', shortName: 'VPBank' },
+    {
+      name: 'Ngân Hàng TMCP Việt Nam Thịnh Vượng (VPBank)',
+      shortName: 'VPBank',
+    },
     { name: 'Shopee Vietnam (SPX Express)', shortName: 'Shopee' },
     { name: 'Ví điện tử MoMo (M-Service)', shortName: 'MoMo' },
-    { name: 'Công ty Cổ phần Giải pháp Thanh toán Việt Nam (VNPAY)', shortName: 'VNPAY' },
+    {
+      name: 'Công ty Cổ phần Giải pháp Thanh toán Việt Nam (VNPAY)',
+      shortName: 'VNPAY',
+    },
     { name: 'Tập đoàn Vingroup (Vinhomes)', shortName: 'Vingroup' },
     { name: 'VinFast Auto', shortName: 'VinFast' },
     { name: 'VinAI Research (Tập đoàn Vingroup)', shortName: 'VinAI' },
@@ -1781,10 +2145,16 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'Masan Consumer Holdings', shortName: 'Masan' },
     { name: 'CMC Telecom', shortName: 'CMC' },
     { name: 'Base.vn (Nền tảng Quản trị Doanh nghiệp)', shortName: 'Base.vn' },
-    { name: 'One Mount Group (Hệ sinh thái VinID & VinShop)', shortName: 'One Mount' },
+    {
+      name: 'One Mount Group (Hệ sinh thái VinID & VinShop)',
+      shortName: 'One Mount',
+    },
     { name: 'KMS Technology Vietnam', shortName: 'KMS Technology' },
     { name: 'NashTech Vietnam', shortName: 'NashTech' },
-    { name: 'Bosch Global Software Technologies (Bosch Việt Nam)', shortName: 'Bosch' },
+    {
+      name: 'Bosch Global Software Technologies (Bosch Việt Nam)',
+      shortName: 'Bosch',
+    },
     { name: 'Unilever Việt Nam', shortName: 'Unilever' },
     { name: 'Công ty Cổ phần Sữa Việt Nam (Vinamilk)', shortName: 'Vinamilk' },
     { name: 'Công ty Cổ phần Chứng khoán SSI', shortName: 'SSI' },
@@ -1797,7 +2167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'Samsung Electronics HCMC', shortName: 'Samsung' },
     { name: 'VCCorp Corporation', shortName: 'VCCorp' },
     { name: 'Dentsu Creative Vietnam', shortName: 'Dentsu' },
-    { name: 'Gemadept Logistics', shortName: 'Gemadept' }
+    { name: 'Gemadept Logistics', shortName: 'Gemadept' },
   ];
 
   const ALL_SUGGESTIONS = [
@@ -1835,7 +2205,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { keyword: 'Hành chính nhân sự', count: 205 },
     { keyword: 'Quản lý nhà hàng', count: 78 },
     { keyword: 'Nhân viên xuất nhập khẩu', count: 132 },
-    { keyword: 'Sales Logistics', count: 110 }
+    { keyword: 'Sales Logistics', count: 110 },
   ];
 
   const RECOMMENDED_JOBS_POOL = [
@@ -1851,7 +2221,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Sales', 'Kinh doanh', 'B2B', 'Quản lý'],
       isPartner: true,
       postedDaysAgo: 1,
-      interactionScore: 96
+      interactionScore: 96,
     },
     {
       id: 2,
@@ -1864,7 +2234,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Sales B2B', 'Quan hệ khách hàng', 'Tài chính'],
       isPartner: true,
       postedDaysAgo: 2,
-      interactionScore: 94
+      interactionScore: 94,
     },
     {
       id: 3,
@@ -1877,7 +2247,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Sales B2B', 'Kinh doanh', 'Quản lý đội ngũ'],
       isPartner: true,
       postedDaysAgo: 3,
-      interactionScore: 88
+      interactionScore: 88,
     },
     {
       id: 4,
@@ -1890,7 +2260,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Telesales', 'Bán hàng', 'Tư vấn', 'Sales'],
       isPartner: true,
       postedDaysAgo: 1,
-      interactionScore: 92
+      interactionScore: 92,
     },
     {
       id: 5,
@@ -1903,7 +2273,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Sales Logistics', 'Xuất nhập khẩu', 'Cước tàu', 'Sales'],
       isPartner: false,
       postedDaysAgo: 2,
-      interactionScore: 85
+      interactionScore: 85,
     },
     {
       id: 6,
@@ -1916,7 +2286,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Sales BĐS', 'Bán hàng', 'Môi giới', 'Sales'],
       isPartner: true,
       postedDaysAgo: 4,
-      interactionScore: 82
+      interactionScore: 82,
     },
 
     // 2. Kế toán & Tài chính
@@ -1931,7 +2301,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Kế toán', 'Báo cáo thuế', 'Tài chính'],
       isPartner: false,
       postedDaysAgo: 2,
-      interactionScore: 86
+      interactionScore: 86,
     },
     {
       id: 8,
@@ -1944,7 +2314,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Kế toán trưởng', 'Kiểm toán', 'Thuế'],
       isPartner: true,
       postedDaysAgo: 1,
-      interactionScore: 97
+      interactionScore: 97,
     },
     {
       id: 9,
@@ -1957,7 +2327,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Phân tích tài chính', 'Đầu tư', 'Chứng khoán'],
       isPartner: true,
       postedDaysAgo: 3,
-      interactionScore: 90
+      interactionScore: 90,
     },
 
     // 3. Công nghệ Thông tin (IT)
@@ -1972,7 +2342,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['IT', 'Infrastructure', 'Hạ tầng mạng', 'DevOps'],
       isPartner: true,
       postedDaysAgo: 1,
-      interactionScore: 98
+      interactionScore: 98,
     },
     {
       id: 11,
@@ -1985,7 +2355,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['ReactJS', 'Node.js', 'TypeScript', 'Frontend', 'Backend'],
       isPartner: true,
       postedDaysAgo: 1,
-      interactionScore: 95
+      interactionScore: 95,
     },
     {
       id: 12,
@@ -1998,7 +2368,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['UI/UX', 'Figma', 'Product Design', 'Web Design'],
       isPartner: true,
       postedDaysAgo: 2,
-      interactionScore: 93
+      interactionScore: 93,
     },
     {
       id: 13,
@@ -2011,7 +2381,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Data Analyst', 'SQL', 'Python', 'PowerBI'],
       isPartner: true,
       postedDaysAgo: 2,
-      interactionScore: 91
+      interactionScore: 91,
     },
     {
       id: 14,
@@ -2024,7 +2394,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Java', 'Spring Boot', 'Backend', 'Microservices'],
       isPartner: true,
       postedDaysAgo: 1,
-      interactionScore: 96
+      interactionScore: 96,
     },
 
     // 4. Marketing & Truyền thông
@@ -2039,7 +2409,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Marketing', 'Brand', 'Chiến lược', 'Quản lý'],
       isPartner: true,
       postedDaysAgo: 1,
-      interactionScore: 92
+      interactionScore: 92,
     },
     {
       id: 16,
@@ -2052,7 +2422,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Digital Marketing', 'Facebook Ads', 'Google Ads', 'SEO'],
       isPartner: true,
       postedDaysAgo: 2,
-      interactionScore: 89
+      interactionScore: 89,
     },
     {
       id: 17,
@@ -2065,7 +2435,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Content Marketing', 'Copywriting', 'Social Media'],
       isPartner: false,
       postedDaysAgo: 3,
-      interactionScore: 84
+      interactionScore: 84,
     },
 
     // 5. Ngành nghề khác (F&B, Kỹ thuật, Vận hành)
@@ -2080,7 +2450,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Quản lý', 'Nhà hàng', 'F&B', 'Dịch vụ'],
       isPartner: false,
       postedDaysAgo: 2,
-      interactionScore: 81
+      interactionScore: 81,
     },
     {
       id: 19,
@@ -2093,7 +2463,7 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Kỹ thuật', 'Bảo trì', 'Cơ điện'],
       isPartner: false,
       postedDaysAgo: 4,
-      interactionScore: 78
+      interactionScore: 78,
     },
     {
       id: 20,
@@ -2106,8 +2476,8 @@ document.addEventListener('DOMContentLoaded', () => {
       skills: ['Tuyển dụng', 'HR', 'Nhân sự', 'Đào tạo'],
       isPartner: true,
       postedDaysAgo: 2,
-      interactionScore: 87
-    }
+      interactionScore: 87,
+    },
   ];
 
   function escapeHtml(str) {
@@ -2128,10 +2498,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getKeywordJobCount(keyword) {
-    const found = ALL_SUGGESTIONS.find(s => s.keyword.toLowerCase() === keyword.toLowerCase());
+    const found = ALL_SUGGESTIONS.find(
+      (s) => s.keyword.toLowerCase() === keyword.toLowerCase(),
+    );
     if (found) return found.count;
     const norm = normalizeText(keyword);
-    const count = JOBS_DATA.filter(j => normalizeText(`${j.title} ${j.skills.join(' ')}`).includes(norm)).length;
+    const count = JOBS_DATA.filter((j) =>
+      normalizeText(`${j.title} ${j.skills.join(' ')}`).includes(norm),
+    ).length;
     return count > 0 ? count * 12 + 15 : 68;
   }
 
@@ -2141,11 +2515,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!raw) return DEFAULT_HISTORY;
       const parsed = JSON.parse(raw);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed.map(item => {
+        return parsed.map((item) => {
           if (typeof item === 'string') {
             return { keyword: item, count: getKeywordJobCount(item) };
           }
-          return { keyword: item.keyword, count: item.count || getKeywordJobCount(item.keyword) };
+          return {
+            keyword: item.keyword,
+            count: item.count || getKeywordJobCount(item.keyword),
+          };
         });
       }
       return DEFAULT_HISTORY;
@@ -2159,7 +2536,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const term = keyword.trim();
     try {
       let history = getRecentSearches();
-      history = history.filter(h => h.keyword.toLowerCase() !== term.toLowerCase());
+      history = history.filter(
+        (h) => h.keyword.toLowerCase() !== term.toLowerCase(),
+      );
       history.unshift({ keyword: term, count: getKeywordJobCount(term) });
       if (history.length > 6) history = history.slice(0, 6);
       localStorage.setItem(RECENT_SEARCH_KEY, JSON.stringify(history));
@@ -2170,7 +2549,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function removeRecentSearch(keyword) {
     try {
       let history = getRecentSearches();
-      history = history.filter(h => h.keyword.toLowerCase() !== keyword.toLowerCase());
+      history = history.filter(
+        (h) => h.keyword.toLowerCase() !== keyword.toLowerCase(),
+      );
       localStorage.setItem(RECENT_SEARCH_KEY, JSON.stringify(history));
       renderRecentSearches();
     } catch (e) {}
@@ -2199,24 +2580,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const keywordsSet = new Set();
     const taxData = window.EasyCVCategoryData || [];
 
-    taxData.forEach(cat => {
+    taxData.forEach((cat) => {
       const catNameNorm = normalizeText(cat.name || '');
-      const popMatches = (cat.popularKeywords || []).filter(pk => normalizeText(pk).includes(normQ));
+      const popMatches = (cat.popularKeywords || []).filter((pk) =>
+        normalizeText(pk).includes(normQ),
+      );
 
       if (catNameNorm.includes(normQ) || popMatches.length > 0) {
         keywordsSet.add(cat.name);
-        (cat.popularKeywords || []).forEach(pk => keywordsSet.add(pk));
-        (cat.subgroups || []).forEach(sg => {
-          (sg.roles || []).slice(0, 3).forEach(r => keywordsSet.add(r));
+        (cat.popularKeywords || []).forEach((pk) => keywordsSet.add(pk));
+        (cat.subgroups || []).forEach((sg) => {
+          (sg.roles || []).slice(0, 3).forEach((r) => keywordsSet.add(r));
         });
       } else {
-        (cat.subgroups || []).forEach(sg => {
+        (cat.subgroups || []).forEach((sg) => {
           const titleMatch = normalizeText(sg.title || '').includes(normQ);
-          const roleMatches = (sg.roles || []).filter(r => normalizeText(r).includes(normQ));
+          const roleMatches = (sg.roles || []).filter((r) =>
+            normalizeText(r).includes(normQ),
+          );
           if (titleMatch || roleMatches.length > 0) {
             keywordsSet.add(cat.name);
             keywordsSet.add(sg.title);
-            roleMatches.forEach(r => keywordsSet.add(r));
+            roleMatches.forEach((r) => keywordsSet.add(r));
           }
         });
       }
@@ -2241,7 +2626,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // - Dữ liệu tín hiệu job: mới đăng, uy tín NTD, độ tương tác [trung bình]
       let recentKws = [];
       try {
-        recentKws = getRecentSearches().map(item => normalizeText(typeof item === 'string' ? item : item.keyword));
+        recentKws = getRecentSearches().map((item) =>
+          normalizeText(typeof item === 'string' ? item : item.keyword),
+        );
       } catch (e) {}
 
       let savedJobIds = [];
@@ -2250,16 +2637,23 @@ document.addEventListener('DOMContentLoaded', () => {
         savedJobIds = JSON.parse(rawSaved);
       } catch (e) {}
 
-      const scoredJobs = RECOMMENDED_JOBS_POOL.map(job => {
+      const scoredJobs = RECOMMENDED_JOBS_POOL.map((job) => {
         let score = 50; // base score
-        const jobTextNorm = normalizeText(`${job.title} ${job.company} ${job.category || ''} ${(job.skills || []).join(' ')}`);
+        const jobTextNorm = normalizeText(
+          `${job.title} ${job.company} ${job.category || ''} ${(job.skills || []).join(' ')}`,
+        );
 
         // Khớp hành vi search gần đây (+35 điểm)
-        const matchedRecent = recentKws.some(kw => kw && jobTextNorm.includes(kw));
+        const matchedRecent = recentKws.some(
+          (kw) => kw && jobTextNorm.includes(kw),
+        );
         if (matchedRecent) score += 35;
 
         // Khớp việc làm đã lưu hoặc đã xem (+30 điểm)
-        if (Array.isArray(savedJobIds) && (savedJobIds.includes(job.id) || savedJobIds.includes(String(job.id)))) {
+        if (
+          Array.isArray(savedJobIds) &&
+          (savedJobIds.includes(job.id) || savedJobIds.includes(String(job.id)))
+        ) {
           score += 30;
         }
 
@@ -2275,7 +2669,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (job.postedDaysAgo && job.postedDaysAgo <= 2) score += 15;
 
         // Độ tương tác (+ điểm theo interactionScore)
-        if (job.interactionScore) score += Math.round(job.interactionScore / 10);
+        if (job.interactionScore)
+          score += Math.round(job.interactionScore / 10);
 
         return { ...job, totalScore: score };
       });
@@ -2285,9 +2680,11 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       // 2. Khi người dùng đã bắt đầu nhập vào box tìm kiếm (từ ký tự thứ 2):
       // Đề xuất dựa vào từ khóa nhập và truy xuất vào dữ liệu ngành nghề có sẵn trong hệ thống
-      const industryKeywords = extractIndustryKeywords(clean).map(kw => normalizeText(kw));
+      const industryKeywords = extractIndustryKeywords(clean).map((kw) =>
+        normalizeText(kw),
+      );
 
-      const scoredJobs = RECOMMENDED_JOBS_POOL.map(job => {
+      const scoredJobs = RECOMMENDED_JOBS_POOL.map((job) => {
         let score = 0;
         const titleNorm = normalizeText(job.title);
         const companyNorm = normalizeText(job.company);
@@ -2302,7 +2699,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (skillsNorm.includes(clean)) score += 45;
 
         // 3. Khớp từ khóa ngành nghề từ taxonomy hệ thống (+35 điểm)
-        const matchedTaxonomy = industryKeywords.some(ikw => ikw && fullJobText.includes(ikw));
+        const matchedTaxonomy = industryKeywords.some(
+          (ikw) => ikw && fullJobText.includes(ikw),
+        );
         if (matchedTaxonomy) score += 35;
 
         // 4. Khớp Category (+25 điểm)
@@ -2312,8 +2711,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (companyNorm.includes(clean)) score += 15;
 
         // 6. Partial match từng từ (+10 điểm)
-        const words = clean.split(/\s+/).filter(w => w.length > 1);
-        const wordMatchCount = words.filter(w => fullJobText.includes(w)).length;
+        const words = clean.split(/\s+/).filter((w) => w.length > 1);
+        const wordMatchCount = words.filter((w) =>
+          fullJobText.includes(w),
+        ).length;
         score += wordMatchCount * 10;
 
         // Tín hiệu đối tác uy tín
@@ -2322,7 +2723,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return { ...job, totalScore: score };
       });
 
-      const matched = scoredJobs.filter(j => j.totalScore > 0);
+      const matched = scoredJobs.filter((j) => j.totalScore > 0);
       if (matched.length > 0) {
         matched.sort((a, b) => b.totalScore - a.totalScore);
         jobsToDisplay = matched.slice(0, 5);
@@ -2332,7 +2733,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    container.innerHTML = jobsToDisplay.map(job => `
+    container.innerHTML = jobsToDisplay
+      .map(
+        (job) => `
       <button type="button" class="recommended-job" data-keyword="${escapeHtml(job.title)}" aria-label="Tìm ${escapeHtml(job.title)}, công ty ${escapeHtml(job.company)}, mức lương ${escapeHtml(job.salary)}, địa điểm ${escapeHtml(job.location || 'Toàn quốc')}">
         <span class="recommended-job-logo" aria-hidden="true" title="Công ty ${escapeHtml(job.company)} tuyển dụng tại EasyCV">
           <img src="${escapeHtml(job.logo)}" alt="${escapeHtml(job.company)}" width="50" height="50" loading="lazy" title="Công ty ${escapeHtml(job.company)} tuyển dụng tại EasyCV">
@@ -2346,9 +2749,11 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
       </button>
-    `).join('');
+    `,
+      )
+      .join('');
 
-    container.querySelectorAll('.recommended-job').forEach(btn => {
+    container.querySelectorAll('.recommended-job').forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         const kw = btn.getAttribute('data-keyword') || '';
@@ -2384,9 +2789,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="popular-keywords" id="popularKeywordsWrap">
           <h3>Từ khóa phổ biến</h3>
           <div class="popular-keyword-list">
-            ${POPULAR_KEYWORDS.map(kw => `
+            ${POPULAR_KEYWORDS.map(
+              (kw) => `
               <button type="button" class="suggest-trend-chip" data-keyword="${kw}">${kw}</button>
-            `).join('')}
+            `,
+            ).join('')}
           </div>
         </div>
       </section>
@@ -2399,49 +2806,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
     searchSuggestDropdown.appendChild(compactSearchPanel);
 
-    searchFormatLeftEl = compactSearchPanel.querySelector('.search-format-left');
-    suggestRecentSectionEl = compactSearchPanel.querySelector('#suggestRecentSection');
-    keywordSuggestionsSectionEl = compactSearchPanel.querySelector('#keywordSuggestionsSection');
-    keywordSuggestionsListEl = compactSearchPanel.querySelector('#keywordSuggestionsList');
-    popularKeywordsWrapEl = compactSearchPanel.querySelector('#popularKeywordsWrap');
+    searchFormatLeftEl = compactSearchPanel.querySelector(
+      '.search-format-left',
+    );
+    suggestRecentSectionEl = compactSearchPanel.querySelector(
+      '#suggestRecentSection',
+    );
+    keywordSuggestionsSectionEl = compactSearchPanel.querySelector(
+      '#keywordSuggestionsSection',
+    );
+    keywordSuggestionsListEl = compactSearchPanel.querySelector(
+      '#keywordSuggestionsList',
+    );
+    popularKeywordsWrapEl = compactSearchPanel.querySelector(
+      '#popularKeywordsWrap',
+    );
     recentListEl = compactSearchPanel.querySelector('#recentSearchList');
-    recommendedJobListEl = compactSearchPanel.querySelector('#recommendedJobList');
+    recommendedJobListEl = compactSearchPanel.querySelector(
+      '#recommendedJobList',
+    );
 
     renderRecommendedJobs('', recommendedJobListEl);
 
-    const clearHistoryBtn = compactSearchPanel.querySelector('#btnClearSearchHistory');
+    const clearHistoryBtn = compactSearchPanel.querySelector(
+      '#btnClearSearchHistory',
+    );
     clearHistoryBtn?.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       clearAllRecentSearches();
     });
 
-    compactSearchPanel.querySelectorAll('.suggest-trend-chip').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const kw = btn.getAttribute('data-keyword') || btn.textContent.trim();
-        executeSearch(kw);
+    compactSearchPanel
+      .querySelectorAll('.suggest-trend-chip')
+      .forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const kw = btn.getAttribute('data-keyword') || btn.textContent.trim();
+          executeSearch(kw);
+        });
       });
-    });
   }
 
   function renderRecentSearches() {
     if (!recentListEl) return;
     recentListEl.innerHTML = '';
     const searches = getRecentSearches();
-    const clearHistoryBtn = searchSuggestDropdown?.querySelector('#btnClearSearchHistory');
+    const clearHistoryBtn = searchSuggestDropdown?.querySelector(
+      '#btnClearSearchHistory',
+    );
 
     if (!searches || searches.length === 0) {
-      recentListEl.innerHTML = '<span class="recent-empty-hint">Chưa có lịch sử tìm kiếm gần đây</span>';
+      recentListEl.innerHTML =
+        '<span class="recent-empty-hint">Chưa có lịch sử tìm kiếm gần đây</span>';
       if (clearHistoryBtn) clearHistoryBtn.style.display = 'none';
       return;
     }
 
     if (clearHistoryBtn) clearHistoryBtn.style.display = 'inline-block';
 
-    searches.slice(0, 6).forEach(item => {
+    searches.slice(0, 6).forEach((item) => {
       const kw = typeof item === 'string' ? item : item.keyword;
-      const cnt = typeof item === 'object' && item.count ? item.count : getKeywordJobCount(kw);
+      const cnt =
+        typeof item === 'object' && item.count
+          ? item.count
+          : getKeywordJobCount(kw);
 
       const row = document.createElement('div');
       row.className = 'recent-search-row';
@@ -2488,18 +2917,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const seenCompanyKeys = new Set();
 
     const allCompaniesList = [...POPULAR_COMPANIES];
-    JOBS_DATA.forEach(j => {
-      if (j.company && !allCompaniesList.some(c => c.name.toLowerCase() === j.company.toLowerCase())) {
+    JOBS_DATA.forEach((j) => {
+      if (
+        j.company &&
+        !allCompaniesList.some(
+          (c) => c.name.toLowerCase() === j.company.toLowerCase(),
+        )
+      ) {
         allCompaniesList.push({ name: j.company, shortName: j.company });
       }
     });
-    RECOMMENDED_JOBS_POOL.forEach(j => {
-      if (j.company && !allCompaniesList.some(c => c.name.toLowerCase() === j.company.toLowerCase())) {
+    RECOMMENDED_JOBS_POOL.forEach((j) => {
+      if (
+        j.company &&
+        !allCompaniesList.some(
+          (c) => c.name.toLowerCase() === j.company.toLowerCase(),
+        )
+      ) {
         allCompaniesList.push({ name: j.company, shortName: j.company });
       }
     });
 
-    allCompaniesList.forEach(comp => {
+    allCompaniesList.forEach((comp) => {
       const normName = normalizeText(comp.name);
       const normShort = normalizeText(comp.shortName || '');
       if (normName.includes(clean) || normShort.includes(clean)) {
@@ -2510,7 +2949,7 @@ document.addEventListener('DOMContentLoaded', () => {
             type: 'company',
             keyword: comp.shortName || comp.name,
             label: comp.name,
-            searchKey: comp.shortName || comp.name
+            searchKey: comp.shortName || comp.name,
           });
         }
       }
@@ -2522,7 +2961,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2a. Việc làm từ dataset (khớp theo title hoặc thuộc công ty được tìm)
     const allSystemJobs = [...JOBS_DATA, ...RECOMMENDED_JOBS_POOL];
-    allSystemJobs.forEach(job => {
+    allSystemJobs.forEach((job) => {
       const normTitle = normalizeText(job.title);
       const normCompany = normalizeText(job.company || '');
       const isTitleMatch = normTitle.includes(clean);
@@ -2535,15 +2974,18 @@ document.addEventListener('DOMContentLoaded', () => {
           matchedJobs.push({
             type: 'job',
             keyword: job.title,
-            label: isCompanyMatch && !isTitleMatch ? `${job.title} — ${job.company}` : job.title,
-            searchKey: job.title
+            label:
+              isCompanyMatch && !isTitleMatch
+                ? `${job.title} - ${job.company}`
+                : job.title,
+            searchKey: job.title,
           });
         }
       }
     });
 
     // 2b. Vai trò/vị trí chuẩn từ ALL_SUGGESTIONS & Taxonomy
-    ALL_SUGGESTIONS.forEach(item => {
+    ALL_SUGGESTIONS.forEach((item) => {
       if (normalizeText(item.keyword).includes(clean)) {
         const key = item.keyword.toLowerCase();
         if (!seenJobKeys.has(key)) {
@@ -2552,7 +2994,7 @@ document.addEventListener('DOMContentLoaded', () => {
             type: 'job',
             keyword: item.keyword,
             label: item.keyword,
-            searchKey: item.keyword
+            searchKey: item.keyword,
           });
         }
       }
@@ -2561,16 +3003,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Phân bổ thông minh: hiển thị cả Công ty và Việc làm (tối đa 10 mục)
     let finalMatches = [];
     if (matchedCompanies.length > 0 && matchedJobs.length > 0) {
-      const isCompanySearch = matchedCompanies.some(c => normalizeText(c.keyword) === clean || normalizeText(c.label).startsWith(clean));
+      const isCompanySearch = matchedCompanies.some(
+        (c) =>
+          normalizeText(c.keyword) === clean ||
+          normalizeText(c.label).startsWith(clean),
+      );
       if (isCompanySearch) {
         finalMatches = [
           ...matchedCompanies.slice(0, 4),
-          ...matchedJobs.slice(0, 6)
+          ...matchedJobs.slice(0, 6),
         ];
       } else {
         finalMatches = [
           ...matchedJobs.slice(0, 6),
-          ...matchedCompanies.slice(0, 4)
+          ...matchedCompanies.slice(0, 4),
         ];
       }
     } else {
@@ -2600,23 +3046,27 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    finalMatches.forEach(item => {
+    finalMatches.forEach((item) => {
       const row = document.createElement('div');
       row.className = `keyword-suggestion-row is-${item.type}`;
       row.setAttribute('role', 'button');
       row.setAttribute('tabindex', '0');
       row.innerHTML = `
         <div class="kw-suggest-left">
-          ${item.type === 'company' ? `
+          ${
+            item.type === 'company'
+              ? `
             <svg class="kw-suggest-icon kw-icon-company" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path d="M3 21h18M3 7v14M21 7v14M6 10h2M6 14h2M6 18h2M11 10h2M11 14h2M11 18h2M16 10h2M16 14h2M16 18h2M9 3h6v4H9z"/>
             </svg>
-          ` : `
+          `
+              : `
             <svg class="kw-suggest-icon kw-icon-job" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
               <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
             </svg>
-          `}
+          `
+          }
           <span class="kw-suggest-text" title="${escapeHtml(item.label)}">${highlightMatch(item.label, query)}</span>
         </div>
       `;
@@ -2638,14 +3088,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isTyping) {
       searchFormatLeftEl?.classList.add('is-typing');
       if (suggestRecentSectionEl) suggestRecentSectionEl.style.display = 'none';
-      if (keywordSuggestionsSectionEl) keywordSuggestionsSectionEl.style.display = 'flex';
+      if (keywordSuggestionsSectionEl)
+        keywordSuggestionsSectionEl.style.display = 'flex';
       if (popularKeywordsWrapEl) popularKeywordsWrapEl.style.display = 'none';
       renderKeywordSuggestions(query, keywordSuggestionsListEl);
       renderRecommendedJobs(query, recommendedJobListEl);
     } else {
       searchFormatLeftEl?.classList.remove('is-typing');
       if (suggestRecentSectionEl) suggestRecentSectionEl.style.display = 'flex';
-      if (keywordSuggestionsSectionEl) keywordSuggestionsSectionEl.style.display = 'none';
+      if (keywordSuggestionsSectionEl)
+        keywordSuggestionsSectionEl.style.display = 'none';
       if (popularKeywordsWrapEl) popularKeywordsWrapEl.style.display = 'block';
       renderRecentSearches();
       renderRecommendedJobs('', recommendedJobListEl);
@@ -2654,14 +3106,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateDropdownPosition() {
     if (!heroSearchWrapper || !searchSuggestDropdown) return;
-    const heroBox = document.getElementById('jobSearchForm') || document.getElementById('heroSearchBox') || (searchInput ? searchInput.closest('.hero-search-box') : null);
+    const heroBox =
+      document.getElementById('jobSearchForm') ||
+      document.getElementById('heroSearchBox') ||
+      (searchInput ? searchInput.closest('.hero-search-box') : null);
     const parentBar = searchSuggestDropdown.parentElement;
 
     if (parentBar && heroBox) {
       const barRect = parentBar.getBoundingClientRect();
       const boxRect = heroBox.getBoundingClientRect();
-      const topOffset = Math.max(0, Math.round(boxRect.bottom - barRect.top + 8));
-      searchSuggestDropdown.style.setProperty('--search-suggest-top', `${topOffset}px`);
+      const topOffset = Math.max(
+        0,
+        Math.round(boxRect.bottom - barRect.top + 8),
+      );
+      searchSuggestDropdown.style.setProperty(
+        '--search-suggest-top',
+        `${topOffset}px`,
+      );
     }
 
     if (window.innerWidth <= 900) {
@@ -2674,7 +3135,9 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const inputGroup = searchInput ? searchInput.closest('.search-input-group') : null;
+    const inputGroup = searchInput
+      ? searchInput.closest('.search-input-group')
+      : null;
     if (inputGroup && parentBar && heroBox) {
       const barRect = parentBar.getBoundingClientRect();
       const groupRect = inputGroup.getBoundingClientRect();
@@ -2684,10 +3147,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const leftOffset = Math.max(0, Math.round(groupRect.left - barRect.left));
 
       // Mép phải: Kéo dài đến hết mép phải của thanh tìm kiếm
-      const rightOffset = Math.max(0, Math.round(barRect.right - boxRect.right));
+      const rightOffset = Math.max(
+        0,
+        Math.round(barRect.right - boxRect.right),
+      );
 
-      searchSuggestDropdown.style.setProperty('--search-suggest-left', `${leftOffset}px`);
-      searchSuggestDropdown.style.setProperty('--search-suggest-right', `${rightOffset}px`);
+      searchSuggestDropdown.style.setProperty(
+        '--search-suggest-left',
+        `${leftOffset}px`,
+      );
+      searchSuggestDropdown.style.setProperty(
+        '--search-suggest-right',
+        `${rightOffset}px`,
+      );
       searchSuggestDropdown.style.left = `${leftOffset}px`;
       searchSuggestDropdown.style.right = `${rightOffset}px`;
       searchSuggestDropdown.style.width = 'auto';
@@ -2726,13 +3198,24 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput?.blur();
 
     applyJobFilters(true, true);
-    const matchCount = currentFilteredJobs.filter(j => j._isSearchMatch).length;
+    const matchCount = currentFilteredJobs.filter(
+      (j) => j._isSearchMatch,
+    ).length;
     if (query && matchCount > 0) {
-      showToast(`Tìm kiếm "${query}": Tìm thấy ${matchCount} việc làm phù hợp nhất!`, '🎯');
+      showToast(
+        `Tìm kiếm "${query}": Tìm thấy ${matchCount} việc làm phù hợp nhất!`,
+        '🎯',
+      );
     } else if (query && matchCount === 0) {
-      showToast(`Dữ liệu mẫu: Đang hiển thị toàn bộ việc làm có sẵn trên hệ thống`, '💡');
+      showToast(
+        `Dữ liệu mẫu: Đang hiển thị toàn bộ việc làm có sẵn trên hệ thống`,
+        '💡',
+      );
     } else {
-      showToast(`Đang hiển thị toàn bộ ${JOBS_DATA.length} việc làm có sẵn`, '🔍');
+      showToast(
+        `Đang hiển thị toàn bộ ${JOBS_DATA.length} việc làm có sẵn`,
+        '🔍',
+      );
     }
     scrollToListingTop();
   }
@@ -2808,13 +3291,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Khi click vào nút Danh mục Nghề: đóng search suggest dropdown
-  const categoryFilterTriggerBtn = document.getElementById('categoryFilterTrigger');
+  const categoryFilterTriggerBtn = document.getElementById(
+    'categoryFilterTrigger',
+  );
   categoryFilterTriggerBtn?.addEventListener('click', () => {
     closeSuggest();
   });
 
   document.addEventListener('click', (e) => {
-    if (searchSuggestDropdown && !searchSuggestDropdown.contains(e.target) && e.target !== searchInput && !e.target.closest('.search-input-group')) {
+    if (
+      searchSuggestDropdown &&
+      !searchSuggestDropdown.contains(e.target) &&
+      e.target !== searchInput &&
+      !e.target.closest('.search-input-group')
+    ) {
       closeSuggest();
     }
   });
@@ -2824,8 +3314,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateDropdownPosition();
   renderRecentSearches();
-
-
 
   // Clear Keyword button
   btnClearKeyword?.addEventListener('click', () => {
@@ -2859,7 +3347,10 @@ document.addEventListener('DOMContentLoaded', () => {
     applyJobFilters(true, true);
     if (primaryQuery) {
       showToast(`Đã lọc danh mục nghề: ${primaryQuery}`, '🎯');
-      const targetSection = document.getElementById('splitListPane') || document.getElementById('jobListingContainer') || document.querySelector('.job-main-columns');
+      const targetSection =
+        document.getElementById('splitListPane') ||
+        document.getElementById('jobListingContainer') ||
+        document.querySelector('.job-main-columns');
       if (targetSection) {
         targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
@@ -2878,25 +3369,36 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Quick Filter Tags Click
-  document.querySelectorAll('.quick-filter-tags .tag-btn').forEach(btn => {
+  document.querySelectorAll('.quick-filter-tags .tag-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       btn.classList.toggle('active');
       applyJobFilters(true, true);
       const tagText = btn.textContent.trim();
-      showToast(btn.classList.contains('active') ? `Đang lọc: ${tagText}` : `Đã bỏ: ${tagText}`, '🔍');
+      showToast(
+        btn.classList.contains('active')
+          ? `Đang lọc: ${tagText}`
+          : `Đã bỏ: ${tagText}`,
+        '🔍',
+      );
     });
   });
 
   // Checkbox filters (Level, Salary, Exp, Type)
-  document.querySelectorAll('.filter-sidebar input[type="checkbox"]').forEach(cb => {
-    cb.addEventListener('change', () => applyJobFilters(true, true));
-  });
+  document
+    .querySelectorAll('.filter-sidebar input[type="checkbox"]')
+    .forEach((cb) => {
+      cb.addEventListener('change', () => applyJobFilters(true, true));
+    });
 
   // Reset Filters button
   btnResetFilters?.addEventListener('click', () => {
     resetAllTopFilters(false);
-    document.querySelectorAll('.filter-sidebar input[type="checkbox"]').forEach(cb => cb.checked = false);
-    document.querySelectorAll('.quick-filter-tags .tag-btn').forEach(b => b.classList.remove('active'));
+    document
+      .querySelectorAll('.filter-sidebar input[type="checkbox"]')
+      .forEach((cb) => (cb.checked = false));
+    document
+      .querySelectorAll('.quick-filter-tags .tag-btn')
+      .forEach((b) => b.classList.remove('active'));
     if (searchInput) searchInput.value = '';
     if (clearSearchInputBtn) clearSearchInputBtn.style.display = 'none';
     if (window.EasyCVLocationPicker) window.EasyCVLocationPicker.reset();
@@ -2916,16 +3418,21 @@ document.addEventListener('DOMContentLoaded', () => {
     else if (locationSelect) locationSelect.value = '';
     if (categorySelect) categorySelect.value = '';
     if (window.EasyCVCategoryModal) window.EasyCVCategoryModal.clearAll();
-    document.querySelectorAll('.quick-filter-tags .tag-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.filter-sidebar input[type="checkbox"]').forEach(cb => cb.checked = false);
+    document
+      .querySelectorAll('.quick-filter-tags .tag-btn')
+      .forEach((b) => b.classList.remove('active'));
+    document
+      .querySelectorAll('.filter-sidebar input[type="checkbox"]')
+      .forEach((cb) => (cb.checked = false));
     applyJobFilters(true, true);
     showToast(`Đã hiển thị tất cả ${JOBS_DATA.length} việc làm`, '✓');
   });
 
   // Suggestion chips inside empty state
-  document.querySelectorAll('.suggest-chip').forEach(chip => {
+  document.querySelectorAll('.suggest-chip').forEach((chip) => {
     chip.addEventListener('click', () => {
-      const keyword = chip.getAttribute('data-search') || chip.textContent.trim();
+      const keyword =
+        chip.getAttribute('data-search') || chip.textContent.trim();
       if (searchInput) {
         searchInput.value = keyword;
         applyJobFilters(true, true);
@@ -2938,7 +3445,9 @@ document.addEventListener('DOMContentLoaded', () => {
   btnBackToGrid?.addEventListener('click', () => closeSplitView(true));
   btnViewGrid?.addEventListener('click', () => closeSplitView(true));
   btnViewSplit?.addEventListener('click', () => {
-    const targetId = selectedJobId || (currentFilteredJobs[0] ? currentFilteredJobs[0].id : JOBS_DATA[0].id);
+    const targetId =
+      selectedJobId ||
+      (currentFilteredJobs[0] ? currentFilteredJobs[0].id : JOBS_DATA[0].id);
     openSplitView(targetId);
   });
 
@@ -2955,11 +3464,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentUrl = new URL(window.location.href);
     if (selectedJobId) currentUrl.searchParams.set('jobId', selectedJobId);
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(currentUrl.toString()).then(() => {
-        showToast('Đã sao chép liên kết việc làm vào bộ nhớ tạm!', '🔗');
-      }).catch(() => {
-        showToast('Đã sao chép liên kết việc làm!', '🔗');
-      });
+      navigator.clipboard
+        .writeText(currentUrl.toString())
+        .then(() => {
+          showToast('Đã sao chép liên kết việc làm vào bộ nhớ tạm!', '🔗');
+        })
+        .catch(() => {
+          showToast('Đã sao chép liên kết việc làm!', '🔗');
+        });
     } else {
       showToast('Đã sao chép liên kết việc làm!', '🔗');
     }
@@ -2973,19 +3485,28 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const onSplitApply = () => {
-    const job = JOBS_DATA.find(j => j.id === selectedJobId) || JOBS_DATA[0];
-    showToast(`Ứng tuyển thành công vị trí "${job.title}"! Nhà tuyển dụng sẽ phản hồi sớm.`, '🚀');
+    const job = JOBS_DATA.find((j) => j.id === selectedJobId) || JOBS_DATA[0];
+    showToast(
+      `Ứng tuyển thành công vị trí "${job.title}"! Nhà tuyển dụng sẽ phản hồi sớm.`,
+      '🚀',
+    );
   };
   btnDetailApply?.addEventListener('click', onSplitApply);
   btnStickyApply?.addEventListener('click', onSplitApply);
 
   // --- Sticky Hero Search Bar on Scroll ---
   function initStickySearch() {
-    const wrapper = document.getElementById('heroSearchWrapper') || document.getElementById('jobSearchWrapper');
-    const stickyBar = document.getElementById('heroSearchStickyBar') || document.getElementById('jobSearchStickyBar');
+    const wrapper =
+      document.getElementById('heroSearchWrapper') ||
+      document.getElementById('jobSearchWrapper');
+    const stickyBar =
+      document.getElementById('heroSearchStickyBar') ||
+      document.getElementById('jobSearchStickyBar');
     if (!wrapper || !stickyBar) return;
 
-    const header = document.querySelector('.site-header') || document.querySelector('.navbar');
+    const header =
+      document.querySelector('.site-header') ||
+      document.querySelector('.navbar');
     let ticking = false;
 
     function updateStickyState() {
@@ -3012,12 +3533,16 @@ document.addEventListener('DOMContentLoaded', () => {
       ticking = false;
     }
 
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(updateStickyState);
-        ticking = true;
-      }
-    }, { passive: true });
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          requestAnimationFrame(updateStickyState);
+          ticking = true;
+        }
+      },
+      { passive: true },
+    );
 
     window.addEventListener('resize', updateStickyState, { passive: true });
     updateStickyState();
@@ -3027,7 +3552,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function syncStateFromUrl() {
     const urlParams = new URLSearchParams(window.location.search);
     const keywordParam = urlParams.get('keyword') || urlParams.get('q') || '';
-    const locationParam = urlParams.get('location') || urlParams.get('locations') || '';
+    const locationParam =
+      urlParams.get('location') || urlParams.get('locations') || '';
     const categoryParam = urlParams.get('category') || '';
     const industryParam = urlParams.get('industry') || '';
     const jobIdParam = urlParams.get('jobId') || urlParams.get('id');
@@ -3044,7 +3570,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.EasyCVLocationPicker) {
         window.EasyCVLocationPicker.setSelected(locationParam);
       } else if (heroLocationTrigger) {
-        Array.from(heroLocationTrigger.childNodes).forEach(n => {
+        Array.from(heroLocationTrigger.childNodes).forEach((n) => {
           if (n.nodeType === Node.TEXT_NODE) n.remove();
         });
         const labelEl = heroLocationTrigger.querySelector('.location-label');
@@ -3059,7 +3585,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.EasyCVLocationPicker) {
         window.EasyCVLocationPicker.reset();
       } else if (heroLocationTrigger) {
-        Array.from(heroLocationTrigger.childNodes).forEach(n => {
+        Array.from(heroLocationTrigger.childNodes).forEach((n) => {
           if (n.nodeType === Node.TEXT_NODE) n.remove();
         });
         const labelEl = heroLocationTrigger.querySelector('.location-label');
@@ -3081,27 +3607,56 @@ document.addEventListener('DOMContentLoaded', () => {
         const savedCat = localStorage.getItem('easycv_category_selection');
         if (savedCat) {
           const parsed = JSON.parse(savedCat);
-          if (parsed && (parsed.roles?.length || parsed.subgroups?.length || parsed.groups?.length)) {
+          if (
+            parsed &&
+            (parsed.roles?.length ||
+              parsed.subgroups?.length ||
+              parsed.groups?.length)
+          ) {
             window.EasyCVCategoryModal.setSelection({
               groups: parsed.groups || [],
               subgroups: parsed.subgroups || [],
-              roles: parsed.roles || []
+              roles: parsed.roles || [],
             });
           } else if (categoryParam) {
-            window.EasyCVCategoryModal.setSelection({ groups: [categoryParam], subgroups: [], roles: [] });
+            window.EasyCVCategoryModal.setSelection({
+              groups: [categoryParam],
+              subgroups: [],
+              roles: [],
+            });
           } else if (industryParam) {
-            window.EasyCVCategoryModal.setSelection({ groups: [], subgroups: [], roles: [industryParam] });
+            window.EasyCVCategoryModal.setSelection({
+              groups: [],
+              subgroups: [],
+              roles: [industryParam],
+            });
           }
         } else if (categoryParam) {
-          window.EasyCVCategoryModal.setSelection({ groups: [categoryParam], subgroups: [], roles: [] });
+          window.EasyCVCategoryModal.setSelection({
+            groups: [categoryParam],
+            subgroups: [],
+            roles: [],
+          });
         } else if (industryParam) {
-          window.EasyCVCategoryModal.setSelection({ groups: [], subgroups: [], roles: [industryParam] });
+          window.EasyCVCategoryModal.setSelection({
+            groups: [],
+            subgroups: [],
+            roles: [industryParam],
+          });
         }
       } catch (e) {
         if (categoryParam) {
-          window.EasyCVCategoryModal.setSelection({ groups: [categoryParam], subgroups: [], roles: [] });
+          window.EasyCVCategoryModal.setSelection({
+            groups: [categoryParam],
+            subgroups: [],
+            roles: [],
+          });
         } else if (industryParam) {
-          window.EasyCVCategoryModal.setSelection({ groups: [], subgroups: [], roles: [industryParam] });
+          window.EasyCVCategoryModal.setSelection({
+            groups: [],
+            subgroups: [],
+            roles: [industryParam],
+          });
         }
       }
     }
@@ -3114,14 +3669,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const saturdayParam = urlParams.get('saturday') || '';
 
     // Hỗ trợ chọn nhiều: ?level=intern,junior (hoặc lặp tham số ?level=intern&level=junior)
-    const readMultiParam = key => parseMultiValue(urlParams.getAll(key).join(',')).join(',');
+    const readMultiParam = (key) =>
+      parseMultiValue(urlParams.getAll(key).join(',')).join(',');
     setFilterValue('exp', readMultiParam('exp') || expParam);
     setFilterValue('salary', readMultiParam('salary') || salaryParam);
     setFilterValue('level', readMultiParam('level') || levelParam);
     setFilterValue('type', readMultiParam('type') || typeParam);
     setFilterValue('saturday', readMultiParam('saturday') || saturdayParam);
 
-    MULTI_FILTER_TYPES.forEach(t => {
+    MULTI_FILTER_TYPES.forEach((t) => {
       updateFilterPillUI(t, getFilterValue(t), '');
       syncFilterDropdownSelection(t);
     });
@@ -3130,15 +3686,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Khôi phục kiểu sắp xếp được trang chi tiết truyền về (?sort=)
     const sortParam = urlParams.get('sort') || '';
-    const sortItem = sortParam ? document.querySelector(`#sortMenuDropdown .sort-menu-item[data-val="${sortParam}"]`) : null;
+    const sortItem = sortParam
+      ? document.querySelector(
+          `#sortMenuDropdown .sort-menu-item[data-val="${sortParam}"]`,
+        )
+      : null;
     if (sortItem && sortSelect) {
       sortSelect.value = sortParam;
-      document.querySelectorAll('#sortMenuDropdown .sort-menu-item').forEach(it => {
-        it.classList.toggle('is-selected', it === sortItem);
-        it.setAttribute('aria-selected', it === sortItem ? 'true' : 'false');
-      });
+      document
+        .querySelectorAll('#sortMenuDropdown .sort-menu-item')
+        .forEach((it) => {
+          it.classList.toggle('is-selected', it === sortItem);
+          it.setAttribute('aria-selected', it === sortItem ? 'true' : 'false');
+        });
       const sortLabel = document.getElementById('sortCurrentLabel');
-      if (sortLabel) sortLabel.textContent = sortItem.querySelector('span')?.textContent.trim() || sortLabel.textContent;
+      if (sortLabel)
+        sortLabel.textContent =
+          sortItem.querySelector('span')?.textContent.trim() ||
+          sortLabel.textContent;
     }
 
     applyJobFilters(true, false);
@@ -3146,7 +3711,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Xử lý mở trực tiếp Split View nếu URL có tham số jobId
     if (jobIdParam) {
       const targetId = parseInt(jobIdParam, 10);
-      if (JOBS_DATA.some(j => j.id === targetId)) {
+      if (JOBS_DATA.some((j) => j.id === targetId)) {
         openSplitView(targetId);
       }
     } else if (activeViewMode === 'split') {
@@ -3185,14 +3750,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Handle item selection
-    menu.querySelectorAll('.sort-menu-item').forEach(item => {
+    menu.querySelectorAll('.sort-menu-item').forEach((item) => {
       item.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
         const val = item.getAttribute('data-val');
-        const text = item.querySelector('span')?.textContent.trim() || 'Search by AI';
+        const text =
+          item.querySelector('span')?.textContent.trim() || 'Search by AI';
 
-        menu.querySelectorAll('.sort-menu-item').forEach(it => {
+        menu.querySelectorAll('.sort-menu-item').forEach((it) => {
           it.classList.remove('is-selected');
           it.setAttribute('aria-selected', 'false');
         });
@@ -3229,14 +3795,18 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickySearch();
 
   // VIP Employer ad explore button
-  document.getElementById('btnExploreVipEmployer')?.addEventListener('click', () => {
-    if (searchInput) {
-      searchInput.value = 'Samsung';
-      applyJobFilters(true, true);
-      showToast('Đang hiển thị vị trí tuyển dụng của Samsung R&D', '★');
-      window.scrollTo({ top: 380, behavior: 'smooth' });
-    }
-  });
+  document
+    .getElementById('btnExploreVipEmployer')
+    ?.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = 'Samsung';
+        applyJobFilters(true, true);
+        showToast('Đang hiển thị vị trí tuyển dụng của Samsung R&D', '★');
+        window.scrollTo({ top: 380, behavior: 'smooth' });
+      }
+    });
 
-  console.log(`EasyCV Job Search loaded successfully. Total catalog: ${JOBS_DATA.length} jobs.`);
+  console.log(
+    `EasyCV Job Search loaded successfully. Total catalog: ${JOBS_DATA.length} jobs.`,
+  );
 });

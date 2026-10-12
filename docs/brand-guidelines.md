@@ -128,7 +128,7 @@ Logo EasyCV bao gồm 2 thành phần chính:
 
 ### Tone of Voice
 - **Đáng tin cậy & Chuyên nghiệp (Trustworthy & Professional):** Ứng viên gửi gắm tương lai nghề nghiệp, doanh nghiệp tìm kiếm nhân tài cốt lõi. Dữ liệu công việc và lương thưởng phải minh bạch, chính xác.
-- **Tiện lợi & Nhanh chóng (Easy & Fast):** Đúng với tinh thần "EasyCV" — quy trình tạo CV, tìm việc và ứng tuyển phải diễn ra mượt mà, tối giản thao tác phức tạp.
+- **Tiện lợi & Nhanh chóng (Easy & Fast):** Đúng với tinh thần "EasyCV" - quy trình tạo CV, tìm việc và ứng tuyển phải diễn ra mượt mà, tối giản thao tác phức tạp.
 - **Truyền cảm hứng (Empowering):** Khích lệ người tìm việc tự tin ứng tuyển và phát triển sự nghiệp.
 
 ### Core Modules for UI/UX

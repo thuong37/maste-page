@@ -1,5 +1,5 @@
 /**
- * EasyCV Job Detail — canonical smart-search behavior.
+ * EasyCV Job Detail - canonical smart-search behavior.
  * Keeps the detail page focused on the current job until a search is submitted.
  */
 (function () {
@@ -20,34 +20,62 @@
 
     if (!form || !input || !dropdown || !wrapper) return;
 
-    const HISTORY_KEY = 'easycv_recent_searches_v2';    const DEFAULT_HISTORY = [
+    const HISTORY_KEY = 'easycv_recent_searches_v2';
+    const DEFAULT_HISTORY = [
       { keyword: 'ReactJS Developer', count: 156 },
       { keyword: 'Telesales', count: 280 },
       { keyword: 'Marketing Leader', count: 92 },
       { keyword: 'UI/UX Designer', count: 143 },
       { keyword: 'Java Spring Boot', count: 67 },
-      { keyword: 'Kế toán tổng hợp', count: 184 }
+      { keyword: 'Kế toán tổng hợp', count: 184 },
     ];
-    const POPULAR_KEYWORDS = ['Telesales', 'Kinh doanh', 'Java Spring', 'Marketing', 'Kế toán'];
+    const POPULAR_KEYWORDS = [
+      'Telesales',
+      'Kinh doanh',
+      'Java Spring',
+      'Marketing',
+      'Kế toán',
+    ];
 
     const POPULAR_COMPANIES = [
-      { name: 'Tập đoàn Công nghiệp - Viễn thông Quân đội (Viettel)', shortName: 'Viettel' },
+      {
+        name: 'Tập đoàn Công nghiệp - Viễn thông Quân đội (Viettel)',
+        shortName: 'Viettel',
+      },
       { name: 'Tập đoàn Công nghiệp Viettel', shortName: 'Viettel' },
-      { name: 'Tổng Công ty Viễn thông Viettel (Viettel Telecom)', shortName: 'Viettel Telecom' },
-      { name: 'Tổng Công ty Cổ phần Bưu chính Viettel (Viettel Post)', shortName: 'Viettel Post' },
-      { name: 'Tổng Công ty Giải pháp Doanh nghiệp Viettel (Viettel Solutions)', shortName: 'Viettel Solutions' },
+      {
+        name: 'Tổng Công ty Viễn thông Viettel (Viettel Telecom)',
+        shortName: 'Viettel Telecom',
+      },
+      {
+        name: 'Tổng Công ty Cổ phần Bưu chính Viettel (Viettel Post)',
+        shortName: 'Viettel Post',
+      },
+      {
+        name: 'Tổng Công ty Giải pháp Doanh nghiệp Viettel (Viettel Solutions)',
+        shortName: 'Viettel Solutions',
+      },
       { name: 'FPT Software', shortName: 'FPT Software' },
       { name: 'TẬP ĐOÀN CÔNG NGHỆ FPT', shortName: 'FPT' },
-      { name: 'Công ty Cổ phần Viễn thông FPT (FPT Telecom)', shortName: 'FPT Telecom' },
+      {
+        name: 'Công ty Cổ phần Viễn thông FPT (FPT Telecom)',
+        shortName: 'FPT Telecom',
+      },
       { name: 'FPT Digital (Tập đoàn FPT)', shortName: 'FPT Digital' },
       { name: 'VNG Corporation (Zalo Team)', shortName: 'VNG' },
       { name: 'Zalo Group (VNG)', shortName: 'Zalo' },
       { name: 'Ngân hàng Techcombank', shortName: 'Techcombank' },
       { name: 'Ngân hàng TMCP Quân Đội (MB Bank)', shortName: 'MB Bank' },
-      { name: 'Ngân Hàng TMCP Việt Nam Thịnh Vượng (VPBank)', shortName: 'VPBank' },
+      {
+        name: 'Ngân Hàng TMCP Việt Nam Thịnh Vượng (VPBank)',
+        shortName: 'VPBank',
+      },
       { name: 'Shopee Vietnam (SPX Express)', shortName: 'Shopee' },
       { name: 'Ví điện tử MoMo (M-Service)', shortName: 'MoMo' },
-      { name: 'Công ty Cổ phần Giải pháp Thanh toán Việt Nam (VNPAY)', shortName: 'VNPAY' },
+      {
+        name: 'Công ty Cổ phần Giải pháp Thanh toán Việt Nam (VNPAY)',
+        shortName: 'VNPAY',
+      },
       { name: 'Tập đoàn Vingroup (Vinhomes)', shortName: 'Vingroup' },
       { name: 'VinFast Auto', shortName: 'VinFast' },
       { name: 'VinAI Research (Tập đoàn Vingroup)', shortName: 'VinAI' },
@@ -55,13 +83,25 @@
       { name: 'Tập đoàn Masan (Masan Consumer)', shortName: 'Masan' },
       { name: 'Masan Consumer Holdings', shortName: 'Masan' },
       { name: 'CMC Telecom', shortName: 'CMC' },
-      { name: 'Base.vn (Nền tảng Quản trị Doanh nghiệp)', shortName: 'Base.vn' },
-      { name: 'One Mount Group (Hệ sinh thái VinID & VinShop)', shortName: 'One Mount' },
+      {
+        name: 'Base.vn (Nền tảng Quản trị Doanh nghiệp)',
+        shortName: 'Base.vn',
+      },
+      {
+        name: 'One Mount Group (Hệ sinh thái VinID & VinShop)',
+        shortName: 'One Mount',
+      },
       { name: 'KMS Technology Vietnam', shortName: 'KMS Technology' },
       { name: 'NashTech Vietnam', shortName: 'NashTech' },
-      { name: 'Bosch Global Software Technologies (Bosch Việt Nam)', shortName: 'Bosch' },
+      {
+        name: 'Bosch Global Software Technologies (Bosch Việt Nam)',
+        shortName: 'Bosch',
+      },
       { name: 'Unilever Việt Nam', shortName: 'Unilever' },
-      { name: 'Công ty Cổ phần Sữa Việt Nam (Vinamilk)', shortName: 'Vinamilk' },
+      {
+        name: 'Công ty Cổ phần Sữa Việt Nam (Vinamilk)',
+        shortName: 'Vinamilk',
+      },
       { name: 'Công ty Cổ phần Chứng khoán SSI', shortName: 'SSI' },
       { name: 'CÔNG TY CỔ PHẦN TẬP ĐOÀN VIKIMCO', shortName: 'Vikimco' },
       { name: 'Tập đoàn Mai Linh', shortName: 'Mai Linh' },
@@ -72,21 +112,41 @@
       { name: 'Samsung Electronics HCMC', shortName: 'Samsung' },
       { name: 'VCCorp Corporation', shortName: 'VCCorp' },
       { name: 'Dentsu Creative Vietnam', shortName: 'Dentsu' },
-      { name: 'Gemadept Logistics', shortName: 'Gemadept' }
+      { name: 'Gemadept Logistics', shortName: 'Gemadept' },
     ];
 
     const SUGGESTIONS = [
-      ['Kiến trúc sư', 94], ['Kỹ sư kiến trúc', 45], ['Thiết kế nội thất', 86],
-      ['ReactJS Developer', 156], ['Frontend Developer', 165], ['Backend Developer (Java/Node)', 142],
-      ['Fullstack Developer', 128], ['Mobile Developer (Flutter / iOS)', 96], ['UI/UX Designer', 143],
-      ['Product Designer', 88], ['Product Manager', 62], ['Business Analyst (BA)', 143],
-      ['Data Analyst', 118], ['Data Engineer', 79], ['AI / Machine Learning Engineer', 95],
-      ['Tester / QA QC', 172], ['Marketing Leader', 92], ['Digital Marketing', 215],
-      ['Content Marketing', 164], ['SEO Specialist', 98], ['Telesales', 280],
-      ['Nhân viên kinh doanh', 420], ['Sales B2B', 165], ['Chăm sóc khách hàng', 310],
-      ['Kế toán tổng hợp', 184], ['Kế toán thuế', 125], ['Chuyên viên tuyển dụng (HR)', 152],
-      ['Hành chính nhân sự', 205], ['Quản lý nhà hàng', 78], ['Nhân viên xuất nhập khẩu', 132],
-      ['Sales Logistics', 110]
+      ['Kiến trúc sư', 94],
+      ['Kỹ sư kiến trúc', 45],
+      ['Thiết kế nội thất', 86],
+      ['ReactJS Developer', 156],
+      ['Frontend Developer', 165],
+      ['Backend Developer (Java/Node)', 142],
+      ['Fullstack Developer', 128],
+      ['Mobile Developer (Flutter / iOS)', 96],
+      ['UI/UX Designer', 143],
+      ['Product Designer', 88],
+      ['Product Manager', 62],
+      ['Business Analyst (BA)', 143],
+      ['Data Analyst', 118],
+      ['Data Engineer', 79],
+      ['AI / Machine Learning Engineer', 95],
+      ['Tester / QA QC', 172],
+      ['Marketing Leader', 92],
+      ['Digital Marketing', 215],
+      ['Content Marketing', 164],
+      ['SEO Specialist', 98],
+      ['Telesales', 280],
+      ['Nhân viên kinh doanh', 420],
+      ['Sales B2B', 165],
+      ['Chăm sóc khách hàng', 310],
+      ['Kế toán tổng hợp', 184],
+      ['Kế toán thuế', 125],
+      ['Chuyên viên tuyển dụng (HR)', 152],
+      ['Hành chính nhân sự', 205],
+      ['Quản lý nhà hàng', 78],
+      ['Nhân viên xuất nhập khẩu', 132],
+      ['Sales Logistics', 110],
     ].map(([keyword, count]) => ({ keyword, count }));
     const RECOMMENDED_JOBS_POOL = [
       // 1. Sales & Kinh doanh
@@ -101,7 +161,7 @@
         skills: ['Sales', 'Kinh doanh', 'B2B', 'Quản lý'],
         isPartner: true,
         postedDaysAgo: 1,
-        interactionScore: 96
+        interactionScore: 96,
       },
       {
         id: 2,
@@ -114,7 +174,7 @@
         skills: ['Sales B2B', 'Quan hệ khách hàng', 'Tài chính'],
         isPartner: true,
         postedDaysAgo: 2,
-        interactionScore: 94
+        interactionScore: 94,
       },
       {
         id: 3,
@@ -127,7 +187,7 @@
         skills: ['Sales B2B', 'Kinh doanh', 'Quản lý đội ngũ'],
         isPartner: true,
         postedDaysAgo: 3,
-        interactionScore: 88
+        interactionScore: 88,
       },
       {
         id: 4,
@@ -140,7 +200,7 @@
         skills: ['Telesales', 'Bán hàng', 'Tư vấn', 'Sales'],
         isPartner: true,
         postedDaysAgo: 1,
-        interactionScore: 92
+        interactionScore: 92,
       },
       {
         id: 5,
@@ -153,7 +213,7 @@
         skills: ['Sales Logistics', 'Xuất nhập khẩu', 'Cước tàu', 'Sales'],
         isPartner: false,
         postedDaysAgo: 2,
-        interactionScore: 85
+        interactionScore: 85,
       },
       {
         id: 6,
@@ -166,7 +226,7 @@
         skills: ['Bất động sản', 'Sales BĐS', 'Môi giới'],
         isPartner: true,
         postedDaysAgo: 4,
-        interactionScore: 82
+        interactionScore: 82,
       },
       // 2. IT & Phần mềm
       {
@@ -180,7 +240,7 @@
         skills: ['IT Infrastructure', 'System', 'Network', 'DevOps'],
         isPartner: true,
         postedDaysAgo: 1,
-        interactionScore: 98
+        interactionScore: 98,
       },
       {
         id: 11,
@@ -193,7 +253,7 @@
         skills: ['ReactJS', 'TypeScript', 'Frontend', 'Next.js'],
         isPartner: true,
         postedDaysAgo: 1,
-        interactionScore: 95
+        interactionScore: 95,
       },
       {
         id: 14,
@@ -206,7 +266,7 @@
         skills: ['Java', 'Spring Boot', 'Microservices', 'PostgreSQL'],
         isPartner: true,
         postedDaysAgo: 1,
-        interactionScore: 96
+        interactionScore: 96,
       },
       {
         id: 12,
@@ -219,7 +279,7 @@
         skills: ['UI/UX', 'Figma', 'Design System', 'User Research'],
         isPartner: true,
         postedDaysAgo: 2,
-        interactionScore: 93
+        interactionScore: 93,
       },
       // 3. Kế toán & Tài chính
       {
@@ -233,7 +293,7 @@
         skills: ['Kế toán tổng hợp', 'Báo cáo tài chính', 'Thuế'],
         isPartner: false,
         postedDaysAgo: 2,
-        interactionScore: 86
+        interactionScore: 86,
       },
       {
         id: 8,
@@ -246,7 +306,7 @@
         skills: ['Kế toán thuế', 'Kiểm toán', 'Báo cáo thuế'],
         isPartner: true,
         postedDaysAgo: 1,
-        interactionScore: 97
+        interactionScore: 97,
       },
       // 4. Marketing & Truyền thông
       {
@@ -260,7 +320,7 @@
         skills: ['Marketing', 'Brand', 'Chiến lược', 'Quản lý'],
         isPartner: true,
         postedDaysAgo: 1,
-        interactionScore: 92
+        interactionScore: 92,
       },
       {
         id: 16,
@@ -273,7 +333,7 @@
         skills: ['Digital Marketing', 'Facebook Ads', 'Google Ads', 'SEO'],
         isPartner: true,
         postedDaysAgo: 2,
-        interactionScore: 89
+        interactionScore: 89,
       },
       {
         id: 17,
@@ -286,7 +346,7 @@
         skills: ['Content Marketing', 'Copywriting', 'Social Media'],
         isPartner: false,
         postedDaysAgo: 3,
-        interactionScore: 84
+        interactionScore: 84,
       },
       // 5. Ngành nghề khác
       {
@@ -300,7 +360,7 @@
         skills: ['Quản lý', 'Nhà hàng', 'F&B', 'Dịch vụ'],
         isPartner: false,
         postedDaysAgo: 2,
-        interactionScore: 81
+        interactionScore: 81,
       },
       {
         id: 19,
@@ -313,7 +373,7 @@
         skills: ['Kỹ thuật', 'Bảo trì', 'Cơ điện'],
         isPartner: false,
         postedDaysAgo: 4,
-        interactionScore: 78
+        interactionScore: 78,
       },
       {
         id: 20,
@@ -326,32 +386,44 @@
         skills: ['Tuyển dụng', 'HR', 'Nhân sự', 'Đào tạo'],
         isPartner: true,
         postedDaysAgo: 2,
-        interactionScore: 87
-      }
+        interactionScore: 87,
+      },
     ];
 
-    const normalize = value => (value || '')
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .replace(/[đĐ]/g, 'd')
-      .toLocaleLowerCase('vi')
-      .trim();
+    const normalize = (value) =>
+      (value || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[đĐ]/g, 'd')
+        .toLocaleLowerCase('vi')
+        .trim();
 
-    const escapeHtml = value => (value || '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
+    const escapeHtml = (value) =>
+      (value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
 
     function highlightMatch(value, query) {
       const escapedValue = escapeHtml(value);
-      const escapedQuery = escapeHtml(query).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      return escapedQuery ? escapedValue.replace(new RegExp(`(${escapedQuery})`, 'gi'), '<strong>$1</strong>') : escapedValue;
+      const escapedQuery = escapeHtml(query).replace(
+        /[.*+?^${}()|[\]\\]/g,
+        '\\$&',
+      );
+      return escapedQuery
+        ? escapedValue.replace(
+            new RegExp(`(${escapedQuery})`, 'gi'),
+            '<strong>$1</strong>',
+          )
+        : escapedValue;
     }
 
     function getKeywordCount(keyword) {
-      const exact = SUGGESTIONS.find(item => normalize(item.keyword) === normalize(keyword));
+      const exact = SUGGESTIONS.find(
+        (item) => normalize(item.keyword) === normalize(keyword),
+      );
       if (exact) return exact.count;
       let hash = 0;
       for (const char of keyword) hash = (hash * 31 + char.charCodeAt(0)) % 300;
@@ -362,10 +434,16 @@
       try {
         const parsed = JSON.parse(localStorage.getItem(HISTORY_KEY) || 'null');
         if (Array.isArray(parsed)) {
-          return parsed.map(item => typeof item === 'string'
-            ? { keyword: item, count: getKeywordCount(item) }
-            : { keyword: item.keyword, count: item.count || getKeywordCount(item.keyword) }
-          ).filter(item => item.keyword);
+          return parsed
+            .map((item) =>
+              typeof item === 'string'
+                ? { keyword: item, count: getKeywordCount(item) }
+                : {
+                    keyword: item.keyword,
+                    count: item.count || getKeywordCount(item.keyword),
+                  },
+            )
+            .filter((item) => item.keyword);
         }
       } catch (error) {
         console.warn('[Detail Search] Cannot read search history', error);
@@ -384,7 +462,9 @@
     function addHistory(keyword) {
       const clean = (keyword || '').trim();
       if (!clean) return;
-      const history = getHistory().filter(item => normalize(item.keyword) !== normalize(clean));
+      const history = getHistory().filter(
+        (item) => normalize(item.keyword) !== normalize(clean),
+      );
       history.unshift({ keyword: clean, count: getKeywordCount(clean) });
       saveHistory(history.slice(0, 6));
     }
@@ -411,7 +491,7 @@
           <div class="popular-keywords" id="popularKeywordsWrap">
             <h3>Từ khóa phổ biến</h3>
             <div class="popular-keyword-list">
-              ${POPULAR_KEYWORDS.map(keyword => `<button type="button" class="suggest-trend-chip" data-keyword="${escapeHtml(keyword)}">${escapeHtml(keyword)}</button>`).join('')}
+              ${POPULAR_KEYWORDS.map((keyword) => `<button type="button" class="suggest-trend-chip" data-keyword="${escapeHtml(keyword)}">${escapeHtml(keyword)}</button>`).join('')}
             </div>
           </div>
         </section>
@@ -441,16 +521,18 @@
       if (categoryHidden?.value) params.set('category', categoryHidden.value);
       if (industryHidden?.value) params.set('industry', industryHidden.value);
       closeDropdown();
-      window.location.assign(`viec-lam.html${params.size ? `?${params.toString()}` : ''}`);
+      window.location.assign(
+        `viec-lam.html${params.size ? `?${params.toString()}` : ''}`,
+      );
     }
 
     function bindSearchAction(element, keyword) {
-      element.addEventListener('click', event => {
+      element.addEventListener('click', (event) => {
         event.preventDefault();
         executeSearch(keyword);
       });
       if (element.tagName === 'BUTTON') return;
-      element.addEventListener('keydown', event => {
+      element.addEventListener('keydown', (event) => {
         if (event.target !== element) return;
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
@@ -464,11 +546,12 @@
       recentList.innerHTML = '';
       clearHistoryButton.hidden = history.length === 0;
       if (!history.length) {
-        recentList.innerHTML = '<span class="recent-empty-hint">Chưa có lịch sử tìm kiếm gần đây</span>';
+        recentList.innerHTML =
+          '<span class="recent-empty-hint">Chưa có lịch sử tìm kiếm gần đây</span>';
         return;
       }
 
-      history.slice(0, 6).forEach(item => {
+      history.slice(0, 6).forEach((item) => {
         const row = document.createElement('div');
         row.className = 'recent-search-row';
         row.tabIndex = 0;
@@ -479,12 +562,19 @@
           <button type="button" class="recent-search-remove" aria-label="Xóa từ khóa ${escapeHtml(item.keyword)}" title="Xóa từ khóa này">✕</button>
         `;
         bindSearchAction(row, item.keyword);
-        row.querySelector('.recent-search-remove').addEventListener('click', event => {
-          event.preventDefault();
-          event.stopPropagation();
-          saveHistory(getHistory().filter(historyItem => normalize(historyItem.keyword) !== normalize(item.keyword)));
-          renderHistory();
-        });
+        row
+          .querySelector('.recent-search-remove')
+          .addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            saveHistory(
+              getHistory().filter(
+                (historyItem) =>
+                  normalize(historyItem.keyword) !== normalize(item.keyword),
+              ),
+            );
+            renderHistory();
+          });
         recentList.appendChild(row);
       });
     }
@@ -498,13 +588,18 @@
       const seenCompanyKeys = new Set();
 
       const allCompaniesList = [...POPULAR_COMPANIES];
-      RECOMMENDED_JOBS_POOL.forEach(j => {
-        if (j.company && !allCompaniesList.some(c => c.name.toLowerCase() === j.company.toLowerCase())) {
+      RECOMMENDED_JOBS_POOL.forEach((j) => {
+        if (
+          j.company &&
+          !allCompaniesList.some(
+            (c) => c.name.toLowerCase() === j.company.toLowerCase(),
+          )
+        ) {
           allCompaniesList.push({ name: j.company, shortName: j.company });
         }
       });
 
-      allCompaniesList.forEach(comp => {
+      allCompaniesList.forEach((comp) => {
         const normName = normalize(comp.name);
         const normShort = normalize(comp.shortName || '');
         if (normName.includes(clean) || normShort.includes(clean)) {
@@ -515,7 +610,7 @@
               type: 'company',
               keyword: comp.shortName || comp.name,
               label: comp.name,
-              searchKey: comp.shortName || comp.name
+              searchKey: comp.shortName || comp.name,
             });
           }
         }
@@ -526,7 +621,7 @@
       const seenJobKeys = new Set();
 
       // 2a. Việc làm từ dataset khớp theo title hoặc thuộc công ty được tìm
-      RECOMMENDED_JOBS_POOL.forEach(job => {
+      RECOMMENDED_JOBS_POOL.forEach((job) => {
         const normTitle = normalize(job.title);
         const normCompany = normalize(job.company || '');
         const isTitleMatch = normTitle.includes(clean);
@@ -539,15 +634,18 @@
             matchedJobs.push({
               type: 'job',
               keyword: job.title,
-              label: isCompanyMatch && !isTitleMatch ? `${job.title} — ${job.company}` : job.title,
-              searchKey: job.title
+              label:
+                isCompanyMatch && !isTitleMatch
+                  ? `${job.title} - ${job.company}`
+                  : job.title,
+              searchKey: job.title,
             });
           }
         }
       });
 
       // 2b. Vai trò/vị trí chuẩn từ SUGGESTIONS
-      SUGGESTIONS.forEach(item => {
+      SUGGESTIONS.forEach((item) => {
         if (normalize(item.keyword).includes(clean)) {
           const key = item.keyword.toLowerCase();
           if (!seenJobKeys.has(key)) {
@@ -556,7 +654,7 @@
               type: 'job',
               keyword: item.keyword,
               label: item.keyword,
-              searchKey: item.keyword
+              searchKey: item.keyword,
             });
           }
         }
@@ -565,16 +663,20 @@
       // 3. Phân bổ thông minh: hiển thị cả Công ty và Việc làm (tối đa 10 mục)
       let finalMatches = [];
       if (matchedCompanies.length > 0 && matchedJobs.length > 0) {
-        const isCompanySearch = matchedCompanies.some(c => normalize(c.keyword) === clean || normalize(c.label).startsWith(clean));
+        const isCompanySearch = matchedCompanies.some(
+          (c) =>
+            normalize(c.keyword) === clean ||
+            normalize(c.label).startsWith(clean),
+        );
         if (isCompanySearch) {
           finalMatches = [
             ...matchedCompanies.slice(0, 4),
-            ...matchedJobs.slice(0, 6)
+            ...matchedJobs.slice(0, 6),
           ];
         } else {
           finalMatches = [
             ...matchedJobs.slice(0, 6),
-            ...matchedCompanies.slice(0, 4)
+            ...matchedCompanies.slice(0, 4),
           ];
         }
       } else {
@@ -597,23 +699,27 @@
         return;
       }
 
-      finalMatches.forEach(item => {
+      finalMatches.forEach((item) => {
         const row = document.createElement('div');
         row.className = `keyword-suggestion-row is-${item.type}`;
         row.tabIndex = 0;
         row.setAttribute('role', 'button');
         row.innerHTML = `
           <div class="kw-suggest-left">
-            ${item.type === 'company' ? `
+            ${
+              item.type === 'company'
+                ? `
               <svg class="kw-suggest-icon kw-icon-company" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M3 21h18M3 7v14M21 7v14M6 10h2M6 14h2M6 18h2M11 10h2M11 14h2M11 18h2M16 10h2M16 14h2M16 18h2M9 3h6v4H9z"/>
               </svg>
-            ` : `
+            `
+                : `
               <svg class="kw-suggest-icon kw-icon-job" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
                 <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
               </svg>
-            `}
+            `
+            }
             <span class="kw-suggest-text" title="${escapeHtml(item.label)}">${highlightMatch(item.label, query)}</span>
           </div>
         `;
@@ -628,24 +734,28 @@
       const keywordsSet = new Set();
       const taxData = window.EasyCVCategoryData || [];
 
-      taxData.forEach(cat => {
+      taxData.forEach((cat) => {
         const catNameNorm = normalize(cat.name || '');
-        const popMatches = (cat.popularKeywords || []).filter(pk => normalize(pk).includes(normQ));
+        const popMatches = (cat.popularKeywords || []).filter((pk) =>
+          normalize(pk).includes(normQ),
+        );
 
         if (catNameNorm.includes(normQ) || popMatches.length > 0) {
           keywordsSet.add(cat.name);
-          (cat.popularKeywords || []).forEach(pk => keywordsSet.add(pk));
-          (cat.subgroups || []).forEach(sg => {
-            (sg.roles || []).slice(0, 3).forEach(r => keywordsSet.add(r));
+          (cat.popularKeywords || []).forEach((pk) => keywordsSet.add(pk));
+          (cat.subgroups || []).forEach((sg) => {
+            (sg.roles || []).slice(0, 3).forEach((r) => keywordsSet.add(r));
           });
         } else {
-          (cat.subgroups || []).forEach(sg => {
+          (cat.subgroups || []).forEach((sg) => {
             const titleMatch = normalize(sg.title || '').includes(normQ);
-            const roleMatches = (sg.roles || []).filter(r => normalize(r).includes(normQ));
+            const roleMatches = (sg.roles || []).filter((r) =>
+              normalize(r).includes(normQ),
+            );
             if (titleMatch || roleMatches.length > 0) {
               keywordsSet.add(cat.name);
               keywordsSet.add(sg.title);
-              roleMatches.forEach(r => keywordsSet.add(r));
+              roleMatches.forEach((r) => keywordsSet.add(r));
             }
           });
         }
@@ -664,7 +774,9 @@
         // 1. Khi chưa nhập: Đề xuất dựa trên hành vi search, view, save, CV và tín hiệu job
         let recentKws = [];
         try {
-          recentKws = getHistory().map(item => normalize(typeof item === 'string' ? item : item.keyword));
+          recentKws = getHistory().map((item) =>
+            normalize(typeof item === 'string' ? item : item.keyword),
+          );
         } catch (e) {}
 
         let savedJobIds = [];
@@ -673,14 +785,22 @@
           savedJobIds = JSON.parse(rawSaved);
         } catch (e) {}
 
-        const scoredJobs = RECOMMENDED_JOBS_POOL.map(job => {
+        const scoredJobs = RECOMMENDED_JOBS_POOL.map((job) => {
           let score = 50;
-          const jobTextNorm = normalize(`${job.title} ${job.company} ${job.category || ''} ${(job.skills || []).join(' ')}`);
+          const jobTextNorm = normalize(
+            `${job.title} ${job.company} ${job.category || ''} ${(job.skills || []).join(' ')}`,
+          );
 
-          const matchedRecent = recentKws.some(kw => kw && jobTextNorm.includes(kw));
+          const matchedRecent = recentKws.some(
+            (kw) => kw && jobTextNorm.includes(kw),
+          );
           if (matchedRecent) score += 35;
 
-          if (Array.isArray(savedJobIds) && (savedJobIds.includes(job.id) || savedJobIds.includes(String(job.id)))) {
+          if (
+            Array.isArray(savedJobIds) &&
+            (savedJobIds.includes(job.id) ||
+              savedJobIds.includes(String(job.id)))
+          ) {
             score += 30;
           }
 
@@ -690,7 +810,8 @@
 
           if (job.isPartner) score += 20;
           if (job.postedDaysAgo && job.postedDaysAgo <= 2) score += 15;
-          if (job.interactionScore) score += Math.round(job.interactionScore / 10);
+          if (job.interactionScore)
+            score += Math.round(job.interactionScore / 10);
 
           return { ...job, totalScore: score };
         });
@@ -699,9 +820,11 @@
         jobsToDisplay = scoredJobs.slice(0, 5);
       } else {
         // 2. Khi đã nhập: Đề xuất dựa vào từ khóa nhập và truy xuất vào taxonomy ngành nghề
-        const industryKeywords = extractIndustryKeywords(clean).map(kw => normalize(kw));
+        const industryKeywords = extractIndustryKeywords(clean).map((kw) =>
+          normalize(kw),
+        );
 
-        const scoredJobs = RECOMMENDED_JOBS_POOL.map(job => {
+        const scoredJobs = RECOMMENDED_JOBS_POOL.map((job) => {
           let score = 0;
           const titleNorm = normalize(job.title);
           const companyNorm = normalize(job.company);
@@ -712,14 +835,18 @@
           if (titleNorm.includes(clean)) score += 60;
           if (skillsNorm.includes(clean)) score += 45;
 
-          const matchedTaxonomy = industryKeywords.some(ikw => ikw && fullJobText.includes(ikw));
+          const matchedTaxonomy = industryKeywords.some(
+            (ikw) => ikw && fullJobText.includes(ikw),
+          );
           if (matchedTaxonomy) score += 35;
 
           if (catNorm.includes(clean)) score += 25;
           if (companyNorm.includes(clean)) score += 15;
 
-          const words = clean.split(/\s+/).filter(w => w.length > 1);
-          const wordMatchCount = words.filter(w => fullJobText.includes(w)).length;
+          const words = clean.split(/\s+/).filter((w) => w.length > 1);
+          const wordMatchCount = words.filter((w) =>
+            fullJobText.includes(w),
+          ).length;
           score += wordMatchCount * 10;
 
           if (score > 0 && job.isPartner) score += 10;
@@ -727,7 +854,7 @@
           return { ...job, totalScore: score };
         });
 
-        const matched = scoredJobs.filter(j => j.totalScore > 0);
+        const matched = scoredJobs.filter((j) => j.totalScore > 0);
         if (matched.length > 0) {
           matched.sort((a, b) => b.totalScore - a.totalScore);
           jobsToDisplay = matched.slice(0, 5);
@@ -736,7 +863,9 @@
         }
       }
 
-      recommendedJobList.innerHTML = jobsToDisplay.map(job => `
+      recommendedJobList.innerHTML = jobsToDisplay
+        .map(
+          (job) => `
         <button type="button" class="recommended-job" data-keyword="${escapeHtml(job.title)}" aria-label="Tìm ${escapeHtml(job.title)}, công ty ${escapeHtml(job.company)}, mức lương ${escapeHtml(job.salary)}, địa điểm ${escapeHtml(job.location || 'Toàn quốc')}">
           <span class="recommended-job-logo" aria-hidden="true" title="Công ty ${escapeHtml(job.company)} tuyển dụng tại EasyCV">
             <img src="${escapeHtml(job.logo)}" alt="" width="50" height="50" loading="lazy">
@@ -750,11 +879,18 @@
             </div>
           </span>
         </button>
-      `).join('');
+      `,
+        )
+        .join('');
 
-      recommendedJobList.querySelectorAll('.recommended-job').forEach(button => {
-        bindSearchAction(button, button.dataset.keyword || button.textContent.trim());
-      });
+      recommendedJobList
+        .querySelectorAll('.recommended-job')
+        .forEach((button) => {
+          bindSearchAction(
+            button,
+            button.dataset.keyword || button.textContent.trim(),
+          );
+        });
     }
 
     renderRecommendedJobs('');
@@ -782,10 +918,18 @@
 
       const barRect = parentBar.getBoundingClientRect();
       const boxRect = box.getBoundingClientRect();
-      dropdown.style.setProperty('--search-suggest-top', `${Math.max(0, Math.round(boxRect.bottom - barRect.top + 8))}px`);
+      dropdown.style.setProperty(
+        '--search-suggest-top',
+        `${Math.max(0, Math.round(boxRect.bottom - barRect.top + 8))}px`,
+      );
 
       if (window.innerWidth <= 900) {
-        Object.assign(dropdown.style, { left: '0', right: '0', width: '100%', maxWidth: '100%' });
+        Object.assign(dropdown.style, {
+          left: '0',
+          right: '0',
+          width: '100%',
+          maxWidth: '100%',
+        });
         return;
       }
       const inputRect = inputGroup.getBoundingClientRect();
@@ -793,11 +937,17 @@
       const right = Math.max(0, Math.round(barRect.right - boxRect.right));
       dropdown.style.setProperty('--search-suggest-left', `${left}px`);
       dropdown.style.setProperty('--search-suggest-right', `${right}px`);
-      Object.assign(dropdown.style, { left: `${left}px`, right: `${right}px`, width: 'auto', maxWidth: 'none' });
+      Object.assign(dropdown.style, {
+        left: `${left}px`,
+        right: `${right}px`,
+        width: 'auto',
+        maxWidth: 'none',
+      });
     }
 
     function openDropdown() {
-      if (window.EasyCVCategoryModal?.isOpen) window.EasyCVCategoryModal.close(false);
+      if (window.EasyCVCategoryModal?.isOpen)
+        window.EasyCVCategoryModal.close(false);
       updatePosition();
       updateMode();
       dropdown.classList.add('is-open');
@@ -809,10 +959,13 @@
       input.setAttribute('aria-expanded', 'false');
     }
 
-    dropdown.querySelectorAll('.suggest-trend-chip').forEach(button => {
-      bindSearchAction(button, button.dataset.keyword || button.textContent.trim());
+    dropdown.querySelectorAll('.suggest-trend-chip').forEach((button) => {
+      bindSearchAction(
+        button,
+        button.dataset.keyword || button.textContent.trim(),
+      );
     });
-    clearHistoryButton.addEventListener('click', event => {
+    clearHistoryButton.addEventListener('click', (event) => {
       event.preventDefault();
       event.stopPropagation();
       saveHistory([]);
@@ -820,16 +973,17 @@
     });
 
     input.addEventListener('focus', openDropdown);
-    input.addEventListener('click', event => {
+    input.addEventListener('click', (event) => {
       event.stopPropagation();
       openDropdown();
     });
     input.addEventListener('input', () => {
-      if (clearButton) clearButton.style.display = input.value.trim() ? 'flex' : 'none';
+      if (clearButton)
+        clearButton.style.display = input.value.trim() ? 'flex' : 'none';
       if (!dropdown.classList.contains('is-open')) openDropdown();
       else updateMode();
     });
-    input.addEventListener('keydown', event => {
+    input.addEventListener('keydown', (event) => {
       if (event.key === 'Enter') {
         event.preventDefault();
         executeSearch(input.value);
@@ -838,10 +992,10 @@
         input.blur();
       }
     });
-    input.closest('.search-input-group')?.addEventListener('click', event => {
+    input.closest('.search-input-group')?.addEventListener('click', (event) => {
       if (!event.target.closest('#clearSearchInputBtn')) input.focus();
     });
-    clearButton?.addEventListener('click', event => {
+    clearButton?.addEventListener('click', (event) => {
       event.preventDefault();
       event.stopPropagation();
       input.value = '';
@@ -849,20 +1003,25 @@
       input.focus();
       openDropdown();
     });
-    form.addEventListener('submit', event => {
+    form.addEventListener('submit', (event) => {
       event.preventDefault();
       executeSearch(input.value);
     });
     categoryTrigger?.addEventListener('click', closeDropdown);
     locationTrigger?.addEventListener('click', closeDropdown);
-    document.addEventListener('click', event => {
+    document.addEventListener('click', (event) => {
       if (!wrapper.contains(event.target)) closeDropdown();
     });
     window.addEventListener('resize', updatePosition, { passive: true });
     window.addEventListener('scroll', updatePosition, { passive: true });
 
-    document.addEventListener('easycv:category-applied', event => {
-      const { groups = [], subgroups = [], roles = [], primaryQuery = '' } = event.detail || {};
+    document.addEventListener('easycv:category-applied', (event) => {
+      const {
+        groups = [],
+        subgroups = [],
+        roles = [],
+        primaryQuery = '',
+      } = event.detail || {};
       const chosen = primaryQuery || roles[0] || subgroups[0] || '';
       if (categoryHidden) categoryHidden.value = groups[0] || '';
       if (industryHidden) industryHidden.value = chosen;

@@ -1,6 +1,6 @@
 # Hướng Dẫn Vận Hành Dành Cho AI Agent (AGENTS.md)
 
-Dự án: **EasyCV — Nền tảng Tuyển dụng & Khám phá Việc làm Thông minh**  
+Dự án: **EasyCV - Nền tảng Tuyển dụng & Khám phá Việc làm Thông minh**  
 
 ---
 
@@ -11,13 +11,13 @@ Dự án: **EasyCV — Nền tảng Tuyển dụng & Khám phá Việc làm Thô
 
 ---
 
-## 2. Phân Tầng Tác Vụ (Task Tiers) — chọn tầng nhỏ nhất đủ dùng
+## 2. Phân Tầng Tác Vụ (Task Tiers) - chọn tầng nhỏ nhất đủ dùng
 
 | Tầng        | Ví dụ                                                                              | Quy trình                                                                                                                           |
 | ----------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| **S — nhỏ** | Đổi chữ/màu/khoảng cách, sửa menu, sửa bố cục một component, sửa lỗi CSS/JS cục bộ | Sửa trực tiếp. Kiểm tra bằng `npm run build`, `git diff`, `node --check` (nếu có JS).                                                |
-| **M — vừa** | Component/section mới, đổi hành vi một trang, thay đổi dữ liệu dùng chung          | Sửa trực tiếp, tự kiểm tra bằng `npm run verify -- <trang> 1440 375` (ảnh chụp ở `scratch/`). Chỉ review khi người dùng yêu cầu.     |
-| **L — lớn** | Tính năng/trang mới, thay đổi kiến trúc hoặc yêu cầu sản phẩm                      | Lập kế hoạch triển khai, kiểm thử đầy đủ các luồng bị ảnh hưởng và ghi tài liệu kỹ thuật khi cần.                                    |
+| **S - nhỏ** | Đổi chữ/màu/khoảng cách, sửa menu, sửa bố cục một component, sửa lỗi CSS/JS cục bộ | Sửa trực tiếp. Kiểm tra bằng `npm run build`, `git diff`, `node --check` (nếu có JS).                                                |
+| **M - vừa** | Component/section mới, đổi hành vi một trang, thay đổi dữ liệu dùng chung          | Sửa trực tiếp, tự kiểm tra bằng `npm run verify -- <trang> 1440 375` (ảnh chụp ở `scratch/`). Chỉ review khi người dùng yêu cầu.     |
+| **L - lớn** | Tính năng/trang mới, thay đổi kiến trúc hoặc yêu cầu sản phẩm                      | Lập kế hoạch triển khai, kiểm thử đầy đủ các luồng bị ảnh hưởng và ghi tài liệu kỹ thuật khi cần.                                    |
 
 Nếu không chắc tầng nào: chọn tầng thấp hơn và hỏi lại khi phát sinh rủi ro. Người dùng có thể nâng tầng bằng cách nói rõ "review kỹ".
 
@@ -25,10 +25,10 @@ Nếu không chắc tầng nào: chọn tầng thấp hơn và hỏi lại khi p
 
 ## 3. Cấu Trúc Mã Nguồn & Build (Single Source of Truth)
 
-- **Nguồn duy nhất là thư mục gốc**: `*.html`, `css/`, `js/`, `assets/`. **KHÔNG sửa tay trong `public/`** — nó là bản sao sinh tự động.
-- **Header & mobile drawer dùng chung** nằm ở [`tools/partials/header.html`](tools/partials/header.html) và [`tools/partials/drawer.html`](tools/partials/drawer.html). Trong các trang, phần này nằm giữa các marker `<!-- @include:header -->…<!-- @end:header -->` (và `drawer`). **Không sửa tay giữa marker** — sửa partial rồi chạy build.
+- **Nguồn duy nhất là thư mục gốc**: `*.html`, `css/`, `js/`, `assets/`. **KHÔNG sửa tay trong `public/`** - nó là bản sao sinh tự động.
+- **Header & mobile drawer dùng chung** nằm ở [`tools/partials/header.html`](tools/partials/header.html) và [`tools/partials/drawer.html`](tools/partials/drawer.html). Trong các trang, phần này nằm giữa các marker `<!-- @include:header -->…<!-- @end:header -->` (và `drawer`). **Không sửa tay giữa marker** - sửa partial rồi chạy build.
 - Lệnh:
-  - `npm run build` — chèn partial vào 4 trang rồi đồng bộ sang `public/`.
-  - `npm run check` — báo lỗi nếu trang/`public/` chưa được build (dùng thay cho so sánh SHA-256 thủ công).
-  - `npm run verify -- <trang> [rộng...]` — chụp ảnh headless Chrome vào `scratch/shot-<trang>-<rộng>.png`.
+  - `npm run build` - chèn partial vào 4 trang rồi đồng bộ sang `public/`.
+  - `npm run check` - báo lỗi nếu trang/`public/` chưa được build (dùng thay cho so sánh SHA-256 thủ công).
+  - `npm run verify -- <trang> [rộng...]` - chụp ảnh headless Chrome vào `scratch/shot-<trang>-<rộng>.png`.
 - Mọi thay đổi cho 4 trang phải kết thúc bằng `npm run build`. Không viết script `apply_*.js` / `verify_*.js` dùng một lần; `scratch/` đã được git-ignore và chỉ dành cho file tạm.
