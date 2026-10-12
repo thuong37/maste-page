@@ -74,20 +74,55 @@
       .hero-mock-section {
         position: relative;
         background:
+          /* Vòng sóng mảnh góc phải trên */
           radial-gradient(
-            ellipse at 80% 20%,
-            rgba(255, 101, 0, 0.07),
-            transparent 50%
+            circle at 100% 0%,
+            transparent 239px,
+            rgba(255, 101, 0, 0.1) 240px,
+            transparent 241.5px,
+            transparent 319px,
+            rgba(255, 101, 0, 0.07) 320px,
+            transparent 321.5px,
+            transparent 399px,
+            rgba(255, 101, 0, 0.05) 400px,
+            transparent 401.5px
           ),
+          /* Quầng vàng nắng góc trái trên */
           radial-gradient(
-            ellipse at 15% 70%,
-            rgba(14, 165, 233, 0.05),
-            transparent 50%
+            ellipse 55% 75% at 6% 0%,
+            rgba(255, 199, 56, 0.42),
+            transparent 70%
           ),
-          #ffffff;
-        border-bottom: 1px solid #e6e6e6;
+          /* Quầng cam thương hiệu góc phải */
+          radial-gradient(
+            ellipse 45% 65% at 94% 12%,
+            rgba(255, 101, 0, 0.16),
+            transparent 70%
+          ),
+          /* Quầng đào phía dưới */
+          radial-gradient(
+            ellipse 50% 55% at 55% 100%,
+            rgba(255, 184, 138, 0.24),
+            transparent 70%
+          ),
+          linear-gradient(180deg, #fff4d6 0%, #fff8e8 55%, #fffcf5 100%);
+        border-bottom: 1px solid rgba(255, 101, 0, 0.12);
         padding: 34px 0 28px 0;
         overflow: visible;
+      }
+      /* Họa tiết chấm mờ, nhạt dần xuống dưới (không z-index để nằm dưới nội dung) */
+      .hero-mock-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image: radial-gradient(
+          rgba(181, 72, 0, 0.16) 1px,
+          transparent 1.6px
+        );
+        background-size: 22px 22px;
+        -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 75%);
+        mask-image: linear-gradient(180deg, #000 0%, transparent 75%);
       }
       .hero-container {
         max-width: var(--container-max-width, 1250px);
@@ -1130,6 +1165,36 @@
         .btn-hero-search {
           justify-content: center;
           width: 100%;
+        }
+        /* Thanh search mobile gọn hơn (ghi đè mobile-typography.css chỉ cho trang chủ) */
+        .hero-search-wrapper {
+          min-height: 0;
+        }
+        .hero-mock-section .hero-search-box {
+          padding: 4px !important;
+          gap: 6px !important;
+        }
+        .hero-mock-section
+          .hero-search-box
+          .search-input-group:not(.search-location-group) {
+          height: 36px !important;
+          gap: 8px;
+        }
+        .hero-mock-section .hero-search-box .search-input-group svg {
+          width: 18px;
+          height: 18px;
+        }
+        .hero-mock-section .hero-search-box .search-input {
+          font-size: 14px;
+        }
+        .hero-mock-section .hero-search-box .btn-hero-search {
+          height: 36px !important;
+          padding: 0 14px !important;
+          font-size: 13.5px !important;
+        }
+        .hero-mock-section .hero-search-box .btn-hero-search svg {
+          width: 16px;
+          height: 16px;
         }
         .search-suggest-dropdown {
           left: 0 !important;
@@ -3200,7 +3265,7 @@
                     <circle cx="11" cy="11" r="8" />
                     <path d="m21 21-4.3-4.3" />
                   </svg>
-                  <span>Tìm việc ngay</span>
+                  <span>Tìm kiếm</span>
                 </button>
               </div>
 

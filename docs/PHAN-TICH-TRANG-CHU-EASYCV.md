@@ -223,7 +223,7 @@ Agent **KHÔNG ĐƯỢC** phục hồi các khối trên nếu không có yêu c
 
 #### H02.1. Cấu trúc
 
-Thứ tự: nút Danh mục Nghề → input từ khóa → bộ chọn địa điểm → CTA “Tìm việc ngay”. Hero không còn heading nhìn thấy; H1 `.sr-only` là “EasyCV - Nền tảng Tuyển dụng & Khám phá Việc làm Thông minh”.
+Thứ tự: nút Danh mục Nghề → input từ khóa → bộ chọn địa điểm → CTA “Tìm kiếm”. Hero không còn heading nhìn thấy; H1 `.sr-only` là “EasyCV - Nền tảng Tuyển dụng & Khám phá Việc làm Thông minh”.
 
 #### H02.2. Sticky search
 

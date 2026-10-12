@@ -3843,6 +3843,10 @@
 }
 
 @media (max-width: 768px) {
+  /* Mobile: ẩn cột quảng cáo (thẻ nhà tuyển dụng VIP + Trợ lý AI CV) */
+  .ads-sidebar-container {
+    display: none;
+  }
   .top-filter-bar {
     padding: 12px 14px;
     margin-bottom: 16px;
