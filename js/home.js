@@ -8899,7 +8899,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="job-pill job-pill-location">${job.city || job.location.split('&')[0].split('(')[0].trim()}</span>
               </div>
               <button type="button" class="btn-bookmark ${isSaved ? 'active' : ''}" data-job-id="${job.id}" aria-label="${isSaved ? 'Bỏ Lưu' : 'Lưu công việc này'}" title="${isSaved ? 'Đã Lưu' : 'Lưu'}">
-                <svg viewBox="0 0 24 24" fill="${isSaved ? '#FF3333' : 'none'}" stroke="${isSaved ? '#FF3333' : 'currentColor'}"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="${isSaved ? '#FF3333' : 'none'}" stroke="${isSaved ? '#FF3333' : 'currentColor'}"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
               </button>
             </div>
           </article>
@@ -9141,7 +9141,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
           <button type="button" class="job-preview-btn-save ${isSaved ? 'active' : ''}" data-job-id="${job.id}" aria-label="${isSaved ? 'Bỏ lưu việc làm' : 'Lưu công việc này'}" title="${isSaved ? 'Đã lưu' : 'Lưu'}">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="${isSaved ? '#EF4444' : 'none'}" stroke="${isSaved ? '#EF4444' : 'currentColor'}" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="${isSaved ? '#EF4444' : 'none'}" stroke="${isSaved ? '#EF4444' : 'currentColor'}" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
           </button>
         </div>
       `;

@@ -2020,7 +2020,7 @@
 
 .job-card {
   background: #ffffff;
-  border: 1.5px solid #a0d6bb;
+  border: 1px solid #CFCFCF;
   border-radius: 16px;
   padding: 12px 18px;
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2040,7 +2040,12 @@
 }
 
 .job-card.is-featured {
-  border-left: 4px solid var(--color-primary, #ff6500);
+  border-color: #CFCFCF;
+}
+
+.job-card.is-featured:hover,
+.job-card.is-featured.is-hovered {
+  border-color: var(--color-primary, #ff6500);
 }
 
 .job-card-top {
