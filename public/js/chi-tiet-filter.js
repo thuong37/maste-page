@@ -822,7 +822,11 @@
     }
 
     document.addEventListener('click', function (e) {
-      if (!e.target.closest('#chiTietTopFilterBar .filter-dropdown-wrap')) {
+      // Mobile: chạm vào lớp nền mờ (::before của wrap) cũng đóng menu
+      if (
+        !e.target.closest('#chiTietTopFilterBar .filter-dropdown-wrap') ||
+        e.target.classList.contains('filter-dropdown-wrap')
+      ) {
         closeAllFilterDropdowns();
       }
     });

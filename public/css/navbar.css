@@ -689,6 +689,12 @@ body {
   gap: 6px;
 }
 
+.menu-group-title svg {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+
 .menu-group-link {
   display: flex;
   align-items: center;
@@ -2689,5 +2695,107 @@ body.in-simulator *::-webkit-scrollbar,
     bottom: 84px;
     right: 12px;
     transform: none;
+  }
+}
+
+/* Điện thoại nhỏ (≤374px): thu gọn cụm nút header để nút menu ☰ không bị đẩy ra ngoài màn hình */
+@media (max-width: 374px) {
+  .navbar {
+    gap: 8px;
+    padding: 0 12px;
+  }
+  .brand-logo-img {
+    height: 32px;
+  }
+  .navbar-actions {
+    gap: 4px;
+  }
+  .navbar-actions .action-icon-btn,
+  .mobile-toggle-btn {
+    width: 34px;
+    height: 34px;
+  }
+  .user-profile-btn > svg {
+    display: none;
+  }
+}
+
+/* Mobile: bảng thông báo / tin nhắn rộng 360px bị lệch ra ngoài mép trái → trải theo chiều ngang màn hình */
+@media (max-width: 600px) {
+  .popover-panel {
+    position: fixed;
+    top: calc(var(--navbar-height, 60px) + 6px);
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-height: calc(100vh - var(--navbar-height, 60px) - 24px);
+    overflow-y: auto;
+    transform-origin: top center;
+  }
+}
+
+/* ===== Thanh điều hướng đáy trên mobile (kiểu app) ===== */
+.mobile-tabbar {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile-tabbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 950;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 0px));
+    background: #fff;
+    border-top: 1px solid var(--eb-text-100, #E6E6E6);
+    box-shadow: 0 -4px 16px rgba(6, 14, 24, 0.06);
+  }
+  .mobile-tabbar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 4px 0;
+    color: var(--eb-text-300, #8A8A8A);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .mobile-tabbar-item svg {
+    width: 24px;
+    height: 24px;
+  }
+  .mobile-tabbar-item.is-active {
+    color: var(--eb-primary-500, #FF6500);
+  }
+  body:has(.mobile-tabbar) {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Nút menu ☰ là con trực tiếp của .navbar: cụm nút bên phải luôn dồn về mép phải */
+@media (max-width: 1100px) {
+  .navbar-actions {
+    margin-left: auto;
+  }
+}
+/* Điện thoại: nút ☰ vẫn ở cuối hàng bên phải, sát cụm nút */
+@media (max-width: 768px) {
+  .navbar {
+    gap: 6px;
+  }
+}
+/* iPad / tablet: nút ☰ nằm góc trên bên trái, cạnh logo */
+@media (min-width: 600px) and (max-width: 1100px) {
+  .navbar {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .mobile-toggle-btn {
+    order: -1;
+    margin-left: 0;
   }
 }

@@ -21,8 +21,8 @@
       rel="stylesheet"
       href="assets/design-tokens.css?v=eb_colors_20261007"
     />
-    <link rel="stylesheet" href="css/navbar.css?v=compact_20261012" />
-    <link rel="stylesheet" href="css/home.css?v=logo5_20261012" />
+    <link rel="stylesheet" href="css/navbar.css?v=ipadmenu2_20261012" />
+    <link rel="stylesheet" href="css/home.css?v=apphero3_20261012" />
     <link
       rel="stylesheet"
       href="css/location-picker.css?v=eb_colors_20261007"
@@ -33,7 +33,7 @@
     />
     <link
       rel="stylesheet"
-      href="css/mobile-typography.css?v=mobile_type_20261011"
+      href="css/mobile-typography.css?v=mfix_20261012"
     />
     <style>
       /* Menu dropdown luôn căn trái 100% */
@@ -1472,7 +1472,7 @@
       }
       @media (max-width: 640px) {
         .jobs-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: minmax(0, 1fr);
         }
       }
 
@@ -1782,6 +1782,7 @@
         bottom: calc(100% + 8px);
         left: -10px;
         width: 310px;
+        max-width: calc(100vw - 48px);
         background: #060e18;
         color: #f8fafc;
         border: 1px solid rgba(245, 158, 11, 0.4);
@@ -2852,12 +2853,12 @@
           </div>
         </div>
 
-        <!-- Mobile Menu Toggle Button (Hamburger) -->
-        <button id="mobile-toggle-btn" class="mobile-toggle-btn" aria-label="Mở menu trên điện thoại">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-        </button>
 
       </div>
+      <!-- Mobile Menu Toggle Button (Hamburger) -->
+      <button id="mobile-toggle-btn" class="mobile-toggle-btn" aria-label="Mở menu trên điện thoại">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
     </nav>
   </header>
   <!-- @end:header -->
@@ -2950,6 +2951,11 @@
           <h1 class="sr-only">
             EasyCV - Nền tảng Tuyển dụng & Khám phá Việc làm Thông minh
           </h1>
+
+          <!-- Tiêu đề hero chỉ hiện trên mobile -->
+          <p class="hero-mobile-title" aria-hidden="true">
+            Tìm việc nhanh, CV chuẩn, ứng tuyển hiệu quả
+          </p>
 
           <!-- KHỐI TÌM KIẾM THÔNG MINH (KÈM POPUP GỢI Ý ĐÈ LÊN KHỐI TIÊU ĐIỂM) -->
           <div class="hero-search-wrapper" id="heroSearchWrapper">
@@ -3511,6 +3517,41 @@
               data-keyword="Telesales"
               >Telesales</a
             >
+          </div>
+
+          <!-- Tìm việc theo ngành nghề: hàng thẻ vuốt ngang, chỉ hiện trên mobile -->
+          <div class="hero-industry" aria-label="Tìm kiếm việc làm theo ngành nghề">
+            <p class="hero-industry-heading">Tìm việc theo ngành nghề</p>
+            <div class="hero-industry-scroller">
+            <a href="viec-lam.html?keyword=Kinh+doanh" class="hero-industry-chip">
+              <span class="hero-industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2.2 0 3 6 1.6 6 4.6 0 1.3-1.3 2.2-3 2.2-1.4 0-2.6-.6-3.1-1.6"/><path d="M12 6v2m0 8v2"/></svg></span>
+              <span class="hero-industry-label">Kinh doanh / Bán hàng</span>
+            </a>
+            <a href="viec-lam.html?keyword=IT" class="hero-industry-chip">
+              <span class="hero-industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg></span>
+              <span class="hero-industry-label">IT - Phần mềm</span>
+            </a>
+            <a href="viec-lam.html?keyword=Marketing" class="hero-industry-chip">
+              <span class="hero-industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
+              <span class="hero-industry-label">Marketing / PR / Quảng cáo</span>
+            </a>
+            <a href="viec-lam.html?keyword=T%C3%A0i+ch%C3%ADnh" class="hero-industry-chip">
+              <span class="hero-industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V10m4 11V10m6 11V10m4 11V10"/><path d="m12 3 9 5H3z"/></svg></span>
+              <span class="hero-industry-label">Tài chính / Ngân hàng</span>
+            </a>
+            <a href="viec-lam.html?keyword=Nh%C3%A2n+s%E1%BB%B1" class="hero-industry-chip">
+              <span class="hero-industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span>
+              <span class="hero-industry-label">Hành chính / Nhân sự</span>
+            </a>
+            <a href="viec-lam.html?keyword=Ch%C4%83m+s%C3%B3c+kh%C3%A1ch+h%C3%A0ng" class="hero-industry-chip">
+              <span class="hero-industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14v-3a9 9 0 0 1 18 0v3"/><path d="M21 15a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2zM3 15a2 2 0 0 0 2 2h1v-6H5a2 2 0 0 0-2 2z"/></svg></span>
+              <span class="hero-industry-label">Chăm sóc khách hàng</span>
+            </a>
+            <a href="viec-lam.html?keyword=B%E1%BA%A5t+%C4%91%E1%BB%99ng+s%E1%BA%A3n" class="hero-industry-chip">
+              <span class="hero-industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 9h1m4 0h1M9 13h1m4 0h1M9 17h1m4 0h1"/></svg></span>
+              <span class="hero-industry-label">Bất động sản</span>
+            </a>
+            </div>
           </div>
 
           <!-- KHỐI BANNER NHÀ TUYỂN DỤNG TIÊU BIỂU (BENTO GRID: 1 Ô CHÍNH SLIDER + 2 Ô PHỤ) -->
@@ -6425,6 +6466,30 @@
     </div>
   </footer>
   <!-- @end:footer -->
+  <!-- @include:tabbar -->
+  <nav class="mobile-tabbar" aria-label="Điều hướng nhanh trên điện thoại">
+    <a href="index.html" class="mobile-tabbar-item is-active" aria-current="page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2h-4v-7H9v7H5a2 2 0 0 1-2-2z"/></svg>
+      <span>Trang chủ</span>
+    </a>
+    <a href="viec-lam.html" class="mobile-tabbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M2 13h20"/></svg>
+      <span>Việc làm</span>
+    </a>
+    <a href="index.html#viec-lam-da-luu" class="mobile-tabbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+      <span>Đã lưu</span>
+    </a>
+    <a href="index.html#tao-cv-theo-mau" class="mobile-tabbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15h6"/></svg>
+      <span>Tạo CV</span>
+    </a>
+    <a href="index.html#ho-so-cua-toi" class="mobile-tabbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+      <span>Cá nhân</span>
+    </a>
+  </nav>
+  <!-- @end:tabbar -->
 
     <script src="js/navbar.js?v=7.1_mobile_float"></script>
     <script src="js/category-filter-modal.js?v=eb_colors_20261007"></script>

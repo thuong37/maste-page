@@ -2095,7 +2095,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. Click outside to close
     document.addEventListener('click', (e) => {
-      if (!e.target.closest('.filter-dropdown-wrap')) {
+      // Mobile: chạm vào lớp nền mờ (::before của wrap) cũng đóng menu
+      if (
+        !e.target.closest('.filter-dropdown-wrap') ||
+        e.target.classList.contains('filter-dropdown-wrap')
+      ) {
         closeAllFilterDropdowns();
       }
     });

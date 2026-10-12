@@ -24,6 +24,16 @@ const BLOCKS = {
     gen: (page) => (page === 'index' ? partial('footer.html') : partial('footer.html').replace(/href="#/g, 'href="index.html#')),
   },
   drawer: { begin: '<!-- @include:drawer -->', end: '<!-- @end:drawer -->', gen: () => partial('drawer.html') },
+  // optional: only pages that carry the markers get the mobile bottom tab bar
+  tabbar: {
+    begin: '<!-- @include:tabbar -->', end: '<!-- @end:tabbar -->', optional: true,
+    gen: (page) => {
+      const on = (cond) => (cond ? [' is-active', ' aria-current="page"'] : ['', '']);
+      const [home, homeAria] = on(page === 'index'), [jobs, jobsAria] = on(page === 'viec-lam');
+      return partial('tabbar.html').replace('{{TAB_HOME}}', home).replace('{{TAB_HOME_ARIA}}', homeAria)
+        .replace('{{TAB_JOBS}}', jobs).replace('{{TAB_JOBS_ARIA}}', jobsAria);
+    },
+  },
 };
 const mode = process.argv[2] || '';
 let dirty = false;
@@ -61,6 +71,7 @@ function initMarkers(src) {
 function inject(src, page) {
   for (const b of Object.values(BLOCKS)) {
     const i = src.indexOf(b.begin), j = src.indexOf(b.end);
+    if ((i < 0 || j < 0) && b.optional) continue;
     if (i < 0 || j < 0) throw new Error(`${page}: missing ${b.begin} markers (run --init)`);
     src = src.slice(0, i + b.begin.length) + '\n' + b.gen(page) + '\n  ' + src.slice(j);
   }

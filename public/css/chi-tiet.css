@@ -109,6 +109,7 @@
   gap: 8px;
   height: 46px;
   padding: 0 24px;
+  white-space: nowrap;
   border-radius: 999px;
   border: 1.5px solid transparent;
   font: 600 15px/1 'Inter', sans-serif;
@@ -553,6 +554,9 @@
   .jd-overview-row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
   .jd-overview dt { padding-top: 0; }
   .jd-actions-inline { max-width: none; }
+  /* Nút "Ứng tuyển ngay" không bị gãy 2 dòng trên màn hẹp */
+  .jd-actions .jd-btn { padding: 0 16px; }
+  .jd-actions .jd-btn-outline { min-width: 0; }
   .jd-rating-box { padding: 16px; }
   .jd-rating-options { grid-template-columns: minmax(0, 1fr); gap: 6px; margin-top: 16px; }
   .jd-rating-options::before { top: 17px; right: auto; bottom: 17px; left: 16px; width: 3px; height: auto; }
