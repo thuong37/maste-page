@@ -69,11 +69,13 @@ function initMarkers(src) {
 }
 
 function inject(src, page) {
+  // keep the page's own line endings (CRLF on Windows checkouts) so a build never leaves mixed EOLs for git to flag
+  const eol = src.includes('\r\n') ? '\r\n' : '\n';
   for (const b of Object.values(BLOCKS)) {
     const i = src.indexOf(b.begin), j = src.indexOf(b.end);
     if ((i < 0 || j < 0) && b.optional) continue;
     if (i < 0 || j < 0) throw new Error(`${page}: missing ${b.begin} markers (run --init)`);
-    src = src.slice(0, i + b.begin.length) + '\n' + b.gen(page) + '\n  ' + src.slice(j);
+    src = src.slice(0, i + b.begin.length) + eol + b.gen(page).replace(/\r?\n/g, eol) + eol + '  ' + src.slice(j);
   }
   return src;
 }

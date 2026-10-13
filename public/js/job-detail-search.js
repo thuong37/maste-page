@@ -28,13 +28,8 @@
       { keyword: 'UI/UX Designer', count: 143 },
       { keyword: 'Java Spring Boot', count: 67 },
       { keyword: 'Kế toán tổng hợp', count: 184 },
-    ];
-    const POPULAR_KEYWORDS = [
-      'Telesales',
-      'Kinh doanh',
-      'Java Spring',
-      'Marketing',
-      'Kế toán',
+      { keyword: 'Digital Marketing', count: 215 },
+      { keyword: 'Nhân viên kinh doanh', count: 420 },
     ];
 
     const POPULAR_COMPANIES = [
@@ -466,7 +461,7 @@
         (item) => normalize(item.keyword) !== normalize(clean),
       );
       history.unshift({ keyword: clean, count: getKeywordCount(clean) });
-      saveHistory(history.slice(0, 6));
+      saveHistory(history.slice(0, 8));
     }
 
     dropdown.setAttribute('role', 'dialog');
@@ -488,12 +483,6 @@
             <div class="suggest-section-header"><h3 class="suggest-title">Từ khóa gợi ý</h3></div>
             <div class="keyword-suggestions-list" id="keywordSuggestionsList"></div>
           </div>
-          <div class="popular-keywords" id="popularKeywordsWrap">
-            <h3>Từ khóa phổ biến</h3>
-            <div class="popular-keyword-list">
-              ${POPULAR_KEYWORDS.map((keyword) => `<button type="button" class="suggest-trend-chip" data-keyword="${escapeHtml(keyword)}">${escapeHtml(keyword)}</button>`).join('')}
-            </div>
-          </div>
         </section>
         <section class="recommended-jobs" aria-labelledby="recommendedJobsTitle">
           <h3 id="recommendedJobsTitle">Việc làm có thể bạn quan tâm</h3>
@@ -507,7 +496,6 @@
     const clearHistoryButton = dropdown.querySelector('#btnClearSearchHistory');
     const keywordSection = dropdown.querySelector('#keywordSuggestionsSection');
     const keywordList = dropdown.querySelector('#keywordSuggestionsList');
-    const popularWrap = dropdown.querySelector('#popularKeywordsWrap');
     const recommendedJobList = dropdown.querySelector('#recommendedJobList');
 
     function executeSearch(keyword) {
@@ -551,7 +539,7 @@
         return;
       }
 
-      history.slice(0, 6).forEach((item) => {
+      history.slice(0, 8).forEach((item) => {
         const row = document.createElement('div');
         row.className = 'recent-search-row';
         row.tabIndex = 0;
@@ -900,7 +888,6 @@
       const typing = query.length >= 2;
       recentSection.hidden = typing;
       keywordSection.hidden = !typing;
-      popularWrap.hidden = typing;
       if (typing) {
         renderSuggestions(query);
         renderRecommendedJobs(query);
@@ -959,12 +946,6 @@
       input.setAttribute('aria-expanded', 'false');
     }
 
-    dropdown.querySelectorAll('.suggest-trend-chip').forEach((button) => {
-      bindSearchAction(
-        button,
-        button.dataset.keyword || button.textContent.trim(),
-      );
-    });
     clearHistoryButton.addEventListener('click', (event) => {
       event.preventDefault();
       event.stopPropagation();

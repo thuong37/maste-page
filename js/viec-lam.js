@@ -1160,7 +1160,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
               <button type="button" class="btn-card-bookmark ${isSaved ? 'saved' : ''}" data-id="${job.id}" aria-label="Lưu công việc" title="${isSaved ? 'Đã Lưu' : 'Lưu công việc'}">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="${isSaved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
-              </button>
+              </button>
             </div>
           </div>
         </article>
@@ -2127,14 +2127,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { keyword: 'UI/UX Designer', count: 143 },
     { keyword: 'Java Spring Boot', count: 67 },
     { keyword: 'Kế toán tổng hợp', count: 184 },
-  ];
-
-  const POPULAR_KEYWORDS = [
-    'Telesales',
-    'Kinh doanh',
-    'Java Spring',
-    'Marketing',
-    'Kế toán',
+    { keyword: 'Digital Marketing', count: 215 },
+    { keyword: 'Nhân viên kinh doanh', count: 420 },
   ];
 
   const POPULAR_COMPANIES = [
@@ -2579,7 +2573,7 @@ document.addEventListener('DOMContentLoaded', () => {
         (h) => h.keyword.toLowerCase() !== term.toLowerCase(),
       );
       history.unshift({ keyword: term, count: getKeywordJobCount(term) });
-      if (history.length > 6) history = history.slice(0, 6);
+      if (history.length > 8) history = history.slice(0, 8);
       localStorage.setItem(RECENT_SEARCH_KEY, JSON.stringify(history));
       renderRecentSearches();
     } catch (e) {}
@@ -2609,7 +2603,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let suggestRecentSectionEl = null;
   let keywordSuggestionsSectionEl = null;
   let keywordSuggestionsListEl = null;
-  let popularKeywordsWrapEl = null;
   let recentListEl = null;
   let recommendedJobListEl = null;
 
@@ -2824,17 +2817,6 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="keyword-suggestions-list" id="keywordSuggestionsList"></div>
         </div>
-
-        <div class="popular-keywords" id="popularKeywordsWrap">
-          <h3>Từ khóa phổ biến</h3>
-          <div class="popular-keyword-list">
-            ${POPULAR_KEYWORDS.map(
-              (kw) => `
-              <button type="button" class="suggest-trend-chip" data-keyword="${kw}">${kw}</button>
-            `,
-            ).join('')}
-          </div>
-        </div>
       </section>
 
       <section class="recommended-jobs" aria-labelledby="recommendedJobsTitle">
@@ -2857,9 +2839,6 @@ document.addEventListener('DOMContentLoaded', () => {
     keywordSuggestionsListEl = compactSearchPanel.querySelector(
       '#keywordSuggestionsList',
     );
-    popularKeywordsWrapEl = compactSearchPanel.querySelector(
-      '#popularKeywordsWrap',
-    );
     recentListEl = compactSearchPanel.querySelector('#recentSearchList');
     recommendedJobListEl = compactSearchPanel.querySelector(
       '#recommendedJobList',
@@ -2875,16 +2854,6 @@ document.addEventListener('DOMContentLoaded', () => {
       e.stopPropagation();
       clearAllRecentSearches();
     });
-
-    compactSearchPanel
-      .querySelectorAll('.suggest-trend-chip')
-      .forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const kw = btn.getAttribute('data-keyword') || btn.textContent.trim();
-          executeSearch(kw);
-        });
-      });
   }
 
   function renderRecentSearches() {
@@ -2904,7 +2873,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (clearHistoryBtn) clearHistoryBtn.style.display = 'inline-block';
 
-    searches.slice(0, 6).forEach((item) => {
+    searches.slice(0, 8).forEach((item) => {
       const kw = typeof item === 'string' ? item : item.keyword;
       const cnt =
         typeof item === 'object' && item.count
@@ -3129,7 +3098,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (suggestRecentSectionEl) suggestRecentSectionEl.style.display = 'none';
       if (keywordSuggestionsSectionEl)
         keywordSuggestionsSectionEl.style.display = 'flex';
-      if (popularKeywordsWrapEl) popularKeywordsWrapEl.style.display = 'none';
       renderKeywordSuggestions(query, keywordSuggestionsListEl);
       renderRecommendedJobs(query, recommendedJobListEl);
     } else {
@@ -3137,7 +3105,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (suggestRecentSectionEl) suggestRecentSectionEl.style.display = 'flex';
       if (keywordSuggestionsSectionEl)
         keywordSuggestionsSectionEl.style.display = 'none';
-      if (popularKeywordsWrapEl) popularKeywordsWrapEl.style.display = 'block';
       renderRecentSearches();
       renderRecommendedJobs('', recommendedJobListEl);
     }

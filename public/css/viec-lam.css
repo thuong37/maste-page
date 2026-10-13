@@ -410,7 +410,6 @@
 }
 
 .search-format-left .suggest-title,
-.popular-keywords h3,
 .recommended-jobs h3 {
   margin: 0;
   color: #060e18;
@@ -528,41 +527,6 @@
   display: block;
 }
 
-/* Từ khóa phổ biến (Pills) */
-.popular-keywords {
-  margin-top: auto;
-  padding-top: 14px;
-  border-top: 1px dashed #f1f5f9;
-}
-
-.popular-keyword-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.popular-keyword-list .suggest-trend-chip {
-  min-height: 32px;
-  padding: 6px 12px;
-  border: 1px solid #e6e6e6;
-  border-radius: 8px;
-  background: #ffffff;
-  color: #333333;
-  font: 500 12.5px/1.2 inherit;
-  cursor: pointer;
-  transition:
-    border-color 0.15s,
-    color 0.15s,
-    background 0.15s;
-}
-
-.popular-keyword-list .suggest-trend-chip:hover {
-  border-color: #ff6500;
-  color: #e85c00;
-  background: #fff0e6;
-}
-
 /* =====================================================================
    TYPING MODE: Khi người dùng gõ phím -> Chuyển sang "Từ khóa gợi ý"
    ===================================================================== */
@@ -572,10 +536,6 @@
 
 .search-format-left.is-typing .keyword-suggestions-section {
   display: flex !important;
-}
-
-.search-format-left.is-typing .popular-keywords {
-  display: none !important;
 }
 
 .keyword-suggestions-section {
@@ -718,8 +678,8 @@
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 7px 6px;
+  gap: 14px;
+  padding: 10px 8px;
   border: 0;
   border-bottom: 1px solid #f8fafc;
   border-radius: 8px;
@@ -746,16 +706,16 @@
 }
 
 .recommended-job-logo {
-  width: 50px;
-  height: 50px;
-  min-width: 50px;
-  max-width: 50px;
-  min-height: 50px;
-  max-height: 50px;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  max-width: 56px;
+  min-height: 56px;
+  max-height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 12px;
   background: #f8fafc;
   border: 1px solid #f1f5f9;
   overflow: hidden;
@@ -776,11 +736,11 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
 }
 
 .recommended-job-title {
-  font-size: 13.5px;
+  font-size: 14.5px;
   font-weight: 600;
   color: #060e18;
   white-space: nowrap;
@@ -790,7 +750,7 @@
 }
 
 .recommended-job-company {
-  font-size: 12px;
+  font-size: 12.5px;
   color: #545454;
   white-space: nowrap;
   overflow: hidden;
@@ -807,7 +767,7 @@
 }
 
 .recommended-job-salary {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   color: #e85c00;
   line-height: 1.25;
@@ -815,7 +775,7 @@
 }
 
 .recommended-job-loc {
-  font-size: 11.5px;
+  font-size: 12.5px;
   color: #545454;
   white-space: nowrap;
   overflow: hidden;
@@ -838,7 +798,6 @@
 }
 
 [data-theme='dark'] .search-format-left .suggest-title,
-[data-theme='dark'] .popular-keywords h3,
 [data-theme='dark'] .recommended-jobs h3 {
   color: #f8fafc;
 }
@@ -849,18 +808,6 @@
 
 [data-theme='dark'] .recent-search-keyword {
   color: #e6e6e6;
-}
-
-[data-theme='dark'] .popular-keyword-list .suggest-trend-chip {
-  background: #333333;
-  border-color: #333333;
-  color: #b0b0b0;
-}
-
-[data-theme='dark'] .popular-keyword-list .suggest-trend-chip:hover {
-  background: #6b2a00;
-  border-color: #ff6500;
-  color: #ffb88a;
 }
 
 [data-theme='dark'] .keyword-suggestion-row {

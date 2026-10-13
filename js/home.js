@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
         !document.hidden &&
         !reducedMotion.matches &&
         !mobileSwipe.matches &&
-        !cvSection.matches(':hover, :focus-within')
+        !cvViewport.matches(':hover, :focus-within')
       ) {
         timer = setInterval(step, 2000);
       }
@@ -311,13 +311,22 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    cvPrevious?.addEventListener('click', () => move(-1, true));
-    cvNext?.addEventListener('click', () => move(1, true));
+    cvPrevious?.addEventListener('click', () => {
+      stop();
+      move(-1, true);
+      start();
+    });
+    cvNext?.addEventListener('click', () => {
+      stop();
+      move(1, true);
+      start();
+    });
 
-    cvSection.addEventListener('mouseenter', stop);
-    cvSection.addEventListener('mouseleave', start);
-    cvSection.addEventListener('focusin', stop);
-    cvSection.addEventListener('focusout', () => setTimeout(start, 0));
+    // Chỉ dừng tự chạy khi chuột/focus nằm trong vùng thẻ CV, không phải cả section.
+    cvViewport.addEventListener('mouseenter', stop);
+    cvViewport.addEventListener('mouseleave', start);
+    cvViewport.addEventListener('focusin', stop);
+    cvViewport.addEventListener('focusout', () => setTimeout(start, 0));
     document.addEventListener('visibilitychange', start);
     reducedMotion.addEventListener('change', start);
     window.addEventListener('resize', updateSlideAccessibility);
@@ -600,7 +609,7 @@ document.addEventListener('DOMContentLoaded', () => {
         !document.hidden &&
         !reducedMotion.matches &&
         !mobileSwipe.matches &&
-        !companiesSection.matches(':hover, :focus-within')
+        !companiesViewport.matches(':hover, :focus-within')
       ) {
         timer = setInterval(step, 2000);
       }
@@ -617,10 +626,11 @@ document.addEventListener('DOMContentLoaded', () => {
       start();
     });
 
-    companiesSection.addEventListener('mouseenter', stop);
-    companiesSection.addEventListener('mouseleave', start);
-    companiesSection.addEventListener('focusin', stop);
-    companiesSection.addEventListener('focusout', () => setTimeout(start, 0));
+    // Chỉ dừng tự chạy khi chuột/focus nằm trong vùng thẻ công ty, không phải cả section.
+    companiesViewport.addEventListener('mouseenter', stop);
+    companiesViewport.addEventListener('mouseleave', start);
+    companiesViewport.addEventListener('focusin', stop);
+    companiesViewport.addEventListener('focusout', () => setTimeout(start, 0));
     document.addEventListener('visibilitychange', start);
     reducedMotion.addEventListener('change', start);
     window.addEventListener('resize', updateSlideAccessibility);
@@ -878,20 +888,6 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="keyword-suggestions-list" id="keywordSuggestionsList"></div>
         </div>
-
-        <!-- Từ khóa phổ biến -->
-        <div class="popular-keywords" id="popularKeywordsWrap">
-          <h3>Từ khóa phổ biến</h3>
-          <div class="popular-keyword-list">
-            ${['Telesales', 'Kinh doanh', 'Java Spring', 'Marketing', 'Kế toán']
-              .map(
-                (keyword) => `
-              <button type="button" class="suggest-trend-chip" data-keyword="${keyword}">${keyword}</button>
-            `,
-              )
-              .join('')}
-          </div>
-        </div>
       </section>
       <section class="recommended-jobs" aria-labelledby="recommendedJobsTitle">
         <h3 id="recommendedJobsTitle">Việc làm có thể bạn quan tâm</h3>
@@ -910,9 +906,6 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     const keywordSuggestionsList = compactSearchPanel.querySelector(
       '#keywordSuggestionsList',
-    );
-    const popularKeywordsWrap = compactSearchPanel.querySelector(
-      '#popularKeywordsWrap',
     );
     const recentListEl = compactSearchPanel.querySelector('#recentSearchList');
     const clearHistoryBtn = compactSearchPanel.querySelector(
@@ -1429,19 +1422,11 @@ document.addEventListener('DOMContentLoaded', () => {
       { keyword: 'UI/UX Designer', count: 143 },
       { keyword: 'Java Spring Boot', count: 67 },
       { keyword: 'Kế toán tổng hợp', count: 184 },
+      { keyword: 'Digital Marketing', count: 215 },
+      { keyword: 'Nhân viên kinh doanh', count: 420 },
     ];
 
     renderRecommendedJobs('', recommendedJobListEl);
-
-    compactSearchPanel
-      .querySelectorAll('.suggest-trend-chip')
-      .forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const kw = btn.getAttribute('data-keyword') || btn.textContent.trim();
-          executeSearch(kw);
-        });
-      });
 
     // Dữ liệu 5 trang Danh mục ngành nghề (mỗi trang 6 ngành) chuẩn Mega-Menu TopCV
     const INDUSTRY_PAGES = [
@@ -2506,7 +2491,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (clearHistoryBtn) clearHistoryBtn.style.display = 'inline-block';
 
-      history.slice(0, 6).forEach((item) => {
+      history.slice(0, 8).forEach((item) => {
         const kw = item.keyword;
         const cnt =
           item.count !== undefined ? item.count : getKeywordJobCount(kw);
@@ -2558,7 +2543,7 @@ document.addEventListener('DOMContentLoaded', () => {
         keyword: cleanKeyword,
         count: getKeywordJobCount(cleanKeyword),
       });
-      if (history.length > 6) history = history.slice(0, 6);
+      if (history.length > 8) history = history.slice(0, 8);
       saveHistory(history);
       renderHistory();
     }
@@ -2931,7 +2916,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (suggestRecentSection) suggestRecentSection.style.display = 'none';
         if (keywordSuggestionsSection)
           keywordSuggestionsSection.style.display = 'flex';
-        if (popularKeywordsWrap) popularKeywordsWrap.style.display = 'none';
         renderKeywordSuggestions(query, keywordSuggestionsList);
         renderRecommendedJobs(query, recommendedJobListEl);
       } else {
@@ -2939,7 +2923,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (suggestRecentSection) suggestRecentSection.style.display = 'flex';
         if (keywordSuggestionsSection)
           keywordSuggestionsSection.style.display = 'none';
-        if (popularKeywordsWrap) popularKeywordsWrap.style.display = 'block';
         renderHistory();
         renderRecommendedJobs('', recommendedJobListEl);
       }
@@ -3545,18 +3528,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
-
-    // Trending chips click
-    const trendChips = document.querySelectorAll('.suggest-trend-chip');
-    trendChips.forEach((chip) => {
-      chip.addEventListener('click', (e) => {
-        e.preventDefault();
-        const kw =
-          chip.getAttribute('data-keyword') ||
-          chip.textContent.trim().replace(/^🔥\s*/, '');
-        executeSearch(kw);
-      });
-    });
 
     // Navbar Logo & "Tìm việc" / "Tìm kiếm việc làm" interactions on homepage
     const navbarBrandLogo =
@@ -8870,7 +8841,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let previewHideTimeout = null;
     let previewShowTimeout = null;
     let isHoveringPopup = false;
-    let isHoveringTitle = false;
+    // Thẻ job đang được xem trước (được highlight trong lúc popup mở)
+    let previewAnchorCard = null;
+    // Chỉ bật popup xem trước trên thiết bị có chuột; màn cảm ứng chạm vào tên job là mở trang chi tiết
+    const canHoverPreview = window.matchMedia(
+      '(hover: hover) and (pointer: fine)',
+    );
 
     // Kiểm tra trạng thái đăng nhập của người dùng
     function checkUserLoginState() {
@@ -9049,7 +9025,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderJobsGrid() {
       clearTimeout(previewShowTimeout);
       isHoveringPopup = false;
-      isHoveringTitle = false;
       hideJobPreview(true);
       const rankedJobs = getRankedJobsForCategory(currentCategory);
       const totalJobs = rankedJobs.length;
@@ -9271,141 +9246,75 @@ document.addEventListener('DOMContentLoaded', () => {
         job.workTime ||
         `${job.type || 'Toàn thời gian'} · Lịch làm việc trao đổi khi phỏng vấn`;
 
-      let updatedTime = '';
-      if (job.updated) {
-        updatedTime = `<span class="job-preview-time" title="Thời gian cập nhật tin đăng"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>${esc(job.updated)}</span></span>`;
-      }
+      const detailHref = buildJobDetailHref(job, heroSearchInput?.value);
+      const companyHref = `chi-tiet-cong-ty.html?company=${encodeURIComponent(job.company)}`;
 
-      // 3 tag mô tả chuẩn yêu cầu: chỉ giữ lại Lương, Địa chỉ và Năm kinh nghiệm
-      const salaryBadgeHtml = job.salaryBadge
-        ? `
-        <span class="job-preview-badge job-preview-badge-salary" title="Mức lương">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
-          <span>${esc(job.salaryBadge)}</span>
-        </span>`
-        : '';
+      // Hàng thông tin nhanh dạng chip xám: Địa điểm, Kinh nghiệm, Thời gian cập nhật
+      const metaIcons = {
+        location:
+          '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
+        exp: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
+        updated:
+          '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+      };
+      const metaHtml = [
+        ['location', job.location || job.city, 'Địa điểm làm việc'],
+        ['exp', job.exp, 'Kinh nghiệm yêu cầu'],
+        ['updated', job.updated, 'Thời gian cập nhật tin đăng'],
+      ]
+        .filter(([, value]) => value)
+        .map(
+          ([key, value, label]) =>
+            `<span class="job-preview-meta-item" title="${label}">${metaIcons[key]}<span>${esc(value)}</span></span>`,
+        )
+        .join('');
 
-      const locBadgeHtml =
-        job.location || job.city
+      const section = (title, content) =>
+        content
           ? `
-        <span class="job-preview-badge job-preview-badge-loc" title="Địa điểm làm việc">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>${esc(job.location || job.city)}</span>
-        </span>`
+          <section class="job-preview-section">
+            <div class="job-preview-section-title">${title}</div>
+            ${content}
+          </section>`
           : '';
-
-      const expBadgeHtml = job.exp
-        ? `
-        <span class="job-preview-badge job-preview-badge-exp" title="Kinh nghiệm yêu cầu">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          <span>${esc(job.exp)}</span>
-        </span>`
-        : '';
 
       previewPopup.innerHTML = `
         <div class="job-preview-body">
           <div class="job-preview-header">
-            <div class="job-preview-logo-wrapper">
-              <img src="${esc(job.logo)}" alt="${esc(job.company)}" class="job-preview-logo" />
-            </div>
+            <a href="${companyHref}" class="job-preview-logo-wrapper" tabindex="-1" aria-hidden="true">
+              <img src="${esc(job.logo)}" alt="" class="job-preview-logo" />
+            </a>
             <div class="job-preview-title-box">
               <h4 class="job-preview-title">
-                <a href="${buildJobDetailHref(job, heroSearchInput?.value)}">${esc(job.title)}</a>
+                <a href="${detailHref}">${esc(job.title)}</a>
               </h4>
-              <div class="job-preview-company-row">
-                <a href="chi-tiet-cong-ty.html?company=${encodeURIComponent(job.company)}" class="job-preview-company">${esc(job.company)}</a>
-                ${updatedTime ? `<span class="job-preview-dot">•</span>${updatedTime}` : ''}
-              </div>
+              <a href="${companyHref}" class="job-preview-company">${esc(job.company)}</a>
+              ${job.salaryBadge ? `<div class="job-preview-salary">${esc(job.salaryBadge)}</div>` : ''}
             </div>
           </div>
 
-          <div class="job-preview-quick-badges">
-            ${salaryBadgeHtml}
-            ${locBadgeHtml}
-            ${expBadgeHtml}
-          </div>
+          ${metaHtml ? `<div class="job-preview-meta">${metaHtml}</div>` : ''}
 
-          ${
-            jdHtml
-              ? `
-          <div class="job-preview-section job-preview-section-desc">
-            <div class="job-preview-section-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-              <span>Mô tả công việc cốt lõi</span>
-            </div>
-            <ul class="job-preview-desc-list">
-              ${jdHtml}
-            </ul>
-          </div>
-          `
-              : ''
-          }
-
-          ${
-            perksHtml
-              ? `
-          <div class="job-preview-section job-preview-section-perks">
-            <div class="job-preview-section-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-              <span>Quyền lợi & đãi ngộ nổi bật</span>
-            </div>
-            <ul class="job-preview-perks-list">
-              ${perksHtml}
-            </ul>
-          </div>
-          `
-              : ''
-          }
-
-          ${
-            requirementsHtml
-              ? `
-          <div class="job-preview-section job-preview-section-requirements">
-            <div class="job-preview-section-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg>
-              <span>Yêu cầu ứng viên</span>
-            </div>
-            <ul class="job-preview-requirements-list">
-              ${requirementsHtml}
-            </ul>
-            ${
-              skillsHtml
-                ? `<div class="job-preview-skills-wrap" aria-label="Kỹ năng chuyên môn">${skillsHtml}</div>`
-                : ''
-            }
-          </div>
-          `
-              : ''
-          }
-
-          <div class="job-preview-section job-preview-section-address">
-            <div class="job-preview-section-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Địa chỉ làm việc</span>
-            </div>
-            <p class="job-preview-info-text">${esc(workAddress)}</p>
-          </div>
-
-          <div class="job-preview-section job-preview-section-schedule">
-            <div class="job-preview-section-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-              <span>Thời gian làm việc</span>
-            </div>
-            <p class="job-preview-info-text">${esc(workTime)}</p>
-          </div>
+          ${section('Mô tả công việc', jdHtml && `<ul class="job-preview-list">${jdHtml}</ul>`)}
+          ${section(
+            'Yêu cầu ứng viên',
+            requirementsHtml &&
+              `<ul class="job-preview-list">${requirementsHtml}</ul>${
+                skillsHtml
+                  ? `<div class="job-preview-skills" aria-label="Kỹ năng chuyên môn">${skillsHtml}</div>`
+                  : ''
+              }`,
+          )}
+          ${section('Quyền lợi', perksHtml && `<ul class="job-preview-list">${perksHtml}</ul>`)}
+          ${section('Địa điểm làm việc', `<p class="job-preview-info-text">${esc(workAddress)}</p>`)}
+          ${section('Thời gian làm việc', `<p class="job-preview-info-text">${esc(workTime)}</p>`)}
         </div>
 
         <div class="job-preview-actions">
-          <a href="viec-lam.html?apply=${job.id}" class="job-preview-btn-apply" target="_blank" rel="noopener noreferrer">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            <span>Ứng tuyển ngay</span>
-          </a>
-          <a href="${buildJobDetailHref(job, heroSearchInput?.value)}" class="job-preview-btn-detail">
-            <span>Xem chi tiết JD</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </a>
+          <a href="viec-lam.html?apply=${job.id}" class="job-preview-btn-apply" target="_blank" rel="noopener noreferrer">Ứng tuyển</a>
+          <a href="${detailHref}" class="job-preview-btn-detail">Xem chi tiết</a>
           <button type="button" class="job-preview-btn-save ${isSaved ? 'active' : ''}" data-job-id="${job.id}" aria-label="${isSaved ? 'Bỏ lưu việc làm' : 'Lưu công việc này'}" title="${isSaved ? 'Đã lưu' : 'Lưu'}">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="${isSaved ? '#EF4444' : 'none'}" stroke="${isSaved ? '#EF4444' : 'currentColor'}" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="${isSaved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
           </button>
         </div>
       `;
@@ -9433,11 +9342,7 @@ document.addEventListener('DOMContentLoaded', () => {
             saveBtn.classList.remove('active');
             saveBtn.title = 'Lưu';
             saveBtn.setAttribute('aria-label', 'Lưu công việc này');
-            const saveSvg = saveBtn.querySelector('svg');
-            if (saveSvg) {
-              saveSvg.setAttribute('fill', 'none');
-              saveSvg.setAttribute('stroke', 'currentColor');
-            }
+            saveBtn.querySelector('svg')?.setAttribute('fill', 'none');
             if (cardBookmarkBtn) {
               cardBookmarkBtn.classList.remove('active');
               cardBookmarkBtn.title = 'Lưu';
@@ -9452,11 +9357,7 @@ document.addEventListener('DOMContentLoaded', () => {
             saveBtn.classList.add('active');
             saveBtn.title = 'Đã lưu';
             saveBtn.setAttribute('aria-label', 'Bỏ lưu việc làm');
-            const saveSvg = saveBtn.querySelector('svg');
-            if (saveSvg) {
-              saveSvg.setAttribute('fill', '#EF4444');
-              saveSvg.setAttribute('stroke', '#EF4444');
-            }
+            saveBtn.querySelector('svg')?.setAttribute('fill', 'currentColor');
             if (cardBookmarkBtn) {
               cardBookmarkBtn.classList.add('active');
               cardBookmarkBtn.title = 'Đã lưu';
@@ -9474,65 +9375,109 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
-      // Đo đạc kích thước thực tế để định vị thông minh
-      const rect = targetEl.getBoundingClientRect();
-      const popupWidth = previewPopup.offsetWidth || 490;
-      const popupHeight = previewPopup.offsetHeight || 440;
-      const windowWidth = window.innerWidth;
-      const windowHeight = window.innerHeight;
+      // Neo popup vào cả thẻ job để không che chính thẻ đang xem
+      const anchorCard = targetEl.closest('.job-card');
+      setPreviewAnchorCard(anchorCard);
+      positionJobPreview(anchorCard || targetEl);
+      void previewPopup.offsetWidth; // áp vị trí xuất phát theo hướng mới trước khi chạy hiệu ứng hiện
+      previewPopup.classList.add('is-visible');
+      previewPopup.setAttribute('aria-hidden', 'false');
+    }
 
-      let leftPos = rect.left;
-      if (leftPos + popupWidth > windowWidth - 20) {
-        leftPos = windowWidth - popupWidth - 20;
+    function setPreviewAnchorCard(card) {
+      if (previewAnchorCard === card) return;
+      previewAnchorCard?.classList.remove('is-previewing');
+      previewAnchorCard = card;
+      previewAnchorCard?.classList.add('is-previewing');
+    }
+
+    // Đặt popup cạnh thẻ (ưu tiên bên phải, hết chỗ thì bên trái) và căn giữa theo chiều dọc của thẻ.
+    // Màn hẹp không đủ chỗ hai bên thì đặt dưới hoặc trên thẻ.
+    function positionJobPreview(anchorEl) {
+      const margin = 16;
+      const gap = 12;
+      const viewportWidth = document.documentElement.clientWidth;
+      const viewportHeight = window.innerHeight;
+
+      // Không để popup đè lên header / thanh tìm kiếm đang dính ở đầu trang
+      let safeTop = margin;
+      document
+        .querySelectorAll('.site-header, #heroSearchStickyBar')
+        .forEach((el) => {
+          const r = el.getBoundingClientRect();
+          if (r.height && r.bottom > 0 && r.top < viewportHeight / 3) {
+            safeTop = Math.max(safeTop, r.bottom + gap);
+          }
+        });
+      const maxHeight = Math.min(560, viewportHeight - safeTop - margin);
+      previewPopup.style.maxHeight = `${Math.max(240, maxHeight)}px`;
+
+      const rect = anchorEl.getBoundingClientRect();
+      const preferredWidth = Math.min(500, viewportWidth - margin * 2);
+      const spaceRight = viewportWidth - margin - rect.right - gap;
+      const spaceLeft = rect.left - gap - margin;
+
+      // Chọn bên còn chỗ; nếu cả hai bên hơi chật (VD thẻ cột giữa) thì thu hẹp popup, tối thiểu 400px
+      let placement;
+      let popupWidth = preferredWidth;
+      if (spaceRight >= preferredWidth) {
+        placement = 'right';
+      } else if (spaceLeft >= preferredWidth) {
+        placement = 'left';
+      } else if (Math.max(spaceRight, spaceLeft) >= 400) {
+        placement = spaceRight >= spaceLeft ? 'right' : 'left';
+        popupWidth = Math.floor(Math.max(spaceRight, spaceLeft));
       }
-      if (leftPos < 20) leftPos = 20;
+      previewPopup.style.width = `${popupWidth}px`;
 
-      // Không gian bên dưới và bên trên
-      const spaceBelow = windowHeight - rect.bottom - 12;
-      const spaceAbove = rect.top - 12;
+      const popupHeight = previewPopup.offsetHeight;
+      const clamp = (value, min, max) =>
+        Math.min(Math.max(value, min), Math.max(min, max));
+      const maxTop = viewportHeight - popupHeight - margin;
 
-      let topPos;
-      if (spaceBelow >= popupHeight) {
-        topPos = rect.bottom + 8;
-      } else if (spaceAbove >= popupHeight) {
-        topPos = rect.top - popupHeight - 8;
+      let left;
+      let top;
+      if (placement) {
+        left =
+          placement === 'right'
+            ? rect.right + gap
+            : rect.left - gap - popupWidth;
+        const centeredTop = rect.top + rect.height / 2 - popupHeight / 2;
+        top = clamp(centeredTop, safeTop, maxTop);
       } else {
-        if (spaceBelow >= spaceAbove) {
-          topPos = rect.bottom + 8;
+        left = clamp(rect.left, margin, viewportWidth - popupWidth - margin);
+        if (rect.bottom + gap + popupHeight <= viewportHeight - margin) {
+          placement = 'bottom';
+          top = rect.bottom + gap;
+        } else if (rect.top - gap - popupHeight >= safeTop) {
+          placement = 'top';
+          top = rect.top - gap - popupHeight;
         } else {
-          topPos = Math.max(16, rect.top - popupHeight - 8);
+          placement = 'bottom';
+          top = clamp(rect.bottom + gap, safeTop, maxTop);
         }
       }
 
-      if (topPos + popupHeight > windowHeight - 16) {
-        topPos = Math.max(16, windowHeight - popupHeight - 16);
-      }
-      if (topPos < 16) {
-        topPos = 16;
-      }
-
-      previewPopup.style.left = `${leftPos}px`;
-      previewPopup.style.top = `${topPos}px`;
-      previewPopup.classList.add('is-visible');
-      previewPopup.setAttribute('aria-hidden', 'false');
+      previewPopup.dataset.placement = placement;
+      previewPopup.style.left = `${Math.round(left)}px`;
+      previewPopup.style.top = `${Math.round(top)}px`;
     }
 
     function hideJobPreview(immediate = false) {
       if (!previewPopup) return;
       clearTimeout(previewShowTimeout);
-      if (immediate) {
-        clearTimeout(previewHideTimeout);
+      const hideNow = () => {
         previewHideTimeout = null;
         previewPopup.classList.remove('is-visible');
         previewPopup.setAttribute('aria-hidden', 'true');
+        setPreviewAnchorCard(null);
+      };
+      clearTimeout(previewHideTimeout);
+      if (immediate) {
+        hideNow();
         return;
       }
-      clearTimeout(previewHideTimeout);
-      previewHideTimeout = setTimeout(() => {
-        previewHideTimeout = null;
-        previewPopup.classList.remove('is-visible');
-        previewPopup.setAttribute('aria-hidden', 'true');
-      }, 240);
+      previewHideTimeout = setTimeout(hideNow, 240);
     }
 
     if (previewPopup) {
@@ -9546,19 +9491,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Tự động ẩn preview popup khi cuộn trang hoặc click ra ngoài
+    // Tự động ẩn preview popup khi cuộn trang, đổi kích thước cửa sổ hoặc click ra ngoài
     window.addEventListener(
       'scroll',
       () => {
-        // Nếu người dùng đang rê chuột trên popup, hoặc trên tên job, hoặc đang chuyển chuột sang popup -> giữ nguyên không ẩn
-        if (isHoveringPopup || isHoveringTitle || previewHideTimeout !== null) {
-          return;
-        }
-        clearTimeout(previewShowTimeout);
+        // Popup neo theo thẻ nên cuộn trang là thẻ trôi đi -> ẩn, trừ khi người dùng đang rê chuột trong popup
+        if (isHoveringPopup) return;
         hideJobPreview(true);
       },
       { passive: true },
     );
+    window.addEventListener('resize', () => hideJobPreview(true));
 
     document.addEventListener('click', (e) => {
       if (previewPopup && previewPopup.classList.contains('is-visible')) {
@@ -9583,7 +9526,6 @@ document.addEventListener('DOMContentLoaded', () => {
           titleEl.dataset.previewBound = 'true';
           titleEl.addEventListener('click', (e) => {
             clearTimeout(previewShowTimeout);
-            isHoveringTitle = false;
             hideJobPreview(true);
             const jobId = titleEl.getAttribute('data-job-id');
             const selectedJob = getJobById(jobId);
@@ -9595,21 +9537,50 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
           });
           titleEl.addEventListener('mouseenter', () => {
-            isHoveringTitle = true;
+            if (!canHoverPreview.matches) return;
+            const jobId = titleEl.getAttribute('data-job-id');
+            const card = titleEl.closest('.job-card');
+            // Popup đang mở đúng cho thẻ này (chuột quay lại tên job) -> giữ nguyên
+            if (card && card === previewAnchorCard) {
+              clearTimeout(previewHideTimeout);
+              previewHideTimeout = null;
+              return;
+            }
             clearTimeout(previewShowTimeout);
             hideJobPreview(true);
-            const jobId = titleEl.getAttribute('data-job-id');
             if (jobId) {
               previewShowTimeout = setTimeout(() => {
                 showJobPreview(jobId, titleEl);
               }, 350);
             }
           });
-          titleEl.addEventListener('mouseleave', () => {
-            isHoveringTitle = false;
+          titleEl.addEventListener('mouseleave', (e) => {
             clearTimeout(previewShowTimeout);
+            // Popup đã mở: chuột vẫn trong thẻ (đang di sang popup) thì chưa ẩn, việc ẩn do mouseleave của thẻ xử lý
+            const card = titleEl.closest('.job-card');
+            if (
+              card &&
+              card === previewAnchorCard &&
+              card.contains(e.relatedTarget)
+            ) {
+              return;
+            }
             hideJobPreview(false);
           });
+
+          const card = titleEl.closest('.job-card');
+          if (card) {
+            card.addEventListener('mouseenter', () => {
+              if (card !== previewAnchorCard) return;
+              clearTimeout(previewHideTimeout);
+              previewHideTimeout = null;
+            });
+            card.addEventListener('mouseleave', (e) => {
+              if (card !== previewAnchorCard) return;
+              if (previewPopup?.contains(e.relatedTarget)) return;
+              hideJobPreview(false);
+            });
+          }
         });
 
       // Click Bookmark -> Lưu vào localStorage
