@@ -1,0 +1,110 @@
+{
+  "note": "Online images for EasyCV prototype. Original rights remain with their owners.",
+  "images": [
+    {
+      "companyId": "1",
+      "file": "assets/banners/companies/fpt.jpg",
+      "imageUrl": "https://fptsoftware.com/-/media/project/fpt-software/fso/newsroom/newsroom/img-our-campus.webp",
+      "sourcePage": "https://fptsoftware.com/newsroom",
+      "retrievedAt": "2026-10-13"
+    },
+    {
+      "companyId": "2",
+      "file": "assets/banners/companies/techcombank.jpg",
+      "imageUrl": "https://www.metalocus.es/sites/default/files/metalocus_fosterpartners_techcombank_01.jpg",
+      "sourcePage": "https://www.metalocus.es/en/news/new-headquarters-techcombank-hanoi-foster-partners",
+      "retrievedAt": "2026-10-13"
+    },
+    {
+      "companyId": "3",
+      "file": "assets/banners/companies/vng.jpg",
+      "imageUrl": "https://corp.vcdn.vn/products/upload/vng/source/News/vng-global-1.jpg",
+      "sourcePage": "https://vng.com.vn/news/enterprise/vng-global.html",
+      "retrievedAt": "2026-10-13"
+    },
+    {
+      "companyId": "4",
+      "file": "assets/banners/companies/viettel.jpg",
+      "imageUrl": "https://cafefcdn.com/203337114487263232/2024/5/13/viettel12-17156213922852046254887-0-0-1264-2022-crop-17156213990171326707090.jpg",
+      "sourcePage": "https://trading.vietcap.com.vn/ai-news/post-detail/ctr-ga-khong-lo-towerco-ho-viettel-tren-san-chung-khoan-uoc-lai-gan-200-ty-dong-sau-4-thang-dau-nam",
+      "retrievedAt": "2026-10-13"
+    },
+    {
+      "companyId": "5",
+      "file": "assets/banners/companies/shopee.jpg",
+      "imageUrl": "https://saigonoffice.com.vn/contents_saigonoffice/uploads/images/le-tan-tai-shopee-sonatus.jpg",
+      "sourcePage": "https://saigonoffice.com.vn/tru-so-chinh-cua-shopee.html",
+      "retrievedAt": "2026-10-13"
+    },
+    {
+      "companyId": "6",
+      "file": "assets/banners/companies/momo.jpg",
+      "imageUrl": "https://homepage.momocdn.net/img/momo-upload-api-220804144914-637952213548818998.jpg",
+      "sourcePage": "https://www.momo.vn/lienhe",
+      "retrievedAt": "2026-10-13"
+    },
+    {
+      "companyId": "7",
+      "file": "assets/banners/companies/vnpay.jpg",
+      "imageUrl": "https://s3-hcm.sds.vnpaycloud.vn/tuyendung-vnpay/uploads/2025/04/dsc02714.jpg",
+      "sourcePage": "https://tuyendung.vnpay.vn/tin-tuc/vnpay-to-chuc-khoa-dao-tao-%E2%80%9Cdanh-gia-chi-so-marketing-hieu-qua%E2%80%9D-lam-chu-du-lieu-nang-tam-chien-luoc.html",
+      "retrievedAt": "2026-10-13"
+    },
+    {
+      "companyId": "9",
+      "file": "assets/banners/companies/cmc.jpg",
+      "imageUrl": "https://officesnapshots.com/wp-content/uploads/2017/09/D-CMC-7-700x416.jpg",
+      "sourcePage": "https://officesnapshots.com/2017/09/15/cmc-telecom-offices-hanoi/",
+      "retrievedAt": "2026-10-13"
+    },
+    {
+      "companyId": "10",
+      "file": "assets/banners/companies/base.jpg",
+      "imageUrl": "https://data-gcdn.basecdn.net/202109/sys1/hiring/01/15/TYXMYJYTXG/86d0e3ceddad3105fb65981825058f83/LCP46KMH6UTPD/c9/e6/e7/b6/9f/143b9ee098b87f29faebf62e936d98a4/kcp_9166.jpg",
+      "sourcePage": "https://careers.base.vn/job/hn-software-engineer-full-stackjunior-8724",
+      "retrievedAt": "2026-10-13"
+    },
+    {
+      "companyId": "11",
+      "file": "assets/banners/companies/onemount.jpg",
+      "imageUrl": "https://cafebiz.cafebizcdn.vn/162123310254002176/2022/9/20/7b2a0428-1663688634810492197430.jpeg",
+      "sourcePage": "https://cafebiz.vn/co-gi-ben-trong-dai-ban-doanh-cua-one-mount-tap-doan-dung-sau-vinid-vinshop-va-onehousing-176220920225112836.chn",
+      "retrievedAt": "2026-10-13"
+    },
+    {
+      "companyId": "12",
+      "file": "assets/banners/companies/kms.jpg",
+      "imageUrl": "https://static.topcv.vn/company_covers/S0N7IDADuKjaNkmIZSX6.jpg",
+      "sourcePage": "https://www.topcv.vn/cong-ty/kms-technology/300.html",
+      "retrievedAt": "2026-10-13"
+    },
+    {
+      "companyId": "14",
+      "file": "assets/banners/companies/tiki.jpg",
+      "imageUrl": "https://saigonoffice.com.vn/contents_saigonoffice/uploads/images/thiet-ke-tru-so-chinh-cua-tiki.jpg",
+      "sourcePage": "https://saigonoffice.com.vn/dia-chi-tru-so-chinh-cua-tiki.html",
+      "retrievedAt": "2026-10-13"
+    },
+    {
+      "companyId": "15",
+      "file": "assets/banners/companies/masan.jpg",
+      "imageUrl": "https://masangroup-cms-production.s3-ap-southeast-1.amazonaws.com/iblock/397/3970706b284cc86d4eb72d03c0d86aa5/c78b37221c9ea6a07dca3a1bd6d2db67.jpeg",
+      "sourcePage": "https://www.masangroup.com/news/market-news/Announcing-the-detailed-list-of-PRIVATE-100-Vietnam-Largest-Taxpayers.html",
+      "retrievedAt": "2026-10-13"
+    },
+    {
+      "companyId": "17",
+      "file": "assets/banners/companies/vinai.jpg",
+      "imageUrl": "https://cdn.brvn.vn/editor/2025/04/346638_qualcomm-mua-lai-vinai-1_1743654288.jpeg",
+      "sourcePage": "https://www.brandsvietnam.com/congdong/topic/346638-qualcomm-mua-lai-bo-phan-phat-trien-ai-cua-vinai",
+      "retrievedAt": "2026-10-13"
+    },
+    {
+      "companyId": "21",
+      "file": "assets/banners/companies/unilever.jpg",
+      "imageUrl": "https://cdn.24h.com.vn/upload/1-2020/images/2020-02-03/Van-phong-Unilever-thay-doi-dien-mao-truoc-them-nam-moi-dien-mao-1-1580716562-341-width660height440.jpg",
+      "sourcePage": "https://www.24h.com.vn/doanh-nghiep/unilever-viet-nam-khanh-thanh-tru-so-van-phong-truoc-them-xuan-canh-ty-c849a1118516.html",
+      "retrievedAt": "2026-10-13"
+    }
+  ]
+}

@@ -201,6 +201,10 @@
   --radius-step7: 50px;
   --radius-step8: 56px;
   --radius-full: 9999px;
+  /* Existing EasyCV template: panels, company cards and search bars. */
+  --radius-panel: 16px;
+  --radius-company-card: 18px;
+  --radius-search: 30px;
 
   /* ==========================================================================
      5. Shadow Tokens

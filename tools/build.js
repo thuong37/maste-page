@@ -6,11 +6,11 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const PAGES = ['index', 'viec-lam', 'chi-tiet-viec-lam', 'job-preview'];
+const PAGES = ['index', 'viec-lam', 'chi-tiet-viec-lam', 'job-preview', 'kham-pha-cong-ty', 'cong-ty'];
 const COPY_DIRS = ['css', 'js', 'assets'];
 const COPY_FILES = ['favicon.png', 'vercel.json'];
 const partial = (n) => fs.readFileSync(path.join(__dirname, 'partials', n), 'utf8').replace(/\r?\n$/, '');
-const CURRENT = new Set(['viec-lam', 'chi-tiet-viec-lam', 'job-preview']); // pages under the "Tìm Việc" menu
+const CURRENT = new Set(['viec-lam', 'chi-tiet-viec-lam', 'job-preview', 'kham-pha-cong-ty', 'cong-ty']); // pages under the "Tìm Việc" menu
 const BLOCKS = {
   header: {
     begin: '<!-- @include:header -->', end: '<!-- @end:header -->',
