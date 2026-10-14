@@ -4,9 +4,9 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Khám phá công ty | EasyCV</title>
   <meta name="description" content="Khám phá môi trường làm việc, phúc lợi và cơ hội nghề nghiệp tại các công ty trên EasyCV.">
-  <link rel="icon" href="favicon.png"><link rel="stylesheet" href="assets/design-tokens.css?v=company_radius_20261013_2">
+  <link rel="icon" href="favicon.png"><link rel="stylesheet" href="assets/design-tokens.css?v=company_20261014_1">
   <link rel="stylesheet" href="css/navbar.css"><link rel="stylesheet" href="css/home.css">
-  <link rel="stylesheet" href="css/cong-ty.css?v=company_radius_20261013_2">
+  <link rel="stylesheet" href="css/cong-ty.css?v=company_20261014_1"><link rel="stylesheet" href="css/mobile-typography.css?v=mui_20261012">
 </head>
 <body class="company-page company-discover-page">
   <!-- @include:header -->
@@ -776,21 +776,11 @@
     <div class="co-container">
       <nav class="company-tabs" aria-label="Danh sách công ty">
         <button type="button" data-view="discover" aria-current="page">Khám phá</button>
-        <button type="button" data-view="following">Đang theo dõi <span id="following-count">0</span></button>
-        <button type="button" data-view="applied">Đã ứng tuyển <span id="applied-count">0</span></button>
-        <button type="button" data-view="viewed">NTD xem CV <span id="viewed-count">0</span></button>
+        <button type="button" data-view="following">Đang theo dõi</button>
       </nav>
       <div class="discover-layout">
-        <aside class="company-filters" id="company-filters" aria-label="Bộ lọc công ty">
-          <div class="filter-heading"><h2>Bộ lọc</h2><button type="button" id="reset-filters">Đặt lại</button></div>
-          <div id="filter-fields"></div>
-          <label class="hiring-filter"><input type="checkbox" id="hiring-only" checked> Chỉ công ty đang tuyển</label>
-          <p class="filter-note">Tìm môi trường phù hợp với cách bạn muốn làm việc.</p>
-        </aside>
         <section class="company-results" aria-label="Kết quả công ty">
-          <div class="collection-row"><span>Bộ sưu tập</span><button type="button" data-collection="tech" aria-pressed="false">Top IT</button><button type="button" data-collection="bank" aria-pressed="false">Ngân hàng</button><button type="button" data-collection="startup" aria-pressed="false">Startup</button><button type="button" data-collection="flexible" aria-pressed="false">Làm việc linh hoạt</button></div>
-          <div class="results-toolbar"><h2 id="result-count" aria-live="polite">Đang tải công ty...</h2><button type="button" id="mobile-filter-toggle" class="co-button" aria-expanded="false" aria-controls="company-filters">Bộ lọc</button><label>Sắp xếp: <select id="company-sort"><option value="match">Phù hợp nhất</option><option value="jobs">Nhiều việc làm nhất</option><option value="name">Tên A → Z</option></select></label></div>
-          <div id="active-filters" class="active-filters"></div>
+          <div id="industry-chips" class="industry-chips" role="group" aria-label="Lọc theo lĩnh vực"></div>
           <div id="company-grid" class="company-grid"></div>
           <nav id="company-pagination" class="co-pagination" aria-label="Phân trang"></nav>
           <p class="demo-note">Bản thử nghiệm: dữ liệu công ty, hoạt động hồ sơ và độ phù hợp được minh họa để trải nghiệm giao diện.</p>
@@ -924,5 +914,5 @@
   <!-- @end:footer -->
   <div id="co-toast" class="co-toast" role="status"></div>
   <noscript><p class="co-container">Vui lòng bật JavaScript để tìm kiếm và xem danh sách công ty.</p></noscript>
-  <script src="js/navbar.js"></script><script src="js/jobs-data.js"></script><script src="js/companies-data.js"></script><script src="js/cong-ty.js"></script>
+  <script src="js/navbar.js"></script><script src="js/jobs-data.js"></script><script src="js/companies-data.js?v=company_20261014_1"></script><script src="js/cong-ty.js?v=company_20261014_1"></script>
 </body></html>

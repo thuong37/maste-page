@@ -203,7 +203,7 @@
   --radius-full: 9999px;
   /* Existing EasyCV template: panels, company cards and search bars. */
   --radius-panel: 16px;
-  --radius-company-card: 18px;
+  --radius-company-card: 16px;
   --radius-search: 30px;
 
   /* ==========================================================================

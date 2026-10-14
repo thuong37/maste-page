@@ -1103,8 +1103,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return `
         <article class="job-card ${featuredClass}" data-id="${job.id}">
           <div class="job-card-top">
-            <a href="chi-tiet-viec-lam.html?id=${job.id}&title=${encodeURIComponent(job.title)}${detailKeywordParam}" class="job-logo-link" aria-label="Xem chi tiết ${job.title}" tabindex="-1">
-              <img src="${job.logo}" alt="${job.company}" class="job-company-logo" loading="lazy" />
+            <a href="chi-tiet-viec-lam.html?id=${job.id}&title=${encodeURIComponent(job.title)}${detailKeywordParam}" class="job-logo-link" title="${job.title}" aria-label="Xem chi tiết ${job.title}" tabindex="-1">
+              <img src="${job.logo}" alt="${job.company}" title="${job.title}" class="job-company-logo" loading="lazy" />
             </a>
             <div class="job-info-main">
               <div class="job-header-row">
