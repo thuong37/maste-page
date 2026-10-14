@@ -208,3 +208,33 @@
 .company-page .address-map iframe{width:100%;height:100%;border:0;display:block}
 .company-page .address-map-link{position:absolute;right:16px;bottom:16px;padding:8px 14px;border-radius:10px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.15);font-size:13px;font-weight:600;color:var(--eb-text-500)}
 .company-page .address-map-link:hover{color:var(--eb-primary-600)}
+
+/* Job card - Việc làm đang tuyển */
+.company-page .profile-jobs .co-job{display:flex;gap:16px;padding:16px;background:var(--eb-secondary-50);border:1px solid var(--eb-secondary-100);border-radius:16px;transition:box-shadow .2s,border-color .2s}
+.company-page .profile-jobs .co-job:hover{border-color:var(--eb-secondary-300);box-shadow:0 4px 14px rgba(48,165,107,.14)}
+.company-page .profile-jobs .co-job-logo{flex:none;width:96px;height:96px;object-fit:contain;padding:6px;background:#fff;border:1px solid var(--eb-text-100);border-radius:10px}
+.company-page .profile-jobs .co-job-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.company-page .profile-jobs .co-job-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.company-page .profile-jobs .co-job-title{margin:0;font-size:16px;line-height:24px;font-weight:700;color:var(--eb-text-500)}
+.company-page .profile-jobs .co-job-title a{color:inherit;text-decoration:none;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.company-page .profile-jobs .co-job-title a:hover{color:var(--eb-secondary-700)}
+.company-page .profile-jobs .co-job-salary{flex:none;font-weight:700;font-size:15px;color:var(--eb-secondary-500);white-space:nowrap}
+.company-page .profile-jobs .co-job-company{font-size:13px;font-weight:500;text-transform:uppercase;color:var(--eb-text-300);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.company-page .profile-jobs .co-job-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-top:auto}
+.company-page .profile-jobs .co-job-tags{display:flex;flex-wrap:wrap;gap:8px}
+.company-page .profile-jobs .co-job-tag{padding:3px 10px;border-radius:999px;background:var(--eb-text-100);color:var(--eb-text-400);font-size:12px;line-height:18px}
+.company-page .profile-jobs .co-job-save{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--eb-secondary-500);background:#fff;color:var(--eb-secondary-500);cursor:pointer}
+.company-page .profile-jobs .co-job-save:hover{background:var(--eb-secondary-50)}
+.company-page .profile-jobs .co-job-save.is-saved{background:var(--eb-secondary-500);color:#fff}
+.company-page .profile-jobs .co-job-save.is-saved svg{fill:currentColor}
+@media(max-width:760px){
+.company-page .profile-jobs .co-job{gap:12px;padding:12px}
+.company-page .profile-jobs .co-job-logo{width:64px;height:64px}
+.company-page .profile-jobs .co-job-head{flex-direction:column;gap:2px}
+}
+.company-page .profile-jobs{display:flex;flex-direction:column;gap:12px}
+.company-page .profile-jobs .co-job{align-items:stretch;padding:14px 16px;margin:0}
+.company-page .profile-jobs .co-job-logo{width:80px;height:80px;align-self:flex-start}
+.company-page .profile-jobs .co-job-body{gap:4px}
+.company-page .profile-jobs .co-job-foot{padding-top:8px}
+@media(max-width:760px){.company-page .profile-jobs .co-job-logo{width:56px;height:56px}}
