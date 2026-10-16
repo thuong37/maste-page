@@ -1888,7 +1888,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       job.verified
                         ? `
                       <span class="badge-verified" title="Doanh nghiệp xác thực">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                       </span>
                     `
                         : ''

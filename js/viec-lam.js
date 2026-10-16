@@ -142,7 +142,29 @@ document.addEventListener('DOMContentLoaded', () => {
     else if (type === 'saturday') selectedSaturday = joined;
   }
 
+  // Khoảng lương tự nhập: giá trị dạng "range:30-40" (đơn vị triệu, cho phép bỏ trống một đầu)
+  const SALARY_RANGE_PATTERN = /^range:(\d{0,4})-(\d{0,4})$/;
+
+  function parseSalaryRange(value) {
+    const match = SALARY_RANGE_PATTERN.exec(value);
+    if (!match || (!match[1] && !match[2])) return null;
+    return {
+      min: match[1] ? Number(match[1]) : 0,
+      max: match[2] ? Number(match[2]) : Infinity,
+    };
+  }
+
+  function formatSalaryRangeLabel(value) {
+    const match = SALARY_RANGE_PATTERN.exec(value);
+    if (!match) return value;
+    if (match[1] && match[2]) return `${match[1]} - ${match[2]} triệu`;
+    if (match[1]) return `Từ ${match[1]} triệu`;
+    return `Đến ${match[2]} triệu`;
+  }
+
   function getFilterOptionLabel(type, value) {
+    if (type === 'salary' && parseSalaryRange(value))
+      return formatSalaryRangeLabel(value);
     const option = document.querySelector(
       `.dropdown-item[data-type="${type}"][data-value="${CSS.escape(value)}"]`,
     );
@@ -170,6 +192,19 @@ document.addEventListener('DOMContentLoaded', () => {
           item.insertAdjacentHTML('beforeend', CHECK_ICON_SVG);
         else if (!isSelected && icon) icon.remove();
       });
+
+    if (type === 'salary') {
+      const range = parseSalaryRange(
+        values.find((v) => parseSalaryRange(v)) || '',
+      );
+      const minInput = document.getElementById('salaryRangeMin');
+      const maxInput = document.getElementById('salaryRangeMax');
+      if (minInput)
+        minInput.value = range && range.min > 0 ? String(range.min) : '';
+      if (maxInput)
+        maxInput.value =
+          range && Number.isFinite(range.max) ? String(range.max) : '';
+    }
   }
 
   // Saved filter dialog elements
@@ -284,7 +319,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const parts = parseMultiValue(value);
         if (
           parts.length === 0 ||
-          !parts.every((part) => SAVED_FILTER_VALUE_SETS[key].has(part))
+          !parts.every(
+            (part) =>
+              SAVED_FILTER_VALUE_SETS[key].has(part) ||
+              (key === 'salary' && parseSalaryRange(part)),
+          )
         )
           return;
         value = parts.join(',');
@@ -712,6 +751,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. CORE FILTERING ENGINE
   // =========================================================================
   function matchSalaryTier(job, tier) {
+    const range = parseSalaryRange(tier);
+    if (range) return job.salaryMin <= range.max && job.salaryMax >= range.min;
     if (tier === 'under10') return job.salaryMin < 10;
     if (tier === '10-15') return job.salaryMin <= 15 && job.salaryMax >= 10;
     if (tier === '15-25') return job.salaryMin <= 25 && job.salaryMax >= 15;
@@ -1090,14 +1131,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // City short pill
         const cityPill = job.city || job.location.split('(')[0].trim();
 
-        // Skills summary line: e.g. "2 năm kinh nghiệm chuyên môn | Backend Deve... | +4"
-        const firstSkill =
-          job.skills && job.skills.length > 0 ? job.skills[0] : '';
+        // Skills summary line: e.g. "Product Designer | Figma | Design System | +2"
+        const skillList = job.skills || [];
+        const shownSkills = skillList
+          .slice(0, 2)
+          .map((s) => ' | ' + s)
+          .join('');
         const remainingCount =
-          job.skills && job.skills.length > 1
-            ? ` | +${job.skills.length - 1}`
-            : '';
-        const skillsSummary = `${expText} kinh nghiệm chuyên môn${firstSkill ? ' | ' + firstSkill : ''}${remainingCount}`;
+          skillList.length > 2 ? ` | +${skillList.length - 2}` : '';
+        const skillsSummary = `${job.specialty || ''}${shownSkills}${remainingCount}`.replace(/^ \| /, '');
 
 
         return `
@@ -1118,21 +1160,19 @@ document.addEventListener('DOMContentLoaded', () => {
                       job.verified
                         ? `
                       <span class="badge-verified" title="Doanh nghiệp xác thực">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                       </span>
                     `
                         : ''
                     }
                   </div>
                   <div class="job-quick-pills">
-                    <span class="job-quick-pill">${cityPill}</span>
+                    <span class="job-quick-pill job-quick-pill--salary">${job.salaryBadge}</span>
                     <span class="job-quick-pill">${expText}</span>
+                    <span class="job-quick-pill">${cityPill}</span>
                   </div>
                 </div>
                 <div class="job-top-right">
-                  <div class="job-salary-wrap">
-                    <span class="job-salary-text">${job.salaryBadge}</span>
-                  </div>
                   <button type="button" class="btn-quick-view" data-id="${job.id}" title="Xem nhanh việc làm">
                     <span>Xem nhanh</span>
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m13 17 5-5-5-5M6 17l5-5-5-5"/></svg>
@@ -1806,6 +1846,17 @@ document.addEventListener('DOMContentLoaded', () => {
         ? [value]
         : [];
     const defaultLabel = FILTER_DEFAULT_LABELS[type] || 'Bộ lọc';
+    // Sidebar desktop: nút là tiêu đề nhóm, giữ nguyên tên tiêu chí khi đã chọn giá trị
+    if (window.matchMedia('(min-width: 1025px)').matches) {
+      labelSpan.textContent = defaultLabel;
+      btn.classList.toggle('is-active', values.length > 0);
+      if (values.length > 0) {
+        btn.title = `${defaultLabel}: ${values.map((v) => getFilterOptionLabel(type, v)).join(', ')}`;
+      } else {
+        btn.removeAttribute('title');
+      }
+      return;
+    }
     if (values.length === 0) {
       btn.classList.remove('is-active');
       labelSpan.textContent = defaultLabel;
@@ -2054,6 +2105,56 @@ document.addEventListener('DOMContentLoaded', () => {
           );
         });
       });
+
+    // 2b. Form nhập khoảng lương tự do (thay thế khoảng nhập trước đó, giữ các mức chọn sẵn)
+    const salaryRangeForm = document.getElementById('salaryRangeForm');
+    if (salaryRangeForm) {
+      const minInput = document.getElementById('salaryRangeMin');
+      const maxInput = document.getElementById('salaryRangeMax');
+      const errorBox = document.getElementById('salaryRangeError');
+      const showError = (message) => {
+        errorBox.textContent = message;
+        errorBox.hidden = !message;
+      };
+      [minInput, maxInput].forEach((input) =>
+        input.addEventListener('input', () => showError('')),
+      );
+      salaryRangeForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const minRaw = minInput.value.trim();
+        const maxRaw = maxInput.value.trim();
+        const isValid = (raw) => /^\d{1,4}$/.test(raw);
+        if (!minRaw && !maxRaw) {
+          showError('Vui lòng nhập mức lương');
+          return;
+        }
+        if ((minRaw && !isValid(minRaw)) || (maxRaw && !isValid(maxRaw))) {
+          showError('Chỉ nhập số nguyên không âm');
+          return;
+        }
+        if (minRaw && maxRaw && Number(minRaw) > Number(maxRaw)) {
+          showError('Mức "Từ" phải nhỏ hơn hoặc bằng "Đến"');
+          return;
+        }
+        showError('');
+        const rangeValue = `range:${minRaw ? Number(minRaw) : ''}-${maxRaw ? Number(maxRaw) : ''}`;
+        const next = [
+          ...parseMultiValue(getFilterValue('salary')).filter(
+            (v) => !parseSalaryRange(v),
+          ),
+          rangeValue,
+        ];
+        setFilterValue('salary', next.join(','));
+        syncFilterDropdownSelection('salary');
+        updateFilterPillUI('salary', getFilterValue('salary'), '');
+        renderActiveFilterChips();
+        applyJobFilters(true, true);
+        showToast(
+          `Đã lọc theo ${FILTER_DEFAULT_LABELS.salary}: ${formatSalaryRangeLabel(rangeValue)}`,
+          '✓',
+        );
+      });
+    }
 
     // 3. Clear All button & Clear inline button
     document
@@ -2642,6 +2743,29 @@ document.addEventListener('DOMContentLoaded', () => {
     return Array.from(keywordsSet);
   }
 
+  function buildJobDetailHref(job, keyword = '') {
+    const title = String(job?.title || '').trim();
+    const normalizedTitle = normalizeText(title);
+    const normalizedCompany = normalizeText(job?.company || '');
+    const titleMatches = JOBS_DATA.filter(
+      (item) => normalizeText(item.title) === normalizedTitle,
+    );
+    const canonicalJob =
+      titleMatches.find(
+        (item) => normalizeText(item.company) === normalizedCompany,
+      ) || (titleMatches.length === 1 ? titleMatches[0] : null);
+    const params = [];
+
+    if (canonicalJob?.id) params.push(`id=${encodeURIComponent(canonicalJob.id)}`);
+    if (title) params.push(`title=${encodeURIComponent(title)}`);
+
+    const cleanKeyword = String(keyword || '').trim();
+    if (cleanKeyword)
+      params.push(new URLSearchParams({ keyword: cleanKeyword }).toString());
+
+    return `chi-tiet-viec-lam.html${params.length ? `?${params.join('&')}` : ''}`;
+  }
+
   function renderRecommendedJobs(query = '', container = recommendedJobListEl) {
     if (!container) return;
     const clean = normalizeText(query || '');
@@ -2768,7 +2892,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = jobsToDisplay
       .map(
         (job) => `
-      <button type="button" class="recommended-job" data-keyword="${escapeHtml(job.title)}" aria-label="Tìm ${escapeHtml(job.title)}, công ty ${escapeHtml(job.company)}, mức lương ${escapeHtml(job.salary)}, địa điểm ${escapeHtml(job.location || 'Toàn quốc')}">
+      <a href="${escapeHtml(buildJobDetailHref(job, query))}" class="recommended-job" data-keyword="${escapeHtml(job.title)}" aria-label="Xem chi tiết việc làm ${escapeHtml(job.title)}, công ty ${escapeHtml(job.company)}, mức lương ${escapeHtml(job.salary)}, địa điểm ${escapeHtml(job.location || 'Toàn quốc')}">
         <span class="recommended-job-logo" aria-hidden="true" title="Công ty ${escapeHtml(job.company)} tuyển dụng tại EasyCV">
           <img src="${escapeHtml(job.logo)}" alt="${escapeHtml(job.company)}" width="50" height="50" loading="lazy" title="Công ty ${escapeHtml(job.company)} tuyển dụng tại EasyCV">
         </span>
@@ -2780,18 +2904,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="recommended-job-loc" title="${escapeHtml(job.location || 'Toàn quốc')}">📍 ${escapeHtml(job.location || 'Toàn quốc')}</span>
           </div>
         </div>
-      </button>
+      </a>
     `,
       )
       .join('');
-
-    container.querySelectorAll('.recommended-job').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const kw = btn.getAttribute('data-keyword') || '';
-        executeSearch(kw);
-      });
-    });
   }
 
   if (searchSuggestDropdown) {

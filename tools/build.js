@@ -8,7 +8,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const PAGES = ['index', 'viec-lam', 'chi-tiet-viec-lam', 'job-preview', 'kham-pha-cong-ty', 'cong-ty'];
 const COPY_DIRS = ['css', 'js', 'assets'];
-const COPY_FILES = ['favicon.png', 'vercel.json'];
+const COPY_FILES = ['favicon.png'];
 const partial = (n) => fs.readFileSync(path.join(__dirname, 'partials', n), 'utf8').replace(/\r?\n$/, '');
 const CURRENT = new Set(['viec-lam', 'chi-tiet-viec-lam', 'job-preview', 'kham-pha-cong-ty', 'cong-ty']); // pages under the "Tìm Việc" menu
 const BLOCKS = {

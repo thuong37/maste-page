@@ -9,14 +9,14 @@
    ========================================================================== */
 
 .page-wrapper {
-  background: #f8fafc;
+  background: #f9fafc;
   min-height: 100vh;
   padding-bottom: 60px;
 }
 
 /* --- Search Hero Section --- */
 .job-search-hero {
-  background: linear-gradient(180deg, #ffffff 0%, #fff0e6 50%, #f8fafc 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fff0e6 50%, #f9fafc 100%);
   border-bottom: 1px solid #e6e6e6;
   padding: 32px 0 0 0;
 }
@@ -105,13 +105,25 @@
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  padding: 10px 0 4px;
+  padding: 13px 0;
   box-sizing: border-box;
   box-shadow:
     0 10px 30px -5px rgba(6, 14, 24, 0.1),
     0 1px 0 rgba(255, 101, 0, 0.15);
   border-bottom: 1px solid rgba(230, 230, 230, 0.9);
   animation: slideDownStickyBar 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* home.css đặt padding 6px qua #id; ghi đè để thanh neo cách mép trên vừa phải */
+#heroSearchStickyBar.is-sticky {
+  padding: 13px 0;
+  background: linear-gradient(180deg, #ffe9d9 0%, #fff1e6 100%);
+  border-bottom: 1px solid rgba(255, 101, 0, 0.28);
+}
+
+[data-theme='dark'] #heroSearchStickyBar.is-sticky {
+  background: linear-gradient(180deg, #2a1608 0%, #1f1208 100%);
+  border-bottom: 1px solid rgba(255, 101, 0, 0.4);
 }
 
 .hero-search-sticky-bar.is-sticky .job-search-box,
@@ -253,7 +265,7 @@
 .search-divider {
   width: 1px;
   height: 28px;
-  background: #e6e6e6;
+  background: #b0b0b0;
   flex-shrink: 0;
 }
 
@@ -958,7 +970,7 @@
 
 /* Khi sticky: filter bar căn theo container giống search box */
 .hero-search-sticky-bar.is-sticky .top-filter-bar {
-  border-top: 1px solid rgba(230, 230, 230, 0.5);
+  border-top: 1px solid #d0d0d0;
   margin-top: 8px;
   padding: 8px 0 2px;
 }
@@ -1325,6 +1337,76 @@
   flex-shrink: 0;
 }
 
+/* Nhập khoảng lương tự do */
+.salary-range-form {
+  margin-top: 6px;
+  padding: 10px 12px 12px;
+  border-top: 1px solid var(--eb-text-100);
+}
+
+.salary-range-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.salary-range-input {
+  flex: 1;
+  min-width: 0;
+  height: 36px;
+  padding: 0 10px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--eb-text-500);
+  background: #fff;
+  border: 1px solid var(--eb-text-100);
+  border-radius: 999px;
+  text-align: center;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.salary-range-input::-webkit-outer-spin-button,
+.salary-range-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.salary-range-input:focus {
+  outline: none;
+  border-color: var(--eb-primary-500);
+}
+
+.salary-range-sep,
+.salary-range-unit {
+  font-size: 13px;
+  color: var(--eb-text-300);
+}
+
+.salary-range-error {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #d92d20;
+}
+
+.salary-range-apply {
+  width: 100%;
+  height: 36px;
+  margin-top: 10px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--eb-primary-500);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.salary-range-apply:hover {
+  background: #e85c00;
+}
+
 /* Nút xóa lọc nhanh */
 .btn-clear-top-filters {
   display: inline-flex;
@@ -1586,7 +1668,7 @@
   flex-direction: column;
   gap: 20px;
   position: sticky;
-  top: 145px;
+  top: 153px;
 }
 
 .ad-card {
@@ -2087,7 +2169,7 @@
 }
 
 .badge-verified {
-  color: #0284c7;
+  color: var(--eb-primary-500);
   display: inline-flex;
   align-items: center;
 }
@@ -2108,7 +2190,14 @@
   border-radius: 6px;
 }
 
-/* Top Right: Salary & Quick View */
+.job-quick-pill--salary {
+  background: #fff0e6;
+  color: var(--color-primary, #ff6500);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Top Right: Quick View */
 .job-top-right {
   display: flex;
   flex-direction: column;
@@ -2700,8 +2789,8 @@
   overflow: hidden;
   /* Dính ngay dưới thanh tìm kiếm sticky; --detail-sticky-top do JS đo theo chiều cao thực của thanh */
   position: sticky;
-  top: var(--detail-sticky-top, 148px);
-  max-height: calc(100vh - var(--detail-sticky-top, 148px) - 16px);
+  top: var(--detail-sticky-top, 156px);
+  max-height: calc(100vh - var(--detail-sticky-top, 156px) - 16px);
   display: flex;
   flex-direction: column;
 }
@@ -4676,5 +4765,271 @@ body.saved-filter-dialog-open {
   .detail-skills-wrap > * {
     flex: 0 0 auto !important;
     white-space: nowrap;
+  }
+}
+
+.filter-side-title {
+  display: none;
+}
+
+/* =========================================================================
+   FILTER SIDEBAR (desktop): bộ lọc tiêu chí nằm ở cột trái, các nhóm luôn mở
+   ========================================================================= */
+@media (min-width: 1025px) {
+  .job-main-columns {
+    grid-template-columns: 222px minmax(0, 1fr); /* 190px nội dung + 2×16px padding */
+  }
+
+  .top-filter-bar.filter-side-panel {
+    position: sticky;
+    top: 92px;
+    margin-bottom: 0;
+    /* !important để thắng rule `.job-search-hero .top-filter-bar` (padding 10px + margin-top 8px) */
+    padding: 0 0 14px !important;
+    margin-top: 0 !important;
+    max-height: calc(100vh - 112px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  /* Thanh cuộn chỉ hiện khi rê chuột / cuộn trên khối bộ lọc */
+  .filter-side-panel:hover,
+  .filter-side-panel .industry-dropdown-list:hover {
+    scrollbar-color: #cbd5e1 transparent;
+  }
+  .filter-side-panel .industry-dropdown-list {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  .filter-side-panel .filter-side-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    box-sizing: border-box;
+    min-height: 40px; /* ngang hàng với thanh "Tìm thấy … việc làm" bên phải */
+    padding: 0 0 10px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #060e18;
+  }
+  .filter-side-panel .filter-side-title-icon {
+    flex-shrink: 0;
+    color: #ff6500;
+  }
+
+  .filter-side-panel .top-filter-bar-inner,
+  .filter-side-panel .top-filter-pills-group {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 0;
+    width: 100%;
+  }
+
+  .filter-side-panel .filter-dropdown-wrap {
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  /* Nút tiêu chí thành tiêu đề nhóm, không còn tương tác mở/đóng */
+  .filter-side-panel .filter-pill-btn {
+    width: 100%;
+    padding: 0 0 8px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #060e18;
+    pointer-events: none;
+    cursor: default;
+  }
+  .filter-side-panel .filter-pill-btn.is-active {
+    background: transparent;
+    box-shadow: none;
+    color: #e85c00;
+  }
+  .filter-side-panel .filter-pill-btn .pill-chevron {
+    display: none;
+  }
+
+  /* Menu luôn hiển thị, nằm trong luồng */
+  .filter-side-panel .filter-dropdown-menu,
+  .filter-side-panel .filter-dropdown-menu[hidden] {
+    display: block !important;
+    position: static;
+    min-width: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    animation: none;
+  }
+  .filter-side-panel .industry-searchable-menu {
+    overflow: visible;
+  }
+  .filter-side-panel .industry-search-wrap {
+    position: static;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    margin-bottom: 4px;
+  }
+  .filter-side-panel .industry-dropdown-list {
+    max-height: 220px;
+    overflow-y: auto;
+    padding: 0;
+  }
+
+  /* Giá trị lọc canh sát lề trái, thẳng hàng với tiêu đề nhóm */
+  .filter-side-panel .filter-dropdown-menu .dropdown-item,
+  .filter-side-panel .industry-dropdown-list .dropdown-item {
+    justify-content: flex-start;
+    gap: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  /* Hộp checkbox thay cho nền highlight + dấu tick bên phải */
+  .filter-side-panel .filter-dropdown-menu .dropdown-item::before,
+  .filter-side-panel .industry-dropdown-list .dropdown-item::before {
+    content: "";
+    flex-shrink: 0;
+    width: 17px;
+    height: 17px;
+    box-sizing: border-box;
+    border: 1.5px solid #b0b0b0;
+    border-radius: 5px;
+    background: #ffffff center / 11px 11px no-repeat;
+    transition: all 0.18s ease;
+  }
+  .filter-side-panel .filter-dropdown-menu .dropdown-item:hover::before,
+  .filter-side-panel .industry-dropdown-list .dropdown-item:hover::before {
+    border-color: #ff6500;
+  }
+  .filter-side-panel .filter-dropdown-menu .dropdown-item.is-selected::before,
+  .filter-side-panel .industry-dropdown-list .dropdown-item.is-selected::before {
+    border-color: #ff6500;
+    background-color: #ff6500;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  }
+  .filter-side-panel .dropdown-item .check-icon {
+    display: none;
+  }
+  .filter-side-panel .filter-dropdown-menu .dropdown-item:hover,
+  .filter-side-panel .filter-dropdown-menu .dropdown-item.is-selected,
+  .filter-side-panel .industry-dropdown-list .dropdown-item:hover,
+  .filter-side-panel .industry-dropdown-list .dropdown-item.is-selected {
+    background: transparent;
+  }
+
+  /* Form khoảng lương canh sát lề trái, thẳng hàng với các checkbox */
+  .filter-side-panel .salary-range-form {
+    margin-top: 8px;
+    padding: 0;
+    border-top: none;
+  }
+
+  .filter-side-panel .btn-clear-top-filters {
+    margin-top: 12px;
+    align-self: flex-start;
+  }
+}
+
+/* =========================================================================
+   JOB LISTING: 2 cột thẻ (tablet/desktop), mobile giữ 1 cột
+   ========================================================================= */
+@media (min-width: 769px) {
+  .job-listing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    align-items: stretch;
+  }
+
+  .job-listing-grid > :not(.job-card) {
+    grid-column: 1 / -1;
+  }
+
+  .job-listing-grid .job-card {
+    padding: 12px 14px;
+    min-width: 0;
+  }
+
+  .job-listing-grid .job-card-top {
+    gap: 12px;
+  }
+
+  body .job-listing-grid .job-card .job-company-logo {
+    width: 72px !important;
+    height: 72px !important;
+    min-width: 72px !important;
+    min-height: 72px !important;
+    border-radius: 10px !important;
+    padding: 2px !important;
+  }
+
+  .job-listing-grid .job-title {
+    font-size: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .job-listing-grid .job-company-row {
+    margin-bottom: 6px;
+  }
+
+  .job-listing-grid .job-company-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .job-listing-grid .job-quick-pill {
+    font-size: 11.5px;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+
+  /* Nút "Xem nhanh" thu thành icon tròn ở góc phải trên, chỉ hiện khi hover */
+  .job-listing-grid .job-top-right {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+  }
+
+  .job-listing-grid .btn-quick-view {
+    padding: 5px;
+    border-radius: 50%;
+  }
+
+  .job-listing-grid .btn-quick-view span {
+    display: none;
+  }
+
+  .job-listing-grid .job-title-wrap {
+    padding-right: 28px;
+  }
+
+  .job-listing-grid .job-bottom-left {
+    font-size: 12.5px;
+  }
+
+  .job-listing-grid .btn-card-apply {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }

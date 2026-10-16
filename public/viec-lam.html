@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="assets/design-tokens.css?v=fullnav_20261012">
   <link rel="stylesheet" href="css/navbar.css?v=fullnav_20261012">
   <link rel="stylesheet" href="css/home.css?v=onebanner2_20261012">
-  <link rel="stylesheet" href="css/viec-lam.css?v=noads_20261012">
+  <link rel="stylesheet" href="css/viec-lam.css?v=stickytop3_20261015">
   <link rel="stylesheet" href="css/location-picker.css?v=eb_colors_20261007">
   <link rel="stylesheet" href="css/category-filter-modal.css?v=sync3_20261012">
   <link rel="stylesheet" href="css/mobile-typography.css?v=mui_20261012">
@@ -1019,7 +1019,117 @@
                 <button type="button" class="btn-close-suggest" id="btnCloseSuggest">Đóng [Esc]</button>
               </div>
             </div>
-      <section class="top-filter-bar" id="topFilterBar" aria-label="Bộ lọc tiêu chí việc làm">
+          </div>
+        </div>
+
+        <!-- Popover / Modal: Chọn Nhóm nghề, Nghề hoặc Chuyên môn (Chuẩn ảnh mẫu tham khảo) -->
+        <div class="category-modal-overlay" id="categoryModalOverlay" role="dialog" aria-modal="true" aria-labelledby="categoryModalTitle" hidden>
+          <div class="category-modal-backdrop" id="categoryModalBackdrop"></div>
+          <div class="category-modal-dialog">
+
+            <!-- Header -->
+            <div class="category-modal-header">
+              <h2 class="category-modal-title" id="categoryModalTitle">Chọn Nhóm nghề, Nghề hoặc Chuyên môn</h2>
+              <button type="button" class="category-modal-close" id="categoryModalClose" aria-label="Đóng bộ lọc">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+            </div>
+
+            <!-- Search input bar -->
+            <div class="category-modal-search-wrap">
+              <div class="category-modal-search-box">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                <input type="search" id="categoryModalSearchInput" placeholder="Nhập từ khóa tìm kiếm" autocomplete="off" />
+                <button type="button" class="category-search-clear" id="categorySearchClear" title="Xóa tìm kiếm" hidden>✕</button>
+              </div>
+              <button type="button" class="btn-category-search-close" id="btnCategorySearchClose" title="Đóng tìm kiếm">Đóng</button>
+            </div>
+
+            <!-- Body: 2 Columns -->
+            <div class="category-modal-body">
+
+              <!-- Left Panel: NHÓM NGHỀ -->
+              <div class="category-panel-left">
+                <div class="category-column-header">NHÓM NGHỀ</div>
+                <div class="category-group-list" id="categoryGroupList">
+                  <!-- Rendered dynamically -->
+                </div>
+              </div>
+
+              <!-- Right Panel: NGHỀ & VỊ TRÍ CHUYÊN MÔN -->
+              <div class="category-panel-right">
+                <div class="category-right-headers" id="categoryRightHeaders">
+                  <div class="category-default-headers" style="display: contents;">
+                    <div class="category-column-header col-role">NGHỀ</div>
+                    <div class="category-column-header col-specialty">VỊ TRÍ CHUYÊN MÔN</div>
+                  </div>
+                  <div class="category-search-headers" id="categorySearchHeaders" style="display: none; width: 100%;">
+                    <div class="category-search-header-title">
+                      <span>Kết quả tìm kiếm</span>
+                      <span class="search-badge" id="categorySearchCount">0 kết quả</span>
+                    </div>
+                    <button type="button" class="btn-exit-category-search" id="btnExitCategorySearch" title="Quay lại danh mục">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"></path></svg>
+                      <span>Quay lại danh mục</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="category-subgroup-list" id="categorySubgroupList">
+                  <div class="category-popular-wrap" id="categoryPopularWrap">
+                    <div class="category-popular-label-wrap">
+                      <span class="category-popular-label">Được tìm kiếm nhiều</span>
+                    </div>
+                    <div class="category-popular-chip-list" id="categoryPopularChipList">
+                      <!-- Rendered dynamically -->
+                    </div>
+                  </div>
+                  <div class="category-subgroup-items" id="categorySubgroupItems">
+                    <!-- Rendered dynamically -->
+                  </div>
+                  <div class="category-search-suggestions" id="categorySearchSuggestions" style="display: none;">
+                    <!-- Rendered dynamically on focus -->
+                  </div>
+                  <div class="category-search-results-list" id="categorySearchResultsList" style="display: none;">
+                    <!-- Rendered dynamically on typing -->
+                  </div>
+                </div>
+                <!-- Floating scroll hint -->
+                <div class="category-scroll-hint" id="categoryScrollHint">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"></path></svg>
+                  <span>Cuộn để xem</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="category-modal-footer">
+              <div class="category-footer-feedback">
+                <span>Bạn gặp vấn đề với Danh mục Nghề?</span>
+                <a href="javascript:void(0)" class="category-feedback-link" id="categoryFeedbackLink">Gửi góp ý</a>
+              </div>
+              <div class="category-footer-actions">
+                <button type="button" class="btn-category-clear-all" id="btnCategoryClearAll">Bỏ chọn tất cả</button>
+                <div class="action-divider"></div>
+                <button type="button" class="btn-category-cancel" id="btnCategoryCancel">Hủy</button>
+                <button type="button" class="btn-category-submit" id="btnCategorySubmit">Chọn</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      <!-- 0. Thanh Bộ Lọc Thông Minh (ngay dưới ô tìm kiếm) -->
+
+      <!-- 2. Bố cục 2 Cột: Danh sách việc làm (Trái) + Khối Banner Quảng Cáo Doanh Nghiệp (Phải) -->
+      <div class="job-main-columns">
+
+        <!-- Cột Trái: Sidebar bộ lọc -->
+      <section class="top-filter-bar filter-side-panel" id="topFilterBar" aria-label="Bộ lọc tiêu chí việc làm">
+        <h2 class="filter-side-title">
+          <svg class="filter-side-title-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+          <span>Lọc nâng cao</span>
+        </h2>
         <div class="top-filter-bar-inner">
           <div class="top-filter-pills-group">
 
@@ -1158,6 +1268,16 @@
                 <div class="dropdown-item" data-type="salary" data-value="negotiable" data-label="Thỏa thuận">
                   <span>Thỏa thuận</span>
                 </div>
+                <form class="salary-range-form" id="salaryRangeForm" novalidate>
+                  <div class="salary-range-row">
+                    <input type="number" class="salary-range-input" id="salaryRangeMin" min="0" step="1" inputmode="numeric" placeholder="Từ" aria-label="Lương từ (triệu)" />
+                    <span class="salary-range-sep">-</span>
+                    <input type="number" class="salary-range-input" id="salaryRangeMax" min="0" step="1" inputmode="numeric" placeholder="Đến" aria-label="Lương đến (triệu)" />
+                    <span class="salary-range-unit">triệu</span>
+                  </div>
+                  <div class="salary-range-error" id="salaryRangeError" role="alert" hidden></div>
+                  <button type="submit" class="salary-range-apply">Áp dụng</button>
+                </form>
               </div>
             </div>
 
@@ -1220,110 +1340,6 @@
         </div>
 
       </section>
-          </div>
-        </div>
-
-        <!-- Popover / Modal: Chọn Nhóm nghề, Nghề hoặc Chuyên môn (Chuẩn ảnh mẫu tham khảo) -->
-        <div class="category-modal-overlay" id="categoryModalOverlay" role="dialog" aria-modal="true" aria-labelledby="categoryModalTitle" hidden>
-          <div class="category-modal-backdrop" id="categoryModalBackdrop"></div>
-          <div class="category-modal-dialog">
-
-            <!-- Header -->
-            <div class="category-modal-header">
-              <h2 class="category-modal-title" id="categoryModalTitle">Chọn Nhóm nghề, Nghề hoặc Chuyên môn</h2>
-              <button type="button" class="category-modal-close" id="categoryModalClose" aria-label="Đóng bộ lọc">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-              </button>
-            </div>
-
-            <!-- Search input bar -->
-            <div class="category-modal-search-wrap">
-              <div class="category-modal-search-box">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
-                <input type="search" id="categoryModalSearchInput" placeholder="Nhập từ khóa tìm kiếm" autocomplete="off" />
-                <button type="button" class="category-search-clear" id="categorySearchClear" title="Xóa tìm kiếm" hidden>✕</button>
-              </div>
-              <button type="button" class="btn-category-search-close" id="btnCategorySearchClose" title="Đóng tìm kiếm">Đóng</button>
-            </div>
-
-            <!-- Body: 2 Columns -->
-            <div class="category-modal-body">
-
-              <!-- Left Panel: NHÓM NGHỀ -->
-              <div class="category-panel-left">
-                <div class="category-column-header">NHÓM NGHỀ</div>
-                <div class="category-group-list" id="categoryGroupList">
-                  <!-- Rendered dynamically -->
-                </div>
-              </div>
-
-              <!-- Right Panel: NGHỀ & VỊ TRÍ CHUYÊN MÔN -->
-              <div class="category-panel-right">
-                <div class="category-right-headers" id="categoryRightHeaders">
-                  <div class="category-default-headers" style="display: contents;">
-                    <div class="category-column-header col-role">NGHỀ</div>
-                    <div class="category-column-header col-specialty">VỊ TRÍ CHUYÊN MÔN</div>
-                  </div>
-                  <div class="category-search-headers" id="categorySearchHeaders" style="display: none; width: 100%;">
-                    <div class="category-search-header-title">
-                      <span>Kết quả tìm kiếm</span>
-                      <span class="search-badge" id="categorySearchCount">0 kết quả</span>
-                    </div>
-                    <button type="button" class="btn-exit-category-search" id="btnExitCategorySearch" title="Quay lại danh mục">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"></path></svg>
-                      <span>Quay lại danh mục</span>
-                    </button>
-                  </div>
-                </div>
-                <div class="category-subgroup-list" id="categorySubgroupList">
-                  <div class="category-popular-wrap" id="categoryPopularWrap">
-                    <div class="category-popular-label-wrap">
-                      <span class="category-popular-label">Được tìm kiếm nhiều</span>
-                    </div>
-                    <div class="category-popular-chip-list" id="categoryPopularChipList">
-                      <!-- Rendered dynamically -->
-                    </div>
-                  </div>
-                  <div class="category-subgroup-items" id="categorySubgroupItems">
-                    <!-- Rendered dynamically -->
-                  </div>
-                  <div class="category-search-suggestions" id="categorySearchSuggestions" style="display: none;">
-                    <!-- Rendered dynamically on focus -->
-                  </div>
-                  <div class="category-search-results-list" id="categorySearchResultsList" style="display: none;">
-                    <!-- Rendered dynamically on typing -->
-                  </div>
-                </div>
-                <!-- Floating scroll hint -->
-                <div class="category-scroll-hint" id="categoryScrollHint">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"></path></svg>
-                  <span>Cuộn để xem</span>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Footer -->
-            <div class="category-modal-footer">
-              <div class="category-footer-feedback">
-                <span>Bạn gặp vấn đề với Danh mục Nghề?</span>
-                <a href="javascript:void(0)" class="category-feedback-link" id="categoryFeedbackLink">Gửi góp ý</a>
-              </div>
-              <div class="category-footer-actions">
-                <button type="button" class="btn-category-clear-all" id="btnCategoryClearAll">Bỏ chọn tất cả</button>
-                <div class="action-divider"></div>
-                <button type="button" class="btn-category-cancel" id="btnCategoryCancel">Hủy</button>
-                <button type="button" class="btn-category-submit" id="btnCategorySubmit">Chọn</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      <!-- 0. Thanh Bộ Lọc Thông Minh (ngay dưới ô tìm kiếm) -->
-
-      <!-- 2. Bố cục 2 Cột: Danh sách việc làm (Trái) + Khối Banner Quảng Cáo Doanh Nghiệp (Phải) -->
-      <div class="job-main-columns">
 
         <!-- Cột Trái: Danh sách việc làm -->
         <section class="listings-content" id="listingsContent">
@@ -1388,7 +1404,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">FPT SOFTWARE</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hà Nội</span>
@@ -1443,7 +1459,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">NGÂN HÀNG TECHCOMBANK</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hồ Chí Minh</span>
@@ -1498,7 +1514,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">VNG CORPORATION (ZALO TEAM)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hồ Chí Minh</span>
@@ -1553,7 +1569,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">TẬP ĐOÀN CÔNG NGHIỆP - VIỄN THÔNG QUÂN ĐỘI (VIETTEL)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hà Nội</span>
@@ -1609,7 +1625,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">SHOPEE VIETNAM (SPX EXPRESS)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hồ Chí Minh & Bình Dương</span>
@@ -1665,7 +1681,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">VÍ ĐIỆN TỬ MOMO (M-SERVICE)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Toàn quốc</span>
@@ -1721,7 +1737,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">CÔNG TY CỔ PHẦN GIẢI PHÁP THANH TOÁN VIỆT NAM (VNPAY)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hà Nội & Remote</span>
@@ -1777,7 +1793,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">TẬP ĐOÀN VINGROUP (VINHOMES)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hà Nội</span>
@@ -1833,7 +1849,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">CMC TELECOM</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hà Nội & Hồ Chí Minh</span>
@@ -1889,7 +1905,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">BASE.VN (NỀN TẢNG QUẢN TRỊ DOANH NGHIỆP)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hồ Chí Minh</span>
@@ -1945,7 +1961,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">ONE MOUNT GROUP (HỆ SINH THÁI VINID & VINSHOP)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hà Nội</span>
@@ -2001,7 +2017,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">KMS TECHNOLOGY VIETNAM</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Đà Nẵng & Remote</span>
@@ -2057,7 +2073,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">FPT SOFTWARE ACADEMY</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Đà Nẵng & Remote</span>
@@ -2113,7 +2129,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">TIKI CORPORATION</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hồ Chí Minh</span>
@@ -2169,7 +2185,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">TẬP ĐOÀN MASAN (MASAN CONSUMER)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hồ Chí Minh & Hà Nội</span>
@@ -2225,7 +2241,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">NASHTECH VIETNAM</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hà Nội</span>
@@ -2281,7 +2297,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">VINAI RESEARCH (TẬP ĐOÀN VINGROUP)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hà Nội</span>
@@ -2337,7 +2353,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">NGÂN HÀNG TMCP QUÂN ĐỘI (MB BANK)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hà Nội</span>
@@ -2393,7 +2409,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">CÔNG TY CỔ PHẦN SỮA VIỆT NAM (VINAMILK)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hồ Chí Minh</span>
@@ -2449,7 +2465,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">BOSCH GLOBAL SOFTWARE TECHNOLOGIES (BOSCH VIỆT NAM)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hồ Chí Minh & Đà Nẵng</span>
@@ -2505,7 +2521,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">UNILEVER VIỆT NAM</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hồ Chí Minh</span>
@@ -2561,7 +2577,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">NGÂN HÀNG TMCP VIỆT NAM THỊNH VƯỢNG (VPBANK)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hà Nội</span>
@@ -2617,7 +2633,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">CÔNG TY CỔ PHẦN GEMADEPT (GEMADEPT LOGISTICS)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hải Phòng & Hồ Chí Minh</span>
@@ -2673,7 +2689,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">TẬP ĐOÀN BƯU CHÍNH VIỄN THÔNG VIỆT NAM (VNPT CYBER IMMUNE)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hà Nội</span>
@@ -2729,7 +2745,7 @@
                     </h3>
                     <div class="job-company-row">
                       <span class="job-company-name">CÔNG TY CỔ PHẦN TIKI (TIKI TECH HUB)</span>
-                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg></span>
+                      <span class="badge-verified" title="Doanh nghiệp xác thực"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.60 15.29,4.05 19.35,4.65 19.95,8.71 22.40,12.00 19.95,15.29 19.35,19.35 15.29,19.95 12.00,22.40 8.71,19.95 4.65,19.35 4.05,15.29 1.60,12.00 4.05,8.71 4.65,4.65 8.71,4.05" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                     <div class="job-quick-pills">
                       <span class="job-quick-pill">Hồ Chí Minh & Remote</span>
@@ -2805,67 +2821,6 @@
 
       </section>
 
-      <!-- Cột Phải: Khối Banner Quảng Cáo Phục Vụ Doanh Nghiệp -->
-      <aside class="ads-sidebar-container" id="adsSidebar" aria-label="Nhà tuyển dụng nổi bật và quảng cáo">
-
-        <!-- 1. VIP Employer Showcase Banner -->
-        <div class="ad-card vip-employer-card">
-          <div class="vip-employer-cover">
-            <img src="assets/banners/samsung-rd-center.jpg" alt="Samsung Electronics R&D Center Hanoi" class="vip-cover-img" />
-            <div class="vip-employer-logo-wrap">
-              <img src="assets/logos/companies/company-samsung.svg" alt="Samsung SRV" class="vip-logo-img" />
-            </div>
-          </div>
-
-          <div class="vip-employer-body">
-            <div class="vip-employer-name-row">
-              <h4 class="vip-employer-name">Samsung Electronics R&D (SRV)</h4>
-              <span class="badge-verified" title="Doanh nghiệp xác thực">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4" stroke="#FFF" stroke-width="2"/></svg>
-              </span>
-            </div>
-            <p class="vip-employer-slogan">Trung tâm nghiên cứu & phát triển phần mềm và AI quy mô lớn nhất Đông Nam Á</p>
-            
-            <div class="vip-hot-jobs">
-              <div class="vip-hot-job-item">
-                <span class="vip-job-title">Senior AI & GenAI Research Engineer</span>
-                <span class="vip-job-salary">40 - 75 triệu</span>
-              </div>
-              <div class="vip-hot-job-item">
-                <span class="vip-job-title">Embedded System / C++ Tech Lead</span>
-                <span class="vip-job-salary">35 - 55 triệu</span>
-              </div>
-              <div class="vip-hot-job-item">
-                <span class="vip-job-title">Cloud DevOps Architect (AWS / K8s)</span>
-                <span class="vip-job-salary">38 - 60 triệu</span>
-              </div>
-            </div>
-
-            <a href="javascript:void(0)" class="btn-vip-explore" id="btnExploreVipEmployer">
-              <span>Xem 28 việc làm đang tuyển</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- 3. AI CV Coach Service Card -->
-        <div class="ad-card cv-coach-card">
-          <div class="cv-coach-header">
-            <div class="cv-coach-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6500" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
-            </div>
-            <div>
-              <h5 class="cv-coach-title">Tối ưu CV với Trợ lý AI</h5>
-              <span class="cv-coach-badge">Chuẩn hóa ATS 2026</span>
-            </div>
-          </div>
-          <p class="cv-coach-desc">Được AI tự động phân tích và tối ưu hóa từ khóa chuyên môn phù hợp với vị trí bạn ứng tuyển, giúp tăng tỷ lệ phản hồi.</p>
-          <a href="index.html#tao-cv-theo-mau" class="btn-cv-coach">
-            <span>Tạo CV chuẩn ATS miễn phí →</span>
-          </a>
-        </div>
-
-      </aside>
 
     </div><!-- /.job-main-columns -->
 

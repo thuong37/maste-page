@@ -635,6 +635,9 @@
         dialog.style.removeProperty('top');
         dialog.style.removeProperty('max-height');
         dialog.style.removeProperty('height');
+        dialog.style.removeProperty('left');
+        dialog.style.removeProperty('width');
+        dialog.style.removeProperty('max-width');
         return;
       }
 
@@ -647,6 +650,11 @@
         const topPos = Math.max(10, Math.round(boxRect.bottom + 8));
         document.documentElement.style.setProperty('--cat-modal-top', `${topPos}px`);
         dialog.style.setProperty('top', `${topPos}px`, 'important');
+
+        // Căn popup đúng bằng chiều rộng thanh tìm kiếm
+        dialog.style.setProperty('left', `${Math.round(boxRect.left + boxRect.width / 2)}px`, 'important');
+        dialog.style.setProperty('width', `${Math.round(boxRect.width)}px`, 'important');
+        dialog.style.setProperty('max-width', 'none', 'important');
 
         const availableHeight = Math.max(260, window.innerHeight - topPos - 20);
         const targetHeight = Math.round(availableHeight * (2 / 3));
@@ -907,7 +915,10 @@
         : POPULAR_KEYWORDS;
 
       this.popularChipListEl.innerHTML = keywords.map(keyword => {
-        const isSelected = self.tempSelection.roles.has(keyword);
+        // Nhóm cha đã được chọn thì đã bao hàm từ khóa này, không cần đánh dấu chip
+        const parentSub = self.findParentSubgroup(keyword);
+        const coveredByGroup = parentSub && self.tempSelection.subgroups.has(parentSub.title);
+        const isSelected = self.tempSelection.roles.has(keyword) && !coveredByGroup;
         return `<button type="button" class="category-popular-chip ${isSelected ? 'is-selected' : ''}" data-keyword="${keyword}">${keyword}</button>`;
       }).join('');
 
@@ -921,7 +932,7 @@
       });
     },
 
-    togglePopularRole: function (keyword) {
+    findParentSubgroup: function (keyword) {
       const currentCat = CATEGORY_DATA.find(c => c.key === this.activeCategoryKey);
       let parentSub = null;
       if (currentCat) {
@@ -933,6 +944,11 @@
           if (parentSub) break;
         }
       }
+      return parentSub;
+    },
+
+    togglePopularRole: function (keyword) {
+      const parentSub = this.findParentSubgroup(keyword);
       this.toggleRole(keyword, parentSub ? parentSub.title : null);
     },
 

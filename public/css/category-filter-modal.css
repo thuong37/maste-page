@@ -391,9 +391,9 @@ body.job-detail-page .category-modal-backdrop {
   padding: 6px 14px;
   border-radius: 999px;
   background: #FFF0E6;
-  color: #B54800;
+  color: #333333;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   border: 1.5px solid #FFB88A;
   transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
