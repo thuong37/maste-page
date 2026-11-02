@@ -1,0 +1,36 @@
+{
+  "id": 86,
+  "nhom": "Sản xuất",
+  "nghe": "Thợ kỹ thuật",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên/thợ, 0-2 năm kinh nghiệm, từ Trung cấp (nhiều JD không đòi bằng cao); 4/6 JD tuyển nam",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; công việc tay nghề, ảnh không quan trọng (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc định hướng",
+    "kinh-nghiem-lam-viec": "can — 4/6 hỏi 1-2 năm; nêu loại thiết bị/ngành đã làm (điện mặt trời, phun sơn, xe nâng, máy in Flexo)",
+    "hoc-van": "can — 5/6 nêu Trung cấp trở lên, chuyên ngành cơ điện tử/cơ khí/điện/điện tử/kỹ thuật liên quan",
+    "ky-nang-chuyen-mon": "can — 6/6: hàn, lắp đặt điện, sửa chữa/bảo dưỡng thiết bị, phun sơn, đọc bản vẽ kỹ thuật, vận hành máy",
+    "ky-nang-mem": "can — 5/6: trung thực, chăm chỉ, trách nhiệm, làm việc độc lập/nhóm, cẩn thận",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc phần mềm; thay vào đó là thiết bị (súng phun sơn, xe nâng, máy in)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ nghề cụ thể",
+    "du-an": "khong — không JD nào nhắc; có thể kể công trình đã thi công (suy từ công việc)",
+    "thanh-tich-kpi": "khong — không JD nào nhắc; JD#2 chỉ nhắc cải tiến chất lượng và sản lượng",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc (2/6 nhận không cần kinh nghiệm)",
+    "giay-phep": "can — 2/6 nêu thẳng: bằng lái B2 trở lên (JD#5), có xe máy đi lại (JD#4)",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/6 JD nêu độ tuổi 20-35/22-35/20-45, giới tính nam, sức khỏe tốt, sẵn sàng đi công trình",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Cơ điện", "hàn", "bảo trì bảo dưỡng", "sửa chữa", "phun sơn", "đọc bản vẽ kỹ thuật", "vận hành máy", "an toàn lao động", "bằng lái B2", "đi công trình"],
+  "bangChung": [
+    "JD#1: 'Có kỹ năng cơ bản về cơ khí, hàn sắt thép, dựng khung đỡ'; 'Nam', 'Tuổi 20 - 35'",
+    "JD#2: 'Ít nhất 2 năm kinh nghiệm ở vị trí kỹ thuật phun sơn trên bề mặt nhựa'",
+    "JD#4: 'Có phương tiện di chuyển là xe máy'; 'Độ tuổi: Từ 22 đến 35 tuổi'",
+    "JD#5: 'Bắt buộc có bằng lái xe B2 trở lên'",
+    "JD#6: 'Nam, có sức khỏe tốt'; 'Tốt nghiệp trung cấp các ngành kỹ thuật liên quan'"
+  ],
+  "ghiChu": "Nghề rất đa dạng (điện, sơn, xe nâng, kiểm định ô tô, máy in); chỉ chung điểm là tay nghề và sức khỏe."
+}

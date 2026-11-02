@@ -1,0 +1,107 @@
+[
+ {
+  "style": "Đơn giản",
+  "title": "Màu sắc",
+  "slug": "cv_color",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Màu sắc",
+  "slug": "cv_color",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Outstanding 3",
+  "slug": "outstanding_3",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Outstanding 5",
+  "slug": "outstanding_5",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Dòng Thời Gian 2",
+  "slug": "timeline_clean_2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Dòng Thời Gian 2",
+  "slug": "timeline_clean_2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Outstanding 9",
+  "slug": "outstanding_9",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Outstanding 7",
+  "slug": "outstanding_7",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Outstanding 7",
+  "slug": "outstanding_7",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Lập Trình Viên",
+  "slug": "dev_1",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Sinh viên 3",
+  "slug": "student_3",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Sinh viên 3",
+  "slug": "student_3",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Tối giản 2",
+  "slug": "minimalism_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Tối giản 2",
+  "slug": "minimalism_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Basic 5",
+  "slug": "basic_5_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ }
+]

@@ -1,0 +1,36 @@
+{
+  "id": 105,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Thể chất/Thể hình",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên: 3 JD huấn luyện viên (yoga/pilates, PT; 0-1 năm), 3 JD giáo viên/giảng viên giáo dục thể chất (0-1 năm, CĐ/ĐH); 3/6 không yêu cầu kinh nghiệm. Bộ JD trùng với nghề #95 (cùng 6 JD)",
+  "muc": {
+    "anh-chan-dung": "can — 4/6 JD nêu thẳng ngoại hình: 'ngoại hình phù hợp/cân đối từ 1m58', 'thân hình cân đối', 'ngoại hình phù hợp với công việc'; ảnh toàn thân/rõ nét là lợi thế",
+    "muc-tieu-nghe-nghiep": "nen — 3/6 nhắc mong muốn gắn bó/phát triển lâu dài; nên nêu định hướng huấn luyện/giảng dạy",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm (3/6 không yêu cầu); ghi thời gian tập luyện/huấn luyện/giảng dạy, bộ môn, đối tượng học viên",
+    "hoc-van": "can — 5/6 nêu bậc học THCS/THPT đến ĐH, ngành Giáo dục thể chất/Sư phạm TDTT/Thể thao",
+    "ky-nang-chuyen-mon": "can — xây dựng chương trình tập, đánh giá thể trạng, hướng dẫn kỹ thuật, giải phẫu/sinh lý/dinh dưỡng thể thao, dạy trẻ có nhu cầu đặc biệt",
+    "ky-nang-mem": "can — 6/6: giao tiếp, thuyết phục, nhiệt huyết, trách nhiệm, kiên nhẫn, làm việc nhóm",
+    "cong-cu-phan-mem": "nen — 1/6 (JD#3) thành thạo tin học văn phòng; không JD nào khác nhắc",
+    "chung-chi": "can — 3/6 nêu thẳng: chứng chỉ PT, nghiệp vụ sư phạm dạy CĐ/TC (bắt buộc ở JD#3), 'chứng chỉ là lợi thế lớn'",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — JD#2 đạt mục tiêu giảm cân/tăng cơ của khách; JD#6 theo dõi tiến độ; nên ghi số khách/kết quả học viên (suy từ công việc)",
+    "ngoai-ngu": "nen — 3/6 nhắc tiếng Anh (dạy bằng tiếng Anh ở JD#4, JD#6 là lợi thế)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "nen — không JD nào nhắc; thành tích thi đấu thể thao hữu ích với nghề (suy từ công việc)",
+    "hoat-dong-ngoai-khoa": "nen — 2/6 nhắc tham gia sự kiện thể thao, Olympic; JD#1 tập luyện fitness thường xuyên 4-6 tháng gần nhất",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/6 nêu thẳng giới tính/độ tuổi (20-36, 25-30, 20-35), chiều cao tối thiểu 1m58, sức khỏe tốt",
+    "so-thich": "nen — JD#1 đòi tập luyện thường xuyên Yoga/Pilates/Gym/Dance...; sở thích thể thao là bằng chứng phù hợp (JD nêu thẳng)"
+  },
+  "tuKhoaNenCo": ["Huấn luyện viên PT", "Yoga/Pilates", "Giáo dục thể chất", "chứng chỉ PT", "giáo án thể dục", "dinh dưỡng thể thao", "đánh giá thể trạng", "Tiếng Anh"],
+  "bangChung": [
+    "JD#1: 'Ngoại hình phù hợp/cân đối làm Huấn Luyện Viên từ 1m58'; 'Nữ 1990 - 2007'",
+    "JD#2: 'Có bằng cấp, chứng chỉ về Huấn luyện viên cá nhân (PT)'; 'Sở hữu thân hình cân đối'",
+    "JD#3: 'Chứng chỉ bắt buộc: Có chứng chỉ Nghiệp vụ sư phạm dạy trình độ Cao đẳng, Trung cấp'",
+    "JD#4: 'Độ tuổi từ 20 – 35'; giảng dạy thể chất 'bằng Tiếng Anh'",
+    "JD#6: 'Có thể training bằng tiếng Anh'; 'Có chứng chỉ/ bằng cấp là một lợi thế lớn'"
+  ],
+  "ghiChu": "Toàn bộ 6 JD trùng nghề #95 (Giáo dục/Đào tạo > Thể chất/Thể hình); chưa có JD riêng của ngành bán lẻ/dịch vụ (ví dụ phòng gym, huấn luyện viên khác). Độ tin cậy 'vua' chỉ vì số JD, không phải vì tính riêng của nghề."
+}

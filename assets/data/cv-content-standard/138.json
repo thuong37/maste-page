@@ -1,0 +1,36 @@
+{
+  "id": 138,
+  "nhom": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học",
+  "nghe": "Sales Dược/Y tế/Sức khoẻ/Làm đẹp",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên (0-1 năm): 2 JD trình dược viên (ĐH Y-Dược, Trung cấp Dược), 4 JD kinh doanh thiết bị/vật tư y tế (Trung cấp/CĐ/ĐH); JD#3 và JD#4 trùng nghề #137",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; JD#3 'ưa nhìn', 3/6 nêu tuổi (25-35, 24-35, 25-39, ≤35); ảnh chỉn chu là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 nhắc tinh thần cầu tiến/gắn bó nghề; nên nêu hướng trình dược viên/sales y tế",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm hoặc không yêu cầu (0-1 năm), ưu tiên TDV/kênh ETC/thiết bị y tế/bán hàng",
+    "hoc-van": "can — 6/6 nêu Trung cấp/CĐ/ĐH ngành Dược, Y, Công nghệ sinh học, Kinh tế, QTKD, Marketing",
+    "ky-nang-chuyen-mon": "can — giới thiệu sản phẩm cho bác sĩ/bệnh viện, đấu thầu thuốc, hồ sơ GDP kho, hợp đồng, báo giá, đàm phán, chăm sóc khách hàng, theo dõi công nợ",
+    "ky-nang-mem": "can — 6/6: giao tiếp, thuyết phục, trung thực, năng động, làm việc nhóm",
+    "cong-cu-phan-mem": "nen — 2/6: CRM, tin học văn phòng cơ bản",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — 2/6 nhắc chỉ tiêu doanh số/mục tiêu kinh doanh; CV nên có số liệu",
+    "ngoai-ngu": "can — 3/6: tiếng Anh thành thạo/giao tiếp 50%, tiếng Trung đọc hiểu là lợi thế",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 không yêu cầu kinh nghiệm/sẽ đào tạo",
+    "giay-phep": "can — 4/6 yêu cầu có phương tiện di chuyển, đi thị trường/công tác tỉnh",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/6 nêu tuổi (25-35, 24-35, 25-39, ≤35), có phương tiện, đi công tác tỉnh, ưa nhìn (JD#3)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Trình dược viên", "kênh ETC", "đấu thầu thuốc", "sales thiết bị/vật tư y tế", "GDP", "bệnh viện/phòng khám", "đi thị trường", "Tiếng Anh/Trung"],
+  "bangChung": [
+    "JD#1: 'Tối thiểu 01 năm kinh nghiệm ... TDV ... bán hàng qua kênh ETC'; 'Tiếng Anh thành thạo là một lợi thế'",
+    "JD#2: 'Chuẩn bị hồ sơ và tham gia đấu thầu thuốc tại bệnh viện'; 'Giao tiếp được tiếng anh 50%'; 'Có phương tiện di chuyển'",
+    "JD#3: 'Nam, Nữ, độ tuổi phù hợp ưa nhìn'; 'Không ngại tăng ca và đi công tác'",
+    "JD#4: 'Có khả năng sử dụng CRM'; 'Không yêu cầu kinh nghiệm'",
+    "JD#5: 'Tốt nghiệp Trung cấp/Cao đẳng/Đại học các ngành: Kinh doanh, Y – Dược ...'; 'Tuổi từ 25- 39'; 'Có phương tiện đi lại cá nhân'"
+  ],
+  "ghiChu": "JD#3, JD#4 trùng JD nghề #137."
+}

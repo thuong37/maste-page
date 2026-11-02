@@ -1,0 +1,34 @@
+{
+  "id": 69,
+  "nhom": "Bất động sản",
+  "nghe": "Quy hoạch và phát triển bất động sản",
+  "soJD": 3,
+  "doTinCay": "thap",
+  "capBac": "3/3 JD cấp nhân viên/chuyên viên (JD định giá 2 năm, JD phát triển dự án 3 năm, JD tài chính dự án 3 năm); Đại học trở lên",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; công việc phân tích/định giá nên ảnh không cần (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — không JD nhắc trực tiếp; nên nêu định hướng phát triển dự án/định giá BĐS (suy từ công việc)",
+    "kinh-nghiem-lam-viec": "can — 3/3 hỏi 2-3 năm ở định giá BĐS, phát triển dự án hoặc tài chính dự án BĐS; nên ghi loại dự án/tài sản đã làm",
+    "hoc-van": "can — 3/3 nêu Đại học, chuyên ngành Tài chính, Kinh tế, Định giá, BĐS, Xây dựng, Kinh tế đầu tư, Kế toán-Kiểm toán",
+    "ky-nang-chuyen-mon": "can — 3/3: nghiên cứu thị trường BĐS, phân tích hiệu quả đầu tư/dòng tiền, lập FS/báo cáo tiền khả thi, định giá, pháp lý dự án, quản trị rủi ro",
+    "ky-nang-mem": "nen — 1/3 JD nêu kỹ năng báo cáo giải trình, phân tích đánh giá; JD khác không nêu kỹ năng mềm riêng",
+    "cong-cu-phan-mem": "khong — không JD nào nêu phần mềm cụ thể (chỉ nhắc xây dựng mô hình tài chính)",
+    "chung-chi": "nen — 1/3 (Savills) yêu cầu chứng chỉ Thẩm định viên về giá do Bộ Tài chính cấp; JD khác không nêu",
+    "du-an": "can — 3/3 mô tả công việc theo dự án đầu tư BĐS (FS, quy hoạch, báo cáo tiền khả thi); CV nên ghi dự án đã tham gia và quy mô",
+    "thanh-tich-kpi": "nen — JD không nêu chỉ tiêu; nên ghi số báo cáo, giá trị dự án/tài sản đã làm (suy từ công việc)",
+    "ngoai-ngu": "khong — không JD nào nêu rõ ngoại ngữ trong phần đã đọc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 1/3 (ASEAN Capital) nêu thẳng nam và từ 27 tuổi trở lên; 2/3 không nhắc",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["phát triển dự án BĐS", "nghiên cứu khả thi (FS)", "định giá/thẩm định BĐS", "phân tích dòng tiền", "pháp lý dự án", "quy hoạch", "tổng mức đầu tư", "thị trường bất động sản", "quản trị rủi ro"],
+  "bangChung": [
+    "JD#1 (Savills): 'Có chứng chỉ Thẩm định viên về giá do Bộ Tài chính cấp'; 'xây dựng và rà soát mô hình tài chính, phân tích dòng tiền'",
+    "JD#3 (SSLAND): 'Khảo sát địa hình, phân tích hiện trạng đô thị'; 'Xây dựng FS, đánh giá hiệu quả, tổng mức đầu tư'; 'Kinh nghiệm tối thiểu 3 năm'",
+    "JD#4 (ASEAN Capital): 'lập và kiểm soát báo cáo tiền khả thi Dự án đầu tư BĐS'; Nam, từ 27 tuổi trở lên"
+  ],
+  "ghiChu": "Chỉ JD#3 (Chuyên viên Phát triển Dự án BĐS) đúng sát nghề quy hoạch/phát triển BĐS; JD#1 (định giá) và JD#4 (tài chính dự án BĐS) là vai trò lân cận trong cùng ngành. Loại JD#2 (EMIR, thẩm định tín dụng ngân hàng, lệch nghề). Số liệu x/3; doTinCay=thap vì chỉ 1 JD sát hoàn toàn."
+}

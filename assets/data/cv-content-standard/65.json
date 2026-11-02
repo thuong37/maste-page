@@ -1,0 +1,36 @@
+{
+  "id": 65,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Bảo hiểm",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên tư vấn/kinh doanh bảo hiểm; 4/6 không yêu cầu hoặc dưới 1 năm kinh nghiệm (ưu tiên 6 tháng bán hàng), 1 JD 3 năm (khách hàng Private); THPT đến Đại học",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; 2/6 nêu ngoại hình khá/ưa nhìn, 2/6 nêu giọng nói/độ tuổi; nghề gặp khách nên ảnh nghiêm túc là lợi thế",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 JD nhắc đam mê kinh doanh, tinh thần cầu tiến; nên nêu định hướng tư vấn bảo hiểm",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nêu kinh nghiệm (từ không yêu cầu đến 3 năm; ưu tiên 6 tháng bán hàng bảo hiểm/tài chính/Bancassurance/telesales); nên ghi sản phẩm và kênh bán",
+    "hoc-van": "can — 6/6 nêu bậc học THPT đến Đại học, ưu tiên Kinh tế, Tài chính, Bảo hiểm, Ngân hàng",
+    "ky-nang-chuyen-mon": "can — 6/6: tư vấn sản phẩm bảo hiểm, đánh giá rủi ro khách hàng, lập hợp đồng/hồ sơ, thu phí, chăm sóc và tái tục, pháp luật bảo hiểm",
+    "ky-nang-mem": "can — 5/6: giao tiếp, thuyết phục, đàm phán, lắng nghe, xây dựng quan hệ, đồng đội",
+    "cong-cu-phan-mem": "nen — 1/6 phần mềm CRM InsOne; còn lại không nhắc",
+    "chung-chi": "nen — 1/6 học lấy chứng chỉ MIT/ILP của Bộ Tài chính sau khi vào làm; không JD đòi chứng chỉ trước",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "can — 2/6 nhắc chỉ tiêu doanh số tháng/quý/năm, áp lực chỉ tiêu; CV nên có số liệu doanh số, số hợp đồng",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc; chỉ hữu ích nếu có danh hiệu sales xuất sắc",
+    "hoat-dong-ngoai-khoa": "nen — 4/6 nhận chưa có hoặc dưới 1 năm kinh nghiệm",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 nêu độ tuổi/hộ khẩu địa phương/phát âm chuẩn; nên có độ tuổi, nơi ở",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["tư vấn bảo hiểm", "Bancassurance", "bảo hiểm nhân thọ", "bảo hiểm phi nhân thọ", "telesales", "chăm sóc khách hàng", "chỉ tiêu doanh số", "hợp đồng bảo hiểm", "CRM", "giao tiếp thuyết phục"],
+  "bangChung": [
+    "JD#1 (Sun Life): 'Có tối thiểu 06 tháng kinh nghiệm bán hàng trong lĩnh vực tài chính, ngân hàng, bảo hiểm'",
+    "JD#2 (BIDV): 'Hiểu biết về thị trường bảo hiểm. Có kiến thức về pháp luật bảo hiểm'; 'Ngoại hình khá'",
+    "JD#3 (MB Life): 'đảm bảo chỉ tiêu doanh số theo tháng/quý/năm'; 'Độ tuổi: 23 - 35'",
+    "JD#5: 'Học lấy chứng chỉ MIT ... ILP của bộ tài chính'",
+    "JD#6: 'Ghi nhận ... trên phần mềm CRM InsOne'; 'chịu được áp lực chỉ tiêu'"
+  ],
+  "ghiChu": "JD#1, #3, #5 trùng với JD ở #66."
+}

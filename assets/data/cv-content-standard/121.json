@@ -1,0 +1,37 @@
+{
+  "id": 121,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Vận hành và bảo trì/Hỗ trợ kỹ thuật",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "5/6 JD cấp nhân viên kỹ thuật (0-2 năm, Trung cấp/CĐ), 1 JD trưởng phòng kỹ thuật bảo hành (3 năm, quản lý); đa số tuyển nam, 20-35 tuổi; gồm ELV, sửa chữa điện thoại/thiết bị điện tử, bảo hành, bảo trì thiết bị điện",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 4/6 nêu giới tính/tuổi (nam 20+, 22-35, 23-30); nghề kỹ thuật nên ảnh chỉ là phụ (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — không JD nào nhắc rõ; JD#1 ý chí phấn đấu; nên nêu hướng kỹ thuật/bảo hành",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm hoặc không yêu cầu (0-3 năm), ưu tiên sửa chữa bo mạch PCB, bảo hành, bảo trì thiết bị điện",
+    "hoc-van": "can — 6/6 nêu Trung cấp trở lên chuyên ngành Điện, Điện tử, Điện lạnh, Tự động hóa, Điện tử viễn thông, CNTT",
+    "ky-nang-chuyen-mon": "can — chẩn đoán/sửa chữa bo mạch PCB, thay linh kiện (IC, MOSFET), lắp đặt CCTV/Access Control, bảo trì thiết bị điện công nghiệp, đọc sơ đồ mạch, dùng đồng hồ vạn năng/máy hiện sóng, quản lý SLA",
+    "ky-nang-mem": "can — 6/6: cẩn thận, tỉ mỉ, trách nhiệm, giao tiếp, phối hợp nhóm, chủ động",
+    "cong-cu-phan-mem": "nen — 1/6 sử dụng tin học văn phòng (JD#2); thay vào đó là dụng cụ đo (đồng hồ vạn năng, ampe kìm, máy hiện sóng)",
+    "chung-chi": "nen — JD#1 kỹ năng 'An toàn điện'; không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — JD#3 (trưởng phòng) quản lý KPI/SLA/chi phí; không JD nhân viên nhắc",
+    "ngoai-ngu": "nen — 2/6 nhắc tiếng Anh/Trung là lợi thế (đọc hiểu tài liệu kỹ thuật)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/6 không yêu cầu kinh nghiệm/chào đón sinh viên mới ra trường",
+    "giay-phep": "can — JD#6 nêu có phương tiện đi lại (xe máy), ưu tiên bằng lái B; sẵn sàng đi công tác tỉnh",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/6 nêu thẳng nam, tuổi 20+/22-35/23-30, JD#1 ưu tiên chưa lập gia đình, sức khỏe tốt",
+    "so-thich": "nen — JD#6 nêu thẳng 'có đam mê với các thiết bị công nghệ'"
+  },
+  "tuKhoaNenCo": ["Sửa chữa điện tử", "bo mạch PCB", "ELV/CCTV/Access Control", "bảo hành", "bảo trì thiết bị điện", "đồng hồ vạn năng", "SLA/KPI bảo hành", "đọc sơ đồ mạch"],
+  "bangChung": [
+    "JD#1: 'Nam, ưu tiên chưa lập gia đình'; 'Không yêu cầu kinh nghiệm'; kỹ năng 'An Toàn Điện'",
+    "JD#2: 'Giới tính: Nam'; 'Sử dụng khá tin học văn phòng'",
+    "JD#3: 'Có kinh nghiệm quản lý KPI, SLA, chất lượng dịch vụ và chi phí'; 'Có từ 3 năm kinh nghiệm trong lĩnh vực bảo hành'",
+    "JD#4: 'Có kinh nghiệm sử dụng các dụng cụ đo lường điện chuyên dụng (đồng hồ vạn năng, ampe kìm, máy hiện sóng...)'",
+    "JD#5: 'Chẩn đoán lỗi bo mạch PCB ... thay thế linh kiện như IC, MOSFET'; 'Tiếng Anh hoặc Tiếng Trung là một lợi thế'",
+    "JD#6: 'Có phương tiện đi lại (Xe máy)'; 'Có đam mê với các thiết bị công nghệ'"
+  ],
+  "ghiChu": ""
+}

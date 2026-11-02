@@ -1,0 +1,2496 @@
+[
+ {
+  "id": 1,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Xuất nhập khẩu/Logistics",
+  "viTri": [
+   "Sales Logistics",
+   "Kinh doanh chuyển phát nhanh",
+   "Sales Xuất nhập khẩu/Logistics khác"
+  ]
+ },
+ {
+  "id": 2,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Bất động sản",
+  "viTri": [
+   "Sales bất động sản/Môi giới bất động sản",
+   "Sales Bất động sản khác"
+  ]
+ },
+ {
+  "id": 3,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Xây dựng",
+  "viTri": [
+   "Kinh doanh thiết bị/vật liệu xây dựng",
+   "Kinh doanh nội thất",
+   "Tư vấn thiết kế xây dựng",
+   "Sales Xây dựng khác"
+  ]
+ },
+ {
+  "id": 4,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Giáo dục/Khoá học",
+  "viTri": [
+   "Tư vấn tuyển sinh/khoá học",
+   "Tư vấn du học/định cư",
+   "Sales Giáo dục/Khoá học khác"
+  ]
+ },
+ {
+  "id": 5,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Admin/Sales Support",
+  "viTri": [
+   "Sales Admin/Sales Support/Sales Associate",
+   "Chuyên viên đấu thầu",
+   "Customer Success",
+   "Vận hành Livestream"
+  ],
+  "tuKhoa": [
+   "sales admin",
+   "sales support",
+   "trợ lý kinh doanh",
+   "hỗ trợ kinh doanh"
+  ]
+ },
+ {
+  "id": 6,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Tài chính/Ngân hàng/Bảo hiểm",
+  "viTri": [
+   "Tư vấn bảo hiểm",
+   "Quan hệ khách hàng cá nhân/doanh nghiệp",
+   "Bancassurance",
+   "Tư vấn đầu tư",
+   "Kinh doanh ngoại hối, vàng, phái sinh",
+   "Tư vấn tài chính",
+   "Sales Tài chính/Ngân hàng/Bảo hiểm khác"
+  ]
+ },
+ {
+  "id": 7,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Bán lẻ/Dịch vụ tiêu dùng",
+  "viTri": [
+   "Kinh doanh kênh MT",
+   "Kinh doanh kênh GT",
+   "Bán hàng siêu thị/cửa hàng tiện ích/tiện lợi",
+   "Bán hàng điện thoại",
+   "Bán hàng điện máy",
+   "Bán hàng thời trang",
+   "Bán hàng trang sức đá quý",
+   "Bán hàng mỹ phẩm",
+   "Kinh doanh thực phẩm",
+   "Kinh doanh bao bì",
+   "Sales thẻ tập",
+   "Sales Bán lẻ/Dịch vụ tiêu dùng khác"
+  ]
+ },
+ {
+  "id": 8,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Sản xuất",
+  "viTri": [
+   "Kinh doanh hoá chất",
+   "Kinh doanh ô tô/xe máy/xe điện",
+   "Kinh doanh phụ tùng ô tô/xe máy/xe điện",
+   "Kinh doanh thức ăn chăn nuôi",
+   "Sales Sản xuất khác"
+  ]
+ },
+ {
+  "id": 9,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Kỹ thuật (Sales Engineer)",
+  "viTri": [
+   "Bán hàng kỹ thuật Điện/Điện tử/Viễn thông",
+   "Bán hàng kỹ thuật cơ khí",
+   "Bán hàng kỹ thuật IT",
+   "Sales Kỹ thuật khác"
+  ],
+  "tuKhoa": [
+   "sales engineer",
+   "kỹ sư bán hàng kỹ thuật",
+   "kỹ sư kinh doanh",
+   "bán hàng kỹ thuật"
+  ]
+ },
+ {
+  "id": 10,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Nhà hàng/Khách sạn/Du lịch",
+  "viTri": [
+   "Kinh doanh HORECA",
+   "Sales Tour/Kinh doanh du lịch",
+   "Kinh doanh khách đoàn (MICE)",
+   "Bán vé máy bay (Ticketing/Booker)",
+   "Kinh doanh khách sạn",
+   "Kinh doanh OTA",
+   "Sales Nhà hàng/Khách sạn/Du lịch khác"
+  ]
+ },
+ {
+  "id": 11,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Dược/Y tế/Sức khoẻ/Làm đẹp",
+  "viTri": [
+   "Kinh doanh thiết bị/vật tư y tế",
+   "Trình dược viên",
+   "Dược sĩ/Bán thuốc",
+   "Tư vấn thẩm mỹ/Spa",
+   "Tư vấn nha khoa",
+   "Kinh doanh dịch vụ y tế",
+   "Sales Dược/Y tế/Sức khoẻ/Làm đẹp khác"
+  ]
+ },
+ {
+  "id": 12,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales IT Phần mềm",
+  "viTri": [
+   "Kinh doanh phần mềm",
+   "Kinh doanh Domain/Hosting/Server",
+   "Sales IT Phần mềm khác"
+  ]
+ },
+ {
+  "id": 13,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Điện/Điện tử/Viễn thông",
+  "viTri": [
+   "Kinh doanh thiết bị/linh kiện điện",
+   "Kinh doanh thiết bị công nghiệp",
+   "Kinh doanh dịch vụ viễn thông",
+   "Kinh doanh điện mặt trời",
+   "Kinh doanh HVAC",
+   "Kinh doanh thiết bị điện dân dụng",
+   "Sales Điện/Điện tử/Viễn thông khác"
+  ]
+ },
+ {
+  "id": 14,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales dịch vụ Quảng cáo/Triển lãm/Sự kiện",
+  "viTri": [
+   "Kinh doanh dịch vụ quảng cáo",
+   "Kinh doanh triển lãm",
+   "Kinh doanh tiệc/sự kiện/hội nghị",
+   "Kinh doanh mảng Nhà tài trợ",
+   "Sales dịch vụ Quảng cáo/Triển lãm/Sự kiện khác",
+   "Sales Marketing"
+  ],
+  "tuKhoa": [
+   "kinh doanh quảng cáo",
+   "sales quảng cáo",
+   "kinh doanh triển lãm",
+   "kinh doanh sự kiện",
+   "account executive quảng cáo"
+  ]
+ },
+ {
+  "id": 15,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Thương mại điện tử",
+  "viTri": [
+   "Kinh doanh sàn thương mại điện tử"
+  ]
+ },
+ {
+  "id": 16,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Quản lý kinh doanh",
+  "viTri": [
+   "Sales Manager/Trưởng phòng kinh doanh",
+   "Sales Supervisor/Giám sát bán hàng",
+   "ASM/Quản lý khu vực/vùng miền",
+   "Quản lý cửa hàng/Cửa hàng trưởng",
+   "Sales Director/Giám đốc kinh doanh",
+   "Chief Customer Officer (CCO)",
+   "Chuyên viên chính sách kinh doanh",
+   "Quản lý Kinh doanh khác"
+  ]
+ },
+ {
+  "id": 17,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Kinh doanh/Bán hàng khác",
+  "viTri": [
+   "Kinh doanh nông sản",
+   "Account Executive",
+   "Account Manager (Quản lý khách hàng)",
+   "Sales Representative/Phát triển kinh doanh",
+   "Trợ lý kinh doanh",
+   "Sales Dịch vụ kế toán",
+   "Kinh doanh quà tặng/in ấn",
+   "Chuyên môn Kinh doanh/Bán hàng khác"
+  ]
+ },
+ {
+  "id": 18,
+  "nhom": "Marketing/PR/Quảng cáo",
+  "nghe": "Marketing",
+  "viTri": [
+   "Digital Marketing",
+   "Content Marketing",
+   "Copywriter",
+   "Content Creator",
+   "TikTok Content",
+   "Social Content",
+   "SEO",
+   "Email Marketing",
+   "Social Media",
+   "Affiliate Marketing",
+   "In-bound Marketing",
+   "Growth Hacker",
+   "Chạy Ads",
+   "Host Livestream/Streamer",
+   "Chuyên môn Marketing",
+   "Marketing Planner",
+   "Brand Marketing",
+   "Product Marketing",
+   "Trade Marketing",
+   "Event Marketing",
+   "KOL/KOC Manager",
+   "Global Marketing",
+   "Marketing Manager",
+   "Marketing Director",
+   "Giám đốc Marketing (CMO)",
+   "Sales Marketing",
+   "Marketing Admin",
+   "Marketing Operations"
+  ]
+ },
+ {
+  "id": 19,
+  "nhom": "Marketing/PR/Quảng cáo",
+  "nghe": "Quảng cáo/Sáng tạo",
+  "viTri": [
+   "Campaign Manager",
+   "Media Planner/Buyer Executive",
+   "Media Placement Specialist",
+   "Creative Planner",
+   "Production Manager",
+   "Ad Operations Manager",
+   "Kiểm duyệt quảng cáo",
+   "Creative Director",
+   "Art Director",
+   "Photographer/Video Editor",
+   "Thiết kế đồ họa (Graphic Design)",
+   "Illustration",
+   "Animation Design",
+   "3D Modeler",
+   "Chuyên môn Quảng cáo/Sáng tạo khác"
+  ]
+ },
+ {
+  "id": 20,
+  "nhom": "Marketing/PR/Quảng cáo",
+  "nghe": "Quan hệ Công chúng (PR)",
+  "viTri": [
+   "Chuyên môn Quan hệ Công chúng",
+   "PR Specialist",
+   "Quan hệ báo chí",
+   "Xử lý khủng hoảng truyền thông",
+   "Corporate Communication",
+   "Xây dựng và bảo vệ thương hiệu",
+   "Truyền thông nội bộ",
+   "Phát triển cộng đồng"
+  ]
+ },
+ {
+  "id": 21,
+  "nhom": "Marketing/PR/Quảng cáo",
+  "nghe": "Quan hệ Chính phủ",
+  "viTri": [
+   "Chuyên môn Quan hệ chính phủ",
+   "Quan hệ đối ngoại",
+   "Hợp tác quốc tế",
+   "Public Affairs Manager",
+   "Nghiên cứu chính sách",
+   "Goverment Affairs Manager",
+   "Vận động hành lang"
+  ]
+ },
+ {
+  "id": 22,
+  "nhom": "Marketing/PR/Quảng cáo",
+  "nghe": "Market Research and Analysis",
+  "viTri": [
+   "Nghiên cứu thị trường (Market Research)",
+   "Business Intelligence",
+   "Quantitative Analyst",
+   "Data Analyst",
+   "Chuyên môn Market Research and Analysis khác"
+  ],
+  "tuKhoa": [
+   "nghiên cứu thị trường",
+   "market research",
+   "chuyên viên nghiên cứu thị trường",
+   "research executive"
+  ]
+ },
+ {
+  "id": 23,
+  "nhom": "Marketing/PR/Quảng cáo",
+  "nghe": "Sales dịch vụ Quảng cáo/Triển lãm/Sự kiện",
+  "viTri": [
+   "Kinh doanh dịch vụ quảng cáo",
+   "Kinh doanh triển lãm",
+   "Kinh doanh tiệc/sự kiện/hội nghị",
+   "Kinh doanh mảng Nhà tài trợ",
+   "Sales dịch vụ Quảng cáo/Triển lãm/Sự kiện khác",
+   "Sales Marketing"
+  ],
+  "tuKhoa": [
+   "kinh doanh quảng cáo",
+   "sales quảng cáo",
+   "kinh doanh triển lãm",
+   "kinh doanh sự kiện",
+   "account executive quảng cáo"
+  ]
+ },
+ {
+  "id": 24,
+  "nhom": "Marketing/PR/Quảng cáo",
+  "nghe": "Marketing/PR/Quảng cáo khác",
+  "viTri": [
+   "Vendor Management Executive/Supplier Relationship Management Executive",
+   "Nhân viên phát tờ rơi",
+   "PG",
+   "Chuyên môn Marketing/PR/Quảng cáo khác"
+  ]
+ },
+ {
+  "id": 25,
+  "nhom": "Chăm sóc khách hàng (Customer Service)/Vận hành",
+  "nghe": "Chăm sóc khách hàng (Customer Service)",
+  "viTri": [
+   "Chăm sóc khách hàng",
+   "Call Center/Trực tổng đài",
+   "Trực page",
+   "Customer Success",
+   "Customer Experience (Trải nghiệm khách hàng)",
+   "Giám sát chất lượng cuộc gọi (QA call center)",
+   "Xử lý khiếu nại",
+   "Dịch vụ khách hàng/Chăm sóc khách hàng khác"
+  ]
+ },
+ {
+  "id": 26,
+  "nhom": "Chăm sóc khách hàng (Customer Service)/Vận hành",
+  "nghe": "Vận hành Thương mại điện tử",
+  "viTri": [
+   "Vận hành sàn thương mại điện tử"
+  ]
+ },
+ {
+  "id": 27,
+  "nhom": "Chăm sóc khách hàng (Customer Service)/Vận hành",
+  "nghe": "Business Operation (Vận hành kinh doanh)",
+  "viTri": [
+   "Vận hành chung",
+   "Data Labeling (Gán nhãn dữ liệu)"
+  ],
+  "tuKhoa": [
+   "business operation",
+   "vận hành kinh doanh",
+   "chuyên viên vận hành kinh doanh",
+   "business operations executive"
+  ]
+ },
+ {
+  "id": 28,
+  "nhom": "Chăm sóc khách hàng (Customer Service)/Vận hành",
+  "nghe": "Quản lý vận hành",
+  "viTri": [
+   "Quản lý/Trưởng phòng vận hành",
+   "Giám đốc vận hành/COO",
+   "Giám đốc dịch vụ khách hàng"
+  ]
+ },
+ {
+  "id": 29,
+  "nhom": "Chăm sóc khách hàng (Customer Service)/Vận hành",
+  "nghe": "Dịch vụ khách hàng/Vận hành khác",
+  "viTri": [
+   "Chuyên môn Dịch vụ khách hàng/Vận hành khác"
+  ]
+ },
+ {
+  "id": 30,
+  "nhom": "Nhân sự/Hành chính/Pháp chế",
+  "nghe": "Nhân sự",
+  "viTri": [
+   "Tuyển dụng",
+   "Đối tác nhân sự (HRBP)",
+   "Đào tạo",
+   "Quan hệ lao động",
+   "Phát triển tổ chức",
+   "Truyền thông nội bộ",
+   "Chuyên viên phát triển văn hóa doanh nghiệp",
+   "Payroll/C&B (Lương/Thưởng/Phúc lợi)",
+   "Nhân sự tổng hợp",
+   "Trưởng phòng nhân sự",
+   "Giám đốc nhân sự",
+   "Chuyên môn Nhân sự khác"
+  ]
+ },
+ {
+  "id": 31,
+  "nhom": "Nhân sự/Hành chính/Pháp chế",
+  "nghe": "Hành chính",
+  "viTri": [
+   "Hành chính nhân sự",
+   "Hành chính tổng hợp",
+   "Trưởng phòng hành chính",
+   "Giám đốc hành chính",
+   "Giám đốc điều hành",
+   "Lễ tân/Đón tiếp",
+   "Văn thư",
+   "Quản lý cơ sở vật chất",
+   "Tài xế lái xe văn phòng",
+   "Lái xe cho sếp",
+   "Trợ lý/Thư ký",
+   "Project Administrator",
+   "Xử lý hồ sơ",
+   "Chuyên viên hợp đồng",
+   "Chuyên môn Hành chính khác"
+  ]
+ },
+ {
+  "id": 32,
+  "nhom": "Nhân sự/Hành chính/Pháp chế",
+  "nghe": "Dịch vụ pháp chế (In-house)",
+  "viTri": [
+   "Pháp chế",
+   "Giám đốc pháp chế",
+   "Chuyên môn Pháp chế khác"
+  ]
+ },
+ {
+  "id": 33,
+  "nhom": "Nhân sự/Hành chính/Pháp chế",
+  "nghe": "Nhân sự/Hành chính/Pháp chế khác",
+  "viTri": [
+   "Chuyên môn Nhân sự/Hành chính/Pháp chế khác"
+  ]
+ },
+ {
+  "id": 34,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Software Engineering",
+  "viTri": [
+   "Software Engineer",
+   "Backend Developer",
+   "Frontend Developer",
+   "Mobile Developer",
+   "Fullstack Developer",
+   "Blockchain Engineer"
+  ]
+ },
+ {
+  "id": 35,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Software Testing",
+  "viTri": [
+   "Software Tester (Automation & Manual)",
+   "Automation Tester",
+   "Manual Tester",
+   "Game Tester",
+   "QA Engineer",
+   "Process Quality Assurance (PQA)"
+  ]
+ },
+ {
+  "id": 36,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Artificial Intelligence (AI)",
+  "viTri": [
+   "AI Engineer",
+   "AI Researcher",
+   "Data Labeling (Gán nhãn dữ liệu)"
+  ]
+ },
+ {
+  "id": 37,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Data Science",
+  "viTri": [
+   "Data Analyst",
+   "Data Engineer",
+   "Data Scientist"
+  ]
+ },
+ {
+  "id": 38,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "IT Infrastructure and Operations",
+  "viTri": [
+   "IT Helpdesk/IT support",
+   "DevOps Engineer",
+   "Network Engineer",
+   "System Engineer",
+   "System Administrator",
+   "Database Administrator (DBA)",
+   "Cloud Engineer",
+   "Kỹ thuật IT"
+  ]
+ },
+ {
+  "id": 39,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Information Security",
+  "viTri": [
+   "Chuyên viên Cyber Security",
+   "Chuyên viên IT Security",
+   "Chiến lược và phân tích bảo mật",
+   "Quản trị và vận hành bảo mật",
+   "Tuân thủ và kiểm toán bảo mật",
+   "Phòng chống lừa đảo và an ninh mạng",
+   "Bảo mật ứng dụng và phát triển",
+   "Mã hóa và bảo mật dữ liệu",
+   "Kiểm thử và đánh giá bảo mật"
+  ]
+ },
+ {
+  "id": 40,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "IoT/Embedded Engineer",
+  "viTri": [
+   "Kỹ sư IoT (IoT Engineer)",
+   "Embedded Engineer/Lập trình nhúng"
+  ]
+ },
+ {
+  "id": 41,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "IT Project Management",
+  "viTri": [
+   "IT Project Manager",
+   "Scrum Master",
+   "Kỹ sư cầu nối BrSE",
+   "IT Comtor"
+  ]
+ },
+ {
+  "id": 42,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "IT Management/Specialist",
+  "viTri": [
+   "Software Architect",
+   "System Architect",
+   "Solution Architect",
+   "Technical Leader",
+   "Technical Manager",
+   "Head of Engineering",
+   "Technical Director",
+   "Chief Technology Officer (CTO)",
+   "Chief Information Officer (CIO)"
+  ]
+ },
+ {
+  "id": 43,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Software Design",
+  "viTri": [
+   "UI/UX Design",
+   "Thiết kế đồ họa (Graphic Design)",
+   "Illustration",
+   "Animation Design",
+   "Interaction Designer",
+   "3D Modeler"
+  ]
+ },
+ {
+  "id": 44,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Product Management",
+  "viTri": [
+   "Product Owner/Product Manager",
+   "Business Analyst (Phân tích nghiệp vụ)",
+   "Product Analyst/Research"
+  ]
+ },
+ {
+  "id": 45,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Game Development",
+  "viTri": [
+   "Game Developer",
+   "Concept Artist",
+   "Game Design",
+   "AR/VR Developer",
+   "Vị trí Game Development khác"
+  ]
+ },
+ {
+  "id": 46,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Sales IT Phần mềm",
+  "viTri": [
+   "Kinh doanh phần mềm",
+   "Kinh doanh Domain/Hosting/Server",
+   "Sales IT Phần mềm khác"
+  ]
+ },
+ {
+  "id": 47,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Công nghệ thông tin khác",
+  "viTri": [
+   "IT Consultant",
+   "GIS Engineer",
+   "Bán hàng kỹ thuật IT",
+   "Quản trị website",
+   "Chuyên môn Công nghệ thông tin khác"
+  ],
+  "tuKhoa": [
+   "IT consultant",
+   "quản trị website",
+   "chuyên viên GIS",
+   "tư vấn giải pháp công nghệ thông tin"
+  ]
+ },
+ {
+  "id": 48,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Công nhân",
+  "viTri": [
+   "Thợ may",
+   "Thợ cơ khí",
+   "Công nhân xây dựng",
+   "Công nhân thời vụ",
+   "Bốc xếp hàng hóa",
+   "Đóng gói hàng hóa",
+   "Nhân viên môi trường",
+   "Công nhân chăn nuôi",
+   "Công nhân làm nước đá",
+   "Công nhân xưởng gỗ",
+   "Công nhân bao bì",
+   "Công nhân điện tử",
+   "Công nhân sản xuất",
+   "Công nhân ép nhựa",
+   "Công nhân giày da",
+   "Công nhân vận hành máy",
+   "Công nhân khai thác than",
+   "Công nhân lắp ráp",
+   "Công nhân xếp quần áo",
+   "Việc làm Công nhân khác"
+  ]
+ },
+ {
+  "id": 49,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Tài xế",
+  "viTri": [
+   "Tài xế taxi",
+   "Tài xế B2",
+   "Tài xế xe tải",
+   "Phụ xe",
+   "Lái xe cho sếp",
+   "Tài xế công nghệ",
+   "Tài xế container",
+   "Tài xế lái xe văn phòng",
+   "Tài xế xe khách",
+   "Tài xế lái xe nâng",
+   "Tài xế lái xe đường dài",
+   "Tài xế lái máy công trình",
+   "Tài xế lái xe thuê",
+   "Tài xế lái xe chuyên dụng",
+   "Dịch vụ đưa đón khác"
+  ]
+ },
+ {
+  "id": 50,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Kho vận/Giao hàng",
+  "viTri": [
+   "Nhân viên kho",
+   "Shipper (Nhân viên giao hàng)",
+   "Bốc xếp hàng hóa",
+   "Bưu tá",
+   "Phân loại/Sắp xếp hàng hoá",
+   "Đóng gói hàng hóa",
+   "Nhân viên cân"
+  ]
+ },
+ {
+  "id": 51,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Bảo vệ/Bảo trì/Sửa chữa",
+  "viTri": [
+   "Sửa chữa điện thoại",
+   "Bảo vệ",
+   "Sửa chữa/Bảo trì điện nước",
+   "Thợ sửa khoá",
+   "Thợ điện",
+   "Thợ điện lạnh",
+   "Bảo trì tòa nhà",
+   "Thợ sửa xe",
+   "Nhân viên rửa xe",
+   "Sửa chữa máy tính và máy in",
+   "Lắp đặt/bảo trì thang máy",
+   "Nhân viên cảnh quan",
+   "Sửa chữa thiết bị gia dụng",
+   "Thợ độ xe ô tô/xe máy/xe điện",
+   "Thợ kỹ thuật khác",
+   "Việc làm Bảo vệ/Bảo trì/Sửa chữa khác"
+  ]
+ },
+ {
+  "id": 52,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Vệ sinh/Giúp việc/Bảo mẫu",
+  "viTri": [
+   "Vệ sinh/Tạp vụ",
+   "Giúp việc",
+   "Bảo mẫu/Người trông trẻ",
+   "Nhân viên dọn vệ sinh",
+   "Sắp xếp tủ quần áo và nhà cửa",
+   "Dịch vụ vệ sinh/nhà cửa khác"
+  ]
+ },
+ {
+  "id": 53,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Chăm sóc sức khoẻ/Làm đẹp",
+  "viTri": [
+   "Phun xăm thẩm mỹ",
+   "Thợ xăm (Tattoo Artist)",
+   "Kỹ thuật viên Spa",
+   "Thợ cắt tóc",
+   "Thợ nail/mi",
+   "Nhân viên massage",
+   "Dịch vụ làm đẹp khác"
+  ]
+ },
+ {
+  "id": 54,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Nhà hàng/Dịch vụ ăn uống",
+  "viTri": [
+   "Đầu bếp",
+   "Pha chế (Barista)",
+   "Phục vụ",
+   "Phụ bếp",
+   "Thợ làm bánh",
+   "Chuyên môn Nhà hàng/Dịch vụ ăn uống khác"
+  ]
+ },
+ {
+  "id": 55,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Khách sạn/Dịch vụ cư trú",
+  "viTri": [
+   "Giặt là",
+   "Lễ tân/Đón tiếp",
+   "Bellman (nhân viên hành lý)",
+   "Buồng phòng",
+   "Nhân viên đỗ xe (Valet Parking)"
+  ]
+ },
+ {
+  "id": 56,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Tiếp thị/Bán hàng",
+  "viTri": [
+   "PG",
+   "Hiệu đính và nhập liệu",
+   "Thu ngân",
+   "Trực page",
+   "Nhân viên siêu thị",
+   "Bán hàng siêu thị/cửa hàng tiện ích/tiện lợi",
+   "Nhân viên phát tờ rơi",
+   "Bán hàng điện thoại",
+   "Nhân viên cây xăng",
+   "Nhân viên rạp chiếu phim"
+  ]
+ },
+ {
+  "id": 57,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Thợ thủ công",
+  "viTri": [
+   "Thợ may",
+   "Thợ cắm hoa",
+   "Thợ cắt vải",
+   "Thợ thủ công mỹ nghệ",
+   "Thợ thủ công khác"
+  ]
+ },
+ {
+  "id": 58,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Gia công cơ khí",
+  "viTri": [
+   "Thợ hàn",
+   "Thợ cơ khí",
+   "Thợ tiện",
+   "Thợ khoan",
+   "Thợ mài",
+   "Thợ phay",
+   "Thợ Gia công cơ khí khác"
+  ]
+ },
+ {
+  "id": 59,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Thợ xây dựng",
+  "viTri": [
+   "Thợ xây/Thợ nề/Thợ hồ",
+   "Thợ mộc",
+   "Thợ sơn",
+   "Thợ nhôm kính",
+   "Thợ xây dựng khác"
+  ]
+ },
+ {
+  "id": 60,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Tài chính",
+  "viTri": [
+   "Chuyên môn Tài chính",
+   "Hoạch định tài chính",
+   "Định chế tài chính",
+   "Kiểm soát và báo cáo tài chính",
+   "Tư vấn tài chính",
+   "Giám đốc tài chính",
+   "Huy động vốn"
+  ]
+ },
+ {
+  "id": 61,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Ngân hàng",
+  "viTri": [
+   "Giao dịch viên",
+   "Chuyên viên xử lý nợ",
+   "Kinh doanh nguồn vốn",
+   "Kinh doanh ngoại hối, vàng, phái sinh",
+   "Tài trợ thương mại",
+   "Giám đốc khối khách hàng cá nhân",
+   "Giám đốc khối khách hàng doanh nghiệp",
+   "Giám đốc khối nguồn vốn và thị trường",
+   "Giám đốc kinh doanh bảo hiểm",
+   "Giám đốc ngân hàng",
+   "Quan hệ khách hàng cá nhân/doanh nghiệp",
+   "Thẩm định tín dụng",
+   "Tác nghiệp tín dụng",
+   "Kiểm soát tuân thủ",
+   "Chuyên môn Ngân hàng khác"
+  ]
+ },
+ {
+  "id": 62,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Chứng khoán",
+  "viTri": [
+   "Phân tích đầu tư chứng khoán",
+   "Quản lý danh mục đầu tư",
+   "Chuyên môn Chứng khoán khác"
+  ]
+ },
+ {
+  "id": 63,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Thẩm định và quản trị rủi ro",
+  "viTri": [
+   "Quản trị rủi ro",
+   "Kiểm soát tuân thủ",
+   "Phòng chống rửa tiền",
+   "Pháp chế",
+   "Thẩm định tín dụng",
+   "Quản lý thanh khoản",
+   "Định giá tài sản",
+   "Thu hồi nợ",
+   "Giám đốc tuân thủ và pháp lý",
+   "Giám đốc quản lý rủi ro (CRO)",
+   "Chuyên môn Thẩm định và quản trị rủi ro khác"
+  ]
+ },
+ {
+  "id": 64,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Đầu tư và Tài trợ",
+  "viTri": [
+   "Phân tích đầu tư",
+   "Tài trợ thương mại",
+   "Mua bán và sáp nhập (M&A)",
+   "Quan hệ nhà đầu tư",
+   "Quản lý tài sản",
+   "Quản lý danh mục/quỹ",
+   "Giám đốc/Phó giám đốc đầu tư",
+   "Tư vấn đầu tư",
+   "Chuyên môn đầu tư và tài trợ khác"
+  ]
+ },
+ {
+  "id": 65,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Bảo hiểm",
+  "viTri": [
+   "Bồi thường bảo hiểm",
+   "Định phí bảo hiểm",
+   "Thẩm định và phát hành hợp đồng bảo hiểm",
+   "Quản lý hợp đồng bảo hiểm",
+   "Tư vấn bảo hiểm",
+   "Bancassurance",
+   "Chuyên môn Bảo hiểm khác"
+  ]
+ },
+ {
+  "id": 66,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Sales Tài chính/Ngân hàng/Bảo hiểm",
+  "viTri": [
+   "Tư vấn bảo hiểm",
+   "Quan hệ khách hàng cá nhân/doanh nghiệp",
+   "Bancassurance",
+   "Tư vấn đầu tư",
+   "Kinh doanh ngoại hối, vàng, phái sinh",
+   "Tư vấn tài chính",
+   "Sales Tài chính/Ngân hàng/Bảo hiểm khác"
+  ]
+ },
+ {
+  "id": 67,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Tài chính/Ngân hàng/Bảo hiểm khác",
+  "viTri": [
+   "Chuyên viên kế hoạch",
+   "Chuyên môn Tài chính/Ngân hàng/Bảo hiểm khác"
+  ],
+  "tuKhoa": [
+   "kế hoạch tài chính",
+   "chuyên viên kế hoạch ngân sách",
+   "FP&A",
+   "phân tích tài chính ngân hàng"
+  ]
+ },
+ {
+  "id": 68,
+  "nhom": "Bất động sản",
+  "nghe": "Quản lý vận hành bất động sản",
+  "viTri": [
+   "Quản lý tòa nhà",
+   "Bảo trì tòa nhà",
+   "Giám sát bảo trì tòa nhà",
+   "Nhân viên cảnh quan",
+   "Bảo trì PCCC",
+   "Vận hành tòa nhà",
+   "Quản lý vận hành bất động sản khác"
+  ]
+ },
+ {
+  "id": 69,
+  "nhom": "Bất động sản",
+  "nghe": "Quy hoạch và phát triển bất động sản",
+  "viTri": [
+   "Quy hoạch và thiết kế đô thị",
+   "Đấu thầu bất động sản",
+   "Quản lý dự án bất động sản",
+   "Quy hoạch bất động sản",
+   "Phát triển mặt bằng",
+   "Giải phóng mặt bằng",
+   "Thẩm định giá bất động sản",
+   "Giám đốc kế hoạch bất động sản",
+   "Giám đốc đấu thầu bất động sản",
+   "Giám đốc dự án bất động sản"
+  ],
+  "tuKhoa": [
+   "quy hoạch đô thị",
+   "quản lý dự án bất động sản",
+   "thẩm định giá bất động sản",
+   "phát triển quỹ đất"
+  ]
+ },
+ {
+  "id": 70,
+  "nhom": "Bất động sản",
+  "nghe": "Sales Bất động sản",
+  "viTri": [
+   "Sales bất động sản/Môi giới bất động sản",
+   "Sales Bất động sản khác"
+  ]
+ },
+ {
+  "id": 71,
+  "nhom": "Bất động sản",
+  "nghe": "Bất động sản khác",
+  "viTri": [
+   "Chuyên môn Bất động sản khác"
+  ]
+ },
+ {
+  "id": 72,
+  "nhom": "Xây dựng",
+  "nghe": "Quản lý dự án xây dựng",
+  "viTri": [
+   "Quản lý dự án thi công xây dựng",
+   "Dự toán công trình",
+   "Giám sát dự án/công trình/thi công",
+   "Thư ký công trình",
+   "Nhân viên hồ sơ xây dựng",
+   "Nhân viên vật tư",
+   "Nhân viên trắc đạc",
+   "Kỹ sư an toàn lao động (HSE)",
+   "Kỹ sư hiện trường",
+   "Quản đốc công trình",
+   "Quản lý chất lượng công trình",
+   "Kỹ sư địa chất",
+   "Đấu thầu xây dựng",
+   "Quản lý thiết bị công trình",
+   "Giám sát thi công nội thất",
+   "Chỉ huy trưởng dự án xây dựng",
+   "Quản lý dự án xây dựng khác"
+  ]
+ },
+ {
+  "id": 73,
+  "nhom": "Xây dựng",
+  "nghe": "Thiết kế và Kiến trúc",
+  "viTri": [
+   "Kỹ sư kết cấu công trình",
+   "Kỹ sư hạ tầng đô thị",
+   "Thiết kế cảnh quan",
+   "Thiết kế nội thất",
+   "Kiến trúc sư",
+   "Kỹ sư xây dựng",
+   "Kỹ sư hệ thống điện nhẹ",
+   "Kỹ sư cơ điện",
+   "Kỹ sư cấp thoát nước",
+   "Kỹ sư HVAC",
+   "Kỹ sư thiết kế nhôm kính",
+   "BIM Engineer",
+   "Kỹ sư PCCC",
+   "Kỹ sư cầu đường",
+   "Kỹ sư xây dựng dân dụng và công nghiệp",
+   "Chuyên môn Thiết kế và Kiến trúc khác"
+  ]
+ },
+ {
+  "id": 74,
+  "nhom": "Xây dựng",
+  "nghe": "Công nhân Xây dựng/Cải tạo",
+  "viTri": [
+   "Sửa chữa/Bảo trì điện nước",
+   "Thợ điện lạnh",
+   "Thợ hàn",
+   "Thợ mộc",
+   "Thợ sơn",
+   "Lắp đặt/bảo trì thang máy",
+   "Thợ xây/Thợ nề/Thợ hồ",
+   "Thợ nhôm kính",
+   "Nhân viên thi công",
+   "Công nhân thời vụ",
+   "Công nhân khai thác than",
+   "Công nhân xưởng gỗ",
+   "Công nhân lắp ráp",
+   "Công nhân vận hành máy",
+   "Công nhân xây dựng",
+   "Thợ xây dựng khác",
+   "Việc làm Công nhân khác"
+  ],
+  "tuKhoa": [
+   "thợ hàn",
+   "thợ mộc",
+   "thợ sơn",
+   "thợ xây",
+   "thợ nhôm kính",
+   "công nhân xây dựng"
+  ]
+ },
+ {
+  "id": 75,
+  "nhom": "Xây dựng",
+  "nghe": "Sales Xây dựng",
+  "viTri": [
+   "Kinh doanh thiết bị/vật liệu xây dựng",
+   "Kinh doanh nội thất",
+   "Tư vấn thiết kế xây dựng",
+   "Sales Xây dựng khác"
+  ]
+ },
+ {
+  "id": 76,
+  "nhom": "Xây dựng",
+  "nghe": "Xây dựng khác",
+  "viTri": [
+   "Chuyên môn Xây dựng khác"
+  ]
+ },
+ {
+  "id": 77,
+  "nhom": "Kế toán/Kiểm toán/Thuế",
+  "nghe": "Kế toán",
+  "viTri": [
+   "Kế toán tổng hợp",
+   "Kế toán nội bộ",
+   "Kế toán công nợ",
+   "Kế toán thuế",
+   "Kế toán chi phí/giá thành",
+   "Kế toán bán hàng",
+   "Kế toán doanh thu",
+   "Kế toán tài chính",
+   "Kế toán đầu tư",
+   "Kế toán tài sản cố định",
+   "Kế toán mua hàng",
+   "Kế toán thanh toán",
+   "Kế toán kho/nguyên vật liệu",
+   "Kế toán tiền lương",
+   "Kế toán quản trị",
+   "Kế toán trưởng",
+   "Kế toán công trình",
+   "Kế toán sản xuất",
+   "Kế toán dự án",
+   "Kế toán xuất nhập khẩu",
+   "Kế toán ngân hàng",
+   "Thủ quỹ",
+   "Kế toán vật tư",
+   "Kế toán thống kê",
+   "Nhân viên đối soát",
+   "Kế toán khác"
+  ]
+ },
+ {
+  "id": 78,
+  "nhom": "Kế toán/Kiểm toán/Thuế",
+  "nghe": "Kiểm toán",
+  "viTri": [
+   "Kiểm toán viên",
+   "Kiểm toán nội bộ",
+   "Kiểm toán độc lập",
+   "Trưởng nhóm kiểm toán",
+   "Chuyên môn Kiểm toán khác"
+  ]
+ },
+ {
+  "id": 79,
+  "nhom": "Kế toán/Kiểm toán/Thuế",
+  "nghe": "Thuế",
+  "viTri": [
+   "Chuyên viên thuế",
+   "Chuyên môn Thuế khác"
+  ]
+ },
+ {
+  "id": 80,
+  "nhom": "Kế toán/Kiểm toán/Thuế",
+  "nghe": "Kế toán/Kiểm toán/Thuế khác",
+  "viTri": [
+   "Chuyên môn Kế toán/Kiểm toán/Thuế khác"
+  ]
+ },
+ {
+  "id": 81,
+  "nhom": "Sản xuất",
+  "nghe": "Gia công cơ khí",
+  "viTri": [
+   "Thợ cơ khí",
+   "Thợ hàn",
+   "Thợ phay",
+   "Thợ mài",
+   "Thợ tiện",
+   "Thợ khoan",
+   "Thợ Gia công cơ khí khác"
+  ]
+ },
+ {
+  "id": 82,
+  "nhom": "Sản xuất",
+  "nghe": "Thiết kế/chế tạo máy",
+  "viTri": [
+   "Thợ tiện",
+   "Kỹ sư lập trình máy",
+   "Kỹ sư tự động hóa",
+   "Kỹ sư cơ khí",
+   "Kỹ sư kết cấu máy",
+   "Kỹ sư quy trình (PE)",
+   "Kỹ sư khuôn mẫu",
+   "Kỹ sư thiết kế cơ khí",
+   "Kỹ sư vật liệu",
+   "Kỹ sư công nghiệp (IE)",
+   "Kỹ sư thiết kế HVAC",
+   "Kỹ sư cơ điện",
+   "Chuyên môn Thiết kế/chế tạo máy khác"
+  ]
+ },
+ {
+  "id": 83,
+  "nhom": "Sản xuất",
+  "nghe": "Hoá chất/Hoá mỹ phẩm",
+  "viTri": [
+   "Kỹ thuật viên phòng thí nghiệm",
+   "Kỹ sư hóa học",
+   "Nghiên cứu và phát triển (R&D) thực phẩm/đồ uống",
+   "Nghiên cứu và phát triển (R&D) mỹ phẩm",
+   "Chuyên môn Hoá chất/Hoá mỹ phẩm khác"
+  ]
+ },
+ {
+  "id": 84,
+  "nhom": "Sản xuất",
+  "nghe": "May mặc/Dệt may/Da",
+  "viTri": [
+   "Thiết kế rập",
+   "Thiết kế vải",
+   "Thợ may",
+   "Thợ cắt vải",
+   "Công nhân xếp quần áo",
+   "Công nhân giày da",
+   "Chuyên môn May mặc/Dệt may/Da khác"
+  ]
+ },
+ {
+  "id": 85,
+  "nhom": "Sản xuất",
+  "nghe": "R&D/Sản xuất ô tô",
+  "viTri": [
+   "Kỹ sư thiết kế ô tô",
+   "Kỹ sư khung gầm",
+   "Kỹ sư lắp ráp ô tô",
+   "Chuyên môn R&D/Sản xuất ô tô khác"
+  ]
+ },
+ {
+  "id": 86,
+  "nhom": "Sản xuất",
+  "nghe": "Thợ kỹ thuật",
+  "viTri": [
+   "Kỹ sư thiết kế điện",
+   "Thợ mộc",
+   "Thợ sơn",
+   "Công nhân xưởng gỗ",
+   "Công nhân lắp ráp",
+   "Công nhân giày da",
+   "Công nhân bao bì",
+   "Công nhân ép nhựa",
+   "Công nhân làm nước đá",
+   "Công nhân sản xuất",
+   "Thợ kỹ thuật khác"
+  ]
+ },
+ {
+  "id": 87,
+  "nhom": "Sản xuất",
+  "nghe": "Vận hành thiết bị vận tải/thiết bị nặng",
+  "viTri": [
+   "Tài xế lái xe nâng",
+   "Tài xế lái máy công trình",
+   "Vận hành thiết bị nặng/phụ trợ",
+   "Tài xế xe tải",
+   "Tài xế container",
+   "Vận hành thiết bị vận tải/thiết bị nặng khác"
+  ]
+ },
+ {
+  "id": 88,
+  "nhom": "Sản xuất",
+  "nghe": "Quản lý chất lượng",
+  "viTri": [
+   "Quản lý chất lượng (QA)",
+   "Kiểm soát chất lượng (QC)",
+   "Kỹ thuật viên phòng thí nghiệm",
+   "Kỹ sư phân tích lỗi (FA)",
+   "Phát triển bao bì",
+   "Kỹ sư chất lượng (QE)",
+   "Quản lý chất lượng khác"
+  ]
+ },
+ {
+  "id": 89,
+  "nhom": "Sản xuất",
+  "nghe": "Vận hành sản xuất",
+  "viTri": [
+   "Giám đốc sản xuất",
+   "Trưởng phòng sản xuất",
+   "Quản đốc phân xưởng/nhà máy",
+   "Trưởng chuyền/Tổ trưởng sản xuất",
+   "Trưởng ca",
+   "Giám sát sản xuất",
+   "Công nhân sản xuất",
+   "Theo dõi đơn hàng",
+   "Kế hoạch sản xuất",
+   "Thủ kho/Quản lý kho",
+   "Quản lý thiết bị sản xuất",
+   "Công nhân vận hành máy",
+   "Chuyên môn Vận hành sản xuất khác"
+  ]
+ },
+ {
+  "id": 90,
+  "nhom": "Sản xuất",
+  "nghe": "Bảo trì, sửa chữa",
+  "viTri": [
+   "Sửa chữa/Bảo trì máy công nghiệp",
+   "Kỹ thuật viên lắp đặt",
+   "Bảo trì, sửa chữa khác"
+  ]
+ },
+ {
+  "id": 91,
+  "nhom": "Sản xuất",
+  "nghe": "Sales Sản xuất",
+  "viTri": [
+   "Kinh doanh hoá chất",
+   "Kinh doanh ô tô/xe máy/xe điện",
+   "Kinh doanh phụ tùng ô tô/xe máy/xe điện",
+   "Kinh doanh thức ăn chăn nuôi",
+   "Sales Sản xuất khác"
+  ]
+ },
+ {
+  "id": 92,
+  "nhom": "Sản xuất",
+  "nghe": "Sản xuất khác",
+  "viTri": [
+   "Kỹ sư an toàn lao động (HSE)",
+   "Đóng gói hàng hóa",
+   "Bốc xếp hàng hóa",
+   "Bán hàng kỹ thuật cơ khí",
+   "Trợ lý/Thư ký sản xuất",
+   "Công nhân thời vụ",
+   "Chuyên môn Sản xuất khác"
+  ],
+  "tuKhoa": [
+   "kỹ sư an toàn lao động HSE",
+   "nhân viên đóng gói",
+   "công nhân bốc xếp",
+   "trợ lý sản xuất"
+  ]
+ },
+ {
+  "id": 93,
+  "nhom": "Giáo dục/Đào tạo",
+  "nghe": "Giáo viên/Giảng viên/Gia sư",
+  "viTri": [
+   "Giáo viên mầm non",
+   "Giáo viên giáo dục sớm",
+   "Giáo viên tiểu học",
+   "Giảng viên thỉnh giảng",
+   "Giáo viên Toán",
+   "Giáo viên Tiếng Việt/Ngữ văn",
+   "Giáo viên Tin học",
+   "Giáo viên Giáo dục thể chất",
+   "Giáo viên dạy nhảy/múa",
+   "Giáo viên tiếng Anh",
+   "Giáo viên tiếng Nhật",
+   "Giáo viên tiếng Hàn",
+   "Giáo viên tiếng Trung",
+   "Giáo viên tiếng Đức",
+   "Giáo viên tiếng Pháp",
+   "Giáo viên Lịch sử",
+   "Giáo viên Địa lý",
+   "Giáo viên Vật lý",
+   "Giáo viên Hoá học",
+   "Giáo viên Sinh học",
+   "Giáo viên ngoại ngữ khác",
+   "Giáo viên bộ môn khác"
+  ]
+ },
+ {
+  "id": 94,
+  "nhom": "Giáo dục/Đào tạo",
+  "nghe": "Văn hoá/Nghệ thuật/Khoa học",
+  "viTri": [
+   "Giáo viên mỹ thuật",
+   "Giáo viên dạy nhảy/múa",
+   "Giáo viên âm nhạc",
+   "Giáo viên dạy chơi cờ",
+   "Giáo viên STEAM/STEM",
+   "Giáo viên Văn hóa/Nghệ thuật/Khoa học khác"
+  ]
+ },
+ {
+  "id": 95,
+  "nhom": "Giáo dục/Đào tạo",
+  "nghe": "Thể chất/Thể hình",
+  "viTri": [
+   "Huấn luyện viên Thể hình (PT)",
+   "Giáo viên dạy nhảy/múa",
+   "Giáo viên Giáo dục thể chất",
+   "Huấn luyện viên bóng rổ",
+   "Huấn luyện viên Yoga",
+   "Huấn luyện viên bơi lội",
+   "Huấn luyện viên võ thuật",
+   "Huấn luyện viên trượt patin",
+   "Huấn luyện viên bóng bàn",
+   "Huấn luyện viên bóng đá",
+   "Huấn luyện viên cầu lông",
+   "Huấn luyện viên quyền anh (Boxing)",
+   "Huấn luyện viên Bi-a (Billiard)",
+   "Huấn luyện viên Pilates",
+   "Huấn luyện viên thể thao khác"
+  ]
+ },
+ {
+  "id": 96,
+  "nhom": "Giáo dục/Đào tạo",
+  "nghe": "Quản lý giáo dục",
+  "viTri": [
+   "Quản lý học vụ",
+   "Chuyên viên điều phối giáo viên",
+   "Hiệu trưởng/Phó hiệu trưởng",
+   "Giáo viên chủ nhiệm",
+   "Quản lý giảng dạy",
+   "Quản lý chất lượng giáo dục",
+   "Quản lý giáo dục khác"
+  ]
+ },
+ {
+  "id": 97,
+  "nhom": "Giáo dục/Đào tạo",
+  "nghe": "Trợ giảng",
+  "viTri": [
+   "Trợ giảng tiếng Anh",
+   "Trợ giảng tiếng Trung",
+   "Trợ giảng tiếng Nhật",
+   "Trợ giảng tiếng Hàn",
+   "Trợ giảng tiếng Đức",
+   "Trợ giảng ngoại ngữ khác",
+   "Trợ giảng bộ môn khác"
+  ]
+ },
+ {
+  "id": 98,
+  "nhom": "Giáo dục/Đào tạo",
+  "nghe": "Quản lý/Hỗ trợ lớp học",
+  "viTri": [
+   "Quản lý/Vận hành lớp học",
+   "Hỗ trợ lớp học",
+   "Chăm sóc/Hỗ trợ học viên",
+   "Quản lý/Hỗ trợ lớp học khác"
+  ]
+ },
+ {
+  "id": 99,
+  "nhom": "Giáo dục/Đào tạo",
+  "nghe": "Sales Giáo dục/Khoá học",
+  "viTri": [
+   "Tư vấn tuyển sinh/khoá học",
+   "Tư vấn du học/định cư",
+   "Sales Giáo dục/Khoá học khác"
+  ]
+ },
+ {
+  "id": 100,
+  "nhom": "Giáo dục/Đào tạo",
+  "nghe": "Giáo dục/Đào tạo khác",
+  "viTri": [
+   "Giáo viên dạy lái xe ô tô",
+   "Giáo viên dạy nghề",
+   "Giáo viên giáo dục đặc biệt",
+   "Giáo viên dạy cắm hoa",
+   "Giáo viên dạy nấu ăn",
+   "Thủ thư",
+   "Phát triển học liệu/Thiết kế khóa học",
+   "Cố vấn học tập",
+   "Tư vấn hướng nghiệp",
+   "Tư vấn tâm lý học đường",
+   "Chuyên môn Giáo dục/Đào tạo khác"
+  ],
+  "tuKhoa": [
+   "giáo viên dạy nghề",
+   "thủ thư",
+   "tư vấn hướng nghiệp",
+   "thiết kế khóa học",
+   "cố vấn học tập"
+  ]
+ },
+ {
+  "id": 101,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Bán lẻ",
+  "viTri": [
+   "Kinh doanh kênh MT",
+   "Kinh doanh kênh GT",
+   "Bán hàng siêu thị/cửa hàng tiện ích/tiện lợi",
+   "Bán hàng điện thoại",
+   "Bán hàng điện máy",
+   "Bán hàng thời trang",
+   "Bán hàng trang sức đá quý",
+   "Bán hàng mỹ phẩm",
+   "Kinh doanh thực phẩm",
+   "Kinh doanh bao bì",
+   "Sales thẻ tập",
+   "Sales Bán lẻ/Dịch vụ tiêu dùng khác",
+   "Thu ngân",
+   "Giám sát thu ngân",
+   "Nhân viên siêu thị",
+   "Phòng chống thất thoát",
+   "Quản lý cửa hàng/Cửa hàng trưởng",
+   "Giám đốc siêu thị",
+   "Vận hành trung tâm thương mại"
+  ]
+ },
+ {
+  "id": 102,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Dịch vụ làm đẹp",
+  "viTri": [
+   "Kỹ thuật viên Spa",
+   "Quản lý Spa",
+   "Tư vấn thẩm mỹ/Spa",
+   "Tư vấn nha khoa",
+   "Thợ nail/mi",
+   "Phun xăm thẩm mỹ",
+   "Thợ xăm (Tattoo Artist)",
+   "Thợ cắt tóc",
+   "Trợ lý/Học việc làm tóc",
+   "Makeup/Stylist",
+   "Dịch vụ làm đẹp khác"
+  ]
+ },
+ {
+  "id": 103,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Dịch vụ chăm sóc sức khoẻ",
+  "viTri": [
+   "Chuyên viên vật lý trị liệu",
+   "Kỹ thuật viên châm cứu bấm huyệt",
+   "Nhân viên massage",
+   "Dịch vụ chăm sóc sức khỏe khác"
+  ]
+ },
+ {
+  "id": 104,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Dịch vụ vệ sinh/nhà cửa",
+  "viTri": [
+   "Nhân viên dọn vệ sinh",
+   "Giám sát vệ sinh",
+   "Giúp việc",
+   "Sắp xếp tủ quần áo và nhà cửa",
+   "Vệ sinh/Tạp vụ",
+   "Dịch vụ vệ sinh/nhà cửa khác"
+  ]
+ },
+ {
+  "id": 105,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Thể chất/Thể hình",
+  "viTri": [
+   "Huấn luyện viên Thể hình (PT)",
+   "Giáo viên dạy nhảy/múa",
+   "Giáo viên Giáo dục thể chất",
+   "Huấn luyện viên bóng rổ",
+   "Huấn luyện viên Yoga",
+   "Huấn luyện viên bơi lội",
+   "Huấn luyện viên võ thuật",
+   "Huấn luyện viên trượt patin",
+   "Huấn luyện viên bóng bàn",
+   "Huấn luyện viên bóng đá",
+   "Huấn luyện viên cầu lông",
+   "Huấn luyện viên quyền anh (Boxing)",
+   "Huấn luyện viên Bi-a (Billiard)",
+   "Huấn luyện viên Pilates",
+   "Huấn luyện viên thể thao khác"
+  ]
+ },
+ {
+  "id": 106,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Tài xế/Lái xe",
+  "viTri": [
+   "Bưu tá",
+   "Shipper (Nhân viên giao hàng)",
+   "Tài xế lái xe thuê",
+   "Tài xế taxi",
+   "Tài xế lái xe văn phòng",
+   "Tài xế xe khách",
+   "Tài xế B2",
+   "Lái xe cho sếp",
+   "Tài xế lái xe đường dài",
+   "Tài xế công nghệ",
+   "Dịch vụ vận tải khác"
+  ]
+ },
+ {
+  "id": 107,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Dịch vụ an ninh và bảo trì",
+  "viTri": [
+   "Bảo vệ",
+   "Giám sát an ninh",
+   "Nhân viên PCCC",
+   "Bảo trì PCCC",
+   "Sửa chữa thiết bị gia dụng",
+   "Sửa chữa điện thoại",
+   "Sửa chữa máy tính và máy in",
+   "Thợ điện lạnh",
+   "Thợ sửa khoá",
+   "Sửa chữa/Bảo trì điện nước",
+   "Lắp đặt/bảo trì thang máy",
+   "Thợ sửa xe",
+   "Bảo trì tòa nhà",
+   "Việc làm Bảo vệ/Bảo trì/Sửa chữa khác"
+  ]
+ },
+ {
+  "id": 108,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Dịch vụ bà mẹ trẻ em",
+  "viTri": [
+   "Bảo mẫu/Người trông trẻ",
+   "Chăm sóc mẹ và bé",
+   "Dịch vụ bà mẹ trẻ em khác"
+  ]
+ },
+ {
+  "id": 109,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Dịch vụ ô tô/xe máy/xe điện",
+  "viTri": [
+   "Thợ sửa xe",
+   "Nhân viên rửa xe",
+   "Thợ độ xe ô tô/xe máy/xe điện",
+   "Quản lý cửa hàng sửa chữa và bảo trì ô tô/xe máy/xe điện",
+   "Kiểm định ô tô",
+   "Giám định bồi thường ô tô",
+   "Dịch vụ ô tô/xe máy/xe điện khác"
+  ],
+  "tuKhoa": [
+   "thợ sửa xe",
+   "kỹ thuật viên ô tô",
+   "nhân viên rửa xe",
+   "kỹ thuật viên sửa chữa xe máy",
+   "kỹ thuật viên xe điện"
+  ]
+ },
+ {
+  "id": 110,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Dịch vụ thú cưng",
+  "viTri": [
+   "Chuyên viên chăm sóc/spa thú cưng",
+   "Bác sĩ thú y",
+   "Dịch vụ thú cưng khác"
+  ],
+  "tuKhoa": [
+   "spa thú cưng",
+   "grooming thú cưng",
+   "chăm sóc thú cưng",
+   "nhân viên petshop"
+  ]
+ },
+ {
+  "id": 111,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Bán lẻ/Dịch vụ đời sống khác",
+  "viTri": [
+   "Thợ cắm hoa",
+   "Thợ thủ công mỹ nghệ",
+   "Thợ thủ công khác",
+   "Tổ chức tiệc cưới (Wedding Planner)",
+   "Quản lý quán net",
+   "Sales Tour/Kinh doanh du lịch",
+   "Bán vé máy bay (Ticketing/Booker)",
+   "Kinh doanh khách sạn",
+   "Chuyên viên đo thị lực",
+   "Photographer/Video Editor",
+   "Nhân viên rạp chiếu phim",
+   "Nhân viên cây xăng",
+   "Nhân viên cứu hộ (Lifeguard)",
+   "Giáo viên dạy cắm hoa",
+   "Giáo viên dạy nấu ăn",
+   "Giáo viên dạy lái xe ô tô",
+   "Chuyên viên điều khiển drone",
+   "Tổ chức sự kiện (Event Planner)",
+   "Việc làm Bán lẻ/Dịch vụ đời sống khác"
+  ],
+  "tuKhoa": [
+   "wedding planner",
+   "photographer",
+   "nhân viên rạp chiếu phim",
+   "nhân viên cây xăng",
+   "event planner"
+  ]
+ },
+ {
+  "id": 112,
+  "nhom": "Phim và truyền hình/Báo chí/Xuất bản",
+  "nghe": "Biên tập/Viết/Xuất bản",
+  "viTri": [
+   "Biên tập viên",
+   "Tổng biên tập/Phó tổng biên tập",
+   "Phóng viên/Biên tập viên tin tức",
+   "Hiệu đính và nhập liệu",
+   "In ấn và sắp chữ",
+   "Nhân viên chế bản",
+   "Chuyên môn Biên tập/Viết/Xuất bản khác"
+  ]
+ },
+ {
+  "id": 113,
+  "nhom": "Phim và truyền hình/Báo chí/Xuất bản",
+  "nghe": "Phim và truyền hình",
+  "viTri": [
+   "Makeup/Stylist",
+   "Diễn viên",
+   "Diễn viên lồng tiếng",
+   "Quản lý/Trợ lý nghệ sĩ",
+   "Dẫn chương trình (MC)",
+   "Người mẫu/Mẫu ảnh",
+   "Photographer/Video Editor",
+   "Đạo diễn",
+   "Biên đạo",
+   "Biên kịch",
+   "Producer (Sản xuất phim)",
+   "Phát hành điện ảnh và truyền hình",
+   "Hậu kỳ sản xuất",
+   "Animation Design",
+   "Chỉnh sửa ảnh (Retouch)",
+   "Kỹ thuật viên ánh sáng",
+   "Kỹ thuật viên âm thanh",
+   "Nhân viên chiếu phim",
+   "Thiết kế mỹ thuật sân khấu",
+   "Chuyên môn Phim và truyền hình khác"
+  ],
+  "tuKhoa": [
+   "diễn viên",
+   "biên kịch",
+   "đạo diễn",
+   "video editor",
+   "producer"
+  ]
+ },
+ {
+  "id": 114,
+  "nhom": "Phim và truyền hình/Báo chí/Xuất bản",
+  "nghe": "Phim và truyền hình/Báo chí/Xuất bản khác",
+  "viTri": [
+   "Chuyên môn Phim và truyền hình/Báo chí/Xuất bản khác"
+  ]
+ },
+ {
+  "id": 115,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Điện/Tự động hoá",
+  "viTri": [
+   "Kỹ sư điện",
+   "Kỹ sư thiết kế điện",
+   "Thợ điện",
+   "Kỹ sư tự động hóa",
+   "Kỹ sư cơ điện",
+   "Kỹ sư lập trình PLC/SCADA",
+   "Kỹ sư robot",
+   "Chuyên môn Điện/Tự động hoá khác"
+  ]
+ },
+ {
+  "id": 116,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Điện tử/Phần cứng",
+  "viTri": [
+   "Kỹ sư điện tử",
+   "Thiết kế mạch điện/vi mạch",
+   "Kỹ sư phần cứng",
+   "Embedded Engineer/Lập trình nhúng",
+   "Sửa chữa/Bảo trì điện tử/viễn thông",
+   "Phát triển FPGA",
+   "Vi điều khiển",
+   "Kỹ sư phát triển Driver",
+   "Kỹ sư PCB",
+   "Kỹ sư RF",
+   "Tích hợp hệ thống",
+   "Kỹ sư quang học",
+   "Phát triển DSP",
+   "Phát triển ARM",
+   "Kỹ thuật điện/điện tử",
+   "Công nhân điện tử",
+   "Chuyên môn Điện tử/Phần cứng khác"
+  ]
+ },
+ {
+  "id": 117,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Nhiệt/Gió/Điều hoà (HVAC-R)",
+  "viTri": [
+   "Kỹ sư HVAC",
+   "Kỹ sư nhiệt lạnh",
+   "Kỹ sư điện lạnh",
+   "Thợ điện lạnh",
+   "Chuyên môn Nhiệt/Gió/Điều hoà (HVAC-R)"
+  ]
+ },
+ {
+  "id": 118,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Chất bán dẫn/Chip",
+  "viTri": [
+   "Thiết kế vi mạch IC",
+   "Kỹ sư kiểm định IC",
+   "Analog Layout Design Engineer",
+   "Chip test Engineer",
+   "DFT Engineer",
+   "FAE",
+   "Digital Front-end Designer",
+   "Back-end Engineer",
+   "Analog IC Design Engineer",
+   "Chuyên môn Chất bán dẫn/Chip khác"
+  ],
+  "tuKhoa": [
+   "IC design engineer",
+   "layout engineer",
+   "kỹ sư thiết kế vi mạch",
+   "FPGA engineer",
+   "kỹ sư phần cứng"
+  ]
+ },
+ {
+  "id": 119,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Quản lý/Vận hành dự án kỹ thuật",
+  "viTri": [
+   "Quản lý dự án điện",
+   "Quản lý dự án kỹ thuật",
+   "Trợ lý dự án kỹ thuật",
+   "Chuyên viên dự án kỹ thuật",
+   "Kỹ sư triển khai",
+   "Tư vấn triển khai",
+   "Kỹ sư phân tích yêu cầu",
+   "Quản lý dự án phần cứng",
+   "Quản lý dự án viễn thông",
+   "Quản lý dự án hệ thống tự động hóa",
+   "Quản lý dự án năng lượng tái tạo",
+   "Công nhân vận hành máy",
+   "Chuyên môn Quản lý/Vận hành dự án kỹ thuật khác"
+  ]
+ },
+ {
+  "id": 120,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Viễn thông",
+  "viTri": [
+   "Kỹ sư điện tử viễn thông",
+   "Kỹ thuật viễn thông",
+   "Kỹ sư IoT (IoT Engineer)",
+   "Kỹ sư nghiên cứu và phát triển viễn thông",
+   "Kỹ sư truyền thông không dây/vô tuyến (RF)",
+   "Kỹ sư truyền thông di động",
+   "Kỹ sư mạng viễn thông",
+   "Kỹ sư truyền thông dữ liệu",
+   "Kỹ sư kiểm thử viễn thông",
+   "Kỹ sư truyền thông quang học",
+   "Kỹ sư mạng quang",
+   "Kỹ sư điện viễn thông",
+   "Kỹ sư truyền dẫn cáp",
+   "Kỹ sư thiết bị viễn thông",
+   "Kỹ sư mạng lõi",
+   "Kỹ sư tiêu chuẩn hóa viễn thông",
+   "Kỹ sư mạng",
+   "Chuyên môn Viễn thông khác"
+  ]
+ },
+ {
+  "id": 121,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Vận hành và bảo trì/Hỗ trợ kỹ thuật",
+  "viTri": [
+   "Sửa chữa/Bảo trì điện tử/viễn thông",
+   "Kỹ sư hệ thống",
+   "Kỹ sư tài liệu kỹ thuật",
+   "Vận hành điện",
+   "Kỹ thuật điện/điện tử",
+   "Công nhân vận hành máy",
+   "Chuyên môn Vận hành và bảo trì/Hỗ trợ kỹ thuật khác"
+  ]
+ },
+ {
+  "id": 122,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Sales Điện/Điện tử/Viễn thông",
+  "viTri": [
+   "Kinh doanh thiết bị/linh kiện điện",
+   "Kinh doanh thiết bị công nghiệp",
+   "Kinh doanh dịch vụ viễn thông",
+   "Kinh doanh điện mặt trời",
+   "Kinh doanh HVAC",
+   "Kinh doanh thiết bị điện dân dụng",
+   "Sales Điện/Điện tử/Viễn thông khác"
+  ]
+ },
+ {
+  "id": 123,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Điện/Điện tử/Viễn thông khác",
+  "viTri": [
+   "Bán hàng kỹ thuật Điện/Điện tử/Viễn thông",
+   "Nhân viên kỹ thuật thiết bị đo lường",
+   "Chuyên môn Điện/Điện tử/Viễn thông khác"
+  ]
+ },
+ {
+  "id": 124,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Sales Xuất nhập khẩu/Logistics",
+  "viTri": [
+   "Sales Logistics",
+   "Kinh doanh chuyển phát nhanh",
+   "Sales Xuất nhập khẩu/Logistics khác"
+  ]
+ },
+ {
+  "id": 125,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Xuất nhập khẩu/Logistics",
+  "viTri": [
+   "Chuyên môn Xuất nhập khẩu/Logistics",
+   "Giám đốc Logistics",
+   "Theo dõi đơn hàng",
+   "Nhân viên hiện trường Logistics",
+   "Quản lý hệ thống vận tải (TMS)",
+   "Giám sát/Điều phối hàng hoá và kho vận",
+   "Chứng từ xuất nhập khẩu",
+   "Nhân viên làm giá (Pricing)"
+  ]
+ },
+ {
+  "id": 126,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Vận tải",
+  "viTri": [
+   "Giám sát/Điều phối vận tải",
+   "Phân loại/Sắp xếp hàng hoá",
+   "Bốc xếp hàng hóa",
+   "Tài xế lái xe nâng",
+   "Tài xế xe tải",
+   "Tài xế container",
+   "Tài xế lái xe đường dài",
+   "Tài xế lái xe chuyên dụng",
+   "Tài xế xe khách",
+   "Phụ xe",
+   "Dịch vụ vận tải khác"
+  ]
+ },
+ {
+  "id": 127,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Giao nhận",
+  "viTri": [
+   "Bưu tá",
+   "Quản lý trạm giao nhận/bưu cục",
+   "Phân loại/Sắp xếp hàng hoá",
+   "Shipper (Nhân viên giao hàng)",
+   "Điều phối giao hàng",
+   "Bốc xếp hàng hóa",
+   "Freight Forwarder",
+   "Dịch vụ giao nhận khác"
+  ]
+ },
+ {
+  "id": 128,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Kho vận",
+  "viTri": [
+   "Nhân viên kho",
+   "Hành chính kho",
+   "Trưởng kho/Giám sát kho",
+   "Freight Forwarder",
+   "Công nhân xếp quần áo",
+   "Đóng gói hàng hóa",
+   "Nhân viên cân",
+   "Nhân viên kiểm soát tồn kho",
+   "Chuyên môn Kho vận khác"
+  ]
+ },
+ {
+  "id": 129,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Thu mua/Mua hàng",
+  "viTri": [
+   "Chuyên môn Thu mua/Mua hàng",
+   "Quản lý/Giám sát mua hàng",
+   "Kỹ sư chất lượng (QE)",
+   "Điều phối hàng hóa",
+   "Quản lý hàng hoá (Merchandiser)",
+   "Giám đốc Thu mua/Mua hàng",
+   "Chuyên viên đấu thầu",
+   "Chuyên viên hồ sơ thầu",
+   "Khai báo hải quan và kiểm dịch"
+  ]
+ },
+ {
+  "id": 130,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Chuỗi cung ứng",
+  "viTri": [
+   "Chuyên môn chuỗi cung ứng",
+   "Quản lý/Giám sát chuỗi cung ứng",
+   "Giám đốc chuỗi cung ứng",
+   "Quản lý sản xuất/Quản lý nguyên vật liệu (PMC)"
+  ]
+ },
+ {
+  "id": 131,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Logistics khác",
+  "viTri": [
+   "Chuyên môn Logistics khác"
+  ]
+ },
+ {
+  "id": 132,
+  "nhom": "Tư vấn chuyên môn",
+  "nghe": "Tư vấn/Phân tích chuyên môn",
+  "viTri": [
+   "Tư vấn quản lý doanh nghiệp",
+   "Tư vấn chiến lược",
+   "Tư vấn tài chính",
+   "Tư vấn CNTT/IT consultant",
+   "Tư vấn nhân sự",
+   "Tư vấn headhunting",
+   "Tư vấn tâm lý",
+   "Tư vấn hôn nhân",
+   "Nghiên cứu thị trường (Market Research)",
+   "Phân tích dữ liệu",
+   "Các vị trí tư vấn khác"
+  ],
+  "tuKhoa": [
+   "tư vấn quản lý doanh nghiệp",
+   "tư vấn chiến lược",
+   "management consultant",
+   "business consultant",
+   "headhunter"
+  ]
+ },
+ {
+  "id": 133,
+  "nhom": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học",
+  "nghe": "Nghề Y tá/Điều dưỡng",
+  "viTri": [
+   "Y tá/Điều dưỡng",
+   "Y tá trưởng/Điều dưỡng trưởng",
+   "Hộ lý/Hộ sinh"
+  ]
+ },
+ {
+  "id": 134,
+  "nhom": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học",
+  "nghe": "Bác sĩ/Kỹ thuật viên",
+  "viTri": [
+   "Bác sĩ ngoại khoa",
+   "Bác sĩ nội khoa",
+   "Bác sĩ da liễu",
+   "Bác sĩ sản khoa và phụ khoa",
+   "Bác sĩ nhi khoa",
+   "Bác sĩ nhãn khoa",
+   "Bác sĩ tâm lý",
+   "Bác sĩ thẩm mỹ",
+   "Bác sĩ đa khoa",
+   "Bác sĩ tai mũi họng",
+   "Bác sĩ siêu âm",
+   "Bác sĩ gây mê hồi sức",
+   "Bác sĩ y học cổ truyền",
+   "Bác sĩ nha khoa",
+   "Kỹ thuật viên xét nghiệm",
+   "Kỹ thuật viên chẩn đoán hình ảnh",
+   "Kỹ thuật viên gây mê",
+   "Kỹ thuật viên đo thị lực",
+   "Quản lý y tế",
+   "Các vị trí bác sĩ khác"
+  ]
+ },
+ {
+  "id": 135,
+  "nhom": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học",
+  "nghe": "Vật lý trị liệu và chăm sóc sức khỏe",
+  "viTri": [
+   "Chuyên viên vật lý trị liệu",
+   "Chuyên gia dinh dưỡng/quản lý sức khoẻ",
+   "Kỹ thuật viên châm cứu bấm huyệt",
+   "Nhân viên massage",
+   "Kỹ thuật viên phục hồi chức năng",
+   "Chăm sóc mẹ và bé",
+   "Chuyên môn Vật lý trị liệu và chăm sóc sức khỏe khác"
+  ]
+ },
+ {
+  "id": 136,
+  "nhom": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học",
+  "nghe": "Dược phẩm/Công nghệ sinh học",
+  "viTri": [
+   "Dược sĩ/Bán thuốc",
+   "Quản lý cửa hàng thuốc",
+   "Nghiên cứu sinh học",
+   "R&D y dược",
+   "Kỹ sư Bioinformatics",
+   "Sản xuất dược phẩm",
+   "Đăng ký dược phẩm",
+   "Quản lý dự án y dược",
+   "Kỹ thuật viên nuôi cấy tế bào",
+   "Chuyên môn Dược phẩm/Công nghệ sinh học khác"
+  ]
+ },
+ {
+  "id": 137,
+  "nhom": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học",
+  "nghe": "Thiết bị y tế",
+  "viTri": [
+   "Quản lý thiết bị y tế",
+   "Phát triển thuốc thử",
+   "Kỹ thuật viên phòng lab",
+   "Quản lý phòng lab",
+   "Chuyên môn Thiết bị y tế khác"
+  ]
+ },
+ {
+  "id": 138,
+  "nhom": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học",
+  "nghe": "Sales Dược/Y tế/Sức khoẻ/Làm đẹp",
+  "viTri": [
+   "Kinh doanh thiết bị/vật tư y tế",
+   "Trình dược viên",
+   "Dược sĩ/Bán thuốc",
+   "Tư vấn thẩm mỹ/Spa",
+   "Tư vấn nha khoa",
+   "Kinh doanh dịch vụ y tế",
+   "Sales Dược/Y tế/Sức khoẻ/Làm đẹp khác"
+  ]
+ },
+ {
+  "id": 139,
+  "nhom": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học",
+  "nghe": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học khác",
+  "viTri": [
+   "Thử nghiệm lâm sàng",
+   "Chuyên môn Dược/Y tế/Sức khoẻ/Công nghệ sinh học khác"
+  ],
+  "tuKhoa": [
+   "nghiên cứu lâm sàng",
+   "clinical research",
+   "CRA",
+   "thử nghiệm lâm sàng"
+  ]
+ },
+ {
+  "id": 140,
+  "nhom": "Thiết kế",
+  "nghe": "Thiết kế Đồ hoạ/Giao diện/Trải nghiệm",
+  "viTri": [
+   "Thiết kế đồ họa (Graphic Design)",
+   "Illustration",
+   "UI/UX Design",
+   "3D Modeler",
+   "Chuyên môn Thiết kế Đồ hoạ/Giao diện/Trải nghiệm khác"
+  ]
+ },
+ {
+  "id": 141,
+  "nhom": "Thiết kế",
+  "nghe": "Thiết kế Nhà/Nội thất/Môi trường",
+  "viTri": [
+   "Kiến trúc sư",
+   "Thiết kế nội thất",
+   "Thiết kế triển lãm/trưng bày",
+   "Thiết kế cảnh quan",
+   "Thiết kế mỹ thuật sân khấu",
+   "Vẽ AutoCAD",
+   "Chuyên môn Thiết kế Nhà/Nội thất/Môi trường khác"
+  ]
+ },
+ {
+  "id": 142,
+  "nhom": "Thiết kế",
+  "nghe": "Thiết kế Công nghiệp",
+  "viTri": [
+   "Thiết kế sản phẩm nội thất",
+   "Chuyên môn Thiết kế Công nghiệp",
+   "Thiết kế bao bì",
+   "Thiết kế đồ trang sức",
+   "Vẽ kỹ thuật"
+  ]
+ },
+ {
+  "id": 143,
+  "nhom": "Thiết kế",
+  "nghe": "Thiết kế Thời trang",
+  "viTri": [
+   "Chuyên môn Thiết kế Thời trang",
+   "Thiết kế rập",
+   "Thiết kế vải"
+  ]
+ },
+ {
+  "id": 144,
+  "nhom": "Thiết kế",
+  "nghe": "Nghệ thuật/Hoạt hình/Game",
+  "viTri": [
+   "Illustration",
+   "Animation Design",
+   "Motion Graphic",
+   "Hoạ sĩ truyện tranh",
+   "Chỉnh sửa ảnh (Retouch)",
+   "Concept Artist",
+   "Game Design",
+   "Photographer/Video Editor",
+   "Chuyên môn Nghệ thuật/Hoạt hình/Game khác"
+  ]
+ },
+ {
+  "id": 145,
+  "nhom": "Thiết kế",
+  "nghe": "Nghiên cứu người dùng",
+  "viTri": [
+   "Chuyên môn nghiên cứu người dùng"
+  ],
+  "tuKhoa": [
+   "UX research",
+   "nhà nghiên cứu người dùng",
+   "product researcher",
+   "user experience research"
+  ]
+ },
+ {
+  "id": 146,
+  "nhom": "Thiết kế",
+  "nghe": "Quản lý thiết kế",
+  "viTri": [
+   "Quản lý/Giám sát thiết kế",
+   "Giám đốc/Đạo diễn thiết kế",
+   "Giám đốc thiết kế hình ảnh (Visual)",
+   "Quản lý thiết kế khác"
+  ]
+ },
+ {
+  "id": 147,
+  "nhom": "Thiết kế",
+  "nghe": "Thiết kế khác",
+  "viTri": [
+   "Chuyên môn Thiết kế khác"
+  ]
+ },
+ {
+  "id": 148,
+  "nhom": "Nhà hàng/Khách sạn/Du lịch",
+  "nghe": "Nhà hàng/Dịch vụ ăn uống",
+  "viTri": [
+   "Phục vụ",
+   "Thu ngân",
+   "Lễ tân/Đón tiếp",
+   "Quản lý lễ tân",
+   "Đầu bếp",
+   "Bếp trưởng",
+   "Phụ bếp",
+   "Quản lý bếp",
+   "Thợ làm bánh",
+   "Pha chế (Barista)",
+   "Chuyên gia thẩm rượu",
+   "Quản lý nhà hàng",
+   "Shipper (Nhân viên giao hàng)",
+   "Chuyên môn Nhà hàng/Dịch vụ ăn uống khác"
+  ]
+ },
+ {
+  "id": 149,
+  "nhom": "Nhà hàng/Khách sạn/Du lịch",
+  "nghe": "Khách sạn/Dịch vụ cư trú",
+  "viTri": [
+   "Lễ tân/Đón tiếp",
+   "Bellman (nhân viên hành lý)",
+   "Buồng phòng",
+   "Giặt là",
+   "Nhân viên đỗ xe (Valet Parking)",
+   "Quản lý khách sạn",
+   "Quản lý homestay",
+   "Chuyên môn Khách sạn/Dịch vụ cư trú khác"
+  ]
+ },
+ {
+  "id": 150,
+  "nhom": "Nhà hàng/Khách sạn/Du lịch",
+  "nghe": "Dịch vụ du lịch",
+  "viTri": [
+   "Hướng dẫn viên du lịch",
+   "Điều hành tour",
+   "Nhân viên visa",
+   "Sales Tour/Kinh doanh du lịch",
+   "Chuyên môn Dịch vụ du lịch khác"
+  ]
+ },
+ {
+  "id": 151,
+  "nhom": "Nhà hàng/Khách sạn/Du lịch",
+  "nghe": "Sales Nhà hàng/Khách sạn/Du lịch",
+  "viTri": [
+   "Kinh doanh HORECA",
+   "Sales Tour/Kinh doanh du lịch",
+   "Kinh doanh khách đoàn (MICE)",
+   "Bán vé máy bay (Ticketing/Booker)",
+   "Kinh doanh khách sạn",
+   "Kinh doanh OTA",
+   "Sales Nhà hàng/Khách sạn/Du lịch khác"
+  ]
+ },
+ {
+  "id": 152,
+  "nhom": "Nhà hàng/Khách sạn/Du lịch",
+  "nghe": "Nhà hàng/Khách sạn/Du lịch khác",
+  "viTri": [
+   "Chuyên môn Nhà hàng/Khách sạn/Du lịch khác"
+  ]
+ },
+ {
+  "id": 153,
+  "nhom": "Năng lượng/Môi trường/Nông nghiệp",
+  "nghe": "Năng lượng/Địa chất",
+  "viTri": [
+   "Kỹ sư năng lượng",
+   "Kỹ sư điện mặt trời",
+   "Kỹ sư thủy lợi",
+   "Kỹ sư địa chất",
+   "Chuyên môn Năng lượng/Địa chất khác"
+  ]
+ },
+ {
+  "id": 154,
+  "nhom": "Năng lượng/Môi trường/Nông nghiệp",
+  "nghe": "An toàn lao động/Môi trường",
+  "viTri": [
+   "Kỹ sư an toàn lao động (HSE)",
+   "Kỹ sư môi trường",
+   "Nhân viên môi trường",
+   "Vận hành hệ thống xử lý nước thải"
+  ]
+ },
+ {
+  "id": 155,
+  "nhom": "Năng lượng/Môi trường/Nông nghiệp",
+  "nghe": "Nông/Lâm/Ngư nghiệp",
+  "viTri": [
+   "Kỹ thuật viên nông nghiệp/trồng trọt",
+   "Công nhân chăn nuôi",
+   "Kỹ sư lâm nghiệp",
+   "Kiểm lâm",
+   "Chuyên môn Nông/Lâm/Ngư nghiệp khác"
+  ]
+ },
+ {
+  "id": 156,
+  "nhom": "Năng lượng/Môi trường/Nông nghiệp",
+  "nghe": "Năng lượng/Môi trường/Nông nghiệp khác",
+  "viTri": [
+   "Chuyên môn Năng lượng/Môi trường/Nông nghiệp khác"
+  ]
+ },
+ {
+  "id": 157,
+  "nhom": "Tài xế",
+  "nghe": "Vận tải",
+  "viTri": [
+   "Giám sát/Điều phối vận tải",
+   "Phân loại/Sắp xếp hàng hoá",
+   "Bốc xếp hàng hóa",
+   "Tài xế lái xe nâng",
+   "Tài xế xe tải",
+   "Tài xế container",
+   "Tài xế lái xe đường dài",
+   "Tài xế lái xe chuyên dụng",
+   "Tài xế xe khách",
+   "Phụ xe",
+   "Dịch vụ vận tải khác"
+  ],
+  "tuKhoa": [
+   "tài xế xe tải",
+   "tài xế container",
+   "tài xế lái xe đường dài",
+   "tài xế lái xe nâng",
+   "phụ xe"
+  ]
+ },
+ {
+  "id": 158,
+  "nhom": "Tài xế",
+  "nghe": "Đưa đón",
+  "viTri": [
+   "Tài xế công nghệ",
+   "Tài xế taxi",
+   "Tài xế lái xe thuê",
+   "Tài xế lái xe văn phòng",
+   "Tài xế B2",
+   "Lái xe cho sếp",
+   "Tài xế xe khách",
+   "Dịch vụ đưa đón khác"
+  ]
+ },
+ {
+  "id": 159,
+  "nhom": "Biên phiên dịch",
+  "nghe": "Nghề Biên phiên dịch",
+  "viTri": [
+   "Biên phiên dịch tiếng Anh",
+   "Biên phiên dịch tiếng Trung",
+   "Biên phiên dịch tiếng Nhật",
+   "Biên phiên dịch tiếng Hàn",
+   "Biên phiên dịch tiếng Nga",
+   "Biên phiên dịch tiếng Tây Ban Nha",
+   "Biên phiên dịch tiếng Đức",
+   "Biên phiên dịch tiếng Pháp",
+   "Biên phiên dịch ngôn ngữ khác",
+   "Biên phiên dịch đa ngôn ngữ",
+   "Tư vấn dịch thuật"
+  ]
+ },
+ {
+  "id": 160,
+  "nhom": "Luật",
+  "nghe": "Dịch vụ pháp lý (Agency/Firm)",
+  "viTri": [
+   "Luật sư",
+   "Chuyên viên pháp lý",
+   "Thư ký công chứng viên",
+   "Thư ký văn phòng luật sư/Thư ký pháp lý",
+   "Chuyên môn Pháp lý khác"
+  ]
+ },
+ {
+  "id": 161,
+  "nhom": "Luật",
+  "nghe": "Dịch vụ pháp chế (In-house)",
+  "viTri": [
+   "Pháp chế",
+   "Giám đốc pháp chế",
+   "Chuyên môn Pháp chế khác"
+  ]
+ },
+ {
+  "id": 162,
+  "nhom": "Nhóm nghề khác",
+  "nghe": "Hàng hải",
+  "viTri": [
+   "Chuyên môn Hàng hải"
+  ],
+  "tuKhoa": [
+   "thuyền viên",
+   "sỹ quan hàng hải",
+   "kỹ sư hàng hải",
+   "thuyền trưởng",
+   "hoa tiêu"
+  ]
+ },
+ {
+  "id": 163,
+  "nhom": "Nhóm nghề khác",
+  "nghe": "NGO/Phi chính phủ/Phi lợi nhuận",
+  "viTri": [
+   "Chuyên môn NGO/Phi chính phủ/Phi lợi nhuận"
+  ],
+  "tuKhoa": [
+   "cán bộ chương trình",
+   "NGO",
+   "phi chính phủ",
+   "chương trình cộng đồng"
+  ]
+ },
+ {
+  "id": 164,
+  "nhom": "Nhóm nghề khác",
+  "nghe": "Nghề khác",
+  "viTri": [
+   "Chuyên môn khác"
+  ]
+ }
+]

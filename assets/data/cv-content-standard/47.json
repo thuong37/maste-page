@@ -1,0 +1,36 @@
+{
+  "id": 47,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Công nghệ thông tin khác",
+  "soJD": 5,
+  "doTinCay": "thap",
+  "capBac": "5/5 JD cấp nhân viên (3 JD yêu cầu 1 năm, gồm 1 cộng tác viên; 2 JD yêu cầu 2 năm); Cao đẳng/Đại học CNTT, Marketing, TMĐT",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; 2/5 JD nêu giới tính nam; công việc làm việc với nội dung/web nên ảnh không bắt buộc (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 1/5 (ViConexus) nhắc tư duy hệ thống, tham gia triển khai Web-App-CRM; nên nêu định hướng quản trị web/SEO",
+    "kinh-nghiem-lam-viec": "can — 5/5 hỏi 1-2 năm quản trị website/SEO; nên ghi website đã quản trị, nền tảng, lưu lượng/thứ hạng",
+    "hoc-van": "can — 5/5 nêu Cao đẳng/Đại học, chuyên ngành CNTT, Marketing, Digital Marketing, Thương mại điện tử",
+    "ky-nang-chuyen-mon": "can — 5/5: quản trị/cập nhật website, SEO on-page/technical, viết nội dung, quản lý domain/hosting/SSL/server, bảo mật/sao lưu, thống kê truy cập",
+    "ky-nang-mem": "nen — 3/5: chủ động, làm việc độc lập, cẩn thận, trách nhiệm",
+    "cong-cu-phan-mem": "can — 5/5: WordPress (4/5), Google Search Console/Analytics, Canva/Photoshop, Ahrefs/SEMrush, HTML/CSS, Haravan, Nginx/Apache/Cloudflare",
+    "chung-chi": "khong — không JD nào nhắc chứng chỉ",
+    "du-an": "nen — JD#1 ghi 'có link dự án đã làm là điểm cộng lớn'; 1/5 nhắc triển khai nền tảng Web-App-CRM",
+    "thanh-tich-kpi": "nen — 3/5 nhắc theo dõi/báo cáo hiệu quả SEO, lượt truy cập; JD#1 nêu đăng 8-12 bài/tháng",
+    "ngoai-ngu": "nen — 2/5 nêu tiếng Anh (đọc hiểu tốt, viết nội dung chuẩn; đọc hiểu); JD#1 làm thị trường quốc tế",
+    "portfolio-link": "can — JD#1 nêu thẳng link dự án là điểm cộng lớn; 1/5, nên đính kèm link website đã quản trị",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/5 nêu giới tính nam, 1/5 độ tuổi 25-35; nên có độ tuổi/giới tính (suy từ JD)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["quản trị website", "SEO on-page/technical", "WordPress", "Google Search Console", "Google Analytics 4", "domain/hosting/SSL", "content", "Canva/Photoshop", "HTML/CSS", "fanpage"],
+  "bangChung": [
+    "JD#1 (GUGU Hair): 'Biết dùng WordPress, Google Search Console, Google Analytics 4'; 'có link dự án đã làm là điểm cộng lớn'",
+    "JD#2 (KNP): 'Có kinh nghiệm quản trị website và fanpage'; 'Giới tính: Nam'",
+    "JD#3 (Trần Gia Phát): 'Quản lý hệ thống tên miền (domain), hosting, SSL'; 'Nắm vững kiến thức SEO'",
+    "JD#4 (Babeeni): 'Web Server (Nginx, Apache, LiteSpeed...)'; 'Nắm vững về HTML, CSS ... Wordpress, Haravan'",
+    "JD#5 (ViConexus): 'quản trị Website, Facebook Fanpage và các nền tảng Social Media'; Nam, Tuổi 25-35"
+  ],
+  "ghiChu": "Nghề thuộc nhóm 'CNTT khác' (tạp) nên giữ doTinCay=thap theo quy tắc, dù crawl lại cho 5 JD cùng một vai trò (quản trị website/SEO/webmaster), nên nội dung tương đối nhất quán và có thể dùng tham khảo. Loại JD#6 (Zynet, tư vấn giải pháp công nghệ - vai trò sales, lệch nghề). Số liệu x/5."
+}

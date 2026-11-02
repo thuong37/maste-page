@@ -1,0 +1,35 @@
+{
+  "id": 1,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Xuất nhập khẩu/Logistics",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "4/5 JD cấp nhân viên (3 JD nhận chưa/ít kinh nghiệm, từ THPT/Trung cấp/Cao đẳng), 1 JD trưởng nhóm (4 năm, ĐH)",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 1/5 nêu độ tuổi, nghề gặp khách nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 1/5 JD nhắc định hướng; dùng để nêu định hướng sales logistics",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD hỏi số năm/ngành; nên ghi rõ vị trí sales/logistics và khu vực phụ trách",
+    "hoc-van": "can — 5/5 JD nêu bậc học (THPT đến ĐH) và ưu tiên chuyên ngành Logistics/Ngoại thương/Kinh tế/Ngoại ngữ",
+    "ky-nang-chuyen-mon": "can — 5/5: tìm kiếm & chăm sóc khách hàng, đàm phán/thuyết phục, hiểu quy trình XNK, vận tải biển/hàng không, chứng từ hải quan",
+    "ky-nang-mem": "can — 4/5: giao tiếp, đàm phán, làm việc độc lập, chịu áp lực doanh số, lập kế hoạch/quản lý thời gian",
+    "cong-cu-phan-mem": "nen — 3/5: Word, Excel, Microsoft Office",
+    "chung-chi": "nen — chỉ 1/5 nêu IELTS 6.0; không JD nào đòi chứng chỉ nghiệp vụ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "can — 3/5 nhắc chỉ tiêu/doanh số; CV nên có số liệu doanh số, số khách hàng",
+    "ngoai-ngu": "can — 3/5: Tiếng Anh (giao tiếp thành thạo/IELTS 6.0), ưu tiên thêm Trung/Nhật",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc; chỉ hữu ích khi có danh hiệu sales xuất sắc",
+    "hoat-dong-ngoai-khoa": "nen — dành cho ứng viên mới ra trường (3/5 JD nhận chưa có kinh nghiệm)",
+    "giay-phep": "nen — J&T: có phương tiện di chuyển/đi thị trường (1/5); chứng chỉ khai báo hải quan chỉ là lợi thế, không JD đòi",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/5 giới hạn độ tuổi; giọng miền Bắc/Nam (1/5); nên có độ tuổi/nơi ở",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Sales Logistics", "Xuất nhập khẩu", "Express/Sea Cargo/Air Cargo", "FCL/LCL", "thủ tục hải quan", "chứng từ", "khai thác khách hàng B2B", "chỉ tiêu doanh số", "Excel", "Tiếng Anh"],
+  "bangChung": [
+    "JD#1 (J&T): 'Thành thạo tin học văn phòng: Excel, Word'; 'Có phương tiện di chuyển'",
+    "JD#2: 'Ưu tiên ... Tiếng Anh/Tiếng Trung/Tiếng Nhật'; 'Độ tuổi: 25 - 45'",
+    "JD#4: 'Có khả năng làm việc độc lập và chịu áp lực doanh số'; 'Tiếng Anh Giao tiếp thành thạo'",
+    "JD#5: 'Am hiểu ... quy trình xuất nhập khẩu ... thủ tục hải quan và các chứng từ liên quan'; 'hoàn thành tốt các chỉ tiêu doanh số'"
+  ],
+  "ghiChu": "Bản mẫu chốt định dạng (phiên 1). Chỉ 5 JD vì 1 JD rỗng bị loại."
+}

@@ -1,0 +1,36 @@
+{
+  "id": 22,
+  "nhom": "Marketing/PR/Quảng cáo",
+  "nghe": "Market Research and Analysis",
+  "soJD": 5,
+  "doTinCay": "cao",
+  "capBac": "2/5 JD cấp nhân viên (1-3 năm kinh nghiệm, Đại học), 3/5 JD thực tập sinh không yêu cầu kinh nghiệm (sinh viên năm 1-4)",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh hay nêu ngoại hình; công việc phân tích văn phòng nên ảnh không bắt buộc (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/5 JD thực tập nêu quan tâm lĩnh vực nghiên cứu thị trường/bất động sản và cơ hội lên chính thức; nên nêu định hướng nghiên cứu",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD hỏi kinh nghiệm hoặc thực tập; nên ghi dự án nghiên cứu, mảng thị trường/ngành hàng đã làm",
+    "hoc-van": "can — 5/5 nêu Đại học/Cao đẳng, chuyên ngành Kinh tế, Marketing, Thống kê, Bất động sản, Tài chính; JD thực tập nêu năm học",
+    "ky-nang-chuyen-mon": "can — 5/5: thu thập, tổng hợp, phân tích dữ liệu thị trường, theo dõi xu hướng/đối thủ, viết báo cáo, xây dựng cơ sở dữ liệu thị trường, khảo sát",
+    "ky-nang-mem": "can — 5/5: tư duy logic/phân tích, chi tiết, chủ động, trách nhiệm, giao tiếp, làm việc nhóm",
+    "cong-cu-phan-mem": "can — 3/5 nêu Microsoft Office, đặc biệt Excel; 1 JD nhắc công cụ công nghệ nội bộ thu thập dữ liệu",
+    "chung-chi": "khong — không JD nào nhắc chứng chỉ",
+    "du-an": "can — 5/5 mô tả làm việc theo dự án nghiên cứu (hỗ trợ dự án nghiên cứu, phân tích dự án bất động sản, nhiều dự án); nên ghi dự án nghiên cứu đã tham gia",
+    "thanh-tich-kpi": "nen — không JD nêu chỉ tiêu; tư duy định lượng được nhắc (1/5), nên ghi quy mô dữ liệu/báo cáo đã làm",
+    "ngoai-ngu": "nen — 2/5: tiếng Anh tốt (JD thực tập TMS), JD Intage viết bằng tiếng Anh, có dịch thuật",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/5 JD thực tập nhận sinh viên chưa kinh nghiệm; hoạt động học thuật/khảo sát là lợi thế (suy từ JD)",
+    "giay-phep": "nen — 1/5 sẵn sàng khảo sát thực địa, đi thị trường; không JD nêu bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "nen — 1/5 nêu độ tuổi 23-30, 1/5 nữ; nên có nơi ở; còn lại không nhắc",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["nghiên cứu thị trường", "phân tích dữ liệu", "báo cáo thị trường", "consumer insight", "xu hướng thị trường", "đối thủ cạnh tranh", "khảo sát", "bất động sản", "Excel", "Microsoft Office", "tư duy logic"],
+  "bangChung": [
+    "JD#1 (G.Empire): 'Thu thập, xây dựng và cập nhật cơ sở dữ liệu ... thị trường Bất động sản'; 'Sẵn sàng khảo sát thực địa'; Tuổi 23-30",
+    "JD#2 (Topgiakids): 'Tối thiểu 2-3 năm kinh nghiệm ... Market Research / Consumer Insight'; 'Nielsen, Kantar, Cimigo, Ipsos'",
+    "JD#3 (TMS): 'Sử dụng tốt tiếng Anh và thành thạo Microsoft Office, đặc biệt là Excel'",
+    "JD#4 (Intage): 'Collect market/industry data online'; 'Some translation'; 'Microsoft Office (Word, Excel)'",
+    "JD#5 (HouseNow): 'Thu thập, tạo cơ sở dữ liệu nghiên cứu thị trường'; sinh viên năm 1-3, tối thiểu 20h/tuần"
+  ],
+  "ghiChu": "Crawl lại: 5/5 JD sát nghề, nhưng 3/5 là thực tập sinh và 3/5 gắn bất động sản nên số liệu nghiêng về cấp thực tập và ngành BĐS. Mục 'du-an' tính theo cách JD mô tả công việc theo dự án nghiên cứu."
+}

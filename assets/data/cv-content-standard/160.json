@@ -1,0 +1,36 @@
+{
+  "id": 160,
+  "nhom": "Luật",
+  "nghe": "Dịch vụ pháp lý (Agency/Firm)",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5/5 JD cấp nhân viên; 1 JD không yêu cầu kinh nghiệm (luật sư có chứng chỉ), còn lại 1-3 năm; đều ĐH Luật trở lên; gồm chuyên viên pháp lý, luật sư kinh tế, luật sư, thư ký nghiệp vụ công chứng",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ảnh/ngoại hình; nghề tư vấn pháp lý văn phòng nên ảnh không phải trọng tâm (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — chỉ JD#3 nhắc 'gắn bó lâu dài cùng Văn phòng'; nên nêu lĩnh vực pháp lý theo đuổi (suy)",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD nhắc kinh nghiệm (1 đến 5 năm; JD#3 nêu kinh nghiệm vụ việc dân sự, đất đai, hôn nhân gia đình, hình sự, thừa kế); ghi rõ loại vụ việc/hợp đồng đã xử lý",
+    "hoc-van": "can — 5/5 yêu cầu ĐH/Cử nhân Luật hoặc Luật kinh tế",
+    "ky-nang-chuyen-mon": "can — 5/5: soạn thảo/rà soát/đàm phán hợp đồng, tư vấn pháp lý, nghiên cứu văn bản pháp luật, hồ sơ doanh nghiệp, tư vấn thuế/xây dựng/đấu thầu, hồ sơ công chứng",
+    "ky-nang-mem": "can — 5/5: trung thực, cẩn thận, bảo mật thông tin, trách nhiệm, giao tiếp, làm việc nhóm, chịu áp lực, thuyết trình/đàm phán",
+    "cong-cu-phan-mem": "can — 2/5 nêu cụ thể: JD#1 Word, Track Changes, bảng tính, quản lý hồ sơ điện tử; JD#4 MS Word, Excel, PowerPoint, Outlook",
+    "chung-chi": "can — 4/5 nhắc chứng chỉ hành nghề luật sư (JD#2 ưu tiên, JD#3 và JD#4 yêu cầu)",
+    "du-an": "khong — không JD nào nhắc dự án; JD#4 nhắc giao dịch, vụ việc (xếp ở kinh nghiệm)",
+    "thanh-tich-kpi": "khong — không JD nào nhắc chỉ tiêu/số liệu",
+    "ngoai-ngu": "can — 4/5: JD#1 đọc hiểu hợp đồng tiếng Anh, JD#3 Anh/Hàn/Trung là lợi thế, JD#4 tiếng Anh giao tiếp thành thạo, JD#5 tiếng Anh đọc hiểu là lợi thế",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc; chỉ JD#3 nhận không kinh nghiệm nhưng yêu cầu chứng chỉ hành nghề",
+    "giay-phep": "khong — không JD nào nhắc bằng lái/giấy phép ngoài chứng chỉ luật sư (xếp ở chung-chi)",
+    "thong-tin-ca-nhan-mo-rong": "nen — chỉ JD#5 nêu độ tuổi 24-35; không phải yêu cầu chung",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["pháp lý doanh nghiệp", "soạn thảo hợp đồng", "rà soát/đàm phán hợp đồng", "chứng chỉ hành nghề luật sư", "tư vấn thuế", "sở hữu trí tuệ", "dân sự/đất đai/hôn nhân gia đình", "công chứng", "Track Changes", "Tiếng Anh pháp lý"],
+  "bangChung": [
+    "JD#1: 'Tốt nghiệp đại học chính quy ngành Luật hoặc Luật kinh tế'; 'Sử dụng tốt Word, chức năng theo dõi chỉnh sửa (Track Changes)'",
+    "JD#2: 'ưu tiên có chứng chỉ hành nghề luật sư'; 'Am hiểu pháp luật về xây dựng, đấu thầu, hợp đồng và thuế'",
+    "JD#3: 'Có Chứng chỉ hành nghề Luật sư'; 'làm việc với khách hàng bằng tiếng Anh/Hàn/Trung là lợi thế'",
+    "JD#4: 'Có chứng chỉ hành nghề luật sư'; 'Giao tiếp tiếng Anh tốt'; 'MS Word, Excel, Power Point'",
+    "JD#5: 'Độ tuổi: 24-35 tuổi'; 'Tốt nghiệp Cử nhân Luật trở lên'"
+  ],
+  "ghiChu": "5 JD gần đồng nhất (luật sư/chuyên viên pháp lý/thư ký công chứng); chưa có JD thực tập nên chưa có bằng chứng cho sinh viên mới ra trường."
+}

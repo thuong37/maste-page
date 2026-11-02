@@ -1,0 +1,161 @@
+{
+ "id": 118,
+ "nhom": "Điện/Điện tử/Viễn thông",
+ "nghe": "Chất bán dẫn/Chip",
+ "method": "category",
+ "categoryUrl": "https://www.topcv.vn/tim-viec-lam-chat-ban-dan-chip-cr644cb648",
+ "categoryTotal": 10,
+ "categoryVerified": true,
+ "crawledAt": "2026-10-22T04:14:34.759Z",
+ "candidates": 10,
+ "thin": false,
+ "jds": [
+  {
+   "url": "https://www.topcv.vn/viec-lam/backend-node-js-nestjs-python/2329008.html",
+   "title": "Backend - Node.Js / NestJS / Python",
+   "company": "CÔNG TY TNHH GIẢI PHÁP TRÍ TUỆ SỐ",
+   "query": "https://www.topcv.vn/tim-viec-lam-chat-ban-dan-chip-cr644cb648",
+   "score": 1,
+   "via": "category",
+   "chips": {
+    "Yêu cầu": [
+     "2 năm kinh nghiệm chuyên môn",
+     "Tuổi 24 - 35",
+     "Đại Học trở lên",
+     "Nam"
+    ],
+    "Chuyên môn": [
+     "Back-end Engineer",
+     "IT - Phần mềm"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "1. Phân tích & tiếp nhận yêu cầu Backend CRM/AI\n\n- Tiếp nhận yêu cầu từ BA/Techlead theo từng sprint\n\n- Phân tích nghiệp vụ CRM, đa kênh, webchat, AI Agent, scoring, automation\n\n- Làm rõ logic dữ liệu và luồng xử lý AI (chat flow, RAG flow, function-calling)\n\n- Tham gia làm rõ yêu cầu kỹ thuật để đảm bảo khả năng triển khai backend\n\n2. Thiết kế API & contract cho CRM & AI\n\n- Thiết kế API REST/GraphQL phục vụ CRM AI, đa kênh và automation\n\n- Định nghĩa schema chuẩn, versioning, error handling, idempotency\n\n- Viết tài liệu OpenAPI/Swagger để FE/QA sử dụng\n\n3. Xây dựng API Realtime (chat/agent)\n\n- Xây dựng streaming API (SSE/WebSocket) cho webchat và AI agent\n\n- Tối ưu tốc độ phản hồi, xử lý queue, retry, backpressure\n\n- Đảm bảo duy trì conversation không mất khi người dùng đổi trang\n\n4. Xây dựng RAG Pipeline & Vector Search\n\n- Thiết kế pipeline ingest → chunk → embedding → index\n\n- Tích hợp vector DB nội bộ (Weaviate/Elastic vector)\n\n- Tối ưu truy vấn để hỗ trợ AI Agent trả lời chính xác\n\n5. Tích hợp LLMs & AI Functions (OpenAI, Claude, Llama, Function Calling):\n\n- Xây dựng lớp adapter cho nhiều provider model\n\n- Tối ưu prompt builder theo từng use case (chat, tóm tắt, phân loại, action)\n\n- Tối ưu chi phí model theo traffic thực tế\n\n6. Quản lý conversation state & memory\n\n- Thiết kế hệ thống lưu context: short-term, long-term, channel states\n\n- Đảm bảo không mất session khi người dùng chuyển trang\n\n- Xử lý load balancing & sticky session cho AI chat\n\n7. Xây dựng dữ liệu – ETL – MLOps pipeline\n\n- Thu thập dữ liệu chat, logs, feedback để cải thiện AI Agent\n\n- Tự động làm mới embedding & tái index\n\n- Tích hợp pipeline training/optimization nhẹ (feedback → retrain/fine-tune small models nếu cần)\n\n8. Đảm bảo bảo mật & tuân thủ dữ liệu (PII, GDPR)\n\n- Thiết kế che/lọc thông tin nhạy cảm trong AI logs\n\n- Mã hóa dữ liệu, HTTPS toàn hệ thống, secret rotation\n\n- RBAC theo module CRM\n\n9. Observability & Monitoring\n\n- Triển khai metrics/tracing/logs bằng Prometheus – Grafana – OpenTelemetry\n\n- Thiết lập cảnh báo cho drift dữ liệu, chi phí model, latency chat\n\n10. Tối ưu hiệu năng & chi phí vận hành\n\n- Cache embedding, cache responses, cache API\n\n- Batching request gọi model\n\n- Chuyển mô hình tự động (fallback / cost-based switching)\n\n11. Testing & Quality Assurance\n\n- Unit test, integration, contract test cho API\n\n- Test luồng AI chat end-to-end\n\n12. Phối hợp liên phòng ban & nhiệm vụ phát sinh\n\n- Hỗ trợ FE tích hợp API Webchat, CRM views, AI agent UI\n\n- Hỗ trợ BA kiểm thử nghiệp vụ\n\n- Hỗ trợ vận hành xử lý lỗi AI",
+    "Yêu cầu ứng viên": "- Trình độ học vấn: Đại học CNTT/ Quản trị công nghệ thông tin hoặc tương đương\n\n- Kỹ năng mềm: Phân tích UI/UX, giao tiếp, teamwork.\n\n- Kỹ năng chuyên môn:\n\n+) Ngôn ngữ/Framework: Python (FastAPI). Ưu tiên Python do CRM AI heavy on AI pipelines\n\n+) Data storage: PostgreSQL, Redis (cache/session), Vector DB: Weaviate / Elastic Vector / Qdrant\n\n+) Event & Queue: Event-driven & Message Queue: Kafka / RabbitMQ / Pulsar dùng cho ingestion, logging và event-driven pipelines\n\n+) AI/LLM Integration: Hiểu về OpenAI/Anthropic API, local LLM, inference server. Embedding pipeline, tokenizer, reranking, RAG orchestration\n\n+) Model integration: Hiểu cách tích hợp LLM (OpenAI API, self-hosted LLM, streaming) và embeddings (sentence-transformers).\n\n+) MLOps basics: hiểu pipeline để tạo embedding, retrain triggers, model registry concept, monitoring of data/model drift.\n\n+)Realtime: WebSocket, SSE, long polling; sticky session; load balancing chat\n\n+)Security & privacy: PII, tokenization, encryption, role-based access control (RBAC)\n\n+)Testing: Unit, integration, contract tests; kiểm thử luồng AI end-to-end\n\n+) DevOps/MLOps căn bản: Docker, CI/CD; MLflow/DVC là lợi thế\n\nTiếng Anh: đọc & viết tài liệu kỹ thuật.\n\n- Kinh nghiệm làm việc: Tối thiểu 2 năm kinh nghiệm backend production. Có kinh nghiệm thực tế xây dựng hệ thống AI, RAG, chatbot, hoặc các pipeline xử lý dữ liệu (hoặc chứng minh năng lực qua project cá nhân)\n\n- Tác phong và thái độ: Siêng năng, cẩn thận, trung thực, chủ động, tinh thần học hỏi và cải tiến, chịu áp lực công việc cao.\n\nKiến thức ngành\nIT - Phần mềm\nKỹ năng cần có\nSQL, Python, code Python\nKỹ năng nên có\nCRM",
+    "Quyền lợi ứng viên": "- Làm việc từ thứ 2 dến hết sáng thứ 7\n\n- Lương từ 15-17 triệu theo năng lực mỗi ứng viên.\n\n- Được trang bị tài khoản GPT Pro để phục vụ cho công việc.\n\n- Làm việc trong môi trường chuyên nghiệp.\n\n- Tham gia đầy đủ các chế độ BHXH, BHYT, BHTN...\n\n- Được tổ chức sinh nhật, tặng quà đám cưới, 8/3, Trung thu, 20/10 quà Tết cho nhân viên.\n\n- Tham gia các buổi teambuilding, du lịch cùng công ty.\n\n- Thưởng các ngày Lễ Tết,lương tháng 13.\n\n- Môi trường thân thiện, chuyên nghiệp, văn hóa doanh nghiệp đề cao năng lực và hiệu suất công việc.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: 09 Dân Tộc, Phường Tân Sơn Nhì (Phường Tân Sơn Nhì thuộc quận Tân Phú cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:00)\nThứ 7 (từ 08:00 đến 12:00)\nNghỉ trưa 12h00-13h00\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 12/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/documentation-engineer-khong-yeu-cau-kinh-nghiem/2061432.html",
+   "title": "Documentation Engineer (Không Yêu Cầu Kinh Nghiệm)",
+   "company": "CÔNG TY CỔ PHẦN PHÁT TRIỂN KHUÔN CHÍNH XÁC PHÚC KHANG",
+   "query": "https://www.topcv.vn/tim-viec-lam-chat-ban-dan-chip-cr644cb648",
+   "score": 1,
+   "via": "category",
+   "chips": {
+    "Yêu cầu": [
+     "Không yêu cầu kinh nghiệm chuyên môn",
+     "Đại Học trở lên",
+     "Nữ",
+     "Tiếng Anh Đọc hiểu"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm xã hội",
+     "Thưởng tháng 13",
+     "Phụ cấp: Ăn trưa"
+    ],
+    "Chuyên môn": [
+     "FAE",
+     "Điện / Điện tử / Điện lạnh",
+     "Viễn thông"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Làm việc với bộ phận Kinh doanh để hoàn thiện tài liệu và hồ sơ kỹ thuật cho các dự án.\nKiểm tra các thông số trong chỉ tiêu kỹ thuật thầu.\nLàm việc với kỹ sư và chủ thầu khi có vấn đề về mã sản phẩm (Part No).",
+    "Yêu cầu ứng viên": "Ưu tiên Nữ\nBằng cử nhân / kỹ sư các chuyên ngành điện, kỹ thuật điện tử, viễn thông, tự động hóa hoặc các ngành tương đương\nKhông yêu cầu kinh nghiệm, có kiến thức điện tử\nThành thạo tin học văn phòng: Word, Excel, PowerPoint\nTiếng Anh: Nghe, nói, đọc, viết tốt. Có thể giao tiếp lưu loát bằng Tiếng Anh\nTỉ mỉ, chăm chỉ\nKiến thức ngành\nĐiện / Điện tử / Điện lạnh, Viễn thông\nKỹ năng cần có\nChăm chỉ, Thành thạo tin học văn phòng, Tỉ mỉ\nKỹ năng nên có\nKinh nghiệm trong các công ty điện tử, sản xuất điện tử, phân phối điện tử (OEM/ ODM/ EMS/ CM/...)",
+    "Quyền lợi ứng viên": "Mức lương hấp dẫn\nThời gian làm việc: Thứ Hai – thứ Sáu, từ 08:30 – 17:30\nĐược trang bị máy móc phục vụ công việc\nHỗ trợ cơm trưa\nLương tháng 13 tùy theo tình hình kinh doanh của Công ty (Không cố định)\nXét duyệt tăng lương hàng năm dựa trên năng lực kinh nghiệm\nĐược nghỉ phép 12 ngày phép/ năm hưởng nguyên lương\nMôi trường làm việc vui vẻ, lành mạnh, tạo điều kiện để phát triển kỹ năng và thăng tiến\nĐóng bảo hiểm theo quy định của nhà nước\nĐược hưởng các chế độ đãi ngộ khác theo quy định của công ty.\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm xã hội, Thưởng tháng 13\nPhụ cấp\nĂn trưa\nHỗ trợ\nĐược cấp Máy tính",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: số 125 Phố Đại Linh, Phường Đại Mỗ (Phường Đại Mỗ thuộc quận Nam Từ Liêm cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:30 đến 17:30)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 12/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Nhân Viên Cơ Điện\nCÔNG TY CỔ PHẦN PHÁT TRIỂN KHUÔN CHÍNH XÁC PHÚC KHANG\n10 - 15 triệu\nBắc Ninh (mới) & Hà Nội\nCập nhật 3 tuần trước\nTrợ Lý Điều Phối Vận Hành Công Nghệ\nCÔNG TY TNHH ĐẦU TƯ CP\n8 - 15 triệu\nHà Nội\nCập nhật 5 ngày trước\nTrợ Lý Dự Án\nAMA TECH JSC\n12 - 16 triệu\nHà Nội\nCập nhật 2 tuần trước",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/ky-su-tu-van-ung-dung-ic-ic-application-engineer/2154187.html",
+   "title": "Kỹ Sư Tư Vấn Ứng Dụng IC (IC Application Engineer)",
+   "company": "CÔNG TY TNHH CÔNG NGHỆ VIETBAY",
+   "query": "https://www.topcv.vn/tim-viec-lam-chat-ban-dan-chip-cr644cb648",
+   "score": 1,
+   "via": "category",
+   "chips": {
+    "Yêu cầu": [
+     "2 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên",
+     "Nam"
+    ],
+    "Chuyên môn": [
+     "Kỹ sư kiểm định IC",
+     "IT - Phần mềm"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Nghiên cứu thử nghiệm các giải pháp phần mềm IC của Siemens (Mentor Graphics)\n\nPhối hợp đánh giá khách hàng tiềm năng và tìm kiếm cơ hội bán hàng\n\nChuẩn bị tài liệu kỹ thuật và demo tư vấn công nghệ giải pháp phù hợp nhu cầu khách hàng\n\nĐào tạo chuyển giao công nghệ và hỗ trợ kỹ thuật sau bán hàng",
+    "Yêu cầu ứng viên": "Tốt nghiệp đại học chuyên ngành điện tử\nKinh nghiệm làm việc tối thiểu từ 2 năm ở ngành nghề được đào tạo.\nCó khả năng sử dụng thành thạo ít nhất một phần mềm thiết kế chip.\nTiếng Anh thành thạo\nĐạo đức tốt, giao tiếp tốt, có tinh thần trách nhiệm và cầu tiến trong công việc\nKiến thức ngành\nIT - Phần mềm\nKỹ năng cần có\nTiếng Anh thành thạo, Tin học văn phòng, phân tích số liệu",
+    "Quyền lợi ứng viên": "Thu nhập cao (2000-3000USD) cùng các khoản thưởng lễ tết, thưởng cuối năm\nĐược tham gia bảo hiểm (BHXH, BHYT, BHTN) đầy đủ cùng phúc lợi hiếu hỉ và du lịch hàng năm…\nĐược cung cấp trang thiết bị làm việc (máy tính, điện thoại,….)\nĐược đào tạo bài bản bởi các chuyên gia của các hãng công nghệ hàng đầu thế giới\nCơ hội làm việc trực tiếp với các hãng và các công ty đa quốc gia\nMôi trường làm việc trẻ trung, năng động và nhiều cơ hội phát triển.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Nhà A8, khu Fivestar, văn phòng Vietbay, Phường Từ Liêm (Phường Từ Liêm thuộc quận Nam Từ Liêm cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:15 đến 17:30)\nThứ 7 làm việc cách tuần.\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 09/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/physical-design-intern/2315325.html",
+   "title": "Physical Design Intern",
+   "company": "Công ty Cổ phần viễn thông FPT",
+   "query": "https://www.topcv.vn/tim-viec-lam-chat-ban-dan-chip-cr644cb648",
+   "score": 1,
+   "via": "category",
+   "chips": {
+    "Yêu cầu": [
+     "Không yêu cầu kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Chuyên môn Chất bán dẫn/Chip khác"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Tham gia trực tiếp vào quy trình Physical Design (RTL-to-GDSII) cho các dòng chip xử lý AI (AI Accelerator / Edge AI) của FPT Telecom.\nThực hiện và hỗ trợ các công đoạn chính trong luồng thiết kế Physical Design:\nSynthesis & Floorplanning:Tổng hợp logic, phân hoạch vùng bộ nhớ/khối chức năng.\nPlacement & Routing (P&R): Đặt linh kiện, đi dây và tối ưu hóa diện tích/mật độ chip.\nClock Tree Synthesis (CTS): Xây dựng và tối ưu cây xung nhịp (Clock Tree).\nThực hiện phân tích và kiểm tra tĩnh:\nStatic Timing Analysis (STA): Phân tích thời gian, sửa các lỗi Timing Setup / Hold.\nIR-Drop & Power Analysis: Phân tích sụt áp và công suất tiêu thụ của chip.\nKiểm tra tính đúng đắn về mặt vật lý (Physical Verification): DRC / LVS / ERC.\nPhối hợp với đội ngũ RTL/Architecture và DFT để tối ưu PPA (Power - Performance - Area).",
+    "Yêu cầu ứng viên": "Đối tượng: Ưu tiên sinh viên Năm 4 trở lên hoặc vừa tốt nghiệp chuyên ngành: Điện tử - Viễn thông, Kỹ thuật Máy tính, Vi mạch / Semiconductor, Vật lý Kỹ thuật hoặc các ngành liên quan.\nKiến thức nền tảng: Có kiến thức vững về Thiết kế Số (Digital Design), Kiến trúc Máy tính (Computer Architecture) và Lý thuyết Mạch bán dẫn (CMOS / VLSI).\nHiểu biết cơ bản về luồng thiết kế ASIC / SOC (RTL-to-GDSII flow). Kỹ năng & Công cụ: Sử dụng hoặc đã học qua các công cụ EDA tiêu chuẩn ngành (Synopsys / Cadence / Siemens) như: Design Compiler, Innovus, IC Compiler II, Primetime, Calibre...\nĐã từng thực hành viết script hỗ trợ tự động hóa bằng: Tcl, Python, Bash shell hoặc Perl. Đọc hiểu tốt tài liệu kỹ thuật bằng tiếng Anh.\n\nĐiểm cộng (Nice-to-have):\n\nCó đồ án tốt nghiệp, bài nghiên cứu hoặc project liên quan đến Vi mạch / Digital ASIC Design / AI Chip / Accelerator Architecture.\nHiểu biết về mạng Nơ-ron (CNN, Transformer) hoặc khối tính toán ma trận cứng trên chip.",
+    "Quyền lợi ứng viên": "Trợ cấp thực tập: 7.000.000 VNĐ/tháng (áp dụng khi làm Full-time, điều chỉnh linh hoạt theo số ngày làm việc).\nLộ trình tăng phụ cấp: Có cơ chế review đánh giá định kỳ để xét tăng mức phụ cấp dựa trên thể hiện công việc.\nCơ hội chính thức: Lộ trình rõ ràng cất nhắc lên Kỹ sư Chính thức (Full-time Junior Engineer) ngay sau kỳ thực tập nếu đáp ứng tốt yêu cầu.\nĐào tạo & Hướng dẫn: Được đồng hành 1-1 (Mentorship) bởi Kỹ sư Vi mạch giàu kinh nghiệm trong suốt quá trình làm việc.\nTrải nghiệm thực chiến: Cơ hội hiếm có để làm việc trực tiếp với một con chip full cycle (từ những công đoạn thiết kế đầu tiên đến khi ra con chip hoàn chỉnh).\nMôi trường: Trẻ trung, năng động, tiếp cận công nghệ và công cụ tiên tiến hàng đầu tại FPT Telecom.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: FPT Tân Thuận 3, Lô B3 Đường Sáng Tạo, Khu chế xuất Tân Thuận, Phường Tân Thuận (Phường Tân Thuận thuộc Quận 7 cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:30)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 31/10/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nThực tập sinh\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n2 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/fae-engineers/2314412.html",
+   "title": "FAE Engineers",
+   "company": "CÔNG TY CỔ PHẦN GELEXIMCO SỐ 1",
+   "query": "https://www.topcv.vn/tim-viec-lam-chat-ban-dan-chip-cr644cb648",
+   "score": 1,
+   "via": "category",
+   "chips": {
+    "Yêu cầu": [
+     "1 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Thiết kế vi mạch IC",
+     "Điện / Điện tử / Điện lạnh",
+     "Cơ khí / Tự động hóa",
+     "Công nghệ kỹ thuật"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Tư vấn lựa chọn sản phẩm bán dẫn (IGBT/SiC) và hỗ trợ giải pháp kỹ thuật cho khách hàng.\nThực hiện thử nghiệm, đánh giá sản phẩm và theo dõi độ tin cậy trong quá trình ứng dụng.\nXây dựng nền tảng thử nghiệm, hỗ trợ xác nhận và triển khai sản phẩm từ mẫu đến sản xuất hàng loạt.\nThu thập phản hồi kỹ thuật từ khách hàng, phối hợp cải tiến sản phẩm.\nĐào tạo đội ngũ kinh doanh về sản phẩm và giải pháp kỹ thuật.",
+    "Yêu cầu ứng viên": "Tốt nghiệp Đại học trở lên chuyên ngành Điện tử, Điện, Tự động hóa hoặc liên quan.\nAm hiểu nguyên lý và ứng dụng của IGBT, SiC và linh kiện bán dẫn công suất.\nCó kinh nghiệm nghiên cứu hoặc ứng dụng các thiết bị công suất như biến tần, inverter, máy hàn, APF/SVG, inverter năng lượng mặt trời...\nThành thạo sử dụng đồng hồ vạn năng, máy hiện sóng và các phần mềm thiết kế mạch (Altium Designer hoặc tương đương).\nKỹ năng giao tiếp tốt, chủ động, có trách nhiệm và sẵn sàng đi công tác.\nKỹ năng tiếng Anh tốt, ưu tiên biết tiếng Trung\nKiến thức ngành\nĐiện / Điện tử / Điện lạnh, Cơ khí / Tự động hóa, Công nghệ kỹ thuật",
+    "Quyền lợi ứng viên": "Làm việc với các hệ thống robot và công nghệ tiên tiến.\nĐược tham gia các khóa đào tạo chuyên môn trong và ngoài nước.\nĐược đóng BHXH, BHYT, BHTN theo quy định.\nNghỉ phép, nghỉ lễ, thưởng theo chính sách của Công ty.\nHỗ trợ ăn trưa tại Công ty.\nThu nhập cạnh tranh, thỏa thuận theo năng lực và kinh nghiệm.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Phường Ô Chợ Dừa (Phường Ô Chợ Dừa thuộc quận Đống Đa cũ) - Phạm vi làm việc trên toàn khu vực trên.\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 28/10/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  }
+ ]
+}

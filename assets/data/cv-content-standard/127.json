@@ -1,0 +1,36 @@
+{
+  "id": 127,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Giao nhận",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên (0-2 năm, THPT/Trung cấp/CĐ): điều phối đơn hàng và giao vận, kỹ thuật và giao nhận thiết bị sự kiện, giao hàng bằng xe tải, sales logistics giao nhận quốc tế, giao nhận hải quan, giao nhận thanh toán đại lý",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; công việc hiện trường/chứng từ (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 nhắc định hướng phát triển logistics; nên nêu hướng giao nhận/điều phối",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm hoặc không yêu cầu (0-2 năm), ưu tiên logistics/điều phối đơn/hải quan/giao hàng",
+    "hoc-van": "nen — 5/6 nêu bậc học THPT đến CĐ/ĐH, ngành XNK, Logistics, Hải quan (JD#6 không yêu cầu bằng cấp)",
+    "ky-nang-chuyen-mon": "can — điều phối đơn hàng và tuyến giao, khai báo hải quan ECUS/VNACCS, quản lý chứng từ (Invoice, Packing List, C/O), kiểm hàng, bốc dỡ, thu tiền khi giao, Incoterms/FCL/LCL",
+    "ky-nang-mem": "can — 5/6: giao tiếp, trung thực, cẩn thận, trách nhiệm, chịu áp lực, tư duy hệ thống",
+    "cong-cu-phan-mem": "can — 3/6: Excel/Google Sheets (pivot, hàm tra cứu), ECUS/VNACCS, Lark",
+    "chung-chi": "nen — JD#3 bằng lái; JD#2 ưu tiên bằng cấp kỹ thuật; không JD nào đòi chứng chỉ nghiệp vụ",
+    "du-an": "nen — JD#1 yêu cầu từng xây/cải tiến một quy trình vận hành, kể ví dụ trước/sau; nên ghi cải tiến quy trình",
+    "thanh-tich-kpi": "nen — JD#1 điều phối cao điểm, JD#4 chỉ tiêu kinh doanh; nên ghi số đơn/thời gian giao",
+    "ngoai-ngu": "nen — 1/6 nêu tiếng Anh cơ bản (đọc email, chứng từ)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#6 không yêu cầu kinh nghiệm/bằng cấp; JD#2 đào tạo trực tiếp",
+    "giay-phep": "can — JD#3 bằng lái hạng C trở lên; JD#2 ưu tiên B2; JD#6 có phương tiện đi lại",
+    "thong-tin-ca-nhan-mo-rong": "can — 2/6 nêu nam, 22-40 tuổi; sức khỏe tốt, làm ngoài giờ, đi lại khu vực",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Điều phối đơn hàng", "giao nhận", "khai báo hải quan ECUS/VNACCS", "chứng từ XNK", "FCL/LCL/Air", "Incoterms", "bằng lái C/B2", "Excel pivot"],
+  "bangChung": [
+    "JD#1: 'Tối thiểu 2 năm kinh nghiệm điều phối đơn hàng / vận hành / logistics'; 'Thành thạo Excel/Google Sheets (lọc, pivot, hàm tra cứu)'",
+    "JD#2: 'Nam, sức khỏe tốt'; 'Ưu tiên có bằng lái xe B2, hoặc bằng cấp kỹ thuật'",
+    "JD#3: 'Có bằng lái xe hạng C trở lên'; 'Ít nhất 1 năm kinh nghiệm vị trí tương đương'",
+    "JD#4: 'Có kiến thức về Incoterms và chứng từ xuất nhập khẩu'; 'Tiếng Anh cơ bản (có khả năng đọc và hiểu email, chứng từ)'",
+    "JD#5: 'Biết sử dụng phần mềm khai báo hải quan ECUS/VNACCS'"
+  ],
+  "ghiChu": "Nhiều vai khác nhau (điều phối, giao hàng, hải quan, thu tiền đại lý); JD#4 là sales logistics lệch nghề."
+}

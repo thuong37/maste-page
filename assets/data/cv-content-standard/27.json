@@ -1,0 +1,36 @@
+{
+  "id": 27,
+  "nhom": "Chăm sóc khách hàng (Customer Service)/Vận hành",
+  "nghe": "Business Operation (Vận hành kinh doanh)",
+  "soJD": 5,
+  "doTinCay": "cao",
+  "capBac": "4/5 JD cấp nhân viên (2-3 năm kinh nghiệm), 1 JD trưởng/phó phòng (3 năm quản lý, 26-35 tuổi); Cao đẳng/Đại học",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; công việc phân tích/vận hành văn phòng nên ảnh không cần (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 1/5 (UpBase) nhắc tư duy làm chủ và phát triển thị trường; nên nêu định hướng vận hành kinh doanh",
+    "kinh-nghiem-lam-viec": "can — 5/5 hỏi 2-3 năm ở Business/Sales/Commercial Operations, Sales Admin, XNK hoặc telesale/QC; nên ghi phạm vi vận hành, số bộ phận phối hợp",
+    "hoc-van": "can — 5/5 nêu Đại học/Cao đẳng, chuyên ngành Kinh tế, Quản trị kinh doanh, Thương mại, Tài chính, Ngoại thương",
+    "ky-nang-chuyen-mon": "can — 5/5: theo dõi và phân tích chỉ số kinh doanh, xây dựng quy trình/chính sách bán hàng, quản lý data/tiến độ, báo cáo, hiểu funnel/P&L",
+    "ky-nang-mem": "can — 5/5: tư duy logic/phân tích, quản lý nhiều đầu việc, phối hợp đa bộ phận, chủ động, trung thực, giao tiếp",
+    "cong-cu-phan-mem": "can — 4/5: Excel/Google Sheets thành thạo, PowerPoint, dashboard/báo cáo, công cụ AI hỗ trợ; Shopee/TikTok/Meta (e-commerce)",
+    "chung-chi": "khong — không JD nào nhắc chứng chỉ",
+    "du-an": "nen — 1/5 nhắc chịu trách nhiệm kết quả triển khai; ghi dự án cải tiến quy trình/dashboard nếu có",
+    "thanh-tich-kpi": "can — 4/5 nhắc KPI/chỉ số (P&L, doanh thu, conversion, TLC, AOV, doanh thu/SĐT); CV nên có số liệu cải thiện hiệu suất",
+    "ngoai-ngu": "nen — 3/5: tiếng Anh tốt để làm việc với đội Philippines, tiếng Anh đọc viết khá cho khách nước ngoài, tiếng Anh giao tiếp cơ bản",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc; 5/5 JD đòi kinh nghiệm làm việc",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/5 nêu độ tuổi (26-35, 22-40); nên có độ tuổi/nơi ở (suy từ JD)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Business Operations", "Sales Operations", "Commercial Operations", "báo cáo dashboard", "phân tích dữ liệu", "KPI", "P&L", "quy trình vận hành", "Excel/Google Sheets", "sales funnel", "e-commerce", "tiếng Anh"],
+  "bangChung": [
+    "JD#1 (UpBase): 'Tối thiểu 3 năm kinh nghiệm trong Business Operations'; 'đọc hiểu P&L'; Tuổi 26-35",
+    "JD#3 (FPT): 'Từ 02 năm kinh nghiệm ... Commercial Operations, Business Operations, Sales Operations'; 'Thành thạo Microsoft Office, đặc biệt Excel và PowerPoint'",
+    "JD#4 (Winki): 'Excel/Google Sheets tốt'; 'Có khả năng xây dựng Dashboard và báo cáo'; 'Hiểu Sales Funnel và các chỉ số Conversion'",
+    "JD#5 (Stavian): 'Ít nhất 2 năm ... Sales Operation, Sales Admin, Xuất nhập khẩu'; 'Excel thành thạo'",
+    "JD#6 (Easyfarm): 'Hiểu về KPI: TLC – AOV – Doanh thu/SĐT'; Tuổi 22-40"
+  ],
+  "ghiChu": "Crawl lại: loại JD#2 (FFShop, Order Operator xử lý đơn hàng game - vận hành đơn, không phải vận hành kinh doanh), còn 5/5 JD sát nghề. Mức độ khác nhau theo ngành (e-commerce, viễn thông, giáo dục, hóa chất, nông nghiệp)."
+}

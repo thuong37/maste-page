@@ -1,0 +1,36 @@
+{
+  "id": 131,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Logistics khác",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5/5 JD cấp nhân viên (0-2 năm, Trung cấp/CĐ/ĐH): 3 JD sales logistics (trùng nghề #124), 1 JD admin logistics (chứng từ POD, bảng kê), 1 JD R&D logistics (nghiên cứu thị trường)",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 3/5 nêu tuổi/giọng (25-45, 22-30, 20-32; giọng miền Bắc/Nam); ảnh chỉn chu là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — chỉ 1/5 nhắc định hướng; nên nêu hướng logistics theo mảng",
+    "kinh-nghiem-lam-viec": "can — 5/5 nhắc kinh nghiệm (0-2 năm), ưu tiên sales logistics, vận hành kho bãi, hải quan, trucking",
+    "hoc-van": "can — 5/5 nêu bậc học Trung cấp/CĐ/ĐH, ngành Logistics, Kinh tế quốc tế, XNK, Kinh tế vận tải",
+    "ky-nang-chuyen-mon": "can — khai thác khách hàng logistics (Express/Sea/Air), FCL/LCL, quản lý chứng từ POD, bảng kê/công nợ, nghiên cứu thị trường và phân tích đối thủ, kho/hải quan/trucking",
+    "ky-nang-mem": "can — 4/5: giao tiếp, đàm phán, phân tích hệ thống, làm việc độc lập, chịu áp lực",
+    "cong-cu-phan-mem": "nen — 2/5: Microsoft Office/tin học văn phòng",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "can — 3/5 nhắc doanh số/KPI/thành tích kinh doanh; CV nên có số liệu",
+    "ngoai-ngu": "can — 4/5: tiếng Anh tốt/giao tiếp, tiếng Trung hoặc Anh cơ bản, Trung/Nhật là lợi thế",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/5 nhận mới tốt nghiệp/đang chờ bằng/chưa có kinh nghiệm",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 3/5 nêu tuổi (25-45, 22-30, 20-32), giọng miền Bắc/Nam, phát âm chuẩn",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Sales Logistics", "Express/Sea Cargo/Air Cargo", "FCL/LCL", "chứng từ POD", "nghiên cứu thị trường logistics", "kho bãi/hải quan/trucking", "Tiếng Anh/Trung"],
+  "bangChung": [
+    "JD#1: 'Độ tuổi: 25 - 45'; 'Ưu tiên ứng viên có khả năng giao tiếp tốt Tiếng Anh/ Tiếng Trung/ Tiếng Nhật'",
+    "JD#2: 'Đã có kinh nghiệm ít nhất 03 tháng ở các vị trí sale'; 'chịu áp lực doanh số'",
+    "JD#3: 'Tuổi từ 20 tuổi đến dưới 32 tuổi'; 'Sử dụng thành thạo các phần mềm văn phòng như Microsoft Office'",
+    "JD#4: 'Quản lý chứng từ, phiếu giao hàng (POD)'; 'Thành thạo tin học văn phòng'",
+    "JD#5: 'Kinh nghiệm chuyên sâu tối thiểu 2 năm ... vận hành bến bãi, kho vận, thủ tục hải quan, trucking'; 'Tiếng Trung hoặc Tiếng Anh giao tiếp cơ bản'"
+  ],
+  "ghiChu": "JD#1-#3 trùng JD nghề #124 (Sales XNK/Logistics); chỉ JD#4 và JD#5 là nhánh admin/R&D riêng."
+}

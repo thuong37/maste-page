@@ -1,0 +1,36 @@
+{
+  "id": 52,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Vệ sinh/Giúp việc/Bảo mẫu",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "5/6 JD nhân viên vệ sinh/tạp vụ/giúp việc (không hoặc dưới 1 năm kinh nghiệm, từ THCS/trung cấp), 1 JD quản lý hành chính dịch vụ vệ sinh (2 năm quản lý, cao đẳng); chưa có JD bảo mẫu",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình; 4/6 nêu giới tính/độ tuổi (Nữ dưới 54, Nữ 18-55, Nữ dưới 60, Nam); công việc lao động (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#1 'làm việc ổn định và lâu dài' (1/6); có thể ghi ngắn",
+    "kinh-nghiem-lam-viec": "nen — 6/6 JD nhắc; 3/6 không yêu cầu, ưu tiên kinh nghiệm vệ sinh trường học/tòa nhà/khách sạn/giúp việc; JD#4 quản lý cần 2 năm quản lý đội nhóm",
+    "hoc-van": "nen — JD chỉ cần THCS hoặc trung cấp; JD#4 cao đẳng; ghi ngắn",
+    "ky-nang-chuyen-mon": "can — dọn dẹp, quét lau, hút bụi, thu gom/phân loại rác, sử dụng hóa chất và dụng cụ vệ sinh, giặt giũ, nấu ăn (JD#3)",
+    "ky-nang-mem": "can — 5/6: chăm chỉ, chịu khó, trung thực, trách nhiệm, nhanh nhẹn, kỷ luật, làm việc theo phân công",
+    "cong-cu-phan-mem": "khong — chỉ JD#4 (quản lý) cần Word, Excel; JD nhân viên không nhắc",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/6 JD nêu giới tính/độ tuổi (Nữ <54, 18-55, <60; Nam), sức khỏe tốt, làm theo ca (6h30-14h30, 12h-20h), ca đêm",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["tạp vụ/vệ sinh", "giúp việc theo giờ", "dọn dẹp nhà xưởng/tòa nhà", "hóa chất vệ sinh", "làm theo ca", "sức khỏe tốt", "chăm chỉ chịu khó"],
+  "bangChung": [
+    "JD#1: 'Không yêu cầu kinh nghiệm, được hướng dẫn khi nhận việc'; 'Sức khỏe tốt, làm việc ổn định và lâu dài'",
+    "JD#2: 'Nữ. Tuổi < 54, có kinh nghiệm ... tối thiểu 6 tháng'; 'xoay ca linh hoạt'",
+    "JD#3: 'Ưu tiên ứng viên có kinh nghiệm làm giúp việc'; 'Tuổi 18 - 55'; 'nấu ăn, Dọn dẹp vệ sinh'",
+    "JD#4 (quản lý): 'Có kinh nghiệm quản lý đội nhóm'; 'Thành thạo word, excel'",
+    "JD#5: 'Nữ, dưới 60 tuổi, có sức khỏe tốt'; 'Ưu tiên ... vệ sinh tại trường học, tòa nhà, khách sạn'"
+  ],
+  "ghiChu": "Không có JD bảo mẫu trong dữ liệu; kết luận chỉ cho tạp vụ/vệ sinh/giúp việc. CV tối giản."
+}

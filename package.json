@@ -4,6 +4,14 @@
   "scripts": {
     "build": "node tools/build.js",
     "check": "node tools/build.js --check",
-    "verify": "node tools/verify.js"
+    "verify": "node tools/verify.js",
+    "topcv": "node tools/topcv/topcv-create-cv.js",
+    "jd:crawl": "node tools/jd/crawl-jd.js",
+    "jd:digest": "node tools/jd/digest.js",
+    "jd:status": "node tools/jd/status.js",
+    "jd:match": "node tools/jd/build-match.js && node tools/jd/build-doc.js",
+    "topcv:plan": "node tools/topcv/topcv-plan.js",
+    "topcv:worker": "node tools/topcv/topcv-worker.js",
+    "topcv:cleanup": "node tools/topcv/topcv-cleanup.js"
   }
 }

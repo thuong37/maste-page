@@ -1,0 +1,35 @@
+{
+  "id": 38,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "IT Infrastructure and Operations",
+  "soJD": 4,
+  "doTinCay": "vua",
+  "capBac": "4/4 JD cấp nhân viên IT Helpdesk/IT Support (1 không yêu cầu kinh nghiệm, 2 JD 1 năm, 1 JD 2-3 năm); trung cấp/cao đẳng trở lên, ngành CNTT/Mạng máy tính",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình/độ tuổi/giới tính; công việc kỹ thuật (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — không JD nhắc thẳng; dùng để nêu định hướng IT support/quản trị hệ thống (suy từ tính chất công việc)",
+    "kinh-nghiem-lam-viec": "can — 4/4 JD nhắc (không yêu cầu đến 3 năm); IT Helpdesk/IT Support, quản trị server, mạng văn phòng",
+    "hoc-van": "can — 4/4 nêu bậc học (trung cấp đến ĐH), chuyên ngành CNTT, Mạng máy tính, Kỹ thuật phần cứng",
+    "ky-nang-chuyen-mon": "can — 4/4: xử lý sự cố phần cứng/phần mềm, quản trị mạng LAN/WAN, TCP/IP, quản trị server Linux/mail/file/NAS, cài đặt Windows/macOS, quản trị tài khoản, ảo hóa",
+    "ky-nang-mem": "can — 4/4: xử lý sự cố, giao tiếp, nhanh nhẹn, tỉ mỉ, trách nhiệm, làm việc nhóm",
+    "cong-cu-phan-mem": "can — 4/4: Windows/macOS, MS Office/Office 365, Linux/Ubuntu/Apache, Router/Switch, ticketing, phần mềm diệt virus, Word/Excel",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ (JD#4 ưu tiên mạnh Network/System, không nêu CCNA)",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "khong — không JD nào nhắc KPI/số liệu",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#1 không yêu cầu kinh nghiệm, nhận ứng viên mới (1/4)",
+    "giay-phep": "khong — không JD nào nhắc (tín hiệu bằng lái 1/4 không xác nhận)",
+    "thong-tin-ca-nhan-mo-rong": "khong — không JD nào nêu độ tuổi/giới tính",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["IT Helpdesk", "IT Support", "quản trị mạng LAN/WAN", "Windows/macOS", "Linux/Ubuntu", "quản trị server", "xử lý sự cố", "Office 365", "TCP/IP"],
+  "bangChung": [
+    "JD#1: 'Không yêu cầu kinh nghiệm'; 'quản trị mạng (LAN/WAN), phần cứng máy tính'; 'Linux/Apache'",
+    "JD#2: 'Kinh nghiệm từ 1 – 2 năm ... IT Helpdesk'; 'Windows / macOS ... MS Office / Office 365'; 'TCP/IP, Wifi, Router/Switch'",
+    "JD#3: 'Có kinh nghiệm 2-3 năm'; 'Quản trị hệ thống Linux, mail server, file server, Nas'",
+    "JD#4: 'Cài đặt Windows cho Laptop PC, ... PDA, Tablet'; 'Ưu tiên ... Network/System'"
+  ],
+  "ghiChu": "Chỉ 4 JD."
+}

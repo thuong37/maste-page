@@ -1,0 +1,587 @@
+[
+ {
+  "folder": "ATS",
+  "title": "Basic 1",
+  "slug": "basic_1_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Basic 1\\Tiếng Việt\\ATS-Basic 1-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Basic 2",
+  "slug": "basic_2",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Basic 2\\Tiếng Việt\\ATS-Basic 2-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Basic 3",
+  "slug": "basic_3_v2",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Basic 3\\Tiếng Việt\\ATS-Basic 3-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Basic 4",
+  "slug": "basic_4_v2",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Basic 4\\Tiếng Việt\\ATS-Basic 4-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Basic 5",
+  "slug": "basic_5_v2",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Basic 5\\Tiếng Việt\\ATS-Basic 5-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Bright",
+  "slug": "bright",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Bright\\Tiếng Việt\\ATS-Bright-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Cao Cấp",
+  "slug": "premium_v2",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Cao Cấp\\Tiếng Việt\\ATS-Cao Cấp-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Chrome",
+  "slug": "chrome",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Chrome\\Tiếng Việt\\ATS-Chrome-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Chuyên gia",
+  "slug": "experts",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Chuyên gia\\Tiếng Việt\\ATS-Chuyên gia-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Chuyên Nghiệp 1",
+  "slug": "pro_1_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Chuyên Nghiệp 1\\Tiếng Việt\\ATS-Chuyên Nghiệp 1-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Chuyên Nghiệp 3",
+  "slug": "pro_3",
+  "style": "Chuyên nghiệp",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Chuyên Nghiệp 3\\Tiếng Việt\\ATS-Chuyên Nghiệp 3-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Clarity",
+  "slug": "clarity",
+  "style": "Chuyên nghiệp",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Clarity\\Tiếng Việt\\ATS-Clarity-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Cổ Điển 1",
+  "slug": "classic_1",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Cổ Điển 1\\Tiếng Việt\\ATS-Cổ Điển 1-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Dòng Thời Gian",
+  "slug": "timeline_clean_v2",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Dòng Thời Gian\\Tiếng Việt\\ATS-Dòng Thời Gian-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Dòng Thời Gian 2",
+  "slug": "timeline_clean_2",
+  "style": "Hiện đại",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Dòng Thời Gian 2\\Tiếng Việt\\ATS-Dòng Thời Gian 2-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Gradient 1",
+  "slug": "gradient_1_v2",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Gradient 1\\Tiếng Việt\\ATS-Gradient 1-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Hello",
+  "slug": "hello",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Hello\\Tiếng Việt\\ATS-Hello-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Hiện Đại 1",
+  "slug": "modern_1_v2",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Hiện Đại 1\\Tiếng Việt\\ATS-Hiện Đại 1-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Hiện Đại 2",
+  "slug": "modern_2_v2",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Hiện Đại 2\\Tiếng Việt\\ATS-Hiện Đại 2-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Hiện Đại 3",
+  "slug": "modern_3",
+  "style": "Hiện đại",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Hiện Đại 3\\Tiếng Việt\\ATS-Hiện Đại 3-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Hiện Đại 4",
+  "slug": "modern_4_v2",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Hiện Đại 4\\Tiếng Việt\\ATS-Hiện Đại 4-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Hiện Đại 5",
+  "slug": "modern_5",
+  "style": "Hiện đại",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Hiện Đại 5\\Tiếng Việt\\ATS-Hiện Đại 5-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Hiện đại 6",
+  "slug": "modern_6_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Hiện đại 6\\Tiếng Việt\\ATS-Hiện đại 6-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Kỹ Sư Phần Mềm",
+  "slug": "software_engineer",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Kỹ Sư Phần Mềm\\Tiếng Việt\\ATS-Kỹ Sư Phần Mềm-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Lập Trình Viên",
+  "slug": "dev_1",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Lập Trình Viên\\Tiếng Việt\\ATS-Lập Trình Viên-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Lập trình viên 2",
+  "slug": "dev_2",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Lập trình viên 2\\Tiếng Việt\\ATS-Lập trình viên 2-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Màu sắc",
+  "slug": "cv_color",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Màu sắc\\Tiếng Việt\\ATS-Màu sắc-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Một Trang Cổ Điển",
+  "slug": "onepage_classic",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Một Trang Cổ Điển\\Tiếng Việt\\ATS-Một Trang Cổ Điển-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Outstanding",
+  "slug": "outstanding",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Outstanding\\Tiếng Việt\\ATS-Outstanding-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Outstanding 10",
+  "slug": "outstanding_10_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Outstanding 10\\Tiếng Việt\\ATS-Outstanding 10-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Outstanding 11",
+  "slug": "outstanding_11",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Outstanding 11\\Tiếng Việt\\ATS-Outstanding 11-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Outstanding 2",
+  "slug": "outstanding_2",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Outstanding 2\\Tiếng Việt\\ATS-Outstanding 2-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Outstanding 3",
+  "slug": "outstanding_3",
+  "style": "Chuyên nghiệp",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Outstanding 3\\Tiếng Việt\\ATS-Outstanding 3-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Outstanding 5",
+  "slug": "outstanding_5",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Outstanding 5\\Tiếng Việt\\ATS-Outstanding 5-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Outstanding 7",
+  "slug": "outstanding_7",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Outstanding 7\\Tiếng Việt\\ATS-Outstanding 7-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Outstanding 9",
+  "slug": "outstanding_9",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Outstanding 9\\Tiếng Việt\\ATS-Outstanding 9-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Senior",
+  "slug": "senior_v2",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Senior\\Tiếng Việt\\ATS-Senior-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Senior 2",
+  "slug": "senior_2",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Senior 2\\Tiếng Việt\\ATS-Senior 2-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Sinh Viên",
+  "slug": "tiny_1",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Sinh Viên\\Tiếng Việt\\ATS-Sinh Viên-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Sinh viên 3",
+  "slug": "student_3",
+  "style": "Chuyên nghiệp",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Sinh viên 3\\Tiếng Việt\\ATS-Sinh viên 3-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Sáng tạo",
+  "slug": "creative",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Sáng tạo\\Tiếng Việt\\ATS-Sáng tạo-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Tham vọng",
+  "slug": "ambitious",
+  "style": "Chuyên nghiệp",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Tham vọng\\Tiếng Việt\\ATS-Tham vọng-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Tham vọng 1",
+  "slug": "ambitious_1",
+  "style": "Chuyên nghiệp",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Tham vọng 1\\Tiếng Việt\\ATS-Tham vọng 1-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Thanh lịch",
+  "slug": "elegant",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Thanh lịch\\Tiếng Việt\\ATS-Thanh lịch-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Thanh Lịch 1",
+  "slug": "onepage_elegant_v2",
+  "style": "Hiện đại",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Thanh Lịch 1\\Tiếng Việt\\ATS-Thanh Lịch 1-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Thanh nhã",
+  "slug": "graceful",
+  "style": "Chuyên nghiệp",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Thanh nhã\\Tiếng Việt\\ATS-Thanh nhã-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Thành đạt",
+  "slug": "prosper",
+  "style": "Chuyên nghiệp",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Thành đạt\\Tiếng Việt\\ATS-Thành đạt-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Thời đại",
+  "slug": "time",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Thời đại\\Tiếng Việt\\ATS-Thời đại-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "TikTop",
+  "slug": "tiktop",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\TikTop\\Tiếng Việt\\ATS-TikTop-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Tinh tế 1",
+  "slug": "delicate_1",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Tinh tế 1\\Tiếng Việt\\ATS-Tinh tế 1-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Tiêu chuẩn",
+  "slug": "default_v2",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Tiêu chuẩn\\Tiếng Việt\\ATS-Tiêu chuẩn-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Tiêu chuẩn (ít kinh nghiệm)",
+  "slug": "default_junior",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Tiêu chuẩn (ít kinh nghiệm)\\Tiếng Việt\\ATS-Tiêu chuẩn (ít kinh nghiệm)-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Topinstar",
+  "slug": "topinstar",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Topinstar\\Tiếng Việt\\ATS-Topinstar-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Toppier",
+  "slug": "toppier",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Toppier\\Tiếng Việt\\ATS-Toppier-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Toptify",
+  "slug": "toptify",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Toptify\\Tiếng Việt\\ATS-Toptify-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Trang trọng",
+  "slug": "formal",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Trang trọng\\Tiếng Việt\\ATS-Trang trọng-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Twittop",
+  "slug": "twittop",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Twittop\\Tiếng Việt\\ATS-Twittop-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Tối giản 2",
+  "slug": "minimalism_v2",
+  "style": "Hiện đại",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Tối giản 2\\Tiếng Việt\\ATS-Tối giản 2-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Đam mê",
+  "slug": "passion",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Đam mê\\Tiếng Việt\\ATS-Đam mê-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Ấn tượng",
+  "slug": "onepage_impressive_v2",
+  "style": "Ấn tượng",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Ấn tượng\\Tiếng Việt\\ATS-Ấn tượng-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Ấn tượng 2",
+  "slug": "onepage_impressive_2_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Ấn tượng 2\\Tiếng Việt\\ATS-Ấn tượng 2-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Ấn tượng 3",
+  "slug": "impressive_3_v2",
+  "style": "Hiện đại",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Ấn tượng 3\\Tiếng Việt\\ATS-Ấn tượng 3-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Ấn tượng 4",
+  "slug": "onepage_impressive_3_v2",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Ấn tượng 4\\Tiếng Việt\\ATS-Ấn tượng 4-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Ấn tượng 5",
+  "slug": "impressive_5",
+  "style": "Đơn giản",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Ấn tượng 5\\Tiếng Việt\\ATS-Ấn tượng 5-Tiếng Việt.pdf"
+ },
+ {
+  "folder": "ATS",
+  "title": "Ấn tượng 6",
+  "slug": "impressive_6_v2",
+  "style": "Hiện đại",
+  "lang": "vi",
+  "langName": "Tiếng Việt",
+  "pdf": "assets\\cv-templates\\ATS\\Ấn tượng 6\\Tiếng Việt\\ATS-Ấn tượng 6-Tiếng Việt.pdf"
+ }
+]

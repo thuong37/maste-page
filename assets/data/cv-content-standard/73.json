@@ -1,0 +1,36 @@
+{
+  "id": 73,
+  "nhom": "Xây dựng",
+  "nghe": "Thiết kế và Kiến trúc",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "1 thực tập sinh, 3 nhân viên (1-3 năm), 2 cấp quản lý/chủ trì (5 năm trở lên); Cao đẳng/Đại học chuyên ngành Kiến trúc, Nội thất",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; 1/6 nêu độ tuổi 25-50; ảnh gọn gàng là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 1/6 JD nhắc yêu thích công việc thiết kế - xây dựng; nên nêu định hướng ngắn",
+    "kinh-nghiem-lam-viec": "can — 5/6 JD nêu số năm (1 đến 7 năm), ưu tiên dự án quy mô lớn, cao tầng; nên ghi loại công trình, vai trò (chủ trì/triển khai)",
+    "hoc-van": "can — 6/6 nêu chuyên ngành Kiến trúc/Nội thất/Mỹ thuật công nghiệp (ưu tiên ĐH Kiến trúc, ĐH Xây dựng)",
+    "ky-nang-chuyen-mon": "can — 6/6: thiết kế ý tưởng/concept, triển khai hồ sơ kỹ thuật thi công, dựng 3D, phối hợp kết cấu/MEP, bóc tách khối lượng, quy chuẩn thiết kế",
+    "ky-nang-mem": "can — 6/6: làm việc nhóm, sáng tạo, giải quyết vấn đề, giao tiếp/đàm phán, kỷ luật, trách nhiệm",
+    "cong-cu-phan-mem": "can — 5/6: AutoCAD, Revit, SketchUp, 3ds Max, V-Ray, Corona, Photoshop",
+    "chung-chi": "can — 2/6 yêu cầu chứng chỉ hành nghiệp kiến trúc (1 JD ghi bắt buộc)",
+    "du-an": "can — 5/6 nhắc dự án (nhà máy, cao tầng, F&B, khách sạn); nên nêu tên dự án, quy mô, vai trò",
+    "thanh-tich-kpi": "nen — chỉ nhắc đảm bảo tiến độ, chất lượng hồ sơ; không có chỉ tiêu số",
+    "ngoai-ngu": "nen — 1/6 tiếng Anh giao tiếp thành thạo; còn lại không nhắc",
+    "portfolio-link": "can — 1/6 JD nhắc sản phẩm/bản phác thảo; JD kiến trúc/nội thất 3D thường cần portfolio (suy từ tính chất công việc)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 1/6 thực tập sinh, sinh viên năm cuối",
+    "giay-phep": "nen — 1/6 yêu cầu laptop cá nhân/khảo sát hiện trạng; không JD nhắc bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "nen — 1/6 nêu độ tuổi; nên có độ tuổi, nơi ở (suy từ tính chất công việc)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["thiết kế kiến trúc", "Revit", "AutoCAD", "SketchUp", "3ds Max/V-Ray", "hồ sơ kỹ thuật thi công", "concept", "chủ trì thiết kế", "chứng chỉ hành nghề kiến trúc", "thiết kế nội thất 3D"],
+  "bangChung": [
+    "JD#1: 'Sử dụng thành thạo phần mềm thiết kế Revit Architecture'; 'AutoCad, Photoshop, 3DS Max, Sketchup, Vray là một lợi thế'",
+    "JD#2: 'Thành thạo các phần mềm thiết kế như AutoCAD, Revit, SketchUp'",
+    "JD#3: 'Có kinh nghiệm thiết kế 3D nội thất, ưu tiên ... nhà hàng, F&B'",
+    "JD#4: 'khả năng phác thảo ý tưởng trực tiếp trên giấy'; 'Yêu cầu ứng viên có laptop cá nhân'",
+    "JD#5: 'Có Chứng chỉ hành nghề thiết kế kiến trúc (bắt buộc)'; JD#6: 'Chứng chỉ hành nghề kiến trúc'"
+  ],
+  "ghiChu": "portfolio-link đánh can dựa trên một JD nhắc sản phẩm/phác thảo và tính chất nghề thiết kế; không JD nào ghi thẳng 'link portfolio'."
+}

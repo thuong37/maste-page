@@ -1,0 +1,36 @@
+{
+  "id": 136,
+  "nhom": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học",
+  "nghe": "Dược phẩm/Công nghệ sinh học",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên (0-2 năm): 3 JD dược sĩ nhà thuốc/bán hàng (Trung cấp trở lên, 0-2 năm), 1 JD dược sĩ kho thương mại điện tử (THPT), 1 JD dược sĩ pha chế bệnh viện (2 năm, CĐ), 1 JD kiểm tra chất lượng vi sinh-dược lý (ĐH, không kinh nghiệm); chưa có JD công nghệ sinh học thuần nghiên cứu",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; JD#4 'ngoại hình gọn gàng'; 4/6 nêu tuổi/giới tính; ảnh chỉnh chu là lợi thế với nhà thuốc (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm hoặc không yêu cầu (0-2 năm), ưu tiên nhà thuốc, khoa dược bệnh viện, phòng kiểm nghiệm",
+    "hoc-van": "can — 6/6 nêu Trung cấp/CĐ/ĐH chuyên ngành Dược, Hóa phân tích, Sinh học, Công nghệ sinh học (JD#1 chỉ THPT, CĐ Dược là lợi thế)",
+    "ky-nang-chuyen-mon": "can — tư vấn bán thuốc, đọc đơn độc lập, quản lý thuốc/hạn dùng/kho, pha chế thuốc, kiểm nghiệm vi sinh-dược lý, hiệu chuẩn thiết bị, GMP/GLP, sổ sách nhà thuốc",
+    "ky-nang-mem": "can — 4/6: giao tiếp, tư vấn, trung thực, chăm chỉ, tinh thần phục vụ",
+    "cong-cu-phan-mem": "nen — 2/6 nêu tin học văn phòng (excel, word) và vi tính đáp ứng công việc",
+    "chung-chi": "can — JD#2 nêu thẳng chứng chỉ pha chế thuốc trong bệnh viện; JD#3 nhắc GMP, GLP; chứng chỉ hành nghề dược là điều kiện ngầm cho vị trí nhà thuốc (suy từ công việc)",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — chỉ 1/6 nêu kiểm soát sai sót/cải tiến chất lượng; không JD nào đòi số liệu",
+    "ngoai-ngu": "nen — JD#3 nhắc ngoại ngữ đáp ứng công việc; 1/6",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/6 nhận mới tốt nghiệp/sinh viên chờ bằng/không yêu cầu kinh nghiệm",
+    "giay-phep": "can — JD#4 có phương tiện di chuyển; JD#2 chứng chỉ pha chế (chứng chỉ hành nghề); nhà thuốc đòi đứng quầy độc lập",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/6 nêu tuổi (23-30, 25-35, 20-35, 25-45), giới tính (nữ), ca xoay, nơi ở ưu tiên",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Dược sĩ nhà thuốc", "tư vấn bán thuốc/đọc đơn", "pha chế thuốc bệnh viện", "GMP/GLP", "kiểm nghiệm vi sinh", "quản lý hạn dùng", "sổ sách nhà thuốc"],
+  "bangChung": [
+    "JD#1: 'Tuổi đời dưới 30'; 'quản lý hạn dùng thuốc/tpcn trong kho'",
+    "JD#2: 'Chứng chỉ pha chế thuốc trong bệnh viện'; 'Ưu tiên ... kinh nghiệm tại Khoa Dược bệnh viện'",
+    "JD#3: 'Tuân thủ các nguyên tắc ... (GMP), ... (GLP)'; 'Có trình độ Đại học thuộc các ngành Dược, Sinh học, Công nghệ sinh học'",
+    "JD#4: 'Sẵn sàng làm việc xoay ca theo phân công, có phương tiện di chuyển'; 'Không yêu cầu kinh nghiệm'",
+    "JD#6: 'Đứng bán thuốc và đọc đơn độc lập'; 'Biết làm hồ sơ sổ sách nhà thuốc mỗi ngày'"
+  ],
+  "ghiChu": "Chứng chỉ hành nghề dược ở nhánh nhà thuốc không được JD nêu trực tiếp (chỉ suy từ công việc)."
+}

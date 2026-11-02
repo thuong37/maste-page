@@ -1,0 +1,36 @@
+{
+  "id": 10,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Nhà hàng/Khách sạn/Du lịch",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "4/6 JD cấp nhân viên (không/dưới 1 năm đến 2 năm kinh nghiệm, trung cấp/cao đẳng trở lên), 2/6 JD trưởng phòng (2-3 năm kinh nghiệm, 2 năm quản lý)",
+  "muc": {
+    "anh-chan-dung": "nen — không JD nào nhắc ngoại hình/ảnh; nghề gặp khách doanh nghiệp/đối tác nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#5 'định hướng công việc rõ ràng, tính gắn kết lâu dài' (1/6); JD#1 tinh thần kinh doanh",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc; sales khách sạn, corporate sales, TA/OTA, du lịch, tiệc cưới/sự kiện, resort",
+    "hoc-van": "can — 6/6 nêu bậc học (trung cấp đến ĐH); chuyên ngành Du lịch, QTKD, Marketing, TMĐT, Kinh tế",
+    "ky-nang-chuyen-mon": "can — 6/6: tìm kiếm khách hàng doanh nghiệp/đoàn, đàm phán hợp đồng, báo giá, chăm sóc đối tác TA/OTA/đại lý, xây dựng chương trình tour, kế hoạch kinh doanh",
+    "ky-nang-mem": "can — 6/6: giao tiếp, thuyết phục, đàm phán, chủ động, làm việc độc lập/nhóm, chịu áp lực; quản lý đội nhóm với JD trưởng phòng",
+    "cong-cu-phan-mem": "nen — 3/6: tin học văn phòng, laptop, báo cáo/dữ liệu cơ bản (JD#3, #4, #6)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "can — 5/6 nhắc doanh thu/mục tiêu doanh thu phòng/doanh số/kế hoạch kinh doanh (JD#1, #2, #3, #4, #5)",
+    "ngoai-ngu": "nen — JD#6 ưu tiên tiếng Anh hoặc tiếng Nhật (1/6)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#4 không yêu cầu kinh nghiệm, JD#1 dưới 1 năm; JD nhắc phối hợp sự kiện (2/6)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — không JD nào nêu độ tuổi/giới tính/ngoại hình",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["corporate sales", "sales khách sạn", "TA/OTA/đại lý", "khách đoàn", "tiệc cưới/sự kiện", "báo giá/hợp đồng", "doanh thu phòng", "kế hoạch kinh doanh", "đàm phán"],
+  "bangChung": [
+    "JD#1: 'Có kinh nghiệm sales khách sạn hoặc corporate sales'; 'tối thiểu 6 tháng ở vị trí tương đương'",
+    "JD#2: 'xây dựng ... kế hoạch kinh doanh ... đạt mục tiêu doanh thu phòng'; 'ít nhất 2 năm kinh nghiệm quản lý'",
+    "JD#3: 'tìm kiếm, tiếp cận và chăm sóc hệ thống đối tác TA, OTA, đại lý, CTV'; 'tin học văn phòng ... làm báo cáo cơ bản'",
+    "JD#4: 'Chủ động, chịu áp lực doanh số'; 'có laptop'",
+    "JD#6: 'Ưu tiên giao tiếp được tiếng Anh hoặc Tiếng Nhật'"
+  ],
+  "ghiChu": ""
+}

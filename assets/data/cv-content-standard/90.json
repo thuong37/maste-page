@@ -1,0 +1,36 @@
+{
+  "id": 90,
+  "nhom": "Sản xuất",
+  "nghe": "Bảo trì, sửa chữa",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5/5 JD cấp nhân viên kỹ thuật, 2/5 không yêu cầu kinh nghiệm (nhận mới tốt nghiệp), còn lại 1-3 năm; từ THPT/Trung cấp đến Cao đẳng; 3/5 nêu nam",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; nghề kỹ thuật hiện trường (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 1/5 nhắc mong muốn gắn bó lâu dài; có thể dùng để nêu định hướng kỹ thuật",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD hỏi bảo trì/sửa chữa (điện lạnh, CNC, thang máy, dây chuyền, thiết bị công nghiệp); ưu tiên 1-3 năm",
+    "hoc-van": "can — 5/5 nêu Trung cấp/THPT đến CĐ chuyên ngành Điện, Điện tử, Cơ khí, Tự động hóa, Cơ điện tử",
+    "ky-nang-chuyen-mon": "can — 5/5: bảo trì/sửa chữa điện, điện lạnh, đọc sơ đồ điện/mạch, dùng đồng hồ đo, phân tích lỗi, lắp đặt, bảo hành, Lean/5S",
+    "ky-nang-mem": "can — 5/5: cẩn thận, tỉ mỉ, trung thực, trách nhiệm, ham học hỏi, chủ động",
+    "cong-cu-phan-mem": "nen — 2/5: AutoCAD, Corel, Inventor, SolidWorks, phần mềm văn phòng; nhắc dụng cụ đo như đồng hồ đo, máy test",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "nen — chỉ 1/5 nhắc (tiếng Anh/đọc tài liệu kỹ thuật là lợi thế)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/5 nhận sinh viên mới ra trường; hữu ích cho người chưa có kinh nghiệm (suy từ JD)",
+    "giay-phep": "can — 3/5 nêu có phương tiện đi lại (xe máy); sẵn sàng đi công tác",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/5 nêu nam, độ tuổi 18-35/22-30/sinh 1990-2005, sức khỏe tốt, có thể đi công tác xa",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Bảo trì sửa chữa", "điện lạnh", "điện dân dụng", "PLC/tự động hóa", "đọc sơ đồ điện", "bảo hành", "thang máy", "máy CNC", "xe máy đi lại"],
+  "bangChung": [
+    "JD#1: '01 năm kinh nghiệm công tác bảo trì, ưu tiên bảo trì máy lạnh'; 'Nam', 'Tuổi 18 - 35'",
+    "JD#2: 'Sử dụng thành thạo một trong các phần mềm đồ họa: AutoCAD'; 'Có phương tiện đi lại (xe máy)'",
+    "JD#3: 'Đọc và hiểu sơ đồ điện, sơ đồ mạch'; 'Có kiến thức cơ bản về các công cụ Lean Manufacturing, bao gồm 5S, Kaizen'",
+    "JD#4: 'Chưa có kinh nghiệm sẽ có hỗ trợ đào tạo'; 'Có phương tiện đi lại cá nhân (xe máy)'",
+    "JD#5: 'Biết sử dụng các dụng cụ kỹ thuật: đồng hồ đo, tool sửa chữa, máy test'"
+  ],
+  "ghiChu": ""
+}

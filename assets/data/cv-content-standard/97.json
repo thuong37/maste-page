@@ -1,0 +1,36 @@
+{
+  "id": 97,
+  "nhom": "Giáo dục/Đào tạo",
+  "nghe": "Trợ giảng",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "5/6 JD cấp nhân viên, 1 JD và 1 JD thực tập sinh; chủ yếu không yêu cầu kinh nghiệm hoặc dưới 1 năm; ưu tiên sinh viên ĐH (năm 1-4); tuổi giới hạn 18-25 ở 3 JD",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 3/6 nêu độ tuổi trẻ 18-22/20-25; ảnh chỉn chu là lợi thế khi tiếp xúc phụ huynh (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "can — 4/6 nhắc đam mê/định hướng trở thành giáo viên hoặc gắn bó ngành giáo dục",
+    "kinh-nghiem-lam-viec": "nen — 4/6 không yêu cầu hoặc dưới 1 năm; kinh nghiệm hỗ trợ lớp học/gia sư chỉ là lợi thế",
+    "hoc-van": "can — 6/6 nêu ĐH (JD#6 Trung cấp), ngành Ngôn ngữ Anh/Sư phạm Anh/Toán/tiếng Đức hoặc sinh viên năm 1-4",
+    "ky-nang-chuyen-mon": "can — hỗ trợ giáo viên, quản lý lớp, điểm danh, chấm chữa bài, soạn học cụ, cập nhật báo cáo học tập; JD#6 pha chế/latte art",
+    "ky-nang-mem": "can — 5/6: trách nhiệm, nhanh nhẹn, kiên nhẫn, giao tiếp, xử lý tình huống",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc phần mềm cụ thể",
+    "chung-chi": "can — 4/6 nêu IELTS 5.5, TOEIC 800, hoặc chứng chỉ nghề pha chế/sư phạm",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "can — 5/6: tiếng Anh giao tiếp trôi chảy/IELTS 5.5/TOEIC 800; tiếng Đức B1",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 5/6 nhận sinh viên chưa có kinh nghiệm; hữu ích để chứng minh kinh nghiệm hỗ trợ lớp/CLB (suy từ JD)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/6 nêu độ tuổi (18-22, 20-25, 22-40) hoặc năm sinh từ 2007; cam kết 5 ngày/tuần; nên có độ tuổi/nơi ở",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Trợ giảng", "English Teaching Assistant", "hỗ trợ giáo viên nước ngoài", "quản lý lớp học", "chấm bài", "IELTS", "TOEIC", "Sư phạm", "điểm danh"],
+  "bangChung": [
+    "JD#1: 'Sở hữu các chứng chỉ IELTS, TOEIC... là một điểm cộng lớn'; 'phát triển sự nghiệp lâu dài trong ngành đào tạo'",
+    "JD#2: 'Có chứng chỉ TOEIC 800+, IELTS 5.5 là một lợi thế'; 'Tuổi 20 - 25'",
+    "JD#3: 'Ứng viên sinh năm từ 2007 trở lên'; 'Ưu tiên sinh viên sư phạm Toán'",
+    "JD#4: 'Có chứng chỉ tiếng Anh IELTS 5.5 trở lên'; 'ít nhất 5 ngày/ tuần'",
+    "JD#5: 'Là sinh viên khoa tiếng Đức. Trình độ tiếng Đức tối thiểu B1'; 'Có định hướng phát triển trở thành giáo viên'"
+  ],
+  "ghiChu": "Nghề phủ nhiều môn (Anh, Toán, Đức, Barista); JD#6 lệch hẳn sang pha chế."
+}

@@ -1,0 +1,36 @@
+{
+  "id": 142,
+  "nhom": "Thiết kế",
+  "nghe": "Thiết kế Công nghiệp",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên (1-2 năm kinh nghiệm), Trung cấp/CĐ/ĐH trở lên; 5 JD thiết kế bao bì, 1 JD kỹ thuật triển khai bản vẽ nội thất; 3/6 nêu giới tính/tuổi",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 3/6 nêu tuổi/giới tính (nam, ≤30, ≤32; nữ ưu tiên); nghề sáng tạo nên ảnh là phụ (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 3/6 nhắc định hướng/đam mê thiết kế; nên nêu hướng bao bì/sản phẩm",
+    "kinh-nghiem-lam-viec": "can — 6/6 hỏi 1-2 năm thiết kế (bao bì/graphic), ưu tiên FMCG, thực phẩm, mỹ phẩm, F&B",
+    "hoc-van": "can — 6/6 nêu Trung cấp/CĐ/ĐH chuyên ngành Thiết kế đồ họa, Thiết kế công nghiệp, Mỹ thuật, Hội họa",
+    "ky-nang-chuyen-mon": "can — thiết kế bao bì/dieline/khuôn bế, file in (CMYK, Pantone, bleed), kiến thức in offset/flexo/gravure, mockup, nghiên cứu xu hướng; triển khai bản vẽ SketchUp, file CNC",
+    "ky-nang-mem": "can — 6/6: thẩm mỹ, sáng tạo, cẩn thận, làm việc độc lập/nhóm, phối hợp bộ phận, quản lý thời gian",
+    "cong-cu-phan-mem": "can — 5/6: Illustrator, Photoshop, InDesign, CorelDraw, After Effects, Premiere, Figma, SketchUp, ABF/oneclick",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "can — 3/6 nhắc dự án bao bì thực tế/dự án thi công; CV nên liệt kê dự án (sản phẩm, thương hiệu)",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "can — 3/6 nêu thẳng portfolio/ 'gửi kèm Portfolio' (thiết kế bao bì); JD#4 'portfolio các dự án bao bì thực tế là lợi thế lớn'",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc (JD đòi 1-2 năm kinh nghiệm)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 3/6 nêu thẳng giới tính/tuổi (nam; nữ ưu tiên và ≤30; ≤32); nơi làm việc Đà Nẵng, hỗ trợ nhà ở",
+    "so-thich": "nen — JD#3 ưu tiên yêu thích và hiểu biết về makeup (ngành mỹ phẩm); 1/6 nêu"
+  },
+  "tuKhoaNenCo": ["Thiết kế bao bì", "dieline/khuôn bế", "CMYK/Pantone", "in offset/flexo", "Illustrator/Photoshop", "mockup", "nhận diện thương hiệu", "portfolio bao bì"],
+  "bangChung": [
+    "JD#2: 'Ưu tiên đặc biệt ứng viên có portfolio mạnh về thiết kế bao bì sản phẩm'; 'Có kiến thức về hệ màu CMYK, RGB, Pantone'",
+    "JD#3: 'Gửi Kèm Portfolio'; 'Ưu tiên ứng viên Nữ, yêu thích và có hiểu biết về makeup'; 'Từ 30 tuổi trở xuống'",
+    "JD#4: 'Hiểu về dieline/khuôn bế, bleed, CMYK, Pantone'; 'Có portfolio các dự án bao bì thực tế là lợi thế lớn'",
+    "JD#5: 'Nam', 'Tuổi 18 - 30'; 'Có 1 năm kinh nghiệm thực tế trong lĩnh vực thiết kế bao bì'",
+    "JD#1: 'Thành thạo Sketchup và các phần mềm hỗ trợ thi công ABF, oneclick'; 'Nam'"
+  ],
+  "ghiChu": "JD#1 (triển khai bản vẽ nội thất) lệch sang nội thất. Yêu cầu giới tính/tuổi ghi nhận như dữ liệu JD."
+}

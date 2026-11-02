@@ -1,0 +1,36 @@
+{
+  "id": 17,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Kinh doanh/Bán hàng khác",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên/chuyên viên; 4/6 cần 1 năm kinh nghiệm bán hàng, 1 JD 3 năm, 1 JD không yêu cầu; trung cấp/cao đẳng trở lên; ngành đa dạng (quà tặng, thùng giấy, rèm, trang sức, BVTV, thang máy)",
+  "muc": {
+    "anh-chan-dung": "nen — không JD nào nhắc ngoại hình; 2/6 nêu giới tính (Nữ, Nam) và độ tuổi; nghề gặp khách/đại lý nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#5 'đam mê kinh doanh, cầu tiến', JD#3 chủ động học hỏi (2/6)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc; 1-3 năm bán hàng B2B, chăm sóc khách hàng/đại lý, ưu tiên theo ngành hàng của công ty",
+    "hoc-van": "can — 6/6 nêu bậc học (trung cấp đến ĐH), ưu tiên Kinh tế, QTKD, Marketing, Tài chính; JD#5 ngành Nông nghiệp/BVTV",
+    "ky-nang-chuyen-mon": "can — 6/6: tìm kiếm và phát triển khách hàng/đại lý, báo giá và chốt đơn, đàm phán, theo dõi đơn hàng và công nợ, lập kế hoạch bán hàng tháng/quý",
+    "ky-nang-mem": "can — 6/6: giao tiếp, thuyết phục, kiên trì, chịu áp lực, trách nhiệm, làm việc nhóm",
+    "cong-cu-phan-mem": "can — 4/6: Excel, Word, PowerPoint, MISA (JD#2), Facebook/TikTok/Zalo (JD#4), máy tính cá nhân (JD#1)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc (JD#6 chỉ làm việc với công trình/chủ đầu tư)",
+    "thanh-tich-kpi": "can — 5/6 nhắc chỉ tiêu doanh số, KPI (JD#1 chỉ tiêu doanh số, JD#2 doanh số dự kiến, JD#4 'không ngại KPI', JD#5 doanh số địa bàn)",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#5 chấp nhận sinh viên mới ra trường (1/6)",
+    "giay-phep": "can — 3/6 JD nêu phương tiện di chuyển/đi thị trường (JD#1, #3, #6)",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/6 JD nêu độ tuổi (24-40, 20-30 Nữ, 24-35 Nam, 26-40, 25-40) và giới tính; JD#6 yêu cầu thường trú/tạm trú Hà Nội",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["sales B2B", "phát triển đại lý", "báo giá chốt đơn", "chỉ tiêu doanh số", "chăm sóc khách hàng", "công nợ", "Excel", "đi thị trường"],
+  "bangChung": [
+    "JD#1: 'Có ít nhất 01 năm kinh nghiệm ... bán hàng khách hàng doanh nghiệp'; 'Excel, Word, PowerPoint'; 'Có máy tính cá nhân và khả năng đi thị trường'",
+    "JD#2: 'Giới tính: Nữ, độ tuổi từ 20 – 30'; 'Ưu tiên: Ứng viên biết sử dụng phần mềm MISA'",
+    "JD#3: 'Nam'; 'Tuổi 24 - 35'; 'Có phương tiện di chuyển'",
+    "JD#4: 'Có từ 3 năm kinh nghiệm'; 'Thành thạo các nền tảng Facebook, TikTok, Zalo'; 'không ngại KPI/doanh số'",
+    "JD#5: 'Không yêu cầu kinh nghiệm, chấp nhận sinh viên mới ra trường'; 'Chịu trách nhiệm về Doanh số'"
+  ],
+  "ghiChu": "Nhóm nghề 'khác' nên JD đa ngành; chỉ mục chung mới đáng tin."
+}

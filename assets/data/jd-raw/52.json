@@ -1,0 +1,185 @@
+{
+ "id": 52,
+ "nhom": "Lao động phổ thông",
+ "nghe": "Vệ sinh/Giúp việc/Bảo mẫu",
+ "crawledAt": "2026-10-22T03:28:34.326Z",
+ "candidates": 83,
+ "thin": false,
+ "jds": [
+  {
+   "url": "https://www.topcv.vn/viec-lam/nhan-vien-tap-vu-ve-sinh-nha-xuong/2311104.html",
+   "title": "Nhân Viên Tạp Vụ Vệ Sinh Nhà Xưởng",
+   "company": "{{ company?.name }}",
+   "query": "Vệ sinh/Tạp vụ",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "Không yêu cầu kinh nghiệm chuyên môn",
+     "Trung học cơ sở (Cấp 2) trở lên"
+    ],
+    "Chuyên môn": [
+     "Vệ sinh/Tạp vụ",
+     "May mặc / Thời trang",
+     "Lao động phổ thông"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Thực hiện vệ sinh, dọn dẹp khu vực nhà xưởng và các khu vực được phân công.\nQuét dọn, lau chùi sàn, hành lang, khu vực làm việc và các khu vực chung.\nThu gom, phân loại và xử lý rác theo quy định.\nĐảm bảo khu vực phụ trách luôn sạch sẽ, gọn gàng.\nSử dụng và bảo quản dụng cụ, thiết bị vệ sinh được giao.\nThực hiện các công việc vệ sinh khác theo sự phân công của quản lý.",
+    "Yêu cầu ứng viên": "Không yêu cầu kinh nghiệm, được hướng dẫn khi nhận việc.\nChăm chỉ, chịu khó, có trách nhiệm trong công việc.\nSức khỏe tốt, làm việc ổn định và lâu dài.\nCó ý thức giữ gìn vệ sinh và tuân thủ nội quy nhà xưởng.\nKiến thức ngành\nMay mặc / Thời trang\nKỹ năng cần có\nChăm chỉ, Chịu khó, có trách nhiệm, Sức Khỏe Tốt",
+    "Quyền lợi ứng viên": "Thu nhập từ 6.000.000 VNĐ/tháng.\nCông việc ổn định, lâu dài.\nMôi trường làm việc có máy lạnh.\nCó khu lưu trú miễn phí cho nhân viên.\nCó thể nhận việc ngay sau khi phỏng vấn đạt yêu cầu.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: Khu C, Lô R.29B-33-35-37-39, Đường Tân Thuận, KCX Tân Thuận, Phường Tân Thuận (Phường Tân Thuận thuộc Quận 7 cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 23/10/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nTrung học cơ sở (Cấp 2) trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/tap-vu-ve-sinh-lam-theo-ca-ha-noi/2321583.html",
+   "title": "Tạp Vụ Vệ Sinh _ Làm Theo Ca _ Hà Nội",
+   "company": "Công ty TNHH Lavender Sài Gòn",
+   "query": "Vệ sinh/Tạp vụ",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "Dưới 1 năm kinh nghiệm chuyên môn",
+     "Từ 54 tuổi trở xuống",
+     "Trung cấp trở lên",
+     "Nữ"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm sức khỏe",
+     "Bảo hiểm xã hội",
+     "Bảo hiểm full lương"
+    ],
+    "Chuyên môn": [
+     "Vệ sinh/Tạp vụ",
+     "Chăm sóc sức khỏe / Làm đẹp"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Vệ sinh sạch sẽ khu vực yêu cầu: sảnh, cầu thang, phòng trị liệu, WC,.....\nCác công việc khác theo yêu cầu",
+    "Yêu cầu ứng viên": "Nữ. Tuổi < 54, có kinh nghiệm vị trí tương đương tối thiểu 6 tháng\nSiêng năng, chịu khó, có sức khỏe, nhanh nhẹn\nCó trách nhiệm trong công việc\nThời gian làm việc: xoay ca linh hoạt (tháng nghỉ 4 ngày, làm 26 công)\n\nCa 1: 6h30 - 14h30\n\nCa 2: 12h - 20h\n\nKiến thức ngành\nChăm sóc sức khỏe / Làm đẹp\nKỹ năng cần có\nNhanh Nhẹn, Chịu Khó, Sạch Sẽ, Gọn Gàng, Chủ động công việc",
+    "Quyền lợi ứng viên": "Lương cơ bản : 7.5tr + thưởng doanh thu Công ty (Thu nhập 8-9tr/ tháng)\nĐóng BHXH, BHYT, BHTN (Đóng bảo hiểm full lương sau 1 tháng)\nDu lịch, nghỉ mát, teambuilding, Year End Party… tiêu chuẩn 5 sao\nThưởng lễ tết 30/4, 2/9……., thưởng thâm niên, lương tháng 13, 14\nMôi trường làm việc vui vẻ, trẻ trung, năng động, hòa đồng “Làm hết sức- Chơi hết mình”\nĐược training và tham gia các khóa học đào tạo phù hợp để phát triển bản thân và hoàn thiện kỹ năng làm việc của mình\nĐược hỗ trợ ăn ca 2 bữa/ ngày (bữa trưa + xế), hoa quả tráng miệng, trà bánh, đồng phục, thiết bị cần thiết khi làm việc\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm sức khỏe, Bảo hiểm xã hội, Bảo hiểm full lương, Team building, Du lịch hàng năm, Phụ cấp thâm niên, Signing bonus, Thưởng hiệu quả làm việc, Thưởng tháng 13, Thưởng cổ phần\nPhụ cấp\nĂn trưa\nHỗ trợ\nĐược cấp Tai nghe",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: 19 Điện Biên Phủ, Phường Ba Đình (Phường Ba Đình thuộc quận Ba Đình cũ)\nThời gian làm việc\nCa ngày\nThời gian làm việc: xoay ca linh hoạt (tháng nghỉ 4 ngày, làm 26 công)\nCa 1: 6h30 - 14h30\nCa 2: 12h - 20h\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 30/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nTrung cấp trở lên\nSố lượng tuyển\n2 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/doi-tac-giup-viec-gia-dinh-theo-gio/2331832.html",
+   "title": "Đối Tác Giúp Việc Gia Đình Theo Giờ",
+   "company": "Công ty Cổ phần Phát triển Dịch vụ Nhà sạch HMC",
+   "query": "Giúp việc",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "Không yêu cầu kinh nghiệm chuyên môn",
+     "Tuổi 18 - 55",
+     "Trung học cơ sở (Cấp 2) trở lên",
+     "Nữ"
+    ],
+    "Chuyên môn": [
+     "Giúp việc",
+     "Lao động phổ thông"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Thực hiện các công việc liên quan đến dọn dẹp, vệ sinh nhà cửa, bao gồm lau chùi, quét dọn, hút bụi, giặt giũ và các công việc khác theo yêu cầu khách hàng\nSắp xếp đồ đạc gọn gàng, ngăn nắp.\nHỗ trợ các công việc khác theo yêu cầu của khách hàng",
+    "Yêu cầu ứng viên": "Ưu tiên ứng viên có kinh nghiệm làm giúp việc hoặc các công việc liên quan.\nSức khỏe tốt, nhanh nhẹn, trung thực và có trách nhiệm.\nChăm chỉ, cẩn thận, tỉ mỉ trong công việc.\nCó khả năng làm việc độc lập và tuân thủ các hướng dẫn.\nKỹ năng cần có\nnấu ăn, Dọn dẹp vệ sinh, Dọn Dẹp Nhà Cửa, Sắp Xếp, Dọn Dẹp\nKỹ năng nên có\nNhanh nhẹn, Sử Dụng Hóa Chất Làm Sạch, Sử Dụng Hóa Chất Vệ Sinh, Kỹ Năng Sắp Xếp Đồ Đạc",
+    "Quyền lợi ứng viên": "Mức lương theo giờ tùy theo năng lực và khối lượng công việc dao động từ 60.000 - 120.000 đ/giờ\nCơ hội học hỏi và phát triển kỹ năng, được đào tạo nghề miễn phí\nThưởng duy trì hàng tháng",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHưng Yên: Xã Văn Giang (Xã Văn Giang thuộc huyện Văn Giang cũ) - Phạm vi làm việc trên toàn khu vực trên.\nHưng Yên: Xã Khoái Châu (Xã Khoái Châu thuộc huyện Khoái Châu cũ) - Phạm vi làm việc trên toàn khu vực trên.\nHưng Yên: Xã Vạn Xuân (Xã Vạn Xuân thuộc huyện Vũ Thư cũ) - Phạm vi làm việc trên toàn khu vực trên.\n...và 33 địa điểm khác\nThời gian làm việc\nCa hỗn hợp (ngày & đêm)\nThời gian tự lựa chọn, tối thiểu 4h/ngày:\n+ Sáng: 8h – 12h\n+ Chiều: 13h – 17h\n+ Tối: 17h – 21h\nHoặc linh hoạt theo nhu cầu: tối thiểu 4 ca/tuần\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 31/12/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nTrung học cơ sở (Cấp 2) trở lên\nSố lượng tuyển\n100 người\nHình thức làm việc\nKết hợp tại văn phòng và từ xa (Hybrid)\nLoại hình làm việc\nLàm tại nhà"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/quan-ly-hanh-chinh-dich-vu-ve-sinh/2318364.html",
+   "title": "Quản Lý Hành Chính (Dịch Vụ Vệ Sinh)",
+   "company": "Công ty Cổ phần Đầu tư và Dịch Vụ Minh Quân",
+   "query": "Vệ sinh/Tạp vụ",
+   "score": 0.75,
+   "chips": {
+    "Yêu cầu": [
+     "2 năm kinh nghiệm chuyên môn",
+     "2 năm kinh nghiệm quản lý",
+     "Cao Đẳng trở lên"
+    ],
+    "Chuyên môn": [
+     "Vệ sinh/Tạp vụ",
+     "Năng lượng / Môi trường"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Kiểm tra chất lượng dịch vụ tại dự án\n\nPhối hợp xử lý các vấn đề phát sinh\nĐảm bảo công việc vận hành đúng tiến độ, chất lượng",
+    "Yêu cầu ứng viên": "Có kinh nghiệm quan lý đội nhóm\n\nThành thạo world, excel\n\nKỹ năng giải quyết vấn đề\n\nKiến thức ngành\nNăng lượng / Môi trường",
+    "Quyền lợi ứng viên": "1. Lương từ 10-12tr/tháng\n\n2. Thưởng quản lý\n\n3. Cơ chế lễ tết, đóng BHXH\n\n4. Cung cấp điện thoại, lap",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: số 63/58 thanh bình, Phường Hà Đông (Phường Hà Đông thuộc quận Hà Đông cũ)\nThời gian làm việc\nThứ 2 - Thứ 7 (từ 08:00 đến 17:30)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 04/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nQuản lý / Giám sát\nKinh nghiệm quản lý\n2 năm\nHọc vấn\nCao Đẳng trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite, Kết hợp tại văn phòng và từ xa (Hybrid)\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/nhan-vien-ve-sinh-tai-ha-dong-ha-noi-luong-tu-7-8-5-trieu/2320805.html",
+   "title": "Nhân Viên Vệ Sinh Tại Hà Đông, Hà Nội (Lương Từ 7 - 8,5 Triệu)",
+   "company": "CÔNG TY TNHH IQ SCHOOL",
+   "query": "Vệ sinh/Tạp vụ",
+   "score": 0.67,
+   "chips": {
+    "Yêu cầu": [
+     "Không yêu cầu kinh nghiệm chuyên môn",
+     "Từ 60 tuổi trở xuống",
+     "Trung học cơ sở (Cấp 2) trở lên",
+     "Nữ"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm xã hội",
+     "Bảo hiểm sức khỏe",
+     "Thưởng tháng 13"
+    ],
+    "Chuyên môn": [
+     "Nhân viên dọn vệ sinh",
+     "Lao động phổ thông"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Thực hiện vệ sinh, làm sạch và duy trì cảnh quan tại các khu vực được phân công: sảnh, hành lang, cầu thang, thang máy, lớp học, nhà vệ sinh, khu vực ngoại cảnh, tầng hầm và tầng mái.\nThu gom rác, sử dụng dụng cụ và hóa chất vệ sinh đúng quy định.\nThực hiện công việc theo phân công của Giám sát và đảm bảo khu vực phụ trách luôn sạch sẽ, an toàn, ngăn nắp.",
+    "Yêu cầu ứng viên": "Nữ, dưới 60 tuổi, có sức khỏe tốt.\nChăm chỉ, trung thực, trách nhiệm, có ý thức kỷ luật.\nCó khả năng làm việc theo phân công và phối hợp với đồng nghiệp.\nƯu tiên ứng viên kinh nghiệm làm vệ sinh tại trường học, tòa nhà, khách sạn hoặc môi trường tương tự.",
+    "Quyền lợi ứng viên": "Thu nhập: 7.000.000 – 8.000.000 đồng/tháng.\nSau 06 tháng, thu nhập 8.500.000 đồng/tháng nếu đáp ứng tốt yêu cầu công việc.\nĐược tham gia BHXH, BHYT, BHTN theo quy định.\nĐược cấp 02 bộ đồng phục bảo hộ/năm và đầy đủ dụng cụ, hóa chất, vật tư phục vụ công việc.\nHưởng Thưởng Lễ, Tết và các chế độ phúc lợi theo chính sách của Nhà trường.\nDu Lịch 2 lần/năm cùng tập thể nhà trường.\nMôi trường làm việc thân thiện, ổn định, lâu dài.\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm xã hội, Bảo hiểm sức khỏe, Thưởng tháng 13",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: 55 Lê Lai - Lê Lợi, Phường Hà Đông (Phường Hà Đông thuộc quận Hà Đông cũ)\nThời gian làm việc\nThứ 2 - Thứ 7 (từ 06:00 đến 17:30)\nnghỉ trưa 02 giờ\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 05/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nTrung học cơ sở (Cấp 2) trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/nhan-vien-ve-sinh-cong-cong-public-attendant/2334574.html",
+   "title": "Nhân Viên Vệ Sinh Công Cộng/ Public Attendant",
+   "company": "CÔNG TY CỔ PHẦN IMPERIAL",
+   "query": "Vệ sinh/Tạp vụ",
+   "score": 0.67,
+   "chips": {
+    "Yêu cầu": [
+     "Dưới 1 năm kinh nghiệm chuyên môn",
+     "Trung cấp trở lên",
+     "Nam"
+    ],
+    "Chuyên môn": [
+     "Buồng phòng",
+     "Nhà hàng / Khách sạn"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Chuẩn bị đầy đủ dụng cụ vệ sinh và di chuyển đến những khu vực công cộng đã được phân công như: Sảnh, hành lang, cầu thang bộ, cầu thang máy, WC của khách và nhân viên, phòng tập Gym, phòng Spa..\nĐặt biển lưu ý để du khách, nhân viên cẩn thận hơn khi đi qua khu vực vừa được vệ sinh xong.\nQuét, lau và làm bóng sàn nhà, bàn ghế…\nHút bụi thảm và lau sạch vết bẩn.\nLàm sạch bụi trên tường.\nLau sạch gương, kính…\nThu dọn và làm sạch rác.\nTham gia tổng vệ sinh khu vực công cộng theo định kỳ bao gồm: Làm sạch thảm, trần nhà, đèn chùm, điều hòa và những nơi không quét dọn được thường xuyên khác.\nBáo cáo những sự cố, dấu hiệu khả nghi cho cấp trên.",
+    "Yêu cầu ứng viên": "Ưu tiên ứng viên có kinh nghiệm từng làm Khách sạn;\nGiao tiếp tốt; sức khỏe tốt;\nCó thể làm ca đêm\nKiến thức ngành\nNhà hàng / Khách sạn",
+    "Quyền lợi ứng viên": "Mức lương cạnh tranh, thưởng hiệu suất công việc, phí dịch vụ hàng tháng\nPhụ cấp ca đêm, suất ăn đêm\nMôi trường làm việc chuyên nghiệp, năng động.\nCơ hội thăng tiến và phát triển bản thân.\nĐược đào tạo nâng cao kỹ năng.\nChính sách phúc lợi: sinh nhật, hiếu hỉ, khám sức khỏe định kỳ, giảm giá dịch ưu đãi cho nhân viên.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: 159 Thùy Vân, Phường Vũng Tàu (Phường Vũng Tàu thuộc Thành phố Vũng Tàu cũ)\nThời gian làm việc\nCa hỗn hợp (ngày & đêm)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 18/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nTrung cấp trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  }
+ ]
+}

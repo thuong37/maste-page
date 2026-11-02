@@ -1,0 +1,36 @@
+{
+  "id": 144,
+  "nhom": "Thiết kế",
+  "nghe": "Nghệ thuật/Hoạt hình/Game",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "1/5 JD thực tập sinh (dưới 1 năm), 4/5 JD cấp nhân viên motion graphic (1-4 năm, CĐ/ĐH, 1 JD Senior 4 năm); toàn bộ là motion graphics/video, chưa có JD game, hoạt hình nhân vật hay concept art",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh hoặc nêu ngoại hình/tuổi/giới tính; nghề sáng tạo (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "can — 4/5 nhắc định hướng/quan tâm lĩnh vực (truyền thông, beauty-lifestyle, truyền hình, quảng cáo); nên nêu định hướng motion",
+    "kinh-nghiem-lam-viec": "can — 5/5 nhắc kinh nghiệm (không yêu cầu đến 4 năm), ưu tiên agency, digital, truyền hình, quảng cáo, giải trí",
+    "hoc-van": "can — 5/5 nêu CĐ/ĐH ngành Thiết kế đồ họa, Multimedia, Animation, Mỹ thuật/Kiến trúc",
+    "ky-nang-chuyen-mon": "can — motion graphics, typography animation, logo animation, đồ họa phát sóng (lower-third, opener, bumper), compositing/keying/tracking, dựng video, chỉnh màu cơ bản, template, AI tools",
+    "ky-nang-mem": "can — 4/5: chủ động, trách nhiệm, đúng deadline, làm việc nhóm, giao tiếp",
+    "cong-cu-phan-mem": "can — 5/5: After Effects, Premiere Pro, Illustrator, Photoshop, Cinema 4D/Blender, CapCut, Figma, AI tools (Gemini, Dreamina, Firefly)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — 1/5 nhắc dự án/chiến dịch; nên ghi video/chiến dịch đã làm (suy từ công việc)",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "nen — JD#4 tiếng Anh đọc hiểu/giao tiếp cơ bản; 1/5 nhắc",
+    "portfolio-link": "can — 3/5 nêu thẳng portfolio/showreel: JD#1, JD#2 'portfolio motion & video', JD#3 'portfolio hoặc showreel thể hiện 2D Motion'",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#1 nhận sinh viên năm cuối/mới tốt nghiệp, không yêu cầu kinh nghiệm",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — không JD nào nêu tuổi/giới tính",
+    "so-thich": "nen — JD#1 quan tâm truyền thông, báo chí, thời trang, nội dung số; JD#2 thẩm mỹ beauty-lifestyle (nêu thẳng ở 2/5)"
+  },
+  "tuKhoaNenCo": ["Motion Graphic", "After Effects", "Premiere Pro", "showreel/portfolio", "typography animation", "đồ họa phát sóng", "Cinema 4D", "AI tools video"],
+  "bangChung": [
+    "JD#1: 'Có portfolio hoặc showreel thể hiện các sản phẩm animation, motion graphics'; 'Sinh viên năm cuối hoặc mới tốt nghiệp'",
+    "JD#2: 'Thành thạo After Effects (bắt buộc)'; 'Có portfolio motion & video beauty/lifestyle'",
+    "JD#3: 'Có portfolio hoặc showreel thể hiện rõ năng lực thiết kế 2D Motion'; 'Có tối thiểu 2 năm kinh nghiệm về Motion Graphics'",
+    "JD#4: 'Thành thạo các ứng dụng cơ bản: After Effect, Capcut, Photoshop, Figma'; 'Có kinh nghiệm hoặc sẵn sàng học & ứng dụng AI tools'",
+    "JD#5: 'Tối thiểu 4 năm kinh nghiệm trong quảng cáo hoặc truyền thông'; 'Thành thạo Photoshop, Illustrator, After Effects, Premiere Pro, C4D (cơ bản)'"
+  ],
+  "ghiChu": "Cả 5 JD là motion graphics; chưa phủ game/hoạt hình nhân vật/concept art."
+}

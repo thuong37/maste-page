@@ -1,0 +1,1226 @@
+[
+ {
+  "folder": "Classic",
+  "title": "Cổ Điển 1",
+  "slug": "classic_1",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Classic\\Cổ Điển 1\\Tiếng Anh\\ATS-Cổ Điển 1-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Classic",
+  "title": "Senior",
+  "slug": "senior_v2",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Classic\\Senior\\Tiếng Anh\\ATS-Senior-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Classic",
+  "title": "Senior",
+  "slug": "senior_v2",
+  "style": "Đơn giản",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Classic\\Senior\\Tiếng Trung\\ATS-Senior-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Classic",
+  "title": "Senior 2",
+  "slug": "senior_2",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Classic\\Senior 2\\Tiếng Anh\\ATS-Senior 2-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Basic 3",
+  "slug": "basic_3_v2",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Basic 3\\Tiếng Anh\\ATS-Basic 3-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Basic 3",
+  "slug": "basic_3_v2",
+  "style": "Ấn tượng",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Creative\\Basic 3\\Tiếng Trung\\ATS-Basic 3-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Basic 3",
+  "slug": "basic_3_v2",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Basic 3\\Tiếng Nhật\\ATS-Basic 3-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Basic 5",
+  "slug": "basic_5_v2",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Basic 5\\Tiếng Anh\\ATS-Basic 5-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Basic 5",
+  "slug": "basic_5_v2",
+  "style": "Ấn tượng",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Creative\\Basic 5\\Tiếng Trung\\ATS-Basic 5-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Basic 5",
+  "slug": "basic_5_v2",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Basic 5\\Tiếng Nhật\\ATS-Basic 5-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Chrome",
+  "slug": "chrome",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Chrome\\Tiếng Anh\\ATS-Chrome-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Chrome",
+  "slug": "chrome",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Chrome\\Tiếng Nhật\\ATS-Chrome-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Gradient 1",
+  "slug": "gradient_1_v2",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Gradient 1\\Tiếng Anh\\ATS-Gradient 1-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Gradient 1",
+  "slug": "gradient_1_v2",
+  "style": "Ấn tượng",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Creative\\Gradient 1\\Tiếng Trung\\ATS-Gradient 1-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Gradient 1",
+  "slug": "gradient_1_v2",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Gradient 1\\Tiếng Nhật\\ATS-Gradient 1-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Hello",
+  "slug": "hello",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Hello\\Tiếng Anh\\ATS-Hello-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Hello",
+  "slug": "hello",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Hello\\Tiếng Nhật\\ATS-Hello-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Lập Trình Viên",
+  "slug": "dev_1",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Lập Trình Viên\\Tiếng Anh\\ATS-Lập Trình Viên-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Lập trình viên 2",
+  "slug": "dev_2",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Lập trình viên 2\\Tiếng Anh\\ATS-Lập trình viên 2-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Lập trình viên 2",
+  "slug": "dev_2",
+  "style": "Đơn giản",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Lập trình viên 2\\Tiếng Nhật\\ATS-Lập trình viên 2-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Màu sắc",
+  "slug": "cv_color",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Màu sắc\\Tiếng Anh\\ATS-Màu sắc-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Màu sắc",
+  "slug": "cv_color",
+  "style": "Đơn giản",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Màu sắc\\Tiếng Nhật\\ATS-Màu sắc-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Outstanding",
+  "slug": "outstanding",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Outstanding\\Tiếng Anh\\ATS-Outstanding-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Outstanding",
+  "slug": "outstanding",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Outstanding\\Tiếng Nhật\\ATS-Outstanding-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Outstanding 5",
+  "slug": "outstanding_5",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Outstanding 5\\Tiếng Anh\\ATS-Outstanding 5-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Outstanding 5",
+  "slug": "outstanding_5",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Outstanding 5\\Tiếng Nhật\\ATS-Outstanding 5-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Sáng tạo",
+  "slug": "creative",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Sáng tạo\\Tiếng Anh\\ATS-Sáng tạo-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Sáng tạo",
+  "slug": "creative",
+  "style": "Ấn tượng",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Creative\\Sáng tạo\\Tiếng Trung\\ATS-Sáng tạo-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Sáng tạo",
+  "slug": "creative",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Sáng tạo\\Tiếng Nhật\\ATS-Sáng tạo-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Thời đại",
+  "slug": "time",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Thời đại\\Tiếng Anh\\ATS-Thời đại-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Thời đại",
+  "slug": "time",
+  "style": "Ấn tượng",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Creative\\Thời đại\\Tiếng Trung\\ATS-Thời đại-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Thời đại",
+  "slug": "time",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Thời đại\\Tiếng Nhật\\ATS-Thời đại-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "TikTop",
+  "slug": "tiktop",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\TikTop\\Tiếng Anh\\ATS-TikTop-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "TikTop",
+  "slug": "tiktop",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\TikTop\\Tiếng Nhật\\ATS-TikTop-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Topinstar",
+  "slug": "topinstar",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Topinstar\\Tiếng Anh\\ATS-Topinstar-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Topinstar",
+  "slug": "topinstar",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Topinstar\\Tiếng Nhật\\ATS-Topinstar-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Toppier",
+  "slug": "toppier",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Toppier\\Tiếng Anh\\ATS-Toppier-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Toppier",
+  "slug": "toppier",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Toppier\\Tiếng Nhật\\ATS-Toppier-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Toptify",
+  "slug": "toptify",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Toptify\\Tiếng Anh\\ATS-Toptify-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Toptify",
+  "slug": "toptify",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Toptify\\Tiếng Nhật\\ATS-Toptify-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Twittop",
+  "slug": "twittop",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Twittop\\Tiếng Anh\\ATS-Twittop-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Twittop",
+  "slug": "twittop",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Twittop\\Tiếng Nhật\\ATS-Twittop-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Đam mê",
+  "slug": "passion",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Đam mê\\Tiếng Anh\\ATS-Đam mê-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Đam mê",
+  "slug": "passion",
+  "style": "Ấn tượng",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Creative\\Đam mê\\Tiếng Trung\\ATS-Đam mê-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Đam mê",
+  "slug": "passion",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Đam mê\\Tiếng Nhật\\ATS-Đam mê-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Ấn tượng",
+  "slug": "onepage_impressive_v2",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Creative\\Ấn tượng\\Tiếng Anh\\ATS-Ấn tượng-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Ấn tượng",
+  "slug": "onepage_impressive_v2",
+  "style": "Ấn tượng",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Creative\\Ấn tượng\\Tiếng Trung\\ATS-Ấn tượng-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Creative",
+  "title": "Ấn tượng",
+  "slug": "onepage_impressive_v2",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Creative\\Ấn tượng\\Tiếng Nhật\\ATS-Ấn tượng-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Minimalist",
+  "title": "Chuyên gia",
+  "slug": "experts",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Minimalist\\Chuyên gia\\Tiếng Anh\\ATS-Chuyên gia-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Minimalist",
+  "title": "Chuyên gia",
+  "slug": "experts",
+  "style": "Đơn giản",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Minimalist\\Chuyên gia\\Tiếng Trung\\ATS-Chuyên gia-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Minimalist",
+  "title": "Chuyên gia",
+  "slug": "experts",
+  "style": "Đơn giản",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Minimalist\\Chuyên gia\\Tiếng Nhật\\ATS-Chuyên gia-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Hiện Đại 1",
+  "slug": "modern_1_v2",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Hiện Đại 1\\Tiếng Anh\\ATS-Hiện Đại 1-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Hiện Đại 1",
+  "slug": "modern_1_v2",
+  "style": "Đơn giản",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Modern\\Hiện Đại 1\\Tiếng Trung\\ATS-Hiện Đại 1-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Hiện Đại 1",
+  "slug": "modern_1_v2",
+  "style": "Đơn giản",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Hiện Đại 1\\Tiếng Nhật\\ATS-Hiện Đại 1-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Minimalist",
+  "title": "Một Trang Cổ Điển",
+  "slug": "onepage_classic",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Minimalist\\Một Trang Cổ Điển\\Tiếng Anh\\ATS-Một Trang Cổ Điển-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Thanh lịch",
+  "slug": "elegant",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Thanh lịch\\Tiếng Anh\\ATS-Thanh lịch-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Thanh lịch",
+  "slug": "elegant",
+  "style": "Đơn giản",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Modern\\Thanh lịch\\Tiếng Trung\\ATS-Thanh lịch-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Thanh lịch",
+  "slug": "elegant",
+  "style": "Đơn giản",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Thanh lịch\\Tiếng Nhật\\ATS-Thanh lịch-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Minimalist",
+  "title": "Tiêu chuẩn",
+  "slug": "default_v2",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Minimalist\\Tiêu chuẩn\\Tiếng Anh\\ATS-Tiêu chuẩn-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Minimalist",
+  "title": "Tiêu chuẩn",
+  "slug": "default_v2",
+  "style": "Đơn giản",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Minimalist\\Tiêu chuẩn\\Tiếng Trung\\ATS-Tiêu chuẩn-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Minimalist",
+  "title": "Tiêu chuẩn",
+  "slug": "default_v2",
+  "style": "Đơn giản",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Minimalist\\Tiêu chuẩn\\Tiếng Nhật\\ATS-Tiêu chuẩn-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Basic 2",
+  "slug": "basic_2",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Basic 2\\Tiếng Anh\\ATS-Basic 2-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Basic 2",
+  "slug": "basic_2",
+  "style": "Đơn giản",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Basic 2\\Tiếng Nhật\\ATS-Basic 2-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Bright",
+  "slug": "bright",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Bright\\Tiếng Anh\\ATS-Bright-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Bright",
+  "slug": "bright",
+  "style": "Ấn tượng",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Modern\\Bright\\Tiếng Trung\\ATS-Bright-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Bright",
+  "slug": "bright",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Bright\\Tiếng Nhật\\ATS-Bright-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Chuyên Nghiệp 1",
+  "slug": "pro_1_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Chuyên Nghiệp 1\\Tiếng Anh\\ATS-Chuyên Nghiệp 1-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Chuyên Nghiệp 1",
+  "slug": "pro_1_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Modern\\Chuyên Nghiệp 1\\Tiếng Trung\\ATS-Chuyên Nghiệp 1-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Chuyên Nghiệp 1",
+  "slug": "pro_1_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Chuyên Nghiệp 1\\Tiếng Nhật\\ATS-Chuyên Nghiệp 1-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Chuyên Nghiệp 3",
+  "slug": "pro_3",
+  "style": "Chuyên nghiệp",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Chuyên Nghiệp 3\\Tiếng Anh\\ATS-Chuyên Nghiệp 3-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Dòng Thời Gian 2",
+  "slug": "timeline_clean_2",
+  "style": "Hiện đại",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Dòng Thời Gian 2\\Tiếng Anh\\ATS-Dòng Thời Gian 2-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Dòng Thời Gian 2",
+  "slug": "timeline_clean_2",
+  "style": "Hiện đại",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Dòng Thời Gian 2\\Tiếng Nhật\\ATS-Dòng Thời Gian 2-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Hiện Đại 3",
+  "slug": "modern_3",
+  "style": "Hiện đại",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Hiện Đại 3\\Tiếng Anh\\ATS-Hiện Đại 3-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Hiện Đại 4",
+  "slug": "modern_4_v2",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Hiện Đại 4\\Tiếng Anh\\ATS-Hiện Đại 4-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Hiện Đại 4",
+  "slug": "modern_4_v2",
+  "style": "Ấn tượng",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Modern\\Hiện Đại 4\\Tiếng Trung\\ATS-Hiện Đại 4-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Hiện Đại 4",
+  "slug": "modern_4_v2",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Hiện Đại 4\\Tiếng Nhật\\ATS-Hiện Đại 4-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Hiện Đại 5",
+  "slug": "modern_5",
+  "style": "Hiện đại",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Hiện Đại 5\\Tiếng Anh\\ATS-Hiện Đại 5-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Hiện đại 6",
+  "slug": "modern_6_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Hiện đại 6\\Tiếng Anh\\ATS-Hiện đại 6-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Hiện đại 6",
+  "slug": "modern_6_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Modern\\Hiện đại 6\\Tiếng Trung\\ATS-Hiện đại 6-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Hiện đại 6",
+  "slug": "modern_6_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Hiện đại 6\\Tiếng Nhật\\ATS-Hiện đại 6-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Outstanding 10",
+  "slug": "outstanding_10_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Outstanding 10\\Tiếng Anh\\ATS-Outstanding 10-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Outstanding 10",
+  "slug": "outstanding_10_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Modern\\Outstanding 10\\Tiếng Trung\\ATS-Outstanding 10-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Outstanding 10",
+  "slug": "outstanding_10_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Outstanding 10\\Tiếng Nhật\\ATS-Outstanding 10-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Outstanding 2",
+  "slug": "outstanding_2",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Outstanding 2\\Tiếng Anh\\ATS-Outstanding 2-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Outstanding 2",
+  "slug": "outstanding_2",
+  "style": "Đơn giản",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Outstanding 2\\Tiếng Nhật\\ATS-Outstanding 2-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Outstanding 3",
+  "slug": "outstanding_3",
+  "style": "Chuyên nghiệp",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Outstanding 3\\Tiếng Anh\\ATS-Outstanding 3-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Outstanding 3",
+  "slug": "outstanding_3",
+  "style": "Chuyên nghiệp",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Outstanding 3\\Tiếng Nhật\\ATS-Outstanding 3-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Outstanding 7",
+  "slug": "outstanding_7",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Outstanding 7\\Tiếng Anh\\ATS-Outstanding 7-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Outstanding 7",
+  "slug": "outstanding_7",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Outstanding 7\\Tiếng Nhật\\ATS-Outstanding 7-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Outstanding 9",
+  "slug": "outstanding_9",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Outstanding 9\\Tiếng Anh\\ATS-Outstanding 9-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Outstanding 9",
+  "slug": "outstanding_9",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Outstanding 9\\Tiếng Nhật\\ATS-Outstanding 9-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Sinh Viên",
+  "slug": "tiny_1",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Sinh Viên\\Tiếng Anh\\ATS-Sinh Viên-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Sinh viên 3",
+  "slug": "student_3",
+  "style": "Chuyên nghiệp",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Sinh viên 3\\Tiếng Anh\\ATS-Sinh viên 3-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Sinh viên 3",
+  "slug": "student_3",
+  "style": "Chuyên nghiệp",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Modern\\Sinh viên 3\\Tiếng Trung\\ATS-Sinh viên 3-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Sinh viên 3",
+  "slug": "student_3",
+  "style": "Chuyên nghiệp",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Sinh viên 3\\Tiếng Nhật\\ATS-Sinh viên 3-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Thanh Lịch 1",
+  "slug": "onepage_elegant_v2",
+  "style": "Hiện đại",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Thanh Lịch 1\\Tiếng Anh\\ATS-Thanh Lịch 1-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Thanh Lịch 1",
+  "slug": "onepage_elegant_v2",
+  "style": "Hiện đại",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Modern\\Thanh Lịch 1\\Tiếng Trung\\ATS-Thanh Lịch 1-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Tinh tế 1",
+  "slug": "delicate_1",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Tinh tế 1\\Tiếng Anh\\ATS-Tinh tế 1-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Tinh tế 1",
+  "slug": "delicate_1",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Tinh tế 1\\Tiếng Nhật\\ATS-Tinh tế 1-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Ấn tượng 2",
+  "slug": "onepage_impressive_2_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Ấn tượng 2\\Tiếng Anh\\ATS-Ấn tượng 2-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Ấn tượng 2",
+  "slug": "onepage_impressive_2_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Modern\\Ấn tượng 2\\Tiếng Trung\\ATS-Ấn tượng 2-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Ấn tượng 2",
+  "slug": "onepage_impressive_2_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Ấn tượng 2\\Tiếng Nhật\\ATS-Ấn tượng 2-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Ấn tượng 3",
+  "slug": "impressive_3_v2",
+  "style": "Hiện đại",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Ấn tượng 3\\Tiếng Anh\\ATS-Ấn tượng 3-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Ấn tượng 3",
+  "slug": "impressive_3_v2",
+  "style": "Hiện đại",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Modern\\Ấn tượng 3\\Tiếng Trung\\ATS-Ấn tượng 3-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Ấn tượng 5",
+  "slug": "impressive_5",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Ấn tượng 5\\Tiếng Anh\\ATS-Ấn tượng 5-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Ấn tượng 5",
+  "slug": "impressive_5",
+  "style": "Đơn giản",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Ấn tượng 5\\Tiếng Nhật\\ATS-Ấn tượng 5-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Basic 1",
+  "slug": "basic_1_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Professional\\Basic 1\\Tiếng Anh\\ATS-Basic 1-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Basic 1",
+  "slug": "basic_1_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Professional\\Basic 1\\Tiếng Trung\\ATS-Basic 1-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Basic 1",
+  "slug": "basic_1_v2",
+  "style": "Chuyên nghiệp",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Professional\\Basic 1\\Tiếng Nhật\\ATS-Basic 1-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Cao Cấp",
+  "slug": "premium_v2",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Professional\\Cao Cấp\\Tiếng Anh\\ATS-Cao Cấp-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Cao Cấp",
+  "slug": "premium_v2",
+  "style": "Ấn tượng",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Professional\\Cao Cấp\\Tiếng Trung\\ATS-Cao Cấp-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Clarity",
+  "slug": "clarity",
+  "style": "Chuyên nghiệp",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Professional\\Clarity\\Tiếng Anh\\ATS-Clarity-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Clarity",
+  "slug": "clarity",
+  "style": "Chuyên nghiệp",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Professional\\Clarity\\Tiếng Trung\\ATS-Clarity-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Clarity",
+  "slug": "clarity",
+  "style": "Chuyên nghiệp",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Professional\\Clarity\\Tiếng Nhật\\ATS-Clarity-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Minimalist",
+  "title": "Kỹ Sư Phần Mềm",
+  "slug": "software_engineer",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Minimalist\\Kỹ Sư Phần Mềm\\Tiếng Anh\\ATS-Kỹ Sư Phần Mềm-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Tham vọng",
+  "slug": "ambitious",
+  "style": "Chuyên nghiệp",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Professional\\Tham vọng\\Tiếng Anh\\ATS-Tham vọng-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Tham vọng",
+  "slug": "ambitious",
+  "style": "Chuyên nghiệp",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Professional\\Tham vọng\\Tiếng Trung\\ATS-Tham vọng-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Tham vọng",
+  "slug": "ambitious",
+  "style": "Chuyên nghiệp",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Professional\\Tham vọng\\Tiếng Nhật\\ATS-Tham vọng-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Tham vọng 1",
+  "slug": "ambitious_1",
+  "style": "Chuyên nghiệp",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Professional\\Tham vọng 1\\Tiếng Anh\\ATS-Tham vọng 1-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Tham vọng 1",
+  "slug": "ambitious_1",
+  "style": "Chuyên nghiệp",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Professional\\Tham vọng 1\\Tiếng Trung\\ATS-Tham vọng 1-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Tham vọng 1",
+  "slug": "ambitious_1",
+  "style": "Chuyên nghiệp",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Professional\\Tham vọng 1\\Tiếng Nhật\\ATS-Tham vọng 1-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Thanh nhã",
+  "slug": "graceful",
+  "style": "Chuyên nghiệp",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Thanh nhã\\Tiếng Anh\\ATS-Thanh nhã-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Thanh nhã",
+  "slug": "graceful",
+  "style": "Chuyên nghiệp",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Modern\\Thanh nhã\\Tiếng Trung\\ATS-Thanh nhã-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Thanh nhã",
+  "slug": "graceful",
+  "style": "Chuyên nghiệp",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Thanh nhã\\Tiếng Nhật\\ATS-Thanh nhã-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Thành đạt",
+  "slug": "prosper",
+  "style": "Chuyên nghiệp",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Professional\\Thành đạt\\Tiếng Anh\\ATS-Thành đạt-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Thành đạt",
+  "slug": "prosper",
+  "style": "Chuyên nghiệp",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Professional\\Thành đạt\\Tiếng Trung\\ATS-Thành đạt-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Thành đạt",
+  "slug": "prosper",
+  "style": "Chuyên nghiệp",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Professional\\Thành đạt\\Tiếng Nhật\\ATS-Thành đạt-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Minimalist",
+  "title": "Tiêu chuẩn (ít kinh nghiệm)",
+  "slug": "default_junior",
+  "style": "Đơn giản",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Minimalist\\Tiêu chuẩn (ít kinh nghiệm)\\Tiếng Anh\\ATS-Tiêu chuẩn (ít kinh nghiệm)-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Minimalist",
+  "title": "Tiêu chuẩn (ít kinh nghiệm)",
+  "slug": "default_junior",
+  "style": "Đơn giản",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Minimalist\\Tiêu chuẩn (ít kinh nghiệm)\\Tiếng Trung\\ATS-Tiêu chuẩn (ít kinh nghiệm)-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Minimalist",
+  "title": "Tiêu chuẩn (ít kinh nghiệm)",
+  "slug": "default_junior",
+  "style": "Đơn giản",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Minimalist\\Tiêu chuẩn (ít kinh nghiệm)\\Tiếng Nhật\\ATS-Tiêu chuẩn (ít kinh nghiệm)-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Trang trọng",
+  "slug": "formal",
+  "style": "Ấn tượng",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Modern\\Trang trọng\\Tiếng Anh\\ATS-Trang trọng-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Trang trọng",
+  "slug": "formal",
+  "style": "Ấn tượng",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Modern\\Trang trọng\\Tiếng Trung\\ATS-Trang trọng-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Modern",
+  "title": "Trang trọng",
+  "slug": "formal",
+  "style": "Ấn tượng",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Modern\\Trang trọng\\Tiếng Nhật\\ATS-Trang trọng-Tiếng Nhật.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Ấn tượng 6",
+  "slug": "impressive_6_v2",
+  "style": "Hiện đại",
+  "lang": "en",
+  "langName": "Tiếng Anh",
+  "pdf": "assets\\cv-style\\Professional\\Ấn tượng 6\\Tiếng Anh\\ATS-Ấn tượng 6-Tiếng Anh.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Ấn tượng 6",
+  "slug": "impressive_6_v2",
+  "style": "Hiện đại",
+  "lang": "cn",
+  "langName": "Tiếng Trung",
+  "pdf": "assets\\cv-style\\Professional\\Ấn tượng 6\\Tiếng Trung\\ATS-Ấn tượng 6-Tiếng Trung.pdf"
+ },
+ {
+  "folder": "Professional",
+  "title": "Ấn tượng 6",
+  "slug": "impressive_6_v2",
+  "style": "Hiện đại",
+  "lang": "jp",
+  "langName": "Tiếng Nhật",
+  "pdf": "assets\\cv-style\\Professional\\Ấn tượng 6\\Tiếng Nhật\\ATS-Ấn tượng 6-Tiếng Nhật.pdf"
+ }
+]

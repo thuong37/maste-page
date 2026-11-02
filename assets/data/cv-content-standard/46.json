@@ -1,0 +1,37 @@
+{
+  "id": 46,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Sales IT Phần mềm",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên kinh doanh phần mềm; 4/6 không hoặc dưới 1 năm kinh nghiệm (3-6 tháng sales), 2/6 cần 2 năm; trung cấp/cao đẳng trở lên, 1 JD ĐH; trùng phần lớn với nghề id 12",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; JD#5 chỉ tuyển Nữ, giọng miền Bắc, phát âm chuẩn (1/6); nghề gặp khách doanh nghiệp nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 4/6 JD nhắc đam mê kinh doanh/nhiệt huyết/cầu tiến; dùng để nêu định hướng sales giải pháp công nghệ",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc; 3-6 tháng sales đến 2 năm B2B, ưu tiên sales phần mềm/thương mại điện tử/giải pháp CNTT",
+    "hoc-van": "can — 6/6 nêu bậc học; ưu tiên Kinh doanh, CNTT, QTKD, Kế toán, Tài chính (JD#5 không phân biệt ngành)",
+    "ky-nang-chuyen-mon": "can — 6/6: tư vấn giải pháp phần mềm, demo/thuyết trình, báo giá, đàm phán và ký hợp đồng, phát triển khách hàng B2B, thu hồi công nợ, chăm sóc trước và sau bán",
+    "ky-nang-mem": "can — 6/6: giao tiếp, thuyết phục, chủ động, chịu áp lực, tư duy logic, làm việc nhóm/độc lập, tự học",
+    "cong-cu-phan-mem": "can — 4/6: tin học văn phòng, laptop cá nhân (JD#2, #5, #6), hiểu phần mềm quản lý bán hàng/kế toán/nhân sự (JD#4, #6)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — JD#4 phối hợp phục vụ đơn hàng/dự án đã chốt (1/6)",
+    "thanh-tich-kpi": "nen — JD#3 chịu trách nhiệm về kết quả, theo dõi cơ hội bán hàng (1-2/6); không JD nêu chỉ tiêu cụ thể",
+    "ngoai-ngu": "nen — 3/6: tiếng Anh đọc hiểu (JD#3, #4), giao tiếp cơ bản (JD#4), ưu tiên tiếng Trung (JD#2)",
+    "portfolio-link": "khong — không JD nào nhắc (tín hiệu 1/6 không xác nhận)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 JD nhận ứng viên mới/dưới 1 năm kinh nghiệm (JD#1, #5, #6)",
+    "giay-phep": "can — 3/6 JD yêu cầu phương tiện di chuyển/laptop cá nhân (JD#2, #6 và laptop JD#5)",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#2 tuổi 22-35, JD#4 tuổi 25-40, JD#5 chỉ Nữ giọng miền Bắc (3/6 nêu độ tuổi/giới tính)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["sales phần mềm", "B2B", "tư vấn giải pháp", "demo sản phẩm", "ký hợp đồng", "phần mềm quản lý bán hàng", "chuyển đổi số", "CRM", "laptop cá nhân"],
+  "bangChung": [
+    "JD#1: 'Kinh nghiệm từ 6 tháng trở lên'; 'Ưu tiên có kinh nghiệm ... khách hàng doanh nghiệp (B2B)'",
+    "JD#2: 'Ưu tiên có kinh nghiệm ngành thương mại điện tử và phần mềm quản lý bán hàng'; 'Có laptop cá nhân và phương tiện di chuyển'; 'Tuổi 22 - 35'",
+    "JD#3: 'Chuẩn bị và thực hiện demo, thuyết trình sản phẩm'; 'Tiếng Anh Đọc hiểu'",
+    "JD#4: 'Kinh nghiệm > 2 năm ... sale tệp khách hàng B2B'; 'thu hồi công nợ'",
+    "JD#5: 'Chỉ tuyển Nữ'; 'Giọng miền Bắc'; 'Có laptop cá nhân'",
+    "JD#6: 'Khả năng sử dụng tin học văn phòng cơ bản'; 'Có phương tiện di chuyển'"
+  ],
+  "ghiChu": "Trùng gần hoàn toàn bộ JD của nghề id 12 (Sales IT Phần mềm, nhóm Kinh doanh); kết luận tương tự."
+}

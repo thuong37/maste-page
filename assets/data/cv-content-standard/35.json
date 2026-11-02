@@ -1,0 +1,35 @@
+{
+  "id": 35,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Software Testing",
+  "soJD": 4,
+  "doTinCay": "vua",
+  "capBac": "4/4 JD cấp nhân viên tester/QA (1-5 năm kinh nghiệm); cao đẳng/ĐH, ưu tiên CNTT; 1 JD Senior Tester ngân hàng (5 năm)",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình; công việc kiểm thử (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#4 nghiên cứu cải tiến automation test (1/4); dùng để nêu định hướng manual/automation",
+    "kinh-nghiem-lam-viec": "can — 4/4 JD nhắc 1-5 năm tester/QA; Web/Mobile/API, ngân hàng-tài chính (JD#4)",
+    "hoc-van": "can — 4/4 nêu cao đẳng/ĐH, ngành CNTT, Hệ thống thông tin, Khoa học máy tính",
+    "ky-nang-chuyen-mon": "can — 4/4: phân tích yêu cầu, viết test case/test plan, functional/regression/UI test, báo cáo bug và theo dõi đến khi đóng, kiểm thử API, SIT/UAT, hiểu SDLC/STLC",
+    "ky-nang-mem": "can — 4/4: tư duy logic, cẩn thận, trách nhiệm, giao tiếp phối hợp với Developer/BA, thuyết trình (JD#3)",
+    "cong-cu-phan-mem": "can — 4/4: Jira, Redmine, Bugzilla, QC, Postman, Swagger, SoapUI, SQL, Selenium/Java automation (JD#4), Test Management tools",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ (ISTQB không được nêu)",
+    "du-an": "can — 3/4 nhắc dự án/sản phẩm đã kiểm thử (JD#1 sản phẩm Web/Mobile, JD#2 Mobile App, JD#4 hệ thống ngân hàng); nên nêu dự án và loại kiểm thử",
+    "thanh-tich-kpi": "nen — không JD nêu chỉ tiêu; nên nêu số bug phát hiện/test case thực thi (suy từ tính chất công việc)",
+    "ngoai-ngu": "nen — JD#3 tiếng Anh thành thạo là lợi thế; JD#4 JD viết bằng tiếng Anh (3/4 tín hiệu ngoại ngữ)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — 4/4 JD đòi 1-5 năm kinh nghiệm",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — không JD nào nêu độ tuổi/giới tính; JD#3 chỉ yêu cầu có laptop cá nhân",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Manual Tester", "Test Case/Test Plan", "Regression/Functional Testing", "Jira", "Postman/API testing", "SQL", "SIT/UAT", "Mobile App testing", "Automation"],
+  "bangChung": [
+    "JD#1: 'Có từ 02 năm ... Tester/Manual Tester'; 'Jira, Redmine'; 'Postman/Swagger'",
+    "JD#2: 'Có 1–3 năm kinh nghiệm QA/QC/Tester'; 'Mobile App (iOS/Android)'; 'Postman'",
+    "JD#3: 'Có từ 03 năm'; 'Test Management tools'; 'Defect Tracking tools: Jira, QC, Bugzilla'; 'Tiếng Anh thành thạo là một lợi thế'",
+    "JD#4: 'ít nhất 5 năm ... Testing with Banking/Financial product'; 'SoapUI, Postman'; 'automation test script base on Java'"
+  ],
+  "ghiChu": "Chỉ 4 JD."
+}

@@ -1,0 +1,36 @@
+{
+  "id": 148,
+  "nhom": "Nhà hàng/Khách sạn/Du lịch",
+  "nghe": "Nhà hàng/Dịch vụ ăn uống",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "4/6 JD nhân viên (bếp, phục vụ x2, phụ bếp; từ THCS/THPT, 3/6 không yêu cầu kinh nghiệm), 1 JD trưởng ca phục vụ (1 năm, Cao đẳng, 23-28 tuổi), 1 JD quản lý chuỗi bếp ăn công nghiệp (1 năm, 1 năm quản lý, Cao đẳng)",
+  "muc": {
+    "anh-chan-dung": "nen — JD không nhắc ảnh/ngoại hình; chỉ nêu độ tuổi/giới tính (3/6); nghề phục vụ tiếp khách nên ảnh thân thiện là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#2 và JD#3 nhắc 'tinh thần học hỏi, cầu tiến', JD#1 'ham học hỏi'; 2/6 JD; nên nêu mong muốn gắn bó ngành F&B (suy)",
+    "kinh-nghiem-lam-viec": "can — 5/6 JD nhắc kinh nghiệm: bếp từ 6 tháng (JD#1), phụ bếp 1 năm (JD#4), trưởng ca 1 năm (JD#5), quản lý bếp ăn công nghiệp 1 năm quản lý (JD#6); 2 JD phục vụ không yêu cầu",
+    "hoc-van": "nen — 6/6 nêu bậc học (THCS/THPT đến Cao đẳng); chỉ JD#5, JD#6 nêu chuyên ngành (Quản trị nhà hàng - khách sạn, Công nghệ thực phẩm)",
+    "ky-nang-chuyen-mon": "can — chế biến/sơ chế (JD#1, #4), nhận order và phục vụ món/đồ uống (JD#2, #3), điều phối ca (JD#5), lập kế hoạch sản xuất suất ăn và kiểm soát chất lượng (JD#6), vệ sinh an toàn thực phẩm (JD#2)",
+    "ky-nang-mem": "can — 6/6: giao tiếp, làm việc nhóm, nhanh nhẹn, siêng năng, trung thực, trách nhiệm, chịu áp lực",
+    "cong-cu-phan-mem": "nen — 2/6: JD#5 Word, Excel, PowerPoint, JD#6 Microsoft Office (Word, Excel)",
+    "chung-chi": "khong — không JD nào nhắc chứng chỉ; JD#2 chỉ nhắc tuân thủ quy định vệ sinh an toàn thực phẩm",
+    "du-an": "khong — không JD nào nhắc dự án",
+    "thanh-tich-kpi": "khong — không JD nào nhắc chỉ tiêu/số liệu",
+    "ngoai-ngu": "nen — 2/6: JD#1 tiếng Nhật hoặc Anh thành thạo là lợi thế, JD#5 tiếng Anh giao tiếp cơ bản",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 JD không yêu cầu kinh nghiệm, đào tạo từ đầu; hoạt động làm thêm phục vụ/bếp phù hợp ứng viên mới (suy)",
+    "giay-phep": "khong — không JD nào nhắc bằng lái/giấy phép; chưa JD nào nhắc giấy khám sức khỏe/chứng nhận ATTP",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/6 JD nêu tuổi/giới tính/sức khỏe/ca làm: JD#1 18-40, JD#2 18-32 sức khỏe tốt, ca cuối tuần, JD#4 Nam 25-45, JD#5 23-28",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["nhân viên phục vụ", "bếp/phụ bếp", "order", "vệ sinh an toàn thực phẩm", "làm việc theo ca", "trưởng ca", "bếp ăn công nghiệp", "quản trị nhà hàng - khách sạn", "Microsoft Office", "tiếng Anh giao tiếp"],
+  "bangChung": [
+    "JD#1: 'Kinh nghiệm từ 6 tháng trở lên'; 'Giao tiếp tiếng Nhật hoặc tiếng Anh thành thạo là lợi thế'; 'Độ tuổi: 18 – 40'",
+    "JD#2: 'Không yêu cầu kinh nghiệm'; 'Tuân thủ nghiêm ngặt các quy định về vệ sinh an toàn thực phẩm'; 'làm việc theo ca, kể cả cuối tuần và ngày lễ'",
+    "JD#4: 'Nam Có kinh nghiệm phụ bếp và biết nấu ăn'; 'Thời gian làm việc từ 7h30-16h30'",
+    "JD#5: 'Cao đẳng/ Đại học / Chuyên ngành quản trị Nhà hàng khách sạn'; 'Sử dụng tốt Word, Excel, Powerpoint'; 'Ưu tiên 23 - 28 tuổi'",
+    "JD#6: 'Có từ 01 năm kinh nghiệm ở vị trí Điều hành, Giám sát hoặc Quản lý ... suất ăn công nghiệp'; 'Thành thạo Microsoft Office (Word, Excel)'"
+  ],
+  "ghiChu": "Nhiều vị trí (bếp, phục vụ, trưởng ca, quản lý bếp ăn); nhân viên cơ sở ít yêu cầu bằng cấp và công cụ."
+}

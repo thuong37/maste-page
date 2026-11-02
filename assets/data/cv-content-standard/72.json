@@ -1,0 +1,36 @@
+{
+  "id": 72,
+  "nhom": "Xây dựng",
+  "nghe": "Quản lý dự án xây dựng",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "2/5 JD nhân viên/kỹ sư (1-2 năm), 1 quản lý (5 năm, 2 năm quản lý), 1 trưởng ban (15-20 năm), 1 chuyên viên chi phí (trên 5 năm); Cao đẳng/Đại học xây dựng, cơ khí, điện",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; 3/5 nêu giới tính Nam, 2/5 nêu độ tuổi (30-45, 40-50); cấp quản lý nên có ảnh nghiêm túc (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — không JD nhắc trực tiếp; nên nêu định hướng quản lý dự án (suy từ tính chất công việc)",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD nêu số năm (1 đến 20 năm), ưu tiên dự án cao tầng/khách sạn/nhà máy; nên ghi loại và quy mô dự án",
+    "hoc-van": "can — 5/5 nêu bậc học và chuyên ngành Xây dựng, Kiến trúc, Cơ điện, Kinh tế xây dựng, Quản lý dự án",
+    "ky-nang-chuyen-mon": "can — 5/5: quản lý tiến độ, dự toán/BOQ, đấu thầu, giám sát thi công, nghiệm thu, bàn giao, điều phối chủ đầu tư/tư vấn/nhà thầu",
+    "ky-nang-mem": "nen — 2/5: lãnh đạo, tổ chức công việc; phần lớn JD không liệt kê kỹ năng mềm",
+    "cong-cu-phan-mem": "nen — 2/5: AutoCAD, MS Project, phần mềm văn phòng, dự toán",
+    "chung-chi": "can — 2/5: chứng chỉ năng lực QLDA hạng I (1 JD), chứng chỉ chuyên ngành khác (1 JD)",
+    "du-an": "can — 5/5 JD xoay quanh dự án; JD#3 yêu cầu từ 1 dự án khách sạn/resort; nên nêu tên, quy mô, vai trò",
+    "thanh-tich-kpi": "nen — nhắc kiểm soát tiến độ, chi phí; không có chỉ tiêu số cụ thể; nên có giá trị dự án, số dự án đã bàn giao",
+    "ngoai-ngu": "nen — 2/5: tiếng Anh giao tiếp cơ bản/đọc hiểu, tiếng Anh chuyên ngành là lợi thế",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhận mới ra trường",
+    "giay-phep": "nen — 1/5 nhắc dự án ở nhiều tỉnh (đi công trình); không JD nhắc bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "nen — 4/5 nêu giới tính/độ tuổi; nên có độ tuổi, nơi ở",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["quản lý dự án xây dựng", "tiến độ", "dự toán/BOQ", "đấu thầu", "giám sát thi công", "nghiệm thu bàn giao", "MS Project", "AutoCAD", "chứng chỉ QLDA", "chủ đầu tư/nhà thầu"],
+  "bangChung": [
+    "JD#1: 'Quản lý toàn bộ quá trình dự án từ giai đoạn khảo sát, thiết kế, đấu thầu, thi công, nghiệm thu'",
+    "JD#2: 'Thành thạo AutoCAD, MS Project và các phần mềm kỹ thuật khác'; 'Nam'",
+    "JD#3: 'Đã trực tiếp tham gia ít nhất 01 dự án khách sạn, resort'; 'Tuổi 30 - 45'",
+    "JD#4: 'Chứng chỉ năng lực QLDA đầu tư xây dựng công trình ... Hạng I'; 'Kinh nghiệm: 15-20 năm'",
+    "JD#5: 'Sở hữu các chứng chỉ chuyên ngành khác'; 'Tiếng Anh chuyên ngành là một lợi thế'"
+  ],
+  "ghiChu": "Chỉ có 5 JD."
+}

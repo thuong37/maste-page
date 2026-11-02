@@ -1,0 +1,120 @@
+{
+ "id": 34,
+ "nhom": "Công nghệ Thông tin",
+ "nghe": "Software Engineering",
+ "crawledAt": "2026-10-22T03:13:39.628Z",
+ "candidates": 128,
+ "thin": false,
+ "jds": [
+  {
+   "url": "https://www.topcv.vn/viec-lam/mobile-game-developer-fullstack-5exp-java-c-c/2335819.html",
+   "title": "Mobile Game Developer Fullstack 5EXP Java, C++, C#",
+   "company": "CÔNG TY CỔ PHẦN GIẢI TRÍ 568E",
+   "query": "Software Engineering",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "5 năm kinh nghiệm chuyên môn",
+     "Tuổi 24 - 40",
+     "Trung cấp trở lên"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm sức khỏe",
+     "Phụ cấp thâm niên",
+     "Phụ cấp: Ăn trưa"
+    ],
+    "Chuyên môn": [
+     "Game Developer",
+     "Game"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "• Tham gia phát triển, bảo trì và vận hành các sản phẩm Game (Web và Mobile).\n• Lập trình các tính năng gameplay theo Game Design và yêu cầu của sản phẩm.\n• Xây dựng các hệ thống trong game: nhân vật, chiến đấu, kỹ năng, vật phẩm, nhiệm vụ, sự kiện, shop, UI, tài nguyên, animation và các module liên quan.\n• Phát triển và tối ưu game trên nhiều nền tảng: Web, Android và iOS.\n• Làm việc với các game engine/framework như Cocos Creator, Unity hoặc công nghệ tương đương.\n• Tích hợp giao tiếp giữa Game Client và Game Server qua HTTP/HTTPS, WebSocket, TCP hoặc giao thức phù hợp.\n• Phân tích và xử lý lỗi gameplay, logic, UI, network, tài nguyên và hiệu năng.\n• Tối ưu FPS, CPU, memory, draw call, loading time, network traffic và dung lượng game.\n• Phối hợp với các team liên quan để triển khai tính năng.\n• Review code, refactor và cải thiện chất lượng source code hiện có.\n• Phân tích bug từ log, dữ liệu thực tế và phản hồi của người chơi; xác định root cause và đưa ra giải pháp.",
+    "Yêu cầu ứng viên": "• Có ít nhất 5 năm kinh nghiệm lập trình game thực tế.\n• Đã trực tiếp tham gia phát triển ít nhất một sản phẩm Mobile Game hoặc Web Game.\n• Có kiến thức tốt về lập trình hướng đối tượng, cấu trúc dữ liệu, thuật toán và tư duy logic.\n• Thành thạo ít nhất một trong các ngôn ngữ: TypeScript/JavaScript, C#, C/C++, PHP, Java.\n• Có kinh nghiệm tốt về lập trình phía server side, hiểu rõ các cơ chế làm việc ở tầng server.\n• Có kinh nghiệm với ít nhất một game engine/framework như Cocos Creator, Unity hoặc công nghệ tương đương.\n• Hiểu rõ game loop, scene, component, event, animation, asset/resource management và object lifecycle.\n• Có khả năng đọc hiểu, phân tích, debug và phát triển tiếp trên source code của dự án có sẵn.\n• Hiểu cách Game Client giao tiếp với Game Server.\n• Có kinh nghiệm sử dụng Git và quy trình quản lý source code theo team.\n• Có khả năng làm việc độc lập, estimate công việc và phối hợp tốt trong team.\n• Có kiến thức về Database, đặc biệt SQL và mô hình dữ liệu; hiểu query, index, transaction và có khả năng đọc/truy vấn dữ liệu phục vụ debug. Kinh nghiệm với MySQL/MariaDB, Redis hoặc database tương đương là lợi thế.\n• Có kiến thức và khả năng làm việc trên hệ thống Linux: command line, process/service, file permission, log, SSH/SCP/rsync, shell script và các công cụ kiểm tra tài nguyên/network cơ bản.\n• Có khả năng phân tích và debug các vấn đề network của game như timeout, mất kết nối, reconnect, latency cao, packet loss và lỗi giao tiếp giữa Game Client – Game Server.\n• Có kiến thức nền tảng tốt về Network và các mô hình/giao thức mạng; hiểu TCP/IP, TCP, UDP, HTTP/HTTPS, WebSocket, DNS, socket, port, latency, packet loss và cơ chế kết nối Client–Server.\n• Biết áp dụng tốt các AI model vào công việc.\n\nKiến thức ngành\nGame\nKỹ năng cần có\nC++, Java",
+    "Quyền lợi ứng viên": "Phúc lợi\n• Quà cho dịp Lễ, Tết\n• Thưởng cuối năm,.. tùy thuộc vào tình hình SXKD thực tế\n• Được cấp thẻ Bảo hiểm sức khỏe Bảo Việt khi trở thành nhân viên chính thức\n• Thâm niên cứ 3 năm được cộng thêm 1 ngày phép\n• Nghỉ hưởng lương (không trừ phép năm) khi:\n• Bản thân kết hôn: 3 ngày\n• Con kết hôn: 1 ngày\n• Người thân mất (tứ thân phụ mẫu, vợ/chồng, con): 3 ngày\nTrợ cấp:\n• Nhân viên kết hôn: 1.000.000đ\n• Đám tang của người thân (tứ thân phụ mẫu, vợ/chồng, con): 2.000.000đ\n• Sinh nhật nhân viên: 500.000đ\n• Nhân viên nữ nghỉ thai sản được trợ cấp 1 tháng lương cơ bản\n\nLộ trình phát triển\n\n• Game Developer → Senior Game Developer → Technical Lead / Game Client Lead → Game Technical Manager\n\n• Technical: Senior Developer → Technical Lead → Architect.\n\n• Management: Team Lead → Game Technical Manager.\n\n• Product: phát triển sâu về gameplay, kiến trúc game và technical prod\n\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm sức khỏe, Phụ cấp thâm niên\nPhụ cấp\nĂn trưa",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: 153 Bùi Thị Xuân, Phường Tân Bình (Phường Tân Bình thuộc quận Tân Bình cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:30 đến 18:00)\nNghỉ trưa 90 phút\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 20/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nTrung cấp trở lên\nSố lượng tuyển\n2 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/lap-trinh-vien-backend-web-developer-nodejs-ai-integration-luong-tu-10-20-trieu-thag/2329768.html",
+   "title": "Lập Trình Viên Backend / Web Developer (NodeJS / AI-Integration) - Lương Từ 10 - 20 Triệu/Thág",
+   "company": "Viện nghiên cứu và phát triển Sản phẩm thiên nhiên",
+   "query": "Software Engineer",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "Không yêu cầu kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Backend Developer",
+     "IT - Phần mềm"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Phát triển, tối ưu và maintain mã nguồn hệ thống hiện tại.\nXây dựng, tích hợp các dịch vụ API, xử lý luồng dữ liệu bằng NodeJS / JavaScript.\nNghiên cứu, ứng dụng các công nghệ mới (LLM Prompting, Vector DB, AI tool) để tự động hóa và nâng cấp sản phẩm/hệ thống nội bộ.\nPhối hợp triển khai, vận hành ứng dụng trên nền tảng Linux/Docker.",
+    "Yêu cầu ứng viên": "Tốt nghiệp chuyên ngành CNTT, Khoa học Máy tính hoặc các ngành liên quan.\nNắm chắc JavaScript/NodeJS, có kinh nghiệm làm việc với RESTful API / Web services.\nĐiểm cộng lớn nếu có hiểu biết hoặc từng làm việc với một trong các mảng: LLM prompting, Vector DB, Docker, Linux/Apache.\nTư duy logic tốt, khả năng tự học công nghệ mới nhanh.\nKiến thức ngành\nIT - Phần mềm\nKỹ năng cần có\nJavascript, NodeJS, RESTful API, Web Services\nKỹ năng nên có\nLinux, Docker, Apache, vector DB, LLM prompting",
+    "Quyền lợi ứng viên": "Mức lương cạnh tranh, phù hợp với năng lực và kinh nghiệm\nĐược hưởng đầy đủ các chế độ theo Luật Lao động: BHXH, BHYT, BHTN\nMôi trường làm việc chuyên nghiệp, thân thiện và năng động\nTham gia các hoạt động team building, du lịch nghỉ mát hàng năm\nThưởng các ngày lễ tết và thưởng theo hiệu quả công việc",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Số 176 Phùng Khoang, Phường Trung Văn, Phường Tây Mỗ (Phường Tây Mỗ thuộc quận Nam Từ Liêm cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:00)\nThứ 7 (từ 08:00 đến 12:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 12/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/senior-php-developer-fullstack-reactjs-laravel/2330324.html",
+   "title": "Senior PHP Developer Fullstack (ReactJS, Laravel)",
+   "company": "CÔNG TY TNHH TNHH THƯƠNG MẠI VÀ TRUYỀN THÔNG NGỌN LỬA",
+   "query": "Software Engineer",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "4 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Fullstack Developer"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Phát triển các ứng dụng Fullstack sử dụng PHP (Laravel), NextJS, ReactJS, HTML, CSS, MySQL, Redis...\nTham gia xây dựng và phát triển các sản phẩm công nghệ giáo dục như:\n- Nền tảng chia sẻ tài liệu Hệ thống thi online\n- Hệ thống xử lý dữ liệu lớn Hệ thống xử lý file Docx, PDF...\n- Các ứng dụng tích hợp và khai thác AI.\nỨng dụng AI và các công cụ AI Coding Assistant như Cursor, Claude, Copilot, ChatGPT... trong toàn bộ quy trình phát triển phần mềm nhằm nâng cao hiệu suất.\nTham gia xây dựng các hệ thống quy mô lớn, lượng truy cập cao, dữ liệu lớn, yêu cầu cao về khả năng mở rộng và hiệu năng.\nPhối hợp với các thành viên trong team để phân tích yêu cầu, thiết kế giải pháp và triển khai sản phẩm.",
+    "Yêu cầu ứng viên": "Tốt nghiệp Đại học chuyên ngành Công nghệ thông tin hoặc các ngành liên quan, ưu tiên ứng viên tốt nghiệp các trường Đại học TOP về CNTT.\nCó tối thiểu 4 năm kinh nghiệm phát triển phần mềm ở vị trí Fullstack.\nThành thạo hoặc có kinh nghiệm tốt với PHP/Laravel, ReactJS, NextJS.\nCó tư duy tốt về UI/UX, có khả năng xây dựng và tối ưu giao diện với HTML, CSS.\nCó kinh nghiệm sử dụng các công cụ AI Code Assistant như Cursor, Claude, Copilot, ChatGPT... để nâng cao năng suất lập trình.\nCó kiến thức về Docker, Kubernetes, CI/CD Pipeline.\nCó khả năng phân tích nghiệp vụ, tư duy logic và giải quyết các bài toán hệ thống.\nCó khả năng làm việc hiệu quả trong môi trường Teamwork và độc lập.\nTư duy tốt, chủ động, sáng tạo, đam mê công nghệ, kiên trì và ham học hỏi.\nCó khả năng tự nghiên cứu, cập nhật và ứng dụng các công nghệ mới.\n\nƯu tiên đặc biệt: Ứng viên tốt nghiệp Đại học Bách Khoa, Học viện Công nghệ Bưu chính Viễn thông và các trường TOP về CNTT, có từ 4 năm kinh nghiệm trở lên.",
+    "Quyền lợi ứng viên": "Đóng BHXH – BHYT – BHTN đầy đủ\nCung cấp máy tính, thiết bị làm việc và các công cụ AI hiện đại phục vụ công việc.\nNghỉ lễ, Tết theo qui định, Thưởng hiệu suất + thưởng năm. Thưởng lễ Tết, sinh nhật, hiếu hỉ,…\nMôi trường làm việc độc lập, đề cao hiệu suất, tư duy công nghệ và sự sáng tạo.\nCó cơ hội tham gia trực tiếp vào quá trình xây dựng các sản phẩm công nghệ giáo dục quy mô lớn, phục vụ lượng lớn người dùng.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: 460 Khương Đình, Phường Khương Đình (Phường Khương Đình thuộc quận Thanh Xuân cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:30)\n2 ngày thứ 7 đầu tháng\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 13/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n2 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/fullstack-developer-c-net-vuejs-luong-upto-40-trieu-thang/2323097.html",
+   "title": "Fullstack Developer (C#, .NET, Vuejs) - Lương Upto 40 Triệu/Tháng",
+   "company": "Công ty Cổ phần MISA",
+   "query": "Software Engineer",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "3 năm kinh nghiệm chuyên môn",
+     "Tuổi 26 - 35",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Fullstack Developer",
+     "IT - Phần mềm"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Ở vị trí Senior Fullstack Developer, bạn sẽ trực tiếp làm chủ các giải pháp từ Frontend đến Backend, tạo ra những cải tiến rõ rệt về hiệu năng, khả năng mở rộng và trải nghiệm người dùng:\n\nThiết kế và phát triển toàn diện từ Frontend, API, Backend .NET đến cơ sở dữ liệu, đồng thời chủ động đề xuất giải pháp kỹ thuật.\nXây dựng, chuẩn hóa codebase Frontend với Angular, React hoặc Vue, giúp sản phẩm dễ phát triển, tái sử dụng và mở rộng.\nĐo lường, tối ưu hiệu năng Client và Backend, cải thiện tốc độ phản hồi, trải nghiệm người dùng và khả năng chịu tải của hệ thống.\nGiải quyết các bài toán chuyên sâu về Transaction, Caching, Concurrency, Messaging và hệ thống có lượng truy cập lớn.\nTham gia định hình kiến trúc, thực hiện Design Review, Code Review và Testing, góp phần xây dựng sản phẩm ổn định, dễ bảo trì.\nPhối hợp cùng Product Manager, BA và DevOps để chuyển hóa nhu cầu kinh doanh thành giải pháp công nghệ hiệu quả.\nChia sẻ chuyên môn, mentoring thành viên và phát triển năng lực theo định hướng Technical Leadership.",
+    "Yêu cầu ứng viên": "Bạn sẽ phù hợp nếu\n\nCó từ 3-4 năm kinh nghiệm phát triển ứng dụng Web với C#, .NET/.NET Core và hiểu cách tổ chức hệ thống theo Clean Architecture.\nCó kinh nghiệm phát triển Frontend với JavaScript/TypeScript và ít nhất một framework Angular, React hoặc Vue; có khả năng xây dựng, chuẩn hóa codebase.\nĐã trực tiếp tối ưu hiệu năng Backend và Client, mang lại cải thiện thực tế về tốc độ phản hồi, trải nghiệm người dùng hoặc khả năng chịu tải.\nNắm vững OOP, SOLID, Design Pattern; có tư duy viết mã dễ đọc, dễ kiểm thử và bảo trì.\nThành thạo SQL Server/MySQL, có kinh nghiệm thiết kế dữ liệu và tối ưu truy vấn.\nCó khả năng phân tích vấn đề, phối hợp đội nhóm và chủ động đề xuất giải pháp kỹ thuật.\n\nLợi thế nếu bạn có\n\nKinh nghiệm với Redis, RabbitMQ, Microservices, Docker hoặc CI/CD.\nĐã sử dụng các công cụ đo lường hiệu năng Frontend như Lighthouse, Chrome DevTools hoặc Web Vitals.\nCó kinh nghiệm với hệ thống quy mô lớn, Unit Test, Code Review hoặc mentoring thành viên.\nKiến thức ngành\nIT - Phần mềm",
+    "Quyền lợi ứng viên": "Tiên phong công nghệ, uy tín\n\nVị thế: Doanh nghiệp CNTT tại khu vực Châu Á - Đại Dương tiên phong giải pháp SaaS, AIaaS và AaaS.\nTăng trưởng bền vững: Ghi nhận mức lợi nhuận tăng >20%/năm, doanh thu tăng 15%/năm.\nSứ mệnh quốc gia: Đồng hành cùng 500.000 tổ chức và 3.5 triệu khách hàng cá nhân trong hành trình Chuyển đổi số quốc gia.\nGhi nhận danh giá: Sở hữu hơn 100 giải thưởng công nghệ uy tín trong và ngoài nước.\n\nNâng tầm phát triển sự nghiệp\n\nThu nhập: Mức lương cạnh tranh vượt trội lên tới 35 triệu/tháng\nThưởng Performance dựa trên kết quả sản phẩm.\nThưởng nhân viên xuất sắc tháng/6 tháng/Vinh danh \"Gấu vàng MISA\" hàng năm\nLộ trình thăng tiến: Cơ hội phát triển lên các vị trí quản lý chiến lược như Techlead, Engineering Manager, Product Manager\nTham gia chiến lược: Trực tiếp xây dựng Product Roadmap và quyết định các tính năng cốt lõi cho sản phẩm AMIS Kế toán.\nĐột phá công nghệ: Trực tiếp tham gia các dự án ứng dụng Agentic AI vào giải quyết nghiệp vụ tài chính/kế toán và thiết kế giải pháp tự động hóa.\nĐào tạo lãnh đạo: Tham gia chương trình đào tạo cán bộ kế cận, chương trình Huấn luyện “Hổ Tướng MISA” nhằm bồi dưỡng thế hệ quản lý tài năng\n\nMôi trường thân thiện, chia sẻ, đồng hành\n\nChế độ phúc lợi: Chăm sóc sức khỏe tại Medlatec, teambuilding thường niên và các kỳ nghỉ lễ hấp dẫn.\nVăn hóa kết nối: Làm việc cùng những tài năng cùng chí hướng trong môi trường sáng tạo, năng động và hạnh phúc.\nCông cụ hiện đại:\nTrang bị máy tính cấu hình cao cùng hệ sinh thái công nghệ chuyên nghiệp (AMIS, Jira, Power BI, AI Marketing...)\nĐược cấp tài khoản sử dụng các công cụ AI (OneAI) hiện đại nhất để tối ưu hóa hiệu suất công việc",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Toà N03T2, Khu đô thị Ngoại giao đoàn, Phường Xuân Đỉnh (Phường Xuân Đỉnh thuộc quận Bắc Từ Liêm cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:30)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 05/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n6 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  }
+ ]
+}

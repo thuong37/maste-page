@@ -1,0 +1,36 @@
+{
+  "id": 11,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Dược/Y tế/Sức khoẻ/Làm đẹp",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên (trình dược viên, sales thiết bị/vật tư y tế); 3/6 không hoặc dưới 1 năm kinh nghiệm, 3/6 cần 1-2 năm; trung cấp/cao đẳng trở lên, ưu tiên Y Dược",
+  "muc": {
+    "anh-chan-dung": "nen — JD#2 nêu 'độ tuổi phù hợp ưa nhìn' (1/6); nghề tiếp xúc bác sĩ/bệnh viện nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#5 'gắn bó với nghề nghiệp', JD#3 'đam mê' (2/6)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc; sale thiết bị y tế, dược phẩm, bệnh viện/phòng khám/nhà thuốc; ưu tiên chuyên khoa (nhãn khoa, nha khoa, xương nhân tạo)",
+    "hoc-van": "can — 6/6 nêu bậc học (trung cấp/cao đẳng/ĐH), ưu tiên Dược, Y dược, Điều dưỡng, Thiết bị y tế, Kinh tế/QTKD",
+    "ky-nang-chuyen-mon": "can — 6/6: tiếp cận bác sĩ/khoa phòng bệnh viện, giới thiệu sản phẩm, tư vấn sử dụng thuốc/thiết bị, đấu thầu thuốc, báo giá, đàm phán hợp đồng, theo dõi công nợ",
+    "ky-nang-mem": "can — 6/6: giao tiếp, thuyết phục, đàm phán, làm việc nhóm/độc lập, chủ động, kiên trì, lên kế hoạch",
+    "cong-cu-phan-mem": "nen — 3/6: CRM (JD#3), tin học văn phòng (JD#4, #6)",
+    "chung-chi": "nen — JD#1 yêu cầu bằng/chuyên ngành dược, kiến thức GDP; không JD nào đòi chứng chỉ riêng (chứng chỉ hành nghề dược không được nêu)",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — 2/6: mục tiêu kinh doanh (JD#5), kế hoạch bán hàng tuần (JD#3); không JD nêu chỉ tiêu cụ thể",
+    "ngoai-ngu": "nen — 2/6: tiếng Anh giao tiếp 50% (JD#1), tiếng Trung đọc hiểu (JD#2)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 JD không yêu cầu kinh nghiệm/dưới 1 năm; JD nhắc tham gia hội thảo, workshop (JD#3)",
+    "giay-phep": "can — 4/6 JD yêu cầu có phương tiện di chuyển/đi thị trường (JD#1, #2, #3, #4)",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 nêu độ tuổi (24-35, 25-39, dưới 35); JD#2 nêu ưa nhìn; nên có tuổi/nơi ở/khu vực phụ trách",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["trình dược viên", "thiết bị/vật tư y tế", "bệnh viện/phòng khám", "đấu thầu thuốc", "bác sĩ", "nha khoa/nhãn khoa", "báo giá hợp đồng", "phương tiện di chuyển", "CRM"],
+  "bangChung": [
+    "JD#1: 'Tốt nghiệp trung cấp trở lên chuyên ngành dược'; 'Giao tiếp được tiếng anh 50%'; 'Có phương tiện di chuyển'",
+    "JD#2: 'Có kinh nghiệm thiết bị phân loại A,B,C,D'; 'độ tuổi phù hợp ưa nhìn'; 'Tiếng Trung đọc hiểu'",
+    "JD#3: 'Có khả năng sử dụng CRM'; 'Tuổi 24 - 35'; 'chưa có sẽ được đào tạo'",
+    "JD#4: 'Ưu tiên ứng viên có nền tảng y – dược'; 'Có phương tiện đi lại cá nhân'",
+    "JD#6: 'Tối thiểu 1–2 năm kinh nghiệm ở vị trí Sale thiết bị y tế'; 'Thành thạo tin học văn phòng'"
+  ],
+  "ghiChu": ""
+}

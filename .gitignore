@@ -18,3 +18,9 @@ __pycache__/
 # One-off scripts, screenshots, browser profiles
 scratch/
 .tmp-browser-profile/
+
+# Dependencies
+node_modules/
+
+# Qwen agent temp
+.qwen/

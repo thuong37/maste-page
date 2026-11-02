@@ -1,0 +1,36 @@
+{
+  "id": 41,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "IT Project Management",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5 JD: 2 IT Project Manager (4 năm, 1 JD 4 năm quản lý), 3 Scrum Master (1-5 năm, 1 JD trưởng nhóm); ĐH trở lên chuyên ngành CNTT/Điện tử viễn thông",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình/độ tuổi/giới tính; vị trí điều phối dự án (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#4 tư duy sản phẩm, chủ động đề xuất hướng phát triển (1/5); dùng để nêu định hướng PM/Scrum Master",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD nhắc 1-6 năm PM/Scrum Master/BA/Product Owner trong công ty công nghệ/phần mềm",
+    "hoc-van": "can — 5/5 yêu cầu ĐH, ngành CNTT, Hệ thống thông tin, Điện tử viễn thông",
+    "ky-nang-chuyen-mon": "can — 5/5: quản lý dự án (kế hoạch, tiến độ, nguồn lực), SDLC, Agile/Scrum, điều phối sprint, phân tích yêu cầu/user story/PRD, quản lý backlog, ITIL",
+    "ky-nang-mem": "can — 5/5: giao tiếp, điều phối, đàm phán, giải quyết vấn đề, facilitation, huấn luyện, chịu áp lực",
+    "cong-cu-phan-mem": "can — 4/5: Jira, Confluence, Trello, Notion, ClickUp, Azure DevOps, SQL cơ bản",
+    "chung-chi": "can — 3/5: PMI-ACP (JD#2), PSM I/CSM (JD#4), Agile (JD#2); JD#1 HSK 5 tiếng Trung",
+    "du-an": "can — 5/5 (tín hiệu 'dự án' đủ 5 JD): quản lý nhiều dự án/chương trình; CV phải nêu dự án, quy mô, vai trò, kết quả",
+    "thanh-tich-kpi": "nen — JD#3 đo lường đánh giá cuối mỗi sprint, JD#4 bảo vệ ưu tiên bằng dữ liệu (2/5); nên nêu số dự án/quy mô team/đúng hạn",
+    "ngoai-ngu": "can — 4/5: tiếng Trung HSK 5 hoặc thành thạo (JD#1), TOEIC 550 (JD#3), tiếng Anh cơ bản (JD#4), tiếng Anh tốt (JD#1)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — 5/5 JD đòi 1-6 năm kinh nghiệm",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — không JD nào nêu độ tuổi/giới tính",
+    "so-thich": "khong — không JD nào nhắc (JD#4 chỉ lợi thế kinh nghiệm ngành game/adtech)"
+  },
+  "tuKhoaNenCo": ["IT Project Manager", "Scrum Master", "Agile/Scrum", "SDLC", "Jira/Confluence", "backlog/user story", "PMI-ACP/PSM/CSM", "quản lý tiến độ nguồn lực", "BA/Product Owner"],
+  "bangChung": [
+    "JD#1: 'Từ 4-6 năm kinh nghiệm làm Project Manager'; 'tiếng Trung ... HSK 5'; 'Jira, Confluence, Trello, Notion'",
+    "JD#2: 'Có kinh nghiệm phát triển dự án CNTT tối thiểu 4 năm'; 'chứng chỉ PMI-ACP'",
+    "JD#3: 'Có kinh nghiệm vị trí Scrum master'; 'Tiếng Anh tương đương tối thiểu 550 Toeic'; 'ITIL'",
+    "JD#4: 'PSM I hoặc CSM là một lợi thế'; 'viết user story/PRD, vẽ flow và wireframe cơ bản'; 'biết SQL cơ bản'",
+    "JD#5: 'Có từ 5 năm kinh nghiệm ... Scrum Master, Agile Coach'; 'Thành thạo Jira, Confluence, Azure'"
+  ],
+  "ghiChu": "Chỉ 5 JD."
+}

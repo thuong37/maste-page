@@ -1,0 +1,36 @@
+{
+  "id": 50,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Kho vận/Giao hàng",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "5/6 JD nhân viên kho (3/6 không hoặc dưới 1 năm kinh nghiệm, từ THCS/THPT; 2/6 cần 1 năm, trung cấp/cao đẳng, quản lý vật tư), 1 JD sales kho fulfillment (lạc nghề, tiếng Trung, không yêu cầu kinh nghiệm)",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình; 3/6 chỉ nêu giới tính Nam; công việc kho (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc định hướng/mục tiêu",
+    "kinh-nghiem-lam-viec": "nen — 5/6 JD nhắc; không yêu cầu đến 2 năm; ưu tiên kinh nghiệm thủ kho/quản lý kho/nhập-xuất-tồn; nên ghi loại kho và hàng hóa",
+    "hoc-van": "nen — 5/6 JD chỉ yêu cầu THCS/THPT/trung cấp, 1-2 JD cao đẳng ngành Logistics/Chuỗi cung ứng; ghi ngắn bậc học",
+    "ky-nang-chuyen-mon": "can — 5/6: nhập/xuất/tồn kho, kiểm hàng, soạn đơn/đóng gói, phân loại hàng theo tuyến, kiểm kê, safety stock/Min–Max, FIFO/FEFO, 5S, báo cáo tồn kho",
+    "ky-nang-mem": "can — 5/6: chăm chỉ, nhanh nhẹn, trung thực, trách nhiệm, làm việc nhóm, chịu áp lực",
+    "cong-cu-phan-mem": "nen — 3/6: Excel, ERP/SAP/Oracle (JD#3), máy tính thành thạo (JD#4), smartphone/thao tác máy tính cơ bản (JD#2)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — JD#5 KPI hạn chế sai sót đơn hàng, kho gọn gàng; JD#3 theo dõi tồn kho (2/6)",
+    "ngoai-ngu": "nen — JD#1 tiếng Trung giao tiếp thành thạo (1/6, lạc nghề)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 JD không yêu cầu hoặc dưới 1 năm kinh nghiệm (JD#2, #5, #6)",
+    "giay-phep": "khong — không JD nào nhắc (không JD đòi bằng lái/xe nâng)",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 JD yêu cầu Nam/sức khỏe tốt (JD#3, #4, #5); JD#2 ca xoay (6h-15h, 13h-22h, 22h-6h), JD#3 sẵn sàng làm ca, có thể tăng ca",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["nhân viên kho", "nhập/xuất/tồn", "soạn đơn/đóng gói", "kiểm kê", "ERP/SAP", "FIFO/FEFO", "5S", "làm ca/tăng ca", "Excel"],
+  "bangChung": [
+    "JD#2: 'tốt nghiệp cấp 2 trở lên'; 'Biết sử dụng smartphone, ... thao tác cơ bản trên máy tính'; 'xoay ca'",
+    "JD#3: 'Có từ 1–2 năm kinh nghiệm trong lĩnh vực quản lý kho'; 'Thành thạo Excel'; 'ERP, SAP hoặc Oracle'; 'FIFO, FEFO, Safety Stock'",
+    "JD#4: 'Tốt nghiệp Trung cấp trở lên'; 'Có ít nhất 1 năm kinh nghiệm'; 'Sử dụng máy vi tính thành thạo'; 'Nam'",
+    "JD#5: 'Nam, sức khỏe tốt'; 'KPI ... Hạn chế sai sót trong đơn hàng'",
+    "JD#6: 'Có kinh nghiệm thủ kho hoặc theo dõi nhập–xuất–tồn'; 'sử dụng Excel hoặc phần mềm'"
+  ],
+  "ghiChu": "JD#1 là sales kho fulfillment biết tiếng Trung (lạc nghề), không dùng làm căn cứ chính."
+}

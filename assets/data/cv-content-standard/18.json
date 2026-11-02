@@ -1,0 +1,36 @@
+{
+  "id": 18,
+  "nhom": "Marketing/PR/Quảng cáo",
+  "nghe": "Marketing",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "4/6 JD cấp nhân viên (dưới 1 đến 3 năm kinh nghiệm, cao đẳng trở lên), 2/6 JD quản lý/trưởng phòng marketing (4-5 năm, 2 năm quản lý, ĐH)",
+  "muc": {
+    "anh-chan-dung": "nen — không JD nào đòi ảnh; 2/6 nêu tuổi/giới tính; nghề gặp khách hàng/đối tác nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 JD nhắc định hướng (JD#3 tư duy growth, JD#6 hiệu quả); dùng để nêu chuyên môn marketing (digital/growth/affiliate)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc (đến 5 năm); account executive agency, digital marketing BĐS, growth/trade, Facebook Ads, affiliate, quản lý marketing bán lẻ",
+    "hoc-van": "can — 6/6 nêu bậc học và chuyên ngành Marketing, Truyền thông, QTKD, CNTT, thiết kế",
+    "ky-nang-chuyen-mon": "can — 6/6: lập kế hoạch và ngân sách marketing, chạy/tối ưu quảng cáo (Facebook Ads, Google, TikTok), quản lý kênh/cộng đồng, quản lý khách hàng agency, affiliate/KOC, phân tích hiệu quả",
+    "ky-nang-mem": "can — 5/6: giao tiếp, quản lý khách hàng, lãnh đạo, làm việc nhóm, sáng tạo, tư duy dữ liệu, chịu áp lực",
+    "cong-cu-phan-mem": "can — 4/6: Canva, Photoshop, CapCut, Premiere, công cụ AI (JD#4); Excel/Google Sheets, Kalodata (JD#6); Google Ads, Meta (JD#2)",
+    "chung-chi": "nen — JD#2 ưu tiên Google Ads, Meta Blueprint, chứng chỉ Digital Marketing (1/6)",
+    "du-an": "can — JD#1 quản lý dự án marketing, JD#2 chiến dịch cho từng dự án, JD#3 thành tích đóng góp cụ thể; CV nên nêu chiến dịch/dự án đã làm (3/6)",
+    "thanh-tich-kpi": "can — 4/6: GMV, CPA, ROAS (JD#6), tăng trưởng doanh thu/kênh (JD#3), tối ưu chi phí chiến dịch (JD#4), phân tích hiệu quả kênh (JD#5)",
+    "ngoai-ngu": "nen — JD#2 tiếng Anh đọc hiểu (1/6)",
+    "portfolio-link": "nen — JD#3 'thành tích cụ thể' và content/video cho JD#5; nên đính kèm link chiến dịch (không JD nào đòi portfolio thẳng)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#4 nhận dưới 1 năm kinh nghiệm nhưng không nhận sinh viên đang học (1/6)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#4 năm sinh 1998-2004, JD#5 tuổi 25-40 (2/6 nêu độ tuổi)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Digital Marketing", "Facebook Ads/Google Ads", "Account Executive", "growth/trade marketing", "affiliate/KOC", "ROAS/CPA/GMV", "kế hoạch ngân sách marketing", "quản lý đội content", "Canva/Excel"],
+  "bangChung": [
+    "JD#1: 'Có 2 kinh nghiệm ở vị trí Account Executive, Client Service hoặc quản lý dự án Marketing'",
+    "JD#2: 'chứng chỉ ... Google Ads, Meta Blueprint'; 'Tối thiểu 04 năm kinh nghiệm ... digital marketing'",
+    "JD#3: 'Có thành tích cụ thể đóng góp vào tăng trưởng doanh thu, phát triển kênh'",
+    "JD#4: 'Biết sử dụng ... Canva, photoshop, camtasia, capcut, ... công cụ về AI'; 'Độ tuổi từ 2004 -1998'",
+    "JD#6: 'theo dõi GMV, CPA, ROAS'; 'thành thạo Excel/Google Sheets; biết Kalodata'"
+  ],
+  "ghiChu": "JD gồm cả agency, digital, growth, affiliate nên mục kỹ năng chuyên môn rất đa dạng."
+}

@@ -1,0 +1,35 @@
+{
+  "id": 40,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "IoT/Embedded Engineer",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5 JD: 1 thực tập sinh embedded/IoT (dưới 1 năm), 3 kỹ sư IoT/firmware (không đến 1 năm kinh nghiệm), 1 trưởng nhóm kỹ sư AI (lạc nghề, 3 năm); ĐH ngành Điện-Điện tử, Tự động hóa, Cơ điện tử, CNTT",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình/độ tuổi/giới tính; công việc kỹ thuật (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#2 chủ động và học hỏi, JD#5 khả năng học hỏi nhanh (2/5); dùng để nêu định hướng nhúng/IoT",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD nhắc; 2 JD không yêu cầu/thực tập, 2 JD 1 năm embedded, ưu tiên dự án motor/inverter, AGV, IoT/PLC",
+    "hoc-van": "can — 5/5 yêu cầu ĐH; ngành Tự động hóa, Điện-Điện tử, Điện tử viễn thông, Cơ-Điện tử, Kỹ thuật máy tính, CNTT",
+    "ky-nang-chuyen-mon": "can — 4/5: lập trình firmware C nhúng (timer, PWM, ADC, interrupt), điều khiển động cơ BLDC/PMSM, PID, đọc schematic/datasheet, giao tiếp UART/SPI/I2C/RS485/Modbus, đấu nối thiết bị",
+    "ky-nang-mem": "can — 4/5: chủ động, trách nhiệm, lập kế hoạch/quản lý tiến độ, phối hợp nhóm, sẵn sàng đi công tác",
+    "cong-cu-phan-mem": "can — 5/5: C/C++, Python, Arduino, STM32, MSP430, ESP32, Raspberry Pi, Jetson Nano, PLC, AWS, SQL, Git",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "can — 3/5 nhắc dự án (JD#2 dự án motor/inverter, JD#4 triển khai nhà máy, JD#5 AIoT thiết bị y tế/camera); CV phải nêu dự án phần cứng/firmware",
+    "thanh-tich-kpi": "nen — JD#2 tối ưu startup BLDC, giảm tiếng ồn, tăng hiệu suất (1/5); nên nêu thông số hiệu năng",
+    "ngoai-ngu": "nen — JD#5 ưu tiên biết tiếng Nhật (1/5)",
+    "portfolio-link": "nen — nghề nhúng nên có link GitHub/ảnh mạch/demo (suy từ tính chất công việc; không JD nhắc thẳng)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "can — JD#4, JD#5 nhận ứng viên mới/thực tập, nhắc kinh nghiệm học tập, thực hành Arduino/vi điều khiển (2/5)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — không JD nào nêu độ tuổi/giới tính",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Embedded/Firmware", "STM32/ESP32/Arduino", "IoT/PLC", "C/C++", "điều khiển động cơ BLDC", "UART/SPI/I2C/RS485/Modbus", "AGV", "Raspberry Pi/Jetson", "đọc datasheet/schematic"],
+  "bangChung": [
+    "JD#1: 'Có kinh nghiệm về IOT, PLC và coding Arduino'; 'tự động hóa hoặc kỹ thuật vi xử lý'",
+    "JD#2: 'Thành thạo lập trình C nhúng, hiểu vững timer, PWM, ADC, interrupt'; 'điều khiển động cơ BLDC/PMSM'; 'Tối thiểu 1 năm kinh nghiệm embedded'",
+    "JD#4: 'Không yêu cầu kinh nghiệm'; 'Arduino, vi điều khiển'; 'UART, RS485, Modbus TCP/RTU'; 'sẵn sàng đi công tác'",
+    "JD#5: 'lập trình C/C++/C#, Python tối thiểu 06 tháng'; 'Rasp Pi, ESP32, Jetson Nano'; 'Ưu tiên ứng viên biết tiếng Nhật'"
+  ],
+  "ghiChu": "JD#3 (trưởng nhóm AI/Computer Vision) trùng id 36, ít liên quan nhúng nên không làm căn cứ."
+}

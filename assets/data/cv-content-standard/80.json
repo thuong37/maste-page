@@ -1,0 +1,36 @@
+{
+  "id": 80,
+  "nhom": "Kế toán/Kiểm toán/Thuế",
+  "nghe": "Kế toán/Kiểm toán/Thuế khác",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "5/6 JD cấp nhân viên (1-4 năm kinh nghiệm), 1 JD trưởng nhóm kế toán-thuế (2-3 năm); Cao đẳng/Đại học chuyên ngành Kế toán, Kiểm toán, Tài chính",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; 2/6 nêu giới tính Nữ; ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — không JD nhắc trực tiếp; nên nêu định hướng kế toán thuế (suy từ tính chất công việc)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nêu số năm kinh nghiệm kế toán thuế/kiểm soát; nên ghi loại hình doanh nghiệp và nghiệp vụ đã làm",
+    "hoc-van": "can — 6/6 nêu bậc học và chuyên ngành Kế toán/Kiểm toán/Tài chính; 1 JD ưu tiên trường khối kinh tế",
+    "ky-nang-chuyen-mon": "can — 6/6: hạch toán, kê khai thuế GTGT/TNDN/TNCN, hóa đơn chứng từ, quyết toán thuế, đối chiếu số liệu, tính giá thành",
+    "ky-nang-mem": "can — 5/6: cẩn thận, trung thực, trách nhiệm, bảo mật thông tin, chịu áp lực, phối hợp nhóm",
+    "cong-cu-phan-mem": "can — 5/6: Excel, Word, Misa SME/AMIS, Fast, Effect, Bit, ERP/SAP; 1 JD Power Query, VBA, công cụ AI",
+    "chung-chi": "nen — không JD đòi chứng chỉ; ưu tiên chung chung bằng cấp ngành",
+    "du-an": "nen — 2/6 nhắc dự án cải tiến quy trình, khách hàng TMĐT; nên nêu nếu có",
+    "thanh-tich-kpi": "nen — 1/6 chỉ tiêu cụ thể (kiểm soát dòng tiền, quyết toán); nên có số liệu doanh nghiệp/số hồ sơ phụ trách",
+    "ngoai-ngu": "nen — 1/6 nhắc ngoại ngữ (hồ sơ TMĐT quốc tế); không phổ biến",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/6 nhận ứng viên ít kinh nghiệm; dành cho ứng viên mới ra trường",
+    "giay-phep": "khong — không JD nào nhắc; 1 JD yêu cầu có laptop riêng",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/6 nêu giới tính; nên có độ tuổi, nơi ở (suy từ tính chất công việc)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["kế toán thuế", "kê khai thuế GTGT/TNDN/TNCN", "quyết toán thuế", "hóa đơn điện tử", "hạch toán", "Misa", "Fast", "Excel", "báo cáo tài chính", "kiểm soát nội bộ"],
+  "bangChung": [
+    "JD#1: 'Biết sử dụng thành thạo phần mềm kế toán Misa SME'; 'Giới tính: Nữ'",
+    "JD#2: 'Thành thạo các phần mềm kế toán (Misa, Fast...) và sử dụng nâng cao Excel'",
+    "JD#3: 'sử dụng tốt công cụ AI (bắt buộc). Ưu tiên Power Query, VBA'",
+    "JD#5: 'Có từ 4 năm kinh nghiệm... Kế toán Thuế, Kế toán Giá thành'",
+    "JD#6: 'phần mềm kế toán (Effect, Bit, Fast, Misa...)'; 'Ưu tiên ứng viên đã từng quyết toán thuế'"
+  ],
+  "ghiChu": "Nhóm 'khác' gồm kế toán thuế, kế toán giá thành, kiểm soát nghiệp vụ."
+}

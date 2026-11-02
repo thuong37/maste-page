@@ -1,0 +1,36 @@
+{
+  "id": 149,
+  "nhom": "Nhà hàng/Khách sạn/Du lịch",
+  "nghe": "Khách sạn/Dịch vụ cư trú",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "5/6 JD nhân viên (giặt là, lễ tân x2, bellman x2; 3/6 không yêu cầu kinh nghiệm, từ THCS/THPT), 1 JD giám sát buồng phòng (1 năm, 1 năm quản lý); bậc học thấp, yêu cầu ngoại hình/tác phong cao",
+  "muc": {
+    "anh-chan-dung": "can — 5/6 JD nêu thẳng ngoại hình: 'Ngoại hình ưa nhìn' (JD#2, #4), 'ngoại hình chỉn chu' (JD#3), 'Ngoại hình sáng, chỉn chu' (JD#5); vị trí tiếp khách nên ảnh chân dung rõ nét",
+    "muc-tieu-nghe-nghiep": "nen — JD#3 và JD#5 nhắc thái độ tiếp đón, JD#2 'cầu tiến'; không JD đòi mục tiêu riêng, nên nêu định hướng ngành dịch vụ khách sạn (suy)",
+    "kinh-nghiem-lam-viec": "can — 4/6 JD nêu kinh nghiệm: giặt là khách sạn (ưu tiên), giám sát buồng phòng nghỉ dưỡng, lễ tân/hành chính 1 năm, bellman 1 năm khách sạn 4-5 sao; 3 JD nhận không kinh nghiệm",
+    "hoc-van": "nen — 6/6 nêu bậc học thấp (THCS/THPT đến Cao đẳng); chỉ JD#4 nêu chuyên ngành (Hành chính, Ngoại ngữ, Du lịch)",
+    "ky-nang-chuyen-mon": "can — quy trình giặt/là, kiểm tra chất lượng phòng/buồng phòng, đón tiếp và phân luồng khách, xử lý cuộc gọi/tổng đài, mang hành lý/welcome drink/dịch vụ khách sạn",
+    "ky-nang-mem": "can — 6/6: giao tiếp, xử lý tình huống, nhanh nhẹn, trách nhiệm, làm việc nhóm, trung thực, tác phong lịch sự",
+    "cong-cu-phan-mem": "nen — chỉ JD#4 'Microsoft Word, Excel, Outlook' và thiết bị văn phòng; 1/6",
+    "chung-chi": "khong — không JD nào nhắc chứng chỉ",
+    "du-an": "khong — không JD nào nhắc dự án",
+    "thanh-tich-kpi": "khong — không JD nào nhắc chỉ tiêu/số liệu",
+    "ngoai-ngu": "nen — JD#5 tiếng Anh là lợi thế, JD#6 tiêu chí tiếng Anh/hospitality; 3/6 nhắc nhưng không đồng đều",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 JD nhận không kinh nghiệm (giặt là, lễ tân KTV, bellman); phù hợp ứng viên mới (suy)",
+    "giay-phep": "khong — không JD nào nhắc bằng lái/giấy phép",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/6 JD nêu tuổi/giới tính/giọng nói/sức khỏe: JD#2 28-45 tuổi, 'Giọng nói chuẩn'; JD#4 20-30 tuổi; JD#5 'Nam trên 22 tuổi'; JD#1 sức khỏe tốt, làm ca",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["khách sạn/resort", "lễ tân", "bellman", "giám sát buồng phòng", "giặt là", "dịch vụ khách hàng", "đón tiếp khách", "làm việc theo ca", "tiếng Anh giao tiếp", "khách sạn 4-5 sao"],
+  "bangChung": [
+    "JD#2: 'Ngoại hình ưa nhìn'; 'Giọng nói chuẩn, không nói ngọng - nói lắp'; tuổi 28-45; 'kinh nghiệm làm Giám sát buồng phòng'",
+    "JD#3: 'Có ngoại hình chỉn chu, tác phong lịch sự'; 'Không bắt buộc có kinh nghiệm'",
+    "JD#4: 'Ngoại hình ưa nhìn, giọng nói dễ nghe'; 'Thành thạo tin học văn phòng (Microsoft Word, Excel, Outlook)'; tuổi 20-30",
+    "JD#5: 'Ngoại hình sáng, chỉn chu'; 'Nam trên 22 tuổi'; 'giao tiếp được tiếng anh là lợi thế'",
+    "JD#6: 'Tối thiểu 1 năm kinh nghiệm làm Bellman'; 'Có kinh nghiệm làm việc tại khách sạn 4 hoặc 5 sao là một lợi thế lớn'"
+  ],
+  "ghiChu": "Nhiều vị trí khác nhau (giặt là, buồng phòng, lễ tân, bellman). JD#3 (lễ tân KTV tại Hàn Quốc) và JD#4 (lễ tân phòng khám) hơi lệch ngành lưu trú nhưng cùng nghề tiếp đón; JD#1 giặt là ít yêu cầu ngoại hình."
+}

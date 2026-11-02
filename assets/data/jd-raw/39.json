@@ -1,0 +1,163 @@
+{
+ "id": 39,
+ "nhom": "Công nghệ Thông tin",
+ "nghe": "Information Security",
+ "method": "category",
+ "categoryUrl": "https://www.topcv.vn/tim-viec-lam-information-security-cr257cb263",
+ "categoryTotal": 76,
+ "categoryVerified": true,
+ "crawledAt": "2026-10-22T04:12:29.010Z",
+ "candidates": 46,
+ "thin": false,
+ "jds": [
+  {
+   "url": "https://www.topcv.vn/viec-lam/ky-su-an-toan-thong-tin-pentest-danh-gia-kiem-thu-attt-he-thong/2329103.html",
+   "title": "Kỹ Sư An Toàn Thông Tin (Pentest) - Đánh Giá Kiểm Thử ATTT Hệ Thống",
+   "company": "VIETTEL SOLUTIONS\n                                TỔNG CÔNG TY GIẢI PHÁP DOANH NGHIỆP VIETTEL - CHI NHÁNH TẬP ĐOÀN CÔNG NGHIỆP - VIỄN THÔNG QUÂN ĐỘI",
+   "query": "https://www.topcv.vn/tim-viec-lam-information-security-cr257cb263",
+   "score": 1,
+   "via": "category",
+   "chips": {
+    "Yêu cầu": [
+     "1 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên",
+     "Tiếng Anh TOEIC 550",
+     "Tiếng Anh TOEIC 600",
+     "Tiếng Anh TOEIC 650",
+     "Tiếng Anh TOEIC 700",
+     "Tiếng Anh IELTS 6.0",
+     "Tiếng Anh IELTS 6.5",
+     "Tiếng Anh IELTS 7.0"
+    ],
+    "Chuyên môn": [
+     "Kiểm thử và đánh giá bảo mật",
+     "IT - Phần mềm",
+     "IT - Phần cứng và máy tính"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "- Pentest định kỳ/đột xuất đối với hạ tầng mạng nội bộ, DMZ và hệ thống external/internet-facing.\n\n- Đánh giá ATTT cho Wireless, VPN, SD-WAN; rà quét lỗ hổng dịch vụ, CVE và cấu hình mặc định nguy hiểm.\n\n- Rà soát hardening cho Windows Server, Linux, Oracle, MS SQL, MySQL, PostgreSQL.\n\n- Đánh giá DNS, Active Directory/LDAP, hệ thống mail, VMware, Hyper-V, Cloud và Container.\n\n- Xây dựng báo cáo kỹ thuật: Attack Path, CVSS v3/v4, mức độ rủi ro và giải pháp khắc phục.\n\n- Phối hợp SysAdmin, NetworkAdmin, CloudOps trong quá trình vá lỗ hổng và hardening.\n\n- Cung cấp dữ liệu cho Blue Team/SOC để tối ưu SIEM/EDR rules theo MITRE ATT&CK.",
+    "Yêu cầu ứng viên": "Tốt nghiệp đại học loại khá trở lên chuyên ngành ATTT, CNTT, Điện tử viễn thông hoặc Mạng máy tính.\n\nTối thiểu 1 năm kinh nghiệm trong ATTT; có kinh nghiệm Network/System Pentest hoặc quản trị hệ thống lớn theo định hướng bảo mật.\n\nHiểu biết về Routing/Switching, Firewall, IPS/IDS và các giao thức TCP/IP, DNS, DHCP, SMB, SSH, RDP.\n\nThành thạo Active Directory và hiểu các kỹ thuật tấn công phổ biến như Kerberoasting, Pass-the-Hash, DCSHadow.\n\nSử dụng tốt Nmap, Nessus, Qualys, Metasploit, Wireshark, Responder, Mimikatz, CrackMapExec, Kali Linux.\n\nCó khả năng viết script Bash, PowerShell hoặc Python.\n\n\n\n\nKiến thức ngành\nIT - Phần mềm, IT - Phần cứng và máy tính",
+    "Quyền lợi ứng viên": "· Mức thu nhập cạnh tranh so với thị trường, phù hợp với phạm vi trách nhiệm công việc và năng lực cá nhân.\n\n· Nhận thưởng tiền mặt dịp Lễ, Tết, ngày thành lập Tập đoàn, hỗ trợ ăn trưa, điện thoại, thưởng dự án, nghỉ dưỡng.\n\n· Tham gia đầy đủ BHXH, BHYT, BHTN và bảo hiểm sức khỏe riêng của Tập đoàn, khám sức khỏe định kỳ và ưu đãi mua bảo hiểm cho người thân.\n\n· Có 12 ngày phép và 15 ngày nghỉ hưởng nguyên lương gồm 11 ngày lễ Tết, 3 ngày nghỉ mát và 1 ngày sáng tạo.\n\n· Cơ hội trở thành Quân nhân chuyên nghiệp hoặc Sĩ quan thuộc Bộ Quốc phòng Việt Nam.\n\n· Được tham gia các buổi đào tạo nội bộ, được tài trợ kinh phí thi các chứng chỉ quốc tế, tham gia hội thảo chuyên ngành.\n\n· Cơ hội luân chuyển và thăng tiến cùng các dự án lớn khác nhau trong hệ sinh thái của Viettel.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Số 1 Trần Hữu Dực, Mỹ Đình 2, Từ Liêm, Phường Từ Liêm (Phường Từ Liêm thuộc quận Nam Từ Liêm cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:30)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 12/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n5 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/talent-reverse-engineer/2328971.html",
+   "title": "Talent Reverse Engineer",
+   "company": "Công ty CP Khoa học Dữ liệu",
+   "query": "https://www.topcv.vn/tim-viec-lam-information-security-cr257cb263",
+   "score": 1,
+   "via": "category",
+   "chips": {
+    "Yêu cầu": [
+     "Dưới 1 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Chuyên viên Cyber Security"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "● Xây dựng và vận hành giải pháp thu thập dữ liệu công khai từ các sàn TMĐT trên quy mô lớn.\n\n● Nghiên cứu và triển khai Reverse Engineering App/Web phức tạp, bao gồm phân tích giao thức mạng (SSL spinning),\n\n● Dịch ngược và đọc hiểu app/web, giải mã (decrypt parameter, captcha resolver, bypass anti-bot).",
+    "Yêu cầu ứng viên": "● Tối thiểu 6 tháng kinh nghiệm về Reverse Engineering hoặc lĩnh vực Security\n\n● Thành thạo kỹ thuật Reverse Engineering và Data Scrape trên Web/Android có độ khó cao.\n\n● Thành thạo một trong các tools request network capture, reverse như IDA, Frida, Xposed, jadx\n\n● Có kinh nghiệm phân tích từ Assembly, Android decompile, JS decompile, web assembly là điểm cộng lớn\n\n● Thành thạo ngôn ngữ lập trình Python, Javascript\n\n● Ưu tiên ứng viên có kinh nghiệm/thành tích trong lĩnh vực an toàn thông tin, tư duy Hacking & Growth Mindset\n\n● Ưu tiên có kinh nghiệm phát triển hệ thống điều khiển tự động app/web với tốc độ cao, và xử lý hàng triệu request dữ liệu hàng ngày, thực hiện reversing large-scale apps (E-commerce App, Social App, Search Engine...)\n\n● Đam mê phát triển sự nghiệp lĩnh vực Data Collection và Data Engineering.\n\n● Có tinh thần làm việc nhóm và kỹ năng giao tiếp tốt, tinh thần trách nhiệm cao, self-motivation và chấp nhận thử thách.",
+    "Quyền lợi ứng viên": "Mức lương - thưởng:\n\n● Lương: Thỏa thuận theo năng lực (up to 35.000.000 VNĐ gross)\n\n● Tối thiểu 13 tháng lương\n\n● Thưởng Quý, Thưởng Năm theo hiệu quả cá nhân và công ty\n\nQuyền lợi được hưởng:\n\n● Phát triển sản phẩm Top 1 về Big Data E-commerce tại Việt Nam.\n\n● Được đào tạo kiến thức chuyên sâu về Algorithm, Data Engineering, Phát triển sản phẩm, vận\n\nhành hệ thống quy mô Big-data ...\n\n● Cơ hội phát triển nghề nghiệp rộng mở về Chuyên môn và Quản lý (Cơ hội sự nghiệp: Senior Big Data, CTO)\n\n● Hưởng đầy đủ chế độ đãi ngộ về lương, thưởng, nghỉ phép theo quy định của pháp luật;\n\n● Các chế độ phúc lợi khác (Cơm trưa tại Công ty, Trợ cấp dùng máy tính cá nhân, Team\n\nbuilding, Hoạt động đào tạo, các chương trình hoạt động gắn kết khác,...)",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Tòa HH2 Building, Dương Đình Nghệ, Phường Yên Hòa (Phường Yên Hòa thuộc quận Cầu Giấy cũ)\nThời gian làm việc\n9h00 - 18h00 từ Thứ Hai đến Thứ Sáu và 01 thứ Bảy trong tháng\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 12/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/ky-su-an-toan-bao-mat-thong-tin/2305377.html",
+   "title": "Kỹ Sư An Toàn Bảo Mật Thông Tin",
+   "company": "CÔNG TY CP VTC DỊCH VỤ DI ĐỘNG",
+   "query": "https://www.topcv.vn/tim-viec-lam-information-security-cr257cb263",
+   "score": 1,
+   "via": "category",
+   "chips": {
+    "Yêu cầu": [
+     "1 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Chuyên viên Cyber Security",
+     "IT - Phần cứng và máy tính",
+     "IT - Phần mềm",
+     "An ninh mạng"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "● Giám sát, phát hiện và xử lý các sự cố an toàn thông tin trên hệ thống Server, Network, Web/API, Cloud và ứng dụng.\n\n● Phân tích log, điều tra các hành vi bất thường như brute-force, malware, webshell, khai thác lỗ hổng, API abuse, DDoS.\n\n● Thực hiện rà quét lỗ hổng, pentest Web/API và theo dõi quá trình khắc phục.\n\n● Phối hợp cùng Dev/DevOps triển khai Application Security, Secure SDLC và DevSecOps.\n\n● Đánh giá và hardening hệ thống Windows/Linux, Firewall, WAF, Database, Docker/Kubernetes.\n\n● Phân tích các nguy cơ hack/cheat, bypass authentication, giả mạo request và can thiệp client đối với hệ thống game.\n\n● Xây dựng rule cảnh báo, checklist bảo mật và quy trình xử lý sự cố.",
+    "Yêu cầu ứng viên": "● Có 1–3 năm kinh nghiệm về Cyber Security / Information Security.\n\n● Nắm vững TCP/IP, HTTP/HTTPS, Firewall, VPN, Windows/Linux.\n\n● Hiểu OWASP Top 10, API Security và các kỹ thuật tấn công phổ biến.\n\n● Có kinh nghiệm sử dụng một số công cụ như Burp Suite, Nmap, Wireshark, Nessus/OpenVAS, ELK/SIEM.\n\n● Có khả năng scripting với Python, PowerShell hoặc Bash.\n\n● Có khả năng phân tích log và xử lý sự cố độc lập.\n\n● Ưu tiên ứng viên có kinh nghiệm về AppSec, Pentest, DevSecOps, Cloud Security, SIEM/EDR hoặc hệ thống Game/Payment.\n\nKiến thức ngành\nIT - Phần cứng và máy tính, IT - Phần mềm, An ninh mạng\nKỹ năng cần có\nAn Ninh Mạng (cybersecurity), Cybersecurity",
+    "Quyền lợi ứng viên": "- Mức lương thỏa thuận đảm bảo xứng đáng với sự đóng góp của mỗi người;\n- Cơ chế lương thưởng linh hoạt và khuyến khích sự phát triển của mỗi cá nhân;\n- Được hưởng đầy đủ các chế độ phúc lợi xã hội như: BHYT, BHXH, BH thất nghiệp;\n- Môi trường làm việc chuyên nghiệp, sáng tạo, được đào tạo nâng cao kĩ năng trong quá trình làm việc, có nhiều cơ hội khẳng định bản thân và thăng tiến trong nghề nghiệp.\n- Tham gia đội ngũ phát hành game chuyên nghiệp hàng đầu Việt Nam, nhiệt huyết và siêu đáng yêu;\n- Du lịch khắp các vùng đất đẹp của Việt Nam và nước ngoài ít nhất 2 lần trong năm;\n- Được hỗ trợ phụ cấp máy tính khi ký hợp đồng chính thức;\n- Thời gian làm việc: 8h15 - 17h30 các ngày từ thứ 2 đến thứ 6 trong tuần;\n- Nghỉ thứ 7, chủ nhật và các ngày lễ khác, phép năm theo quy định của luật lao động.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Tầng 11, Tòa nhà VTC Online, Số 18 Tam Trinh, Phường Tương Mai (Phường Tương Mai có thể thuộc các quận Hai Bà Trưng, Hoàng Mai cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:15 đến 17:30)\n- Thời gian làm việc: 8h15 - 17h30 các ngày từ thứ 2 đến thứ 6 trong tuần;\n- Nghỉ thứ 7, chủ nhật và các ngày lễ khác, phép năm theo quy định của luật lao động.\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 18/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/kiem-toan-vien-it/2325311.html",
+   "title": "Kiểm Toán Viên (IT)",
+   "company": "CÔNG TY TÀI CHÍNH TÍN DỤNG TIÊU DÙNG TNHH MỘT THÀNH VIÊN AEON",
+   "query": "https://www.topcv.vn/tim-viec-lam-information-security-cr257cb263",
+   "score": 1,
+   "via": "category",
+   "chips": {
+    "Yêu cầu": [
+     "5 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên",
+     "Tiếng Anh Đọc hiểu"
+    ],
+    "Chuyên môn": [
+     "Tuân thủ và kiểm toán bảo mật",
+     "Ngân hàng",
+     "Kiểm toán",
+     "Tài chính"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Thực hiện kiểm toán CNTT theo kế hoạch được Ban Kiểm soát phê duyệt; phát hiện các sai phạm, tồn tại trong hệ thống CNTT và hoạt động nghiệp vụ liên quan; theo dõi việc khắc phục sau kiểm toán.\n\nĐánh giá rủi ro CNTT toàn diện và hỗ trợ xây dựng kế hoạch kiểm toán CNTT hàng năm; đảm bảo tuân thủ quy định pháp luật, quy định của NHNN và các tiêu chuẩn quốc tế như COBIT, ISO 27001, PCI DSS.\n\nTư vấn cho Ban lãnh đạo và các đơn vị về các biện pháp kiểm soát nội bộ CNTT hiệu quả; đề xuất cải tiến hệ thống kiểm soát nhằm bảo vệ tài sản thông tin và nâng cao hiệu quả hoạt động.\n\nXây dựng chương trình kiểm toán chi tiết cho từng cuộc kiểm toán, bao gồm phân tích sơ bộ, xác định rủi ro trọng yếu, thiết kế thủ tục kiểm toán, chọn mẫu và phân công nhiệm vụ.\n\nĐảm nhận vai trò Trưởng nhóm kiểm toán trong các cuộc kiểm toán liên quan đến hệ thống CNTT, bảo mật thông tin và hạ tầng CNTT.\n\nKiểm tra và đánh giá hệ thống kiểm soát truy cập, quản lý tài khoản đặc quyền và phân quyền người dùng; đánh giá tuân thủ an toàn thông tin theo quy định hiện hành của NHNN.\n\nPhân tích dữ liệu từ các hệ thống và kho dữ liệu bằng SQL, Python, Power BI nhằm phát hiện bất thường, gian lận tiềm ẩn và sai lệch dữ liệu.\n\nĐánh giá rủi ro CNTT trong các dự án triển khai, nâng cấp và tích hợp hệ thống; báo cáo phát hiện kiểm toán và theo dõi tiến độ khắc phục.\n\nTham gia xây dựng và rà soát các quy định, quy trình CNTT nội bộ; phối hợp với kiểm toán độc lập và cơ quan quản lý trong các đợt kiểm tra liên quan.\n\nCập nhật xu hướng công nghệ, rủi ro mới và thay đổi pháp lý; phát triển phương pháp kiểm toán CNTT và hỗ trợ đào tạo đội ngũ.",
+    "Yêu cầu ứng viên": "Tốt nghiệp Đại học trở lên chuyên ngành Công nghệ Thông tin, An toàn Thông tin, Khoa học Máy tính, Kế toán – Kiểm toán hoặc Tài chính – Ngân hàng.\n\nTối thiểu 05 năm kinh nghiệm trong lĩnh vực Tài chính – Ngân hàng, Kiểm toán hoặc CNTT; trong đó có ít nhất 03 năm kinh nghiệm trực tiếp về Kiểm toán CNTT hoặc Rủi ro CNTT.\n\nƯu tiên ứng viên có kinh nghiệm làm việc tại các công ty tài chính tiêu dùng, Fintech hoặc tổ chức tín dụng.\n\nAm hiểu kiến trúc hệ thống CNTT, hạ tầng mạng, cơ sở dữ liệu, an ninh mạng và bảo mật thông tin trong môi trường tài chính – ngân hàng; có kiến thức về Data Warehouse, Cloud Infrastructure và các hệ thống Core Banking hoặc LOS.\n\nThành thạo phân tích dữ liệu bằng SQL, Python và các công cụ kiểm toán như ACL, IDEA, Power BI; có kinh nghiệm làm việc với kho dữ liệu để phục vụ kiểm toán dựa trên dữ liệu và phát hiện gian lận.\n\nNắm vững phương pháp luận kiểm toán CNTT theo các chuẩn quốc tế như COBIT 2019, ISO 27001, ITIL, PCI DSS và các quy định của NHNN về an toàn thông tin.\n\nCó khả năng lập kế hoạch kiểm toán chi tiết, dẫn dắt nhóm kiểm toán, thu thập và đánh giá bằng chứng, xây dựng báo cáo kiểm toán chuyên nghiệp và trình bày kết quả một cách thuyết phục.\n\nƯu tiên ứng viên có các chứng chỉ quốc tế như CISA, CISSP, CISM, CRISC, ISO 27001 Lead Auditor hoặc tương đương.\n\nKỹ năng giao tiếp, thuyết trình và đàm phán hiệu quả; có khả năng truyền đạt các vấn đề kỹ thuật phức tạp đến đối tượng không chuyên một cách rõ ràng và thuyết phục bằng tiếng Việt và tiếng Anh.\n\nTư duy phân tích logic, chú trọng chi tiết; có khả năng xác định vấn đề trọng yếu, phân tích nguyên nhân gốc rễ và đề xuất giải pháp cải tiến khả thi.\n\nTrung thực, khách quan, độc lập và tuân thủ nghiêm ngặt bảo mật thông tin; duy trì đạo đức nghề nghiệp kiểm toán và sự hoài nghi nghề nghiệp phù hợp.\n\nKiến thức ngành\nNgân hàng, Kiểm toán, Tài chính\nKỹ năng cần có\nPower BI, PCI DSS, ISO 27001, Dẫn dắt nhóm, Phân tích dữ liệu SQL, Kiểm Toán Cntt, Phân tích dữ liệu Python, ACL, IDEA, COBIT 2019, Itil, Lập Kế Hoạch Kiểm Toán, Báo Cáo Kiểm Toán\nKỹ năng nên có\nFintech, CISSP, CISA, CISM, CRISC, ISO 27001 Lead Auditor",
+    "Quyền lợi ứng viên": "Thời gian thử việc 2 tháng và hưởng 100% mức lương.\n\nĐóng bảo hiểm xã hội trên 100% mức lương.\n\nHưởng phụ cấp ăn trưa theo quy định của Công ty.\n\nHưởng đầy đủ các chế độ phúc lợi theo quy định của pháp luật, bao gồm bảo hiểm y tế, bảo hiểm xã hội và bảo hiểm thất nghiệp.\n\nKhám sức khỏe định kỳ hàng năm và tham gia chương trình bảo hiểm sức khỏe cao cấp theo cấp bậc và thâm niên.\n\nHưởng tối thiểu 13 tháng lương cùng các khoản thưởng theo kết quả kinh doanh, thưởng dịp đặc biệt và các ngày lễ lớn.\n\nĐược tham gia các chương trình đào tạo nhằm nâng cao kiến thức và kỹ năng chuyên môn.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Số 3 Đặng Thái Thân, Phường Cửa Nam (Phường Cửa Nam thuộc quận Hoàn Kiếm cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 07/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/chuyen-vien-cao-cap-quan-ly-tuan-thu-bao-mat-cong-nghe-thong-tin/2319044.html",
+   "title": "Chuyên Viên Cao Cấp Quản Lý Tuân Thủ & Bảo Mật Công Nghệ Thông Tin",
+   "company": "NOVALAND GROUP CORP",
+   "query": "https://www.topcv.vn/tim-viec-lam-information-security-cr257cb263",
+   "score": 1,
+   "via": "category",
+   "chips": {
+    "Yêu cầu": [
+     "3 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Tuân thủ và kiểm toán bảo mật",
+     "An ninh mạng",
+     "IT - Phần cứng và máy tính",
+     "IT - Phần mềm"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "1. Quản lý tuân thủ CNTT:\n- Đảm bảo tất cả các hệ thống CNTT và các quy trình liên quan tuân thủ các tiêu chuẩn bảo mật quốc tế (như ISO 27001, GDPR) và các quy định pháp lý địa phương.\n- Quản lý và giám sát các chính sách tuân thủ CNTT, thực hiện kiểm tra định kỳ và đảm bảo rằng các quy trình, hệ thống và đội ngũ liên quan tuân thủ các yêu cầu bảo mật và pháp lý.\n\n2. Xây dựng và cải tiến quy trình quản lý:\n- Phối hợp với các bộ phận liên quan để xây dựng và cải tiến các quy trình quản lý CNTT nhằm đảm bảo tính hiệu quả, an toàn và tuân thủ.\n- Thực hiện các đánh giá rủi ro và đề xuất biện pháp giảm thiểu rủi ro bảo mật và pháp lý trong các quy trình CNTT.\n\n3. Kiểm soát nội bộ và quản lý rủi ro:\n- Thực hiện và giám sát các hoạt động kiểm soát nội bộ liên quan đến quản lý rủi ro và tuân thủ, đảm bảo các hệ thống và quy trình được vận hành an toàn và bảo mật.\n- Đề xuất và triển khai các giải pháp phòng ngừa rủi ro và kế hoạch kiểm soát an ninh cho các hệ thống CNTT và quy trình nghiệp vụ của công ty.\n\n4. Kiểm toán và báo cáo tuân thủ:\n- Tham gia và điều phối các cuộc kiểm toán nội bộ và bên ngoài liên quan đến tuân thủ CNTT, đảm bảo mọi yêu cầu kiểm toán đều được thực hiện và tuân thủ đúng quy trình.\n- Lập báo cáo định kỳ về tình trạng tuân thủ CNTT của công ty và đề xuất các giải pháp cải thiện.\n\n5. Đào tạo và nâng cao nhận thức về tuân thủ:\n- Xây dựng và triển khai các chương trình đào tạo, nâng cao nhận thức về tuân thủ và an ninh thông tin cho nhân viên.\n- Đảm bảo các quy trình tuân thủ được truyền đạt rõ ràng và mọi nhân viên hiểu rõ về trách nhiệm tuân thủ của mình.\n\n6.Giám sát hệ thống an ninh mạng:\n- Theo dõi và giám sát liên tục hệ thống mạng và các ứng dụng CNTT để phát hiện các dấu hiệu tấn công mạng, xâm nhập trái phép hoặc các hành vi bất thường.\n- Sử dụng các công cụ bảo mật như SIEM (Security Information and Event Management), IDS/IPS để giám sát và phân tích các sự kiện bảo mật, đảm bảo phát hiện và xử lý các nguy cơ an ninh mạng một cách kịp thời.\n\n7. Phân tích và xử lý sự cố bảo mật:\n- Điều tra các sự cố bảo mật, xác định nguyên nhân gốc rễ và đề xuất các biện pháp khắc phục.\n- Phối hợp với các bộ phận liên quan để triển khai các biện pháp phục hồi và giảm thiểu rủi ro sau khi xảy ra sự cố.\n\n8. Thực hiện quét lỗ hổng bảo mật:\n- Tiến hành quét lỗ hổng bảo mật định kỳ trên toàn hệ thống mạng và các thiết bị CNTT, đảm bảo rằng hệ thống luôn được cập nhật và bảo vệ trước các lỗ hổng mới nhất.\n- Đề xuất các biện pháp bảo vệ và khắc phục lỗ hổng bảo mật, đảm bảo hệ thống tuân thủ các tiêu chuẩn bảo mật.\n\n9. Hỗ trợ triển khai các biện pháp bảo mật:\n9.1. Tham gia vào việc triển khai các biện pháp bảo mật mới, bao gồm cấu hình firewall, hệ thống IDS/IPS, bảo mật ứng dụng và cơ sở dữ liệu.\n9.2. Phối hợp với các bộ phận khác để đảm bảo các biện pháp bảo mật được áp dụng đúng quy trình và tiêu chuẩn bảo mật.\n\n10. Đào tạo và nâng cao nhận thức bảo mật:\n- Tham gia vào các chương trình đào tạo, hội thảo nâng cao nhận thức về an ninh thông tin cho nhân viên.\n- Hỗ trợ các thành viên trong công ty hiểu và tuân thủ các chính sách, quy trình an ninh thông tin.\n\n11. Các công việc khác được giao bởi quản lý trực tiếp",
+    "Yêu cầu ứng viên": "Trình độ: Tốt nghiệp đại học chuyên ngành CNTT, An ninh mạng, Hệ thống thông tin hoặc các ngành liên quan.\n\nChứng chỉ nghề nghiệp:\n\n- Hiểu biết về các tiêu chuẩn bảo mật thông tin quốc tế như ISO 27001, GDPR là một lợi thế.\n- Chứng chỉ bảo mật như CEH (Certified Ethical Hacker), CISM, CISSP là một lợi thế.\n\nKinh nghiệm chuyên môn:\n\n- Có từ 3 năm kinh nghiệm trong lĩnh vực bảo mật thông tin hoặc an ninh mạng.\n- Kinh nghiệm làm việc với các công cụ giám sát bảo mật như SIEM, IDS/IPS, và các công nghệ bảo mật khác.\n- Hiểu biết về các phương pháp bảo mật, quản lý rủi ro, và phòng chống tấn công mạng.\n\nKỹ năng:\n\n- Kỹ năng giám sát hệ thống và phân tích sự cố bảo mật tốt, có khả năng phản ứng nhanh với các mối đe dọa.\n- Kỹ năng giao tiếp tốt, có khả năng làm việc nhóm và phối hợp với các bộ phận khác để giải quyết sự cố.\n\nCác yêu cầu khác:\n\n- Hiệu quả; Chính trực; Chuyên nghiệp\n- Đặc tính Novator & Cơ chế đánh giá Nhân sự.\n\nKiến thức ngành\nAn ninh mạng, IT - Phần cứng và máy tính, IT - Phần mềm",
+    "Quyền lợi ứng viên": "- Thu nhập cạnh tranh\n- Tham gia đầy đủ BHXH/BHYT/BHTN\n- Thưởng & phúc lợi theo chính sách Công ty (ngày phép, CityGym miễn phí, Giảm giá các dịch vụ trong hệ sinh thái của Nova,...)\n- Môi trường chuyên nghiệp, năng động và nhiều cơ hội được đào tạo và phát triển.\n\n- Làm việc tại trung tâm Quận 1 TP HCM",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: 65 Nguyễn Du, Phường Sài Gòn (Phường Sài Gòn thuộc Quận 1 cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:30 đến 17:30)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 31/10/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  }
+ ]
+}

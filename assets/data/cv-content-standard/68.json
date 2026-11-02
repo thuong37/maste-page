@@ -1,0 +1,36 @@
+{
+  "id": 68,
+  "nhom": "Bất động sản",
+  "nghe": "Quản lý vận hành bất động sản",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "2/6 JD trưởng phòng/kỹ sư trưởng (2 năm quản lý), 4/6 nhân viên/chuyên viên (1-5 năm); Trung cấp đến Đại học; JD#3 là kế toán ban quản lý tòa nhà",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh nhưng 2/6 nêu ngoại hình (khá, sáng, nữ từ 1m57) và 5/6 nêu độ tuổi/giới tính; nghề tiếp khách thuê nên ảnh nghiêm túc là lợi thế",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 JD nhắc tinh thần cầu tiến, gắn bó; nên nêu định hướng quản lý vận hành",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nêu 1-5 năm kinh nghiệm quản lý vận hành tòa nhà/chung cư/văn phòng/khu đô thị; nên ghi loại tòa nhà, quy mô",
+    "hoc-van": "can — 6/6 nêu Trung cấp đến Đại học; ngành Kỹ thuật điện, Xây dựng, Quản lý BĐS, QTKD, Kế toán",
+    "ky-nang-chuyen-mon": "can — 6/6: giám sát vận hành điện nước/PCCC/thang máy, quản lý dịch vụ bảo vệ vệ sinh, xử lý yêu cầu khách thuê/cư dân, pháp luật nhà ở, thu phí và hóa đơn",
+    "ky-nang-mem": "can — 5/6: lập kế hoạch, thương lượng, quản lý đội nhóm, giao tiếp, trung thực, trách nhiệm",
+    "cong-cu-phan-mem": "nen — 2/6: Word, Excel, Misa, ERP; ứng dụng quản lý của công ty",
+    "chung-chi": "nen — 1/6 chứng chỉ quản lý vận hành là lợi thế; 1/6 nhắc tiêu chuẩn PCCC",
+    "du-an": "nen — 2/6 nhắc dự án BĐS/khu đô thị; không JD đòi dự án cụ thể",
+    "thanh-tich-kpi": "nen — 1/6 nhắc hài lòng khách hàng/chất lượng dịch vụ; không có chỉ tiêu số",
+    "ngoai-ngu": "nen — 2/6 tiếng Anh là lợi thế",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhận mới ra trường",
+    "giay-phep": "nen — 1/6 nhắc phương tiện/bằng lái; không phổ biến",
+    "thong-tin-ca-nhan-mo-rong": "nen — 5/6 nêu độ tuổi/giới tính/chiều cao; nên có độ tuổi, nơi ở",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["quản lý vận hành tòa nhà", "kỹ sư trưởng", "PCCC", "hệ thống điện nước điều hòa thang máy", "dịch vụ khách thuê", "ban quản lý tòa nhà", "ERP", "Excel", "tiêu chuẩn dịch vụ"],
+  "bangChung": [
+    "JD#1: 'Tối thiểu 2 năm kinh nghiệm ở vị trí Kỹ sư trưởng/Trợ lý Kỹ sư trưởng'; 'Tuổi 28 - 50', 'Nam'",
+    "JD#2: 'ít nhất 2 năm kinh nghiệm Quản lý'; 'Độ tuổi từ 30 - 49 tuổi'",
+    "JD#3: 'Ưu tiên ứng viên có kinh nghiệm phần mềm ERP'; 'Word, Excel, Misa'",
+    "JD#5: 'Độ tuổi từ 20 - 30. Ngoại hình khá'; 'Giao tiếp ngoại ngữ (tiếng Anh) là một lợi thế'",
+    "JD#6: 'Có chứng chỉ liên quan về Quản lý Vận hành là lợi thế'; 'Ngoại hình sáng, nữ từ 1m57'"
+  ],
+  "ghiChu": "anh-chan-dung để nen dù JD nêu ngoại hình ở 2/6 vì chỉ ở vị trí tiếp khách; chưa thành đa số."
+}

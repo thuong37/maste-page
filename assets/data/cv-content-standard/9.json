@@ -1,0 +1,37 @@
+{
+  "id": 9,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Kỹ thuật (Sales Engineer)",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên; 1 JD không yêu cầu kinh nghiệm, 3 JD yêu cầu 1 năm, 2 JD yêu cầu 2 năm; Cao đẳng/Đại học kinh doanh hoặc kỹ thuật",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; 3/6 nêu độ tuổi/giới tính, nghề gặp khách doanh nghiệp nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 1/6 JD (Việt Thương) nhắc định hướng phát triển nghề nghiệp lâu dài; nên nêu định hướng sales thiết bị công nghiệp",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD hỏi kinh nghiệm; nên ghi mảng đã bán (B2B, máy CNC, thiết bị đo lường, bơm, vật tư cơ khí...) và khách hàng phụ trách",
+    "hoc-van": "can — 6/6 nêu bậc học và chuyên ngành kỹ thuật (Cơ khí, Cơ điện tử, Tự động hóa, Điện-Điện tử) hoặc Kinh tế/Quản trị kinh doanh/Ngoại thương",
+    "ky-nang-chuyen-mon": "can — 6/6: tư vấn sản phẩm kỹ thuật, tìm kiếm khách hàng B2B, lập báo giá/hồ sơ kỹ thuật, pre-sales (demo, chào thầu, giải pháp), ký hợp đồng",
+    "ky-nang-mem": "can — 6/6: giao tiếp, đàm phán, thuyết phục/thuyết trình, chủ động, chịu áp lực doanh số, quản lý thời gian",
+    "cong-cu-phan-mem": "nen — 3/6: tin học văn phòng, Word/Excel, Zalo/Facebook để tìm khách; không JD nhắc phần mềm kỹ thuật cụ thể",
+    "chung-chi": "khong — không JD nào nhắc chứng chỉ",
+    "du-an": "nen — 3/6 nhắc dự án (khách hàng dự án thiết bị, chào thầu, giải pháp); ghi dự án đã tham gia nếu có",
+    "thanh-tich-kpi": "nen — 2/6 nhắc doanh số (lương thưởng theo doanh số, chịu áp lực doanh số); nên ghi số liệu doanh số/khách hàng",
+    "ngoai-ngu": "nen — 3/6: tiếng Anh đọc hiểu tài liệu kỹ thuật, tiếng Anh/Trung là lợi thế; 1 JD đọc hiểu cả tiếng Trung",
+    "portfolio-link": "khong — không JD nào nhắc (2/6 chỉ liên quan hồ sơ kỹ thuật/tài liệu thuyết minh của công ty)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc; chỉ 1/6 nhận chưa có kinh nghiệm",
+    "giay-phep": "nen — 1/6 (Nam Hải CNC) có phương tiện di chuyển và đi công tác khi cần",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 nêu độ tuổi (22-45, 25-40, 25-35); nên có độ tuổi/nơi ở/khả năng đi công tác",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Sales Engineer", "B2B", "thiết bị công nghiệp", "tư vấn kỹ thuật", "pre-sales", "báo giá", "đàm phán", "máy CNC/máy hàn/máy bơm", "thiết bị đo lường", "doanh số", "tiếng Anh kỹ thuật", "đi công tác"],
+  "bangChung": [
+    "JD#1 (Weldcom): 'Tốt nghiệp các chuyên ngành kỹ thuật, cơ điện tử, Cơ khí chế tạo máy, Tự động hóa'; 'Tiếng Anh/tiếng Trung là một lợi thế'",
+    "JD#2 (Takasi Vina): 'Từ 02 năm trở lên tại vị trí Kinh doanh'; 'thành thạo tin học văn phòng'",
+    "JD#3: 'Ưu tiên ... kinh nghiệm kinh doanh B2B, vật tư công nghiệp, cơ khí'",
+    "JD#4 (Nam Hải CNC): 'Biết sử dụng Word, Excel, Zalo, Facebook'; 'Có thể đi công tác khi cần'",
+    "JD#5: 'Thực hiện các công việc kỹ thuật trước bán hàng (pre-sales) ... chào thầu, demo'; 'biên dịch được tài liệu kỹ thuật tiếng Anh'",
+    "JD#6: 'Tối thiểu 02 năm kinh nghiệm Sales B2B'; 'chịu áp lực doanh số tốt'; Tuổi 25-35"
+  ],
+  "ghiChu": "Crawl lại: 6/6 JD sát nghề (JD#5 là Application Engineer/pre-sales, gần nghề). JD#6 tên công ty là biến mẫu chưa render, không ảnh hưởng nội dung."
+}

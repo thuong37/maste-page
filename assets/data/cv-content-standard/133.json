@@ -1,0 +1,36 @@
+{
+  "id": 133,
+  "nhom": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học",
+  "nghe": "Nghề Y tá/Điều dưỡng",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "4/6 JD cấp nhân viên điều dưỡng/phụ tá nha khoa (0-1 năm, Sơ cấp/Trung cấp đến ĐH), 1 JD điều dưỡng trưởng khu vực (3 năm quản lý, nữ 32-45), 1 JD lạc nghề (quản lý nhà hàng)",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; JD#4 nêu thẳng 'ngoại hình ưa nhìn', 2/6 nêu tuổi/giới tính; ảnh chuyên nghiệp là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — không JD nào nhắc rõ; nên nêu định hướng điều dưỡng/phụ tá nha khoa",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD sát nghề nhắc kinh nghiệm hoặc ưu tiên (0 đến 3 năm), ưu tiên bệnh viện/phòng khám/nha khoa/thẩm mỹ",
+    "hoc-van": "can — 5/5 JD sát nghề nêu Sơ cấp/Trung cấp/CĐ/ĐH chuyên ngành Điều dưỡng, Y sĩ",
+    "ky-nang-chuyen-mon": "can — thực hiện y lệnh (tiêm, truyền, thay băng, lấy mẫu), theo dõi dấu hiệu sinh tồn, ghi hồ sơ bệnh án, phụ bác sĩ nha khoa (implant, răng sứ), khử khuẩn/vô trùng, lấy máu trẻ nhỏ",
+    "ky-nang-mem": "can — 5/5: giao tiếp, tận tâm, cẩn thận, trung thực, trách nhiệm, phối hợp với bác sĩ",
+    "cong-cu-phan-mem": "khong — không JD sát nghề nhắc phần mềm",
+    "chung-chi": "can — 4/5 JD sát nghề đòi/ưu tiên chứng chỉ hành nghề điều dưỡng/y sĩ (JD#4 CCHN ≥ 36 tháng)",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — JD#4 đạt chỉ tiêu doanh thu chi nhánh; các JD khác không nhắc",
+    "ngoai-ngu": "nen — JD#1 tiếng Anh giao tiếp cơ bản/đọc hiểu; 1/5 nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/5 chấp nhận chưa có kinh nghiệm/được đào tạo",
+    "giay-phep": "can — 4/5 JD sát nghề yêu cầu chứng chỉ hành nghề, giấy xác nhận quá trình hành nghề (JD#4 gồm quyết định thôi việc cơ sở cũ)",
+    "thong-tin-ca-nhan-mo-rong": "can — 3/5 nêu tuổi (22-45, 20-35, 32-45), giới tính nữ (JD#4)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Điều dưỡng", "phụ tá nha khoa", "chứng chỉ hành nghề", "tiêm truyền/thay băng", "lấy máu", "hồ sơ bệnh án", "vô trùng/khử khuẩn", "implant"],
+  "bangChung": [
+    "JD#1: 'Có chứng chỉ hành nghề y sĩ, điều dưỡng'; 'Tuổi 22 - 45'; 'vệ sinh, khử khuẩn và vô trùng dụng cụ nghiêm ngặt'",
+    "JD#2: 'Có chứng chỉ hành nghề Điều dưỡng do Bộ Y tế cấp'; 'tiêm truyền, thay băng, lấy mẫu xét nghiệm, theo dõi dấu hiệu sinh tồn'",
+    "JD#3: 'Tốt nghiệp Trung cấp/Cao đẳng/Đại học chuyên ngành Điều dưỡng'; 'Không yêu cầu kinh nghiệm'",
+    "JD#4: 'Có chứng chỉ hành nghề (CCHN) điều dưỡng được cấp tối thiểu 36 tháng'; 'Chuyên nghiệp và ngoại hình ưa nhìn'; 'Nữ'",
+    "JD#5: 'Ưu tiên có kinh nghiệm phụ tá nha khoa từ 12 tháng trở lên'; 'Trợ thủ được các dịch vụ Răng sứ thẩm mỹ, Implant'"
+  ],
+  "ghiChu": "JD#6 (quản lý nhà hàng) lạc nghề, bỏ qua. Yêu cầu ngoại hình/giới tính ghi nhận như dữ liệu JD."
+}

@@ -1,0 +1,36 @@
+{
+  "id": 56,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Tiếp thị/Bán hàng",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "4/6 JD PG/nhân viên bán hàng (3/4 không yêu cầu kinh nghiệm, 1 JD 1 năm), 1 JD PG Supervisor (1-2 năm quản lý đội PG), 1 JD giám đốc dự án (lạc nghề); từ THPT/sơ cấp trở lên; trùng phần lớn với nghề id 24",
+  "muc": {
+    "anh-chan-dung": "nen — JD#3 'ngoại hình sáng sủa, thái độ thân thiện' (1/6), JD#4 quy định trang phục; nghề PG tiếp xúc khách nên ảnh gọn gàng/thân thiện là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc định hướng/mục tiêu",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD sát nghề nhắc; ưu tiên kinh nghiệm PG, bán hàng tại siêu thị/cửa hàng, FMCG; supervisor cần 1-2 năm quản lý đội bán hàng trực tiếp",
+    "hoc-van": "nen — JD sát nghề chỉ cần THPT/sơ cấp/trung cấp; ghi ngắn",
+    "ky-nang-chuyen-mon": "can — 5/5: tư vấn bán hàng trực tiếp tại siêu thị/sự kiện, giới thiệu sản phẩm, chốt đơn, kiểm tồn/trưng bày, tính tiền; supervisor: phân công, đào tạo, sampling, báo cáo doanh số",
+    "ky-nang-mem": "can — 6/6: giao tiếp, thuyết phục, nhanh nhẹn, trung thực, trách nhiệm, làm việc nhóm/độc lập, chịu áp lực",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc phần mềm",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD sát nghề nhắc (JD#5 lạc nghề là giám đốc dự án)",
+    "thanh-tich-kpi": "can — 3/6: tinh thần đạt doanh số (JD#2), báo cáo doanh số/thị trường (JD#6), doanh số/KPI trong tín hiệu; nên nêu doanh số cá nhân/đội",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "nen — nghề bán hàng nên ghi danh hiệu nhân viên xuất sắc nếu có (suy từ tính chất công việc; không JD nhắc)",
+    "hoat-dong-ngoai-khoa": "can — 3/5 JD sát nghề không yêu cầu kinh nghiệm/chào đón sinh viên (JD#1, #2, #4); nên ghi làm thêm/part-time",
+    "giay-phep": "can — JD#6 yêu cầu có phương tiện di chuyển (1/5 sát nghề); JD#4 làm theo ca, cuối tuần, lễ Tết",
+    "thong-tin-ca-nhan-mo-rong": "nen — 4/6 JD nêu độ tuổi (20-38, 18-40, 25-37), JD#4 và JD#3 nêu ca/cuối tuần; JD#6 địa điểm điểm bán, chợ, sự kiện",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["PG/PB bán hàng", "tư vấn bán hàng siêu thị", "FMCG", "chốt đơn", "kiểm tồn/trưng bày", "sampling", "PG Supervisor", "làm ca/cuối tuần", "part-time"],
+  "bangChung": [
+    "JD#1: 'Tốt nghiệp THPT trở lên, tuổi từ 20 – 38'; 'Ưu tiên đã có kinh nghiệm PG'",
+    "JD#2: 'có tinh thần đạt doanh số'; 'Sinh viên ... vẫn được chào đón'",
+    "JD#3: 'Tối thiểu 1 năm kinh nghiệm trong lĩnh vực bán hàng'; 'Ngoại hình sáng sủa'; 'sẵn sàng làm việc theo ca, cuối tuần và các ngày lễ, tết'",
+    "JD#4: 'Nam/Nữ từ đủ 18 tuổi'; 'Trang phục: Áo có cổ, quần dài và giày đen'",
+    "JD#6: 'Có ít nhất 1-2 năm kinh nghiệm vị trí PG Supervisor'; 'Có phương tiện di chuyển'; 'Tuổi 25 - 37'"
+  ],
+  "ghiChu": "JD#5 (giám đốc dự án) lạc nghề, không dùng làm căn cứ; trùng nhiều JD với nghề id 24."
+}

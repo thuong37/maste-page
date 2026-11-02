@@ -1,0 +1,35 @@
+{
+  "id": 118,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Chất bán dẫn/Chip",
+  "soJD": 5,
+  "doTinCay": "thap",
+  "capBac": "5/5 JD cấp nhân viên/thực tập; chỉ 3/5 JD sát nghề (IC Application Engineer 2 năm, Physical Design Intern, FAE bán dẫn công suất 1 năm); JD#1 (Backend Python/AI) và JD#2 (Documentation Engineer khuôn chính xác) lạc nghề/lệch",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 3/5 nêu giới tính/tuổi (nam 24-35, nữ ưu tiên); nghề kỹ thuật nên ảnh chỉ là phụ (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 1/5 nhắc tinh thần cầu tiến; nên nêu hướng thiết kế chip/ứng dụng",
+    "kinh-nghiem-lam-viec": "can — 5/5 nhắc kinh nghiệm hoặc không yêu cầu (thực tập sinh năm 4 trở lên, 1-2 năm), ưu tiên đúng ngành điện tử/bán dẫn",
+    "hoc-van": "can — 5/5 nêu ĐH ngành Điện tử, Viễn thông, Vi mạch/Semiconductor, Kỹ thuật Máy tính, Tự động hóa",
+    "ky-nang-chuyen-mon": "can — luồng thiết kế ASIC/SoC (RTL-to-GDSII), Synthesis/Floorplan/P&R, ứng dụng IC, FAE IGBT/SiC, thử nghiệm và đánh giá độ tin cậy, kiến thức CMOS/VLSI",
+    "ky-nang-mem": "can — 4/5: giao tiếp, trách nhiệm, chủ động, tỉ mỉ, làm việc nhóm",
+    "cong-cu-phan-mem": "can — 4/5: công cụ EDA (Synopsys, Cadence, Siemens/Mentor), Design Compiler, Innovus, Calibre, Altium Designer, Tcl script, Office",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "can — 3/5 nhắc dự án/đồ án (thực hành quy trình thiết kế, dự án ứng dụng, thử nghiệm sản phẩm); nên ghi đồ án/dự án",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "can — 5/5 nhắc tiếng Anh (thành thạo/lưu loát/tốt), JD#5 ưu tiên tiếng Trung",
+    "portfolio-link": "nen — JD thực tập Physical Design mong có kinh nghiệm thực hành script/công cụ EDA; không JD nào nêu thẳng link (suy từ công việc)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/5 nhận thực tập sinh/không yêu cầu kinh nghiệm",
+    "giay-phep": "nen — JD#5 sẵn sàng đi công tác; không JD nào đòi bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/5 nêu giới tính (nam, nữ ưu tiên), tuổi 24-35; không đồng nhất",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Physical Design", "RTL-to-GDSII", "EDA Synopsys/Cadence", "CMOS/VLSI", "IC Application Engineer", "FAE IGBT/SiC", "Tcl/Python", "Altium Designer", "Tiếng Anh"],
+  "bangChung": [
+    "JD#3: 'Có khả năng sử dụng thành thạo ít nhất một phần mềm thiết kế chip'; 'Tiếng Anh thành thạo'; 'Nam'",
+    "JD#4: 'Có kiến thức vững về Thiết kế Số ... Lý thuyết Mạch bán dẫn (CMOS / VLSI)'; 'Design Compiler, Innovus, IC Compiler II, Primetime, Calibre'; 'viết script hỗ trợ tự động hóa bằng: Tcl'",
+    "JD#5: 'Am hiểu nguyên lý và ứng dụng của IGBT, SiC'; 'Altium Designer'; 'Kỹ năng tiếng Anh tốt, ưu tiên biết tiếng Trung'",
+    "JD#2: 'Ưu tiên Nữ'; 'Tiếng Anh: Nghe, nói, đọc, viết tốt' (JD lệch ngành)"
+  ],
+  "ghiChu": "Chỉ 3/5 JD sát nghề chip/bán dẫn; JD#1 (backend CRM/AI) lạc nghề, JD#2 (documentation khuôn chính xác) lệch. Độ tin cậy thấp."
+}

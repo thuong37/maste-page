@@ -1,0 +1,35 @@
+{
+  "id": 43,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Software Design",
+  "soJD": 4,
+  "doTinCay": "vua",
+  "capBac": "4/4 JD cấp nhân viên UI/UX/Product Designer (2-5 năm kinh nghiệm, 1 JD lead team 2-3 thành viên); cao đẳng/ĐH ngành Thiết kế đồ họa, UI/UX, CNTT",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình/độ tuổi (chỉ tín hiệu giới tính 1/4 không xác nhận); công việc thiết kế, portfolio quan trọng hơn ảnh (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#3 tư duy hướng hiệu quả chuyển đổi kinh doanh, JD#4 AI-driven design (2/4 mô tả định hướng); dùng để nêu định hướng UI/UX/Product Design",
+    "kinh-nghiem-lam-viec": "can — 4/4 JD nhắc 2-5 năm UI/UX, Product Design, Graphic; sản phẩm số Web/Mobile, e-commerce",
+    "hoc-van": "can — 4/4 nêu bậc học; ngành Thiết kế đồ họa, UI/UX, Thiết kế tương tác, Mỹ thuật đa phương tiện, CNTT",
+    "ky-nang-chuyen-mon": "can — 4/4: thiết kế UI/UX Web/Mobile, wireframe/prototype, design system, nghiên cứu người dùng, CRO/A-B test, graphic/brand design, handoff cho dev",
+    "ky-nang-mem": "can — 4/4: giao tiếp, trình bày thiết kế, phối hợp BA/PO/Dev/QA, mentor/lead team, tư duy data-driven",
+    "cong-cu-phan-mem": "can — 4/4: Figma (Auto Layout, Components, Prototyping), Photoshop, Illustrator, công cụ AI, heatmap/session recording, Shopify",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ (tín hiệu chứng chỉ chỉ là bằng cấp)",
+    "du-an": "can — 3/4: sản phẩm đã ra mắt (JD#1), ít nhất 03 dự án sản phẩm số quy mô trung-lớn (JD#2), phân tích funnel Ads→Landing→Checkout (JD#3); CV phải nêu dự án và vai trò",
+    "thanh-tich-kpi": "nen — JD#3 hiệu quả chuyển đổi, CRO, tốc độ tải trang (1/4); nên nêu số liệu cải thiện conversion",
+    "ngoai-ngu": "nen — tín hiệu ngoại ngữ 1/4; JD#1 viết nội dung tiếng Việt rõ ràng (không phải ngoại ngữ)",
+    "portfolio-link": "can — JD#2 'có thể chứng minh qua portfolio' (tín hiệu portfolio 2/4); nghề thiết kế bắt buộc có link Behance/Figma",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — 4/4 JD đòi 2-5 năm kinh nghiệm",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — JD#2 chỉ yêu cầu tốt nghiệp ĐH trước 2020; không JD nêu độ tuổi/giới tính",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["UI/UX Designer", "Product Design", "Figma", "wireframe/prototype", "design system", "CRO/A-B test", "Photoshop/Illustrator", "responsive/mobile-first", "portfolio"],
+  "bangChung": [
+    "JD#1: 'Có từ 2–4 năm kinh nghiệm ... UI/UX Design'; 'Thành thạo Figma, bao gồm Auto Layout, Components, Prototyping'; 'dieline, bleed, hệ màu CMYK'",
+    "JD#2: 'Tối thiểu 05 năm kinh nghiệm thiết kế UI/UX'; 'ít nhất 03 dự án ... chứng minh qua portfolio'; 'lead team thiết kế'",
+    "JD#3: 'ít nhất 03 năm kinh nghiệm làm UX/UI cho nền tảng E-commerce / Shopify'; 'Funnel analysis, Heatmap, A/B Testing'",
+    "JD#4: 'Thành thạo Figma; Photoshop, Illustrator'; 'kinh nghiệm ứng dụng AI vào công việc thiết kế'"
+  ],
+  "ghiChu": "Chỉ 4 JD; nên đọc cùng id 19 (Quảng cáo/Sáng tạo)."
+}

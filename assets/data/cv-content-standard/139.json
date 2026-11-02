@@ -1,0 +1,34 @@
+{
+  "id": 139,
+  "nhom": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học",
+  "nghe": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học khác",
+  "soJD": 1,
+  "doTinCay": "thap",
+  "capBac": "1/1 JD cấp nhân viên (Nhân viên nghiên cứu lâm sàng), không yêu cầu kinh nghiệm, từ Cao đẳng",
+  "muc": {
+    "anh-chan-dung": "khong — JD không nhắc ảnh/ngoại hình; công việc hành chính/hồ sơ nghiên cứu nên ảnh không phải trọng tâm (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD nhắc phẩm chất chủ động, kỷ luật; nên nêu định hướng nghiên cứu lâm sàng (suy từ JD, bằng chứng yếu)",
+    "kinh-nghiem-lam-viec": "nen — JD không yêu cầu kinh nghiệm, ưu tiên kinh nghiệm tại bệnh viện/viện nghiên cứu/trung tâm thử nghiệm lâm sàng",
+    "hoc-van": "can — 1/1 JD bắt buộc CĐ trở lên chuyên ngành Y, Dược, Điều dưỡng, Khoa học sức khỏe, Sinh học, Y tế công cộng",
+    "ky-nang-chuyen-mon": "can — 1/1: soạn SOP, quản lý tài liệu nguồn/hồ sơ thiết yếu, nhập dữ liệu CRF/eCRF, hiểu GCP, đạo đức nghiên cứu và quy định pháp lý",
+    "ky-nang-mem": "can — 1/1: trách nhiệm, chủ động, kỷ luật, tuân thủ quy định",
+    "cong-cu-phan-mem": "nen — digest ghi tín hiệu công cụ=1; JD nhắc nhập dữ liệu CRF/eCRF (hệ thống điện tử), không nêu phần mềm cụ thể",
+    "chung-chi": "can — 1/1 JD bắt buộc chứng chỉ tiếng Anh; hiểu biết GCP là yêu cầu (không nêu rõ chứng chỉ GCP)",
+    "du-an": "nen — JD ưu tiên kinh nghiệm nghiên cứu y sinh học/lâm sàng; có thể ghi nghiên cứu đã tham gia",
+    "thanh-tich-kpi": "khong — JD không nhắc",
+    "ngoai-ngu": "can — 1/1 JD bắt buộc tiếng Anh có chứng chỉ",
+    "portfolio-link": "khong — JD không nhắc",
+    "giai-thuong": "khong — JD không nhắc",
+    "hoat-dong-ngoai-khoa": "khong — JD không nhắc",
+    "giay-phep": "khong — JD không nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — JD không nêu tuổi/giới tính/hộ khẩu",
+    "so-thich": "khong — JD không nhắc"
+  },
+  "tuKhoaNenCo": ["Nghiên cứu lâm sàng", "GCP", "SOP", "CRF/eCRF", "hồ sơ thử nghiệm lâm sàng", "đạo đức nghiên cứu", "tiếng Anh có chứng chỉ"],
+  "bangChung": [
+    "JD#1: 'Tốt nghiệp Cao đẳng trở lên chuyên ngành Y, Dược, Điều dưỡng, Khoa học sức khỏe, Sinh học, Y tế công cộng'",
+    "JD#1: 'Tiếng Anh: có chứng chỉ'; 'Hiểu biết về hướng dẫn GCP, đạo đức nghiên cứu và quy định pháp lý liên quan'",
+    "JD#1: 'nhập dữ liệu vào Phiếu thu thập thông tin (CRF) và ... điện tử (eCRF)'; 'Ưu tiên ... kinh nghiệm ... tại bệnh viện, viện nghiên cứu hoặc trung tâm thử nghiệm lâm sàng'"
+  ],
+  "ghiChu": "Rất mỏng: nghề là nhóm 'khác' tạp, crawl lại chỉ thu được 1 JD (nhân viên nghiên cứu lâm sàng). Không đại diện cho các vị trí y tế/sức khỏe khác. Mọi nhận định x/1 chỉ là tham khảo; không bịa thêm."
+}

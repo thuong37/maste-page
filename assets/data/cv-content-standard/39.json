@@ -1,0 +1,36 @@
+{
+  "id": 39,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Information Security",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5/5 JD cấp nhân viên/chuyên viên (4 JD 1-3 năm pentest/SOC/reverse engineering/compliance, 1 JD kiểm toán viên IT 5 năm); ĐH trở lên chuyên ngành ATTT, CNTT, Điện tử viễn thông, Khoa học máy tính",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình/độ tuổi/giới tính; công việc kỹ thuật (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/5 JD nhắc tư duy hacking/growth mindset, định hướng ATTT; dùng để nêu chuyên môn pentest/SOC/compliance",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD nhắc (dưới 1 năm đến 5 năm); pentest, SOC/giám sát sự cố, reverse engineering, kiểm toán/tuân thủ CNTT",
+    "hoc-van": "can — 5/5 yêu cầu ĐH; JD#1 loại khá trở lên; chuyên ngành ATTT, CNTT, Điện tử viễn thông, Mạng máy tính, Kế toán-Kiểm toán (JD#4)",
+    "ky-nang-chuyen-mon": "can — 5/5: pentest hạ tầng/Web/API, giám sát và xử lý sự cố ATTT, phân tích log, hardening, reverse engineering, kiểm toán CNTT, quản lý tuân thủ, đánh giá rủi ro",
+    "ky-nang-mem": "nen — 3/5: phối hợp Dev/DevOps, xử lý sự cố độc lập, giao tiếp, giám sát hệ thống",
+    "cong-cu-phan-mem": "can — 4/5: Nmap, Nessus, Qualys, Metasploit, Wireshark, Burp Suite, Kali Linux, Mimikatz, ELK/SIEM, IDA, Frida, jadx, Python/PowerShell/Bash",
+    "chung-chi": "can — JD#5 CEH, CISM, CISSP là lợi thế, ISO 27001/GDPR; JD#4 COBIT, ISO 27001; JD#1 TOEIC/IELTS (3/5 nhắc chứng chỉ)",
+    "du-an": "nen — JD#5 quản lý tuân thủ theo dự án (1/5); nên nêu hệ thống đã pentest/audit (suy từ tính chất công việc)",
+    "thanh-tich-kpi": "nen — JD#2 'ưu tiên kinh nghiệm/thành tích trong lĩnh vực ATTT' (1/5); nên nêu số lỗ hổng/CVE/sự cố đã xử lý",
+    "ngoai-ngu": "can — JD#1 TOEIC 550-700/IELTS 6.0-7.0, JD#4 tiếng Anh đọc hiểu (2/5; JD#1 nêu mức cụ thể)",
+    "portfolio-link": "nen — nghề bảo mật nên có link CVE/CTF/bug bounty (suy từ tính chất công việc; JD#2 nhắc thành tích ATTT)",
+    "giai-thuong": "nen — JD#2 thành tích ATTT (CTF/bug bounty được hiểu ngầm, 1/5 nhắc thẳng 'thành tích')",
+    "hoat-dong-ngoai-khoa": "nen — JD#2 dưới 1 năm kinh nghiệm (ứng viên mới có thể ghi CTF/hoạt động; 1/5)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — không JD nào nêu độ tuổi/giới tính",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Pentest", "SOC/SIEM", "OWASP Top 10", "Nmap/Nessus/Burp Suite", "Active Directory", "kiểm toán CNTT", "ISO 27001", "CEH/CISSP", "Python/Bash/PowerShell"],
+  "bangChung": [
+    "JD#1: 'Tối thiểu 1 năm kinh nghiệm trong ATTT'; 'Nmap, Nessus, Qualys, Metasploit, Wireshark, Kali Linux'; 'TOEIC 550 ... IELTS 7.0'",
+    "JD#2: 'Tối thiểu 6 tháng kinh nghiệm về Reverse Engineering'; 'IDA, Frida, Xposed, jadx'",
+    "JD#3: 'Có 1–3 năm kinh nghiệm về Cyber Security'; 'Burp Suite, Nmap, ELK/SIEM'; 'OWASP Top 10'",
+    "JD#4: 'ít nhất 03 năm kinh nghiệm trực tiếp về Kiểm toán CNTT'; 'COBIT, ISO 27001'",
+    "JD#5: 'Chứng chỉ bảo mật như CEH, CISM, CISSP là một lợi thế'; 'ISO 27001, GDPR'"
+  ],
+  "ghiChu": "Chỉ 5 JD; nghề gồm cả pentest, SOC, kiểm toán/tuân thủ nên mục công cụ khác nhau theo hướng."
+}

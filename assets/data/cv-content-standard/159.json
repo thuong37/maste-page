@@ -1,0 +1,36 @@
+{
+  "id": 159,
+  "nhom": "Biên phiên dịch",
+  "nghe": "Nghề Biên phiên dịch",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5/5 JD cấp nhân viên (2 JD không/dưới 1 năm kinh nghiệm, 2 JD 1 năm, 1 JD 2 năm; từ Cao đẳng/ĐH); toàn bộ là phiên dịch tiếng Anh theo ngành (trợ giảng, kỹ thuật, may mặc, bếp ăn công nghiệp, y tế)",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 2/5 nêu giới tính/độ tuổi (Nữ, ưu tiên Nam); vị trí giao tiếp trực tiếp nên ảnh chuyên nghiệp là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#1 nhắc 'yêu thích công việc giảng dạy'; còn lại không nhắc; nên nêu lĩnh vực muốn phiên dịch (suy)",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD nhắc kinh nghiệm phiên dịch (JD#2: 2 năm lĩnh vực kỹ thuật; JD#4: 1 năm, ưu tiên nhà máy/bếp ăn; JD#5: y tế); JD#1, #3 nhận ít/không kinh nghiệm",
+    "hoc-van": "can — 5/5 nêu bậc học; ưu tiên Ngôn ngữ Anh/Sư phạm Anh/Biên phiên dịch (JD#1, #2, #5), hoặc ngành kỹ thuật có kinh nghiệm dịch",
+    "ky-nang-chuyen-mon": "can — 5/5: phiên dịch trực tiếp (họp, giao tiếp), dịch tài liệu/hợp đồng/email Anh-Việt, thuật ngữ chuyên ngành (kỹ thuật, y khoa, thực phẩm), biên soạn nội dung tiếng Anh",
+    "ky-nang-mem": "can — 5/5: giao tiếp, cẩn thận/tỉ mỉ, nhanh nhẹn, trách nhiệm, truyền đạt chính xác, bảo mật thông tin",
+    "cong-cu-phan-mem": "nen — JD#2 tin học văn phòng tốt, JD#5 tin học văn phòng và phần mềm quản lý bệnh nhân; 2/5",
+    "chung-chi": "can — 3/5 nêu điểm cụ thể: JD#2 IELTS 6.5, JD#3 IELTS 6.5+, JD#1 ưu tiên IELTS/TOEIC",
+    "du-an": "khong — không JD nào nhắc dự án",
+    "thanh-tich-kpi": "khong — không JD nào nhắc chỉ tiêu/số liệu",
+    "ngoai-ngu": "can — 5/5: tiếng Anh nghe-nói-đọc-viết thành thạo (IELTS 6.5), ngôn ngữ là năng lực lõi của nghề",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#1 ưu tiên kinh nghiệm trợ giảng/gia sư; JD#1 và #3 nhận sinh viên/không kinh nghiệm; phù hợp ứng viên mới ra trường",
+    "giay-phep": "khong — không JD nào nhắc bằng lái/giấy phép",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/5: JD#1 nêu Nữ từ 19 tuổi, JD#2 nêu Nam 25-35 tuổi; không phải yêu cầu chung",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["biên phiên dịch Anh-Việt", "phiên dịch họp", "dịch tài liệu kỹ thuật/hợp đồng", "IELTS 6.5", "thuật ngữ chuyên ngành", "trợ giảng", "tiếng Anh giao tiếp", "tin học văn phòng"],
+  "bangChung": [
+    "JD#1: 'ưu tiên ... chuyên ngành Sư phạm Anh/ Ngôn ngữ Anh'; 'Ưu tiên ... chứng chỉ IELTS/TOEIC'",
+    "JD#2: 'Có 2 năm kinh nghiệm biên phiên dịch trong lĩnh vực kỹ thuật'; 'Tiếng Anh IELTS 6.5'",
+    "JD#3: 'Sử dụng Tiếng Anh thành thạo (IELTS 6.5+)'; 'không có sẽ được đào tạo'",
+    "JD#4: 'Có từ 1 năm kinh nghiệm phiên dịch'; 'Ưu tiên ... phiên dịch trong nhà máy, bếp ăn công nghiệp'",
+    "JD#5: 'Ưu tiên ... kiến thức về thuật ngữ y khoa tiếng Anh'"
+  ],
+  "ghiChu": "Cả 5 JD đều là phiên dịch tiếng Anh; chưa có JD tiếng Hàn/Trung/Nhật nên kết luận ngoại ngữ chỉ chắc cho tiếng Anh."
+}

@@ -1,0 +1,37 @@
+{
+  "id": 141,
+  "nhom": "Thiết kế",
+  "nghe": "Thiết kế Nhà/Nội thất/Môi trường",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên (0-4 năm): 5 JD kiến trúc sư/kỹ sư thiết kế kiến trúc (0-4 năm, CĐ/ĐH), 1 JD kỹ sư thiết kế MEP nội thất (2 năm, ĐH)",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh hoặc nêu ngoại hình/tuổi/giới tính; nghề kỹ thuật-thiết kế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 1/6 nhắc mong muốn phát triển; nên nêu hướng kiến trúc/MEP",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm (0-4 năm), ưu tiên nhà phố, biệt thự, chung cư RC, công trình vốn ngân sách, công ty Nhật, dự án cải tạo",
+    "hoc-van": "can — 6/6 nêu CĐ/ĐH chuyên ngành Kiến trúc, Xây dựng, Điện kỹ thuật, Nhiệt lạnh",
+    "ky-nang-chuyen-mon": "can — concept đến hồ sơ thiết kế, bản vẽ thi công (BVTC), khảo sát đo vẽ, phối cảnh 3D/render, phối hợp kết cấu-MEP xử lý va chạm, thiết kế MEP (điện, chiếu sáng, PCCC, HVAC)",
+    "ky-nang-mem": "can — 6/6: phối hợp bộ phận, cẩn thận, chủ động, chịu áp lực tiến độ, tư duy không gian/thẩm mỹ",
+    "cong-cu-phan-mem": "can — 6/6: AutoCAD, Revit, SketchUp, 3Ds Max, Photoshop, Enscape/Lumion/D5 Render, Dialux, Jw_cad, MS Office",
+    "chung-chi": "nen — JD#2 tiếng Nhật JLPT N3 (xếp ở ngoại ngữ); không JD nào đòi chứng chỉ hành nghề kiến trúc",
+    "du-an": "can — 6/6 là thiết kế theo dự án; CV nên liệt kê dự án (loại công trình, quy mô, vai trò, BVTC đã triển khai)",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "nen — 2/6: tiếng Nhật N3 bắt buộc (JD#2), tiếng Anh là lợi thế (JD#1)",
+    "portfolio-link": "can — nghề kiến trúc cần hồ sơ dự án bản vẽ/render; không JD nào nêu thẳng link (suy từ tính chất công việc)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#5 không yêu cầu kinh nghiệm, được đào tạo; ít JD nhắc",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — không JD nào nêu tuổi/giới tính",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Kiến trúc sư", "bản vẽ thi công BVTC", "AutoCAD/Revit", "SketchUp/3Ds Max", "render D5/Lumion/Enscape", "thiết kế MEP", "BIM", "nhà phố/biệt thự/chung cư"],
+  "bangChung": [
+    "JD#1: 'Thông thạo Auto Cad ... Dialux, Heatload, Duct checker'; 'Tối thiểu 2 năm kinh nghiệm vị trí tương đương'",
+    "JD#2: 'Có kinh nghiệm sử dụng các công cụ BIM, bao gồm Revit'; 'Năng lực tiếng Nhật: N3 trở lên'",
+    "JD#3: 'Có kinh nghiệm từ 1–3 năm ở vị trí Kiến trúc sư'; 'Sử dụng tốt AutoCAD'",
+    "JD#4: 'REVIT / Sketchup / AutoCAD / Adobe: Ps / Id / Ai ... Render: Enscape / Lumion / D5 Render'",
+    "JD#5: 'Đã trực tiếp triển khai hồ sơ BVTC cho ít nhất 01 công trình' (điểm cộng); 'Thành thạo AutoCAD, Revit'",
+    "JD#6: 'Đã có kinh nghiệm triển khai hồ sơ KTTC các dự án sử dụng vốn ngân sách Nhà nước'"
+  ],
+  "ghiChu": "Portfolio là suy từ nghề, không JD nêu thẳng."
+}

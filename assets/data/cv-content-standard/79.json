@@ -1,0 +1,36 @@
+{
+  "id": 79,
+  "nhom": "Kế toán/Kiểm toán/Thuế",
+  "nghe": "Thuế",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "5/6 JD kế toán thuế cấp nhân viên (dưới 1 năm đến 5 năm kinh nghiệm, đa số 3 năm); Cao đẳng/Đại học; JD#1 là sale bất động sản (lệch nghề)",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — không JD nhắc trực tiếp; nên nêu định hướng kế toán thuế (suy từ tính chất công việc)",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD kế toán thuế nêu số năm (từ 6 tháng đến trên 5 năm); nên ghi loại hình doanh nghiệp (FDI, TMĐT, thương mại) và các sắc thuế đã làm",
+    "hoc-van": "can — 5/5 nêu Đại học/Cao đẳng chuyên ngành Kế toán, Kiểm toán, Tài chính",
+    "ky-nang-chuyen-mon": "can — 5/5: lập/kê khai thuế VAT, CIT, PIT, WHT, quyết toán thuế, làm việc với cơ quan thuế, hạch toán, báo cáo tài chính, kiểm soát rủi ro thuế",
+    "ky-nang-mem": "can — 5/5: cẩn thận, trách nhiệm, bảo mật thông tin, chịu áp lực, giao tiếp, tổ chức sắp xếp",
+    "cong-cu-phan-mem": "can — 5/5: Excel, Misa, Fast, Google Sheets, phần mềm kế toán",
+    "chung-chi": "nen — không JD kế toán thuế đòi chứng chỉ; chỉ JD sale đòi chứng chỉ môi giới (lệch nghề)",
+    "du-an": "nen — 1/5 nhắc chi phí hợp đồng/dự án và xây dựng hệ thống tài chính; nên nêu nếu có",
+    "thanh-tich-kpi": "nen — 3/6 nhắc mục tiêu/chỉ tiêu nhưng chủ yếu là JD sale; kế toán thuế ít JD nêu KPI; nên có số liệu quy mô doanh nghiệp, số tờ khai",
+    "ngoai-ngu": "nen — 2/5 JD thuế: tiếng Trung thành thạo (FDI), tiếng Anh đọc hiểu/song ngữ",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 1/5 nhận sinh viên mới ra trường, thực tập kiểm toán là lợi thế",
+    "giay-phep": "khong — không JD kế toán thuế nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — không JD thuế nêu thẳng; nên có độ tuổi, nơi ở (suy từ tính chất công việc)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["kế toán thuế", "VAT/CIT/PIT/WHT", "quyết toán thuế", "FDI", "e-invoice", "Misa", "Fast", "Excel", "kiểm soát rủi ro thuế", "tiếng Trung"],
+  "bangChung": [
+    "JD#2: 'Có kinh nghiệm kế toán tổng hợp và Thuế ( >5 năm)'; 'Thành thạo Excel và phần mềm kt Misa'",
+    "JD#3: 'Có kinh nghiệm tham gia quyết toán thuế'; 'Ưu tiên ... Công ty Kiểm toán'",
+    "JD#4: 'Thành thạo song ngữ Tiếng Trung + Tiếng Việt'; 'Ưu tiên từng làm tại công ty FDI'",
+    "JD#5: 'Fresh graduates or candidates with at least 01 year of relevant experience'",
+    "JD#6: 'sử dụng thành thạo phần mềm kế toán FAST'; 'Tối thiểu 6 tháng kinh nghiệm kế toán thuế'"
+  ],
+  "ghiChu": "JD#1 (sale bất động sản) lệch nghề, loại khỏi thống kê; số 'x/5' tính trên 5 JD sát nghề."
+}

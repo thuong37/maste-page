@@ -1,0 +1,10 @@
+{
+  "worker": "W4",
+  "style": "Đơn giản",
+  "port": 9304,
+  "jobs": {},
+  "failedLog": {
+    "classic_1.vi": "[topcv +44.4s] LỖI: %s Error: Editor không load (không thấy .ql-editor), URL: https://www.topcv.vn/viet-cv/classic_1?ta_source=CVPreviewModalInTemplateHome",
+    "classic_1.en": "[topcv +41.7s] LỖI: %s Error: Editor không load (không thấy .ql-editor), URL: https://www.topcv.vn/viet-cv/classic_1?ta_source=CVPreviewModalInTemplateHome"
+  }
+}

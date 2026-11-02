@@ -1,0 +1,36 @@
+{
+  "id": 128,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Kho vận",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "4/6 JD cấp nhân viên (0-1 năm; thủ kho công trình, quản lý hồ sơ kho, nhân viên kho xử lý hàng, sales kho fulfillment), 2/6 JD trưởng kho/giám sát kho (1-2 năm quản lý); học vấn từ THCS đến CĐ/ĐH",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; công việc kho (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc",
+    "kinh-nghiem-lam-viec": "can — 5/6 nhắc kinh nghiệm (dưới 1 đến 2 năm) hoặc không yêu cầu, ưu tiên kho công trình, nhà máy sản xuất, kho vận",
+    "hoc-van": "nen — 6/6 nêu bậc học THCS đến CĐ/ĐH, ngành Logistics/Chuỗi cung ứng/Điện/Xây dựng chỉ là ưu tiên",
+    "ky-nang-chuyen-mon": "can — nhập-xuất-tồn, kiểm kê, lập thẻ kho, FIFO/SLA, sắp xếp kho, phân loại hàng theo tuyến, đóng gói, hồ sơ CO/CQ, phân biệt vật tư",
+    "ky-nang-mem": "nen — 3/6: trung thực, cẩn thận, giao tiếp, lãnh đạo/quản lý đội nhóm (JD cấp giám sát)",
+    "cong-cu-phan-mem": "can — 4/6: Excel, MS Office, WMS/ERP (lợi thế), smartphone/máy tính cơ bản",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — 2/6 làm việc tại công trình/dự án (JD#3, JD#4); nên ghi công trình đã quản lý kho",
+    "thanh-tich-kpi": "nen — JD#5 đảm bảo FIFO/SLA; JD#1 doanh thu; nên ghi số liệu kiểm kê/giảm chênh lệch (suy từ công việc)",
+    "ngoai-ngu": "nen — JD#1 tiếng Trung giao tiếp thành thạo (vị trí sales kho); 1/6 nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/6 không yêu cầu kinh nghiệm/nhận người mới",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 3/6 nêu tuổi/giới tính (18-50 nam, từ 25 tuổi), sức khỏe tốt, làm ca xoay, làm tại công trường",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Quản lý kho", "nhập-xuất-tồn", "kiểm kê", "FIFO", "WMS/ERP", "kho công trình", "thủ kho", "Excel"],
+  "bangChung": [
+    "JD#2: 'Có kinh nghiệm tại vị trí Trưởng Bộ Phận Kho 2 năm'; 'Từ 25 tuổi trở lên'",
+    "JD#3: 'Thành thạo Excel và các phần mềm văn phòng'; 'Có ít nhất 1 - 2 năm kinh nghiệm làm kho công trình'",
+    "JD#4: 'Cập nhật sổ sách/file theo dõi nhập – xuất – tồn hằng ngày'; 'Nam', 'Tuổi 18 - 50'",
+    "JD#5: 'hệ thống quản lý kho (WMS), ERP là một lợi thế'; 'Có kinh nghiệm tối thiểu 1 năm ở vị trí Trưởng kho, Giám sát kho'",
+    "JD#6: 'Ca làm: 6h-15h; 13h-22h và 22h-06h'; 'Sức khỏe tốt, nhanh nhẹn, chăm chỉ, trung thực'"
+  ],
+  "ghiChu": "JD#1 (sales kho fulfillment) lệch nghề."
+}

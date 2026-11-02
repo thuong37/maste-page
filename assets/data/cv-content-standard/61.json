@@ -1,0 +1,36 @@
+{
+  "id": 61,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Ngân hàng",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên: 4 giao dịch viên (không đến 1 năm kinh nghiệm, trung cấp/cao đẳng), 1 CSKH ngân hàng (không yêu cầu kinh nghiệm, THPT), 1 chuyên viên tư vấn tín dụng (1 năm, cao đẳng)",
+  "muc": {
+    "anh-chan-dung": "can — 3/6 JD nêu thẳng ngoại hình/chiều cao: JD#2 'dễ nhìn, nhanh nhẹn', JD#4 'ưa nhìn, giọng chuẩn, Nữ cao từ 1m58, Nam từ 1m70', JD#6 'ưa nhìn, cao từ 1,58m'; nên có ảnh chân dung nghiêm túc",
+    "muc-tieu-nghe-nghiep": "nen — chỉ tín hiệu 1/6; dùng để nêu định hướng giao dịch viên/tư vấn tín dụng (suy từ tính chất công việc)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc; giao dịch viên 1-2 năm hoặc sinh viên mới tốt nghiệp, tín chấp ngân hàng/công ty tài chính 1 năm",
+    "hoc-van": "can — 6/6 nêu bậc học (THPT đến cao đẳng); ưu tiên Tài chính-Ngân hàng, Kế toán, Kinh tế, QTKD",
+    "ky-nang-chuyen-mon": "can — giao dịch quầy (mở/đóng tài khoản, thu chi, chuyển khoản), kiểm tra chứng từ, phân biệt tiền thật-giả, bán chéo sản phẩm, hồ sơ vay/thẻ, tư vấn tín dụng, tiếp nhận khiếu nại",
+    "ky-nang-mem": "can — 4/6: giao tiếp, thuyết phục, xử lý tình huống, chăm sóc khách hàng, quản lý thời gian, làm việc theo ca",
+    "cong-cu-phan-mem": "can — 3/6: Word, Excel, PowerPoint, Outlook, phần mềm ngân hàng cơ bản, T24 (JD#4), máy tính (JD#2)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — JD#2 'lương doanh số', JD#4 bán chéo (2/6); nên nêu doanh số tín dụng/số giao dịch nếu có",
+    "ngoai-ngu": "nen — JD#4 tiếng Anh đọc hiểu (1/6)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 4/6 JD không yêu cầu hoặc dưới 1 năm kinh nghiệm, chấp nhận sinh viên mới tốt nghiệp (JD#1, #3, #5, #6)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/6 JD nêu độ tuổi/chiều cao/giọng nói (20-35, 22-32, không quá 26, từ 26 trở xuống; Nữ 1m58, Nam 1m70; giọng chuẩn không nói ngọng)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["giao dịch viên", "giao dịch quầy", "tư vấn tín dụng/vay tín chấp", "bán chéo", "chăm sóc khách hàng ngân hàng", "T24", "nghiệp vụ ngân quỹ", "Tài chính-Ngân hàng"],
+  "bangChung": [
+    "JD#1: 'tuổi từ 20 - 35'; 'Có giọng nói chuẩn, không nói ngọng'; 'Không yêu cầu kinh nghiệm'",
+    "JD#2: 'Ngoại hình: Dễ nhìn, nhanh nhẹn'; 'ít nhất 1 năm kinh nghiệm ... Ngân Hàng mảng tín chấp'; 'Có máy tính'",
+    "JD#3: 'chấp nhận sinh viên mới tốt nghiệp có tố chất phù hợp'; 'Word, Excel, PowerPoint và các phần mềm ngân hàng cơ bản'",
+    "JD#4: 'Ngoại hình ưa nhìn, giọng nói chuẩn. Nữ cao từ 1m58, Nam cao từ 1m70'; 'Độ tuổi không quá 26'; 'phần mềm T24'; 'Kỹ năng phân biệt tiền thật, tiền giả'",
+    "JD#6: 'Ngoại hình: ưa nhìn, cao từ 1,58m trở lên'; 'Độ tuổi: từ 26 tuổi trở xuống'"
+  ],
+  "ghiChu": "Nhà tuyển dụng ngân hàng nêu thẳng ngoại hình/chiều cao/tuổi nên anh-chan-dung và thong-tin-ca-nhan-mo-rong đánh can; đây là yêu cầu của JD."
+}

@@ -1,0 +1,226 @@
+{
+  "worker": "W2",
+  "style": "Đơn giản",
+  "port": 9302,
+  "jobs": {
+    "default_v2.jp": {
+      "status": "done",
+      "title": "Tiêu chuẩn",
+      "langName": "Tiếng Nhật",
+      "cvName": "Đơn giản-Tiêu chuẩn-Tiếng Nhật",
+      "attempts": 4,
+      "startedAt": "2026-10-17T10:10:36.062Z",
+      "finishedAt": "2026-10-17T10:11:16.595Z",
+      "dest": "D:\\master page\\assets\\cv-templates\\Đơn giản\\Tiêu chuẩn\\Tiếng Nhật\\Đơn giản-Tiêu chuẩn-Tiếng Nhật.pdf",
+      "cvId": "1f090b2cdba021777e70177ce4b13072",
+      "deleted": true,
+      "deleteError": ""
+    },
+    "classic_1.vi": {
+      "status": "failed",
+      "title": "Cổ Điển 1",
+      "langName": "Tiếng Việt",
+      "cvName": "Đơn giản-Cổ Điển 1-Tiếng Việt",
+      "attempts": 8,
+      "startedAt": "2026-10-17T10:36:28.327Z",
+      "finishedAt": "2026-10-17T10:37:57.833Z",
+      "error": "[topcv +89.4s] LỖI: %s Error: CV chưa được lưu (không vào được /save-cv-success). Dừng để không tải/xóa nhầm CV khác. URL=https://www.topcv.vn/quan-ly-cv"
+    },
+    "classic_1.en": {
+      "status": "failed",
+      "title": "Cổ Điển 1",
+      "langName": "Tiếng Anh",
+      "cvName": "Đơn giản-Cổ Điển 1-Tiếng Anh",
+      "attempts": 7,
+      "startedAt": "2026-10-17T10:37:57.845Z",
+      "finishedAt": "2026-10-17T10:39:23.090Z",
+      "error": "[topcv +85.2s] LỖI: %s Error: CV chưa được lưu (không vào được /save-cv-success). Dừng để không tải/xóa nhầm CV khác. URL=https://www.topcv.vn/quan-ly-cv"
+    },
+    "senior_2.vi": {
+      "status": "pending",
+      "title": "Senior 2",
+      "langName": "Tiếng Việt",
+      "cvName": "Đơn giản-Senior 2-Tiếng Việt",
+      "attempts": 0
+    },
+    "senior_2.en": {
+      "status": "pending",
+      "title": "Senior 2",
+      "langName": "Tiếng Anh",
+      "cvName": "Đơn giản-Senior 2-Tiếng Anh",
+      "attempts": 0
+    },
+    "onepage_classic.vi": {
+      "status": "pending",
+      "title": "Một Trang Cổ Điển",
+      "langName": "Tiếng Việt",
+      "cvName": "Đơn giản-Một Trang Cổ Điển-Tiếng Việt",
+      "attempts": 0
+    },
+    "onepage_classic.en": {
+      "status": "pending",
+      "title": "Một Trang Cổ Điển",
+      "langName": "Tiếng Anh",
+      "cvName": "Đơn giản-Một Trang Cổ Điển-Tiếng Anh",
+      "attempts": 0
+    },
+    "dev_2.vi": {
+      "status": "pending",
+      "title": "Lập trình viên 2",
+      "langName": "Tiếng Việt",
+      "cvName": "Đơn giản-Lập trình viên 2-Tiếng Việt",
+      "attempts": 0
+    },
+    "dev_2.en": {
+      "status": "pending",
+      "title": "Lập trình viên 2",
+      "langName": "Tiếng Anh",
+      "cvName": "Đơn giản-Lập trình viên 2-Tiếng Anh",
+      "attempts": 0
+    },
+    "dev_2.jp": {
+      "status": "pending",
+      "title": "Lập trình viên 2",
+      "langName": "Tiếng Nhật",
+      "cvName": "Đơn giản-Lập trình viên 2-Tiếng Nhật",
+      "attempts": 0
+    },
+    "cv_color.vi": {
+      "status": "pending",
+      "title": "Màu sắc",
+      "langName": "Tiếng Việt",
+      "cvName": "Đơn giản-Màu sắc-Tiếng Việt",
+      "attempts": 0
+    },
+    "cv_color.en": {
+      "status": "pending",
+      "title": "Màu sắc",
+      "langName": "Tiếng Anh",
+      "cvName": "Đơn giản-Màu sắc-Tiếng Anh",
+      "attempts": 0
+    },
+    "cv_color.jp": {
+      "status": "pending",
+      "title": "Màu sắc",
+      "langName": "Tiếng Nhật",
+      "cvName": "Đơn giản-Màu sắc-Tiếng Nhật",
+      "attempts": 0
+    },
+    "tiny_1.vi": {
+      "status": "pending",
+      "title": "Sinh Viên",
+      "langName": "Tiếng Việt",
+      "cvName": "Đơn giản-Sinh Viên-Tiếng Việt",
+      "attempts": 0
+    },
+    "tiny_1.en": {
+      "status": "pending",
+      "title": "Sinh Viên",
+      "langName": "Tiếng Anh",
+      "cvName": "Đơn giản-Sinh Viên-Tiếng Anh",
+      "attempts": 0
+    },
+    "basic_2.vi": {
+      "status": "pending",
+      "title": "Basic 2",
+      "langName": "Tiếng Việt",
+      "cvName": "Đơn giản-Basic 2-Tiếng Việt",
+      "attempts": 0
+    },
+    "basic_2.en": {
+      "status": "pending",
+      "title": "Basic 2",
+      "langName": "Tiếng Anh",
+      "cvName": "Đơn giản-Basic 2-Tiếng Anh",
+      "attempts": 0
+    },
+    "basic_2.jp": {
+      "status": "pending",
+      "title": "Basic 2",
+      "langName": "Tiếng Nhật",
+      "cvName": "Đơn giản-Basic 2-Tiếng Nhật",
+      "attempts": 0
+    },
+    "impressive_5.vi": {
+      "status": "pending",
+      "title": "Ấn tượng 5",
+      "langName": "Tiếng Việt",
+      "cvName": "Đơn giản-Ấn tượng 5-Tiếng Việt",
+      "attempts": 0
+    },
+    "impressive_5.en": {
+      "status": "pending",
+      "title": "Ấn tượng 5",
+      "langName": "Tiếng Anh",
+      "cvName": "Đơn giản-Ấn tượng 5-Tiếng Anh",
+      "attempts": 0
+    },
+    "impressive_5.jp": {
+      "status": "pending",
+      "title": "Ấn tượng 5",
+      "langName": "Tiếng Nhật",
+      "cvName": "Đơn giản-Ấn tượng 5-Tiếng Nhật",
+      "attempts": 0
+    },
+    "outstanding_2.vi": {
+      "status": "pending",
+      "title": "Outstanding 2",
+      "langName": "Tiếng Việt",
+      "cvName": "Đơn giản-Outstanding 2-Tiếng Việt",
+      "attempts": 0
+    },
+    "outstanding_2.en": {
+      "status": "pending",
+      "title": "Outstanding 2",
+      "langName": "Tiếng Anh",
+      "cvName": "Đơn giản-Outstanding 2-Tiếng Anh",
+      "attempts": 0
+    },
+    "outstanding_2.jp": {
+      "status": "pending",
+      "title": "Outstanding 2",
+      "langName": "Tiếng Nhật",
+      "cvName": "Đơn giản-Outstanding 2-Tiếng Nhật",
+      "attempts": 0
+    },
+    "dev_1.vi": {
+      "status": "pending",
+      "title": "Lập Trình Viên",
+      "langName": "Tiếng Việt",
+      "cvName": "Đơn giản-Lập Trình Viên-Tiếng Việt",
+      "attempts": 0
+    },
+    "dev_1.en": {
+      "status": "pending",
+      "title": "Lập Trình Viên",
+      "langName": "Tiếng Anh",
+      "cvName": "Đơn giản-Lập Trình Viên-Tiếng Anh",
+      "attempts": 0
+    },
+    "fresher.vi": {
+      "status": "pending",
+      "title": "Fresher",
+      "langName": "Tiếng Việt",
+      "cvName": "Đơn giản-Fresher-Tiếng Việt",
+      "attempts": 0
+    },
+    "fresher.en": {
+      "status": "pending",
+      "title": "Fresher",
+      "langName": "Tiếng Anh",
+      "cvName": "Đơn giản-Fresher-Tiếng Anh",
+      "attempts": 0
+    },
+    "fresher.jp": {
+      "status": "pending",
+      "title": "Fresher",
+      "langName": "Tiếng Nhật",
+      "cvName": "Đơn giản-Fresher-Tiếng Nhật",
+      "attempts": 0
+    }
+  },
+  "failedLog": {
+    "senior_v2.vi": "[topcv +42.3s] LỖI: %s Error: CV chưa được lưu (không vào được /save-cv-success). Dừng để không tải/xóa nhầm CV khác. URL=https://www.topcv.vn/viet-cv/senior_v2?type=content_library&ta_source=CVPrevie",
+    "senior_v2.en": "[topcv +40.1s] LỖI: %s Error: CV chưa được lưu (không vào được /save-cv-success). Dừng để không tải/xóa nhầm CV khác. URL=https://www.topcv.vn/viet-cv/senior_v2?type=content_library&ta_source=CVPrevie"
+  }
+}

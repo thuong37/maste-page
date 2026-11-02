@@ -1,0 +1,35 @@
+{
+  "id": 123,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Điện/Điện tử/Viễn thông khác",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5/5 JD cấp nhân viên (0-1 năm, Trung cấp/CĐ/ĐH): sales điện tử viễn thông, kỹ sư giải pháp thiết bị đo lường, đại diện kinh doanh điện tử-điện lạnh, kỹ thuật điện nhẹ, kỹ thuật điện tử hàng hải; JD#1 và JD#3 trùng nghề #122",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 3/5 nêu giới tính/tuổi (nam 25-40, nam 20-35, 20-35); ảnh chỉ là phụ (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#4 yêu thích công việc thiết bị an ninh, điện tử; nên nêu hướng kỹ thuật/kinh doanh kỹ thuật",
+    "kinh-nghiem-lam-viec": "can — 5/5 nhắc kinh nghiệm (không yêu cầu đến 1 năm), ưu tiên đúng lĩnh vực (điện tử, thiết bị đo, hàng hải, điện nhẹ)",
+    "hoc-van": "can — 5/5 nêu Trung cấp/CĐ/ĐH chuyên ngành Điện, Điện tử, Tự động hóa, Đo lường điện, QTKD",
+    "ky-nang-chuyen-mon": "can — sửa chữa/lắp đặt thiết bị điện tử chuyên dụng (radar, định vị), đọc sơ đồ mạch, pre-sales thiết bị đo lường, hỗ trợ kỹ thuật tủ đóng cắt/relay/âm thanh, bán hàng dự án B2B",
+    "ky-nang-mem": "can — 5/5: cẩn thận, tỉ mỉ, làm việc độc lập/nhóm, giao tiếp, thuyết phục, trách nhiệm",
+    "cong-cu-phan-mem": "can — 3/5: AutoCAD 2D/3D, MS Office, PowerPoint, Email; đồng hồ vạn năng",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — 2/5 nhắc dự án (B2B dự án, hệ thống tự động hóa); nên ghi dự án đã tham gia",
+    "thanh-tich-kpi": "nen — JD#1 nhắc forecast bán hàng; ít JD đòi số liệu",
+    "ngoai-ngu": "nen — 1/5 yêu cầu đọc hiểu/biên dịch tài liệu kỹ thuật tiếng Anh (JD#2)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#1 không yêu cầu kinh nghiệm; JD#5 'ưu tiên có kinh nghiệm'",
+    "giay-phep": "can — JD#3 có phương tiện di chuyển; JD#5 sẵn sàng đi công tác tỉnh",
+    "thong-tin-ca-nhan-mo-rong": "can — 3/5 nêu nam, tuổi 25-40/20-35, đi thị trường/công tác tỉnh, sức khỏe tốt",
+    "so-thich": "nen — JD#3, JD#4 nêu đam mê sản phẩm điện tử/thiết bị an ninh (nêu thẳng ở 2/5)"
+  },
+  "tuKhoaNenCo": ["Application Engineer", "thiết bị đo lường", "sửa chữa điện tử", "điện nhẹ", "tủ đóng cắt/relay", "radar hàng hải", "sales B2B điện tử", "pre-sales", "AutoCAD"],
+  "bangChung": [
+    "JD#2: 'Kỹ sư tốt nghiệp chuyên ngành: Đo lường điện, Điện - điện tử, Cơ điện tử, Tự động hóa'; 'đọc hiểu, biên dịch được tài liệu kỹ thuật tiếng Anh'",
+    "JD#3: 'Có ít nhất 1 năm kinh nghiệm làm việc bán hàng trong ngành hàng điện tử, điện máy, điện lạnh'; 'Có phương tiện di chuyển'",
+    "JD#4: 'Tốt nghiệp từ Trung cấp các ngành: Điện-Điện tử/ Tự động hóa'; 'sử dụng được ... Ms Office, AutoCAD'; 'Yêu thích công việc ngành thiết bị an ninh, điện tử'",
+    "JD#5: 'Có kỹ năng đọc hiểu bản vẽ kỹ thuật (board mạch điện tử)'; 'Biết vẽ Autocad 2D, 3D'; 'sẵn sàng đi công tác tỉnh'"
+  ],
+  "ghiChu": "Nhóm 'khác' trải nhiều vai; JD#1 và JD#3 trùng nghề #122."
+}

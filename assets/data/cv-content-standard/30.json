@@ -1,0 +1,36 @@
+{
+  "id": 30,
+  "nhom": "Nhân sự/Hành chính/Pháp chế",
+  "nghe": "Nhân sự",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "5/6 JD cấp nhân viên/chuyên viên (1-5 năm kinh nghiệm), 1 JD trưởng phòng HCNS (5 năm quản lý); JD#5 là phân tích nghiệp vụ phần mềm F&B (lạc nghề); cao đẳng/ĐH trở lên",
+  "muc": {
+    "anh-chan-dung": "nen — không JD nào đòi ảnh; JD#6 ưu tiên nữ dưới 35 tuổi (1/6); vị trí văn phòng nên ảnh nghiêm túc là tùy chọn (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#3 ưu tiên làm việc ổn định, lâu dài (1/6); dùng để nêu định hướng HCNS/C&B/tuyển dụng",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc (1-5 năm); HCNS tổng hợp, tuyển dụng, C&B, hành chính văn thư",
+    "hoc-van": "can — 6/6 nêu bậc học và chuyên ngành Quản trị Nhân sự, Quản trị KD, Luật, Kinh tế lao động, Hành chính",
+    "ky-nang-chuyen-mon": "can — 5/6: tuyển dụng và onboarding, hợp đồng lao động, tiền lương/BHXH/thuế TNCN, chấm công, quản lý hồ sơ nhân sự, đào tạo, đánh giá hiệu suất, am hiểu Luật Lao động",
+    "ky-nang-mem": "can — 6/6: cẩn thận, tỉ mỉ, trách nhiệm, giao tiếp, chủ động, phối hợp",
+    "cong-cu-phan-mem": "can — 4/6: Excel/Google Sheets, Word, tin học văn phòng, phần mềm quản lý nhân sự (JD#4)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ (JD#4 chỉ nêu hiểu Luật Lao động, BHXH)",
+    "du-an": "nen — JD#2 từng xây dựng và vận hành hệ thống nhân sự/KPI (1/6); JD#5 dự án phần mềm (lạc nghề)",
+    "thanh-tich-kpi": "nen — JD#2 triển khai thành công hệ thống KPI các phòng ban (1/6); nên nêu số lượng tuyển dụng/quy mô nhân sự",
+    "ngoai-ngu": "nen — JD#1 tiếng Anh giao tiếp cơ bản (1/6)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — 6/6 JD đòi 1-5 năm kinh nghiệm",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#6 nữ dưới 35 tuổi (1/6 nêu thẳng)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["hành chính nhân sự", "tuyển dụng/onboarding", "C&B", "BHXH/thuế TNCN", "Luật Lao động", "hợp đồng lao động", "chấm công", "quản lý hồ sơ", "Excel/Google Sheets"],
+  "bangChung": [
+    "JD#1: 'Ít nhất 2 năm kinh nghiệm ... HCNS tổng hợp và có kinh nghiệm tuyển dụng'; 'Giao tiếp tiếng Anh cơ bản'",
+    "JD#2: 'trên 5 năm kinh nghiệm tại vị trí Trưởng phòng HCNS'; 'Am hiểu Luật Lao động, BHXH, Thuế TNCN'; 'hệ thống KPI'",
+    "JD#3: 'Có từ 5 năm kinh nghiệm ở vị trí Hành chính, Nhân sự'; 'Ưu tiên ứng viên mong muốn làm việc ổn định, lâu dài'",
+    "JD#4: 'Thành thạo Tin học văn phòng và phần mềm quản lý nhân sự'; 'kiến thức về Luật Lao động, BHXH, BHYT, Thuế TNCN'",
+    "JD#6: 'ưu tiên nhân sự nữ, dưới 35 tuổi'; 'Sử dụng tốt Word, Excel'"
+  ],
+  "ghiChu": "JD#5 là phân tích nghiệp vụ phần mềm F&B (lạc nghề), không dùng làm căn cứ."
+}

@@ -1,0 +1,29 @@
+{
+  "worker": "W3",
+  "style": "Đơn giản",
+  "port": 9303,
+  "jobs": {
+    "default_v2.cn": {
+      "status": "done",
+      "title": "Tiêu chuẩn",
+      "langName": "Tiếng Trung",
+      "cvName": "Đơn giản-Tiêu chuẩn-Tiếng Trung",
+      "attempts": 1,
+      "startedAt": "2026-10-17T09:57:21.090Z",
+      "dest": "D:\\master page\\assets\\cv-templates\\Đơn giản\\Tiêu chuẩn\\Tiếng Trung\\Đơn giản-Tiêu chuẩn-Tiếng Trung.pdf",
+      "cvId": "2cd05f1bdacd4e0da7b75e3828e80328",
+      "deleted": true,
+      "deleteError": "",
+      "finishedAt": "2026-10-17T09:58:03.018Z"
+    }
+  },
+  "history": [
+    "experts.jp",
+    "experts.cn"
+  ],
+  "failedLog": {
+    "experts.en": "[topcv +66.0s] LỖI: %s Error: Không thấy nút \"Tải CV miễn phí\" trong viewport (modal Tải CV chưa mở?)",
+    "timeline_clean_v2.vi": "at rewriteError (file:///D:/master%20page/.qwen/tmp/node_modules/puppeteer-core/lib/puppeteer/cdp/ExecutionContext.js:468:15)",
+    "timeline_clean_v2.en": "at rewriteError (file:///D:/master%20page/.qwen/tmp/node_modules/puppeteer-core/lib/puppeteer/cdp/ExecutionContext.js:468:15)"
+  }
+}

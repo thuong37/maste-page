@@ -1,0 +1,36 @@
+{
+  "id": 147,
+  "nhom": "Thiết kế",
+  "nghe": "Thiết kế khác",
+  "soJD": 6,
+  "doTinCay": "thap",
+  "capBac": "Nhóm tạp 6 JD cấp nhân viên (1-3 năm; 1 JD trên 5 năm, thẩm tra 10 năm): kỹ sư thiết kế cơ khí, thiết kế in ấn quảng cáo, kiến trúc sư thẩm tra hồ sơ, thiết kế thêu (Embroidery), thiết kế trang sức 3D, kỹ sư thiết kế MEP; từ CĐ/ĐH",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; 3/6 nêu tuổi/giới tính (nam, không quá 28 tuổi); nghề kỹ thuật-sáng tạo (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm (1 đến 10 năm), ưu tiên đúng loại thiết kế (cơ khí/busbar, in ấn, thẩm tra BĐS, thêu, trang sức, MEP)",
+    "hoc-van": "can — 6/6 nêu CĐ/ĐH chuyên ngành cơ khí, thiết kế đồ họa, kiến trúc, thiết kế, điện lạnh",
+    "ky-nang-chuyen-mon": "can — thiết kế chi tiết cơ khí/jig/đồ gá, bình file in/dàn trang, thẩm tra hồ sơ thiết kế, số hóa file thêu (digitize), thiết kế 3D trang sức/in sáp, bóc tách khối lượng, dự toán thầu",
+    "ky-nang-mem": "can — 5/6: cẩn thận, tỉ mỉ, trách nhiệm, tư duy logic/thẩm mỹ, phối hợp bộ phận, giao tiếp",
+    "cong-cu-phan-mem": "can — 6/6: AutoCAD, Inventor, Illustrator, Photoshop, Revit, Wilcom/Hatch/Embird/Pulse, phần mềm thiết kế trang sức 3D, Word/Excel",
+    "chung-chi": "nen — JD#3 chứng chỉ hành nghề Kiến trúc sư hạng I là lợi thế; 1/6 nêu",
+    "du-an": "nen — chỉ JD#3 nhắc chủ trì dự án; nên ghi dự án/sản phẩm đã thiết kế (suy từ công việc)",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "nen — JD#1 đọc hiểu tài liệu bản vẽ tiếng Anh; 1/6 nhắc",
+    "portfolio-link": "nen — JD#4 (thêu) và JD#5 (trang sức 3D) là nghề sản phẩm nhìn được; không JD nào nêu thẳng link (suy từ tính chất công việc)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "nen — JD#3 chứng chỉ hành nghề là lợi thế; không JD nào đòi bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 nêu thẳng nam, không quá 28 tuổi (JD#6); không đồng nhất",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Thiết kế cơ khí AutoCAD/Inventor", "thiết kế in ấn quảng cáo", "thẩm tra hồ sơ thiết kế", "digitize thêu Wilcom", "thiết kế trang sức 3D", "thiết kế MEP", "jig/đồ gá"],
+  "bangChung": [
+    "JD#1: 'Sử dụng thành thạo Autocad, vẽ 3D inventor'; 'Có ít nhất 3 năm kinh nghiệm'; 'Ưu tiên ứng viên có kinh nghiệm thiết kế jig, đồ gá hàn, khuôn dập'",
+    "JD#2: 'Thành thạo Adobe Illustrator và Adobe Photoshop'; 'đã từng thực hiện bình file in nhanh'",
+    "JD#3: 'Tối thiểu 10 năm kinh nghiệm chủ trì thiết kế hoặc thẩm tra'; 'Có Chứng chỉ hành nghề Kiến trúc sư hạng I là một lợi thế'",
+    "JD#4: 'Thành thạo ít nhất một phần mềm digitize thêu như Wilcom, Hatch, Embird, Pulse'",
+    "JD#6: 'Độ tuổi không quá 28 tuổi'; 'Sử dụng thành thạo phần mềm autocad'"
+  ],
+  "ghiChu": "Nhóm 'khác' rất tạp, 6 JD thuộc 6 vai khác nhau nên độ tin cậy thấp."
+}

@@ -1,0 +1,428 @@
+{
+ "6": {
+  "giai-thuong": {
+   "mucDo": "tuy-chon",
+   "lyDo": "Giải thưởng không phải mục quyết định của nghề này"
+  }
+ },
+ "16": {
+  "giai-thuong": {
+   "mucDo": "tuy-chon",
+   "lyDo": "Giải thưởng không phải mục quyết định của nghề này"
+  }
+ },
+ "21": {
+  "chung-chi": {
+   "mucDo": "nen",
+   "lyDo": "Chứng chỉ có lợi nhưng không phải điều kiện bắt buộc của nghề này"
+  },
+  "du-an": {
+   "mucDo": "nen",
+   "lyDo": "Quan hệ chính phủ: dự án là điểm cộng, không bắt buộc"
+  }
+ },
+ "24": {
+  "ky-nang-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "hoat-dong-ngoai-khoa": {
+   "mucDo": "nen",
+   "lyDo": "Hoạt động ngoại khóa chỉ có giá trị với ứng viên mới ra trường, không đến mức bắt buộc"
+  }
+ },
+ "25": {
+  "chung-chi": {
+   "mucDo": "nen",
+   "lyDo": "Chứng chỉ có lợi nhưng không phải điều kiện bắt buộc của nghề này"
+  }
+ },
+ "32": {
+  "giay-phep": {
+   "mucDo": "nen",
+   "lyDo": "Pháp chế in-house không bắt buộc chứng chỉ hành nghề luật sư"
+  }
+ },
+ "39": {
+  "giai-thuong": {
+   "mucDo": "tuy-chon",
+   "lyDo": "Giải thưởng không phải mục quyết định của nghề này"
+  }
+ },
+ "40": {
+  "hoat-dong-ngoai-khoa": {
+   "mucDo": "nen",
+   "lyDo": "Hoạt động ngoại khóa chỉ có giá trị với ứng viên mới ra trường, không đến mức bắt buộc"
+  }
+ },
+ "42": {
+  "chung-chi": {
+   "mucDo": "nen",
+   "lyDo": "Chứng chỉ có lợi nhưng không phải điều kiện bắt buộc của nghề này"
+  }
+ },
+ "47": {
+  "cong-cu-phan-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "portfolio-link": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ },
+ "48": {
+  "muc-tieu-nghe-nghiep": {
+   "mucDo": "nen",
+   "lyDo": "CV lao động phổ thông thường ngắn gọn, kinh nghiệm và kỹ năng quan trọng hơn đoạn mục tiêu"
+  }
+ },
+ "49": {
+  "giai-thuong": {
+   "mucDo": "tuy-chon",
+   "lyDo": "Giải thưởng không phải mục quyết định của nghề này"
+  }
+ },
+ "50": {
+  "giay-phep": {
+   "mucDo": "nen",
+   "lyDo": "Giao hàng/kho vận: bằng lái xe là thông tin thường được hỏi"
+  },
+  "muc-tieu-nghe-nghiep": {
+   "mucDo": "nen",
+   "lyDo": "CV lao động phổ thông thường ngắn gọn, kinh nghiệm và kỹ năng quan trọng hơn đoạn mục tiêu"
+  }
+ },
+ "51": {
+  "muc-tieu-nghe-nghiep": {
+   "mucDo": "nen",
+   "lyDo": "CV lao động phổ thông thường ngắn gọn, kinh nghiệm và kỹ năng quan trọng hơn đoạn mục tiêu"
+  }
+ },
+ "52": {
+  "muc-tieu-nghe-nghiep": {
+   "mucDo": "nen",
+   "lyDo": "CV lao động phổ thông thường ngắn gọn, kinh nghiệm và kỹ năng quan trọng hơn đoạn mục tiêu"
+  }
+ },
+ "54": {
+  "muc-tieu-nghe-nghiep": {
+   "mucDo": "nen",
+   "lyDo": "CV lao động phổ thông thường ngắn gọn, kinh nghiệm và kỹ năng quan trọng hơn đoạn mục tiêu"
+  }
+ },
+ "55": {
+  "muc-tieu-nghe-nghiep": {
+   "mucDo": "nen",
+   "lyDo": "CV lao động phổ thông thường ngắn gọn, kinh nghiệm và kỹ năng quan trọng hơn đoạn mục tiêu"
+  }
+ },
+ "56": {
+  "hoat-dong-ngoai-khoa": {
+   "mucDo": "nen",
+   "lyDo": "Hoạt động ngoại khóa chỉ có giá trị với ứng viên mới ra trường, không đến mức bắt buộc"
+  },
+  "giai-thuong": {
+   "mucDo": "tuy-chon",
+   "lyDo": "Giải thưởng không phải mục quyết định của nghề này"
+  }
+ },
+ "57": {
+  "muc-tieu-nghe-nghiep": {
+   "mucDo": "nen",
+   "lyDo": "CV lao động phổ thông thường ngắn gọn, kinh nghiệm và kỹ năng quan trọng hơn đoạn mục tiêu"
+  }
+ },
+ "58": {
+  "muc-tieu-nghe-nghiep": {
+   "mucDo": "nen",
+   "lyDo": "CV lao động phổ thông thường ngắn gọn, kinh nghiệm và kỹ năng quan trọng hơn đoạn mục tiêu"
+  }
+ },
+ "59": {
+  "muc-tieu-nghe-nghiep": {
+   "mucDo": "nen",
+   "lyDo": "CV lao động phổ thông thường ngắn gọn, kinh nghiệm và kỹ năng quan trọng hơn đoạn mục tiêu"
+  }
+ },
+ "62": {
+  "hoat-dong-ngoai-khoa": {
+   "mucDo": "nen",
+   "lyDo": "Hoạt động ngoại khóa chỉ có giá trị với ứng viên mới ra trường, không đến mức bắt buộc"
+  },
+  "giai-thuong": {
+   "mucDo": "tuy-chon",
+   "lyDo": "Giải thưởng không phải mục quyết định của nghề này"
+  },
+  "so-thich": {
+   "mucDo": "tuy-chon",
+   "lyDo": "Sở thích không liên quan đến năng lực nghề này"
+  }
+ },
+ "64": {
+  "hoat-dong-ngoai-khoa": {
+   "mucDo": "nen",
+   "lyDo": "Hoạt động ngoại khóa chỉ có giá trị với ứng viên mới ra trường, không đến mức bắt buộc"
+  }
+ },
+ "65": {
+  "giay-phep": {
+   "mucDo": "nen",
+   "lyDo": "Chứng chỉ đại lý bảo hiểm là điều kiện hành nghề; JD ít nhắc"
+  }
+ },
+ "66": {
+  "giay-phep": {
+   "mucDo": "nen",
+   "lyDo": "Chứng chỉ đại lý bảo hiểm là điều kiện hành nghề; JD ít nhắc"
+  }
+ },
+ "69": {
+  "du-an": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ },
+ "70": {
+  "giay-phep": {
+   "mucDo": "can",
+   "lyDo": "Môi giới bất động sản: chứng chỉ hành nghề môi giới là yêu cầu theo luật, JD thường không ghi"
+  }
+ },
+ "71": {
+  "ky-nang-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ },
+ "74": {
+  "thong-tin-ca-nhan-mo-rong": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ },
+ "76": {
+  "ky-nang-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "du-an": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ },
+ "78": {
+  "chung-chi": {
+   "mucDo": "can",
+   "lyDo": "Kiểm toán: ACCA/CPA/VACPA là chứng chỉ nghề nghiệp quyết định; JD ít nhắc đầy đủ"
+  }
+ },
+ "79": {
+  "chung-chi": {
+   "mucDo": "nen",
+   "lyDo": "Thuế: chứng chỉ đại lý thuế và chứng chỉ nghề là lợi thế"
+  }
+ },
+ "92": {
+  "chung-chi": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "thong-tin-ca-nhan-mo-rong": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "ky-nang-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ },
+ "99": {
+  "giai-thuong": {
+   "mucDo": "tuy-chon",
+   "lyDo": "Giải thưởng không phải mục quyết định của nghề này"
+  }
+ },
+ "100": {
+  "ky-nang-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ },
+ "110": {
+  "ky-nang-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ },
+ "111": {
+  "ngoai-ngu": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "ky-nang-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "du-an": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "cong-cu-phan-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ },
+ "118": {
+  "ngoai-ngu": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "ky-nang-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "du-an": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "cong-cu-phan-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ },
+ "121": {
+  "giai-thuong": {
+   "mucDo": "tuy-chon",
+   "lyDo": "Giải thưởng không phải mục quyết định của nghề này"
+  },
+  "so-thich": {
+   "mucDo": "tuy-chon",
+   "lyDo": "Sở thích không liên quan đến năng lực nghề này"
+  }
+ },
+ "122": {
+  "giai-thuong": {
+   "mucDo": "tuy-chon",
+   "lyDo": "Giải thưởng không phải mục quyết định của nghề này"
+  },
+  "so-thich": {
+   "mucDo": "tuy-chon",
+   "lyDo": "Sở thích không liên quan đến năng lực nghề này"
+  }
+ },
+ "123": {
+  "giai-thuong": {
+   "mucDo": "tuy-chon",
+   "lyDo": "Giải thưởng không phải mục quyết định của nghề này"
+  },
+  "so-thich": {
+   "mucDo": "tuy-chon",
+   "lyDo": "Sở thích không liên quan đến năng lực nghề này"
+  }
+ },
+ "125": {
+  "giai-thuong": {
+   "mucDo": "tuy-chon",
+   "lyDo": "Giải thưởng không phải mục quyết định của nghề này"
+  }
+ },
+ "132": {
+  "ky-nang-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ },
+ "137": {
+  "giay-phep": {
+   "mucDo": "nen",
+   "lyDo": "Thiết bị y tế: giấy phép là lợi thế, không phải điều kiện của mọi vị trí"
+  }
+ },
+ "139": {
+  "ngoai-ngu": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "chung-chi": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "ky-nang-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ },
+ "145": {
+  "ky-nang-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "cong-cu-phan-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "portfolio-link": {
+   "mucDo": "nen",
+   "lyDo": "Nghiên cứu người dùng: case study/báo cáo nghiên cứu là bằng chứng năng lực"
+  }
+ },
+ "147": {
+  "ky-nang-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "cong-cu-phan-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ },
+ "152": {
+  "ky-nang-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ },
+ "159": {
+  "portfolio-link": {
+   "mucDo": "nen",
+   "lyDo": "Biên phiên dịch: bản dịch mẫu là bằng chứng năng lực"
+  }
+ },
+ "160": {
+  "giay-phep": {
+   "mucDo": "can",
+   "lyDo": "Luật sư/dịch vụ pháp lý: chứng chỉ hành nghề luật sư là điều kiện nghề nghiệp, JD thường không ghi"
+  }
+ },
+ "161": {
+  "giay-phep": {
+   "mucDo": "nen",
+   "lyDo": "Pháp chế doanh nghiệp: chứng chỉ hành nghề luật là lợi thế"
+  }
+ },
+ "162": {
+  "chung-chi": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "ky-nang-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ },
+ "163": {
+  "ky-nang-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "du-an": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  },
+  "cong-cu-phan-mem": {
+   "mucDo": "nen",
+   "lyDo": "JD của nghề này mỏng hoặc lạc nghề nên không dùng làm bằng chứng mạnh; hạ từ \"cần có\" xuống \"nên có\""
+  }
+ }
+}

@@ -1,0 +1,36 @@
+{
+  "id": 13,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Điện/Điện tử/Viễn thông",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên; 2/6 không yêu cầu kinh nghiệm, 2/6 cần 1 năm, 2/6 cần 2-3 năm; trung cấp/cao đẳng trở lên",
+  "muc": {
+    "anh-chan-dung": "nen — không JD nào nhắc ngoại hình; 2/6 chỉ nêu giới tính Nữ (JD#4, JD#5) và độ tuổi; ảnh nghiêm túc là lợi thế khi gặp khách B2B (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 4/6 nhắc đam mê kinh doanh/thu nhập/mục tiêu phát triển (JD#2, #4, #5...)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc; sales thiết bị điện, điện tử, điện lạnh, năng lượng mặt trời, dự án B2B, đấu thầu; 1-3 năm hoặc không yêu cầu",
+    "hoc-van": "can — 6/6 nêu bậc học (trung cấp đến ĐH); ưu tiên Điện, Điện tử, Kinh tế, QTKD, CNTT, ngôn ngữ Trung",
+    "ky-nang-chuyen-mon": "can — 6/6: tìm kiếm và phát triển khách hàng, tư vấn giải pháp, báo giá, đàm phán, bán hàng dự án/phân phối, lập hồ sơ dự thầu (JD#3), theo dõi công nợ",
+    "ky-nang-mem": "can — 6/6: giao tiếp, đàm phán, thuyết trình, chủ động, trung thực, chịu áp lực, làm việc nhóm/độc lập",
+    "cong-cu-phan-mem": "can — 5/6: Word, Excel, PowerPoint, Zalo, Email",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — 3/6 nhắc bán hàng dự án/đấu thầu (JD#2, #3 và một phần JD#1); CV nên nêu dự án đã bán/đấu thầu",
+    "thanh-tich-kpi": "nen — JD#2 forecast, JD#4 theo dõi tiến độ bán hàng và báo cáo kết quả (2/6); không JD nêu chỉ tiêu cụ thể",
+    "ngoai-ngu": "nen — JD#1 tiếng Trung/Anh lợi thế, JD#4 tiếng Trung giao tiếp thành thạo (2/6)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#2, JD#4 nhận ứng viên mới ra trường/không yêu cầu kinh nghiệm (2/6)",
+    "giay-phep": "can — 3/6 JD yêu cầu phương tiện di chuyển (JD#4, #6) hoặc có thể đi công tác (JD#1)",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/6 JD nêu độ tuổi/giới tính (20-40, dưới 30 Nữ, Nữ từ 34 tuổi, 20-35)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["sales thiết bị điện", "năng lượng mặt trời", "điện tử/viễn thông", "bán hàng dự án B2B", "hồ sơ dự thầu", "báo giá", "đàm phán", "kênh phân phối", "Excel", "tiếng Trung"],
+  "bangChung": [
+    "JD#1: 'Sử dụng tốt các công cụ văn phòng: Word, Excel, Zalo, Email'; 'Biết tiếng Trung / Anh là một lợi thế'",
+    "JD#2: 'Có kinh nghiệm bán hàng dự án B2B là lợi thế'; 'Ưu tiên kinh nghiệm trong IT, hệ thống'",
+    "JD#3: 'Biết đọc - phân tích HSMT và độc lập lập Hồ sơ dự thầu'; 'Từ 2- 3 năm kinh nghiệm làm Sales Dự án'",
+    "JD#4: 'Từ 30 tuổi trở xuống'; 'Nữ'; 'Tiếng Trung Giao tiếp thành thạo'; 'Có phương tiện di chuyển'",
+    "JD#6: 'Có ít nhất 1 năm kinh nghiệm ... điện tử, điện máy, điện lạnh'; 'Tuổi 20 - 35'; 'Có phương tiện di chuyển'"
+  ],
+  "ghiChu": "JD#5 (sales Nữ từ 34 tuổi) khá lạc mảng điện, nhưng vẫn là JD sales; các số liệu tính trên 6 JD."
+}

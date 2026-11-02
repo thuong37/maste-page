@@ -1,0 +1,36 @@
+{
+  "id": 99,
+  "nhom": "Giáo dục/Đào tạo",
+  "nghe": "Sales Giáo dục/Khoá học",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên tư vấn tuyển sinh/sales khóa học, 3/6 dưới 1 năm kinh nghiệm, 3/6 yêu cầu 1 năm; từ Trung cấp/CĐ trở lên; độ tuổi giới hạn ở 5/6 JD",
+  "muc": {
+    "anh-chan-dung": "can — JD không nêu ảnh nhưng 5/6 nêu tuổi/giới tính (nữ, giọng miền Bắc, phát âm chuẩn); nghề gặp khách nên ảnh chỉn chu (suy từ tính chất công việc và yêu cầu ngoại hình)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 nhắc mong muốn phát triển lâu dài trong giáo dục; nên nêu mục tiêu doanh số/vị trí",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm sale/tư vấn/chăm sóc khách hàng (3 tháng đến 1-2 năm), ưu tiên giáo dục/telesales",
+    "hoc-van": "can — 6/6 nêu tốt nghiệp Trung cấp/CĐ/ĐH hoặc sinh viên năm cuối, không yêu cầu chuyên ngành",
+    "ky-nang-chuyen-mon": "can — tư vấn chương trình học, thuyết phục thi xếp lớp/ghi danh, chăm sóc học viên, tái ghi danh, telesales, phát triển khách hàng, CRM",
+    "ky-nang-mem": "can — 6/6: giao tiếp thuyết phục, lắng nghe, chịu áp lực KPI, làm việc độc lập, xử lý tình huống",
+    "cong-cu-phan-mem": "can — 4/6: Word, Excel, Google Sheets, CRM/phần mềm quản lý học viên, laptop cá nhân",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "can — 5/6 nhắc KPI/mục tiêu ghi danh/doanh số; CV nên có số liệu doanh số, tỷ lệ chốt",
+    "ngoai-ngu": "nen — 1/6 nêu tiếng Anh cơ bản; ngành khóa học ngoại ngữ nên tiếng Anh là lợi thế (suy từ JD)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "nen — không JD nào nhắc; danh hiệu sales xuất sắc chỉ hữu ích (suy từ công việc)",
+    "hoat-dong-ngoai-khoa": "nen — 2/6 nhận sinh viên năm 3-4/năm cuối chưa có kinh nghiệm",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/6 nêu tuổi 20-40, giới tính nữ, giọng miền Bắc/phát âm chuẩn, làm ca tối và cuối tuần, nơi làm việc",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Tư vấn tuyển sinh", "sales khóa học", "telesales", "ghi danh/tái ghi danh", "KPI doanh số", "chăm sóc học viên", "CRM", "tư vấn học viên và phụ huynh"],
+  "bangChung": [
+    "JD#1: 'Kinh nghiệm sale từ 3 tháng'; 'Độ tuổi: 22-28 tuổi'; 'Có laptop cá nhân'",
+    "JD#2: 'sẵn sàng chinh phục mục tiêu doanh số (KPI)'; 'Nữ', 'Tuổi 20 - 28'",
+    "JD#4: 'Nữ'; 'Giọng miền Bắc, Phát âm chuẩn'; 'thuyết phục ... để đạt KPI'",
+    "JD#5: 'Thành thạo Google Sheets; biết dùng CRM/phần mềm quản lý học viên là một lợi thế'; 'chịu được áp lực doanh số'",
+    "JD#6: 'Không nói ngọng'; 'Ưu tiên ... kinh nghiệm kinh doanh, tư vấn, bán hàng, chăm sóc khách hàng'"
+  ],
+  "ghiChu": "Yêu cầu ngoại hình/giọng/giới tính ghi nhận như dữ liệu JD."
+}

@@ -1,0 +1,36 @@
+{
+  "id": 100,
+  "nhom": "Giáo dục/Đào tạo",
+  "nghe": "Giáo dục/Đào tạo khác",
+  "soJD": 6,
+  "doTinCay": "thap",
+  "capBac": "6/6 JD cấp nhân viên; kinh nghiệm từ không yêu cầu đến 5 năm; học vấn từ THCS đến ĐH. Chỉ 1/6 JD là giáo dục thật (giáo viên mầm non, 1 năm, CĐ trở lên)",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nêu ảnh/ngoại hình; nhóm JD quá lạc nghề nên không suy được",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 JD nhắc định hướng/đam mê nghề (kinh doanh, tâm huyết với giảng dạy mầm non); chỉ là gợi ý yếu",
+    "kinh-nghiem-lam-viec": "can — 5/6 JD nêu số năm kinh nghiệm (1-5 năm); riêng JD tư vấn XKLĐ chấp nhận chưa có kinh nghiệm",
+    "hoc-van": "can — 6/6 JD nêu bậc học; JD giáo viên mầm non đòi CĐ trở lên đúng chuyên ngành mầm non",
+    "ky-nang-chuyen-mon": "nen — mỗi JD một nghề khác nhau (giảng dạy/chăm sóc trẻ, thiết kế web, kế toán doanh thu, sales xuất khẩu); chỉ JD mầm non thuộc giáo dục: quản lý lớp học, ca hát, vẽ, kể chuyện, chăm sóc trẻ",
+    "ky-nang-mem": "can — 3/6 JD (giao tiếp, xử lý tình huống, kiên nhẫn, tỉ mỉ, cẩn thận)",
+    "cong-cu-phan-mem": "nen — 3/6: Excel/MISA, Figma/Photoshop/Illustrator, tin học văn phòng; không có công cụ riêng ngành giáo dục",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — 1/6 JD (thiết kế web) nhắc kinh nghiệm dự án thiết kế game; không liên quan giáo dục",
+    "thanh-tich-kpi": "nen — 3/6 JD nhắc số liệu doanh số/thu nhập, tất cả là JD kinh doanh/kế toán, không phải giáo dục",
+    "ngoai-ngu": "nen — 2/6: tiếng Anh giao tiếp, ưu tiên tiếng Hoa/Nga (JD sales xuất khẩu); JD mầm non nhắc trường song ngữ/quốc tế",
+    "portfolio-link": "nen — 1/6 JD (Senior Web Designer) bắt buộc gửi portfolio; không áp dụng cho giáo dục",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc; JD XKLĐ chỉ nói chưa có kinh nghiệm sẽ được đào tạo",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — không JD nào nêu tuổi/giới tính/hộ khẩu; 1 JD kế toán nhắc sức khỏe tốt, có thể tăng ca",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Giáo viên mầm non", "chăm sóc trẻ", "quản lý lớp học", "trường song ngữ/quốc tế", "tư vấn", "giao tiếp"],
+  "bangChung": [
+    "JD#2 (Giáo viên mầm non): 'Tốt nghiệp từ Cao đẳng trở lên đúng chuyên ngành mầm non'; 'Có kinh nghiệm giảng dạy 1 năm trở lên ở các trường song ngữ và quốc tế'; kỹ năng 'Quản Lý Lớp Học, Ca Hát, Chăm Sóc Trẻ, Vẽ, Kể Chuyện'",
+    "JD#1 (Senior Web Designer): 'Bắt buộc gửi Portf...'; 'Sử dụng thành thạo Figma' (lạc nghề)",
+    "JD#3 (Sales tư vấn XKLĐ): 'Chưa có kinh nghiệm sẽ được đào tạo'; 'Kỹ năng giao tiếp tốt, truyền đạt tốt'",
+    "JD#4/#6 (Kế toán doanh thu): 'Thành thạo tin học văn phòng Microsoft, Excel'; 'Thành thạo phần mềm kế toán (Misa)' (lạc nghề)",
+    "JD#5 (Sales xuất khẩu): 'Tiếng Anh giao tiếp thành thạo'; 'Ưu tiên biết thêm tiếng Hoa và tiếng Nga' (lạc nghề)"
+  ],
+  "ghiChu": "Rất mỏng: nghề là nhóm 'khác' tạp; sau crawl lại chỉ 1/6 JD sát nghề (giáo viên mầm non), 5/6 lệch nghề (thiết kế web, tư vấn XKLĐ, 2 kế toán doanh thu, sales xuất khẩu) nên các tỷ lệ x/6 ở trên gồm cả JD lệch và chỉ mang tính tham khảo. Đáng tin chỉ cho hướng giáo viên mầm non (1 JD); không dùng làm tiêu chuẩn chung cho giáo dục/đào tạo."
+}

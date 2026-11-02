@@ -1,0 +1,36 @@
+{
+  "id": 37,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Data Science",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5 JD: 1 thực tập sinh Data Scientist (sinh viên năm 3-4), 2 nhân viên (1-2 năm; 1 Data Analyst cao đẳng), 2 trưởng nhóm Data Scientist (3 năm, ĐH/cao học); ưu tiên Khoa học dữ liệu, Khoa học máy tính, Toán/Thống kê",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình; JD#1 chỉ nêu độ tuổi dưới 26; công việc phân tích dữ liệu (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/5 JD nhắc định hướng/chủ động đề xuất giải pháp, mentor hướng dẫn; dùng để nêu định hướng DS/DA",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD nhắc (thực tập 2-3 tháng đến 3 năm); Data Scientist/Analyst, mô hình ML, phân tích dữ liệu lớn",
+    "hoc-van": "can — 5/5 nêu bậc học; ngành Khoa học dữ liệu, Khoa học máy tính, Toán/Thống kê, Tài chính định lượng, Kinh tế lượng",
+    "ky-nang-chuyen-mon": "can — 5/5: phân tích và khám phá dữ liệu, mô hình ML/Deep Learning (hồi quy, phân loại, gom cụm, chuỗi thời gian), feature engineering, EDA, A/B test, ETL/làm sạch dữ liệu, dashboard",
+    "ky-nang-mem": "can — 5/5: tư duy phân tích, cẩn thận kiểm tra kết quả, giải thích kỹ thuật cho người không chuyên, phối hợp đơn vị kinh doanh",
+    "cong-cu-phan-mem": "can — 5/5: Python (pandas, numpy, scikit-learn, matplotlib), SQL, XGBoost, TensorFlow, PyTorch, Looker Studio, Power BI, Excel/Google Sheets",
+    "chung-chi": "nen — JD#1 TOEIC 700, JD#3 chứng chỉ quốc tế về CNTT phù hợp chuyên môn (2/5 nhắc chứng chỉ)",
+    "du-an": "can — JD#2 dự án Data Science 2-3 tháng, JD#1/#4 giải pháp ML triển khai thực tế (2-3/5); CV phải có dự án phân tích/mô hình và kết quả",
+    "thanh-tich-kpi": "can — JD#1 tăng trưởng kinh doanh, cá nhân hóa, tối ưu vận hành (2/5 nhắc kết quả đo lường); nên nêu độ chính xác mô hình/giá trị kinh doanh",
+    "ngoai-ngu": "nen — JD#1 TOEIC 700 (1/5)",
+    "portfolio-link": "nen — nghề data nên có link GitHub/Kaggle/notebook (suy từ tính chất công việc; không JD nhắc thẳng)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#2 thực tập sinh nhận sinh viên năm 3-4 (1/5)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — chỉ JD#1 nêu độ tuổi dưới 26 (1/5)",
+    "so-thich": "khong — không JD nào nhắc (JD#2 chỉ nêu hiểu cơ bản về game mobile như kiến thức lĩnh vực)"
+  },
+  "tuKhoaNenCo": ["Data Scientist", "Machine Learning", "Python/pandas/scikit-learn", "SQL", "EDA/feature engineering", "A/B test", "TensorFlow/PyTorch", "Power BI/Looker Studio", "Data Analyst"],
+  "bangChung": [
+    "JD#1: 'Độ tuổi dưới 26'; 'Tiếng Anh TOEIC 700'; 'kiểm định giả thuyết, phân tích nhân quả, ... chuỗi thời gian'",
+    "JD#2: 'Sinh viên năm 3,4 chuyên ngành Khoa học Máy tính'; 'Có ít nhất 2-3 tháng thực tập/dự án về Data Science'; 'pandas, numpy'",
+    "JD#3: 'XGBoost, TensorFlow, PyTorch'; 'có chứng chỉ quốc tế về CNTT phù hợp'; 'Python (Pandas), EDA, feature engineering'",
+    "JD#4: 'tối thiểu 3 năm ... Data Scientist'; 'NumPy, Pandas, Scikit-learn'; 'SQL'",
+    "JD#5: 'Thành thạo SQL'; 'dashboard trên Looker Studio, Power BI'; 'Excel hoặc Google Sheets'"
+  ],
+  "ghiChu": "Chỉ 5 JD; JD#5 là Data Analyst (gần nghề)."
+}

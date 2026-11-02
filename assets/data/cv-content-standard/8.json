@@ -1,0 +1,36 @@
+{
+  "id": 8,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Sản xuất",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên; 2/6 không yêu cầu kinh nghiệm (nhận sinh viên mới ra trường), 3/6 cần 1-2 năm, 1 JD 2 năm; cao đẳng trở lên",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 2/6 ưu tiên Nữ (JD#3, JD#5), JD#5 nêu 'giọng nói truyền cảm'; ảnh nghiêm túc là lợi thế khi gặp khách B2B (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 JD nhắc đam mê sales B2B/khao khát phát triển (JD#1, JD#5)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc; ưu tiên sales B2B, ngành sản xuất/hóa chất/may mặc/bao bì, chăm sóc khách hàng doanh nghiệp",
+    "hoc-van": "can — 6/6 yêu cầu cao đẳng trở lên; 4/6 nêu chuyên ngành (Kinh tế, QTKD, Marketing, Hóa học, Dệt may, Kỹ thuật)",
+    "ky-nang-chuyen-mon": "can — 6/6: tìm kiếm và phát triển khách hàng B2B, báo giá/đàm phán hợp đồng, theo dõi đơn hàng, kiến thức sản phẩm công nghiệp/hóa chất, thu hồi công nợ",
+    "ky-nang-mem": "can — 6/6: giao tiếp, đàm phán, thuyết trình, giải quyết vấn đề, làm việc độc lập, chịu áp lực doanh số",
+    "cong-cu-phan-mem": "can — 4/6: tin học văn phòng (Word, Excel) ở JD#1, #3, #4",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — 2/6 nhắc áp lực doanh số/sản lượng khách hàng (JD#2, JD#4); CV nên có số liệu doanh số nếu đã làm",
+    "ngoai-ngu": "can — 4/6: Tiếng Anh/Trung/Pháp/Hàn thành thạo (JD#2), Tiếng Anh viết email khách nước ngoài (JD#3), Tiếng Anh giao tiếp cơ bản (JD#4)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/6 JD không yêu cầu kinh nghiệm, ưu tiên sinh viên mới ra trường (JD#1, JD#2)",
+    "giay-phep": "nen — JD#2 'có thể đi công tác (có xe đưa đón)' (1/6); không đòi bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#3 Tuổi 20-40, Nữ; JD#5 ưu tiên Nữ (2/6 nêu thẳng)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Sales B2B", "sản xuất công nghiệp", "hóa chất", "đơn hàng may mặc OEM/FOB", "báo giá", "đàm phán hợp đồng", "chăm sóc khách hàng doanh nghiệp", "công nợ", "Tiếng Anh", "Excel"],
+  "bangChung": [
+    "JD#1: 'Không yêu cầu kinh nghiệm. Ưu tiên sinh viên mới ra trường'; 'Thành thạo tin học văn phòng'",
+    "JD#2: 'Thành thạo Tiếng Anh hoặc Tiếng Trung hoặc Tiếng Pháp hoặc Tiếng Hàn'",
+    "JD#3: 'Tiếng Anh tốt, giao tiếp và viết email với khách hàng nước ngoài'; 'Thành thạo Excel, Word'; 'Có 2 năm kinh nghiệm'",
+    "JD#4: 'chịu được áp lực về doanh số'; 'Tiếng Anh giao tiếp cơ bản'; chuyên ngành Hóa học",
+    "JD#6: 'Có 1-2 năm kinh nghiệm kinh doanh B2B'; 'Theo dõi, thu hồi công nợ'"
+  ],
+  "ghiChu": ""
+}

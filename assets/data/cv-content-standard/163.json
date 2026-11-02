@@ -1,0 +1,34 @@
+{
+  "id": 163,
+  "nhom": "Nhóm nghề khác",
+  "nghe": "NGO/Phi chính phủ/Phi lợi nhuận",
+  "soJD": 1,
+  "doTinCay": "thap",
+  "capBac": "1/1 JD sát nghề cấp nhân viên (Cán bộ chương trình cộng đồng), 1 năm kinh nghiệm y tế, ĐH trở lên",
+  "muc": {
+    "anh-chan-dung": "khong — JD không nhắc ảnh/ngoại hình; nghề chương trình cộng đồng nên ảnh không phải trọng tâm (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — JD không nhắc định hướng",
+    "kinh-nghiem-lam-viec": "can — 1/1 JD đòi ít nhất 1 năm kinh nghiệm y tế, ưu tiên làm với tổ chức phi lợi nhuận và chương trình/dự án sức khỏe, từng làm với bệnh viện phổi và tổ chống lao",
+    "hoc-van": "can — 1/1 JD đòi cử nhân lĩnh vực sức khỏe hoặc dịch tễ học",
+    "ky-nang-chuyen-mon": "can — 1/1: xây dựng kế hoạch và ngân sách hoạt động quý/năm, triển khai dự án cộng đồng cùng đối tác địa phương, làm việc với cán bộ y tế",
+    "ky-nang-mem": "can — 1/1: sắp xếp, tổ chức công việc, cẩn thận, giao tiếp tốt, làm việc cá nhân và nhóm",
+    "cong-cu-phan-mem": "can — 1/1 JD đòi thành thạo Microsoft Office",
+    "chung-chi": "khong — JD không nhắc chứng chỉ",
+    "du-an": "can — 1/1 JD mô tả quản lý và thực thi hoạt động dự án theo thỏa thuận/đề xuất dự án; nên liệt kê dự án y tế/cộng đồng đã tham gia",
+    "thanh-tich-kpi": "khong — JD không nhắc chỉ tiêu cụ thể",
+    "ngoai-ngu": "nen — JD nêu ưu tiên ứng viên có khả năng sử dụng (nội dung cắt, chưa rõ ngôn ngữ); không đòi bắt buộc",
+    "portfolio-link": "khong — JD không nhắc",
+    "giai-thuong": "khong — JD không nhắc",
+    "hoat-dong-ngoai-khoa": "nen — ưu tiên kinh nghiệm tổ chức phi lợi nhuận; hoạt động tình nguyện/cộng đồng có thể bổ sung (suy từ tính chất công việc)",
+    "giay-phep": "khong — JD không nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — JD không nêu tuổi/giới tính/hộ khẩu",
+    "so-thich": "khong — JD không nhắc"
+  },
+  "tuKhoaNenCo": ["Chương trình cộng đồng", "dự án y tế", "phi lợi nhuận", "kế hoạch và ngân sách hoạt động", "đối tác địa phương", "dịch tễ học", "Microsoft Office"],
+  "bangChung": [
+    "JD#1 (Hoành Sơn): 'Có bằng cử nhân trong lĩnh vực liên quan đến sức khỏe hoặc dịch tễ học'",
+    "JD#1: 'ít nhất 1 năm kinh nghiệm ... ưu tiên kinh nghiệm làm với các tổ chức phi lợi nhuận và các chương trình/dự án liên quan đến sức khỏe'",
+    "JD#1: 'xây dựng kế hoạch, ngân sách hoạt động quý, năm và triển khai các hoạt động dự án'; 'Sử dụng thành thạo phần mềm Microsoft Office'"
+  ],
+  "ghiChu": "Rất mỏng: nghề là nhóm 'khác' tạp; trong 6 JD thu được chỉ JD#1 (cán bộ chương trình cộng đồng) sát nghề NGO/phi lợi nhuận. 5 JD còn lại lệch nghề đã loại khỏi số liệu x/1: #2 thiết kế web game, #3 QC cơ khí kết cấu thép, #4 tiến độ sản xuất, #5 trưởng bộ phận cơ điện xây dựng, #6 khai báo hải quan/quyết toán XNK. Nhận định chỉ tham khảo, chỉ dựa trên 1 JD."
+}

@@ -1,0 +1,37 @@
+{
+  "id": 4,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Giáo dục/Khoá học",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên; 4/6 đòi 1 năm kinh nghiệm tư vấn/sales, 2 JD nhận dưới 1 năm; từ trung cấp/cao đẳng trở lên, 1 JD ĐH",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh nhưng 3/6 nêu giới tính Nữ/độ tuổi/giọng chuẩn (JD#4 'Nữ, 20-28', JD#5 'Nữ, giọng miền Bắc'); nghề gặp phụ huynh/học viên nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#4 'mong muốn phát triển lâu dài trong lĩnh vực Giáo dục', JD#1 'yêu thích môi trường giáo dục' (2/6)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc; kinh nghiệm tư vấn tuyển sinh, sales khóa học, telesales, CSKH (4/6 đòi 1 năm)",
+    "hoc-van": "can — 6/6 nêu bậc học (trung cấp/cao đẳng/ĐH), phần lớn không yêu cầu chuyên ngành (JD#2)",
+    "ky-nang-chuyen-mon": "can — 6/6: tư vấn khóa học/tuyển sinh, phân tích nhu cầu, chăm sóc học viên và phụ huynh, tìm kiếm khách hàng, telesales, tái ghi danh",
+    "ky-nang-mem": "can — 6/6: giao tiếp, thuyết phục, xử lý tình huống, làm việc độc lập/nhóm, chịu áp lực KPI, quản lý thời gian",
+    "cong-cu-phan-mem": "nen — 3/6: tin học văn phòng, Word/Excel (JD#2, JD#4), Google Sheets/CRM/phần mềm quản lý học viên (JD#6)",
+    "chung-chi": "khong — chỉ JD#3 nhắc giao tiếp tiếng Anh cơ bản, không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "can — 5/6 nhắc KPI/chỉ tiêu/doanh số/ghi danh (JD#4, JD#5, JD#6...)",
+    "ngoai-ngu": "nen — JD#3 'giao tiếp tiếng Anh cơ bản' (1/6); các JD khác là trung tâm tiếng Anh nhưng không nêu thẳng yêu cầu",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#4 nhận sinh viên năm 3-4 chờ tốt nghiệp, JD#3 'năm cuối đang chờ bằng'; JD nhắc tham gia sự kiện/truyền thông",
+    "giay-phep": "nen — JD#1 'có phương tiện di chuyển' (1/6)",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/6 JD nêu độ tuổi; 2/6 nêu giới tính Nữ, JD#5 giọng miền Bắc/phát âm chuẩn; nên có tuổi/giới tính/giọng",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["tư vấn tuyển sinh", "sales khóa học", "telesales", "chăm sóc học viên/phụ huynh", "tái ghi danh", "KPI doanh số", "tư vấn giáo dục", "CRM", "giao tiếp thuyết phục"],
+  "bangChung": [
+    "JD#1: 'Có từ 1 năm kinh nghiệm mảng tư vấn tuyển sinh'; 'Độ tuổi từ 21 - 35'",
+    "JD#2: 'Tốt nghiệp Cao đẳng trở lên, không yêu cầu chuyên ngành'; 'Tin học văn phòng, Giao tiếp, Lập Kế Hoạch'",
+    "JD#3: 'Giao tiếp Tiếng Anh cơ bản'; 'Nam hoặc nữ tuổi từ 22 – 30 tuổi'",
+    "JD#4: 'sẵn sàng chinh phục mục tiêu doanh số (KPI)'; 'Nữ' (tiêu đề 'Tuyển Nữ')",
+    "JD#5: 'Tối thiểu 1 năm ... Tư vấn tuyển sinh'; 'Nữ ... Giọng miền Bắc'; 'đạt KPI'",
+    "JD#6: 'Thành thạo Google Sheets; biết dùng CRM/phần mềm quản lý học viên'"
+  ],
+  "ghiChu": "JD#4, JD#5 nêu thẳng giới tính nữ nên thong-tin-ca-nhan-mo-rong đánh can; đây là yêu cầu của nhà tuyển dụng, không phải khuyến nghị nội dung chung."
+}

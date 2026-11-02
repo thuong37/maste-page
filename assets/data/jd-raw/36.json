@@ -1,0 +1,146 @@
+{
+ "id": 36,
+ "nhom": "Công nghệ Thông tin",
+ "nghe": "Artificial Intelligence (AI)",
+ "crawledAt": "2026-10-22T03:15:11.903Z",
+ "candidates": 47,
+ "thin": false,
+ "jds": [
+  {
+   "url": "https://www.topcv.vn/viec-lam/artificial-intelligence-ai-2026/2112124.html",
+   "title": "Artificial Intelligence (AI) 2026",
+   "company": "CÔNG TY CỔ PHẦN TRUYỀN THÔNG VĂN HOÁ VIỆT",
+   "query": "Artificial Intelligence (AI)",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "1 năm kinh nghiệm chuyên môn",
+     "1 năm kinh nghiệm quản lý",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "AI Engineer",
+     "IT - Phần mềm"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "- Mục tiêu công việc: Nghiên cứu và hiện thực hóa sức mạnh của Trí tuệ nhân tạo (AI) vào quy trình vận hành, trọng tâm là xây dựng hệ thống AGENTIC thông minh nhằm tối ưu hóa hiệu suất và tự động hóa các công đoạn trong chu kỳ phát triển phần mềm (SDLC).\n\n- Nhiệm vụ trọng tâm\n\nR&D & Đổi mới sáng tạo:\nChủ động nghiên cứu các công nghệ mới, mô hình ngôn ngữ lớn (LLMs) và các giải pháp AI tiên tiến nhất để ứng dụng vào thực tế công việc.\nĐề xuất các phương án cải thiện hiệu suất vận hành dựa trên dữ liệu và công nghệ.\nPhát triển Hệ sinh thái AI Agent:\nThiết kế và xây dựng các Multi-Agent System chuyên biệt cho từng vai trò trong dự án phần mềm (ví dụ: Requirement Agent, Coding Agent, Test Case Generator Agent, Project Manager Assistant...).\nTối ưu hóa quy trình tương tác và phối hợp giữa các Agent để tự động hóa tối đa các tác vụ lặp lại.\nPhối hợp liên chức năng (Cross-functional):\nLàm việc chặt chẽ với đội ngũ Product, Design, Dev và Tester để tích hợp các tính năng AI vào sản phẩm hiện có.\nĐóng vai trò cầu nối kỹ thuật, đảm bảo giải pháp AI khả thi và giải quyết đúng bài toán của người dùng/nội bộ.\nTối ưu hóa & Đảm bảo chất lượng:\nThiết kế các kịch bản thử nghiệm, thu thập dữ liệu phản hồi (feedback loop) để liên tục tinh chỉnh và nâng cấp độ chính xác của AI.\nTheo dõi, đánh giá hiệu quả của các giải pháp AI sau khi triển khai.\nCác công việc khác: Thực hiện các nhiệm vụ phát triển dự án theo định hướng của Trưởng bộ phận.",
+    "Yêu cầu ứng viên": "- Yêu cầu chung\n\nHọc vấn: Tốt nghiệp Đại học chuyên ngành Công nghệ thông tin hoặc các khối ngành kỹ thuật liên quan.\nGiới tính: Nam/Nữ.\nThái độ: Tư duy giải quyết vấn đề (Problem-solving) quyết liệt, sẵn sàng thử sai và cập nhật công nghệ mới với tốc độ nhanh\n\n- Kỹ năng chuyên môn (Hard Skills)\n\nNền tảng lập trình: Tối thiểu 1 năm kinh nghiệm làm việc thành thạo với ngôn ngữ Python.\nAm hiểu AI & LLMs: Có kinh nghiệm thực tế triển khai các mô hình ngôn ngữ lớn: Google Gemini, OpenAI, Anthropic.\nThành thạo kỹ thuật Prompt Engineering để tối ưu hóa đầu ra cho AI.\nSử dụng tốt các framework hỗ trợ xây dựng ứng dụng AI như LangChain.\nTư duy Agentic & Công cụ:\nCó trải nghiệm thực tế (Vibecode/Workflow) với các công cụ Agentic hiện đại như: VS Code Cursor, Claude Code, Gemini CLI, Antigravity...\nCó khả năng đọc hiểu, phân tích và nghiên cứu sâu các Open-source Repo về AI Agent trên GitHub.\n\n- Kinh nghiệm & Ưu tiên (Experience & Plus)\n\nQuy trình làm việc: Hiểu sâu về quy trình phát triển phần mềm, ưu tiên ứng viên đã làm việc trong môi trường Agile/Scrum.\nĐiểm cộng ưu tiên: Ứng viên có sản phẩm Demo thực tế liên quan đến Agentic (Bot tự động hóa, hệ thống Multi-agent...).\nCó tư duy Product-mindset: Không chỉ viết code mà còn hiểu mục đích sản phẩm và cách AI giải quyết nỗi đau của người dùng.\nKiến thức ngành\nIT - Phần mềm",
+    "Quyền lợi ứng viên": "Thu nhập upto 35M/tháng\nĐược đào tạo và làm việc với các leaders giỏi, có nhiều năm kinh nghiệm làm việc với thành tích xuất sắc;\nChính sách phát triển bản thân phù hợp với từng vị trí. Có cơ hội tiếp cận với các công nghệ mới nhất.\nSau 2 tháng thử việc sẽ được cân nhắc lên nhân viên chính thức, hưởng đầy đủ quyền lợi về BHXH\nNghỉ phép: 12 ngày/ năm\nMôi trường làm việc năng động, sáng tạo với đội ngũ CBNV đầy nhiệt huyết. Chế độ du lịch hàng năm và tham gia các hoạt động teambuilding, sự kiện công ty, tiệc mặn ngọt,....",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Phường Nghĩa Đô (Phường Nghĩa Đô có thể thuộc các quận Bắc Từ Liêm, Cầu Giấy cũ) - Phạm vi làm việc trên toàn khu vực trên.\nThời gian làm việc\nThứ 2 - Thứ 7 (từ 08:00 đến 17:30)\nNghỉ thứ 7 cách tuần\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 20/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nTrưởng/Phó phòng\nKinh nghiệm quản lý\n1 năm\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n2 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/ai-engineer-thu-nhap-hap-dan-upto-40m-tai-ha-noi/2335679.html",
+   "title": "AI Engineer - Thu Nhập Hấp Dẫn Upto 40M - Tại Hà Nội",
+   "company": "Công ty cổ phần Công nghệ thông tin Phú Minh (Phú Minh Teck)",
+   "query": "AI Engineer",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "2 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "AI Engineer",
+     "IT - Phần mềm"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Tham gia phân tích yêu cầu, thiết kế và phát triển các ứng dụng tích hợp AI/LLM.\nPhát triển và bảo trì các dịch vụ Backend và Frontend. Xây dựng và tối ưu cơ sở dữ liệu PostgreSQL, pgvector hoặc Vector Database.\nPhát triển các tính năng AI như Chatbot, AI Assistant, RAG, Semantic Search hoặc AI Agent.\nThực hiện kiểm thử, review code, tối ưu hiệu năng, bảo mật và xử lý lỗi của hệ thống.\nTham gia triển khai, vận hành, giám sát hệ thống và xây dựng tài liệu kỹ thuật.\nPhối hợp với các thành viên trong nhóm để đảm bảo chất lượng và tiến độ dự án.",
+    "Yêu cầu ứng viên": "Tốt nghiệp Đại học ngành CNTT hoặc các ngành liên quan\nCó từ 2 năm kinh nghiệm AI, ưu tiên các ứng dụng sử dụng LLM (Large Language Model).\nCó từ 2 năm kinh nghiệm Fullstack.\nCó kinh nghiệm thực tế trong việc tích hợp mô hình AI hoặc LLM vào ứng dụng; phát triển Chatbot, hệ thống hỏi đáp tài liệu, trợ lý AI, Semantic Search hoặc các ứng dụng sử dụng AI Agent.\nCó kinh nghiệm với PostgreSQL Vector Extension, Vector Database hoặc các nền tảng tìm kiếm tương đương.\nCó kinh nghiệm xây dựng cơ chế đánh giá, logging, tracing và giám sát các luồng xử lý AI.\nCó hiểu biết về phân quyền dữ liệu, bảo vệ thông tin nhạy cảm và bảo mật ứng dụng AI.\nĐã có sản phẩm AI trong thực tế\nCó kinh nghiệm phát triển Backend và Frontend\nCó kinh nghiệm làm việc với PostgreSQL hoặc các hệ quản trị cơ sở dữ liệu quan hệ.\nCó kiến thức tốt về: RESTful API; Thiết kế và tích hợp hệ thống; Git và quy trình quản lý source code; Kiểm thử, triển khai và vận hành ứng dụng.\nCó khả năng phân tích, xử lý lỗi và tối ưu hiệu năng hệ thống.\nCó khả năng làm việc độc lập và phối hợp làm việc theo nhóm.\nCó tinh thần trách nhiệm, chủ động trong công việc và sẵn sàng hỗ trợ xử lý các vấn đề phát sinh trong quá trình vận hành sản phẩm.\nKiến thức ngành\nIT - Phần mềm",
+    "Quyền lợi ứng viên": "Thưởng tháng 13\nReview lương hàng năm.\nThử việc nhận 100% lương\nThưởng: Thưởng Tết, thưởng giới thiệu nhân sự...\nTham gia các dự án lớn về dữ liệu và công nghệ.\nVăn phòng làm việc chuyên nghiệp hạng A.\nMôi trường làm việc thân thiện và có tính tương hỗ cao, ổn định lâu dài.\nCó nhiều cơ hội được đào tạo, làm việc nâng cao trình độ và cơ hội thăng tiến.\nCó nhiều hoạt động bổ trợ tinh thần, du lịch...",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Láng Hạ, Giảng Võ, Phường Giảng Võ (Phường Giảng Võ thuộc quận Ba Đình cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 31/12/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n3 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/middle-ai-engineer/2334311.html",
+   "title": "Middle AI Engineer",
+   "company": "Công ty TNHH Tổng công ty Công nghệ & Giải pháp CMC",
+   "query": "AI Engineer",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "2 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "AI Engineer",
+     "IT - Phần mềm"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "1. Mục tiêu công việc\n\nPhát triển, tối ưu và triển khai các mô hình AI cho hệ thống Camera AI/IoT của CTS, đảm bảo mô hình đạt độ chính xác cao, vận hành ổn định và hiệu quả trên nhiều nền tảng phần cứng, từ máy chủ, cụm Kubernetes đến thiết bị biên. Đồng thời, phối hợp với các bộ phận Phát triển sản phẩm, Triển khai dự án và Vận hành để đưa mô hình AI vào sản phẩm và dự án thực tế.\n\n2. Mô tả công việc\n\nHuấn luyện, tinh chỉnh (fine-tune) và tối ưu các mô hình AI (phát hiện, nhận dạng, phân loại, theo dõi đối tượng…) nhằm đạt độ chính xác cao theo yêu cầu của bài toán thực tế.\nPhân tích dữ liệu, lỗi dự đoán và các chỉ số đánh giá mô hình (Precision, Recall, F1-score, mAP, Latency, FPS…) để đề xuất và thực hiện các phương án cải thiện mô hình.\nÁp dụng các kỹ thuật nén và tăng tốc mô hình như lượng tử hóa (PTQ, QAT), cắt tỉa (pruning), chưng cất tri thức (knowledge distillation), đảm bảo cân bằng giữa độ chính xác và hiệu năng.\nChuyển đổi mô hình giữa các định dạng PyTorch, ONNX, TensorRT, OpenVINO, TFLite, RKNN… phù hợp với từng nền tảng triển khai.\nTối ưu mô hình cho từng loại phần cứng đích: GPU NVIDIA, CPU x86/ARM, NPU và các chip AI chuyên dụng.\nKiểm tra, đối soát sai lệch kết quả trước và sau chuyển đổi; xử lý các lớp (operator) không được hỗ trợ trên phần cứng đích.\nĐộc lập triển khai các dịch vụ AI trên Kubernetes: đóng gói container (Docker), xây dựng manifest/Helm chart, cấu hình phân bổ GPU, tự động mở rộng (autoscaling) và cập nhật phiên bản mô hình.\nXây dựng và vận hành hệ thống phục vụ mô hình (model serving) với các công nghệ như Triton Inference Server, DeepStream, KServe hoặc tương đương.\nThiết lập quy trình CI/CD, giám sát hiệu năng và cảnh báo cho các dịch vụ AI; phối hợp với bộ phận Vận hành xử lý các sự cố liên quan đến mô hình.\nTriển khai và tối ưu mô hình AI trên thiết bị biên (NVIDIA Jetson, Rockchip, Camera AI…) trong điều kiện giới hạn về bộ nhớ, năng lượng và độ trễ.\nPhối hợp với bộ phận Phát triển sản phẩm và Triển khai dự án để tích hợp mô hình vào thiết bị, kiểm thử và nghiệm thu tại hiện trường khi cần thiết.\nNghiên cứu, đánh giá các mô hình và công nghệ AI mới để đề xuất ứng dụng vào sản phẩm.\nXây dựng, cập nhật tài liệu kỹ thuật về mô hình, quy trình chuyển đổi và triển khai.",
+    "Yêu cầu ứng viên": "3. Yêu cầu ứng viên\n\n3.1. Trình độ chuyên môn\n\nTốt nghiệp Đại học trở lên thuộc các ngành Khoa học máy tính, Công nghệ thông tin, Điện tử viễn thông, Toán – Tin hoặc các ngành kỹ thuật liên quan.\nĐọc hiểu tốt tài liệu kỹ thuật và bài báo khoa học bằng tiếng Anh.\n\n3.2. Kinh nghiệm và kỹ năng chuyên môn\n\nCó từ 2–4 năm kinh nghiệm trong lĩnh vực AI/Machine Learning, đã tham gia ít nhất một dự án đưa mô hình AI vào vận hành thực tế.\nThành thạo Python và ít nhất một framework học sâu (PyTorch hoặc TensorFlow).\nCó kinh nghiệm thực tế tối ưu mô hình AI đạt độ chính xác cao; nắm vững các kỹ thuật lượng tử hóa, cắt tỉa, chưng cất tri thức.\nThành thạo chuyển đổi mô hình sang các định dạng ONNX, TensorRT, OpenVINO, TFLite, RKNN… và tối ưu trên nhiều loại phần cứng khác nhau.\nCó khả năng độc lập triển khai hệ thống AI trên Kubernetes; thành thạo Docker, Linux và có kinh nghiệm với Helm, CI/CD cùng các công nghệ triển khai khác.\nĐã từng có kinh nghiệm làm việc với các mô hình AI trên thiết bị biên (NVIDIA Jetson, Rockchip, Hailo, Coral hoặc tương đương).\nCó kinh nghiệm với C/C++, CUDA, DeepStream/GStreamer hoặc các bài toán xử lý video thời gian thực là một lợi thế.\n\n3.3. Kỹ năng và phẩm chất\n\nCó tư duy phân tích, giải quyết vấn đề dựa trên thử nghiệm và số liệu.\nCó khả năng làm việc độc lập và phối hợp hiệu quả với các bộ phận Phát triển sản phẩm, Triển khai dự án và Vận hành.\nCó tinh thần ham học hỏi, chủ động cập nhật các mô hình và công nghệ AI mới.\nChịu được áp lực công việc, đáp ứng tiến độ dự án và xử lý kịp thời các sự cố phát sinh khi hệ thống đang vận hành.\n\n3.4. Yêu cầu khác\n\nSẵn sàng hỗ trợ ngoài giờ khi phát sinh sự cố nghiêm trọng liên quan đến dịch vụ AI theo quy định của đơn vị.\nSẵn sàng đi công tác để tích hợp, kiểm thử hoặc xử lý sự cố mô hình tại địa điểm khách hàng khi cần thiết.\nKiến thức ngành\nIT - Phần mềm",
+    "Quyền lợi ứng viên": "4. Quyền lợi\n\nĐược trực tiếp phát triển và triển khai các mô hình AI cho hệ thống Camera AI/IoT thực tế.\nĐược làm việc với hạ tầng GPU, cụm Kubernetes và nhiều dòng thiết bị biên (Edge AI) khác nhau.\nĐược phối hợp trực tiếp với các đội ngũ Phát triển sản phẩm, Triển khai dự án và Vận hành.\nĐược đào tạo, hỗ trợ tham gia khóa học và hội thảo chuyên môn; có lộ trình phát triển lên Kỹ sư AI cấp cao (Senior) hoặc Trưởng nhóm kỹ thuật.\nHưởng chế độ lương, thưởng và phúc lợi theo chính sách của công ty.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Tòa CMC, 11 Duy Tân, Phường Cầu Giấy (Phường Cầu Giấy thuộc quận Cầu Giấy cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:30 đến 17:30)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 18/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/truong-nhom-ky-su-ai-ai-engineer-team-lead/2334844.html",
+   "title": "Trưởng Nhóm Kỹ Sư AI - AI Engineer Team Lead",
+   "company": "CÔNG TY CỔ PHẦN COWATECH",
+   "query": "AI Engineer",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "3 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm xã hội",
+     "Team building",
+     "Du lịch hàng năm"
+    ],
+    "Chuyên môn": [
+     "AI Engineer",
+     "IT - Phần mềm",
+     "Công nghệ kỹ thuật"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Dẫn dắt kỹ thuật, nghiên cứu và phát triển các giải pháp AI ứng dụng Computer Vision trong môi trường sản xuất, tự động hóa quy trình và nâng cao hiệu quả.\n\nTham gia phát triển sản phẩm từ nghiên cứu đến triển khai thực tế, đồng thời định hướng kỹ thuật và phát triển năng lực cho team AI.\n\nĐịnh hướng phát triển: Team AI sẽ phụ trách chính toàn bộ các công việc liên quan đến AI trong cowa Group, từ nghiên cứu, phát triển giải pháp đến triển khai và tối ưu ứng dụng thực tế.\n\nNghiên cứu, training và tối ưu các mô hình Computer Vision: Object Detection, Tracking, Pose Estimation, nhận diện hành vi.\nReview code, hỗ trợ kỹ thuật và chia sẻ kiến thức với các thành viên trong team AI.\nPhát triển các ứng dụng AI từ dữ liệu camera IP phục vụ giám sát an toàn, đếm số lượng, giám sát thao tác và quy trình sản xuất.\nXây dựng và tối ưu hệ thống xử lý video thời gian thực (Real-time Video Processing), giám sát đa camera (Multi-camera Monitoring) và AI Inference Pipeline.\nTriển khai, kiểm thử và tối ưu mô hình AI trên thiết bị Edge tại nhà máy.\nTối ưu hiệu năng mô hình và tốc độ suy luận trên thiết bị triển khai.\nPhối hợp với Manager xác định giải pháp kỹ thuật, nghiên cứu tính khả thi và phát triển các sản phẩm AI mới.",
+    "Yêu cầu ứng viên": "Từ 3 năm kinh nghiệm trong lĩnh vực phát triển AI/Machine Learning, 2 năm kinh nghiệm thực tế với Computer Vision.\nThành thạo C++; Git.\nCó kinh nghiệm xử lý dữ liệu video, object/human tracking, làm việc với Camera IP và xây dựng hệ thống AI xử lý thời gian thực là lợi thế.\nCó kinh nghiệm sử dụng Python, PyTorch, OpenCV; đã train và fine-tune model detection (YOLO hoặc tương tự).\nCó tư duy thiết kế giải pháp, khả năng phân tích vấn đề và lựa chọn công nghệ phù hợp với yêu cầu thực tế.\nCó khả năng dẫn dắt đội nhóm kỹ thuật, review code, hướng dẫn và hỗ trợ các thành viên trong team.\nChủ động nghiên cứu công nghệ mới, có tinh thần trách nhiệm và khả năng phối hợp làm việc với các bộ phận liên quan.\n\n➢ Ưu tiên:\n\nĐã triển khai model trên Jetson hoặc thiết bị edge, có kinh nghiệm với TensorRT/ONNX.\nĐã làm pose estimation hoặc action recognition.\nHiểu môi trường nhà máy.\n\nYêu cầu về trình độ Tốt nghiệp đại học các ngành Công nghệ thông tin, Khoa học máy tính, Kỹ thuật phần mềm, và các ngành liên quan\n\nKiến thức ngành\nIT - Phần mềm, Công nghệ kỹ thuật\nKỹ năng cần có\nC++, Git, Python, Pytorch, Computer Vision, Machine Learning, object detection, OpenCV, tracking, Pose Estimation\nKỹ năng nên có\nJetson, TensorRT, onnx, môi trường nhà máy, Pose Estimation, action recognition",
+    "Quyền lợi ứng viên": "Lương(Gross) : Thu nhập: 25-30 triệu VNĐ/tháng (Gross) + Thưởng theo hiệu suất công việc.\n\nThưởng hiệu suất kinh doanh 2 lần/năm.\n(Thực tế: 3–4 tháng lương/năm tùy theo kết quả đánh giá cá nhân)\n\nTăng lương Tháng 1 hàng năm\n\nCơ hội & Quyền lợi\n\n- Được tham gia vào domain ổn định, có tiềm năng phát triển cao. Không cần phải thay đổi KNOW HOW theo dự án\n\n- Được tiếp cận: Bài toán thực tế trong nhà máy, Dữ liệu lớn & quy trình automation, IOT\n\n- Có cơ hội phát triển lên các vị trí Quản lý theo sự phát triển của công ty\n\n- Nghỉ lễ & Chế độ phúc lợi theo quy định.\n\n- Du lịch công ty, Team building, Happy hour,\n\n- Đóng BHXH đầy đủ theo luật LĐ\n\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm xã hội, Team building, Du lịch hàng năm, Thưởng hiệu quả làm việc",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: TTH Building, Di Trạch, Xã Hoài Đức (Xã Hoài Đức thuộc huyện Hoài Đức cũ)\nThời gian làm việc\nTừ Thứ 2 - Thứ 6: 08:30 – 17:30, nghỉ trưa 12:00 – 13:00\nAuto Remote 2 ngày thứ 7 mỗi tháng\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 19/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nTrưởng nhóm\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite, Làm việc từ xa (Remote)\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/ai-engineer-python-go-c-c-backend-ai-agents/2337640.html",
+   "title": "AI Engineer (Python/Go/C/C++ Backend & AI Agents)",
+   "company": "Công ty Cổ phần Atomi Digital",
+   "query": "AI Engineer",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "3 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "AI Engineer"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "AI Software Engineer (Python/Go/C/C++ Backend & AI Agents)\n\nXây dựng phát triển các sản phẩm AI có khả năng tự động lập kế hoạch, ra quyết định và\nthực thi hành động, được triển khai thực tế ở quy mô lớn, các hệ thống AI thế hệ mới như:\n\nAI Agents (Autonomous Agents)\nLLM-powered Applications\nMulti-agent Workflow Systems\nAI-driven Backend Services\nIntelligent Automation Platforms\n\nTrách nhiệm công việc (Responsibilities):\n\nThiết kế và phát triển các hệ thống Backend tích hợp AI/LLM Agents.\nXây dựng các Agentic Workflow, A: Planning – Tool Use – Memory – Execution.\nPhát triển các dịch vụ AI dưới dạng Microservices (FastAPI/Flask/Django hoặc Java/Go\nservices).\nTích hợp các mô hình AI vào hệ thống sản phẩm qua REST/gRPC APIs.\nTriển khai hệ thống AI production-ready với Docker/Kubernetes.\nTối ưu hiệu năng inference: latency, throughput, cost.\nLàm việc với dữ liệu lớn và hệ thống có lượng người dùng cao (đặc biệt trong tài\nchính/ngân hàng/chứng khoán).\nNghiên cứu và ứng dụng các kỹ thuật mới: RAG, Function Calling, Multi-agent systems,\nReinforcement Learning Agents.\nĐảm bảo các tiêu chuẩn về bảo mật, an toàn và khả năng mở rộng của hệ thống AI",
+    "Yêu cầu ứng viên": "Tốt nghiệp Đại học các chuyên ngành: Công nghệ thông tin, Khoa học máy tính,Công nghệ\nphần mềm, Hệ thống thông tin, Tự động hóa, Điện tử viễn thông hoặc các ngành liên quan\nCó kinh nghiệm thực tế làm Backend tại công ty hoặc dự án lớn.\nThành thạo ít nhất 1 ngôn ngữ Backend: Ưu tiên Python, Go, C/C++\nCó kinh nghiệm thiết kế hệ thống Microservice Architecture.\nThành thạo một trong các hệ quản trị cơ sở dữ liệu: PostgreSQL, MongoDB...\nHiểu rõ API design (RESTful/gRPC), bảo mật và tối ưu hiệu năng hệ thốn g.\nCó kinh nghiệm với: LLM Agents (GPT, Gemini, Claude...), LangChain / LangGraph/ ADK,\nAutogen, RAG pipelines, Vector Database(Milvus, pgvector...). Tool-use Agents (Function\nCalling), Memory + Planning + Multi-step reasoning systems\nThành thạo làm việc, tích hợp với các app Mobile\nCó kinh nghiệm: Docker, Kubernetes",
+    "Quyền lợi ứng viên": "Làm việc từ thứ 2 đến thứ 6\nThưởng các ngày lễ Tết trong năm, thưởng tháng lương 13, thưởng Tết căn cứ vào kết quả kinh doanh\nHỗ trợ ăn trưa 50k/ngày làm việc\nHỗ trợ gửi xe 300k/tháng\nReview tăng lương tối thiểu 1 lần/năm\nDu lịch nghỉ mát, team building hàng năm\nBHXH, BHYT, BHTN theo quy định của pháp luật hiện hành\nĐược thử thách trong các dự án lớn, có cơ hội khẳng định năng lực bản thân và phát triển sự nghiệp\n\nLưu ý: Những nhân sự ở xa có thể được hỗ trợ chỗ ở miễn phí tại gần nơi làm việc do Công ty sắp xếp.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: 266-268 Nam Kỳ Khởi Nghĩa, Phường Xuân Hòa (Phường Xuân Hòa thuộc Quận 3 cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:30)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 21/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n3 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  }
+ ]
+}

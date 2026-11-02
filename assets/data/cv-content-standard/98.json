@@ -1,0 +1,36 @@
+{
+  "id": 98,
+  "nhom": "Giáo dục/Đào tạo",
+  "nghe": "Quản lý/Hỗ trợ lớp học",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "5/6 JD cấp nhân viên (1 JD thực tập sinh part-time), phần lớn không yêu cầu kinh nghiệm hoặc dưới 1 năm, 1 JD 1 năm; ĐH/CĐ, ưu tiên sinh viên năm cuối; 3/6 ưu tiên nữ",
+  "muc": {
+    "anh-chan-dung": "can — JD#6 nêu thẳng 'Ngoại hình ưa nhìn'; thêm 4/6 nêu tuổi/giới tính; nghề tiếp xúc phụ huynh nên nên có ảnh chỉn chu",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 nhắc đam mê/yêu thích môi trường giáo dục; nên nêu định hướng vận hành giáo dục",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm hoặc ưu tiên kinh nghiệm trung tâm giáo dục (0-1 năm), kinh nghiệm hỗ trợ lớp/giảng dạy/gia sư",
+    "hoc-van": "can — 6/6 nêu ĐH/CĐ, sinh viên năm 3-4, ưu tiên Sư phạm Anh/Quản lý giáo dục/Ngôn ngữ Anh",
+    "ky-nang-chuyen-mon": "can — điểm danh, theo dõi sĩ số, chuẩn bị tài liệu, lập kế hoạch lớp, xếp thời khóa biểu, liên lạc phụ huynh, báo cáo học tập, tư vấn tuyển sinh",
+    "ky-nang-mem": "can — 6/6: giao tiếp, xử lý tình huống, chăm sóc khách hàng, trách nhiệm, chịu áp lực, chủ động",
+    "cong-cu-phan-mem": "can — 2/6 Word, Excel; JD#2 và JD#4 yêu cầu có laptop cá nhân",
+    "chung-chi": "nen — 3/6 nêu IELTS 6.0/TOEIC 600/VSTEP B2 (một số JD tiếng Anh)",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — JD#4 đặt mục tiêu vận hành; không JD nào đòi số liệu; suy từ công việc",
+    "ngoai-ngu": "can — 3/6: tiếng Anh IELTS 6.0, TOEIC 600; ưu tiên ngành tiếng Anh",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 nhận sinh viên năm cuối/chưa có kinh nghiệm",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/6 nêu tuổi/giới tính (19-24, 22-34, 23-30, 21-27 nữ), ưu tiên nữ và nơi sống gần trung tâm; làm theo ca",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Quản lý lớp học", "giáo vụ", "vận hành lớp học", "điểm danh", "thời khóa biểu", "phụ huynh", "Excel", "IELTS", "hỗ trợ giáo viên nước ngoài"],
+  "bangChung": [
+    "JD#1: 'Sinh viên năm 3, năm 4, ưu tiên sinh viên ... ngành học về giáo dục, quản lý'; 'Nữ', 'Tuổi 19 - 24'",
+    "JD#2: 'Có tối thiểu 6 tháng kinh nghiệm làm việc tại Trung tâm giáo dục'; 'Sử dụng tốt Word, Excel'; 'Có laptop cá nhân'",
+    "JD#3: 'ƯU TIÊN ỨNG VIÊN NỮ'; 'tương đương IELTS 6.0 hoặc bằng B2 VSTEP'",
+    "JD#5: 'Ưu tiên ứng viên có từ 6 tháng kinh nghiệm giảng dạy/gia sư hoặc sở hữu chứng chỉ IELTS / TOEFL iBT / TOEIC'",
+    "JD#6: 'Ngoại hình ưu nhìn'; 'Toeic từ 600 trở lên hoặc IELTS từ 6.0 trở lên'"
+  ],
+  "ghiChu": "JD#3 trùng JD#4 của nghề #96."
+}

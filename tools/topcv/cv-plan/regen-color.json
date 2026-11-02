@@ -1,0 +1,1003 @@
+[
+ {
+  "style": "Đơn giản",
+  "title": "Tiêu chuẩn",
+  "slug": "default_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Tiêu chuẩn",
+  "slug": "default_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Tiêu chuẩn",
+  "slug": "default_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Tiêu chuẩn",
+  "slug": "default_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Tiêu chuẩn (ít kinh nghiệm)",
+  "slug": "default_junior",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Tiêu chuẩn (ít kinh nghiệm)",
+  "slug": "default_junior",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Tiêu chuẩn (ít kinh nghiệm)",
+  "slug": "default_junior",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Tiêu chuẩn (ít kinh nghiệm)",
+  "slug": "default_junior",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Ấn tượng 6",
+  "slug": "impressive_6_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Ấn tượng 6",
+  "slug": "impressive_6_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Ấn tượng 6",
+  "slug": "impressive_6_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Ấn tượng 6",
+  "slug": "impressive_6_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Ấn tượng 2",
+  "slug": "onepage_impressive_2_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Ấn tượng 2",
+  "slug": "onepage_impressive_2_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Ấn tượng 2",
+  "slug": "onepage_impressive_2_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Ấn tượng 2",
+  "slug": "onepage_impressive_2_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Thanh lịch",
+  "slug": "elegant",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Thanh lịch",
+  "slug": "elegant",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Thanh lịch",
+  "slug": "elegant",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Thanh lịch",
+  "slug": "elegant",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Tham vọng",
+  "slug": "ambitious",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Tham vọng",
+  "slug": "ambitious",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Tham vọng",
+  "slug": "ambitious",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Tham vọng",
+  "slug": "ambitious",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Bright",
+  "slug": "bright",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Bright",
+  "slug": "bright",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Bright",
+  "slug": "bright",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Bright",
+  "slug": "bright",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Tối giản 2",
+  "slug": "minimalism_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Tối giản 2",
+  "slug": "minimalism_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Tối giản 2",
+  "slug": "minimalism_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Tối giản 2",
+  "slug": "minimalism_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Sáng tạo",
+  "slug": "creative",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Sáng tạo",
+  "slug": "creative",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Sáng tạo",
+  "slug": "creative",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Sáng tạo",
+  "slug": "creative",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Clarity",
+  "slug": "clarity",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Clarity",
+  "slug": "clarity",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Clarity",
+  "slug": "clarity",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Clarity",
+  "slug": "clarity",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Hiện đại 6",
+  "slug": "modern_6_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Hiện đại 6",
+  "slug": "modern_6_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Hiện đại 6",
+  "slug": "modern_6_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Hiện đại 6",
+  "slug": "modern_6_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Thanh nhã",
+  "slug": "graceful",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Thanh nhã",
+  "slug": "graceful",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Thanh nhã",
+  "slug": "graceful",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Thanh nhã",
+  "slug": "graceful",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Basic 1",
+  "slug": "basic_1_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Basic 1",
+  "slug": "basic_1_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Basic 1",
+  "slug": "basic_1_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Basic 1",
+  "slug": "basic_1_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Basic 3",
+  "slug": "basic_3_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Basic 3",
+  "slug": "basic_3_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Basic 3",
+  "slug": "basic_3_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Basic 3",
+  "slug": "basic_3_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Senior",
+  "slug": "senior_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Senior",
+  "slug": "senior_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Senior",
+  "slug": "senior_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Hiện Đại 1",
+  "slug": "modern_1_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Hiện Đại 1",
+  "slug": "modern_1_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Hiện Đại 1",
+  "slug": "modern_1_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Hiện Đại 1",
+  "slug": "modern_1_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Ấn tượng 4",
+  "slug": "onepage_impressive_3_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Ấn tượng 4",
+  "slug": "onepage_impressive_3_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Ấn tượng 4",
+  "slug": "onepage_impressive_3_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Ấn tượng 4",
+  "slug": "onepage_impressive_3_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Sinh viên 3",
+  "slug": "student_3",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Sinh viên 3",
+  "slug": "student_3",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Sinh viên 3",
+  "slug": "student_3",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Sinh viên 3",
+  "slug": "student_3",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Basic 4",
+  "slug": "basic_4_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Basic 4",
+  "slug": "basic_4_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Basic 4",
+  "slug": "basic_4_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Basic 4",
+  "slug": "basic_4_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Tham vọng 1",
+  "slug": "ambitious_1",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Tham vọng 1",
+  "slug": "ambitious_1",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Tham vọng 1",
+  "slug": "ambitious_1",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Tham vọng 1",
+  "slug": "ambitious_1",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Outstanding 10",
+  "slug": "outstanding_10_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Outstanding 10",
+  "slug": "outstanding_10_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Outstanding 10",
+  "slug": "outstanding_10_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Outstanding 10",
+  "slug": "outstanding_10_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Chuyên Nghiệp 1",
+  "slug": "pro_1_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Chuyên Nghiệp 1",
+  "slug": "pro_1_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Chuyên Nghiệp 1",
+  "slug": "pro_1_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Chuyên Nghiệp 1",
+  "slug": "pro_1_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Gradient 1",
+  "slug": "gradient_1_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Gradient 1",
+  "slug": "gradient_1_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Gradient 1",
+  "slug": "gradient_1_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Gradient 1",
+  "slug": "gradient_1_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Ấn tượng 3",
+  "slug": "impressive_3_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Ấn tượng 3",
+  "slug": "impressive_3_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Ấn tượng 3",
+  "slug": "impressive_3_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Hiện Đại 4",
+  "slug": "modern_4_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Hiện Đại 4",
+  "slug": "modern_4_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Hiện Đại 4",
+  "slug": "modern_4_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Hiện Đại 4",
+  "slug": "modern_4_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Ấn tượng",
+  "slug": "onepage_impressive_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Ấn tượng",
+  "slug": "onepage_impressive_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Ấn tượng",
+  "slug": "onepage_impressive_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Ấn tượng",
+  "slug": "onepage_impressive_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Dòng Thời Gian",
+  "slug": "timeline_clean_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Dòng Thời Gian",
+  "slug": "timeline_clean_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Dòng Thời Gian",
+  "slug": "timeline_clean_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Dòng Thời Gian",
+  "slug": "timeline_clean_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Hiện Đại 2",
+  "slug": "modern_2_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Hiện Đại 2",
+  "slug": "modern_2_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Hiện Đại 2",
+  "slug": "modern_2_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Thành đạt",
+  "slug": "prosper",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Thành đạt",
+  "slug": "prosper",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Thành đạt",
+  "slug": "prosper",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Thành đạt",
+  "slug": "prosper",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Cổ Điển 1",
+  "slug": "classic_1",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Cổ Điển 1",
+  "slug": "classic_1",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Chuyên Nghiệp 3",
+  "slug": "pro_3",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Chuyên nghiệp",
+  "title": "Chuyên Nghiệp 3",
+  "slug": "pro_3",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Một Trang Cổ Điển",
+  "slug": "onepage_classic",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Một Trang Cổ Điển",
+  "slug": "onepage_classic",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Ấn tượng 5",
+  "slug": "impressive_5",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Ấn tượng 5",
+  "slug": "impressive_5",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Ấn tượng 5",
+  "slug": "impressive_5",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Thanh Lịch 1",
+  "slug": "onepage_elegant_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Thanh Lịch 1",
+  "slug": "onepage_elegant_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Hiện đại",
+  "title": "Thanh Lịch 1",
+  "slug": "onepage_elegant_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Basic 5",
+  "slug": "basic_5_v2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Basic 5",
+  "slug": "basic_5_v2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Basic 5",
+  "slug": "basic_5_v2",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Basic 5",
+  "slug": "basic_5_v2",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Thời đại",
+  "slug": "time",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Thời đại",
+  "slug": "time",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Thời đại",
+  "slug": "time",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Thời đại",
+  "slug": "time",
+  "lang": "cn",
+  "langName": "Tiếng Trung"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Kỹ Sư Phần Mềm",
+  "slug": "software_engineer",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Kỹ Sư Phần Mềm",
+  "slug": "software_engineer",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Senior 2",
+  "slug": "senior_2",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Đơn giản",
+  "title": "Senior 2",
+  "slug": "senior_2",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "TikTop",
+  "slug": "tiktop",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "TikTop",
+  "slug": "tiktop",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "TikTop",
+  "slug": "tiktop",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Topinstar",
+  "slug": "topinstar",
+  "lang": "vi",
+  "langName": "Tiếng Việt"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Topinstar",
+  "slug": "topinstar",
+  "lang": "en",
+  "langName": "Tiếng Anh"
+ },
+ {
+  "style": "Ấn tượng",
+  "title": "Topinstar",
+  "slug": "topinstar",
+  "lang": "jp",
+  "langName": "Tiếng Nhật"
+ }
+]

@@ -1,0 +1,36 @@
+{
+  "id": 54,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Nhà hàng/Dịch vụ ăn uống",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "4/6 JD nhân viên (bếp, phục vụ, phụ bếp; không đến 1 năm kinh nghiệm, từ THCS/THPT), 2/6 JD trưởng ca/tổ trưởng phục vụ (1-2 năm, trung cấp/cao đẳng)",
+  "muc": {
+    "anh-chan-dung": "nen — không JD nào đòi ảnh; 3/6 nêu độ tuổi/giới tính (18-40, 18-32, Nam 25-45, 23-28); nghề phục vụ gặp khách nên ảnh thân thiện là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 JD nhắc tinh thần học hỏi, cầu tiến, gắn bó (JD#2, #1); có thể ghi ngắn",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc; 3/6 không yêu cầu, bếp 6 tháng, phụ bếp 1 năm, trưởng ca/tổ trưởng 1-2 năm; nên ghi loại quán/nhà hàng, vị trí",
+    "hoc-van": "nen — 4/6 chỉ yêu cầu THCS/THPT; 2/6 trưởng ca ưu tiên ngành Nhà hàng–Khách sạn, Du lịch; ghi ngắn",
+    "ky-nang-chuyen-mon": "can — phục vụ bàn, ghi order, sơ chế/chế biến món, chia khẩu phần, vệ sinh an toàn thực phẩm; trưởng ca: điều phối nhân sự, kiểm soát chất lượng phục vụ, quản lý hàng hóa",
+    "ky-nang-mem": "can — 6/6: giao tiếp, thái độ phục vụ thân thiện, nhanh nhẹn, trung thực, làm việc nhóm, xử lý tình huống, quản lý thời gian",
+    "cong-cu-phan-mem": "nen — JD#5 Word, Excel, PowerPoint (1/6, vị trí trưởng ca)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ (vệ sinh an toàn thực phẩm chỉ nêu là yêu cầu tuân thủ)",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "nen — JD#1 tiếng Nhật hoặc tiếng Anh thành thạo là lợi thế, JD#5 tiếng Anh giao tiếp cơ bản (2/6)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 JD không yêu cầu kinh nghiệm/đào tạo khi nhận việc (JD#2, #3, #1)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 4/6 JD nêu độ tuổi/giới tính/sức khỏe; 5/6 yêu cầu làm theo ca, cuối tuần, ngày lễ",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["nhân viên phục vụ", "nhân viên bếp/phụ bếp", "trưởng ca/tổ trưởng phục vụ", "vệ sinh an toàn thực phẩm", "làm theo ca/cuối tuần", "ghi order", "F&B", "tiếng Anh/Nhật"],
+  "bangChung": [
+    "JD#1: 'Kinh nghiệm từ 6 tháng trở lên'; 'Giao tiếp tiếng Nhật hoặc tiếng Anh thành thạo là lợi thế'; 'Độ tuổi: 18 – 40'",
+    "JD#2: 'Không yêu cầu kinh nghiệm, sẵn sàng đào tạo'; 'có thể làm việc theo ca, kể cả cuối tuần và ngày lễ'; 'Tuổi 18 - 32'",
+    "JD#4: 'Nam Có kinh nghiệm phụ bếp và biết nấu ăn'; 'Tuổi 25 - 45'",
+    "JD#5: 'Tiếng Anh giao tiếp cơ bản'; 'Sử dụng tốt Word, Excel, Powerpoint'; 'Ưu tiên 23 - 28 tuổi'",
+    "JD#6: 'Có từ 02 năm kinh nghiệm trong lĩnh vực F&B, ưu tiên từng làm Ca trưởng/Tổ trưởng'; 'vệ sinh an toàn thực phẩm'"
+  ],
+  "ghiChu": ""
+}

@@ -1,0 +1,36 @@
+{
+  "id": 24,
+  "nhom": "Marketing/PR/Quảng cáo",
+  "nghe": "Marketing/PR/Quảng cáo khác",
+  "soJD": 6,
+  "doTinCay": "thap",
+  "capBac": "5/6 JD cấp nhân viên bán hàng/phát tờ rơi/PG (4/6 không yêu cầu kinh nghiệm, từ THPT; 1 JD 1 năm, sơ cấp), 1 JD giám đốc dự án (lạc nghề: trên 5 năm, ĐH)",
+  "muc": {
+    "anh-chan-dung": "nen — JD#4 nêu 'ngoại hình sáng sủa, thái độ thân thiện' (1/6), JD#5 nêu trang phục quy định; công việc PG/tiếp xúc khách nên ảnh là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc định hướng",
+    "kinh-nghiem-lam-viec": "nen — 5/6 JD nêu kinh nghiệm PG/bán hàng là ưu tiên (4/6 không bắt buộc); JD#6 đòi trên 5 năm quản lý dự án (lạc nghề)",
+    "hoc-van": "nen — 5/6 JD chỉ cần THPT/sơ cấp/trung cấp; chỉ JD#6 đòi ĐH",
+    "ky-nang-chuyen-mon": "can — 5/6: tư vấn bán hàng trực tiếp, giới thiệu sản phẩm/voucher, chốt đơn, kiểm tồn và trưng bày, tiếp cận khách tại điểm bán/sự kiện",
+    "ky-nang-mem": "can — 6/6: giao tiếp tốt, tự tin, nhanh nhẹn, đúng giờ, trách nhiệm, chịu áp lực",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc phần mềm",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — chỉ JD#6 (lạc nghề) quản trị dự án; JD sát nghề không nhắc",
+    "thanh-tich-kpi": "nen — JD#3 'tinh thần đạt doanh số', JD#1 báo cáo số voucher phát và SĐT thu được (2/6)",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "can — 4/6 JD không yêu cầu kinh nghiệm; JD#3 sinh viên bán hàng tốt được chào đón; nên ghi hoạt động tình nguyện/làm thêm",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#2 tuổi 20-38, JD#5 tuổi 18-40 (2/6 nêu độ tuổi); JD#1 nêu khu vực/quận làm việc; JD#5 nêu thời gian làm việc cụ thể",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["PG", "bán hàng tại siêu thị/sự kiện", "tư vấn bán hàng", "phát voucher/tờ rơi", "giao tiếp tự tin", "trưng bày hàng hóa", "part-time/thời vụ"],
+  "bangChung": [
+    "JD#1: 'Giao tiếp rõ ràng, lịch sự'; 'Báo cáo số lượng voucher phát & SĐT thu được cuối ca'",
+    "JD#2: 'Tốt nghiệp THPT trở lên, tuổi từ 20 – 38'; 'Ưu tiên đã có kinh nghiệm PG'",
+    "JD#3: 'có tinh thần đạt doanh số'; 'Sinh viên có khả năng giao tiếp và bán hàng tốt vẫn được chào đón'",
+    "JD#4: 'Tối thiểu 1 năm kinh nghiệm trong lĩnh vực bán hàng'; 'Ngoại hình sáng sủa'",
+    "JD#5: 'Nam/Nữ từ đủ 18 tuổi'; 'Ưu tiên ứng viên có kinh nghiệm bán hàng'"
+  ],
+  "ghiChu": "Nhóm 'khác' bị lấy JD PG/phát tờ rơi (không phải marketing/PR thực sự) và 1 JD giám đốc dự án lạc nghề (JD#6, không dùng làm căn cứ); độ tin cậy thấp."
+}

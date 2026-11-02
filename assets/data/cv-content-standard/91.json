@@ -1,0 +1,36 @@
+{
+  "id": 91,
+  "nhom": "Sản xuất",
+  "nghe": "Sales Sản xuất",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên kinh doanh B2B, 2/6 không yêu cầu kinh nghiệm (nhận mới ra trường), 4/6 hỏi 1-2 năm; đều Cao đẳng trở lên",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 2/6 nêu giới tính/độ tuổi (ưu tiên nữ); nghề gặp khách nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 nhắc định hướng/đam mê sales B2B; nên nêu hướng sales ngành sản xuất",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm sales B2B (có 2/6 không đòi), ưu tiên ngành hóa chất, bao bì, may mặc, nguyên vật liệu",
+    "hoc-van": "can — 6/6 nêu Cao đẳng/Đại học, ngành Kinh tế, QTKD, Marketing, Hóa học, Dệt may hoặc kỹ thuật liên quan",
+    "ky-nang-chuyen-mon": "can — tìm kiếm và phát triển khách hàng B2B, báo giá, đàm phán, chăm sóc khách hàng, theo dõi đơn hàng/công nợ, hiểu sản phẩm kỹ thuật",
+    "ky-nang-mem": "can — 5/6: giao tiếp, đàm phán, thuyết phục, chủ động, chịu áp lực doanh số, làm việc độc lập",
+    "cong-cu-phan-mem": "can — 3/6: tin học văn phòng, Excel, Word",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — 2/6 nhắc áp lực/mục tiêu doanh số; CV nên có số liệu doanh số (suy từ công việc)",
+    "ngoai-ngu": "can — 4/6: tiếng Anh (giao tiếp cơ bản đến viết email với khách nước ngoài), JD#2 tiếng Trung/Pháp/Hàn",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/6 nhận sinh viên mới ra trường",
+    "giay-phep": "nen — JD#2 có thể đi công tác; không JD nào đòi bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/6 nêu giới tính/độ tuổi (JD#3 nữ 20-40; JD#5 ưu tiên nữ); nên có độ tuổi/nơi ở",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Sales B2B", "khách hàng doanh nghiệp", "báo giá", "đàm phán", "công nợ", "Sales Engineer", "đơn hàng FOB/OEM", "hóa chất", "Tiếng Anh"],
+  "bangChung": [
+    "JD#1: 'Không yêu cầu kinh nghiệm. Ưu tiên các bạn sinh viên mới ra trường'; 'Thành thạo tin học văn phòng'",
+    "JD#2: 'Thành thạo Tiếng Anh hoặc Tiếng Trung hoặc Tiếng Pháp hoặc Tiếng Hàn'",
+    "JD#3: 'Tiếng Anh tốt, giao tiếp và viết email với khách hàng nước ngoài'; 'Thành thạo Excel, Word'",
+    "JD#4: 'chịu được áp lực về doanh số'; 'Tiếng Anh giao tiếp cơ bản'",
+    "JD#6: 'Có 1-2 năm kinh nghiệm kinh doanh B2B'"
+  ],
+  "ghiChu": ""
+}

@@ -1,0 +1,36 @@
+{
+  "id": 161,
+  "nhom": "Luật",
+  "nghe": "Dịch vụ pháp chế (In-house)",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "5/6 JD cấp chuyên viên/nhân viên (1-5 năm, ĐH Luật), 1 JD trưởng nhóm (5 năm); không có JD thực tập; yêu cầu kinh nghiệm 1-5 năm, 3/6 JD từ 5 năm",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ảnh/ngoại hình; 2/6 nêu tuổi (25-45) hoặc ưu tiên nam; nghề văn phòng pháp lý nên ảnh không phải trọng tâm (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — không JD nhắc trực tiếp nhưng nghề tư vấn dài hạn; nên nêu định hướng pháp chế doanh nghiệp và lĩnh vực quan tâm (suy)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nêu số năm (1, 2, 3, 5, 5+, 5); ưu tiên kinh nghiệm pháp chế doanh nghiệp/công ty luật, ngành bán lẻ, logistics, tài chính",
+    "hoc-van": "can — 6/6 JD yêu cầu tốt nghiệp ĐH ngành Luật/Luật Kinh tế; JD#5 nêu ĐH Luật Hà Nội hoặc Khoa Luật ĐHQG",
+    "ky-nang-chuyen-mon": "can — 6/6: soạn thảo/rà soát/đàm phán hợp đồng, tư vấn pháp lý, kiểm soát rủi ro và tuân thủ, giải quyết tranh chấp, nghiên cứu văn bản pháp luật, thủ tục đăng ký kinh doanh",
+    "ky-nang-mem": "can — 6/6: cẩn trọng, tư duy logic/pháp lý, chịu áp lực, phân tích, đàm phán, giao tiếp, trung thực/bảo mật",
+    "cong-cu-phan-mem": "can — 4/6 yêu cầu thành thạo tin học văn phòng (JD#1, #4, #6 và JD#2 qua kỹ năng văn phòng)",
+    "chung-chi": "can — 4/6 ưu tiên thẻ/chứng chỉ hành nghề luật sư hoặc chứng chỉ đào tạo nghề luật sư (JD#1, #2, #3); là lợi thế nổi bật của nghề",
+    "du-an": "khong — không JD nào nhắc dự án",
+    "thanh-tich-kpi": "nen — không JD nêu chỉ tiêu số; nên ghi số hợp đồng đã rà soát, vụ việc tranh chấp đã xử lý (suy từ tính chất công việc)",
+    "ngoai-ngu": "can — 3/6: JD#1 'Thành thạo tiếng Anh hoặc tiếng Trung', JD#2 'Tiếng Anh Đọc hiểu', JD#3 hợp đồng quốc tế",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc; không JD nhận thực tập nên không cần cho ứng viên có kinh nghiệm",
+    "giay-phep": "khong — không JD nào nhắc bằng lái/giấy phép; thẻ luật sư xếp ở mục chung-chi",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/6 nêu độ tuổi (25-45), 1 ưu tiên nam (JD#4); không phải yêu cầu chính",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["pháp chế doanh nghiệp", "soạn thảo hợp đồng", "rà soát hợp đồng", "kiểm soát rủi ro pháp lý", "tuân thủ", "giải quyết tranh chấp", "luật doanh nghiệp/thương mại/lao động/đầu tư", "phòng chống rửa tiền", "thẻ luật sư", "Tiếng Anh/Tiếng Trung", "tin học văn phòng"],
+  "bangChung": [
+    "JD#1: 'Tốt nghiệp Đại học chuyên ngành Luật (có thẻ luật sư là lợi thế)'; 'Thành thạo tiếng Anh hoặc tiếng Trung'",
+    "JD#2: 'ưu tiên có Chứng chỉ hành nghề Luật sư'; 'Có kinh nghiệm tư vấn pháp lý, soạn thảo, rà soát và đàm phán hợp đồng'",
+    "JD#3: 'Ưu tiên ... Chứng chỉ đào tạo nghề luật sư ... hoặc có Thẻ luật sư'",
+    "JD#5: 'Tốt nghiệp Đại học Luật Hà Nội hoặc Khoa Luật của Đại học Quốc Gia'; 'từ 5 năm kinh nghiệm'",
+    "JD#6: 'Độ tuổi: Từ 25 – 45 tuổi'; 'Thành thạo Tin học văn phòng'"
+  ],
+  "ghiChu": "6 JD đồng nhất nghề, cùng vị trí pháp chế doanh nghiệp, không có JD cấp thực tập nên chưa có bằng chứng cho ứng viên mới ra trường."
+}

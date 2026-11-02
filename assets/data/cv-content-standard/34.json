@@ -1,0 +1,35 @@
+{
+  "id": 34,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Software Engineering",
+  "soJD": 4,
+  "doTinCay": "vua",
+  "capBac": "4/4 JD cấp nhân viên lập trình (1 JD không yêu cầu kinh nghiệm, 3 JD senior/fullstack 3-5 năm); trung cấp đến ĐH, ưu tiên CNTT/Khoa học máy tính",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình; công việc lập trình (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD nhắc tự học công nghệ mới, ứng dụng AI (JD#2, #3); dùng để nêu định hướng backend/fullstack/game (suy từ mô tả)",
+    "kinh-nghiem-lam-viec": "can — 4/4 JD nhắc (không yêu cầu đến 5 năm); nên nêu sản phẩm đã làm và vai trò",
+    "hoc-van": "can — 4/4 nêu bậc học; 3/4 yêu cầu chuyên ngành CNTT/Khoa học máy tính, JD#3 ưu tiên trường top CNTT",
+    "ky-nang-chuyen-mon": "can — 4/4: lập trình backend/frontend/fullstack, API, thiết kế hệ thống, tối ưu hiệu năng, OOP/SOLID/Design Pattern, server side, CI/CD, game loop",
+    "ky-nang-mem": "nen — 4/4 nhắc tư duy logic; làm việc nhóm, phân tích nghiệp vụ, tự học",
+    "cong-cu-phan-mem": "can — 4/4: C#/.NET, PHP/Laravel, JavaScript/TypeScript/NodeJS, ReactJS/NextJS/Angular/Vue, Unity/Cocos Creator, SQL Server/MySQL, Docker, Kubernetes, Linux, công cụ AI (Cursor, Claude, Copilot)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "can — 3/4: JD#1 đã tham gia ít nhất một sản phẩm game, JD#3 xây dựng sản phẩm công nghệ giáo dục, JD#4 tối ưu hiệu năng thực tế; CV phải có dự án và công nghệ",
+    "thanh-tich-kpi": "nen — JD#4 'đã tối ưu hiệu năng, cải thiện thực tế về tốc độ phản hồi' (1/4); nên nêu số liệu hiệu năng/người dùng",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "nen — nghề lập trình nên có link GitHub/sản phẩm (suy từ tính chất công việc; không JD nhắc thẳng)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#2 không yêu cầu kinh nghiệm, nhận ứng viên mới (1/4)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#1 tuổi 24-40, JD#4 tuổi 26-35 (2/4 nêu độ tuổi)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Fullstack Developer", "NodeJS/JavaScript", "C#/.NET", "PHP/Laravel", "ReactJS/NextJS", "RESTful API", "Docker/CI/CD", "SQL", "game engine Unity/Cocos", "AI coding tools"],
+  "bangChung": [
+    "JD#1: 'Có ít nhất 5 năm kinh nghiệm lập trình game'; 'Cocos Creator, Unity'; 'Tuổi 24 - 40'",
+    "JD#2: 'Không yêu cầu kinh nghiệm'; 'Nắm chắc JavaScript/NodeJS, RESTful API'",
+    "JD#3: 'Có tối thiểu 4 năm ... Fullstack'; 'PHP/Laravel, ReactJS, NextJS'; 'Cursor, Claude, Copilot'",
+    "JD#4: 'Có từ 3-4 năm ... C#, .NET'; 'Đã trực tiếp tối ưu hiệu năng Backend và Client'"
+  ],
+  "ghiChu": "Chỉ 4 JD, mỗi JD một ngăn xếp công nghệ khác nhau nên mục công cụ phải theo ngăn xếp ứng viên."
+}

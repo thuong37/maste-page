@@ -1,0 +1,37 @@
+{
+  "id": 134,
+  "nhom": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học",
+  "nghe": "Bác sĩ/Kỹ thuật viên",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên bác sĩ (0-5 năm; ngoại khoa, nội khoa, nội tổng quát, da liễu thẩm mỹ), đều ĐH Y khoa trở lên; 2 JD yêu cầu Thạc sĩ/CKI; JD#3 và JD#5 gần giống nhau (cùng mô tả bác sĩ nội khoa phòng khám thẩm mỹ-sức khỏe)",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 2/6 nêu 'ngoại hình ưa nhìn/khá' (JD#5, JD#6); 4/6 nêu tuổi/giới tính; ảnh chuyên nghiệp là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm (dưới 1 đến 5 năm), ưu tiên bệnh viện/phòng khám lớn/thẩm mỹ viện/bệnh viện da liễu",
+    "hoc-van": "can — 6/6 nêu ĐH Y khoa; 2/6 yêu cầu Thạc sĩ/Bác sĩ chuyên khoa I; ưu tiên bằng sau đại học Nội khoa/Ngoại khoa/Da liễu",
+    "ky-nang-chuyen-mon": "can — khám, chẩn đoán, lập phác đồ, kê đơn, thủ thuật/tiểu phẫu, đọc siêu âm/xét nghiệm, tư vấn bệnh nhân, tiêm filler/botox/meso, laser thẩm mỹ, quản lý chuyên môn khoa",
+    "ky-nang-mem": "can — 5/6: giao tiếp, tư vấn, tận tâm, trách nhiệm, tuân thủ đạo đức nghề nghiệp",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc phần mềm; thiết bị là laser/Thermage/Ultherapy",
+    "chung-chi": "can — 6/6 nêu thẳng chứng chỉ hành nghề/giấy phép hành nghề (JD#6 thêm chứng chỉ filler/botox)",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "can — 6/6 yêu cầu CCHN/GPHN đúng chuyên môn theo Bộ Y tế",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/6 nêu độ tuổi (30-45, dưới 45, 28-40) và giới tính (nữ, nam, không phân biệt)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Bác sĩ nội khoa", "Bác sĩ ngoại khoa", "chứng chỉ hành nghề", "bác sĩ da liễu thẩm mỹ", "filler/botox", "khám sức khỏe định kỳ", "chuyên khoa I", "phác đồ điều trị"],
+  "bangChung": [
+    "JD#1: 'Tốt nghiệp Đại học chuyên ngành Y khoa, ưu tiên có đào tạo/chuyên môn Ngoại khoa'; 'Có giấy phép hành nghề'",
+    "JD#2: 'Tốt nghiệp Thạc sĩ, Bác sĩ chuyên khoa I trở lên'; 'Có Chứng chỉ hành nghề theo quy định'",
+    "JD#3: 'Đã có kinh nghiệm tối thiểu 5 năm làm việc tại Chuyên khoa Nội các Bệnh viện lớn'; 'Tuổi 30 - 45'",
+    "JD#4: 'Có Chứng chỉ hành nghề (CCHN) / Giấy phép hành nghề (GPHN) đúng chuyên môn'; 'Độ tuổi: Dưới 45 tuổi'",
+    "JD#5: 'Ngoại hình ưa nhìn. Phong thái nhẹ nhàng'; 'Nữ'",
+    "JD#6: 'Có chứng chỉ hành nghề'; 'Thành thạo dịch vụ tiêm filler, botox, meso'; 'Nam, tuổi 28 - 40'"
+  ],
+  "ghiChu": "Yêu cầu ngoại hình/giới tính ghi nhận như dữ liệu JD."
+}

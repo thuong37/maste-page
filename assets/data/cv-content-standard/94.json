@@ -1,0 +1,36 @@
+{
+  "id": 94,
+  "nhom": "Giáo dục/Đào tạo",
+  "nghe": "Văn hoá/Nghệ thuật/Khoa học",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên giáo viên mỹ thuật (trường mầm non/tiểu học/THCS, trung tâm), dưới 1 đến 3 năm kinh nghiệm, từ Cao đẳng/Đại học; chưa có JD văn hóa hay khoa học khác",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 2/6 nêu tuổi/giới tính, JD#1 'ngoại hình phù hợp với môi trường giáo dục'; ảnh chỉn chu là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 3/6 nhắc tâm huyết/làm việc lâu dài; nên nêu triết lý dạy mỹ thuật",
+    "kinh-nghiem-lam-viec": "can — 6/6 hỏi kinh nghiệm dạy mỹ thuật (dưới 1 đến 3 năm), ưu tiên trường tư/quốc tế/trung tâm nghệ thuật",
+    "hoc-van": "can — 6/6 nêu CĐ/ĐH chuyên ngành Sư phạm Mỹ thuật, Hội họa, Mỹ thuật ứng dụng, hoặc ngành liên quan",
+    "ky-nang-chuyen-mon": "can — vẽ nhiều chất liệu (chì, màu nước, acrylic, sơn dầu), giảng dạy theo giáo trình, quản lý lớp, đánh giá học sinh, trao đổi phụ huynh",
+    "ky-nang-mem": "can — 5/6: giao tiếp, giải quyết tình huống, tâm huyết, thích nghi, nhiệt tình",
+    "cong-cu-phan-mem": "nen — 2/6 nhắc phần mềm/ứng dụng hỗ trợ giảng dạy, laptop cá nhân",
+    "chung-chi": "can — 4/6 nêu chứng chỉ nghiệp vụ sư phạm (mầm non hoặc nghiệp vụ sư phạm khi không phải khối sư phạm)",
+    "du-an": "nen — JD#6 phụ trách CLB năng khiếu, xây dựng chương trình văn hóa nghệ thuật; nên ghi chương trình/triển lãm đã làm",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "can — nghề đòi 'vẽ tốt nhiều chất liệu' ở 4/6 JD nên cần bộ tranh minh chứng; không JD nào nói thẳng link (suy từ tính chất công việc)",
+    "giai-thuong": "nen — JD#4 ưu tiên thâm niên, bằng cấp, năng lực vẽ nhiều chất liệu; không JD nào nhắc giải thưởng (suy từ công việc)",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 nhắc hỗ trợ sự kiện, ngoại khóa của trường, đội tuyển/CLB",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 nêu độ tuổi (20-36, 22-27, 25-40), JD#3 giới tính nữ, JD#1 ưu tiên khu vực Thủ Đức; nên có độ tuổi/nơi ở",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Giáo viên mỹ thuật", "Sư phạm Mỹ thuật", "vẽ nhiều chất liệu", "màu nước", "acrylic", "quản lý lớp học", "chứng chỉ nghiệp vụ sư phạm", "giáo án"],
+  "bangChung": [
+    "JD#1: 'ưu tiên chứng chỉ Nghiệp vụ sư phạm mầm non'; 'Có phong cách ăn mặc và ngoại hình phù hợp với môi trường giáo dục'",
+    "JD#2: 'Có khả năng vẽ tay tốt'; 'Thành thạo các phần mềm, ứng dụng và các thiết bị hỗ trợ giảng dạy'",
+    "JD#3: 'Vẽ được đa dạng loại màu'; 'Có laptop cá nhân'",
+    "JD#4: 'Vẽ tốt tối thiểu 2 chất liệu: chì + 1 chất liệu màu'; 'Có bằng cấp/chứng chỉ sư phạm' (ưu tiên)",
+    "JD#6: 'phụ trách hoạt động CLB năng khiếu'; 'Tối thiểu 1 – 3 năm kinh nghiệm giảng dạy bộ môn Mỹ thuật'"
+  ],
+  "ghiChu": "Cả 6 JD là giáo viên mỹ thuật; nghề nghệ thuật/khoa học khác chưa có JD. Portfolio là suy từ yêu cầu vẽ, không có JD đòi link."
+}

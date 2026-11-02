@@ -1,0 +1,36 @@
+{
+  "id": 48,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Công nhân",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD công nhân/lao động phổ thông; không yêu cầu kinh nghiệm (công ty đào tạo), từ THCS/THPT; vận hành máy, khai thác kho, sản xuất, linh kiện điện tử, xưởng đá",
+  "muc": {
+    "anh-chan-dung": "nen — không JD nào đòi ảnh; 5/6 nêu giới tính/độ tuổi (Nam 19-31, Nam từ 22, Nữ 18-32...) và JD#5 'không có hình xăm'; ảnh chỉ để nhận diện (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 3/6 JD nhắc mong muốn làm việc ổn định, lâu dài (JD#2, #6, #4); có thể ghi ngắn",
+    "kinh-nghiem-lam-viec": "nen — 6/6 JD không yêu cầu kinh nghiệm, ưu tiên kinh nghiệm làm tại nhà máy/vận hành máy/xưởng/kho; nên ghi nơi làm và vị trí nếu có",
+    "hoc-van": "nen — 6/6 chỉ yêu cầu THCS hoặc THPT; ghi ngắn bậc học tốt nghiệp",
+    "ky-nang-chuyen-mon": "nen — vận hành máy dây chuyền, đóng gói/phân loại hàng, kiểm tra chất lượng, cắt đá, lái xe nâng (JD#6 ưu tiên); các JD đều đào tạo khi nhận việc",
+    "ky-nang-mem": "can — 6/6: chăm chỉ, chịu khó, trách nhiệm, cẩn thận, trung thực, kỷ luật, tuân thủ nội quy",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc phần mềm (JD#2 chỉ cập nhật dữ liệu lên hệ thống báo cáo)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "nen — JD#6 ưu tiên biết lái xe nâng hoặc lái ô tô (1/6); JD#1 yêu cầu sức khỏe và không dị ứng nguyên liệu thực phẩm",
+    "thong-tin-ca-nhan-mo-rong": "can — 6/6 JD nêu độ tuổi/giới tính/sức khỏe (Nam 19-31, Nam 22-40, từ 18 tuổi, Nữ 18-32, Nam dưới 30); JD#1 ca đêm, JD#5 không có hình xăm",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["công nhân vận hành máy", "sản xuất/đóng gói", "làm việc theo ca", "sức khỏe tốt", "không yêu cầu kinh nghiệm", "đào tạo khi nhận việc", "lái xe nâng", "kiểm tra chất lượng"],
+  "bangChung": [
+    "JD#1: 'Tốt nghiệp THPT trở lên'; 'Không yêu cầu kinh nghiệm, công ty sẽ đào tạo'; 'làm việc theo ca, bao gồm cả ca đêm'; 'Tuổi 19 - 31, Nam'",
+    "JD#2: 'Tuổi từ 22 tuổi trở lên (Ưu tiên nam)'; 'Mong muốn gắn bó công việc ổn định, lâu dài'",
+    "JD#3: 'Từ 18 tuổi trở lên'; 'Cẩn thận, có trách nhiệm'; 'Có khả năng làm việc theo ca'",
+    "JD#5: 'Nữ - tuổi từ 18 đến 32'; 'không có hình xăm'",
+    "JD#6: 'Nam, dưới 30 tuổi, sức khỏe tốt'; 'Ưu tiên ứng viên biết lái xe nâng hoặc lái ô tô'"
+  ],
+  "ghiChu": "Nhóm lao động phổ thông: CV tối giản, tập trung thông tin cá nhân, sức khỏe, khả năng làm ca."
+}

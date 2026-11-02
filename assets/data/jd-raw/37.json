@@ -1,0 +1,150 @@
+{
+ "id": 37,
+ "nhom": "Công nghệ Thông tin",
+ "nghe": "Data Science",
+ "crawledAt": "2026-10-22T03:15:59.802Z",
+ "candidates": 46,
+ "thin": false,
+ "jds": [
+  {
+   "url": "https://www.topcv.vn/viec-lam/chuyen-vien-khoa-hoc-du-lieu-data-scientist/2318342.html",
+   "title": "Chuyên Viên Khoa Học Dữ Liệu - Data Scientist",
+   "company": "Công ty cổ phần chứng khoán FPT",
+   "query": "Data Science",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "1 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên",
+     "Tiếng Anh TOEIC 700"
+    ],
+    "Chuyên môn": [
+     "Data Scientist",
+     "IT - Phần mềm",
+     "Tài chính",
+     "Chứng khoán"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Chủ động đề xuất, thiết kế, chịu trách nhiệm chính triển khai các giải pháp khoa học dữ liệu cùng chuyên gia và phối hợp chặt chẽ với các đơn vị kinh doanh/vận hành để giải quyết các bài toán thực tế có tính ứng dụng cao.\nPhân tích chuyên sâu và khám phá dữ liệu lớn, sử dụng các kỹ thuật xác suất thống kê, học máy và học sâu để phát hiện các xu hướng, hành vi ẩn và các yếu tố thúc đẩy hành động của khách hàng; từ đó xây dựng insight giá trị và hỗ trợ đề xuất chiến lược kinh doanh, thiết kế sản phẩm hoặc chiến dịch phù hợp.\nPhối hợp với ML Engineer / Data Engineer để đóng gói và triển khai mô hình. Thiết lập cơ chế monitoring, drift detection và cảnh báo suy giảm hiệu năng. Tham gia A/B testing và đánh giá tác động thực tế sau triển khai. Hỗ trợ cải tiến mô hình theo vòng đời MLOps.\nLàm việc chặt chẽ với chuyên gia phân tích đầu tư, tư vấn đầu tư và Product Owner để chuyển đổi bài toán kinh doanh thành bài toán dữ liệu. Giải thích kết quả mô hình một cách rõ ràng, có logic và phù hợp với ngữ cảnh đầu tư. Đảm bảo mô hình phản ánh đúng thực tiễn thị trường và hành vi khách hàng.",
+    "Yêu cầu ứng viên": "Độ tuổi dưới 26, tốt nghiệp Đại học trở lên các ngành: Khoa học Dữ liệu, Khoa học Máy tính, Toán/Thống kê, Tài chính định lượng, Kinh tế lượng hoặc các ngành liên quan..\nCó hiểu biết sâu và vận dụng thành thạo các kỹ thuật phân tích dữ liệu nâng cao, bao gồm kiểm định giả thuyết, phân tích nhân quả, xử lý mất cân bằng dữ liệu, phân tích chuỗi thời gian, mô hình suy diễn, vector embeddings\nCó kinh nghiệm chủ động triển khai các mô hình hoặc giải pháp phân tích phục vụ một hoặc nhiều mục tiêu như tăng trưởng kinh doanh, cá nhân hóa, tối ưu hóa vận hành, nâng cao trải nghiệm khách hàng…\nCó tối thiểu 1–3 năm kinh nghiệm trong lĩnh vực phân tích nâng cao, phát triển mô hình học máy/học sâu hoặc ứng dụng AI vào bài toán thực tiễn.\nCó khả năng phối hợp hiệu quả với các đơn vị kinh doanh/vận hành để hiểu bài toán, chuyển đổi thành giải pháp phân tích dữ liệu cụ thể, có giá trị ứng dụng cao và đo lường được hiệu quả. Có kinh nghiệm xử lý, trực quan hóa và diễn giải dữ liệu một cách sâu sắc, kết nối với nhu cầu kinh doanh và gợi ý hành động cụ thể. Thành thạo Python và các thư viện: Scikit-learn, XGBosst, LightGBM, PyTorch/ TensorFlow…\nHiểu rõ và có khả năng tham gia triển khai các quy trình phát triển và vận hành mô hình (MLOps/LangOps), bao gồm xử lý dữ liệu, huấn luyện, đánh giá, kiểm thử, triển khai và giám sát mô hình.\nCó chứng chỉ tiếng Anh TOEIC 700 trở lên hoặc các chứng chỉ tương đương\nƯu tiên ứng viên có kinh nghiệm sử dụng: Mlflow, Docker, Git, DVC, AWS, Azure, Databricks… Có hiểu biết về drift detection, monitoring. Có khả năng làm việc với dữ liệu quy mô lớn. Có tư duy hệ thống và nhạy cảm với rủi ro mô hình. Có kinh nghiệm trong lĩnh vực tài chính/chứng khoán, đã từng triển khai mô hình vào môi trường thực tế.\nKiến thức ngành\nIT - Phần mềm, Tài chính, Chứng khoán\nKỹ năng cần có\nPython\nKỹ năng nên có\nAWS, Azure, GCP, MLflow",
+    "Quyền lợi ứng viên": "Được hưởng mức thu nhập cạnh tranh, tháng lương thứ 13 và thưởng theo kết quả sản xuất kinh doanh của Công ty.\nĐược hưởng bảo hiểm sức khỏe FPT Care dành riêng cho CBNV FPT cùng đầy đủ BHXH, BHYT, BHTN theo quy định.\nĐược Công ty tài trợ chi phí tham gia các khóa đào tạo, nâng cao chuyên môn phục vụ công việc.\nCó cơ chế đánh giá hiệu quả công việc rõ ràng và cơ hội phát triển nghề nghiệp theo năng lực.\nĐược tham gia các hoạt động văn hóa, thể thao, ngoại khóa và gắn kết dành cho CBNV FPTS.\nĐược làm việc trong môi trường chuyên nghiệp, ổn định và có cơ hội phát triển lâu dài tại FPTS.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: 52 Lạc Long Quân, Phường Tây Hồ (Phường Tây Hồ thuộc quận Tây Hồ cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:30 đến 17:30)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 31/10/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n2 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/thuc-tap-sinh-data-scientist/2218813.html",
+   "title": "Thực Tập Sinh Data Scientist",
+   "company": "SonatGame Studio",
+   "query": "Data Science",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "Dưới 1 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Data Scientist",
+     "Game",
+     "IT - Phần mềm"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Hỗ trợ team Data Scientist trong các task phân tích dữ liệu cơ bản: cleaning, transformation, thống kê mô tả\nViết SQL query đơn giản lấy data từ data warehouse phục vụ EDA\nChạy script Python xử lý data dưới sự hướng dẫn của mentor: pandas, numpy\nTạo visualization cơ bản (matplotlib) để hỗ trợ phân tích player behavior\nChạy model tutorial (sklearn) trên dataset mẫu — hiểu flow train → predict → evaluate\nTham gia quan sát quy trình ML pipeline: từ EDA → feature engineering → model training → handoff\nTham dự meeting với stakeholder (PO, Game Designer) để hiểu bài toán game\nGhi chép learning notes, viết summary công việc hàng ngày\nƯu tiên: Đã từng dùng pandas, matplotlib qua course/project; Biết Git cơ bản (clone, commit, push)",
+    "Yêu cầu ứng viên": "Kiến thức (Knowledge):\n\nSinh viên năm 3,4 chuyên ngành Khoa học Máy tính, Kỹ thuật phần mềm, Toán – Tin, Công nghệ thông tin hoặc các lĩnh vực liên quan\nCó ít nhất 2-3 tháng thực tập/ dự án về Data Science\nStatistics & Probability: Hiểu xác suất cơ bản, trung bình, phương sai\nML/AI Fundamentals: Hiểu khái niệm ML cơ bản: supervised vs unsupervised, classification vs regression\nDeep Learning: Biết khái niệm neural network cơ bản (neuron, layer, activation)\nExperimentation: Hiểu khái niệm A/B test cơ bản (control vs treatment)\nGame Domain: Hiểu cơ bản về game mobile (thể loại, cách chơi, IAP concept)\n\nKỹ năng (Skills):\n\nProgramming (Python): Python cơ bản - syntax, loop, function, data types\nSQL: SQL cơ bản - SELECT, WHERE, JOIN, ORDER BY\nML Modeling: Chạy model tutorial (sklearn) với dataset mẫu\nFeature Engineering: Hiểu khái niệm feature, label, target\nModel Evaluation: Hiểu accuracy, confusion matrix cơ bản\nVisualization: Biết dùng matplotlib cơ bản (line, bar chart)\nGit: Git cơ bản - clone, add, commit, push\n\nThái độ (Attitude):\n\nCó tinh thần học hỏi. Sẵn sàng tiếp thu công nghệ mới, nhanh chóng thích nghi với môi trường nghiên cứu/phát triển.\nCẩn thận, có trách nhiệm với dữ liệu và hệ thống\nChủ động phát hiện vấn đề và đề xuất hướng cải tiến\nLàm việc tốt trong môi trường tốc độ cao\nGắn bó lâu dài và mong muốn phát triển chuyên sâu trong lĩnh vực dữ liệu\nKiến thức ngành\nGame, IT - Phần mềm",
+    "Quyền lợi ứng viên": "THU NHẬP & CƠ HỘI PHÁT TRIỂN\n\nHỗ trợ thực tập: Up to 7M/tháng.\nThời gian thực tập từ 2-4 tháng, tùy thuộc vào năng lực của ứng viên.\nCơ hội trở thành nhân viên chính thức sau 2- 4 tháng thực tập nếu đạt tiêu chí.\nMở rộng và nâng cao kiến ​​thức, kỹ năng chuyên môn\nCó lộ trình phát triển nghề nghiệp rõ ràng, cá nhân hóa\n\nMÔI TRƯỜNG LÀM VIỆC\n\nTrải nghiệm môi trường làm việc năng động, chuyên nghiệp\nHưởng 100% chế độ phúc lợi chăm sóc cuộc sống hằng ngày\n\nCHÍNH SÁCH PHÚC LỢI\n\nThưởng/quà tặng vào các dịp: Tết Dương, 8/3, 30/4–1/5, Trung Thu, 2/9, 20/10, Giáng sinh\nHỗ trợ chi phí Company trip hàng năm\nChia sẻ thành quả liên tục, không giới hạn theo hiệu suất làm việc\nChế độ cưới hỏi, hiếu hỉ, quà Lễ/Tết và các phúc lợi khác\n\nTHỜI GIAN LÀM VIỆC\n\nLàm việc từ Thứ 2 đến Thứ 6, nghỉ Thứ 7 & Chủ nhật\nSáng: 8:30 – 12:00 | Chiều: 13:15 – 17:45",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Tầng 10, The West Tower, 265 Cầu Giấy, Phường Cầu Giấy (Phường Cầu Giấy thuộc quận Cầu Giấy cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:30 đến 17:45)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 30/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nThực tập sinh\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n2 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/truong-nhom-data-scientist/2329724.html",
+   "title": "Trưởng Nhóm Data Scientist",
+   "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VẠN XUÂN",
+   "query": "Data Science",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "3 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Data Scientist",
+     "IT - Phần cứng và máy tính",
+     "IT - Phần mềm"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "· Thiết kế và xây dựng các mô hình phân tích dữ liệu trên nền tảng Big Data với kiến trúc tối ưu bài toán đặt ra.\n\n· Phát triển các hệ thống, sản phẩm đánh giá chấm điểm khách hàng doanh nghiệp, hộ kinh doanh và cá nhân: Credit Score, Fraud Score, Lead Gen,…\n\n· Tổ chức phân tích, làm sạch dữ liệu, xây dựng lộ trình, phương pháp xử lý đối với dữ liệu để lập trình theo.\n\n· Lập trình các thuật toán thao tác với dữ liệu, phân tích dữ liệu.\n\n· Sử dụng các công cụ phân tích dữ liệu, học máy để xây dựng model tạo ra các đầu ra tối ưu đáp ứng các bài toán kinh doanh mong muốn.\n\nCác nhiệm vụ khác:\n\n· Các nhiệm vụ khác theo chỉ đạo của Ban Giám Đốc.",
+    "Yêu cầu ứng viên": "1. Trình độ\n\n· Yêu cầu về bằng cấp/ chuyên ngành: Tốt nghiệp Đại học trở lên chuyên ngành Công nghệ thông tin hoặc tương đương; Tốt nghiệp Đại học trở lên các ngành: Công nghệ kỹ thuật điện tử - viễn thông, Kỹ thuật điện tử - viễn\n\nthông, có chứng chỉ quốc tế về CNTT phù hợp chuyên môn vị trí tuyển dụng\n\n2. Kinh nghiệm\n\n· Có kinh nghiệm xây dựng và triển khai mô hình Machine Learning với các thư viện như XGBoost, TensorFlow, PyTorch.\n\n· Thành thạo xử lý và phân tích dữ liệu với Python (Pandas), thực hiện EDA và feature engineering.\n\n· Thành thạo truy vấn cơ sở dữ liệu, và thành thạo ít nhất một trong các\n\ndatabase Oracle, MS SQL, MySQL, MongoDB, Hadoop, Cassandra, Spark\n\n· Hiểu và áp dụng các phương pháp đánh giá mô hình (cross-validation, AUC, precision/recall…).\n\n· Hiểu quy trình xây dựng và triển khai mô hình end-to-end (training, validation, deployment).\n\n· Hiểu và xử lý các vấn đề thực tế của dữ liệu và mô hình (missing data, imbalance, overfitting, data leakage).\n\nƯu tiên đối với ứng viên có:\n\n· Từng làm việc và có kinh nghiệm về việc giải quyết các bài toán về dữ liệu và BigData cho viễn thông, logistics, e-commerce.\n\n· Có kinh nghiệm làm việc với dữ liệu lớn trên các nền tảng như Spark (PySpark) là một lợi thế.\n\n· Nhanh nhạy với dữ liệu kinh doanh.\n\n3. Yêu cầu về kỹ năng\n\n· Có tư duy logic tốt, nắm bắt vấn đề nhanh, có hiểu biết sâu về dữ liệu, tổ chức dữ liệu, các công cụ lập trình và xử lý dữ liệu.\n\n· Thành thạo ít nhất các công cụ phân tích dữ liệu như Pandas, SSAS, Excel, Matlab, SPSS, Jupiter notebook, Anaconda.\n\n· Từng lập trình các thuật toán Machine learning như Deep learning, forest tree, Gradient boosting … Hoặc có hiểu sâu về các thuật toán học máy, phân tích dữ liệu Analysis.\n\n· Thành thạo việc tổ chức dữ liệu, làm sạch,… và kinh nghiệm làm việc với nhiều loại dữ liệu khác nhau.\n\n· Kỹ năng giao tiếp, phối hợp công việc tốt, năng động, chăm chỉ, làm việc dưới áp lực cao.\n\n· Kỹ năng đào tạo, trình bày và truyền đạt.\n\nKiến thức ngành\nIT - Phần cứng và máy tính, IT - Phần mềm",
+    "Quyền lợi ứng viên": "· Mức lương & thưởng cạnh tranh: Lương tháng thứ 13 và thưởng lên tới 3 tháng lương dựa vào hiệu quả công việc.\n\n· Du lịch, team building cùng Công ty tối thiểu 2 lần/ 1 năm.\n\n· Cơ hội đào tạo, thăng tiến và tham gia các dự án công nghệ mới.\n\n· Hưởng đầy đủ chế độ bảo hiểm, nghỉ phép, phúc lợi theo quy định của Công ty và pháp luật.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Tầng 2, Tòa Handico Tower, Đường Phạm Hùng, Phường Từ Liêm (Phường Từ Liêm thuộc quận Nam Từ Liêm cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 07:45 đến 17:15)\nThứ 7 (từ 07:45 đến 11:45)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 14/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nTrưởng nhóm\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/data-scientist-lead/2312435.html",
+   "title": "Data Scientist (Lead)",
+   "company": "CÔNG TY CỔ PHẦN ĐẦU TƯ CÔNG NGHỆ & ĐỔI MỚI VIỆT",
+   "query": "Data Science",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "3 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Data Scientist"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Phân tích, đánh giá các bài toán kinh doanh, thu thập và làm sạch dữ liệu từ nhiều nguồn khác nhau (cơ sở dữ liệu, API, file log, ...).\nThực hiện phân tích dữ liệu chuyên sâu để khám phá các xu hướng, insight và mô hình tiềm ẩn, hỗ trợ ra quyết định kinh doanh.\nXây dựng, huấn luyện và triển khai các mô hình Machine Learning (Hồi quy, Phân loại, Gom cụm, Chuỗi thời gian, Xử lý ngôn ngữ tự nhiên, Thị giác máy tính...) để giải quyết các vấn đề nghiệp vụ.\nĐánh giá hiệu suất và cải thiện các mô hình đã triển khai, đảm bảo tính chính xác và hiệu quả.\nPhát triển và duy trì các pipeline dữ liệu, đảm bảo dữ liệu sạch, nhất quán và sẵn sàng cho việc phân tích và mô hình hóa.\nThiết kế và triển khai các giải pháp trực quan hóa dữ liệu (dashboard, báo cáo tương tác) để trình bày kết quả phân tích một cách rõ ràng và dễ hiểu.\nPhối hợp chặt chẽ với các phòng ban khác (Kỹ thuật, Sản phẩm, Marketing) để hiểu rõ nhu cầu, thu thập phản hồi và triển khai các giải pháp dữ liệu.\nNghiên cứu và ứng dụng các công nghệ, thuật toán mới nhất trong lĩnh vực Khoa học dữ liệu vào các dự án của công ty.",
+    "Yêu cầu ứng viên": "Tốt nghiệp Đại học/Cao học các chuyên ngành Khoa học máy tính, Khoa học dữ liệu, Thống kê, Toán học, Kỹ thuật hoặc các lĩnh vực liên quan.\nCó tối thiểu 3 năm kinh nghiệm làm việc ở vị trí Data Scientist hoặc các vị trí tương đương.\nThành thạo lập trình Python (bao gồm các thư viện như NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn).\nCó kinh nghiệm làm việc với các framework Deep Learning như TensorFlow hoặc PyTorch.\nNắm vững kiến thức về Machine Learning (Regression, Classification, Clustering, Time Series), thống kê và xác suất.\nKinh nghiệm làm việc với SQL để truy vấn và quản lý dữ liệu lớn.\nCó kinh nghiệm với các công cụ trực quan hóa dữ liệu như Tableau, Power BI hoặc Apache Superset.\nHiểu biết về kiến trúc dữ liệu và các hệ thống Big Data (như Apache Spark, Hadoop) là một lợi thế.\nKhả năng phân tích vấn đề, tư duy logic tốt và kỹ năng giải quyết vấn đề hiệu quả.\nKỹ năng giao tiếp và trình bày tốt, có khả năng diễn giải các khái niệm kỹ thuật phức tạp cho người không chuyên.",
+    "Quyền lợi ứng viên": "Mức lương cạnh tranh, hấp dẫn, xứng đáng với năng lực và kinh nghiệm.\nThưởng hiệu suất công việc, thưởng dự án, thưởng cuối năm theo kết quả kinh doanh của công ty.\nĐược đóng đầy đủ Bảo hiểm xã hội, Bảo hiểm y tế, Bảo hiểm thất nghiệp theo quy định của pháp luật.\nChế độ nghỉ phép hàng năm, các ngày lễ, tết theo quy định.\nMôi trường làm việc chuyên nghiệp, năng động, khuyến khích sự sáng tạo và phát triển cá nhân.\nCơ hội được tham gia các khóa đào tạo chuyên sâu, hội thảo về Khoa học dữ liệu và công nghệ mới.\nĐược tham gia các hoạt động teambuilding, du lịch nghỉ dưỡng hàng năm, tiệc cuối năm.\nKhám sức khỏe định kỳ hàng năm.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Tòa nhà Tasco, Lô HH2-2, đường Phạm Hùng, Phường Mễ Trì, Quận Nam Từ Liêm, Phường Từ Liêm (Phường Từ Liêm thuộc quận Nam Từ Liêm cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 25/10/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nTrưởng nhóm\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/chuyen-vien-du-lieu-data-analyst-sql-python-tu-2-nam-kinh-nghiem/2324652.html",
+   "title": "Chuyên Viên Dữ Liệu (Data Analyst – SQL/Python) - Từ 2 Năm Kinh Nghiệm",
+   "company": "HỘ KINH DOANH HALA THẾ GIỚI GIA DỤNG",
+   "query": "Data Analyst",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "2 năm kinh nghiệm chuyên môn",
+     "Cao Đẳng trở lên"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm xã hội",
+     "Thưởng hiệu quả làm việc",
+     "Thưởng tháng 13"
+    ],
+    "Chuyên môn": [
+     "Data Analyst",
+     "IT - Phần mềm",
+     "Thương mại điện tử"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Công ty kinh doanh đồ gia dụng nhiều thương hiệu riêng trên Shopee, TikTok Shop khoảng 40 nhân sự, với khối lượng dữ liệu đơn hàng và giao dịch lên tới hàng triệu dòng. Chúng tôi cần một người có kỹ năng kỹ thuật vững để xây dựng hệ thống dữ liệu từ đầu.\n\nLogic nghiệp vụ sẽ được chủ doanh nghiệp trực tiếp hướng dẫn.\n\nVị trí báo cáo trực tiếp cho chủ doanh nghiệp.\n\n1. Đối soát dữ liệu sàn với kế toán\n\nXây dựng quy trình tự động đối chiếu doanh thu, phí và thanh toán từ các sàn với dữ liệu kế toán.\nPhát hiện và báo cáo chênh lệch định kỳ.\n\n2. Hệ thống đánh giá hiệu quả kho\n\nKết nối dữ liệu từ phần mềm quản lí năng suất kho, với phần mềm quản lí đơn hàng và chấm công qua API.\nTự động tính các chỉ số năng suất và chất lượng theo từng nhân viên.\n\n3. Hệ thống đánh giá hiệu quả Marketing\n\nKết nối dữ liệu từ phần mềm quản lý nội dung và TikTok Ads, tự động tính hiệu quả theo từng video và từng nhân sự nội dung.\nXây dựng dashboard KPI cho bộ phận Marketing.\n\nCông việc chung\n\nXây dựng dashboard theo dõi cho Ban Giám đốc và các trưởng bộ phận.\nViết tài liệu mô tả cho mọi công thức, script và luồng dữ liệu để hệ thống vận hành ổn định lâu dài.",
+    "Yêu cầu ứng viên": "Bắt buộc\n\nThành thạo SQL: truy vấn, ghép bảng, tổng hợp dữ liệu lớn.\nViết được Python để lấy dữ liệu qua API (đọc JSON), làm sạch dữ liệu và chạy tự động định kỳ.\nĐã từng làm việc với tập dữ liệu từ hàng trăm nghìn dòng trở lên.\nBiết làm sạch và ghép dữ liệu nhiều nguồn: chuẩn hóa mã, xử lý trùng, thiếu, sai định dạng.\nLàm được dashboard trên Looker Studio, Power BI hoặc công cụ tương đương.\nThành thạo Excel hoặc Google Sheets.\nCẩn thận, tự kiểm tra kết quả trước khi báo cáo; chủ động hỏi lại khi thấy số liệu bất thường.\nGiải thích được kết quả kỹ thuật bằng ngôn ngữ dễ hiểu cho người không làm kỹ thuật.\n\nLợi thế\n\nKinh nghiệm với BigQuery hoặc cơ sở dữ liệu khác (PostgreSQL, MySQL).\nBiết dùng AI hỗ trợ viết code và phân tích.\nTừng làm việc với dữ liệu sàn TMĐT, kế toán, quảng cáo hoặc kho vận. Không bắt buộc, công ty hướng dẫn nghiệp vụ.\nKiến thức ngành\nIT - Phần mềm, Thương mại điện tử\nKỹ năng cần có\nPython, SQL, PowerBI, Looker Studio",
+    "Quyền lợi ứng viên": "Lương khởi điểm 15 triệu, xét tăng lên 17–18 triệu sau thử việc theo kết quả công việc.\nLàm việc thứ 2 – thứ 6, nghỉ thứ 7 và Chủ nhật.\nBHXH theo quy định, lương tháng 13, nghỉ phép năm...\nĐược xây dựng hệ thống dữ liệu từ đầu, chủ động chọn công cụ và cách triển khai; kết quả công việc tác động trực tiếp đến cách công ty vận hành.\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm xã hội, Thưởng hiệu quả làm việc, Thưởng tháng 13",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: 1132/21 Tỉnh Lộ 10, Phường Tân Tạo (Phường Tân Tạo thuộc quận Bình Tân cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 07/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nCao Đẳng trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  }
+ ]
+}

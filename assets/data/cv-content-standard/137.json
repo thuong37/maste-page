@@ -1,0 +1,36 @@
+{
+  "id": 137,
+  "nhom": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học",
+  "nghe": "Thiết bị y tế",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên (0-2 năm): 5 JD kinh doanh thiết bị y tế (Trung cấp/CĐ/ĐH), 1 JD product specialist (2 năm, ĐH, 25-45 tuổi)",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 2/6 nêu ngoại hình ('ngoại hình chỉn chu, sáng sân khấu', 'độ tuổi phù hợp ưa nhìn'); ảnh chỉn chu là lợi thế khi gặp bác sĩ/bệnh viện",
+    "muc-tieu-nghe-nghiep": "nen — 1/6 nhắc đam mê nghề sales; nên nêu hướng sales thiết bị y tế",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm hoặc không yêu cầu (0-2 năm), ưu tiên thiết bị y tế/vật tư y tế/dược phẩm/đấu thầu bệnh viện",
+    "hoc-van": "can — 6/6 nêu Trung cấp/CĐ/ĐH ngành Kinh tế, QTKD, Y-Dược, Y sinh, Kỹ thuật công nghệ Y sinh",
+    "ky-nang-chuyen-mon": "can — tìm kiếm khách hàng B2B/bệnh viện, báo giá, đàm phán, đấu thầu vật tư thiết bị y tế, hội thảo/giới thiệu sản phẩm, cấu hình sản phẩm, đào tạo sales (product specialist)",
+    "ky-nang-mem": "can — 6/6: giao tiếp, đàm phán, thuyết phục, chịu áp lực, chủ động, làm việc nhóm",
+    "cong-cu-phan-mem": "nen — 2/6: CRM (JD#4); ít JD nhắc phần mềm",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — JD#1 khách hàng nhà máy/dự án đặt hàng riêng, JD#6 dự thầu; nên ghi hợp đồng/gói thầu đã làm",
+    "thanh-tich-kpi": "can — 3/6 nhắc chỉ tiêu doanh số/hoa hồng/kết quả; CV nên có số liệu doanh số và gói thầu",
+    "ngoai-ngu": "nen — 3/6 nhắc tiếng Anh (tốt) hoặc tiếng Trung là lợi thế",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/6 sẵn sàng đào tạo sinh viên mới tốt nghiệp",
+    "giay-phep": "can — JD#3, JD#4 yêu cầu có phương tiện di chuyển; 3/6 đi thị trường/công tác",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 nêu tuổi (24-35, 25-45), ưa nhìn, có phương tiện; không đồng nhất",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Sales thiết bị y tế", "đấu thầu bệnh viện", "vật tư y tế", "Product Specialist", "trình dược viên", "bác sĩ/phòng vật tư", "hội thảo sản phẩm", "CRM"],
+  "bangChung": [
+    "JD#1: 'Ưu tiên ứng viên có từ 02 năm kinh nghiệm ... Vật tư y tế / Dược phẩm / Thiết bị y tế'; 'Ngoại hình chỉn chu, sáng sân khấu là một lợi thế'",
+    "JD#3: 'Có kinh nghiệm thiết bị phân loại A,B,C,D (nhất là về Xương Nhân Tạo)'; 'Có phương tiện di chuyển'",
+    "JD#4: 'Có khả năng sử dụng CRM'; 'Không yêu cầu kinh nghiệm'",
+    "JD#5: 'Tốt nghiệp đại học ... Y sinh, Y, Dược'; 'Kỹ năng tiếng anh tốt'",
+    "JD#6: 'nắm được quy trình đấu thầu và làm các thủ tục với chủ đầu tư trong lĩnh vực y tế của Nhà nước'"
+  ],
+  "ghiChu": "Yêu cầu ngoại hình ghi nhận như dữ liệu JD. JD#3 và JD#4 trùng với JD của nghề #138."
+}

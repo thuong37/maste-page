@@ -1,0 +1,36 @@
+{
+  "id": 14,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales dịch vụ Quảng cáo/Triển lãm/Sự kiện",
+  "soJD": 5,
+  "doTinCay": "cao",
+  "capBac": "5 JD cấp nhân viên bán dịch vụ quảng cáo/triển lãm/sự kiện (1 JD thực tập sinh kinh doanh sự kiện không cần kinh nghiệm, 4 JD yêu cầu 1-5 năm); Trung cấp/Cao đẳng/Đại học",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh, nhưng 2/5 nêu ngoại hình (OOH 'ngoại hình sáng', triển lãm 'ngoại hình ưa nhìn') và nghề gặp khách nên ảnh chuyên nghiệp là lợi thế",
+    "muc-tieu-nghe-nghiep": "nen — 1/5 nhắc hướng đến mục tiêu; 1/5 'yêu thích lĩnh vực sự kiện, triển lãm'; nên nêu định hướng sales truyền thông/sự kiện",
+    "kinh-nghiem-lam-viec": "can — 5/5 hỏi kinh nghiệm hoặc ưu tiên kinh nghiệm (sales B2B, truyền thông, quảng cáo, sự kiện, triển lãm)",
+    "hoc-van": "nen — 5/5 nêu bậc học (Trung cấp đến Đại học), chuyên ngành Kinh tế/Quản trị kinh doanh/Marketing/Truyền thông chỉ là ưu tiên",
+    "ky-nang-chuyen-mon": "can — 5/5: tìm kiếm và chăm sóc khách hàng doanh nghiệp/agency, tư vấn giải pháp, báo giá, đàm phán, ký hợp đồng, hiểu thị trường quảng cáo/sự kiện",
+    "ky-nang-mem": "can — 5/5: giao tiếp, đàm phán, thuyết phục/thuyết trình, chịu áp lực, quản lý thời gian, chủ động",
+    "cong-cu-phan-mem": "nen — 2/5: tin học văn phòng, Excel/Google Sheet; 1 JD nhắc TikTok Ads/Meta Ads (JD#2)",
+    "chung-chi": "khong — không JD nào nhắc chứng chỉ",
+    "du-an": "nen — 1/5 nhắc triển khai chiến dịch/dự án quảng cáo; ghi chiến dịch/sự kiện đã bán hoặc tham gia nếu có",
+    "thanh-tich-kpi": "nen — 1/5 nhắc chỉ số quảng cáo CPI/CPA/ROAS và theo dõi hiệu quả; 1/5 báo cáo kinh doanh hàng tuần; nên ghi số liệu doanh thu/khách hàng",
+    "ngoai-ngu": "nen — 3/5: tiếng Anh hoặc tiếng Trung dùng được trong công việc, tiếng Anh giao tiếp là lợi thế",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 1/5 JD thực tập nhận sinh viên mới ra trường yêu thích tổ chức sự kiện; hoạt động sự kiện là lợi thế (suy từ JD)",
+    "giay-phep": "nen — 2/5 nêu có thể đi công tác khi công ty có nhu cầu; không JD nêu bằng lái/phương tiện",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/5 JD nêu thẳng độ tuổi (20-25, 23-40, 20-30, 20-28) và/hoặc giới tính nữ (2/5)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Sales B2B", "quảng cáo OOH", "quảng cáo digital", "agency", "triển lãm", "sự kiện", "tìm kiếm khách hàng", "báo giá", "đàm phán", "ký hợp đồng", "báo cáo kinh doanh", "đi công tác"],
+  "bangChung": [
+    "JD#1 (Adfly): 'Phụ trách toàn bộ quá trình ... tìm kiếm khách hàng → tư vấn → đàm phán → ký kết'; 'Sử dụng được tiếng Anh HOẶC tiếng Trung'",
+    "JD#3 (Alba OOH): 'Ngoại hình sáng, giao tiếp tự tin'; Tuổi 23-40; 'quảng cáo ngoài trời (OOH)'",
+    "JD#4 (Vietbuild): 'ngoại hình ưa nhìn'; 'Có thể đi công tác'; 'Thực hiện báo cáo kinh doanh hàng tuần'",
+    "JD#5 (Vhomes): 'Thực tập Kinh doanh Sự Kiện'; 'Không yêu cầu kinh nghiệm'; Tuổi 20-30",
+    "JD#6: 'Có ít nhất 1 năm ở vị trí NVKD ... sales trong ngành thiết kế, quảng cáo, sự kiện'; Nữ, Tuổi 20-28"
+  ],
+  "ghiChu": "Trùng nghề với #23 (cùng tên, dùng chung JD). Crawl lại: loại JD#2 (nhân viên chạy TikTok Ads, là vận hành quảng cáo chứ không bán dịch vụ), còn 5/5 JD sát nghề. JD#5 là thực tập sinh sự kiện, hơi nhẹ cấp bậc nhưng vẫn là sales sự kiện."
+}

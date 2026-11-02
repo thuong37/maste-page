@@ -1,0 +1,36 @@
+{
+  "id": 107,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Dịch vụ an ninh và bảo trì",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "5/6 JD cấp nhân viên bảo vệ (dưới 1 đến 1 năm, THCS/THPT, nam, 18-60 tuổi), 1 JD lạc nghề (sales engineer máy bơm PCCC); chưa có JD bảo trì tòa nhà",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 2/5 nêu ngoại hình ('ngoại hình tươm tất', không hình xăm); ảnh chỉn chu là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD bảo vệ hỏi dưới 1 đến 1 năm, ưu tiên bộ đội/công an/bệnh viện/trường học/dịch vụ (ngân hàng, nha khoa)",
+    "hoc-van": "nen — 5/5 chỉ cần THCS/THPT/Sơ cấp (bằng hiện hữu); không đòi chuyên ngành",
+    "ky-nang-chuyen-mon": "can — kiểm soát người/phương tiện ra vào, tuần tra, lập biên bản/báo cáo, PCCC, ứng phó khẩn cấp, giám sát camera",
+    "ky-nang-mem": "can — 5/5: giao tiếp, quan sát, xử lý tình huống, trung thực, trách nhiệm",
+    "cong-cu-phan-mem": "khong — không JD bảo vệ nào nhắc phần mềm (chỉ camera/thiết bị an ninh)",
+    "chung-chi": "nen — JD#5 có kiến thức PCCC, an toàn lao động; không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "nen — JD#4, JD#5 ưu tiên người phục vụ quân đội/công an; JD#2 không tiền án tiền sự (lý lịch); không JD nào đòi bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/5 JD bảo vệ nêu nam, độ tuổi (30-50, 20-45, 18-48, 40-60), sức khỏe, không xăm, không tiền án tiền sự, làm ca xoay",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Bảo vệ", "kiểm soát ra vào", "tuần tra", "PCCC", "ca xoay", "bộ đội xuất ngũ", "giám sát camera", "an ninh trật tự"],
+  "bangChung": [
+    "JD#2: 'Nam, tuổi từ 30 – 50'; 'Không xăm trổ ... không tiền án, tiền sự'",
+    "JD#3: 'Có kinh nghiệm làm bảo vệ 1 năm trở lên'; 'Độ tuổi: Từ 20 – 45 tuổi'",
+    "JD#4: 'Ngoại hình tươm tất, tác phong chuyên nghiệp'; 'Ưu tiên ứng viên có kinh nghiệm bảo vệ tại trường học hoặc bộ đội xuất ngũ'",
+    "JD#5: 'Có kiến thức về phòng cháy chữa cháy (PCCC), an toàn lao động và xử lý tình huống khẩn cấp'",
+    "JD#6: 'Nam'; 'Độ tuổi: Dưới 60 tuổi'"
+  ],
+  "ghiChu": "JD#1 (sales máy bơm) lạc nghề, bỏ qua; nhánh bảo trì chưa có JD. Yêu cầu ngoại hình/lý lịch ghi nhận như dữ liệu JD."
+}

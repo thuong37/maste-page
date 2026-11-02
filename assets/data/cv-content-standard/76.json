@@ -1,0 +1,36 @@
+{
+  "id": 76,
+  "nhom": "Xây dựng",
+  "nghe": "Xây dựng khác",
+  "soJD": 6,
+  "doTinCay": "thap",
+  "capBac": "4/6 JD cấp nhân viên (1-3 năm), 1 JD phó tổng giám đốc (10 năm), 1 JD sale không kinh nghiệm; Cao đẳng/Đại học; JD rất phân tán (sale xây dựng x2, kiểm toán xây dựng, kinh tế xây dựng, điều hành, kiểm soát xây dựng)",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; 1/6 nêu giới tính Nam; JD sale gặp khách nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 JD nhắc gắn bó lâu dài, định hướng phát triển; nên nêu định hướng rõ theo vị trí",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nêu kinh nghiệm (từ không yêu cầu đến 10 năm); nên ghi loại công trình, quy mô dự án",
+    "hoc-van": "can — 6/6 nêu bậc học và chuyên ngành Xây dựng, Kinh tế xây dựng, Kiến trúc, Cầu đường; vài JD ưu tiên ĐH Xây dựng, GTVT, Kiến trúc",
+    "ky-nang-chuyen-mon": "can — 6/6: bóc tách khối lượng, lập dự toán, kiểm soát thiết kế/tiến độ, nghiệm thu, quản lý dự án, QS/QA/QC/HSE, sales dự án",
+    "ky-nang-mem": "can — 5/6: giao tiếp, đàm phán, làm việc độc lập, chịu áp lực, trung thực, tinh thần trách nhiệm",
+    "cong-cu-phan-mem": "nen — 3/6: Word, Excel, AutoCAD, phần mềm dự toán/chuyên ngành",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "can — 6/6 JD xoay quanh dự án (thi công, quyết toán, đấu thầu); nên nêu dự án đã tham gia, quy mô, vai trò",
+    "thanh-tich-kpi": "nen — 2/6 nhắc áp lực doanh số/ngân sách lớn/sản lượng; nên có số liệu giá trị dự án",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 1/6 nhận không yêu cầu kinh nghiệm; chỉ cho vị trí cấp thấp",
+    "giay-phep": "nen — 1/6 sẵn sàng đi công tác tỉnh, 1/6 đi công trình; không JD nhắc bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "nen — 1/6 nêu giới tính; nên có nơi ở, sẵn sàng đi công tác (suy từ tính chất công việc)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["dự toán", "bóc tách khối lượng", "quyết toán", "kinh tế xây dựng", "AutoCAD", "nghiệm thu", "quản lý dự án", "đấu thầu", "Sales dự án", "QS/QA/QC/HSE"],
+  "bangChung": [
+    "JD#1: 'Có 1 năm kinh nghiệm Sales B2B/Sales dự án'; 'chịu được áp lực doanh số'",
+    "JD#3: 'Thành thạo word, excel, biết đọc bản vẽ, bóc khối lượng'; 'Sẵn sàng đi công tác tỉnh'",
+    "JD#4: 'Lập dự toán cho các công trình'; 'Kinh nghiệm làm việc liên quan từ 3 năm trở lên'",
+    "JD#5: 'Có tối thiểu 10 năm kinh nghiệm... trên 5 năm ở vị trí quản lý cấp cao'",
+    "JD#6: 'Có ít nhất 2 năm kinh nghiệm ở vị trí tương đương'"
+  ],
+  "ghiChu": "Nhóm 'xây dựng khác' rất tạp, các mục chỉ mang tính tổng quát; độ tin cậy thấp."
+}

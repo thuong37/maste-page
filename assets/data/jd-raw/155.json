@@ -1,0 +1,189 @@
+{
+ "id": 155,
+ "nhom": "Năng lượng/Môi trường/Nông nghiệp",
+ "nghe": "Nông/Lâm/Ngư nghiệp",
+ "crawledAt": "2026-10-22T03:54:28.992Z",
+ "candidates": 73,
+ "thin": false,
+ "jds": [
+  {
+   "url": "https://www.topcv.vn/viec-lam/ky-su-nong-nghiep-nuoi-trong-thuy-san-thu-nhap-tu-15-20tr-thang/2249830.html",
+   "title": "Kỹ Sư Nông Nghiệp - Nuôi Trồng Thủy Sản - Thu Nhập Từ 15-20tr/Tháng",
+   "company": "FTILES\n                                CÔNG TY CỔ PHẦN GẠCH FTILES",
+   "query": "Kỹ thuật viên nông nghiệp/trồng trọt",
+   "score": 0.75,
+   "chips": {
+    "Yêu cầu": [
+     "1 năm kinh nghiệm chuyên môn",
+     "Cao Đẳng trở lên"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm xã hội",
+     "Bảo hiểm sức khỏe",
+     "Thưởng tháng 13"
+    ],
+    "Chuyên môn": [
+     "Kỹ thuật viên nông nghiệp/trồng trọt",
+     "Nông lâm ngư nghiệp"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Thiết kế, phát triển và cải tiến quy trình sản xuất nông nghiệp\nThực hiện kiểm tra, giám sát và đánh giá chất lượng sản phẩm nông nghiệp\nNghiên cứu và áp dụng công nghệ mới để cải thiện hiệu suất sản xuất và chất lượng sản phẩm\nPhối hợp với các bộ phận khác để đảm bảo sản xuất hiệu quả và an toàn\nThực hiện các công việc khác liên quan đến nông nghiệp theo yêu cầu của công ty",
+    "Yêu cầu ứng viên": "Tốt nghiệp từ Cao đẳng trở lên, chuyên ngành Nông nghiệp, Khoa học Cây trồng hoặc liên quan\nCó kinh nghiệm làm việc trong ngành nông nghiệp (ưu tiên)\nCó kiến thức về quy trình sản xuất, kiểm tra chất lượng và an toàn thực phẩm\nCó kỹ năng giao tiếp, làm việc nhóm và giải quyết vấn đề\nCó khả năng làm việc độc lập và chịu áp lực công việc\nKiến thức ngành\nNông lâm ngư nghiệp\nKỹ năng cần có\nLàm việc độc lập, Làm việc nhóm, Giao tiếp, Giải quyết vấn đề, chịu áp lực công việc\nKỹ năng nên có\nKinh Nghiệm Làm Việc Trong Ngành Nông Nghiệp",
+    "Quyền lợi ứng viên": "Thu nhập từ 15 – 20 triệu đồng/tháng, thỏa thuận theo năng lực và kinh nghiệm.\n\nThưởng theo hiệu quả công việc và kết quả kinh doanh.\n\nTham gia đầy đủ BHXH, BHYT, BHTN theo quy định của pháp luật. Môi trường làm việc chuyên nghiệp, năng động, có cơ hội phát triển lâu dài.\n\nTham gia trực tiếp vào hoạt động logistics và chuỗi cung ứng của doanh nghiệp\n\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm xã hội, Bảo hiểm sức khỏe, Thưởng tháng 13",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nAn Giang: (Tất cả các phường) - Phạm vi làm việc trên toàn khu vực trên.\nCần Thơ: (Tất cả các phường) - Phạm vi làm việc trên toàn khu vực trên.\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:00)\nThứ 7 (từ 08:00 đến 12:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 30/10/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nCao Đẳng trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/ky-su-nong-nghiep-an-giang-kien-giang-bac-lieu-hau-giang/1706418.html",
+   "title": "Kỹ Sư Nông Nghiệp (An Giang, Kiên Giang, Bạc Liêu, Hậu Giang)",
+   "company": "{{ company?.name }}",
+   "query": "Kỹ thuật viên nông nghiệp/trồng trọt",
+   "score": 0.75,
+   "chips": {
+    "Yêu cầu": [
+     "Dưới 1 năm kinh nghiệm chuyên môn",
+     "Cao Đẳng trở lên",
+     "Nam"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm xã hội",
+     "Bảo hiểm sức khỏe",
+     "Bảo hiểm full lương"
+    ],
+    "Chuyên môn": [
+     "Kỹ thuật viên nông nghiệp/trồng trọt",
+     "Nông lâm ngư nghiệp"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Tổ chức các cuộc hội thảo, tập huấn để hướng dẫn các biện pháp canh tác lúa theo hướng an toàn, bền vững.\nChịu sự phân công của các trưởng vùng để chăm sóc, tư vấn quy trình sản xuất lúa đạt chuẩn dư lượng thuốc bảo vệ thực vật (MRL).\nĐồng hành và thăm đồng cùng nông dân để quản lý tốt các loại dịch hại trên cây lúa, kịp thời phát hiện và tư vấn các giải pháp kiểm soát hiệu quả, an toàn.\nTriển khai, kiểm tra và ghi nhận dữ liệu của các mô hình AWD (ngập khô xen kẽ) thông qua ứng dụng Rize App.\nSử dụng ZOHO Book để lấy nhu cầu mua – kiểm soát đơn hàng từ nông dân và nhiều nền tảng khác nhằm hỗ trợ và tăng hiệu suất làm việc.",
+    "Yêu cầu ứng viên": "Có kiến thức trong lĩnh vực công nghệ nông nghiệp.\nHiểu biết chuyên môn về các phương pháp canh tác nông nghiệp và chu kỳ trồng trọt.\nKhả năng xây dựng niềm tin và mối quan hệ bền chặt với các bên liên quan (nông dân, lãnh đạo nhóm nông dân và người thu mua lúa) trong cộng đồng địa phương.\nKhả năng hiểu danh mục sản phẩm và giá trị cốt lõi của Rize (các phương pháp tưới tiêu luân phiên AWD) và tư vấn giải pháp cho nông dân, tác động đến quyết định mua hàng và phương thức canh tác của họ.\nTư duy hướng đến kết quả cao, có động lực đạt được các mục tiêu tham vọng.\nKhả năng quản lý nhiều bên liên quan và phối hợp giữa các nhóm chức năng khác nhau.\nKiến thức ngành\nNông lâm ngư nghiệp\nKỹ năng cần có\nPhân tích dữ liệu, Quản Lý Dự Án, Giải quyết vấn đề, Kiến Thức Về Nông Nghiệp, Thiết Kế Và Lập Kế Hoạch",
+    "Quyền lợi ứng viên": "Cơ hội phát triển: Được đào tạo chuyên sâu, tiếp cận công nghệ nông nghiệp mới.\nLộ trình thăng tiến: Có cơ hội tăng lương và lên vị trí cao hơn.\nPhụ cấp: Hỗ trợ chi phí ăn ở, xăng xe.\nThưởng hiệu suất: Dựa trên kết quả làm việc.\nChế độ đầy đủ: Bảo hiểm, phúc lợi theo quy định.\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm xã hội, Bảo hiểm sức khỏe, Bảo hiểm full lương, Thưởng hiệu quả làm việc, Khám sức khỏe định kỳ\nPhụ cấp\nĂn trưa, Xăng xe, Cước điện thoại",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nAn Giang: (Tất cả các phường) - Phạm vi làm việc trên toàn khu vực trên.\nCà Mau: (Tất cả các phường) - Phạm vi làm việc trên toàn khu vực trên.\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:30 đến 17:30)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 04/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nCao Đẳng trở lên\nSố lượng tuyển\n5 người\nHình thức làm việc\nKết hợp tại văn phòng và từ xa (Hybrid)\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/ky-su-nong-lam/2074131.html",
+   "title": "Kỹ Sư Nông Lâm",
+   "company": "CÔNG TY CỔ PHẦN HOÀN CẦU NINH HÒA",
+   "query": "Kỹ thuật viên nông nghiệp/trồng trọt",
+   "score": 0.75,
+   "chips": {
+    "Yêu cầu": [
+     "1 năm kinh nghiệm chuyên môn",
+     "Cao Đẳng trở lên",
+     "Nam"
+    ],
+    "Chuyên môn": [
+     "Kỹ thuật viên nông nghiệp/trồng trọt",
+     "Nông lâm ngư nghiệp"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "- Quản lý vườn ươm, lập kế hoạch ươm giống, theo dõi quá trình sinh trưởng và đảm bảo cây giống đạt tiêu chuẩn chất lượng.\n\n- Nhân giống cây, thực hiện các phương pháp nhân giống như gieo hạt, giâm cành, chiết cành, ghép cây và các kỹ thuật nhân giống khác.\n\n- Chăm sóc cây, tưới nước, bón phân, cắt tỉa, thay chậu, cải tạo đất và duy trì điều kiện sinh trưởng phù hợp cho cây.\n\n- Kiểm soát sâu bệnh, theo dõi, phát hiện và xử lý sâu bệnh hại cây; áp dụng biện pháp phòng trừ an toàn và hiệu quả.\n\n- Giám sát công nhân, hướng dẫn và kiểm tra công nhân thực hiện các quy trình chăm sóc và sản xuất cây giống đúng kỹ thuật.\n\n- Kiểm tra cây tại công trình, theo dõi tình trạng sinh trưởng của cây sau khi trồng tại các dự án hoặc khu vực cảnh quan.\n\n- Báo cáo và cải tiến, lập báo cáo định kỳ về tình hình cây giống, tỷ lệ hao hụt và đề xuất cải tiến quy trình kỹ thuật.\n\n- Quản lý vật tư, theo dõi và đề xuất mua sắm vật tư như đất trồng, phân bón, thuốc bảo vệ thực vật, khay ươm…",
+    "Yêu cầu ứng viên": "Tốt nghiệp từ Cao đẳng chuyên ngành Lâm nghiệp, Nông học, Khoa học cây trồng, Công nghệ sinh học hoặc liên quan\nƯu tiên có kinh nghiệm làm việc tại vườn ươm, công ty cây xanh hoặc đơn vị cảnh quan.\nHiểu biết về kỹ thuật nhân giống, chăm sóc cây xanh, đất trồng, phân bón và phòng trừ sâu bệnh.\nLập kế hoạch công việc, quản lý vườn ươm, giám sát công nhân, báo cáo kỹ thuật.\nChăm chỉ, cẩn thận, yêu thích cây trồng, có trách nhiệm trong công việc.\nKiến thức ngành\nNông lâm ngư nghiệp",
+    "Quyền lợi ứng viên": "-Khám sức khỏe định kỳ.\n-Ngoài BHXH, BHYT, BHTNLĐ... còn có thêm BH24h.\n-Hoạt động team building hàng năm.\n-Đánh giá thưởng hiệu quả công việc theo KPI hàng tháng.\n-Phụ cấp tiền ăn trưa : 730.000 đồng/ tháng\n-Thưởng các ngày Lễ, Tết, ngày sinh nhật,.....\n-Lương tháng 13\n-Các chế độ bảo hiểm, nghỉ phép và chế độ khác theo đúng quy định của Luật lao động.\n-Môi trường làm việc năng động, trẻ trung, nhiệt huyết.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nKhánh Hòa: Phường Đông Ninh Hòa (Phường Đông Ninh Hòa thuộc Thị xã Ninh Hòa cũ) - Phạm vi làm việc trên toàn khu vực trên.\nThời gian làm việc\nThứ 2 - Thứ 7 (từ 08:00 đến 17:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 30/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nCao Đẳng trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/ky-su-nong-nghiep/2335772.html",
+   "title": "Kỹ Sư Nông Nghiệp",
+   "company": "CÔNG TY TNHH NÔNG SẢN XANH AN PHÁT",
+   "query": "Kỹ thuật viên nông nghiệp/trồng trọt",
+   "score": 0.75,
+   "chips": {
+    "Yêu cầu": [
+     "Không yêu cầu kinh nghiệm chuyên môn",
+     "Tuổi 22 - 28",
+     "Đại Học trở lên"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm xã hội",
+     "Thưởng tháng 13",
+     "Thưởng hiệu quả làm việc"
+    ],
+    "Chuyên môn": [
+     "Kỹ thuật viên nông nghiệp/trồng trọt",
+     "Nông lâm ngư nghiệp"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "1. Theo dõi và chăm sóc cây trồng\n\n2. Thực hiện kế hoạch sản xuất\n\n3. Quản lý vật tư và chi phí sản xuất\n\n4. Quản lý chất lượng và hồ sơ sản xuất\n\n5. Báo cáo và cải tiến kỹ thuật\n\n- Địa điểm làm việc\n\nEcoFarm – Bình Phước.\n\n-Thời gian tuyển dụng\n\nPhỏng vấn và có thể nhận việc ngay sau khi đạt yêu cầu.",
+    "Yêu cầu ứng viên": "1. Yêu cầu\n\nNam/Nữ, độ tuổi từ 22–28.\nTốt nghiệp chuyên ngành Nông nghiệp hoặc các ngành liên quan.\nKhông yêu cầu kinh nghiệm, được đào tạo và hướng dẫn bài bản.\nHam học hỏi, có tinh thần trách nhiệm và mong muốn gắn bó lâu dài.\nKiến thức ngành\nNông lâm ngư nghiệp\nKỹ năng cần có\nHam học hỏi, Tinh Thần Trách Nhiệm",
+    "Quyền lợi ứng viên": "2. Quyền lợi\n\nLương cơ bản 8.000.000 - 12.000.000 đồng/tháng + Tháng 13 + Thưởng hiệu quả cuối năm.\nTham gia BHXH và hưởng các chế độ phúc lợi hấp dẫn theo chính sách Công ty.\nĐược đào tạo thực tế, nâng cao kiến thức và kỹ năng chuyên môn về trồng trọt, chăm sóc cây trồng và quản lý sản xuất nông nghiệp.\nLàm việc trong môi trường chuyên nghiệp, được hướng dẫn và đồng hành cùng đội ngũ có kinh nghiệm.\nCó sẵn nơi ăn ở tiện nghi tại Farm, phù hợp với các bạn ở xa có nhu cầu sinh sống và làm việc tại Farm.\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm xã hội, Thưởng tháng 13, Thưởng hiệu quả làm việc",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nĐồng Nai: Số 113, Tổ 3A, Ấp 17, Phường An Lộc (Phường An Lộc thuộc Thị xã Bình Long cũ)\nThời gian làm việc\nThứ 2 - Thứ 7 (từ 08:00 đến 17:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 19/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n2 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite, Kết hợp tại văn phòng và từ xa (Hybrid)\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/ky-su-nong-nghiep-ky-thuat-nong-nghiep-gia-lai-hcm-dak-lak/2312952.html",
+   "title": "Kỹ Sư Nông Nghiệp - Kỹ Thuật Nông Nghiệp (Gia Lai/HCM/Đắk Lắk)",
+   "company": "maxanking\n                                CÔNG TY TNHH DẦU NHỜN MAXAN NANO VIỆT NAM",
+   "query": "Kỹ thuật viên nông nghiệp/trồng trọt",
+   "score": 0.75,
+   "chips": {
+    "Yêu cầu": [
+     "3 năm kinh nghiệm chuyên môn",
+     "Cao Đẳng trở lên",
+     "Nam",
+     "Tiếng Anh Đọc hiểu"
+    ],
+    "Chuyên môn": [
+     "Kỹ thuật viên nông nghiệp/trồng trọt",
+     "Nông lâm ngư nghiệp"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Khảo sát vườn trồng, đánh giá tình trạng đất, bộ rễ, dinh dưỡng, sâu bệnh hại và đề xuất giải pháp chăm sóc cây phù hợp.\nĐi vườn cùng nhân viên tư vấn; hướng dẫn chẩn đoán, tư vấn sản phẩm và theo dõi quá trình xử lý các vấn đề kỹ thuật tại farm, vườn khách hàng và đại lý.\nXây dựng tài liệu kỹ thuật, hướng dẫn sử dụng sản phẩm và quy trình chăm sóc cây trồng; đào tạo chuyên môn cho nhân viên mới và đội ngũ kinh doanh.\nTham gia đánh giá, phát triển sản phẩm mới; trao đổi thông tin kỹ thuật với nhà cung cấp trong và ngoài nước.\nTham gia hội thảo nông dân, chăm sóc khách hàng và phối hợp phát triển hợp đồng với farm.\nCung cấp, kiểm tra nội dung chuyên môn cho nhãn sản phẩm, website, video và tài liệu truyền thông.",
+    "Yêu cầu ứng viên": "Tốt nghiệp Cao đẳng/Đại học ngành Nông học, Bảo vệ thực vật, Khoa học cây trồng hoặc ngành liên quan.\nCó kiến thức về dinh dưỡng cây trồng, đất, bộ rễ và quản lý sâu bệnh hại. Ưu tiên kinh nghiệm trên sầu riêng, cà phê, hồ tiêu, chanh dây hoặc rau màu.\nCó khả năng phân tích tình trạng cây tại vườn, tư vấn giải pháp rõ ràng và viết báo cáo kỹ thuật.\nTiếng anh cơ bản, có kỹ năng trao đổi công việc với nhà cung cấp nước ngoài qua email.\nSẵn sàng đi thực địa, công tác theo kế hoạch; chủ động và phối hợp tốt với các bộ phận.\nKiến thức ngành\nNông lâm ngư nghiệp",
+    "Quyền lợi ứng viên": "Lương cứng: 16–20 triệu đồng/tháng; hoa hồng từ hợp đồng ký kết với farm được tính riêng theo chính sách Công ty.\nHỗ trợ xăng xe, công tác phí; tham gia BHXH, BHYT, BHTN và hưởng thưởng Lễ, Tết theo chính sách Công ty.\nĐược đào tạo về giải pháp hữu cơ, vi sinh; tiếp cận công việc thực tế tại vườn và có cơ hội làm việc với đối tác nước ngoài.\nCơ hội phát triển theo hướng chuyên gia sản phẩm hoặc quản lý kỹ thuật vùng.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: 18c3 DN2, Phường Đông Hưng Thuận (Phường Đông Hưng Thuận thuộc Quận 12 cũ)\nGia Lai: Thống Nhất, Phường Pleiku (Phường Pleiku thuộc Thành phố Pleiku cũ)\nGia Lai: chợ Mook Đen, Xã Đức Cơ (Xã Đức Cơ thuộc huyện Đức Cơ cũ)\n...và 3 địa điểm khác\nThời gian làm việc\nThứ 2 - Thứ 7 (từ 07:30 đến 17:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 31/12/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nCao Đẳng trở lên\nSố lượng tuyển\n3 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite, Kết hợp tại văn phòng và từ xa (Hybrid)\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/ky-su-nong-nghiep/2324624.html",
+   "title": "Kỹ Sư Nông Nghiệp",
+   "company": "CÔNG TY CỔ PHẦN ĐẦU TƯ NÔNG NGHIỆP XANH GERMANY",
+   "query": "Kỹ thuật viên nông nghiệp/trồng trọt",
+   "score": 0.75,
+   "chips": {
+    "Yêu cầu": [
+     "1 năm kinh nghiệm chuyên môn",
+     "Tuổi 25 - 60",
+     "Đại Học trở lên",
+     "Nam"
+    ],
+    "Chuyên môn": [
+     "Kỹ thuật viên nông nghiệp/trồng trọt",
+     "Nông lâm ngư nghiệp",
+     "Thương mại điện tử"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "· Tư vấn kỹ thuật cho bà con về cách trồng và chăm sóc cây để đạt hiệu quả cao, ứng dụng sử dụng phân bón lá, phân bón gốc trong từng giai đoạn của cây trồng\n\n· Xây dựng quy trình trồng và chăm sóc cho từng loại cây trồng khác nhau\n\n· Tham gia livestream, video TikTok, hoặc hội thảo trực tiếp để chia sẻ kiến thức về nông nghiệp, về phân bón lá, về thuốc bvtv\n\n· Giải đáp thắc mắc của khách hàng, hỗ trợ kỹ thuật trước và sau khi mua sản phẩm phân bón lá.\n\n· Kết hợp với team Marketing để phát triển nội dung tư vấn nông nghiệp trên mạng xã hội.",
+    "Yêu cầu ứng viên": "· Tốt nghiệp chuyên ngành Nông học, Khoa học cây trồng, Bảo vệ thực vật hoặc ngành liên quan.\n\n· Hiểu sâu về dinh dưỡng cây trồng, phân bón và quy trình canh tác nông nghiệp.\n\n· Có kinh nghiệm thực tế làm việc với nông dân là một lợi thế.\n\n· Giao tiếp tốt, có khả năng tư vấn và giải thích kiến thức dễ hiểu cho bà con nông dân.\n\n· Yêu thích công việc hướng dẫn, chia sẻ kiến thức nông nghiệp.\n\n· Làm việc chủ yếu ở văn phòng tại HCM\n\nKiến thức ngành\nNông lâm ngư nghiệp, Thương mại điện tử",
+    "Quyền lợi ứng viên": "Mức lương cạnh tranh, thỏa thuận theo năng lực.\nĐược đào tạo kiến thức và kinh nghiệm thực tế chuyên sâu cho nhiều loại cây trồng\nPhụ cấp cơm trưa\nThưởng theo dự án và hiệu quả công việc.\nMôi trường làm việc sáng tạo, năng động, cơ hội phát triển nghề nghiệp.\nHưởng đầy đủ các chế độ phúc lợi theo quy định của công ty và pháp luật Việt Nam.\nDu lịch hằng năm",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: 26, Đường 17A, Phường Bình Hưng Hòa (Phường Bình Hưng Hòa thuộc quận Bình Tân cũ)\nThời gian làm việc\nThứ 2 - Thứ 7 (từ 08:00 đến 17:00)\nThời gian linh động\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 06/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n2 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  }
+ ]
+}

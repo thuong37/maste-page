@@ -1,0 +1,36 @@
+{
+  "id": 126,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Vận tải",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên (0-3 năm): 4 JD sales vận tải/logistics B2B (trong đó 1 JD dầu nhớt cho doanh nghiệp vận tải), 1 JD tài xế xe bồn xăng dầu FC, 1 JD business analyst part-time cho công ty vận tải (lạc nghề)",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 3/6 nêu tuổi/giới tính (nam, 30-45, dưới 40); ảnh chỉ là phụ (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 nhắc định hướng/mục tiêu; nên nêu hướng sales vận tải hoặc lái xe",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm (không yêu cầu đến 3 năm), ưu tiên vận tải, logistics, forwarding, trucking, lái xe bồn",
+    "hoc-van": "can — 5/6 nêu bậc học Trung cấp/THPT đến ĐH, ngành Kinh doanh, Logistics, Vận tải, XNK",
+    "ky-nang-chuyen-mon": "can — tìm kiếm/khai thác khách hàng vận tải, báo giá trucking, đàm phán hợp đồng, theo dõi lô hàng; lái xe bồn, an toàn vận chuyển xăng dầu, PCCC",
+    "ky-nang-mem": "can — 6/6: giao tiếp, đàm phán, thuyết phục, trách nhiệm, chịu áp lực doanh số, chủ động",
+    "cong-cu-phan-mem": "nen — 2/6: tin học văn phòng, phần mềm quản lý ELSA/TMS/CRM là lợi thế; JD#6 Business Analyst (lạc nghề)",
+    "chung-chi": "nen — JD#2 giấy phép lái xe hạng FC (xếp ở giấy phép); không JD nào đòi chứng chỉ nghiệp vụ",
+    "du-an": "nen — chỉ JD#6 (lạc nghề) nhắc dự án; nên ghi hợp đồng/khách hàng đã phục vụ",
+    "thanh-tich-kpi": "can — 3/6 nhắc doanh số/KPI/dự báo bán hàng; CV nên có số liệu",
+    "ngoai-ngu": "nen — JD#1 yêu cầu Anh giao tiếp thành thạo; 1/6 nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#3 không yêu cầu kinh nghiệm; ít JD nhắc",
+    "giay-phep": "can — JD#2 bắt buộc bằng lái hạng FC còn hiệu lực; JD#3 có phương tiện di chuyển",
+    "thong-tin-ca-nhan-mo-rong": "can — 3/6 nêu nam, tuổi dưới 40/30-45, có phương tiện di chuyển; JD#2 sức khỏe tốt",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Sales vận tải", "trucking", "vận tải đường biển/sông", "hàng lạnh/3PL", "báo giá và đàm phán", "lái xe bồn xăng dầu", "bằng lái FC", "ELSA/TMS"],
+  "bangChung": [
+    "JD#1: 'Có nhiều năm kinh nghiệm và thành công Sales B2B'; 'Tiếng Anh Giao tiếp thành thạo'; 'Tuổi 30 - 45'",
+    "JD#2: 'Có giấy phép lái xe hạng FC còn hiệu lực'; 'Nam, tuổi dưới 40'",
+    "JD#3: 'Ưu tiên ứng viên nam, có khả năng di chuyển'; 'Có phương tiện di chuyển'",
+    "JD#4: 'Có từ 1–2 năm kinh nghiệm ở vị trí kinh doanh, ưu tiên ... vận tải, Logistics, Forwarding'",
+    "JD#5: 'chịu được áp lực doanh số'; 'phần mềm quản lý (ELSA, TMS, CRM…) là lợi thế'"
+  ],
+  "ghiChu": "JD#2 trùng nghề #106; JD#6 (Business Analyst) lạc nghề, bỏ qua."
+}

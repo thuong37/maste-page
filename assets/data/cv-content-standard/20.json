@@ -1,0 +1,36 @@
+{
+  "id": 20,
+  "nhom": "Marketing/PR/Quảng cáo",
+  "nghe": "Quan hệ Công chúng (PR)",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên/chuyên viên (1 thực tập sinh); 2/6 không hoặc dưới 1 năm kinh nghiệm, 1 JD 1 năm, 3/6 cần 2-4 năm; 3/6 JD là truyền thông nội bộ, 1 JD lạc hướng (IT kiêm nhiệm)",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; JD#5 chỉ tuyển Nữ 22-28; nghề giao tiếp báo chí/đối tác nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 JD nhắc cầu tiến/định hướng nghề truyền thông (JD#2, JD#5)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc; PR, truyền thông, biên tập nội dung, truyền thông nội bộ, quản trị mạng xã hội",
+    "hoc-van": "can — 6/6 nêu bậc học; chuyên ngành Truyền thông, Báo chí, PR, Marketing, Nhân sự",
+    "ky-nang-chuyen-mon": "can — 6/6: lập kế hoạch chiến dịch PR/event, quan hệ báo chí/KOL, viết và biên tập nội dung, quản trị fanpage/mạng xã hội, tổ chức sự kiện nội bộ",
+    "ky-nang-mem": "can — 6/6: viết và giao tiếp, sáng tạo, chủ động, làm việc đa nhiệm/nhóm, cẩn thận, xử lý vấn đề",
+    "cong-cu-phan-mem": "nen — 3/6: Canva, CapCut, công cụ AI (JD#3), tin học văn phòng (JD#5), Excel nâng cao (JD#6), laptop cá nhân (JD#1)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "can — JD#2 'portfolio hoặc minh chứng chiến dịch đã triển khai thành công', JD#3 case study, JD#5 sự kiện đã tổ chức (3/6 nhắc chiến dịch/sự kiện)",
+    "thanh-tich-kpi": "nen — JD#2 chiến dịch triển khai thành công, JD#4 chuyển hóa dữ liệu thành kế hoạch (2/6); không JD nêu chỉ tiêu cụ thể",
+    "ngoai-ngu": "nen — JD#4 biên dịch Việt-Anh là lợi thế (1/6)",
+    "portfolio-link": "nen — JD#2 'có portfolio hoặc minh chứng chiến dịch' (1/6); nên đính kèm bài viết/chiến dịch đã làm",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#1 thực tập sinh nhận ứng viên mới, JD#5 dưới 1 năm kinh nghiệm; JD nhắc tổ chức event/workshop (2/6)",
+    "giay-phep": "khong — không JD nào nhắc (JD#2 chỉ 'sẵn sàng đi công tác')",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#2 tuổi 24-30, JD#5 Nữ 22-28 (2/6 nêu độ tuổi/giới tính)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["PR", "truyền thông nội bộ", "quan hệ báo chí/KOL", "viết bài PR", "quản trị fanpage", "tổ chức sự kiện/team building", "content/biên tập", "văn hóa doanh nghiệp", "Canva/CapCut"],
+  "bangChung": [
+    "JD#1: 'Viết bài PR, bài viết fanpage'; 'Có Laptop cá nhân'",
+    "JD#2: 'Có portfolio hoặc minh chứng cho các chiến dịch truyền thông'; 'Xây dựng ... mạng lưới báo chí, KOL'; 'Tuổi 24 - 30'",
+    "JD#3: 'biết chụp ảnh, dựng video cơ bản và sử dụng ... Canva, CapCut'; 'Tối thiểu 03 năm'",
+    "JD#4: 'Tối thiểu 3-4 năm'; 'có thể biên dịch nội dung Việt – Anh là một lợi thế'",
+    "JD#5: 'Chỉ tuyển Nữ. Ưu tiên độ tuổi 22 - 28'; 'Tổ chức các sự kiện định kỳ ... team building, YEP'"
+  ],
+  "ghiChu": "JD#6 là IT kiêm truyền thông nội bộ (lạc hướng), không dùng làm căn cứ chính."
+}

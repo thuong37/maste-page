@@ -1,0 +1,36 @@
+{
+  "id": 115,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Điện/Tự động hoá",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "5/6 JD cấp nhân viên kỹ sư/kỹ thuật (0-2 năm, CĐ/ĐH), 1 JD giám sát công trình (3 năm, quản lý), 1 JD sales kỹ thuật (2 năm); ngành điện-tự động hóa-cơ điện tử",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; nghề kỹ thuật (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 nhắc định hướng/gắn bó nghề kinh doanh kỹ thuật; nên nêu hướng thiết kế/lập trình/giám sát",
+    "kinh-nghiem-lam-viec": "can — 6/6 hỏi kinh nghiệm (dưới 1 đến 5 năm), ưu tiên dự án công nghiệp, nhà xưởng, nhà máy, tòa nhà",
+    "hoc-van": "can — 6/6 nêu CĐ/ĐH/Trung cấp chuyên ngành Điện, Tự động hóa, Điện-Điện tử, Cơ điện tử, Điều khiển",
+    "ky-nang-chuyen-mon": "can — lập trình PLC/HMI/SCADA, thiết kế tủ điện, biến tần, servo, BMS, giám sát thi công, xử lý sự cố, đọc bản vẽ điện, chạy thử bàn giao",
+    "ky-nang-mem": "can — 6/6: làm việc độc lập/nhóm, chịu áp lực, giao tiếp, tổ chức/điều phối",
+    "cong-cu-phan-mem": "can — 6/6: AutoCAD/AutoCAD Electrical, EPLAN, TIA Portal (Siemens), SolidWorks, MS Office, MS Project",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ; chỉ nhắc kiến thức tiêu chuẩn an toàn điện",
+    "du-an": "can — 5/6 nhắc dự án (khảo sát, thiết kế, thi công, chạy thử bàn giao, giám sát nhà thầu); CV nên liệt kê dự án",
+    "thanh-tich-kpi": "nen — JD#4 sales kỹ thuật có báo cáo kết quả kinh doanh; JD#3 kiểm soát tiến độ/chất lượng; ít số liệu",
+    "ngoai-ngu": "can — 4/6 nhắc tiếng Anh (giao tiếp cơ bản, đọc hiểu tài liệu kỹ thuật tiếng Anh), JD#4 ưu tiên tiếng Trung",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#2, JD#6 chấp nhận ứng viên trẻ, dưới 1 năm kinh nghiệm",
+    "giay-phep": "nen — nhiều JD đòi đi công tác/lắp đặt; không JD nào đòi bằng lái hay chứng chỉ an toàn điện",
+    "thong-tin-ca-nhan-mo-rong": "nen — 1/6 nêu giới tính ưu tiên nam; 4/6 nêu sẵn sàng đi công tác, làm việc tại dự án",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["PLC", "HMI/SCADA", "biến tần/servo", "thiết kế tủ điện", "AutoCAD Electrical/EPLAN", "TIA Portal", "BMS", "giám sát thi công", "BACnet/Modbus", "chạy thử bàn giao"],
+  "bangChung": [
+    "JD#1: 'Biết lập trình PLC, HMI, SCADA'; 'Có kinh nghiệm thiết kế, lắp đặt tủ điện'; 'biết sử dụng AutoCAD'",
+    "JD#2: 'Sử dụng AutoCAD Electrical, EPLAN'; 'Lập trình được ít nhất một dòng PLC; ưu tiên Siemens và TIA Portal'; 'tài liệu kỹ thuật tiếng Anh'",
+    "JD#3: 'Có từ 03 năm kinh nghiệm giám sát thi công Điện & Tự động hóa'; 'AutoCAD, MS Project/Excel'",
+    "JD#4: 'Ưu tiên Nam. Có kinh nghiệm 2 - 5 năm'; 'Ưu tiên ứng viên biết Tiếng Anh, Tiếng Trung'",
+    "JD#5: 'Có kiến thức về PLC, SCADA, BMS, mạng truyền thông công nghiệp (BACnet, Modbus, LonWorks)'; 'Sẵn sàng đi công tác xa'"
+  ],
+  "ghiChu": ""
+}

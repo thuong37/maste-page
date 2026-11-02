@@ -1,0 +1,176 @@
+{
+ "id": 42,
+ "nhom": "Công nghệ Thông tin",
+ "nghe": "IT Management/Specialist",
+ "crawledAt": "2026-10-22T03:20:27.967Z",
+ "candidates": 66,
+ "thin": false,
+ "jds": [
+  {
+   "url": "https://www.topcv.vn/viec-lam/solution-architect/2198645.html",
+   "title": "Solution Architect",
+   "company": "Công ty Cổ phần Tập đoàn Công nghệ Thiên Hoàng",
+   "query": "Software Architect",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "5 năm kinh nghiệm chuyên môn",
+     "5 năm kinh nghiệm quản lý",
+     "Đại Học trở lên"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm xã hội",
+     "Bảo hiểm sức khỏe",
+     "Thưởng tháng 13"
+    ],
+    "Chuyên môn": [
+     "Technical Leader",
+     "IT - Phần mềm",
+     "Điện toán đám mây (Cloud)",
+     "Chính phủ/Dịch vụ công"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Phân tích yêu cầu nghiệp vụ và kỹ thuật từ Product Manager / Business để thiết kế giải pháp kiến trúc end-to-end cho sản phẩm AI/Data (data ingestion, storage, feature store, model training, model serving, monitoring).\nThiết kế kiến trúc hệ thống trên cloud (multi-region/HA), bao gồm microservices, event-driven pipelines, stream/batch processing, API gateway, và integration với hệ thống bên thứ ba.\nXác định các thành phần hạ tầng (k8s, container, message broker, data warehouse, ML infra), đưa ra lựa chọn công nghệ và trade-off (scalability, cost, latency, security).\nĐịnh nghĩa non-functional requirements: SLO/SLI/SLA, backup/DR, observability (logs/metrics/tracing), performance, bảo mật và compliance.\nDẫn dắt kỹ thuật cho đội dev/infra: review thiết kế, code review, proof-of-concept (POC), mentoring.\nHỗ trợ triển khai, chuyển giao kiến trúc, phối hợp với DevOps/Platform/QA để đảm bảo giải pháp được triển khai đúng thiết kế.\nTham gia đánh giá rủi ro kỹ thuật, lập kế hoạch migration/refactor và ước lượng công việc.\nGhi chép tài liệu kiến trúc, diagram, guideline, patterns và standard cho team",
+    "Yêu cầu ứng viên": "Tốt nghiệp Đại học chuyên ngành CNTT, Khoa học máy tính, Toán – Tin hoặc các chuyên ngành liên quan\nTối thiểu 5 năm kinh nghiệm trong vai trò kỹ thuật (Software Engineer / Senior Engineer / Architect), trong đó trực tiếp làm kiến trúc hệ thống cho sản phẩm liên quan AI/Data.\nHiểu biết sâu về cloud (AWS/GCP/Azure) — thiết kế dịch vụ, networking, IAM, autoscaling, cost optimization.\nKinh nghiệm với container & orchestration: Docker, Kubernetes (Helm, Operators).\nKinh nghiệm thiết kế data pipelines (Kafka, Pub/Sub, Airflow), data stores (Postgres, OLAP, BigQuery, Snowflake, HDFS) và giải pháp ML infra (MLflow, Seldon/BentoML/TorchServe, TF Serving).\nKinh nghiệm xây dựng API (REST/gRPC), event-driven architecture và asynchronous processing.\nAm hiểu observability (Prometheus, Grafana, ELK/EFK, OpenTelemetry) và CI/CD (GitOps, Terraform, ArgoCD/Flux, Jenkins/GitHub Actions).\nKỹ năng phân tích kiến trúc, trade-off, viết tài liệu kỹ thuật, diagram (C4/Arch).\nKỹ năng giao tiếp và thuyết trình mạnh, có khả năng làm việc với stakeholders kỹ thuật & non-kỹ thuật.\nTư duy hệ thống, leadership, khả năng dẫn dắt team kỹ thuật.\nƯu tiên: chứng chỉ cloud (AWS Solutions Architect, GCP Professional Cloud Architect, Azure Architect), kinh nghiệm MLOps/Feature Store, có kinh nghiệm sản phẩm AI thương mại.\nKiến thức ngành\nIT - Phần mềm, Điện toán đám mây (Cloud), Chính phủ/Dịch vụ công\nKỹ năng cần có\nKỹ Năng Giao Tiếp Và Thuyết Trình, Phân tích yêu cầu nghiệp vụ và kỹ thuật, Thiết kế kiến trúc hệ thống trên cloud, Kinh nghiệm với container & orchestration, Thiết kế data pipelines và data stores, Xây dựng API, event-driven architecture, Am hiểu observability và CI/CD, Kỹ năng phân tích kiến trúc, trade-off, Tư duy hệ thống, leadership\nKỹ năng nên có\nChứng chỉ cloud (AWS Solutions Architect, GCP Professional Cloud Architect, Azure Architect), Kinh nghiệm MLOps/Feature Store, Kinh nghiệm sản phẩm AI thương mại",
+    "Quyền lợi ứng viên": "Lương: hấp dẫn\nThời gian làm việc: thứ 2 đến thứ 6, 08h30 đến 17h30.\nĐánh giá nhân sự và điều chỉnh lương: định kỳ 1 năm 1 lần.\nNghỉ phép: 12 ngày/năm\nNghỉ lễ, nghỉ thai sản, nghỉ ốm, nghỉ hiếu hỉ: theo quy định chung của luật Lao động.\nBHXH, BHYT, BHTN, Bảo hiểm Bảo Việt cho 100% cán bộ sau thời gian thử việc.\nChính sách thu hút và đãi ngộ nhân tài.\nChính sách ưu đãi đối với nhân viên có thâm niên làm việc tại công ty.\nThu nhập: lương tháng 13; thưởng theo dự án, thưởng theo kết quả kinh doanh và mức độ đóng góp; thưởng theo năng lực và mức độ hoàn thành công việc của từng thành viên đánh giá hàng tháng và trả thưởng theo quý; thưởng các ngày lễ lớn.\nChế độ nghỉ mát, du xuân, liên hoan cuối năm cho nhân viên và gia đình.\nCác hoạt động giao lưu bóng đá, golf, văn nghệ...\nChính sách đào tạo về chuyên môn, nghiệp vụ và kỹ năng cho nhân viên. Hỗ trợ 100% kinh phí học và thi các chứng chỉ chuyên môn.\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm xã hội, Bảo hiểm sức khỏe, Thưởng tháng 13, Team building, Du lịch hàng năm, Phụ cấp thâm niên",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Tòa nhà Viwaseen, 48 Tố Hữu, Phường Đại Mỗ (Phường Đại Mỗ thuộc quận Nam Từ Liêm cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 31/12/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nTrưởng/Phó phòng\nKinh nghiệm quản lý\n5 năm\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n15 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/solution-architect-aws-cloud/1571120.html",
+   "title": "Solution Architect (AWS Cloud)",
+   "company": "Công ty TNHH Tổng công ty Công nghệ & Giải pháp CMC",
+   "query": "Software Architect",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "5 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm xã hội",
+     "Bảo hiểm sức khỏe",
+     "Team building"
+    ],
+    "Chuyên môn": [
+     "Solution Architect",
+     "IT - Phần mềm",
+     "Điện toán đám mây (Cloud)"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "1. Thiết Kế và Tư Vấn Giải Pháp:\n\nTương tác với các lãnh đạo doanh nghiệp để phân tích nhu cầu, đề xuất các giải pháp tối ưu trên nền tảng AWS.\nThiết kế hệ thống bao gồm hạ tầng, cơ sở dữ liệu, lưu trữ và bảo mật.\nĐánh giá tính khả thi di chuyển, xác định các phụ thuộc và khắc phục trở ngại kỹ thuật.\n\n2. Triển Khai Giải Pháp:\n\nHỗ trợ di chuyển và hiện đại hóa hệ thống lên nền tảng AWS.\nThiết lập và triển khai các công nghệ liên quan đến bảo mật và kiểm tra hạ tầng.\n\n3. Tối Ưu Hóa và Vận Hành:\n\nĐánh giá hiệu suất, bảo mật và chi phí hạ tầng AWS cho khách hàng.\nĐảm bảo hệ thống đáp ứng các tiêu chuẩn về High Availability (HA) và Disaster Recovery (DR).\nGiám sát và khắc phục các sự cố liên quan đến AWS.\n\n4. Hỗ Trợ Kinh Doanh và Phát Triển Sản Phẩm:\n\nHợp tác với đội ngũ kinh doanh trong việc trình bày giải pháp kỹ thuật cho khách hàng.\nPhân tích xu hướng thị trường và hỗ trợ thiết kế, phát triển các sản phẩm/dịch vụ mới trên nền tảng AWS.\n\n5. Đào Tạo và Phát Triển:\n\nTổ chức đào tạo đội ngũ nội bộ và khách hàng về các công nghệ AWS.\nCập nhật thông tin về xu hướng công nghệ mới nhất của AWS để cung cấp các giải pháp tiên tiến.",
+    "Yêu cầu ứng viên": "Kinh nghiệm:\n\nTối thiểu 5 năm kinh nghiệm trong việc thiết kế, triển khai và tư vấn các hệ thống CNTT phân tán.\nKinh nghiệm dẫn dắt các dự án di chuyển trung tâm dữ liệu hoặc đám mây.\nHiểu biết về Infrastructure architecture, Database architecture, Networking, IT Security, và Software development.\nKinh nghiệm thực tế với các công nghệ như VMware, Hyper-V, Terraform, Kubernetes.\n\nChứng chỉ:\n\nChứng chỉ AWS Solutions Architect Associate hoặc AWS Solutions Architect Professional.\nƯu tiên có kinh nghiệm với DevOps, CI/CD, Containerization (Docker, Kubernetes).\n\nKỹ năng:\n\nKỹ năng giao tiếp, trình bày và giải quyết vấn đề tốt.\nTính tự chủ cao, có khả năng độc lập lấy khách hàng làm trung tâm.\n\nKiến thức ngành\nIT - Phần mềm, Điện toán đám mây (Cloud)\nKỹ năng cần có\nKiến Trúc Hệ Thống Phân Tán, Thiết Kế Hệ Thống Đám Mây (cloud Design), Aws (ec2, S3, Lambda, Rds, Dynamodb, V.v.), Lập Trình (ít Nhất Một Ngôn Ngữ Như Java, Python, Go), An Ninh Mạng (security)",
+    "Quyền lợi ứng viên": "Đóng BHXH đầy đủ và BH sức khỏe CMC Care ngay khi ký Hợp đồng chính thức\nNghỉ phép: 12 ngày/ năm + 1 ngày nghỉ hưởng lương vào dịp sinh nhật bản thân\nĐược tham gia các chương trình đào tạo chuyên môn, nghiệp vụ từ cơ bản đến nâng cao. Tài trợ 100% chi phí tham gia các khóa học, thi chứng chỉ CNTT Quốc tế\nĐược trang bị laptop/thiết bị công nghệ trong quá trình làm việc\nMôi trường trẻ, năng động và chuyên nghiệp\nTham gia Team building và các hoạt động văn hóa đa dạng\nĐược vinh danh các giải thưởng năm của Tập đoàn CMC, CMC TS và khen thưởng trên các thành tích xuất sắc (dự án, kinh doanh, quản trị)\nThời gian nghỉ hàng tuần: Nghỉ Thứ 7 & Chủ nhật\nLương tháng thỏa thuận theo năng lực và vị trí công tác\nGói phúc lợi tiền mặt 9 triệu/năm vào các dịp Lễ, Tết, Sinh nhật Tập đoàn...\nXét tăng lương theo năng lực và kết quả công việc định kỳ 1 lần/năm. Hoặc tăng lương đột xuất theo hiệu quả công việc.\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm xã hội, Bảo hiểm sức khỏe, Team building, Thưởng hiệu quả làm việc, Khám sức khỏe định kỳ, Du lịch hàng năm\nHỗ trợ\nĐược cấp Máy tính",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Tòa CMC, 11 Duy Tân, Phường Cầu Giấy (Phường Cầu Giấy thuộc quận Cầu Giấy cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:30)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 30/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/technical-solution-architect/2299235.html",
+   "title": "Technical/Solution Architect",
+   "company": "Công ty Cổ Phần Galaxy Technology Services",
+   "query": "Software Architect",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "5 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên",
+     "Tiếng Anh Đọc hiểu",
+     "Tiếng Trung Đọc hiểu"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm xã hội",
+     "Bảo hiểm sức khỏe",
+     "Team building"
+    ],
+    "Chuyên môn": [
+     "Solution Architect",
+     "IT - Phần mềm",
+     "Thương mại điện tử",
+     "Công nghệ kỹ thuật"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Lead the approaching/discovery phase with clients for new business owners/solutions within the Non-JP BU scope (Factory Management, RFID, AI, Fintech, AR/VR, Inventory Management, AI Chatbot & Assistant...).\nGather requirements, analyze pain points, and propose appropriate technical/technological solutions.\nCollaborate with project teams and clients to build PoC.\nDesign overall solution architecture: system design, integration, tech stack selection, and high-level/low-level design documentation.\nEstimate technical effort/budget for each solution and present to stakeholders.\nCoordinate with POs, SMEs, and delivery teams to transition PoC into formal project scope upon approval.\nStandardize domain and solution architecture documentation.\nParticipate in client meetings/workshops alongside PMs and BAs as needed.\nApply AI to the SDLC for design, solution evaluation, and documentation.",
+    "Yêu cầu ứng viên": "Required Qualifications:\n\n5+ years of experience as a Technical/Solution Architect or Senior Developer/Tech Lead with solution design experience. Preference for candidates with 8–10+ years of experience in the IT industry.\nExperience in requirement gathering, business analysis, and proposing technical/technological solutions.\nStrong background in system architecture, integration (APIs, microservices), and cloud platforms (AWS, GCP preferred).\nProficient in English communication to participate in meetings/workshops with clients.\nGrowth mindset with strong self-motivation to actively learn new technologies and business domains.\n\nPreferred Qualifications:\n\nDomain experience in Supply Chain, Factory Management, and RFID.\nExperience in other solution areas: Fintech, AR/VR, Inventory Management, and AI Chatbots.\nExperience conducting discovery/PoC for multinational clients (Singapore, Australia, China, Vietnam, etc.).\nProficiency in Chinese is a plus.\n\nSoft Skills:\n\nProduct-oriented mindset with a commitment to accompanying the product and client throughout their growth.\nHigh adaptability to fast-changing environments, evolving requirements, and shifting work scopes.\nStrong analytical and problem-solving skills.\nStrong teamwork, proactivity, and a high sense of ownership.\nExperience working in Agile/Scrum environments.\nKiến thức ngành\nIT - Phần mềm, Thương mại điện tử, Công nghệ kỹ thuật\nKỹ năng cần có\nMicroservices, business analysis, Agile/Scrum, Api Integration, Cloud Platforms (aws, Gcp), Requirement Gathering, System Architecture, English Communication, Technical/Solution Architecture\nKỹ năng nên có\nFintech, Supply Chain, Inventory Management, Rfid, Ar/Vr, Chinese language, AI chatbot, Factory Management",
+    "Quyền lợi ứng viên": "Working hours: 8:30 AM – 5:30 PM, Monday – Friday.\nAttractive income.\nFull salary paid during the 2-month probation period.\nAnnual salary review based on performance and contribution.\n15 days of annual leave, plus seniority leave increases with years of working.\nYear-end bonus/ performance bonus based on business performance.\nSocial, Health and others Insurance are based on Labor Law and HDI Health Insurance.\nInternal Activities: Company trips, Year-End Party, sports clubs (football, badminton, running, pickleball...), Happy Hours (08/03, 20/10, 19/11, 01/06, Christmas, Tet holiday...).\nHỗ trợ chi phí di chuyển áp dụng đối với nhân viên có khoảng cách từ nhà đến nơi làm việc >15km và bố trí gửi xe miễn phí tại văn phòng công ty. / Mobility allowance for employees whose home-to-work distance is >15km and free internal parking area.\nBirthday Gift, Holiday bonus (New Year, Traditional Tet, 30/4 – 1/5, National Day).\nWelfare policies for Union Members (Sickness, Marriage, Condolences...).\nWork equipment is provided based on company standards.\nSkytel phone sim: limit 100.000 VND/month.\nOffer training courses to support employees in furthering their education and qualifications.\n“Employee of the Year” gifts and lucky draw prizes.\nSnacks and beverages.\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm xã hội, Bảo hiểm sức khỏe, Team building, Du lịch hàng năm, Phụ cấp thâm niên, Thưởng tháng 13, Thưởng hiệu quả làm việc\nPhụ cấp\nĂn trưa, Xăng xe, Cước điện thoại\nHỗ trợ\nĐược cấp Điện thoại, Máy tính",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: Phường Tăng Nhơn Phú (Phường Tăng Nhơn Phú thuộc Thành phố Thủ Đức cũ) - Phạm vi làm việc trên toàn khu vực trên.\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:30 đến 17:30)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 11/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nTrưởng nhóm\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/solution-architect-data-analytics/1905720.html",
+   "title": "Solution Architect (Data & Analytics)",
+   "company": "SVTECH",
+   "query": "Software Architect",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "3 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên",
+     "Tiếng Anh TOEIC 600"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm sức khỏe ngưởi thân",
+     "Bảo hiểm sức khỏe",
+     "Du lịch hàng năm"
+    ],
+    "Chuyên môn": [
+     "Solution Architect",
+     "Viễn thông",
+     "Ngân hàng",
+     "IT - Phần mềm"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Phân tích yêu cầu và định hướng giải pháp từ Presales, thiết kế kiến trúc về công nghệ phù hợp và có khả năng triển khai thực tế cho khách hàng\nĐánh giá hiện trạng dữ liệu doanh nghiệp và xây dựng lộ trình (roadmap) tiến tới Data Lakehouse, Data Warehouse.\nTrình bày giải pháp, demo và PoC cho khách hàng.\nThực hiện khảo sát kỹ thuật: xác định các vấn đề (pain point), yêu cầu nghiệp vụ và kỹ thuật, kịch bản hiện trạng và mục tiêu.\nThiết kế kiến trúc dữ liệu và mô hình dữ liệu (data model), hỗ trợ đội triển khai trong quá trình thực hiện dự án.",
+    "Yêu cầu ứng viên": "Yêu cầu năng lực chuyên môn:\n\nTốt nghiệp Đại học chuyên ngành Công nghệ thông tin, Viễn thông hoặc tương đương.\n3–5 năm kinh nghiệm về Data Architecture/Solution Architecture hoặc thiết kế giải pháp dữ liệu.\nHiểu sâu về kiến trúc Data Lakehouse, Data Warehouse và mô hình hóa dữ liệu Data Modeling.\nCó kinh nghiệm triển khai nền tảng dữ liệu on-premise (Linux, Docker/Kubernetes).\nCó kinh nghiệm với Spark, Kafka, Hadoop, Flink, Trino, Iceberg, Airflow.\n\nYêu cầu năng lực hành vi:\n\nTư duy logic tốt, tư duy hệ thống tốt, có khả năng nhìn nhận vấn đề ở góc độ tổng thể\nKhả năng nghiên cứu, thực hành công nghệ mới nhanh, nhạy bén.\nKiến thức ngành\nViễn thông, Ngân hàng, IT - Phần mềm\nKỹ năng cần có\nkafka, data quality, Data, Datalake, BI/Data Warehouse, DataMart",
+    "Quyền lợi ứng viên": "Tại sao chọn SVTECH?\n\nSVTECH là doanh nghiệp dẫn đầu thị trường Tích hợp hệ thống (SI) và đã tăng trưởng liên tục suốt hơn 25 năm nhờ đội ngũ nhân sự xuất sắc. Mỗi SVTECHer đều được trao quyền để thấu hiểu bản thân, tự tin phát huy thế mạnh riêng để hoàn thành sứ mệnh, theo đuổi đam mê và tạo ra giá trị cho tổ chức và xã hội.\n\n1. Thu nhập xứng đáng\n\n● Lương cạnh tranh, thưởng hấp dẫn dựa trên lợi nhuận công ty và hiệu quả công việc cá nhân (trung bình 14–16 tháng lương/năm).\n\n● Phụ cấp công tác, phụ cấp làm thêm giờ. Được cấp laptop, thẻ điện thoại, tài khoản và các công cụ cần thiết cho công việc.\n\n● Làm chủ công việc và tận hưởng thành quả mình tạo ra. Trao đổi cởi mở, minh bạch và thẳng thắn với quản lý trong suốt quá trình làm việc cũng như trong các kỳ đánh giá lương và hiệu quả công việc hằng năm.\n\n2. Cơ hội phát triển sự nghiệp\n\n● Được đào tạo trong nước và quốc tế bởi các hãng công nghệ hàng đầu thế giới: Juniper, Oracle, IBM, Dell, Red Hat, HP...\n\n● Trực tiếp triển khai các dự án công nghệ trọng điểm. Tham gia các dự án quy mô lớn thuộc nhiều lĩnh vực, vận hành hệ thống tại các trung tâm dữ liệu lớn và làm việc cùng các chuyên gia hàng đầu trong nước và quốc tế.\n\n● Làm việc với các tổ chức lớn và doanh nghiệp tầm cỡ quốc gia: 3 nhà mạng viễn thông lớn nhất Việt Nam, các bộ, ban, ngành, ngân hàng, tổ chức tài chính và doanh nghiệp.\n\n● Truy cập không giới hạn tài liệu và nguồn học chính thức từ các hãng, cùng cơ hội đạt các chứng chỉ hàng đầu trong ngành. Ngân sách đào tạo lên tới 5.000 USD/người/năm.\n\n● 2 phòng lab hiện đại, được đầu tư bài bản với nhiều loại thiết bị tại Hà Nội và TP. Hồ Chí Minh.\n\n● Được đầu tư phát triển kỹ năng mềm, năng lực lãnh đạo, khả năng tự nhận thức, phát triển bản thân và coaching song song với chuyên môn kỹ thuật.\n\n3. Phúc lợi đặc biệt cho Thân – Tâm – Trí\nMỗi SVTECHer đều được truyền cảm hứng và động lực để sống một cuộc đời ý nghĩa, trọn vẹn về Sức khỏe – Trái tim – Trí tuệ – Tinh thần.\n\n● Chăm sóc sức khỏe: bảo hiểm sức khỏe cho nhân viên và người thân với mức chi trả lên tới 3.000 USD/người; khám sức khỏe định kỳ hằng năm, bên cạnh bảo hiểm xã hội theo quy định.\n\n● Đóng góp giá trị ý nghĩa cho cộng đồng qua các chương trình thiện nguyện lớn hằng năm của công ty: xây trường, làm đường, trao tặng thiết bị học tập cho trẻ em vùng cao...\n\n● Ngân sách lớn dành cho đời sống tinh thần của nhân viên và gia đình: team building, du lịch công ty, Year End Party, Family Day, Giáng sinh, Halloween...\n\n● Nhiều câu lạc bộ thể thao và sở thích giúp bạn duy trì lối sống lành mạnh: bóng đá, cầu lông, bơi lội, chạy bộ, yoga và âm nhạc (piano, guitar, trống...).\n\n4. Môi trường hội tụ nhân tài và chuyên gia đầu ngành\nThân thiện, đoàn kết, tin tưởng, lắng nghe, tôn trọng, quan tâm và hỗ trợ hết mình từ quản lý, thành viên trong nhóm và đồng nghiệp. Những phẩm chất này thấm nhuần trong văn hóa cốt lõi của tổ chức và được truyền lại qua nhiều thế hệ.\n\n5. Chính sách làm việc linh hoạt\nLinh hoạt về thời gian, địa điểm và phạm vi công việc theo tinh thần agile.\n\nVề SVTECH\n\nSVTECH là nhà cung cấp hàng đầu Việt Nam về Tích hợp hệ thống, giải pháp và dịch vụ CNTT – Viễn thông.\n\nThành lập năm 2001 với triết lý kinh doanh “Excellence in everything we do” (Xuất sắc trong mọi việc chúng tôi làm), SVTECH tự hào là một trong những nhà cung cấp dịch vụ Tích hợp hệ thống và ICT hàng đầu cho các tổ chức, doanh nghiệp tại Việt Nam. Với đội ngũ chuyên gia hàng đầu, SVTECH tập trung nghiên cứu, triển khai và tích hợp các giải pháp nhằm tối ưu hiệu năng hạ tầng CNTT và viễn thông – nền tảng không thể thay thế của chuyển đổi số quốc gia.\n\nLấy Niềm tin làm nền tảng cho mọi mối quan hệ, SVTECH là đối tác chiến lược cấp cao nhất tại Việt Nam của các hãng CNTT hàng đầu thế giới như Oracle, Juniper, Hitachi, IBM, HP, Dell, NetApp, Red Hat, Intel Security...\n\nHoạt động trong 3 lĩnh vực cốt lõi là Tích hợp hệ thống, Dịch vụ Cloud và Phần mềm, SVTECH vinh dự nhận được sự tin tưởng của nhiều tổ chức lớn thuộc nhiều ngành và các doanh nghiệp tầm cỡ quốc gia như Viettel, MobiFone, VinaPhone, VNPT, ACB, VPBank, Techcombank, Sacombank, Bộ Tài chính, Bộ Tài nguyên và Môi trường, EVN, Sawaco, PVOIL, PVEP, Vingroup, Toyota, Ericsson, Đại học Quốc gia, Đại học RMIT, Vinamilk...\n\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm sức khỏe ngưởi thân, Bảo hiểm sức khỏe, Du lịch hàng năm, Thưởng hiệu quả làm việc\nHỗ trợ\nĐược cấp Máy tính",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: 82 Duy Tân, Phường Cầu Giấy (Phường Cầu Giấy thuộc quận Cầu Giấy cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:30 đến 17:30)\nflexible time - không chấm công\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 22/10/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/truong-phong-solution-architect/2294907.html",
+   "title": "Trưởng Phòng Solution Architect",
+   "company": "Lâm Hải\n                                Công ty TNHH Tư vấn và Phát triển Dịch vụ Công nghệ Lâm Hải",
+   "query": "Software Architect",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "Trên 5 năm kinh nghiệm chuyên môn",
+     "3 năm kinh nghiệm quản lý",
+     "Cao Đẳng trở lên"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm xã hội",
+     "Team building",
+     "Du lịch hàng năm"
+    ],
+    "Chuyên môn": [
+     "Solution Architect"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Thiết kế kiến trúc tổng thể hệ thống, ứng dụng, dữ liệu, tích hợp, hạ tầng và bảo mật.\nThiết kế hệ thống quy mô lớn, đáp ứng khoảng 500.000 người dùng và 1.000 CCU.\nXây dựng phương án Sizing, Performance, Capacity Planning, Scaling và High Availability.\nThiết kế kiến trúc Microservices/Monolith, API, Message Queue, Cache và các cơ chế tích hợp.\nThiết kế kiến trúc dữ liệu, Database, Storage, Backup/Restore và Disaster Recovery.\nThiết kế giải pháp bảo mật, phân quyền, SSO, API Security và Network Security.\nThiết kế hạ tầng, môi trường triển khai, Docker/Kubernetes và CI/CD.\nXây dựng hệ thống Monitoring, Logging và Observability.\nXây dựng, review tài liệu kiến trúc, HLD/LLD và tài liệu kỹ thuật.\nPhối hợp với PM, BA, Developer, DevOps, DBA, QA và các bên liên quan để triển khai giải pháp.\nƯu tiên có kinh nghiệm triển khai các hệ thống CNTT quy mô lớn cho cơ quan nhà nước.",
+    "Yêu cầu ứng viên": "Có 05 – 10 năm kinh nghiệm trong lĩnh vực phát triển phần mềm/hệ thống thông tin.\nCó tối thiểu 03 năm kinh nghiệm ở vai trò Technical Lead, System Architect, Solution Architect hoặc vị trí tương đương.\nĐã từng trực tiếp tham gia thiết kế kiến trúc cho ít nhất một hệ thống thông tin quy mô lớn.\nĐã từng tham gia hệ thống phục vụ cơ quan quản lý nhà nước/Bộ/ngành/địa phương.\nCó kinh nghiệm với hệ thống có quy mô tương đương:\nKhoảng 500.000 người dùng;\nKhoảng 1.000 CCU trở lên.\nCó kinh nghiệm thiết kế hệ thống có yêu cầu:\nHigh Availability.\nLoad Balancing.\nDatabase HA.\nCaching.\nAPI Integration.\nMonitoring.\nBackup/DR.\nSecurity.",
+    "Quyền lợi ứng viên": "Mức lương cạnh tranh, thỏa thuận theo năng lực và kinh nghiệm.\nThưởng theo hiệu quả công việc và kết quả dự án.\nTham gia các dự án CNTT quy mô lớn, công nghệ đa dạng.\nCó cơ hội làm việc trực tiếp với các khách hàng, đối tác và cơ quan nhà nước.\nĐược tham gia định hướng kiến trúc, công nghệ và giải pháp của dự án.\nĐược đào tạo, cập nhật công nghệ và hỗ trợ các chứng chỉ chuyên môn.\nĐầy đủ chế độ BHXH, BHYT, BHTN theo quy định.\nNghỉ phép, lễ Tết và các chế độ phúc lợi theo quy định công ty.\nMôi trường chuyên nghiệp, cơ hội phát triển lên vị trí Senior/Principal Architect hoặc quản lý kỹ thuật.\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm xã hội, Team building, Du lịch hàng năm, Thưởng tháng 13, Thưởng hiệu quả làm việc\nHỗ trợ\nĐược cấp Máy tính",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Số 21 Lê Đức Thọ, Phường Từ Liêm (Phường Từ Liêm thuộc quận Nam Từ Liêm cũ)\nThời gian làm việc\nThứ 2 - Thứ 7 (từ 08:00 đến 17:30)\nLàm thứ 7 cách tuần\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 11/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nTrưởng/Phó phòng\nKinh nghiệm quản lý\n3 năm\nHọc vấn\nCao Đẳng trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  }
+ ]
+}

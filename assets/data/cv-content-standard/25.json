@@ -1,0 +1,36 @@
+{
+  "id": 25,
+  "nhom": "Chăm sóc khách hàng (Customer Service)/Vận hành",
+  "nghe": "Chăm sóc khách hàng (Customer Service)",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "4/5 JD cấp nhân viên (3/5 không yêu cầu hoặc dưới 1 năm kinh nghiệm, từ THPT/trung cấp), 1 JD trưởng nhóm CSKH (1 năm, cao đẳng, tiếng Anh lưu loát); 1 JD lễ tân gym cần 1 năm",
+  "muc": {
+    "anh-chan-dung": "nen — JD#5 'ngoại hình sáng sủa, thân thiện là một lợi thế', JD#4 chỉ tuyển Nữ 20-35 (2/5); nghề tiếp xúc khách nên ảnh nghiêm túc/thân thiện là lợi thế",
+    "muc-tieu-nghe-nghiep": "nen — JD#5 'mong muốn gắn bó lâu dài, định hướng với công việc bán hàng' (1/5)",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD nhắc; 3/5 không yêu cầu hoặc dưới 1 năm, ưu tiên kinh nghiệm CSKH, BPO, hàng không, bán lẻ",
+    "hoc-van": "can — 5/5 nêu bậc học (THPT đến cao đẳng/ĐH)",
+    "ky-nang-chuyen-mon": "can — 5/5: tiếp nhận và xử lý yêu cầu khách qua tổng đài/email/mạng xã hội, đặt chỗ/đổi vé (JD#2), xử lý bảo hành (JD#3), lên đơn và theo dõi đơn hàng (JD#5), xử lý khiếu nại",
+    "ky-nang-mem": "can — 5/5: giao tiếp, lắng nghe, chịu áp lực, cẩn thận, trung thực, làm việc ca xoay/theo ca",
+    "cong-cu-phan-mem": "can — 3/5: vi tính văn phòng và phần mềm quản lý khách hàng (JD#3), Word/Excel/Facebook/Zalo (JD#5), hệ thống thông tin hội viên (JD#4)",
+    "chung-chi": "can — JD#2 TOEIC 450 trở lên hoặc IELTS tương đương còn hạn (1/5 đòi thẳng chứng chỉ)",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — JD#1 đạt chỉ tiêu KPIs, tỷ lệ kết nối (1/5; JD#4 ghi 'không áp doanh số')",
+    "ngoai-ngu": "can — 3/5: tiếng Anh lưu loát (JD#1), TOEIC 450 (JD#2), tiếng Anh giao tiếp cơ bản (JD#4)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/5 JD không yêu cầu hoặc dưới 1 năm kinh nghiệm (JD#2, #3, #5)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 3/5 JD nêu tuổi/giới tính (18-30; Nữ 20-35); JD#2 nêu sức khỏe tốt, không nói ngọng, nói lắp; JD#1 ca xoay 24/7",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["chăm sóc khách hàng", "Customer Service", "xử lý khiếu nại", "tổng đài/email/mạng xã hội", "tiếng Anh/TOEIC", "phần mềm quản lý khách hàng", "ca xoay", "CRM"],
+  "bangChung": [
+    "JD#1: 'Tiếng Anh: Sử dụng lưu loát'; 'đạt những chỉ tiêu KPIs'; 'ca xoay 24/7'",
+    "JD#2: 'Tiếng Anh tối thiểu TOEIC 450, hoặc IELTS'; 'Độ tuổi: Từ 18 đến 30 tuổi'; 'không nói ngọng, nói lắp'",
+    "JD#3: 'Sử dụng thành thạo vi tính văn phòng và các phần mềm quản lý khách hàng'",
+    "JD#4: 'Nữ - Độ tuổi: 20 - 35 tuổi'; 'Tiếng Anh giao tiếp cơ bản'",
+    "JD#5: 'Biết sử dụng máy tính cơ bản (Word, Excel, Facebook, Zalo...)'; 'Ngoại hình sáng sủa, thân thiện là một lợi thế'"
+  ],
+  "ghiChu": "Chỉ 5 JD."
+}

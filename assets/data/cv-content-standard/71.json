@@ -1,0 +1,36 @@
+{
+  "id": 71,
+  "nhom": "Bất động sản",
+  "nghe": "Bất động sản khác",
+  "soJD": 6,
+  "doTinCay": "thap",
+  "capBac": "6/6 JD cấp nhân viên hoặc trưởng phòng (1 JD); 2/6 không yêu cầu kinh nghiệm, 2/6 1 năm, 2/6 3 năm; THPT đến Đại học; JD rất phân tán (trợ lý BĐS, sale, R&D thị trường, sales admin nguồn hàng, phát triển đối tác)",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; 1/6 nêu ngoại hình chuyên nghiệp, 2/6 nêu độ tuổi; JD sale gặp khách nên ảnh nghiêm túc là lợi thế",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 JD nhắc mong muốn phát triển lĩnh vực kinh doanh; nên nêu định hướng theo vị trí",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nêu mức kinh nghiệm (từ không yêu cầu đến 3 năm R&D/sales admin); nên ghi mảng BĐS đã làm",
+    "hoc-van": "can — 5/6 nêu bậc học, ngành BĐS, QTKD, Đầu tư, Tài chính-Kế toán, Quy hoạch; JD sale chấp nhận trái ngành",
+    "ky-nang-chuyen-mon": "can — 6/6: tư vấn/chăm sóc khách hàng, quản lý nguồn hàng, nghiên cứu thị trường, phát triển đại lý/đối tác, hồ sơ giao dịch",
+    "ky-nang-mem": "can — 6/6: giao tiếp, trung thực, trách nhiệm, chủ động, chịu áp lực, đàm phán",
+    "cong-cu-phan-mem": "nen — 1/6 Microsoft Office (Excel, PowerPoint, AI)",
+    "chung-chi": "nen — 1/6 ưu tiên chứng chỉ hành nghề môi giới BĐS (trong JD#6)",
+    "du-an": "nen — 4/6 nhắc sản phẩm/dự án BĐS ở phần mô tả; không JD đòi dự án cụ thể",
+    "thanh-tich-kpi": "nen — 2/6 nhắc thu nhập/hoa hồng/kế hoạch bán hàng; nên có số liệu doanh số nếu từng làm sale",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/6 không yêu cầu kinh nghiệm (được đào tạo)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/6 nêu độ tuổi (21-35, 22-30), 1/6 ưu tiên khu vực sinh sống; nên có độ tuổi, nơi ở",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["bất động sản", "chăm sóc khách hàng", "quản lý nguồn hàng", "nghiên cứu thị trường BĐS", "phát triển đại lý", "chứng chỉ môi giới", "hồ sơ giao dịch", "Excel/PowerPoint", "đàm phán"],
+  "bangChung": [
+    "JD#1 (Vinhomes): 'Ưu tiên ứng viên đã có kinh nghiệm trong lĩnh vực BĐS hoặc CSKH (chưa có kinh nghiệm sẽ được đào tạo)'",
+    "JD#2: 'Không yêu cầu kinh nghiệm'; 'Ưu tiên ứng viên từ 21 - 35 tuổi'; 'Chấp nhận sinh viên trái ngành'",
+    "JD#3: 'Ngoại hình chuyên nghi...' (kỹ năng mềm); 'Tối thiểu 01 năm kinh nghiệm'",
+    "JD#4: 'Thành thạo Microsoft Office (Đặc biệt Excel và Powerpoint, AI)'; 'Tối thiểu 03 năm làm R&D'",
+    "JD#6: 'Ưu tiên Có chứng chỉ hành nghề Môi giới Bất động sản'"
+  ],
+  "ghiChu": "Nhóm 'khác' rất tạp, các mục chỉ mang tính tổng quát; độ tin cậy thấp."
+}

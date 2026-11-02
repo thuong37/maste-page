@@ -1,0 +1,35 @@
+{
+  "id": 135,
+  "nhom": "Dược/Y tế/Sức khoẻ/Công nghệ sinh học",
+  "nghe": "Vật lý trị liệu và chăm sóc sức khỏe",
+  "soJD": 4,
+  "doTinCay": "vua",
+  "capBac": "4/4 JD cấp nhân viên: 3 JD kỹ thuật viên/chuyên viên vật lý trị liệu (1-5 năm, THPT/CĐ; trùng nghề #103), 1 JD bác sĩ phục hồi chức năng (3 năm, ĐH, 35-50 tuổi)",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 3/4 nêu độ tuổi; ảnh chuyên nghiệp là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "can — 2/4 nêu mục tiêu nghề nghiệp/gắn bó lâu dài, tinh thần cầu tiến (JD#1, JD#3); nên nêu mục tiêu",
+    "kinh-nghiem-lam-viec": "can — 4/4 hỏi 1-5 năm trong YHCT, cơ xương khớp, phục hồi chức năng, bệnh viện/phòng khám",
+    "hoc-van": "can — 4/4 nêu THPT/CĐ/ĐH, tốt nghiệp YHCT, VLTL, PHCN, Học viện YHCT/Y",
+    "ky-nang-chuyen-mon": "can — xoa bóp bấm huyệt, châm cứu, điện xung/nhiệt/laser trị liệu, tập PHCN, nắn chỉnh cơ xương khớp, đánh giá chức năng, lập kế hoạch điều trị, bệnh án điện tử",
+    "ky-nang-mem": "can — 3/4: tỉ mỉ, tận tâm, trung thực, quan sát tốt, tiếp đón bệnh nhân",
+    "cong-cu-phan-mem": "nen — JD#4 nhập hồ sơ bệnh án điện tử và phần mềm điện tử; 1/4 nhắc",
+    "chung-chi": "can — 3/4 nêu thẳng chứng chỉ hành nghề VLTL/PHCN (CCHN 54 tháng với bác sĩ PHCN)",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "nen — JD#2 tiếng Anh là điểm cộng; 1/4 nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "can — 3/4 yêu cầu chứng chỉ hành nghề/CCHN",
+    "thong-tin-ca-nhan-mo-rong": "can — 3/4 nêu độ tuổi (20-35, 20-25/20-35, 35-50), sức khỏe tốt, nơi làm việc nội thành HCM",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Vật lý trị liệu", "phục hồi chức năng", "Y học cổ truyền", "chứng chỉ hành nghề", "trị liệu cơ xương khớp", "điện xung/laser trị liệu", "bệnh án điện tử"],
+  "bangChung": [
+    "JD#1: 'Có kinh nghiệm hoặc tốt nghiệp các trường liên quan đến YHCT'; 'ĐỘ TUỔI TỪ 25-35 TUỔI'",
+    "JD#2: 'Chứng chỉ hành nghề Vật lý trị liệu và Phục hồi chức năng'; 'Giao tiếp tiếng Anh là điểm cộng'",
+    "JD#3: 'Có chứng chỉ hành nghề và bằng cấp đào tạo chính quy'; 'Mục tiêu nghề nghiệp: nơi gắn bó lâu dài'",
+    "JD#4: 'Sử dụng thành thạo máy tính để nhập hồ sơ bệnh án điện tử'; 'Tốt nghiệp Đại Học trở lên chuyên ngành YHCT, VLTL, PHCN'"
+  ],
+  "ghiChu": "JD#1-#3 trùng JD nghề #103."
+}

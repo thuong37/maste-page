@@ -1,0 +1,36 @@
+{
+  "id": 117,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Nhiệt/Gió/Điều hoà (HVAC-R)",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên kỹ sư (0-2 năm, Cao đẳng trở lên), 2 JD trùng nhau (cùng JD Yurtec); vai trò: pre-sale, thiết kế, shop drawing, giám sát thi công, kỹ sư thầu",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 2/6 nêu tuổi/giới tính (nam 23-32, từ 25 tuổi); nghề kỹ thuật nên ảnh chỉ là phụ (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc định hướng rõ",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm (không yêu cầu đến 3 năm), ưu tiên MEP/HVAC/nhà thầu/trung tâm dữ liệu/dự án xây dựng",
+    "hoc-van": "can — 6/6 nêu CĐ/ĐH chuyên ngành Nhiệt lạnh, Cơ điện lạnh, HVAC, Cấp thoát nước, Điện, MEP",
+    "ky-nang-chuyen-mon": "can — tính chọn thiết bị HVAC, thiết kế hệ thống, shop drawing MEP, bóc tách khối lượng/BOQ, giám sát thi công, lập hồ sơ thầu, nghiệm thu, tính tải lạnh",
+    "ky-nang-mem": "can — 6/6: cẩn thận, tư duy logic, phối hợp nhóm, trách nhiệm, chịu áp lực tiến độ",
+    "cong-cu-phan-mem": "can — 6/6: AutoCAD, Revit/Revit MEP, Excel, MS Office, HAP/EnergyPlus",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ; chỉ 'hiểu tiêu chuẩn/quy chuẩn HVAC'",
+    "du-an": "can — 6/6 nhắc dự án (thiết kế, thi công, hoàn công, dự thầu, trung tâm dữ liệu); CV phải liệt kê dự án",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "can — 3/6 nhắc đọc hiểu tài liệu kỹ thuật tiếng Anh",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 chấp nhận sinh viên mới ra trường/không yêu cầu kinh nghiệm",
+    "giay-phep": "nen — JD sẵn sàng đi công tác công trình xa, làm ngoài giờ; không JD nào đòi bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 nêu tuổi/giới tính (nam 23-32; từ 25 tuổi; nam); 4/6 yêu cầu sức khỏe/đi công trường",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["HVAC", "MEP", "thiết kế điều hòa thông gió", "shop drawing", "BOQ/bóc tách khối lượng", "PCCC", "AutoCAD/Revit", "hồ sơ thầu", "nghiệm thu"],
+  "bangChung": [
+    "JD#1: 'Đọc hiểu bản vẽ MEP, BOQ, spec kỹ thuật; sử dụng được AutoCAD và Excel'; 'Nam', 'Tuổi 23 - 32'",
+    "JD#2: 'Thành thạo AutoCAD, Revit (ưu tiên), các phần mềm tính toán tải lạnh'; 'Có ít nhất 1 năm kinh nghiệm thiết kế hệ thống HVAC/MEP'",
+    "JD#3: 'Kinh nghiệm từ 1–3 năm ở vị trí Shop MEP'; 'kiểm tra va chạm (clash)'",
+    "JD#4: 'Sức khỏe tốt có thể đi được công trường'; 'có 0-2 năm kinh nghiệm'",
+    "JD#6: 'Ưu tiên ứng viên từng tham gia dự án trung tâm dữ liệu, điều hòa chính xác'"
+  ],
+  "ghiChu": "JD#5 trùng JD#4 của nghề #116 (Yurtec)."
+}

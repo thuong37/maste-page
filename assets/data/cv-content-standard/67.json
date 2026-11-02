@@ -1,0 +1,34 @@
+{
+  "id": 67,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Tài chính/Ngân hàng/Bảo hiểm khác",
+  "soJD": 3,
+  "doTinCay": "thap",
+  "capBac": "3/3 JD cấp nhân viên phân tích/kế hoạch tài chính (1 năm đến trên 3 năm kinh nghiệm); Cao đẳng/Đại học Tài chính, Kế toán, Kiểm toán",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; công việc phân tích số liệu nên ảnh không cần (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — không JD nhắc trực tiếp; nên nêu định hướng FP&A/kế hoạch tài chính (suy từ công việc)",
+    "kinh-nghiem-lam-viec": "can — 3/3 hỏi 1-3 năm ở FP&A, phân tích tài chính hoặc lập kế hoạch/quản lý tài chính; nên ghi lĩnh vực (chứng khoán, giáo dục, doanh nghiệp)",
+    "hoc-van": "can — 3/3 nêu Đại học/Cao đẳng chuyên ngành Tài chính, Kế toán, Kiểm toán, Kinh tế",
+    "ky-nang-chuyen-mon": "can — 3/3: phân tích tài chính, lập và theo dõi ngân sách/dự toán, báo cáo quản trị, thẩm định dự án đầu tư, theo dõi dòng tiền, quyết toán",
+    "ky-nang-mem": "nen — 2/3: cẩn thận, kiên trì, chịu áp lực, tổng hợp số liệu phục vụ tham mưu",
+    "cong-cu-phan-mem": "nen — 1/3 nêu Excel, Word, phần mềm kế toán; 1/3 ưu tiên ứng dụng CNTT trong quản lý ngân sách",
+    "chung-chi": "khong — không JD nào nhắc chứng chỉ",
+    "du-an": "nen — 1/3 (HS) nêu tính toán/thẩm định dự án đầu tư; ghi dự án phân tích tài chính nếu có",
+    "thanh-tich-kpi": "nen — 2/3 nhắc KPI/chỉ số hiệu quả (BSC-KPI, hiệu quả kinh doanh); nên ghi số liệu tiết kiệm chi phí/độ chính xác dự báo",
+    "ngoai-ngu": "khong — không JD tài chính nào nhắc ngoại ngữ (tiếng Anh chỉ ở JD kế hoạch sản xuất đã loại)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 1/3 nêu độ tuổi 24-35; nên có độ tuổi (suy từ JD)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["FP&A", "phân tích tài chính", "lập kế hoạch ngân sách", "dự toán", "báo cáo quản trị", "thẩm định dự án", "dòng tiền", "kế toán quản trị", "Excel", "BSC-KPI"],
+  "bangChung": [
+    "JD#1 (ThaiHoldings): 'Trên 3 năm kinh nghiệm ... (FP&A, Phân tích tài chính)'; 'lập kế hoạch và dự báo ngân sách'",
+    "JD#2 (Phenikaa): 'Tổng hợp dự toán thu chi ngân sách năm'; 'BSC-KPI'; 'kinh nghiệm làm việc tại cơ sở giáo dục đại học'",
+    "JD#3 (HS): 'Tuổi 24 – 35'; 'thẩm định dự án, phân tích hiệu quả kinh doanh, ngân sách'; 'Sử dụng thành thạo excel, word, phần mềm kế toán'"
+  ],
+  "ghiChu": "Nghề thuộc nhóm 'khác' tạp và chỉ còn 3 JD sát nghề (FP&A/kế hoạch tài chính) nên doTinCay=thap. Loại JD#4 (Kiên Cố PMG, Nhân viên Kế hoạch Sản xuất - lệch nghề). Crawl lại vẫn chưa đủ JD cho một chuẩn chung; mỗi JD thuộc một mảng khác nhau (chứng khoán, giáo dục, doanh nghiệp)."
+}

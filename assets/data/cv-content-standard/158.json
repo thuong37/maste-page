@@ -1,0 +1,35 @@
+{
+  "id": 158,
+  "nhom": "Tài xế",
+  "nghe": "Đưa đón",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "5/6 JD tài xế cấp nhân viên (2-3 năm kinh nghiệm lái xe, từ THPT/Trung cấp), JD#2 (kế toán tổng hợp, 3 năm) lạc nghề; tài xế đưa đón sếp/ban giám đốc, đón sân bay-khách sạn, xe cứu thương",
+  "muc": {
+    "anh-chan-dung": "nen — JD#1 yêu cầu 'tác phong lịch sự chỉnh tề, không có hình xăm' (ngoại hình), nghề tiếp xúc lãnh đạo/khách nên ảnh nghiêm túc là lợi thế",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc định hướng nghề nghiệp",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD tài xế nêu 2-5 năm lái xe (chở sếp, xe sang Mercedes/BMW, xe cứu thương); nên ghi loại xe, tuyến, số năm lái an toàn",
+    "hoc-van": "nen — 5/5 nêu bậc học thấp (THPT, Trung cấp trở lên); không yêu cầu chuyên ngành",
+    "ky-nang-chuyen-mon": "can — lái xe an toàn, thông thạo đường nội thành/tỉnh lân cận, luật giao thông, bảo dưỡng/vệ sinh xe, xử lý tình huống khẩn cấp (4/5 JD tài xế), sơ cứu ban đầu (JD#4)",
+    "ky-nang-mem": "can — 5/5: trung thực, cẩn thận, trách nhiệm, lịch sự, giao tiếp, quản lý thời gian",
+    "cong-cu-phan-mem": "khong — không JD tài xế nào nhắc phần mềm",
+    "chung-chi": "can — 5/5 yêu cầu loại bằng lái cụ thể (B2, C, D hoặc cao hơn); xếp ở mục giay-phep, chung-chi chỉ bổ sung (chưa có JD nêu chứng chỉ khác ngoài bằng lái)",
+    "du-an": "khong — không JD nào nhắc dự án",
+    "thanh-tich-kpi": "nen — JD#4: 'không có vi phạm nghiêm trọng' trong 3-5 năm; nên ghi số năm lái an toàn không vi phạm",
+    "ngoai-ngu": "nen — JD#3 tiếng Anh giao tiếp là lợi thế, JD#5 và #6 tiếng Anh giao tiếp cơ bản; 3/6 JD",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "can — 5/5 JD tài xế yêu cầu bằng lái đúng hạng (B2/C cho xe du lịch, D cho xe cứu thương); JD#1 nhắc giấy tờ xe, bằng lái còn hạn",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/5 JD tài xế nêu giới tính Nam và độ tuổi (20-60; 25-45; 30-60)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Bằng lái B2/C/D", "lái xe an toàn", "tài xế đưa đón lãnh đạo", "xe sang Mercedes/BMW", "xe cứu thương", "thông thạo đường nội thành và liên tỉnh", "bảo dưỡng xe", "luật giao thông", "xử lý tình huống khẩn cấp", "Tiếng Anh giao tiếp cơ bản"],
+  "bangChung": [
+    "JD#1: 'Bằng lái xe du lịch (B2, C)'; 'Từ 2 năm kinh nghiệm lái xe chở Sếp'; 'không có hình xăm'; 'Nam từ 30 – 60 tuổi'",
+    "JD#3: 'Có bằng lái xe theo quy định'; 'Thuộc đường trong khu vực TP.HCM'; 'tiếng anh là một lợi thế'",
+    "JD#4: 'Giấy phép lái xe hạng D hoặc cao hơn'; '03 – 05 năm kinh nghiệm lái xe an toàn, không có vi phạm nghiêm trọng'",
+    "JD#5/#6: 'Có bằng lái xe dấu B2'; 'Đã từng lái qua các dòng xe sang Mercedes-Benz, BMW'; 'Tiếng anh giao tiếp cơ bản'"
+  ],
+  "ghiChu": "JD#2 (Kế toán tổng hợp, Thuốc Thú Y TW5) lạc nghề, không dùng làm bằng chứng. JD#5 và #6 gần như trùng nhau."
+}

@@ -1,0 +1,36 @@
+{
+  "id": 157,
+  "nhom": "Tài xế",
+  "nghe": "Vận tải",
+  "soJD": 5,
+  "doTinCay": "cao",
+  "capBac": "5/5 JD sát nghề cấp nhân viên lái xe tải/giao hàng; kinh nghiệm từ không yêu cầu đến 5 năm (đa số 1-2 năm); học vấn từ THCS/THPT",
+  "muc": {
+    "anh-chan-dung": "nen — không JD nào đòi ảnh; 5/5 JD nêu giới tính Nam/độ tuổi nên nếu có ảnh thì chỉ cần nghiêm túc (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc định hướng",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD hỏi kinh nghiệm lái xe tải/giao hàng (1-5 năm), ưu tiên xe bồn/xăng dầu, tuyến TP.HCM/Hà Nội/liên tỉnh",
+    "hoc-van": "nen — 5/5 JD chỉ nêu THCS/THPT trở lên, không đòi chuyên ngành",
+    "ky-nang-chuyen-mon": "can — 5/5: lái xe tải/xe bồn theo tuyến, giao nhận hàng, bốc xếp, kiểm tra hàng, bảo quản/bảo dưỡng xe, thông thạo đường",
+    "ky-nang-mem": "can — 5/5: trung thực, cẩn thận, trách nhiệm, chấp hành luật giao thông và kỷ luật an toàn, siêng năng",
+    "cong-cu-phan-mem": "khong — JD lái xe không nhắc phần mềm",
+    "chung-chi": "nen — không JD nào đòi chứng chỉ ngoài giấy phép lái xe",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — chỉ nhắc giao hàng đúng thời gian/địa điểm; không có chỉ tiêu số liệu",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "can — 5/5 JD yêu cầu bằng lái theo hạng xe: FC, B2/C1, C, B2 trở lên",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/5 JD nêu giới tính Nam, 4/5 nêu độ tuổi (dưới 40, 20-45, từ 20, 20-35); JD#1 nhắc sức khỏe tốt",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Lái xe tải", "xe bồn", "giao hàng", "giấy phép lái xe hạng C/FC/B2", "thông thạo tuyến đường", "an toàn giao thông", "bốc xếp"],
+  "bangChung": [
+    "JD#1: 'Có giấy phép lái xe hạng FC còn hiệu lực'; 'Nam, tuổi dưới 40'; 'Ưu tiên ... kinh nghiệm lái xe bồn/vận tải xăng dầu'",
+    "JD#2: 'bằng B2 cũ/C1 mới'; 'Tuổi từ 20 đến 45'; 'Nam'",
+    "JD#3: 'Có từ 5 năm kinh nghiệm lái xe tải'; 'Bằng C, Có sức khỏe tốt'; 'Thông thạo đường đi các tỉnh'",
+    "JD#5: 'Có bằng lái xe tải B2 trở lên'; 'Kinh nghiệm: Từ 1–2 năm'; 'Giới tính: Nam'",
+    "JD#6: 'Nam, từ 20-35 tuổi'; 'Có 2 năm kinh nghiệm lái xe tải'"
+  ],
+  "ghiChu": "Loại JD#4 (Kỹ thuật xe tải: theo dõi tình trạng đội xe, phối hợp gara, CĐ/ĐH cơ khí ô tô, Excel) khỏi số liệu x/5; số JD thu được là 6. 5 JD sát nghề đều là lái xe tải/giao hàng, không có tài xế xe khách/container/taxi."
+}

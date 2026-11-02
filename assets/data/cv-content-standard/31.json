@@ -1,0 +1,36 @@
+{
+  "id": 31,
+  "nhom": "Nhân sự/Hành chính/Pháp chế",
+  "nghe": "Hành chính",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên/chuyên viên (trừ 1 trưởng phòng HCNS); 1 JD không yêu cầu kinh nghiệm (trung cấp), còn lại 2-5 năm; 3/6 JD trùng với nghề Nhân sự (id 30)",
+  "muc": {
+    "anh-chan-dung": "nen — không JD nào đòi ảnh; JD#2 nêu tuổi 25-30 (1/6); vị trí văn phòng, ảnh chỉ là tùy chọn (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#6 ưu tiên làm việc ổn định, lâu dài (1/6)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc (không yêu cầu đến 5 năm); hành chính văn phòng, HR Admin, hành chính vận hành, HCNS tổng hợp",
+    "hoc-van": "can — 6/6 nêu bậc học (trung cấp đến ĐH); ngành Nhân lực, QTKD, Quản trị văn phòng, Luật, Hành chính",
+    "ky-nang-chuyen-mon": "can — 6/6: quản lý hồ sơ/văn bản/con dấu, quản lý VPP và thiết bị, thanh toán hoàn ứng, xây dựng quy trình vận hành, báo cáo chi phí/hiệu suất, am hiểu Luật Lao động, BHXH",
+    "ky-nang-mem": "can — 6/6: cẩn thận, trung thực, trách nhiệm, tổ chức công việc, giao tiếp phối hợp liên phòng ban, bảo mật",
+    "cong-cu-phan-mem": "can — 5/6: Excel/Google Sheets, Word, Trello, Asana, Base, 1Office (JD#3), tin học văn phòng",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — JD#3 lập báo cáo chi phí, hiệu suất, tối ưu chi phí; JD#5 hệ thống KPI (2/6)",
+    "ngoai-ngu": "nen — JD#3 tiếng Anh giao tiếp/đọc hiểu là lợi thế, JD#4 tiếng Anh giao tiếp cơ bản (2/6)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#1 không yêu cầu kinh nghiệm, ứng viên mới có thể ghi hoạt động (1/6)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#2 tuổi 25-30 (1/6 nêu thẳng)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["hành chính văn phòng", "quản lý hồ sơ/văn bản", "HR Admin", "quản lý VPP/thiết bị", "thanh toán hoàn ứng", "quy trình vận hành", "Excel/Google Sheets", "Luật Lao động"],
+  "bangChung": [
+    "JD#1: 'không yêu cầu kinh nghiệm'; 'Quản lý hồ sơ, soạn thảo văn bản theo mẫu có sẵn'",
+    "JD#2: 'Quản lý con dấu của công ty'; 'Kinh nghiệm tối thiếu từ 2 năm'; 'Kỹ năng Excel + Word tốt'",
+    "JD#3: '3 năm kinh nghiệm ... Admin vận hành'; 'phần mềm quản lý công việc (Trello, Asana, Base, 1Office...)'; 'Tiếng Anh giao tiếp/đọc hiểu là lợi thế'",
+    "JD#4: 'Giao tiếp tiếng Anh cơ bản'; 'Thành thạo tin học văn phòng (Excel/Google Sheets, Word)'",
+    "JD#6: 'Có từ 5 năm kinh nghiệm ... Hành chính, Nhân sự'; 'Quản Lý Hồ Sơ, Quản Lý Văn Bản'"
+  ],
+  "ghiChu": "3/6 JD (Evox, Nexful, Viện nghiên cứu) trùng với JD của nghề Nhân sự (id 30)."
+}

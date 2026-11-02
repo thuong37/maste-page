@@ -1,0 +1,36 @@
+{
+  "id": 42,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "IT Management/Specialist",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5/5 JD Solution/Technical Architect: 2 trưởng phòng/trưởng nhóm (5 năm kinh nghiệm, 3-5 năm quản lý), 3 nhân viên cấp senior (3-5 năm); ĐH trở lên (1 JD cao đẳng), ngành CNTT/Khoa học máy tính/Toán-Tin",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình/độ tuổi/giới tính; công việc kiến trúc kỹ thuật (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#3 growth mindset, tự học công nghệ mới; JD#4 nghiên cứu công nghệ nhanh (2/5); dùng để nêu định hướng kiến trúc giải pháp",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD đòi 3-10 năm Solution/Technical Architect hoặc Senior Engineer/Tech Lead",
+    "hoc-van": "can — 5/5 nêu bậc học; ngành CNTT, Khoa học máy tính, Toán-Tin, Viễn thông",
+    "ky-nang-chuyen-mon": "can — 5/5: thiết kế kiến trúc end-to-end, cloud (AWS/GCP/Azure), microservices, data pipeline, Data Lakehouse/Warehouse, HA/DR, sizing/capacity planning, PoC, tư vấn giải pháp với khách hàng",
+    "ky-nang-mem": "can — 4/5: giao tiếp, trình bày, tư duy hệ thống/logic, giải quyết vấn đề, làm việc với PM/BA/khách hàng, dẫn dắt",
+    "cong-cu-phan-mem": "can — 5/5: AWS/GCP/Azure, Docker/Kubernetes, Terraform, VMware/Hyper-V, Kafka, Airflow, Spark, Postgres/BigQuery/Snowflake, MLflow",
+    "chung-chi": "can — JD#2 AWS Solutions Architect Associate/Professional; JD#4 TOEIC 600 (3/5 nhắc chứng chỉ/bằng cấp theo tín hiệu, 2/5 nêu thẳng)",
+    "du-an": "can — 3/5 nhắc dự án (JD#2 dẫn dắt dự án di chuyển data center/cloud, JD#5 hệ thống 500.000 người dùng, đã tham gia hệ thống cơ quan nhà nước, JD#3 PoC); CV phải nêu hệ thống và quy mô",
+    "thanh-tich-kpi": "nen — JD#5 quy mô 500.000 người dùng, 1.000 CCU; JD#1 cost optimization (2/5); nên nêu quy mô hệ thống",
+    "ngoai-ngu": "nen — JD#3 tiếng Anh giao tiếp trong họp/workshop với khách hàng, JD#3 tiếng Trung đọc hiểu, JD#4 TOEIC 600 (2/5)",
+    "portfolio-link": "nen — tín hiệu portfolio 2/5; nên đính kèm sơ đồ kiến trúc/sản phẩm đã thiết kế (suy từ tính chất công việc)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — 5/5 JD đòi 3-10 năm kinh nghiệm",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — không JD nào nêu độ tuổi/giới tính",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Solution Architect", "kiến trúc cloud AWS/GCP", "microservices", "Kubernetes/Docker", "Data Lakehouse/Data Warehouse", "high availability/DR", "PoC/presales", "AWS Solutions Architect", "Terraform"],
+  "bangChung": [
+    "JD#1: 'Tối thiểu 5 năm kinh nghiệm ... trực tiếp làm kiến trúc hệ thống'; 'Docker, Kubernetes'; 'Kafka, Airflow, MLflow'",
+    "JD#2: 'Chứng chỉ AWS Solutions Architect Associate hoặc ... Professional'; 'Kinh nghiệm dẫn dắt các dự án di chuyển trung tâm dữ liệu hoặc đám mây'",
+    "JD#3: '5+ years ... Technical/Solution Architect'; 'Proficient in English communication'; 'Build PoC'",
+    "JD#4: '3–5 năm kinh nghiệm về Data Architecture'; 'Data Lakehouse, Data Warehouse'; 'TOEIC 600'",
+    "JD#5: 'hệ thống ... khoảng 500.000 người dùng và 1.000 CCU'; 'High Availability, Load Balancing, Backup/DR'"
+  ],
+  "ghiChu": "Nghề 'IT Management/Specialist' nhưng JD thu được đều là Solution Architect; chỉ 5 JD."
+}
