@@ -1,0 +1,35 @@
+{
+  "id": 49,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Tài xế",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "4/6 JD tài xế/lái xe (xe bồn FC, lái xe công ty B2, xe hạng D, xe nâng; 2-3 năm kinh nghiệm, trừ xe nâng dưới 1 năm); 2/6 JD lạc nghề (tư vấn tuyển sinh học lái xe, kỹ thuật xe tải); từ THPT/trung cấp",
+  "muc": {
+    "anh-chan-dung": "nen — không JD nào đòi ảnh; JD#3 nêu 'chỉnh chu, không nhuộm tóc, không xăm hình' (1/4 JD tài xế); 3/6 nêu giới tính Nam; ảnh gọn gàng là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc định hướng/mục tiêu",
+    "kinh-nghiem-lam-viec": "can — 4/4 JD tài xế đòi kinh nghiệm lái xe tương đương (2-3 năm; xe nâng 3-6 tháng); nên ghi loại xe đã lái, tuyến, công ty",
+    "hoc-van": "nen — JD tài xế chỉ cần THPT hoặc trung cấp; ghi ngắn bậc học",
+    "ky-nang-chuyen-mon": "can — lái xe an toàn, bảo quản/bảo dưỡng xe, vận chuyển đúng lịch, thông thạo đường TP.HCM và lân cận, vận hành xe nâng, PCCC/an toàn vận chuyển xăng dầu",
+    "ky-nang-mem": "can — 6/6: trách nhiệm, cẩn thận, trung thực, chịu khó, giao tiếp lịch sự, bảo mật thông tin",
+    "cong-cu-phan-mem": "khong — không JD tài xế nào nhắc phần mềm (chỉ JD#6 lạc nghề dùng Excel)",
+    "chung-chi": "can — 4/6: giấy phép lái xe hạng FC (JD#2), bằng B2 trở lên (JD#3), hạng D (JD#4), chứng chỉ vận hành xe nâng (JD#5)",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — JD#3 'lái xe an toàn và tiết kiệm' (1/4); có thể ghi số năm/km lái xe an toàn không vi phạm (suy từ tính chất công việc)",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "nen — nghề lái xe nên ghi khen thưởng lái xe an toàn nếu có (suy từ tính chất công việc; không JD nhắc)",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "can — 4/6 JD đòi bằng lái hạng FC/B2/D và chứng chỉ xe nâng, bắt buộc còn hiệu lực",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/6 JD nêu giới tính/độ tuổi (Nam dưới 40, Nam 30-40, Nữ), JD#3 yêu cầu không uống rượu bia, không hút thuốc, không xăm; yêu cầu sức khỏe tốt",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["bằng lái B2/D/FC", "lái xe bồn/xe công ty", "xe nâng", "an toàn giao thông", "bảo dưỡng xe", "thông thạo đường", "sức khỏe tốt", "đưa đón lãnh đạo"],
+  "bangChung": [
+    "JD#2: 'Có giấy phép lái xe hạng FC còn hiệu lực'; 'Nam, tuổi dưới 40'; 'Có sức khỏe tốt'",
+    "JD#3: 'Bắt buộc Bằng B2 trở lên'; 'Kinh nghiệm 3 năm trở lên'; 'không uống rượu bia, không hút thuốc, không nhuộm tóc, không xăm hình'",
+    "JD#4: 'Yêu cầu bằng lái xe hạng D'; 'Thông thạo đường tại TP. Hồ Chí Minh và các tỉnh lân cận'",
+    "JD#5: 'Có chứng chỉ đào tạo \"Vận hành xe nâng hàng\"'; 'Kinh nghiệm từ 3-6 tháng vận hành xe nâng'"
+  ],
+  "ghiChu": "JD#1 (tư vấn tuyển sinh học lái xe) và JD#6 (kỹ thuật xe tải) lạc nghề, không dùng làm căn cứ; CV tài xế tối giản, ưu tiên bằng lái và kinh nghiệm."
+}

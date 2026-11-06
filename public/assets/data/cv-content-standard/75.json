@@ -1,0 +1,36 @@
+{
+  "id": 75,
+  "nhom": "Xây dựng",
+  "nghe": "Sales Xây dựng",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "5/6 JD nhân viên kinh doanh (không đến 1 năm kinh nghiệm; Trung cấp/Cao đẳng trở lên), 1 JD giám đốc kinh doanh (1 năm quản lý, Đại học); phần lớn sale nội thất/vật liệu xây dựng",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; 1/6 nêu ngoại hình ưa nhìn là lợi thế, 2/6 nêu độ tuổi; nghề gặp khách nên ảnh nghiêm túc là lợi thế",
+    "muc-tieu-nghe-nghiep": "can — 2/6 JD nhấn mục tiêu thu nhập và định hướng phát triển nghề sales; nên nêu định hướng rõ",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD hỏi kinh nghiệm sales/BĐS/nội thất/xây dựng; nên ghi ngành, loại khách B2B/B2C",
+    "hoc-van": "can — 6/6 nêu bậc học (Trung cấp đến Đại học), ngành Xây dựng, Kinh tế, QTKD, Marketing",
+    "ky-nang-chuyen-mon": "can — 6/6: tìm kiếm khách hàng, tư vấn giải pháp, lập báo giá, đàm phán, chốt hợp đồng, đấu thầu, theo dõi pipeline",
+    "ky-nang-mem": "can — 6/6: giao tiếp, thuyết phục, đàm phán, kiên trì, chịu áp lực doanh số, làm việc độc lập/nhóm",
+    "cong-cu-phan-mem": "nen — 3/6: Word, Excel, PowerPoint, CRM",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — 3/6 nhắc sales dự án, tổng thầu/nhà thầu; nên nêu dự án/hợp đồng đã chốt",
+    "thanh-tich-kpi": "can — 4/6 nhắc doanh số/KPI/mục tiêu thu nhập; CV nên có số liệu doanh số, số hợp đồng",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc; chỉ hữu ích nếu có danh hiệu sales xuất sắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/6 nhận không/chưa có kinh nghiệm (được đào tạo)",
+    "giay-phep": "nen — 1/6 đi công trình, gặp nhà thầu; không JD nhắc bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 nêu độ tuổi/giới tính (22-33, 22-32, Nam); nên có độ tuổi, nơi ở",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Sales B2B", "Sales dự án", "tư vấn nội thất", "vật liệu xây dựng", "báo giá", "chốt đơn", "đàm phán", "chăm sóc khách hàng", "KPI doanh số", "CRM"],
+  "bangChung": [
+    "JD#1: 'Có kinh nghiệm sales tối thiểu 1 năm (ưu tiên nội thất, BĐS, xây dựng)'; 'đảm bảo KPI doanh số'",
+    "JD#2: 'Ngoại hình ưa nhìn, phong cách chuyên nghiệp là một lợi thế'; 'Độ tuổi: 22 - 33'; 'CRM'",
+    "JD#3: 'Có 1 năm kinh nghiệm Sales B2B/Sales dự án'; 'chịu được áp lực doanh số'",
+    "JD#4: 'Có mục tiêu thu nhập và thật sự muốn phát triển trong nghề Sales'",
+    "JD#6: 'Công tác nhận, giao chỉ tiêu, điều hành kinh doanh'; 'Sử dụng thành thạo Word, Excel'"
+  ],
+  "ghiChu": "JD#3 và JD#5 trùng với JD ở #76 (cùng nguồn Austnam, Đa Lợi)."
+}

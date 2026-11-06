@@ -1,0 +1,36 @@
+{
+  "id": 130,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Chuỗi cung ứng",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "1/6 JD nhân viên sales kho lạnh (1 năm, ĐH), 1/6 JD nhân viên vận hành chuỗi cung ứng (3 năm), 1 JD giám sát/trưởng nhóm (5 năm), 3/6 JD cấp giám đốc (5-10 năm, 2-5 năm quản lý); từ CĐ/ĐH; đa số ngành F&B/mỹ phẩm/sản xuất",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; nghề quản lý vận hành (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 nhắc định hướng/lộ trình partner/tầm nhìn; nên nêu mục tiêu chiến lược chuỗi cung ứng",
+    "kinh-nghiem-lam-viec": "can — 6/6 hỏi kinh nghiệm (1-10 năm), ưu tiên F&B nhiều chi nhánh, mỹ phẩm/FMCG, nhà máy, nhiều kho/cơ sở",
+    "hoc-van": "can — 6/6 nêu CĐ/ĐH ngành Chuỗi cung ứng, Logistics, Mua hàng, QTKD, Kỹ thuật công nghiệp",
+    "ky-nang-chuyen-mon": "can — hoạch định cung ứng, mua hàng và phát triển NCC, kho vận/tồn kho, điều phối sản xuất, 3PL, nhập khẩu/hải quan/Incoterms, xây dựng quy trình/SOP, phân tích chi phí",
+    "ky-nang-mem": "can — 6/6: quản lý/phát triển đội ngũ, đàm phán, tư duy hệ thống, giải quyết vấn đề, phối hợp liên phòng ban",
+    "cong-cu-phan-mem": "can — 5/6: Excel, ERP, WMS, Salesforce/Base, công cụ dữ liệu/AI",
+    "chung-chi": "nen — JD#4 ưu tiên chứng chỉ quốc tế CSCP, CPIM, CIPS; 1/6 nhắc",
+    "du-an": "nen — JD#3 kể lại một lô hàng có vấn đề và cách xử lý; JD#4/JD#2 dự án cải tiến; ít JD nhắc",
+    "thanh-tich-kpi": "can — 5/6 nhắc KPI, chi phí, tồn kho, tiến độ, giao hàng, doanh thu; CV phải có số liệu (tiết giảm chi phí, vòng quay tồn kho)",
+    "ngoai-ngu": "can — 3/6: tiếng Anh giao tiếp (cơ bản đến thành thạo), tiếng Trung là lợi thế",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "nen — 3/6 nêu chịu đi công tác tỉnh/nhiều nhà máy-kho; không JD nào đòi bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "nen — không JD nào nêu tuổi/giới tính; 3/6 nêu đi công tác nhiều nơi",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Chuỗi cung ứng", "hoạch định cung ứng", "phát triển nhà cung cấp", "tồn kho/kho vận", "3PL", "S&OP", "ERP/WMS", "tối ưu chi phí", "CSCP/CPIM"],
+  "bangChung": [
+    "JD#2: 'Ít nhất 5 năm kinh nghiệm trong chuỗi cung ứng, mua hàng hoặc kho vận'; 'Ưu tiên từng làm tại chuỗi nhà hàng, thức ăn nhanh'",
+    "JD#3: 'Đã từng gỡ một lô hàng có vấn đề đến cùng, và kể được chuyện đó'; 'chịu đi công tác tỉnh'",
+    "JD#4: 'Ưu tiên có chứng chỉ chuyên môn quốc tế (CSCP, CPIM, CIPS...)'; 'Tối thiểu 8–10 năm kinh nghiệm'",
+    "JD#5: 'Có năng lực hoạch định, điều phối nguồn lực, kiểm soát chi phí, tồn kho, tiến độ, chất lượng và giao hàng'",
+    "JD#1: 'chịu được áp lực KPI'; 'Biết tiếng Anh hoặc tiếng Trung là lợi thế' (JD sales kho lạnh, lệch nghề)"
+  ],
+  "ghiChu": "JD#1 trùng JD#4 của nghề #125 và JD#5 của #128/#131; JD#1 lệch sang sales. JD#5 và JD#6 cùng công ty Fumo Auto."
+}

@@ -1,0 +1,35 @@
+{
+  "id": 103,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Dịch vụ chăm sóc sức khoẻ",
+  "soJD": 4,
+  "doTinCay": "vua",
+  "capBac": "4/4 JD cấp nhân viên kỹ thuật viên vật lý trị liệu/massage, 1-5+ năm kinh nghiệm, THPT/Trung cấp/CĐ; độ tuổi giới hạn trong khoảng 20-45",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 3/4 nêu độ tuổi, nghề tiếp xúc bệnh nhân nên ảnh chỉn chu là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "can — 2/4 nêu mong muốn gắn bó lâu dài/phát triển chuyên môn y tế; nên nêu mục tiêu",
+    "kinh-nghiem-lam-viec": "can — 4/4 hỏi 1 đến trên 5 năm (YHCT, phục hồi chức năng, chăm sóc da/massage), ưu tiên spa/thẩm mỹ viện/phòng khám lớn",
+    "hoc-van": "can — 4/4 nêu THPT/Trung cấp/CĐ trở lên, tốt nghiệp YHCT, bằng chính quy",
+    "ky-nang-chuyen-mon": "can — xoa bóp bấm huyệt, châm cứu, giác hơi, điện xung/nhiệt/laser trị liệu, tập PHCN, nắn chỉnh cơ xương khớp, đánh giá chức năng, ghi hồ sơ bệnh nhân",
+    "ky-nang-mem": "nen — 2/4: tỉ mỉ, tận tâm, trung thực, tinh thần cầu tiến",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc phần mềm",
+    "chung-chi": "can — 2/4 nêu thẳng chứng chỉ hành nghề VLTL/PHCN và bằng chính quy",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "nen — 1/4 nêu tiếng Anh giao tiếp cơ bản là điểm cộng",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "can — 2/4 nêu chứng chỉ hành nghề (xếp ở mục chứng chỉ hành nghề y tế), JD#2/JD#3 yêu cầu hợp lệ",
+    "thong-tin-ca-nhan-mo-rong": "can — 3/4 nêu độ tuổi (20-35, 20-25, 27-45), JD#3 sức khỏe tốt, nơi làm việc nội thành HCM",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Vật lý trị liệu", "phục hồi chức năng", "Y học cổ truyền", "chứng chỉ hành nghề", "trị liệu cơ xương khớp", "massage trị liệu", "châm cứu/bấm huyệt", "điện xung trị liệu"],
+  "bangChung": [
+    "JD#1: 'Có kinh nghiệm hoặc tốt nghiệp các trường liên quan đến YHCT'; 'ĐỘ TUỔI TỪ 25-35 TUỔI'",
+    "JD#2: 'Chứng chỉ hành nghề Vật lý trị liệu và Phục hồi chức năng'; 'Giao tiếp tiếng Anh là điểm cộng'",
+    "JD#3: 'Có chứng chỉ hành nghề và bằng cấp đào tạo chính quy'; 'Kinh nghiệm làm việc: tối thiểu 5 năm'",
+    "JD#4: 'Có kinh nghiệm 5 năm trở lên chuyên về chăm sóc da, massage gội đầu'; 'Độ tuổi: Từ 27- 45 tuổi'"
+  ],
+  "ghiChu": "Chỉ 4 JD, nằm giữa vật lý trị liệu và massage; chưa phủ các dịch vụ sức khỏe khác (dinh dưỡng, tư vấn)."
+}

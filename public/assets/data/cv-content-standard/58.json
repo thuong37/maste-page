@@ -1,0 +1,36 @@
+{
+  "id": 58,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Gia công cơ khí",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "5/6 JD thợ/kỹ thuật gia công cơ khí (gia công, tiện-phay-bào, CNC, đánh bóng, thợ hàn; không yêu cầu đến 2 năm kinh nghiệm; THPT/trung cấp/cao đẳng), 1 JD lạc nghề (kế toán thuế doanh nghiệp cơ khí)",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình; JD#3, #6 chỉ nêu Nam (JD#6 tuổi 20-50); công việc tay nghề kỹ thuật (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#1, #5 'mong muốn gắn bó lâu dài' (2/5 JD sát nghề)",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD sát nghề nhắc; gia công cơ khí, CNC phay/tiện, hàn TIG/MIG, đánh bóng inox; nên ghi loại máy, vật liệu, công ty (ưu tiên công ty Nhật)",
+    "hoc-van": "nen — JD sát nghề cần THPT, trung cấp/cao đẳng nghề cơ khí/hàn/nguội/tiện/phay; kỹ sư SMC cao đẳng/ĐH Cơ khí/Cơ điện tử; ghi ngắn",
+    "ky-nang-chuyen-mon": "can — 5/5: đọc bản vẽ cơ khí 2D, cắt, hàn, mài, khoan, tiện/phay/bào, lập trình CNC (Fanuc), dung sai, dụng cụ đo kiểm, bảo trì thiết bị, an toàn lao động",
+    "ky-nang-mem": "can — 4/5: trách nhiệm, chăm chỉ, chịu khó, làm việc nhóm, tuân thủ quy trình",
+    "cong-cu-phan-mem": "nen — JD#4 lập trình CNC hệ Fanuc/Mazatrol (1/5); các JD khác dùng máy móc, dụng cụ đo, không phần mềm",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ (JD#4 có bằng cấp cơ khí)",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "nen — JD#4 đọc hiểu tài liệu kỹ thuật tiếng Anh là lợi thế (1/5)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#5 học việc có đào tạo, JD#1/#3/#4 dưới 1 năm kinh nghiệm (4/5 nhận ứng viên mới/dưới 1 năm)",
+    "giay-phep": "nen — JD#5 ưu tiên hoàn thành nghĩa vụ quân sự (1/5); không JD đòi chứng chỉ hàn cụ thể",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#3, #6 nêu Nam, JD#6 tuổi 20-50; JD#3 làm theo ca, sức khỏe tốt (2/5)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["gia công cơ khí", "đọc bản vẽ kỹ thuật", "tiện/phay/bào CNC", "Fanuc", "hàn TIG/MIG", "dung sai/dụng cụ đo", "mài/đánh bóng", "an toàn lao động"],
+  "bangChung": [
+    "JD#1: 'Biết đọc và hiểu bản vẽ cơ khí'; 'Đã từng làm việc tại công ty cơ khí của Nhật Bản là một lợi thế'; 'mong muốn gắn bó lâu dài'",
+    "JD#3: 'Tốt nghiệp Trung cấp/cao đẳng nghề (Cơ khí, hàn, nguội, tiện, phay, bào...)'; 'Đọc hiểu bản vẽ, có kiến thức về dung sai'; 'Nam'",
+    "JD#4: 'lập trình phay CNC hệ điều khiển Fanuc (bắt buộc)'; 'đọc hiểu tài liệu kỹ thuật T.Anh là một lợi thế'",
+    "JD#5: 'Học việc có đào tạo'; 'Ưu tiên hoàn thành nghĩa vụ quân sự'",
+    "JD#6: 'TIG, MIG, Hàn que, laser'; 'Nam'; 'Tuổi 20 - 50'"
+  ],
+  "ghiChu": "JD#2 (kế toán thuế) lạc nghề, không dùng làm căn cứ."
+}

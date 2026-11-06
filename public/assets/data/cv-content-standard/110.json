@@ -1,0 +1,34 @@
+{
+  "id": 110,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Dịch vụ thú cưng",
+  "soJD": 1,
+  "doTinCay": "thap",
+  "capBac": "1/1 JD cấp nhân viên (Groomer - Chuyên viên spa thú cưng), dưới 1 năm kinh nghiệm, từ THPT",
+  "muc": {
+    "anh-chan-dung": "khong — JD không nhắc ảnh/ngoại hình; nghề thao tác tay nên ảnh không phải trọng tâm (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 1/1 JD nhắc 'có định hướng gắn bó làm việc ổn định, lâu dài'",
+    "kinh-nghiem-lam-viec": "nen — JD chấp nhận dưới 1 năm; 'ưu tiên kinh nghiệm làm việc liên quan', nên ghi kinh nghiệm grooming/chăm sóc thú cưng",
+    "hoc-van": "can — 1/1 JD nêu 'Tốt nghiệp THPT trở lên'",
+    "ky-nang-chuyen-mon": "can — 1/1: vệ sinh, tắm, cắt tỉa, làm đẹp thú cưng; chăm sóc lưu trú khách sạn chó mèo; có năng khiếu thẩm mỹ",
+    "ky-nang-mem": "can — 1/1: kiên trì, cẩn thận, tỉ mỉ, nhanh nhẹn, trách nhiệm, làm việc độc lập và theo nhóm, yêu động vật",
+    "cong-cu-phan-mem": "khong — JD không nhắc",
+    "chung-chi": "nen — 1/1 JD ưu tiên chứng chỉ grooming",
+    "du-an": "khong — JD không nhắc",
+    "thanh-tich-kpi": "khong — JD không nhắc",
+    "ngoai-ngu": "khong — JD không nhắc",
+    "portfolio-link": "khong — JD không nhắc",
+    "giai-thuong": "khong — JD không nhắc",
+    "hoat-dong-ngoai-khoa": "khong — JD không nhắc",
+    "giay-phep": "khong — digest ghi tín hiệu bằng lái/phương tiện=1 nhưng JD không nêu rõ yêu cầu giấy phép",
+    "thong-tin-ca-nhan-mo-rong": "nen — 1/1 JD yêu cầu sức khỏe tốt, không dị ứng/hô hấp/tim mạch; không nêu tuổi/giới tính",
+    "so-thich": "nen — JD ưu tiên 'yêu thích làm đẹp', 'yêu động vật'; có thể ghi sở thích liên quan thú cưng"
+  },
+  "tuKhoaNenCo": ["Groomer", "spa thú cưng", "tắm cắt tỉa", "khách sạn chó mèo", "chứng chỉ grooming", "yêu động vật"],
+  "bangChung": [
+    "JD#1 (2Vet): 'Tư vấn, vệ sinh, tắm, cắt tỉa, làm đẹp thú cưng'; 'Quản lý và chăm sóc lưu trú khách sạn chó mèo'",
+    "JD#1: 'Tốt nghiệp THPT trở lên'; 'Ưu tiên có chứng chỉ grooming, kinh nghiệm làm việc liên quan'",
+    "JD#1: 'Sức khỏe tốt, không mắc các bệnh dị ứng, hô hấp, tim mạch'; 'Có định hướng gắn bó làm việc ổn định, lâu dài'"
+  ],
+  "ghiChu": "Rất mỏng: crawl lại chỉ thu được 1 JD (Groomer ở hệ thống thú y), không phản ánh các vị trí khác như nhân viên thú y/bán hàng pet shop. Mọi nhận định x/1 chỉ là tham khảo; không bịa thêm."
+}

@@ -1,0 +1,36 @@
+{
+  "id": 124,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Sales Xuất nhập khẩu/Logistics",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "4/5 JD cấp nhân viên sales logistics (0-2 năm, THPT/Trung cấp/CĐ; 2 JD không đòi hoặc dưới 1 năm), 1 JD trưởng nhóm (4 năm, ĐH, IELTS 6.0); nghề tương tự nghề #1 nhưng bộ JD khác",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 4/5 nêu độ tuổi/giọng nói (tuổi 25-45, 20-27, 22-30; giọng miền Bắc/Nam); nghề gặp khách nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 1/5 nhắc định hướng; nên nêu hướng sales logistics/FWD",
+    "kinh-nghiem-lam-viec": "can — 5/5 nhắc kinh nghiệm sales/logistics (0 đến 4 năm), ưu tiên sales logistics, express, FCL/LCL, freight forwarding",
+    "hoc-van": "can — 5/5 nêu bậc học (THPT đến ĐH), ưu tiên Logistics, Kinh tế quốc tế, XNK, Thương mại quốc tế, Ngoại ngữ",
+    "ky-nang-chuyen-mon": "can — tìm kiếm/khai thác khách hàng B2B, đàm phán thuyết phục, hiểu XNK và vận tải biển/hàng không/đường bộ, thủ tục hải quan, chứng từ, FCL/LCL",
+    "ky-nang-mem": "can — 4/5: giao tiếp, đàm phán, xử lý tình huống, làm việc độc lập, chịu áp lực doanh số, lập kế hoạch",
+    "cong-cu-phan-mem": "can — 3/5: Excel, Word, Microsoft Office",
+    "chung-chi": "nen — 1/5 nêu IELTS 6.0 (trưởng nhóm); không JD nào đòi chứng chỉ nghiệp vụ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "can — 3/5 nêu doanh số/chỉ tiêu; CV nên có số liệu doanh số, số khách hàng",
+    "ngoai-ngu": "can — 3/5: tiếng Anh giao tiếp thành thạo/IELTS 6.0, ưu tiên thêm Trung/Nhật",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/5 nhận chưa có kinh nghiệm/ứng viên đang chờ bằng",
+    "giay-phep": "nen — JD#1 có phương tiện di chuyển/đi thị trường; không JD nào đòi bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/5 nêu độ tuổi (25-45, 20-27, 22-30, từ 22), giọng miền Bắc/Nam, phát âm chuẩn; có phương tiện",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Sales Logistics", "Freight forwarding", "Express/Sea Cargo/Air Cargo", "FCL/LCL", "thủ tục hải quan", "khách hàng B2B", "chỉ tiêu doanh số", "Tiếng Anh/Trung/Nhật"],
+  "bangChung": [
+    "JD#1: 'Thành thạo tin học văn phòng: Excel, Word'; 'Có phương tiện di chuyển'",
+    "JD#2: 'Độ tuổi: 25 - 45'; 'Ưu tiên ứng viên có khả năng giao tiếp tốt Tiếng Anh/ Tiếng Trung/ Tiếng Nhật'",
+    "JD#3: 'Tuổi từ 20 tuổi đến dưới 32 tuổi'; 'Sử dụng thành thạo các phần mềm văn phòng như Microsoft Office'",
+    "JD#4: 'Có khả năng làm việc độc lập và chịu áp lực doanh số'; 'Đã có kinh nghiệm ít nhất 03 tháng ở các vị trí sale'",
+    "JD#5: 'hoàn thành tốt các chỉ tiêu doanh số'; 'Am hiểu ... thủ tục hải quan và các chứng từ liên quan'"
+  ],
+  "ghiChu": "Cùng loại với nghề #1; JD#1 và JD#5 có thể trùng với #1."
+}

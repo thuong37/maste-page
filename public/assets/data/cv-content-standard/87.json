@@ -1,0 +1,35 @@
+{
+  "id": 87,
+  "nhom": "Sản xuất",
+  "nghe": "Vận hành thiết bị vận tải/thiết bị nặng",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên, 0-2 năm kinh nghiệm, THPT trở lên; 2/6 JD lạc nghề (tư vấn trả góp, sales xe tải) nên chỉ 4 JD sát nghề lái xe nâng/xe tải cẩu",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; nghề vận hành, ảnh không quan trọng (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc",
+    "kinh-nghiem-lam-viec": "can — 4/4 JD sát nghề hỏi 3 tháng đến 2 năm lái xe nâng/xe tải; nêu loại xe, tải trọng, môi trường kho/công trường",
+    "hoc-van": "nen — 4/4 JD sát nghề chỉ cần THPT hoặc sơ cấp, 'không yêu cầu bằng cấp cao'",
+    "ky-nang-chuyen-mon": "can — lái xe nâng, lái xe tải/cẩu, xếp dỡ an toàn, kiểm tra xe hàng ngày, bảo dưỡng cơ bản, hiểu giới hạn tải trọng",
+    "ky-nang-mem": "nen — 4/4: cẩn thận, trung thực, trách nhiệm, làm việc nhóm",
+    "cong-cu-phan-mem": "khong — không JD sát nghề nhắc phần mềm",
+    "chung-chi": "can — 4/4 JD sát nghề đòi chứng chỉ vận hành xe nâng hoặc chứng chỉ cẩu tự hành/cẩu trục",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "khong — không JD sát nghề nhắc; có thể ghi số giờ/ năm lái không tai nạn (suy từ công việc)",
+    "ngoai-ngu": "khong — không JD sát nghề nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "can — JD#5 bằng lái ô tô hạng C trở lên; các JD xe nâng đòi chứng chỉ vận hành hợp lệ còn thời hạn",
+    "thong-tin-ca-nhan-mo-rong": "can — 3/4 JD sát nghề nêu nam, độ tuổi 18-50/20-40, sức khỏe/thị lực tốt",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Lái xe nâng", "xe nâng dầu 3.5-11 tấn", "xe tải cẩu", "chứng chỉ vận hành xe nâng", "bằng lái hạng C", "xếp dỡ hàng hóa", "kho bãi", "an toàn"],
+  "bangChung": [
+    "JD#3: 'Có chứng chỉ đào tạo Vận hành xe nâng hàng'; 'Kinh nghiệm từ 3-6 tháng vận hành xe nâng'",
+    "JD#4: 'BẮT BUỘC có chứng chỉ vận hành xe nâng hợp lệ'; 'Không yêu cầu bằng cấp cao'",
+    "JD#5: 'Có bằng lái xe ô tô hạng C trở lên'; 'chứng chỉ vận hành cẩu tự hành/cẩu trục'",
+    "JD#6: 'Nam từ 20-40 tuổi'; 'Có chứng chỉ lái xe nâng còn thời hạn'"
+  ],
+  "ghiChu": "JD#1 (FE Credit tư vấn trả góp) và JD#2 (sales xe tải) lạc nghề, bỏ qua khi tổng hợp."
+}

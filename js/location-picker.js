@@ -1,7 +1,7 @@
 (() => {
   const trigger = document.getElementById('heroLocationTrigger') || document.getElementById('jobLocationTrigger');
   const picker = document.getElementById('heroLocationPicker') || document.getElementById('jobLocationPicker');
-  const select = document.getElementById('heroLocationSelect') || document.getElementById('jobLocationSelect');
+  const select = document.getElementById('heroLocationSelect') || document.getElementById('jobLocationSelect') || document.getElementById('company-location');
   if (!trigger || !picker || !select) return;
 
   const places = [
@@ -248,7 +248,7 @@
   }));
   document.getElementById('locationClearAll')?.addEventListener('click', () => { selected.clear(); render(); });
   document.getElementById('locationApply')?.addEventListener('click', apply);
-  (document.getElementById('heroSearchInput') || document.getElementById('jobSearchInput'))?.addEventListener('focus', close);
+  (document.getElementById('heroSearchInput') || document.getElementById('jobSearchInput') || document.getElementById('company-keyword'))?.addEventListener('focus', close);
   document.addEventListener('click', event => { if (!picker.contains(event.target) && !trigger.contains(event.target)) close(); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && !picker.hidden) { close(); trigger.focus(); } });
   

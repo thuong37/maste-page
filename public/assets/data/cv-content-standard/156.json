@@ -1,0 +1,35 @@
+{
+  "id": 156,
+  "nhom": "Năng lượng/Môi trường/Nông nghiệp",
+  "nghe": "Năng lượng/Môi trường/Nông nghiệp khác",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "4/6 JD nhân viên (dưới 1 đến 1 năm, ĐH; JD#4 không cần kinh nghiệm), 1 JD giám sát (2 năm, Cao đẳng), 1 JD trưởng phòng điện mặt trời (2 năm quản lý); vị trí gồm tư vấn môi trường/ESG, kinh doanh giải pháp bền vững, kỹ sư điện mặt trời",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 3/6 nêu độ tuổi/giới tính (22-30, 20-35, Nam 22-35); nghề tư vấn/kinh doanh gặp khách nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — chỉ 1/6 JD nhắc định hướng; nên nêu lĩnh vực quan tâm (ESG, điện mặt trời, môi trường) (suy)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nêu số năm hoặc ưu tiên kinh nghiệm: JD#1 2 năm điện mặt trời; JD#6 giám sát thi công điện mặt trời áp mái; JD#2, #3 ưu tiên ESG/bền vững/B2B; JD#5 1 năm lập hồ sơ môi trường",
+    "hoc-van": "can — 6/6 nêu bậc học và chuyên ngành: Kỹ thuật điện/Năng lượng tái tạo (JD#1), Môi trường/Quản lý năng lượng (JD#2, #3, #5), Điện/Cơ khí (JD#6), Nông học (JD#4)",
+    "ky-nang-chuyen-mon": "can — mảng điện mặt trời: quản lý dự án EPC, Inverter/Panel/SCADA, tiêu chuẩn TCVN/IEC, giám sát thi công; mảng môi trường: lập ĐTM, giấy phép môi trường, báo cáo tài nguyên nước, kiểm kê khí nhà kính, ESG, công trình xanh (LEED, EDGE, LOTUS)",
+    "ky-nang-mem": "can — 6/6: giao tiếp, thuyết phục, làm việc nhóm/độc lập, chịu áp lực, cẩn thận, trách nhiệm, thuyết trình",
+    "cong-cu-phan-mem": "can — JD#1: AutoCAD, PVsyst, Helioscope, ETAP; JD#6: AutoCAD; JD#5 tin học; JD#3 laptop; 3-4/6 JD (nhánh kỹ thuật)",
+    "chung-chi": "nen — JD#2 nhắc các chứng chỉ công trình xanh LEED/EDGE/LOTUS là phạm vi dịch vụ (hiểu biết là lợi thế), JD#6 'đã hoàn tất một khóa học về hệ thống điện'; không JD nào đòi chứng chỉ cụ thể",
+    "du-an": "can — 4/6 JD liên quan dự án: JD#1 quản lý vòng đời dự án solar, JD#6 dự án EPC áp mái nhà xưởng, JD#5 hồ sơ ĐTM và dự án nghiên cứu môi trường",
+    "thanh-tich-kpi": "nen — nhánh kinh doanh (JD#2, #3, JD#4) nhắc chốt sales, upsales, tái kích hoạt khách; JD#1 giám sát ngân sách dự án; ghi số dự án/công suất/doanh số nếu có",
+    "ngoai-ngu": "can — 3/6 nêu tiếng Anh: JD#2 đọc hiểu và trao đổi cơ bản, JD#3 giao tiếp và đọc hiểu, JD#1 tiêu chuẩn quốc tế IEC (suy)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#4 nhận không kinh nghiệm, JD#2 dưới 1 năm; phù hợp ứng viên mới ra trường (suy)",
+    "giay-phep": "khong — không JD nào nhắc bằng lái/giấy phép; JD#6 và #3 chỉ nêu khả năng đi công tác",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 JD nêu độ tuổi/giới tính (JD#2 22-30, JD#4 20-35, JD#6 Nam/Nữ 22-35); JD#3 và #6 nêu khả năng đi công tác",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["ESG", "kiểm kê khí nhà kính", "điện mặt trời", "EPC", "PVsyst/ETAP/AutoCAD", "ĐTM/giấy phép môi trường", "công trình xanh LEED/EDGE/LOTUS", "tiêu chuẩn TCVN/IEC", "quản lý dự án", "tư vấn môi trường"],
+  "bangChung": [
+    "JD#1: 'Ít nhất 2 năm kinh nghiệm ... điện mặt trời'; 'Thành thạo ... AutoCAD, PVsyst, Helioscope, ETAP'; 'tiêu chuẩn ... IEC'",
+    "JD#2: 'kiểm kê khí nhà kính (GHG), giảm phát thải carbon, ESG và các chứng chỉ công trình xanh (LEED, EDGE, LOTUS)'; 'Nam/ nữ tuổi từ 22–30'",
+    "JD#5: 'Lập hồ sơ môi trường như ĐTM, Giấy phép môi trường ...'; 'Biết các quy định pháp luật về môi trường'",
+    "JD#6: 'Sử dụng thành thạo Autocad'; 'kinh nghiệm giám sát thi công hệ thống điện mặt trời áp mái'; 'Có khả năng đi công tác'"
+  ],
+  "ghiChu": "Nhóm 'khác' nên 6 JD gồm 3 mảng (điện mặt trời, tư vấn môi trường/ESG, kinh doanh bền vững); mục chuyên môn/phần mềm phụ thuộc mảng. JD#4 (Tư vấn kỹ thuật nông nghiệp, telesale) nghiêng sang nông nghiệp/bán hàng nên chỉ dùng cho thực tập/không kinh nghiệm."
+}

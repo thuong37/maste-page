@@ -1,0 +1,37 @@
+{
+  "id": 140,
+  "nhom": "Thiết kế",
+  "nghe": "Thiết kế Đồ hoạ/Giao diện/Trải nghiệm",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên thiết kế đồ họa (dưới 1 đến 3 năm; 4/6 hỏi 2 năm), CĐ/ĐH trở lên, ngành Mỹ thuật/Thiết kế đồ họa; 2/6 nêu giới tính/tuổi (nữ 22-27; 22-28); chưa có JD UI/UX riêng",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 2/6 nêu tuổi/giới tính (nữ 22-27, 22-28); nghề sáng tạo nên ảnh là phụ (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 nhắc định hướng/đam mê thiết kế; nên nêu hướng thiết kế (branding, social, bao bì)",
+    "kinh-nghiem-lam-viec": "can — 6/6 hỏi kinh nghiệm thiết kế (dưới 1 đến 3 năm), ưu tiên brand lớn, F&B, digital marketing, TMĐT",
+    "hoc-van": "can — 6/6 nêu CĐ/ĐH chuyên ngành Thiết kế đồ họa, Mỹ thuật ứng dụng hoặc liên quan",
+    "ky-nang-chuyen-mon": "can — thiết kế ấn phẩm (banner, poster, catalogue, POSM), nhận diện thương hiệu, bao bì/tem nhãn, key visual, quay dựng video ngắn, chuẩn bị file in/digital",
+    "ky-nang-mem": "can — 6/6: tư duy thẩm mỹ, sáng tạo, chủ động, trách nhiệm, làm việc nhóm, chịu áp lực deadline",
+    "cong-cu-phan-mem": "can — 6/6: Photoshop, Illustrator, InDesign, Premiere, After Effects, CapCut, Canva, Figma, CorelDraw",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — 1/6 nêu dự án; nên ghi chiến dịch/dự án branding đã thiết kế (suy từ công việc)",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "nen — 1/6 tiếng Anh đọc hiểu",
+    "portfolio-link": "can — nghề đồ họa sản phẩm nhìn được; JD nêu portfolio ở 1/6, phần lớn JD yêu cầu thành thạo phần mềm thiết kế (suy từ tính chất công việc)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#2 chấp nhận dưới 1 năm kinh nghiệm; ít JD nhắc",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/6 nêu giới tính/tuổi (nữ 22-27, 22-28); không đồng nhất",
+    "so-thich": "nen — JD#5 ưu tiên nhiếp ảnh, vẽ tay, biên tập video (kỹ năng phụ trợ)"
+  },
+  "tuKhoaNenCo": ["Graphic Designer", "Photoshop/Illustrator/InDesign", "nhận diện thương hiệu", "thiết kế bao bì", "key visual/POSM", "dựng video CapCut/Premiere", "Figma", "tư duy thẩm mỹ"],
+  "bangChung": [
+    "JD#1: 'Thành thạo các phần mềm thiết kế: Photoshop, Illustrator (biết thêm Premiere/After Effects là lợi thế)'; 'Có kinh nghiệm tối thiểu 2 năm'",
+    "JD#2: 'Nữ - độ tuổi từ 22-27'; 'Tốt nghiệp CĐ, ĐH chuyên ngành Mỹ thuật, Thiết kế đồ họa'",
+    "JD#3: 'Thành thạo ... Adobe Photoshop, Adobe Illustrator, InDesign'; 'Canva Pro ... công cụ AI'",
+    "JD#4: 'Sử dụng tốt CapCut Pro hoặc các phần mềm dựng video khác'; 'Hiểu về bố cục, màu sắc, typography'",
+    "JD#5: 'Sử dụng thành thạo ... Photoshop, Corel Draw, Flash, Illustrator, InDesign'; 'Ưu tiên ... nhiếp ảnh, vẽ tay, biên tập video'",
+    "JD#6: 'Thành thạo Photoshop, Illustrator và Premiere Pro hoặc CapCut'; 'Biết sử dụng Figma'"
+  ],
+  "ghiChu": "Chưa có JD UI/UX riêng; portfolio là suy từ nghề. Yêu cầu giới tính/tuổi ghi nhận như dữ liệu JD."
+}

@@ -1,0 +1,183 @@
+{
+ "id": 148,
+ "nhom": "Nhà hàng/Khách sạn/Du lịch",
+ "nghe": "Nhà hàng/Dịch vụ ăn uống",
+ "crawledAt": "2026-10-22T03:49:30.882Z",
+ "candidates": 49,
+ "thin": false,
+ "jds": [
+  {
+   "url": "https://www.topcv.vn/viec-lam/nhan-vien-bep-nha-hang-nhat-fulltime-parttime-lcb-tu-9-5-trieu-tuy-vao-nang-luc-tip-phu-cap-khong-yeu-cau-kinh-nghiem-di-lam-ngay/2335761.html",
+   "title": "Nhân Viên Bếp Nhà Hàng Nhật (Fulltime/Parttime) - LCB Từ 9.5 Triệu Tùy Vào Năng Lực + Tip + Phụ Cấp, Không Yêu Cầu Kinh Nghiệm, Đi Làm Ngay",
+   "company": "CÔNG TY TNHH SYNERGY VIETNAM",
+   "query": "Nhà hàng Dịch vụ ăn uống",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "Dưới 1 năm kinh nghiệm chuyên môn",
+     "Tuổi 18 - 40",
+     "Trung học phổ thông (Cấp 3) trở lên"
+    ],
+    "Chuyên môn": [
+     "Chuyên môn Nhà hàng/Dịch vụ ăn uống khác",
+     "Lao động phổ thông"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "BẾP\n\nChuẩn bị nguyên liệu nấu ăn\n\nChế biến món ăn theo hướng dẫn\n\nGiữ gìn khu vực bếp sạch sẽ, gọn gàng\n\nLàm việc theo mô hình bếp mở",
+    "Yêu cầu ứng viên": "Kinh nghiệm từ 6 tháng trở lên (sẽ được đào tạo bởi đầu bếp & quản lý có chuyên môn)\nGiao tiếp tiếng Nhật hoặc tiếng Anh thành thạo là lợi thế\nSiêng năng, ham học hỏi, biết lắng nghe\nĐộ tuổi: 18 – 40",
+    "Quyền lợi ứng viên": "• Lương cơ bản từ 9 triệu đồng trở lên, thử việc hưởng 100% lương + tip hàng tháng.\n\n• Có kinh nghiệm bếp Nhật, mức lương khởi điểm từ 9tr5 trở lên\n\n• Lương part-time từ 27.000đ – 40.000đ/giờ, tùy theo năng lực.\n\n• Phụ cấp xăng xe.\n\n• Tham gia đầy đủ BHXH, BHYT, BHTN theo quy định.\n\n• Hưởng lương các ngày nghỉ lễ, Tết theo quy định của pháp luật.\n\n• Xét tăng lương định kỳ và thưởng tháng lương thứ 13.\n\n• Được đào tạo về ẩm thực Nhật Bản, văn hóa Nhật Bản và tiếng Nhật bởi người Nhật.\n\n• Môi trường làm việc thân thiện, quản lý người Nhật tâm lý và dễ mến.\n\n• Lộ trình thăng tiến rõ ràng, phù hợp với năng lực và sự phát triển của mỗi cá nhân.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: AEON MALL TÂN PHÚ CELADON, Phường Tân Sơn Nhì (Phường Tân Sơn Nhì thuộc quận Tân Phú cũ)\nHồ Chí Minh: VINCOM MEGA MALL GRAND PARK, Phường Long Bình (Phường Long Bình thuộc Thành phố Thủ Đức cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:30 đến 22:00)\nChủ nhật - Thứ 7 (từ 08:30 đến 22:00)\nFULLTIME Xoay ca 8 tiếng theo lịch QLNH sắp xếp, được off 4-5 ngày/ tháng\nPART TIME lịch làm linh động tùy theo lịch cá nhân\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 19/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nTrung học phổ thông (Cấp 3) trở lên\nSố lượng tuyển\n10 người\nHình thức làm việc\nKết hợp tại văn phòng và từ xa (Hybrid)\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/nhan-vien-phuc-vu/2302419.html",
+   "title": "Nhân Viên Phục Vụ",
+   "company": "{{ company?.name }}",
+   "query": "Nhà hàng Dịch vụ ăn uống",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "Không yêu cầu kinh nghiệm chuyên môn",
+     "Tuổi 18 - 32",
+     "Trung học cơ sở (Cấp 2) trở lên"
+    ],
+    "Chuyên môn": [
+     "Chuyên môn Nhà hàng/Dịch vụ ăn uống khác",
+     "Nhà hàng / Khách sạn",
+     "Thực phẩm / Đồ uống",
+     "Lao động phổ thông"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Chào đón khách hàng, lắng nghe và tư vấn các món ăn, đồ uống phù hợp với nhu cầu của khách.\nGhi nhận order, truyền đạt thông tin order chính xác đến bộ phận bếp/bar và theo dõi quá trình chuẩn bị món ăn/đồ uống.\nPhục vụ món ăn, đồ uống cho khách hàng một cách nhanh chóng, chuyên nghiệp và đúng tiêu chuẩn của nhà hàng/quán.\nDọn dẹp bàn ăn, đảm bảo khu vực phục vụ luôn sạch sẽ, gọn gàng và ngăn nắp.\nHỗ trợ các công việc chuẩn bị, sơ chế nguyên vật liệu, hoặc pha chế đồ uống cơ bản khi được yêu cầu.\nĐảm bảo tuân thủ các quy định về vệ sinh an toàn thực phẩm trong suốt quá trình làm việc.\nGiải quyết các yêu cầu, thắc mắc hoặc khiếu nại của khách hàng một cách khéo léo và hiệu quả, báo cáo quản lý khi cần thiết.\nHỗ trợ các công việc khác theo sự phân công của Quản lý để đảm bảo hoạt động chung của cửa hàng.",
+    "Yêu cầu ứng viên": "Không yêu cầu kinh nghiệm, sẵn sàng đào tạo cho ứng viên mới vào nghề.\nTốt nghiệp THPT trở lên là một lợi thế.\nCó sức khỏe tốt, siêng năng, trung thực và có trách nhiệm trong công việc.\nThái độ phục vụ chuyên nghiệp, nhiệt tình, thân thiện và luôn tươi cười với khách hàng.\nKỹ năng giao tiếp tốt, cởi mở và khả năng làm việc nhóm hiệu quả.\nCó tinh thần học hỏi, cầu tiến và sẵn sàng thích nghi với môi trường làm việc năng động.\nChịu khó, có thể làm việc theo ca, kể cả cuối tuần và ngày lễ.\nTuân thủ nghiêm ngặt các quy định về vệ sinh an toàn thực phẩm và nội quy của nhà hàng.\nKiến thức ngành\nNhà hàng / Khách sạn, Thực phẩm / Đồ uống",
+    "Quyền lợi ứng viên": "Mức lương cạnh tranh, hấp dẫn, sẽ trao đổi cụ thể khi phỏng vấn, phù hợp với năng lực và đóng góp.\nĐược hưởng đầy đủ các chế độ phúc lợi theo quy định của Luật Lao động (BHXH, BHYT, BHTN) sau thời gian thử việc.\nMôi trường làm việc trẻ trung, năng động, thân thiện và chuyên nghiệp, khuyến khích phát triển bản thân.\nĐược đào tạo nâng cao nghiệp vụ, kỹ năng phục vụ khách hàng và các kỹ năng chuyên môn khác liên quan đến ngành F&B.\nCơ hội thăng tiến rõ ràng lên các vị trí cao hơn trong hệ thống.\nThưởng lễ, Tết, lương tháng 13 (tùy theo chính sách công ty và hiệu quả kinh doanh).\nTham gia các hoạt động gắn kết đội nhóm, team building, du lịch, tiệc cuối năm cùng công ty.\nCung cấp bữa ăn theo ca và đồng phục làm việc.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: 31B-31C Phan Đình Phùng, Phường Phú Nhuận (Phường Phú Nhuận thuộc quận Phú Nhuận cũ)\nHồ Chí Minh: 209 Hoàng Sa, Phường Cầu Kiệu (Phường Cầu Kiệu thuộc quận Phú Nhuận cũ)\nHồ Chí Minh: 176-178 Lê Quang Định, Phường Bình Thạnh (Phường Bình Thạnh thuộc quận Bình Thạnh cũ)\nThời gian làm việc\nThứ 2 - Chủ nhật (từ 15:00 đến 23:30)\nXoay ca sáng 10h đến 17h\nPartime từ 17h đến 23h\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 30/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nTrung học cơ sở (Cấp 2) trở lên\nSố lượng tuyển\n20 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/nhan-vien-phuc-vu/2333227.html",
+   "title": "Nhân Viên Phục Vụ",
+   "company": "CÔNG TY CỔ PHẦN PHỞ ĐỨC VIỆT NAM",
+   "query": "Nhà hàng Dịch vụ ăn uống",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "Không yêu cầu kinh nghiệm chuyên môn",
+     "Trung học phổ thông (Cấp 3) trở lên"
+    ],
+    "Chuyên môn": [
+     "Chuyên môn Nhà hàng/Dịch vụ ăn uống khác",
+     "Lao động phổ thông"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Chào đón khách hàng với thái độ niềm nở, thân thiện, sắp xếp chỗ ngồi phù hợp.\nGiới thiệu thực đơn món ăn, đồ uống, các chương trình khuyến mãi (nếu có) một cách rõ ràng, chuyên nghiệp.\nGhi nhận order chính xác từ khách hàng, đảm bảo thông tin được chuyển đến bộ phận bếp/bar đầy đủ và kịp thời.\nPhục vụ món ăn và đồ uống theo đúng tiêu chuẩn, đảm bảo đúng order, nóng/lạnh đúng chuẩn.\nQuan sát và đáp ứng kịp thời các yêu cầu của khách trong suốt quá trình sử dụng dịch vụ.\nDọn dẹp bàn ăn, thay chén dĩa khi khách dùng xong món, đảm bảo khu vực bàn ăn luôn sạch sẽ, gọn gàng.\nĐảm bảo vệ sinh sạch sẽ khu vực làm việc được phân công (bàn ăn, ghế, khu vực phục vụ...).\nPhối hợp chặt chẽ với các bộ phận khác (bếp, bar, thu ngân) để đảm bảo chất lượng dịch vụ tốt nhất.\nThực hiện các công việc khác theo sự phân công của Quản lý.",
+    "Yêu cầu ứng viên": "Không yêu cầu kinh nghiệm, sẽ được đào tạo khi nhận việc.\nNhanh nhẹn, trung thực, có tinh thần trách nhiệm cao trong công việc.\nKhả năng giao tiếp tốt, tự tin, thân thiện và niềm nở với khách hàng.\nSức khỏe tốt, chịu khó, có thể làm việc theo ca (sáng/chiều/tối), cuối tuần và ngày lễ.\nCó tinh thần học hỏi, cầu tiến và khả năng làm việc độc lập cũng như làm việc nhóm.",
+    "Quyền lợi ứng viên": "Mức thu nhập hấp dẫn 7-12tr/tháng\nHỗ trợ bữa ăn theo ca làm việc tại nhà hàng.\nMôi trường làm việc năng động, thân thiện, chuyên nghiệp, tạo điều kiện phát triển bản thân.\nCơ hội được đào tạo nâng cao nghiệp vụ, kỹ năng phục vụ.\nCơ hội thăng tiến lên các vị trí cao hơn trong hệ thống nhà hàng.\nĐược hưởng đầy đủ các chế độ phúc lợi theo Luật lao động Việt Nam (BHXH, BHYT, BHTN).\nThưởng các dịp Lễ, Tết, thưởng cuối năm theo quy định của công ty.\nTham gia các hoạt động team building, du lịch, tiệc cuối năm của công ty.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: 57 Trần Xuân Soạn, Phường Hai Bà Trưng (Phường Hai Bà Trưng thuộc quận Hai Bà Trưng cũ)\nHà Nội: 68 Hai Bà Trưng, Phường Hoàn Kiếm (Phường Hoàn Kiếm thuộc quận Hoàn Kiếm cũ)\nHà Nội: 128 Ngọc Lâm, Phường Long Biên (Phường Long Biên thuộc quận Long Biên cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:00)\nCa sáng/ Chiều/ Gãy/ part (5-12 tiếng/ngày)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 15/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nTrung học phổ thông (Cấp 3) trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/phu-bep-biet-nau/1775606.html",
+   "title": "Phụ Bếp Biết Nấu",
+   "company": "CÔNG TY CỔ PHẦN AN PHÁT CƯỜNG",
+   "query": "Nhà hàng Dịch vụ ăn uống",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "1 năm kinh nghiệm chuyên môn",
+     "Tuổi 25 - 45",
+     "Trung học phổ thông (Cấp 3) trở lên",
+     "Nam"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm xã hội",
+     "Khám sức khỏe định kỳ",
+     "Thưởng tháng 13"
+    ],
+    "Chuyên môn": [
+     "Chuyên môn Nhà hàng/Dịch vụ ăn uống khác",
+     "Nhà hàng / Khách sạn",
+     "Lao động phổ thông"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Sơ chế thực phẩm: rửa, cắt, thái, nhặt rau, làm sạch thịt cá theo hướng dẫn của bếp trưởng.\n\nChuẩn bị nguyên liệu, gia vị và dụng cụ phục vụ chế biến món ăn.\n\nHỗ trợ bếp trưởng/đầu bếp nấu ăn, chia suất ăn cho cán bộ công nhân viên.\n\nChuẩn bị cơm, thức ăn, canh và các món ăn theo thực đơn của công ty.\n\nThực hiện chia khẩu phần ăn đúng số lượng, đảm bảo vệ sinh và an toàn thực phẩm.\n\nVệ sinh khu vực bếp, bàn sơ chế, khu vực chia thức ăn sau mỗi ca.\n\nRửa và sắp xếp chén, đĩa, nồi, xoong, dụng cụ nhà bếp đúng nơi quy định.\n\nKiểm tra, bảo quản và sắp xếp nguyên liệu thực phẩm trong kho/tủ lạnh.",
+    "Yêu cầu ứng viên": "- Nam Có kinh nghiệm phụ bếp và biết nấu ăn\n\n- Nhanh nhẹn, siêng năng, sức khỏe tốt\n\n- Thời gian làm việc từ 7h30-16h30\n\n\n\n\nKiến thức ngành\nNhà hàng / Khách sạn\nKỹ năng cần có\nLàm việc nhóm, nấu ăn, Làm Sạch Vệ Sinh, Sử Dụng Các Dụng Cụ Nhà Bếp\nKỹ năng nên có\nKhả Năng Sáng Tạo Món Ăn",
+    "Quyền lợi ứng viên": "- Lương thỏa thuận theo năng lực\n\n- Công ty hỗ trợ cơm trưa.\n\n- Được tham gia đầy đủ các chế độ bảo hiểm theo qui định.\n\n- Lương tháng 13,các chế độ hiếu, hỷ, văn hóa văn nghệ, thể thao,.....vv\n\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm xã hội, Khám sức khỏe định kỳ, Thưởng tháng 13\nPhụ cấp\nĂn trưa",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: 30/7, Đường Trương Văn Vĩnh, KP Tân Hiệp, P Tân Đông Hiệp, Phường Tân Đông Hiệp (Phường Tân Đông Hiệp thuộc Thành phố Dĩ An cũ)\nThời gian làm việc\nThứ 2 - Thứ 7 (từ 07:30 đến 16:30)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 12/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nTrung học phổ thông (Cấp 3) trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/truong-ca-phuc-vu-thuong-hieu-le-cafe/2067817.html",
+   "title": "Trưởng Ca Phục Vụ (Thương Hiệu Lề Café)",
+   "company": "CÔNG TY TNHH KIẾN TẠO NIỀM VUI",
+   "query": "Nhà hàng Dịch vụ ăn uống",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "1 năm kinh nghiệm chuyên môn",
+     "Tuổi 23 - 28",
+     "Cao Đẳng trở lên",
+     "Tiếng Anh Giao tiếp cơ bản"
+    ],
+    "Chuyên môn": [
+     "Chuyên môn Nhà hàng/Dịch vụ ăn uống khác",
+     "Du lịch",
+     "Nhà hàng / Khách sạn"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Chuẩn bị trước ca: kiểm tra nhân sự, set up, vệ sinh, hàng hóa, máy móc.\nTheo dõi sát tiến độ và chất lượng phục vụ, quy trình làm việc trong ca.\nĐiều phối nhân viên theo các khu vực mà Quản lý hoặc Giám sát sắp xếp ca, kiểm tra các khu vực từ ngoài vào trong của quán, kiểm tra khu vực quầy bar, kiểm tra tủ đồ mang đi, dụng cụ, bàn ghế, nắm bắt hoạt động quán, kiểm tra các quầy khác trực thuộc quán (khu tô tượng, khu chụp ảnh,...).\nĐảm bảo mọi bộ phận trong quán (bar, phục vụ, thu ngân, vệ sinh...) phối hợp nhịp nhàng, hiệu quả.\nTrực tiếp hỗ trợ công việc cho nhân viên khi cần thiết để duy trì chất lượng dịch vụ.\nKiểm tra và bàn giao đầy đủ và rõ ràng cho ca kế tiếp.\nĐào tạo nghiệp vụ cho nhân viên phục vụ, cách pha chế, sắp xếp hàng, vệ sinh khu vực khi nhận ca hoặc bàn giao ca.\nĐào tạo về menu của quán.\nCác trường hợp xảy ra trong quán thì sẽ xử lý, còn những trường hợp đặc biệt khác thì cần xin chỉ đạo cấp trên như Giám Sát / Quản Lý.",
+    "Yêu cầu ứng viên": "Ưu tiên 23 - 28 tuổi\nCao đẳng/ Đại học\nChuyên ngành quản trị Nhà hàng khách sạn.\nTiếng Anh giao tiếp cơ bản\nSử dụng tốt Word, Excel, Powerpoint,...\nCẩn thận, chi tiết, năng động, chính xác, trung thực, quyết đoán, độc lập,...\nKiến thức ngành\nDu lịch, Nhà hàng / Khách sạn\nKỹ năng cần có\nKỹ năng giao tiếp, Kỹ năng giải quyết vấn đề, Kỹ năng làm việc nhóm, kỹ năng quản lý thời gian",
+    "Quyền lợi ứng viên": "Thời gian làm việc linh hoạt: linh động theo ca, 8h/ca\nNgày off/tháng: 04 ngày/tháng\nTham gia BHXH theo quy định Công ty.\nTrao đổi cụ thể trong quá trình phỏng vấn.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: 30 Đ. Trịnh Đình Thảo (Tân Phú), Phường Tân Phú (Phường Tân Phú thuộc quận Tân Phú cũ)\nHồ Chí Minh: 98 Đ. Nguyễn Thị Thập (Q.7), Phường Tân Hưng (Phường Tân Hưng thuộc Quận 7 cũ)\nHồ Chí Minh: 259 Đ. Đồng Đen (Tân Bình), Phường Bảy Hiền (Phường Bảy Hiền thuộc quận Tân Bình cũ)\n...và 1 địa điểm khác\nThời gian làm việc\n- Ca Sáng: 7h-15h\n- Ca Chiều: 15h-23h\n- Ca Đêm: 23h-7h sáng\n- Xoay ca linh động theo vận hành của Quán\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 11/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nTrưởng nhóm\nHọc vấn\nCao Đẳng trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/quan-ly-chuoi-bep-an-cong-nghiep/2228813.html",
+   "title": "Quản Lý Chuỗi Bếp Ăn Công Nghiệp",
+   "company": "CÔNG TY TNHH OLIVE",
+   "query": "Nhà hàng Dịch vụ ăn uống",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "1 năm kinh nghiệm chuyên môn",
+     "1 năm kinh nghiệm quản lý",
+     "Cao Đẳng trở lên"
+    ],
+    "Chuyên môn": [
+     "Chuyên môn Nhà hàng/Dịch vụ ăn uống khác",
+     "Thực phẩm / Đồ uống",
+     "Nhà hàng / Khách sạn"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "1. Điều hành hoạt động bếp\n\nLập kế hoạch và theo dõi hoạt động sản xuất suất ăn theo thực đơn và số lượng đặt hàng.\nPhối hợp với Bếp trưởng, Kho, Mua hàng và các bộ phận liên quan để đảm bảo nguyên vật liệu, nhân sự và tiến độ sản xuất.\nKiểm soát việc thực hiện đúng quy trình vận hành của bếp.\n\n2. Quản lý chất lượng dịch vụ\n\nTheo dõi chất lượng suất ăn, khẩu phần, thời gian chế biến và giao nhận.\nKiểm tra việc tuân thủ các quy định về an toàn vệ sinh thực phẩm và vệ sinh bếp.\nTiếp nhận, xử lý hoặc phối hợp xử lý các phản hồi, khiếu nại của khách hàng.\n\n3. Quản lý nhân sự vận hành\n\nPhối hợp sắp xếp lịch làm việc và phân công công việc cho nhân viên bếp.\nTheo dõi tình hình chấm công, nhân sự thiếu hụt và đề xuất bổ sung khi cần.\nHỗ trợ đào tạo nhân viên mới về quy trình vận hành và nội quy làm việc.\n\n4. Làm việc với khách hàng\n\nTiếp nhận nhu cầu thay đổi số lượng suất ăn, thực đơn hoặc các yêu cầu phát sinh.\nDuy trì mối quan hệ với khách hàng, đảm bảo chất lượng dịch vụ và mức độ hài lòng.\nPhối hợp tổ chức các chương trình phục vụ theo yêu cầu của khách hàng.\n\n5. Báo cáo và cải tiến\n\nThực hiện báo cáo sản lượng, chi phí, tình hình vận hành và các sự cố phát sinh.\nĐề xuất các giải pháp nhằm nâng cao hiệu quả vận hành, tối ưu chi phí và cải thiện chất lượng dịch vụ.\nThực hiện các công việc khác theo sự phân công của cấp quản lý.",
+    "Yêu cầu ứng viên": "Tốt nghiệp Cao đẳng/Đại học các ngành Quản trị kinh doanh, Quản trị nhà hàng – khách sạn, Công nghệ thực phẩm hoặc các ngành liên quan.\nCó từ 01 năm kinh nghiệm ở vị trí Điều hành, Giám sát hoặc Quản lý trong lĩnh vực suất ăn công nghiệp, nhà hàng hoặc F&B.\nCó khả năng lập kế hoạch, điều phối công việc và xử lý tình huống.\nKỹ năng giao tiếp, làm việc nhóm và chăm sóc khách hàng tốt.\nThành thạo Microsoft Office (Word, Excel).\nChịu được áp lực công việc, sẵn sàng di chuyển giữa các bếp khi cần.\nKiến thức ngành\nThực phẩm / Đồ uống, Nhà hàng / Khách sạn",
+    "Quyền lợi ứng viên": "Thu nhập cạnh tranh, thỏa thuận theo năng lực và kinh nghiệm.\nXét tăng lương định kỳ dựa trên hiệu quả công việc.\nThưởng theo kết quả kinh doanh, hiệu suất làm việc và các dịp Lễ, Tết theo chính sách của Công ty.\nTham gia đầy đủ các chế độ BHXH, BHYT, BHTN theo quy định của pháp luật.\nHưởng các chế độ phúc lợi khác như hiếu hỷ, sinh nhật, du lịch, khám sức khỏe định kỳ (theo chính sách của Công ty).\nĐược đào tạo về quy trình vận hành, an toàn vệ sinh thực phẩm, kỹ năng quản lý và phát triển chuyên môn.\nCó cơ hội thăng tiến lên các vị trí Giám sát Vận hành, Điều phối Vùng hoặc Quản lý Vận hành.\nLàm việc trong môi trường chuyên nghiệp, năng động, có cơ hội học hỏi và phát triển lâu dài.\nĐược trang bị đầy đủ công cụ, thiết bị phục vụ công việc.\nHỗ trợ công tác phí và các chi phí phát sinh khi đi công tác (nếu có), theo quy định của Công ty.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: Phường Bình Trưng (Phường Bình Trưng thuộc Thành phố Thủ Đức cũ) - Phạm vi làm việc trên toàn khu vực trên.\nĐồng Nai: Xã Nhơn Trạch (Xã Nhơn Trạch thuộc huyện Nhơn Trạch cũ) - Phạm vi làm việc trên toàn khu vực trên.\nĐồng Nai: Xã Long Thành (Xã Long Thành thuộc huyện Long Thành cũ) - Phạm vi làm việc trên toàn khu vực trên.\nThời gian làm việc\nThứ 2 - Thứ 7 (từ 08:00 đến 17:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 31/10/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nQuản lý / Giám sát\nKinh nghiệm quản lý\n1 năm\nHọc vấn\nCao Đẳng trở lên\nSố lượng tuyển\n3 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite, Kết hợp tại văn phòng và từ xa (Hybrid)\nLoại hình làm việc\nToàn thời gian"
+   }
+  }
+ ]
+}

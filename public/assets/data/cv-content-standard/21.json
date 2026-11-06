@@ -1,0 +1,37 @@
+{
+  "id": 21,
+  "nhom": "Marketing/PR/Quảng cáo",
+  "nghe": "Quan hệ Chính phủ",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "4/6 JD cấp nhân viên/chuyên viên (1-3 năm), 2/6 JD trưởng phòng đối ngoại (3 năm, 2-3 năm quản lý); đều từ ĐH trở lên (1 JD yêu cầu thạc sĩ); JD gồm đối ngoại cơ quan nhà nước và hợp tác quốc tế",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; JD#5 nêu Nam dưới 35, 3/6 nêu độ tuổi/giới tính; vai trò đại diện đối ngoại nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 4/6 JD nhắc định hướng/chiến lược quan hệ đối tác dài hạn; dùng để nêu định hướng đối ngoại/hợp tác quốc tế",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc (1-5 năm); quan hệ với cơ quan nhà nước/hiệp hội, đối ngoại, hợp tác quốc tế, trợ lý lãnh đạo",
+    "hoc-van": "can — 6/6 nêu ĐH trở lên (thạc sĩ ở JD#3); ngành Quan hệ quốc tế, Luật, Ngoại thương, Kinh tế, Truyền thông, ngoại ngữ",
+    "ky-nang-chuyen-mon": "can — 6/6: duy trì quan hệ cơ quan nhà nước/đối tác, am hiểu quy trình pháp lý/thủ tục, đàm phán và soạn thảo MOU/hợp đồng, nghiệp vụ nhập khẩu (JD#2), quản lý dự án",
+    "ky-nang-mem": "can — 6/6: giao tiếp, đàm phán, lãnh đạo nhóm, chủ động, trách nhiệm, tư duy logic, giải quyết vấn đề",
+    "cong-cu-phan-mem": "nen — JD#2 vi tính văn phòng, JD#6 Gantt chart/Trello (2/6)",
+    "chung-chi": "can — JD#3 tiếng Anh bậc 4/6 (B2) trở lên, JD#5 IELTS 7.5 hoặc TORFL Level 3 (2/6 nêu chứng chỉ ngoại ngữ cụ thể)",
+    "du-an": "can — 4/6 nhắc dự án (quản lý dự án quốc tế JD#6, chương trình trao đổi/hợp tác đào tạo JD#3); nên nêu dự án/thỏa thuận đã thực hiện",
+    "thanh-tich-kpi": "nen — JD#4, JD#6 kết quả phát triển đối tác; không JD nêu số liệu cụ thể (1-2/6)",
+    "ngoai-ngu": "can — 6/6: tiếng Trung thành thạo (JD#1), tiếng Anh 4 kỹ năng (JD#2, #3, #6), tiếng Anh/Nga (JD#5)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — JD đòi kinh nghiệm 1-5 năm, không JD nhận ứng viên mới",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 3/6 JD nêu độ tuổi/giới tính (28-40, 20-40, Nam 22-40 dưới 35)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["quan hệ đối ngoại", "cơ quan nhà nước", "Government Relations", "hợp tác quốc tế", "đối tác chiến lược", "MOU/MOA", "đàm phán", "tiếng Anh/Trung/Nga", "quản lý dự án"],
+  "bangChung": [
+    "JD#1: 'Có từ 3–5 năm kinh nghiệm ... đối ngoại chính phủ/quan hệ doanh nghiệp – cơ quan nhà nước'; 'Tiếng Trung Giao tiếp thành thạo'",
+    "JD#2: 'Tiếng Anh 4 kỹ năng ... phiên dịch các cuộc họp, đàm phán'; 'Tốt nghiệp đại học ngoại thương'",
+    "JD#3: 'tiếng Anh tương đương bậc 4/6 ... (B2) trở lên'; 'trình độ thạc sĩ'",
+    "JD#4: 'Có kinh nghiệm làm việc trực tiếp với các cơ quan nhà nước, hiệp hội'",
+    "JD#5: 'Tiếng Anh IELTS 7.5'; 'Nam, tuổi dưới 35'; 'TORFL/TRKI Level 3'",
+    "JD#6: 'soạn thảo thỏa thuận quốc tế (MOU, MOA)'; 'Quản lý dự án; ... Gantt chart, Trello'"
+  ],
+  "ghiChu": "Nửa số JD là hợp tác quốc tế (trường đại học, công ty), nửa là đối ngoại với cơ quan nhà nước; ngoại ngữ là điểm chung."
+}

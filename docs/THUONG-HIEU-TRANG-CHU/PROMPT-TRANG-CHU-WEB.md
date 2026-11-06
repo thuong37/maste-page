@@ -273,7 +273,7 @@ Một tin được gắn huy hiệu khi **đồng thời** thỏa:
 ## 7. Hướng dẫn thực thi cho Qwen
 
 ```
-BƯỚC 1  Đọc AGENTS.md, tài liệu này, docs/PHAN-TICH-TRANG-CHU-EASYCV.md (chỉ để biết hiện trạng).
+BƯỚC 1  Đọc AGENTS.md, tài liệu này, docs/THUONG-HIEU-TRANG-CHU/PHAN-TICH-TRANG-CHU-EASYCV.md (chỉ để biết hiện trạng).
 BƯỚC 2  Lập bảng: khối (B1-B12) -> selector -> file CSS/JS -> thay đổi cần làm so với prototype.
 BƯỚC 3  Đối chiếu từng khối với mục 4. Chỉ sửa chỗ khác nhau. Khác biệt đã biết:
           - B4: autoplay 5s -> 10s, animation 300ms, click -> COMPANY_DETAIL.

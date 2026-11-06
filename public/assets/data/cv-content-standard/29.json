@@ -1,0 +1,36 @@
+{
+  "id": 29,
+  "nhom": "Chăm sóc khách hàng (Customer Service)/Vận hành",
+  "nghe": "Dịch vụ khách hàng/Vận hành khác",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "2/6 JD nhân viên (1 không kinh nghiệm), 2/6 trưởng nhóm/tổ trưởng (1-3 năm), 2/6 trưởng bộ phận dịch vụ khách hàng (5 năm, 3 năm quản lý); cao đẳng/ĐH trở lên",
+  "muc": {
+    "anh-chan-dung": "nen — JD#5 nêu 'ngoại hình sáng', JD#4/#6 'tác phong diện mạo chuyên nghiệp, tự tin' (3/6 nhắc hình ảnh); nghề tiếp xúc khách nên ảnh nghiêm túc là lợi thế",
+    "muc-tieu-nghe-nghiep": "nen — JD#1 khả năng nghiên cứu/học hỏi, JD#4 tâm huyết (ít JD nhắc thẳng; 1/6)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc; 1-5 năm CSKH/chất lượng dịch vụ, quản lý đội nhóm, ngành bất động sản/ngân hàng/viễn thông",
+    "hoc-van": "can — 6/6 nêu cao đẳng/ĐH; ưu tiên QTKD, Kinh tế, Thương mại, Luật, Tài chính-Ngân hàng, Dịch vụ khách hàng",
+    "ky-nang-chuyen-mon": "can — 6/6: xây dựng quy trình CSKH, xử lý khiếu nại, đo lường chất lượng dịch vụ/trải nghiệm khách hàng, quản lý hợp đồng/hồ sơ bán hàng, khai thác nhu cầu và giới thiệu dịch vụ",
+    "ky-nang-mem": "can — 6/6: giao tiếp, xử lý tình huống, thuyết phục đàm phán, quản lý/đào tạo nhân viên, chịu áp lực",
+    "cong-cu-phan-mem": "can — 5/6: Word, Excel, PowerPoint (JD#1), Excel/Google Sheet (JD#2), tin học văn phòng (JD#4, #5, #6)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — 3/6 nhắc chương trình nâng cao chất lượng dịch vụ/dự án bất động sản (JD#1, #4, #6)",
+    "thanh-tich-kpi": "can — JD#1 chấm điểm KPIs chất lượng dịch vụ, JD#2 đánh giá hiệu quả nhân viên, phân tích phản hồi (2/6; cần số liệu mức hài lòng/xử lý khiếu nại)",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#5 không yêu cầu kinh nghiệm (1/6)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — JD#5 Nữ 22-30, JD#6 Nữ, không nói ngọng/lắp (2/6 nêu thẳng giới tính/độ tuổi)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["dịch vụ khách hàng", "xử lý khiếu nại", "quản lý chất lượng dịch vụ", "quản lý đội CSKH", "quy trình chăm sóc khách hàng", "trải nghiệm khách hàng", "quan hệ khách hàng", "Excel/Google Sheet"],
+  "bangChung": [
+    "JD#1: 'kinh nghiệm quản lý chất lượng dịch vụ trên 3 năm ... Ngân hàng'; 'Word, Excel, PowerPoint'",
+    "JD#2: 'kinh nghiệm CSKH và quản lý đội nhóm từ 1–2 năm'; 'Sử dụng tốt Excel, Google Sheet'",
+    "JD#3: 'Hỗ trợ xử lý khiếu nại, yêu cầu bồi thường của khách hàng'",
+    "JD#4: '05 năm kinh nghiệm ... dịch vụ hoặc CSKH, ít nhất 3 năm vị trí tương đương'; 'Tác phong diện mạo chuyên nghiệp'",
+    "JD#5: 'Giới tính: Nữ, tuổi: 22-30'; 'ngoại hình sáng'; 'không nói ngọng, không nói lắp'"
+  ],
+  "ghiChu": "JD#4 và JD#6 là cùng vị trí ở hai pháp nhân khác nhau (Peninsula Đà Nẵng); nghề đa ngành nên mục kiến thức ngành khác nhau."
+}

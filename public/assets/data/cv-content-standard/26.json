@@ -1,0 +1,36 @@
+{
+  "id": 26,
+  "nhom": "Chăm sóc khách hàng (Customer Service)/Vận hành",
+  "nghe": "Vận hành Thương mại điện tử",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "5/6 JD cấp nhân viên/chuyên viên (1-3 năm vận hành sàn Shopee/TikTok Shop/Amazon, cao đẳng trở lên), 1 JD quản lý vận hành sàn TMĐT (2 năm, từng dẫn dắt đội nhóm)",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình; 1/6 nêu độ tuổi; công việc vận hành online (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#1 'mong muốn học hỏi, thăng tiến' (1/6)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD đòi 1-3 năm vận hành sàn TMĐT (Shopee, TikTok Shop, Lazada, Amazon); ưu tiên theo ngành hàng (điện tử, thực phẩm, mẹ và bé, thời trang)",
+    "hoc-van": "can — 6/6 nêu cao đẳng/ĐH; ưu tiên Kinh tế, QTKD, Marketing, TMĐT, CNTT",
+    "ky-nang-chuyen-mon": "can — 6/6: vận hành/tối ưu gian hàng, đăng sản phẩm, chạy ads nội sàn, flash sale/voucher, livestream, booking KOC/KOL, affiliate, quản lý đơn hàng và đối soát",
+    "ky-nang-mem": "can — 5/6: chủ động, cẩn thận số liệu, giao tiếp, chịu cường độ campaign, quản lý/phân công công việc",
+    "cong-cu-phan-mem": "can — 6/6: Excel/Google Sheets (VLOOKUP, pivot), Kênh Người Bán Shopee/TikTok Shop, Canva/Photoshop, CapCut/Premiere, Helium10, Jungle Scout",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — JD#1 'từng xây dựng shop từ giai đoạn khởi tạo' là lợi thế (1/6); nên nêu gian hàng/chiến dịch đã vận hành",
+    "thanh-tich-kpi": "can — 6/6 nhắc doanh số, số đơn, tỷ lệ chuyển đổi, AOV, chỉ tiêu, lợi nhuận, GMV; CV cần số liệu doanh thu/tăng trưởng gian hàng",
+    "ngoai-ngu": "nen — JD#6 tiếng Anh đọc/viết tốt (sàn Amazon/Etsy) (1/6)",
+    "portfolio-link": "nen — JD#4 sáng tạo nội dung hình ảnh/video, JD#3 quản lý thư viện ảnh (2/6); không JD đòi link",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — 6/6 JD đòi 1-3 năm kinh nghiệm vận hành",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#3 tuổi 24-35 (1/6)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["vận hành Shopee/TikTok Shop", "tối ưu gian hàng", "listing/SEO sàn", "flash sale/voucher", "livestream/KOC/affiliate", "doanh số/AOV/chuyển đổi", "đối soát đơn hàng", "Excel/Google Sheets"],
+  "bangChung": [
+    "JD#1: 'Tối thiểu 01 năm kinh nghiệm vận hành Shopee và/hoặc TikTok Shop'; 'Sử dụng tốt Excel / Google Sheets'",
+    "JD#2: 'Từ 2 năm kinh nghiệm vận hành sàn TMĐT'; 'phân tích mục tiêu doanh số, số đơn hàng, tỷ lệ chuyển đổi, AOV'",
+    "JD#3: 'Thành thạo Kênh Người Bán: đăng sản phẩm hàng loạt'; 'Excel/Google Sheets (lọc, VLOOKUP, pivot)'; 'Tuổi 24 - 35'",
+    "JD#4: 'Từ 3 năm kinh nghiệm vận hành sàn TMĐT'; 'CapCut, Premiere'; 'Booking KOC/KOL, Affiliate, Livestream'",
+    "JD#5: 'Đã có kinh nghiệm quản lý hoặc dẫn dắt đội nhóm (Team Leader trở lên)'"
+  ],
+  "ghiChu": "JD#6 trùng với JD đầu của nghề id 15 (Zetacom)."
+}

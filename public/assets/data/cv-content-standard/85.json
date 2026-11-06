@@ -1,0 +1,36 @@
+{
+  "id": 85,
+  "nhom": "Sản xuất",
+  "nghe": "R&D/Sản xuất ô tô",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "5/6 JD cấp nhân viên kỹ sư (0-3 năm, ĐH/CĐ chuyên ngành cơ khí/ô tô), 1 JD Phó giám đốc sản xuất (5 năm, 2 năm quản lý)",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 4/6 nêu độ tuổi/giới tính (nam) nhưng đó là giới hạn tuyển, không phải yêu cầu ảnh (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — không JD nào nhắc rõ; nên nêu hướng thiết kế hoặc vận hành sản xuất ô tô",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD hỏi số năm, ưu tiên lĩnh vực ô tô/cơ khí/nhà máy lắp ráp",
+    "hoc-van": "can — 6/6 nêu ĐH/CĐ chuyên ngành Cơ khí, Ô tô, Tự động hóa, Cơ điện tử",
+    "ky-nang-chuyen-mon": "can — thiết kế chi tiết 2D/3D, đọc bản vẽ, PLC/robot, quy trình lắp ráp, bảo trì, kiểm soát chất lượng, an toàn lao động",
+    "ky-nang-mem": "can — 6/6: giải quyết vấn đề, chịu áp lực, làm việc nhóm, giao tiếp, lập kế hoạch",
+    "cong-cu-phan-mem": "can — 3/6: AutoCAD, SolidWorks, Catia V5, Teamcenter, Word/Excel/PowerPoint",
+    "chung-chi": "nen — JD#3 nêu hiểu IATF 16949, JD#4 ưu tiên 5S/Kaizen/ISO; không JD nào đòi chứng chỉ cụ thể",
+    "du-an": "nen — 1/6 nhắc dự án phát triển linh kiện/hàng mẫu (JD#2); nên ghi dự án thiết kế/cải tiến sản xuất",
+    "thanh-tich-kpi": "nen — 1/6: JD#4 giảm tỷ lệ hàng lỗi, tăng hiệu suất; nên ghi số liệu cải tiến",
+    "ngoai-ngu": "can — 3/6: tiếng Anh (viết/nói, 4 kỹ năng), tiếng Trung là lợi thế",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc (1/6 nhận không cần kinh nghiệm)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 4/6 nêu độ tuổi/giới tính nam; 1/6 yêu cầu sức khỏe; nên có độ tuổi/nơi ở",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Thiết kế ô tô", "AutoCAD", "SolidWorks", "Catia", "PLC", "Robot công nghiệp", "IATF 16949", "Lean/5S/Kaizen", "bản vẽ kỹ thuật", "Tiếng Anh"],
+  "bangChung": [
+    "JD#1: 'Tạo ra các bản vẽ kỹ thuật, bản thiết kế 2D và 3D sử dụng phần mềm AutoCAD'; 'Autocad, Solidworks'",
+    "JD#2: 'Kinh nghiệm CAD (Catia V5), kinh nghiệm Team Center'; 'Thành thạo tiếng Anh viết và nói'",
+    "JD#3: 'điều khiển PLC và hệ thống Robot công nghiệp'; 'IATF 16949'; 'biết tiếng Trung là lợi thế lớn'",
+    "JD#4: 'ưu tiên ứng viên có kinh nghiệm áp dụng 5S, Kaizen, ISO'",
+    "JD#5: 'Thành thạo tin học văn phòng: word, excel, powerpoint'; 'Tiếng anh 4 kỹ năng'"
+  ],
+  "ghiChu": "Nghề gộp cả kỹ sư thiết kế, kỹ sư sản xuất và quản lý sản xuất ô tô; JD#6 thiên về bảo trì máy nông nghiệp."
+}

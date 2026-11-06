@@ -1,0 +1,36 @@
+{
+  "id": 55,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Khách sạn/Dịch vụ cư trú",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "4/6 JD nhân viên giặt là/thanh trùng (không đến 1 năm kinh nghiệm, từ THCS/trung cấp), 1 JD giám sát buồng phòng (1 năm quản lý, sơ cấp), 1 JD giám đốc xưởng giặt là (3 năm quản lý, cao đẳng); chủ yếu mảng giặt là, ít JD buồng phòng/lễ tân",
+  "muc": {
+    "anh-chan-dung": "nen — JD#2 nêu 'ngoại hình ưa nhìn, giọng nói chuẩn' (1/6, giám sát buồng phòng); 3/6 nêu độ tuổi/giới tính; ảnh gọn gàng là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#2 'ham học hỏi, cầu tiến' (1/6); có thể ghi ngắn",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc; 2/6 không hoặc dưới 1 năm, 2/6 1 năm, giám sát 1 năm, giám đốc xưởng 3 năm; ưu tiên kinh nghiệm giặt là khách sạn/bệnh viện/công nghiệp",
+    "hoc-van": "nen — JD chỉ cần THCS/sơ cấp/trung cấp, giám đốc xưởng cao đẳng; ghi ngắn",
+    "ky-nang-chuyen-mon": "can — phân loại và giặt/sấy/là/gấp đồ vải, vận hành máy giặt công nghiệp, hóa chất giặt, kiểm soát nhiễm khuẩn/tiệt trùng (JD#3, #4), quản lý buồng phòng/xưởng giặt",
+    "ky-nang-mem": "can — 6/6: cẩn thận, trung thực, trách nhiệm, nhanh nhẹn, làm việc nhóm, chịu áp lực, giao tiếp",
+    "cong-cu-phan-mem": "khong — chỉ JD#6 'sử dụng máy tính khá' (1/6, vị trí quản lý); không phần mềm cụ thể",
+    "chung-chi": "nen — JD#4 ưu tiên chứng chỉ/kiến thức tiệt khuẩn trung tâm (1/6)",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — JD#6 công suất, hiệu quả hoạt động, quản lý chi phí (1/6, quản lý)",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#1, JD#3 không yêu cầu hoặc đào tạo từ đầu (2/6)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/6 JD nêu giới tính/độ tuổi/sức khỏe (28-45, từ 22 Nữ, Nam 25-48, Nam/Nữ) và làm theo ca",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["giặt là", "vận hành máy giặt công nghiệp", "buồng phòng", "đồ vải", "kiểm soát nhiễm khuẩn", "làm theo ca", "sức khỏe tốt", "khách sạn/bệnh viện"],
+  "bangChung": [
+    "JD#1: 'Không yêu cầu kinh nghiệm, được đào tạo khi nhận việc'; 'Có sức khỏe tốt, có thể làm việc theo ca'",
+    "JD#2: 'Ngoại hình ưa nhìn'; 'Giọng nói chuẩn'; 'Tuổi 28 - 45'; 'kinh nghiệm làm Giám sát buồng phòng'",
+    "JD#3: 'Thành thạo các kỹ thuật về vận hành máy móc, hóa chất ... kiểm soát nhiễm khuẩn'; 'Chưa có kinh nghiệm sẽ được đào tạo từ đầu'",
+    "JD#4: 'Ưu tiên ... chứng chỉ/kiến thức về tiệt khuẩn trung tâm'; 'Nữ'",
+    "JD#6: 'Có kinh nghiệm về giặt là từ 3 năm trở lên'; 'Nam từ 30 tuổi trở lên'"
+  ],
+  "ghiChu": "JD tập trung mảng giặt là; ít JD buồng phòng/lễ tân thực sự nên chưa đại diện cho cả nghề khách sạn."
+}

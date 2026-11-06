@@ -1,0 +1,36 @@
+{
+  "id": 57,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Thợ thủ công",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5/5 JD nhân viên/thợ: 1 thợ phục hồi giày túi (1 năm), 3 thợ may (không, 1 năm, 2 năm), 1 thợ cắt vải (1 năm); từ THCS/THPT trở lên, 2 JD cao đẳng; chủ yếu ngành may mặc/thời trang",
+  "muc": {
+    "anh-chan-dung": "nen — không JD nào đòi ảnh; JD#1 nêu tuổi 18-30, ưu tiên Nam, JD#3 tuổi 18-50 (2/5); công việc tay nghề (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#1, #2, #3 'tinh thần học hỏi, nâng cao tay nghề' (3/5)",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD nhắc (không yêu cầu đến 2 năm); thợ may thời trang nữ, cắt vải, phục hồi giày/túi; nên ghi loại sản phẩm đã làm",
+    "hoc-van": "nen — 5/5 nêu bậc học từ THCS đến cao đẳng, ưu tiên đã qua đào tạo nghề may; ghi ngắn",
+    "ky-nang-chuyen-mon": "can — 5/5: may hoàn thiện theo rập, vận hành máy may 1 kim/2 kim/vắt sổ, cắt vải theo rập và định mức, đọc bảng thông số kỹ thuật, sửa chữa/phục hồi da và đế giày, nhận biết chất liệu",
+    "ky-nang-mem": "can — 5/5: cẩn thận, tỉ mỉ, kiên nhẫn, trách nhiệm, tinh thần học hỏi, làm việc nhóm",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc phần mềm (máy may, máy vắt sổ là thiết bị)",
+    "chung-chi": "nen — JD#3 ưu tiên đã qua đào tạo nghề may (1/5); không JD đòi chứng chỉ cụ thể",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — JD#2 tiêu chuẩn chất lượng và tiến độ, JD#4 chất lượng đường may và tiến độ sản xuất (2/5); chưa có số liệu cụ thể",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "nen — nghề thủ công nên có ảnh sản phẩm/mẫu đã may, phục hồi (suy từ tính chất công việc; không JD nhắc thẳng)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#3 không yêu cầu kinh nghiệm, ưu tiên đam mê nghề may; JD#1 đào tạo nếu có tinh thần học hỏi (2/5)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#1 tuổi 18-30 ưu tiên Nam, JD#3 tuổi 18-50, sức khỏe/thị lực tốt, tăng ca (2/5 nêu độ tuổi/giới tính)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["thợ may", "máy may công nghiệp", "cắt vải/rập", "thời trang nữ", "phục hồi giày túi đồ da", "nhận biết chất liệu vải", "tăng ca"],
+  "bangChung": [
+    "JD#1: 'Ưu tiên ứng viên có kinh nghiệm ... sửa chữa, phục hồi giày dép, túi xách, đồ da'; 'Độ tuổi: Từ 18 – 30 tuổi (Ưu tiên Nam)'",
+    "JD#2: 'Có ít nhất 2 năm kinh nghiệm may trong ngành thời trang'; 'Am hiểu chất liệu vải'",
+    "JD#3: 'Không yêu cầu kinh nghiệm'; 'Vận hành các loại máy may công nghiệp như máy 1 kim, 2 kim, máy vắt sổ'; 'thị lực tốt'; 'tăng ca'",
+    "JD#4: 'Thành thạo kỹ thuật cắt may ... vest, sơ mi, đầm, quần tây'",
+    "JD#5: 'Có kinh nghiệm từ 1 năm ở vị trí cắt mẫu'; 'đọc được bảng thông số kỹ thuật'; 'Đọc Hiểu Rập'"
+  ],
+  "ghiChu": "Chỉ 5 JD; chủ yếu ngành may mặc."
+}

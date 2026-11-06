@@ -1,0 +1,36 @@
+{
+  "id": 112,
+  "nhom": "Phim và truyền hình/Báo chí/Xuất bản",
+  "nghe": "Biên tập/Viết/Xuất bản",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "4/6 JD cấp nhân viên biên tập viên (0-2 năm; 1 JD 5 năm), 1 JD trưởng ban biên tập (2 năm quản lý), 1 JD phóng viên/biên tập; đều từ Trung cấp/ĐH trở lên",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; chỉ JD#3 (MC/VJ làm gương mặt đại diện) thực sự liên quan; ảnh chỉ là phụ (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 nhắc định hướng chiến lược/tư duy báo chí; nên nêu hướng chuyên đề viết",
+    "kinh-nghiem-lam-viec": "can — 6/6 hỏi kinh nghiệm (dưới 1 đến 5 năm), ưu tiên đúng lĩnh vực (khoa học-công nghệ, y tế, toán, năng lượng, báo điện tử)",
+    "hoc-van": "can — 6/6 nêu bậc học và ngành Báo chí, Truyền thông, Marketing, Ngữ văn, Sư phạm Toán",
+    "ky-nang-chuyen-mon": "can — viết/biên tập tin bài, phóng sự, biên dịch Việt-Anh, thẩm định nội dung, quản trị fanpage, kịch bản/video, tổ chức sự kiện truyền thông",
+    "ky-nang-mem": "can — 4/6: tư duy sáng tạo, chủ động, cẩn thận, quản lý đội ngũ, làm việc nhóm",
+    "cong-cu-phan-mem": "can — 4/6: Adobe Premiere/After Effects/Photoshop, CapCut, Canva, Word/Excel, công cụ soạn công thức toán",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — 3/6 nhắc dự án/chương trình/sự kiện (JD#1, JD#6 điều phối dự án, hội thảo); nên ghi ấn phẩm/dự án đã thực hiện",
+    "thanh-tich-kpi": "khong — không JD nào nhắc số liệu",
+    "ngoai-ngu": "can — 4/6 nhắc tiếng Anh (đọc hiểu, 4 kỹ năng, biên dịch Việt-Anh)",
+    "portfolio-link": "can — JD#6 nêu thẳng 'gửi kèm link Portfolio các sản phẩm đã từng thực hiện'; JD#2, JD#3 cần sản phẩm video/bài viết",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#5 nhận dưới 1 năm kinh nghiệm; không JD nào nhắc ngoại khóa",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — không JD nào nêu tuổi/giới tính/nơi ở",
+    "so-thich": "nen — JD#5 yêu thích phim ảnh, giải trí; JD#3 nhạy bén xu hướng (JD nêu thẳng ở 1/6)"
+  },
+  "tuKhoaNenCo": ["Biên tập viên", "viết bài/phóng sự", "biên dịch Việt-Anh", "quản trị fanpage", "Premiere/CapCut/Canva", "nội dung số", "portfolio", "xuất bản"],
+  "bangChung": [
+    "JD#1: 'Sử dụng tốt tiếng Anh trong nghiên cứu và công việc'; 'năng lực quản lý đội ngũ'",
+    "JD#2: 'Thành thạo các phần mềm xử lý hình ảnh, video (ví dụ: Adobe Premiere Pro, After Effects, Photoshop...)'",
+    "JD#4: 'Sử dụng tốt Word, Excel và công cụ soạn công thức toán'",
+    "JD#5: 'Có khả năng biên dịch Việt - Anh, Anh - Việt tốt'; 'Yêu thích phim ảnh, giải trí'",
+    "JD#6: 'Ứng viên gửi kèm link Portfolio các sản phẩm đã từng thực hiện (nếu có)'; 'Sử dụng thành thạo tiếng Anh (4 kỹ năng)'"
+  ],
+  "ghiChu": "JD trải nhiều mảng (sách khoa học, báo điện tử, biên tập câu hỏi toán, social); chưa có JD biên kịch/sách văn học."
+}

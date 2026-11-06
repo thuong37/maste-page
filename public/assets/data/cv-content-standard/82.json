@@ -1,0 +1,36 @@
+{
+  "id": 82,
+  "nhom": "Sản xuất",
+  "nghe": "Thiết kế/chế tạo máy",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên; 3/6 nhận ứng viên mới ra trường hoặc 1 năm kinh nghiệm, 2/6 từ 2-3 năm; Trung cấp đến Đại học; có 1 JD thợ tiện và 1 JD trợ lý sản xuất lệch nghề",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; 3/6 nêu giới tính Nam, 3/6 nêu độ tuổi; ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 1/6 JD nhắc mong muốn làm việc lâu dài; nên nêu định hướng thiết kế cơ khí",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nêu số năm hoặc lĩnh vực (thiết kế cơ khí, gia công, kiểm soát sản xuất); nên ghi loại máy, sản phẩm đã thiết kế",
+    "hoc-van": "can — 6/6 nêu bậc học Trung cấp đến Đại học, chuyên ngành Cơ khí/Chế tạo máy/Kỹ thuật sản xuất",
+    "ky-nang-chuyen-mon": "can — 6/6: thiết kế chi tiết cơ khí, đọc và triển khai bản vẽ 2D/3D, BOM, gia công, lắp ráp, thiết kế đồ gá/khuôn",
+    "ky-nang-mem": "can — 6/6: cẩn thận, chính xác, quản lý thời gian, làm việc nhóm, giao tiếp, chịu áp lực",
+    "cong-cu-phan-mem": "can — 4/6: AutoCAD, SolidWorks, Inventor; mô phỏng Ansys, Abaqus (ưu tiên); Word, Excel, PowerPoint",
+    "chung-chi": "nen — 1/6 chấp nhận chứng chỉ nghề (Thợ tiện); 1/6 nhắc tiêu chuẩn thực phẩm HACCP, GlobalGAP (JD lệch)",
+    "du-an": "nen — JD thiết kế nhắc máy đóng gói, chiết rót, laser, dò kim loại là ưu tiên; nên nêu dự án thiết kế máy",
+    "thanh-tich-kpi": "khong — không JD nào nhắc chỉ tiêu cụ thể",
+    "ngoai-ngu": "nen — 2/6: tiếng Anh/Nhật/Trung là ưu tiên, 1/6 đọc hiểu tiếng Anh",
+    "portfolio-link": "khong — không JD nào nhắc; bản vẽ mẫu có thể là lợi thế (suy từ tính chất công việc)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/6 chấp nhận sinh viên mới ra trường",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 nêu giới tính, 3/6 nêu độ tuổi; nên có độ tuổi, nơi ở",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["thiết kế cơ khí", "AutoCAD", "SolidWorks", "Inventor", "bản vẽ 2D/3D", "BOM", "gia công cơ khí", "đồ gá", "kết cấu hàn", "phân tích kết cấu"],
+  "bangChung": [
+    "JD#1 (TOTO): 'AutoCad hoặc Solidwork tốt'; 'Nam, dưới 30 tuổi'; 'ưu tiên tiếng Anh hoặc Nhật hoặc Trung'",
+    "JD#2: 'ít nhất 2 năm kinh nghiệm trong lĩnh vực thiết kế cơ khí'; 'phần mềm mô phỏng như Ansys, Abaqus'",
+    "JD#3: 'Sử dụng thành thạo AutoCad; Inventor'; 'Chấp nhận sinh viên mới ra trường'",
+    "JD#5: 'Đọc và hiểu thành thạo bản vẽ kỹ thuật cơ khí'; 'Trung cấp nghề... hoặc có chứng chỉ nghề'",
+    "JD#6: 'Sử dụng tốt các phần mềm thiết kế CAD'; 'kinh nghiệm thiết kế khuôn mẫu, đồ gá'"
+  ],
+  "ghiChu": "JD#4 (trợ lý sản xuất thực phẩm) lệch nghề, không dùng cho mục phần mềm/chuyên môn."
+}

@@ -1,0 +1,36 @@
+{
+  "id": 88,
+  "nhom": "Sản xuất",
+  "nghe": "Quản lý chất lượng",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "3/6 JD cấp nhân viên/chuyên viên (1 năm, CĐ trở lên), 3/6 cấp trưởng nhóm/trưởng phòng/quản lý (2-5 năm, có 1-2 năm quản lý); ngành đa dạng: kết cấu thép, nha khoa, dược, may mặc, xây dựng",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 2/6 nêu độ tuổi/giới tính; nghề kỹ thuật nên ảnh chỉ là phụ (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 1/6 nhắc định hướng; nên nêu hướng QA/QC theo ngành đang làm",
+    "kinh-nghiem-lam-viec": "can — 6/6 hỏi 1-5 năm QA/QC, ưu tiên đúng ngành (kết cấu thép, GMP dược, y tế, xây dựng)",
+    "hoc-van": "can — 6/6 nêu bậc học và chuyên ngành (Cơ khí, Xây dựng, Dược, Hóa, Công nghệ thực phẩm, Y tế)",
+    "ky-nang-chuyen-mon": "can — ITP, checklist, kiểm tra/đo kiểm, đọc bản vẽ, xử lý lỗi/CAPA, xây dựng quy trình chất lượng, hồ sơ chất lượng",
+    "ky-nang-mem": "can — 4/6: cẩn thận, tỉ mỉ, trách nhiệm, giải quyết vấn đề, quản lý đội nhóm",
+    "cong-cu-phan-mem": "nen — chỉ 1/6 (JD#6) nhắc tin học văn phòng; JD#2 nhắc thiết bị đo lường",
+    "chung-chi": "nen — 3/6 nhắc tiêu chuẩn/chứng chỉ: GMP-WHO, GLP, ISO, JCI/AACI, chứng chỉ quản lý chất lượng bệnh viện (lợi thế)",
+    "du-an": "nen — 4/6 JD nhắc dự án/công trình (kết cấu thép, xây dựng, kiểm định AACI/JCI); nên ghi dự án đã phụ trách chất lượng",
+    "thanh-tich-kpi": "nen — 1/6 nhắc mục tiêu; nên ghi số liệu giảm lỗi/đạt kiểm định (suy từ công việc)",
+    "ngoai-ngu": "nen — 3/6 nhắc tiếng Anh (đọc hiểu tiêu chuẩn đến giao tiếp thành thạo)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "nen — JD#3 điểm cộng làm hồ sơ cấp phép cơ sở khám chữa bệnh; JD#2 sẵn sàng làm ca đêm; không JD nào đòi giấy phép",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/6 nêu độ tuổi 32-42/nam (JD#2, JD#4); nên có độ tuổi/nơi ở (suy từ JD)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["QA/QC", "ITP", "kiểm soát chất lượng", "GMP-WHO", "ISO", "CAPA", "NDT", "đọc bản vẽ kỹ thuật", "hồ sơ chất lượng", "kiểm định"],
+  "bangChung": [
+    "JD#1: 'Am hiểu các tiêu chuẩn về kết cấu thép, hàn, NDT, sơn và nghiệm thu'",
+    "JD#2: 'Kỹ năng ... Kiểm Tra Chất Lượng, Đọc Hiểu Bản Vẽ Kỹ Thuật, Sử Dụng Thiết Bị Đo Lường'",
+    "JD#3: 'từng tham gia kiểm định JCI, ACHS, AACI'; 'chứng chỉ quản lý chất lượng bệnh viện là lợi thế'",
+    "JD#4: 'xây dựng, vận hành hệ thống QC theo tiêu chuẩn GMP-WHO, GLP, ISO'",
+    "JD#6: 'Kỹ năng vi tính văn phòng'; 'Tối thiểu 3 năm kinh nghiệm ở vị trí tương đương'"
+  ],
+  "ghiChu": "Nghề gộp nhiều ngành rất khác nhau; nội dung chuyên môn phải bám đúng ngành của ứng viên."
+}

@@ -1,0 +1,36 @@
+{
+  "id": 120,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Viễn thông",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên (0-2 năm), CĐ/ĐH trở lên (JD#6 Trung cấp); vai trò kỹ sư thiết kế hạ tầng viễn thông, kỹ sư hệ thống vô tuyến 3G/4G/5G, kỹ thuật điện tử-viễn thông, điều hành công trình, kỹ thuật viên lắp đặt internet; JD#4 (quản lý điện trang trại) lạc nghề",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 2/6 nêu tuổi/giới tính (nam 20-35); nghề kỹ thuật hiện trường nên ảnh chỉ là phụ (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc định hướng rõ",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD sát nghề nhắc kinh nghiệm hoặc không yêu cầu (0-3 năm), ưu tiên viễn thông, triển khai công trình, năng lượng mặt trời",
+    "hoc-van": "can — 6/6 nêu Trung cấp/CĐ/ĐH chuyên ngành Điện tử-Viễn thông, Điện, CNTT, Xây dựng hạ tầng viễn thông",
+    "ky-nang-chuyen-mon": "can — thiết kế/giám sát/nghiệm thu hạ tầng viễn thông, khai báo và hòa mạng trạm 3G/4G/5G, kéo cáp/hàn nối/cấu hình, bóc tách khối lượng, dự toán, tư vấn giải pháp cáp/UPS/networking",
+    "ky-nang-mem": "can — 4/6: làm việc độc lập/nhóm, trung thực, cẩn thận, chủ động",
+    "cong-cu-phan-mem": "can — 3/6: AutoCAD, Excel, MS Project, phần mềm bản đồ, tin học văn phòng",
+    "chung-chi": "nen — JD#1 ưu tiên chứng chỉ hành nghề (chấp nhận sinh viên mới ra trường)",
+    "du-an": "can — 3/6 nhắc dự án/công trình (viễn thông, hệ thống vô tuyến, điều hành công trình); nên liệt kê dự án",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "can — 3/6 nhắc tiếng Anh (cơ bản, đọc hiểu tài liệu kỹ thuật)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 không yêu cầu kinh nghiệm/chấp nhận sinh viên mới ra trường",
+    "giay-phep": "nen — 4/6 nêu đi công tác/làm ngoài hiện trường; JD#6 leo trèo, không sợ độ cao; không JD nào đòi bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "can — JD#6 nêu thẳng nam 20-35 tuổi, sức khỏe tốt, không sợ độ cao; 4/6 yêu cầu đi công tác",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Viễn thông", "hạ tầng BTS/truyền dẫn", "trạm vô tuyến 3G/4G/5G", "cáp quang/hàn nối", "networking/UPS", "giám sát nghiệm thu", "AutoCAD", "đi công tác"],
+  "bangChung": [
+    "JD#1: 'thiết kế hệ thống điện tử – viễn thông (mạng truyền dẫn, BTS ...)'; 'Ưu tiên ứng viên có chứng chỉ hành nghề'",
+    "JD#2: 'Có kiến thức cơ bản về Networking, UPS'; 'Trình độ tiếng anh cơ bản'; 'sẵn sàng đi công tác'",
+    "JD#3: 'Có kỹ năng khai báo trạm vô tuyến 3G/4G/5G, tích hợp trạm'; 'Tiếng Anh Đọc hiểu'",
+    "JD#5: 'Có ít nhất 2 năm kinh nghiệm trong lĩnh vực triển khai công trình dự án'; 'Ưu tiên có kinh nghiệm về viễn thông'",
+    "JD#6: 'Sức khỏe tốt, không ngại leo trèo, không sợ độ cao'; 'Độ tuổi phù hợp: từ 20 – 35 tuổi'"
+  ],
+  "ghiChu": "JD#1 trùng JD#1 của nghề #116; JD#4 (quản lý hệ thống điện trang trại) lạc nghề, bỏ qua."
+}

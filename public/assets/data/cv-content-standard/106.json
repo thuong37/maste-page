@@ -1,0 +1,36 @@
+{
+  "id": 106,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Tài xế/Lái xe",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "5/6 JD cấp nhân viên lái xe (1-3 năm, THPT/Trung cấp; xe bồn FC, xe con 4-7 chỗ, hạng D, xe tải cẩu, xe tải B2); 1 JD lạc nghề (tư vấn tuyển sinh học lái xe); đa số tuyển nam",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; JD#3 nêu hình thức (không nhuộm tóc, không xăm) cho lái xe riêng; ảnh chỉnh chu là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD sát nghề hỏi 1-3 năm lái xe đúng loại (xe bồn, xe con, xe tải cẩu, giao hàng)",
+    "hoc-van": "nen — 5/5 JD sát nghề chỉ cần THPT đến Trung cấp, không đòi chuyên ngành",
+    "ky-nang-chuyen-mon": "can — lái xe an toàn, bảo dưỡng/bảo quản xe, giao nhận hàng, thông thạo đường TP.HCM/Đà Nẵng, an toàn vận chuyển xăng dầu/PCCC, vận hành cẩu",
+    "ky-nang-mem": "can — 5/5: trung thực, cẩn thận, trách nhiệm, chịu khó, giao tiếp lịch sự (lái xe cho lãnh đạo)",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc",
+    "chung-chi": "can — JD#5 chứng chỉ vận hành cẩu tự hành/cẩu trục theo quy định; các JD khác đòi bằng lái (xếp ở giay-phep)",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "can — 5/5 JD sát nghề bắt buộc bằng lái đúng hạng: FC, B2 trở lên, hạng D, hạng C trở lên, B2",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/5 JD sát nghề nêu tuổi/giới tính (nam, dưới 40, 30-40, từ 20), sức khỏe tốt, sẵn sàng làm thêm giờ/công tác đột xuất",
+    "so-thich": "khong — không JD nào nhắc (JD#3 cấm rượu bia, thuốc lá, xăm hình, không phải sở thích)"
+  },
+  "tuKhoaNenCo": ["Lái xe", "bằng lái B2/C/D/FC", "xe bồn xăng dầu", "lái xe công ty", "xe tải cẩu", "bảo dưỡng xe", "thông thạo đường", "an toàn giao thông"],
+  "bangChung": [
+    "JD#2: 'Có giấy phép lái xe hạng FC còn hiệu lực'; 'Nam, tuổi dưới 40'",
+    "JD#3: 'Nam, tuổi từ 30 – 40. Bắt buộc Bằng B2 trở lên'; 'Kinh nghiệm 3 năm trở lên'; 'không nhuộm tóc, không xăm hình'",
+    "JD#4: 'Yêu cầu bằng lái xe hạng D'; 'Thông thạo đường tại TP. Hồ Chí Minh và các tỉnh lân cận'",
+    "JD#5: 'bằng lái xe ô tô hạng C trở lên'; 'chứng chỉ vận hành cẩu tự hành/cẩu trục'",
+    "JD#6: 'Có giấy phép lái xe hạng B2 trở lên'; 'Nam, từ 20 tuổi trở lên'"
+  ],
+  "ghiChu": "JD#1 (tư vấn tuyển sinh học lái xe) lạc nghề, bỏ qua; JD#5 trùng nghề #87."
+}

@@ -1,0 +1,36 @@
+{
+  "id": 2,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Bất động sản",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên; 4/6 không yêu cầu hoặc dưới 1 năm kinh nghiệm (từ THPT/sơ cấp/trung cấp), 1 JD cần 1 năm kinh nghiệm + chứng chỉ môi giới",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 3/6 nêu độ tuổi (18+, 22-35, 22-40, 18-50) và 2 JD nêu diễn đạt/phát âm chuẩn; nghề gặp khách nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 3/6 JD nhắc mục tiêu thu nhập/định hướng phát triển lâu dài trong BĐS; dùng để nêu định hướng sales BĐS",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc kinh nghiệm (dù nhiều JD không bắt buộc); ưu tiên kinh nghiệm BĐS, sales, tư vấn, CSKH; nên ghi rõ mảng bán/thuê và khu vực",
+    "hoc-van": "nen — 6/6 nêu bậc học thấp (THPT, sơ cấp, trung cấp, cao đẳng); không đòi chuyên ngành",
+    "ky-nang-chuyen-mon": "can — 6/6: tìm kiếm và phát triển khách hàng, tư vấn sản phẩm BĐS, đàm phán, chăm sóc khách hàng, đăng tin, dẫn khách xem nhà",
+    "ky-nang-mem": "can — 6/6: giao tiếp, thuyết phục, chủ động, trách nhiệm, chịu áp lực doanh số, làm việc độc lập",
+    "cong-cu-phan-mem": "nen — JD#6 nêu AI/ChatGPT, mạng xã hội; JD#2 nêu Facebook/Zalo/TikTok; JD#5 nêu chạy marketing Facebook/Google; không JD nào đòi phần mềm văn phòng",
+    "chung-chi": "nen — JD#4 đòi chứng chỉ hành nghề môi giới BĐS còn hiệu lực; JD#6 coi là lợi thế (2/6)",
+    "du-an": "khong — không JD nào yêu cầu viết dự án (chỉ nhắc dự án BĐS công ty bán)",
+    "thanh-tich-kpi": "nen — JD#4 nêu chỉ tiêu doanh số, JD#6 áp lực doanh số; CV nên có số giao dịch/doanh số nếu đã làm (2/6)",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 JD nhận chưa có kinh nghiệm, sinh viên năm cuối/mới tốt nghiệp",
+    "giay-phep": "can — 4/6 JD nêu phương tiện đi lại/xe hoặc laptop/điện thoại cá nhân để đi thị trường",
+    "thong-tin-ca-nhan-mo-rong": "nen — 4/6 JD giới hạn độ tuổi; nên có tuổi/nơi ở/khu vực hoạt động (JD không đòi ngoại hình)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Sales bất động sản", "môi giới BĐS", "tư vấn khách hàng", "tìm kiếm khách hàng", "chăm sóc khách hàng", "đàm phán", "dẫn khách xem nhà", "chứng chỉ hành nghề môi giới", "chỉ tiêu doanh số", "phương tiện di chuyển"],
+  "bangChung": [
+    "JD#1: 'Có điện thoại thông minh và phương tiện đi lại'; 'Từ 18 tuổi trở lên'",
+    "JD#2: 'Có kỹ năng giao tiếp, tư vấn và thuyết phục khách hàng'; 'Chủ động tìm kiếm khách hàng thông qua Facebook, Zalo, TikTok'",
+    "JD#4: 'Có chứng chỉ hành nghề môi giới bất động sản còn hiệu lực'; 'Thực hiện chỉ tiêu doanh số'",
+    "JD#5: 'Có Laptop và phương tiện di chuyển cá nhân'; 'Tốt nghiệp cao đẳng trở lên'",
+    "JD#6: 'Biết và hiểu về AI hoặc Chat GPT là 1 điểm cộng'; 'chịu được áp lực doanh số'"
+  ],
+  "ghiChu": ""
+}

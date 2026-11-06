@@ -1,0 +1,35 @@
+{
+  "id": 152,
+  "nhom": "Nhà hàng/Khách sạn/Du lịch",
+  "nghe": "Nhà hàng/Khách sạn/Du lịch khác",
+  "soJD": 5,
+  "doTinCay": "thap",
+  "capBac": "2/5 JD thực tập sinh (không/dưới 1 năm, Cao đẳng/ĐH), 3/5 JD nhân viên (không yêu cầu đến 1 năm, Trung cấp trở lên); 5 JD thuộc 5 vị trí rất khác nhau (BA phần mềm F&B, TTS quản lý tài sản, kinh doanh F&B, nhân viên nhà hàng, TTS sales du lịch)",
+  "muc": {
+    "anh-chan-dung": "nen — JD không nhắc ảnh/ngoại hình; 2/5 nêu tuổi/giới tính (18-25 Nam, từ 18 tuổi); nghề phục vụ/tiếp khách nên ảnh nghiêm túc, thân thiện là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#2 'Yêu thích công việc Hành chính Nhân sự', JD#3 'yêu thích kinh doanh, Marketing', JD#1 chương trình chuyển ngành F&B; nên nêu định hướng (suy)",
+    "kinh-nghiem-lam-viec": "can — 4/5 JD nhắc kinh nghiệm hoặc nhận không kinh nghiệm: JD#1 1 năm F&B, JD#3 ưu tiên Sales 6 tháng, JD#4 và #5 không yêu cầu, được đào tạo; ghi thực tập/làm thêm ở F&B",
+    "hoc-van": "can — 5/5 nêu bậc học (Trung cấp đến ĐH); JD#1 Quản trị Nhà hàng/Khách sạn, JD#3 Kinh doanh/Marketing/Kinh tế, JD#5 Quản trị kinh doanh/Marketing/Du lịch",
+    "ky-nang-chuyen-mon": "can — mỗi JD một mảng: phân tích nghiệp vụ F&B (JD#1), kiểm kê tài sản (JD#2), tư vấn/báo giá khách F&B (JD#3), quầy mì/order/tempura/thu ngân (JD#4), tư vấn sales du lịch (JD#5)",
+    "ky-nang-mem": "can — 5/5: giao tiếp, làm việc nhóm, nhanh nhẹn, trách nhiệm, tự tin, cẩn thận, xử lý tình huống",
+    "cong-cu-phan-mem": "nen — 3/5: MS Office (JD#2, #3), Google Workspace (JD#3), Google Sheets/Excel/PowerPoint cơ bản (JD#5)",
+    "chung-chi": "khong — không JD nào nhắc chứng chỉ",
+    "du-an": "khong — không JD nào nhắc dự án; JD#1 là BA phần mềm, lạc nghề nhà hàng",
+    "thanh-tich-kpi": "khong — không JD nào nhắc chỉ tiêu/số liệu",
+    "ngoai-ngu": "nen — chỉ JD#5 'tiếng Anh trong giao tiếp/email là lợi thế'; 1/5",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/5 JD nhận TTS/không kinh nghiệm/sinh viên năm cuối; hoạt động ngoại khóa phù hợp ứng viên mới (suy)",
+    "giay-phep": "khong — không JD nào nhắc bằng lái/giấy phép",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#2 tuổi 18-25 và Nam, JD#4 đủ 18 tuổi, có thể xoay ca, sức khỏe tốt; không phải yêu cầu chung",
+    "so-thich": "nen — chỉ JD#5 'Yêu thích Travel, Sports, Wellness & Lifestyle là một điểm cộng'; 1/5"
+  },
+  "tuKhoaNenCo": ["F&B", "nhà hàng/khách sạn", "phục vụ khách hàng", "quầy order/thu ngân", "tư vấn bán hàng", "du lịch", "Microsoft Office", "làm việc xoay ca", "thực tập sinh"],
+  "bangChung": [
+    "JD#1: 'Tốt nghiệp ... Quản trị Nhà hàng và Dịch vụ ăn uống, Quản trị Khách sạn ... tối thiểu 1 năm kinh nghiệm ... F&B'",
+    "JD#2: 'sinh viên năm cuối ... Cao đẳng trở lên'; 'thành thạo về MS Office'; tuổi 18-25, Nam",
+    "JD#4: 'Không yêu cầu kinh nghiệm, sẽ được đào tạo từ đầu'; 'Có thể làm việc xoay ca'; 'Sức khỏe tốt'",
+    "JD#5: 'Sinh viên năm 2, 3, 4 hoặc mới tốt nghiệp'; 'tiếng Anh trong giao tiếp/email là lợi thế'; 'Yêu thích Travel, Sports, Wellness & Lifestyle'"
+  ],
+  "ghiChu": "Độ tin cậy thấp: nhóm 'khác' nên 5 JD rất không đồng nhất; JD#1 (BA phần mềm MISA) và JD#2 (TTS hành chính quản lý tài sản) lạc nghề nhà hàng/khách sạn. Nên dùng cho định hướng chung, không dùng để chốt mẫu CV."
+}

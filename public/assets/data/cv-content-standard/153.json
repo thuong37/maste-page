@@ -1,0 +1,36 @@
+{
+  "id": 153,
+  "nhom": "Năng lượng/Môi trường/Nông nghiệp",
+  "nghe": "Năng lượng/Địa chất",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "5/6 JD cấp nhân viên kỹ sư (dưới 1 đến 3 năm, Trung cấp/Cao đẳng/ĐH), 1 JD giám sát (1 năm, 1 năm quản lý); 3/6 JD điện mặt trời, 3/6 JD điện/cơ điện; không có JD địa chất",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ảnh/ngoại hình; 3/6 nêu Nam hoặc độ tuổi; nghề kỹ thuật công trường nên ảnh không phải trọng tâm (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc định hướng nghề nghiệp",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nêu số năm hoặc ưu tiên: điện mặt trời (JD#1, #2, #3), nhà máy sản xuất (JD#4), sửa chữa thiết bị điện (JD#5), thi công nhà xưởng/dân dụng (JD#6)",
+    "hoc-van": "can — 6/6 nêu bậc học và chuyên ngành Điện/Hệ thống điện/Điện tử/Năng lượng/Tự động hóa/Cơ khí/Cơ điện",
+    "ky-nang-chuyen-mon": "can — giám sát thi công và tiến độ, khảo sát mái/phụ tải, hòa lưới/Hybrid/lưu trữ (JD#2), bóc tách khối lượng, đọc/lập bản vẽ điện, PLC và biến tần (JD#5), bảo trì thiết bị (JD#4)",
+    "ky-nang-mem": "can — 4/6: làm việc độc lập/nhóm, giao tiếp, trình bày, phối hợp với kinh doanh/thi công/khách hàng, an toàn điện",
+    "cong-cu-phan-mem": "can — 5/6: AutoCAD (JD#1, #2, #5, #6), PVsyst (JD#2 ưu tiên), 3D, OrCAD, Word/Excel, MS Project (JD#6)",
+    "chung-chi": "nen — JD#3 ưu tiên chứng chỉ hành nghề thi công xây dựng hạng I/II/III; JD#5 Anh văn trình độ B; 2/6 JD, không JD nào đòi",
+    "du-an": "can — 4/6 JD gắn với dự án: giám sát dự án điện mặt trời (JD#1, #3), nhà máy điện, dự án nhà xưởng/dân dụng (JD#6)",
+    "thanh-tich-kpi": "nen — không JD nêu chỉ tiêu; JD#1 tiến độ dự án, JD#6 thanh quyết toán thầu phụ; nên ghi công suất kWp/MW và số dự án đã thi công",
+    "ngoai-ngu": "can — 5/6: JD#1 đọc hiểu cơ bản tiếng Anh, JD#2 đọc tài liệu kỹ thuật tiếng Anh, JD#3 tiếng Anh hoặc tiếng Trung, JD#5 Anh văn B, JD#6 Anh/Nhật giao tiếp cơ bản",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — chỉ JD#5 nhận dưới 1 năm và ưu tiên thực tập tại công ty sản xuất; phù hợp ứng viên mới ra trường (suy)",
+    "giay-phep": "nen — JD#3 'Ưu tiên ứng viên có bằng lái xe ô tô'; 1/6 JD",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 JD nêu Nam và/hoặc độ tuổi (JD#4 25-45, JD#5 Nam 23-40, JD#1 Nam); JD#2 sẵn sàng đi công tác",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["điện mặt trời", "hòa lưới bám tải/Hybrid", "AutoCAD", "PVsyst", "giám sát thi công", "bóc tách khối lượng", "PLC/biến tần", "chứng chỉ hành nghề thi công xây dựng", "an toàn điện", "cơ điện M&E"],
+  "bangChung": [
+    "JD#1: 'Nam giới có tối thiểu 01 năm kinh nghiệm quản lý giám sát thi công các dự án điện mặt trời'; 'Autocad'",
+    "JD#2: 'Tốt nghiệp cao đẳng hoặc đại học ngành điện ...'; 'Ưu tiên biết PVsyst'; 'đọc tài liệu kỹ thuật tiếng Anh'",
+    "JD#3: 'Ưu tiên ... chứng chỉ hành nghề thi công xây dựng: Hạng I, II, III'; 'Ưu tiên ... bằng lái xe ô tô'",
+    "JD#5: 'Ngoại ngữ: Anh văn trình độ B trở lên'; 'Tin học: Word, Excel, Autocad'; 'Có kiến thức về PLC, biến tần'",
+    "JD#6: 'Phần mềm: Offices, Autocad, Project'; 'Đã thi công trực tiếp công trình Nhà xưởng, dân dụng ít nhất 3 năm'"
+  ],
+  "ghiChu": "Danh mục 'Năng lượng/Địa chất' nhưng crawl chủ yếu ra JD điện mặt trời và điện/cơ điện; không có JD địa chất nên kết luận chỉ chắc cho kỹ thuật điện/năng lượng mặt trời."
+}

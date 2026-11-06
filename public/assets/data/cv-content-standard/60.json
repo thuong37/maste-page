@@ -1,0 +1,37 @@
+{
+  "id": 60,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Tài chính",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "5/6 JD cấp nhân viên/chuyên viên tài chính (1-3 năm; 1 JD kiểm soát nội bộ cấp trưởng/phó phòng 1 năm quản lý; 1 JD tư vấn tài chính không yêu cầu kinh nghiệm, THPT); ĐH/cao đẳng ngành Tài chính, Kế toán, Kiểm toán",
+  "muc": {
+    "anh-chan-dung": "nen — không JD nào nhắc ngoại hình; 1/6 nêu độ tuổi 18-30; nghề tài chính/tư vấn gặp khách nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "can — JD#6 'có mục tiêu phấn đấu để thăng tiến', JD#5 'hứng thú với Data'; 2/6 nêu định hướng; nên có để nêu định hướng FP&A/tài chính doanh nghiệp/tư vấn",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc (không yêu cầu đến 3 năm); FP&A, Business Controller, quản trị tài chính doanh nghiệp, M&A, ngân hàng bán lẻ, phân tích dữ liệu tài chính",
+    "hoc-van": "can — 6/6 nêu bậc học; chuyên ngành Tài chính, Kế toán, Kiểm toán, Kinh tế; JD#5 Phân tích dữ liệu/CNTT",
+    "ky-nang-chuyen-mon": "can — 6/6: lập ngân sách/dự báo, phân tích doanh thu/giá thành/công nợ/vốn lưu động (DSO, DIO, DPO), kế hoạch tài chính, tính hiệu quả đầu tư, bán chéo sản phẩm tài chính, hồ sơ vay",
+    "ky-nang-mem": "can — 5/6: tư duy phân tích, nhạy số liệu, giao tiếp, đàm phán, làm việc độc lập và nhóm",
+    "cong-cu-phan-mem": "can — 4/6: Excel, Power BI/Power Query, ERP, SAP, PowerPoint, truy vấn dữ liệu (JD#1, #4, #5)",
+    "chung-chi": "nen — JD#3 ưu tiên chứng chỉ CFA và kinh nghiệm M&A (1/6 nêu thẳng)",
+    "du-an": "nen — JD#4 phương án kinh doanh cho từng hợp đồng/dự án/showroom, JD#3 hoạt động M&A (2/6); nên nêu dự án tài chính",
+    "thanh-tich-kpi": "can — 3/6 nhắc số liệu: JD#1 CM/hiệu quả kinh doanh, DSO, JD#4 tỷ suất sinh lợi, JD#2 bán chéo; CV cần số liệu tài chính",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#6 không yêu cầu kinh nghiệm, nhận ứng viên 18-30 tuổi (1/6)",
+    "giay-phep": "khong — không JD nào nhắc (tín hiệu bằng lái 1/6 không xác nhận)",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#6 tuổi 18-30 (1/6 nêu thẳng)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["FP&A", "kiểm soát tài chính", "phân tích tài chính", "ngân sách/dự báo", "DSO/công nợ/vốn lưu động", "Power BI", "SAP/ERP", "CFA", "tư vấn tài chính cá nhân"],
+  "bangChung": [
+    "JD#1: 'FP&A, Business Controller, Management Accounting'; 'Excel tốt; ưu tiên biết Power BI/Power Query và ERP'; 'DSO – DIO – DPO – CCC'",
+    "JD#2: 'Cần có kinh nghiệm từ 1 năm trở lên trong lĩnh vực ngân hàng tài chính, bán hàng'; 'bán chéo'",
+    "JD#3: 'Ưu tiên ứng viên đã có kinh nghiệm tham gia các hoạt động M&A và có chứng chỉ CFA'",
+    "JD#4: 'Kinh nghiệm trên 3 năm trong lĩnh vực tài chính, kế toán, kiểm toán'; 'phần mềm kế toán SAP'",
+    "JD#5: 'thành thạo công cụ trực quan hóa dữ liệu Power BI'; 'Ứng viên đã có 2 năm kinh nghiệm'",
+    "JD#6: 'Độ tuổi: từ 18-30 tuổi'; 'Không kinh nghiệm được đào tạo'; 'có mục tiêu phấn đấu để thăng tiến'"
+  ],
+  "ghiChu": "Nghề gồm cả tài chính doanh nghiệp (FP&A, M&A) và tư vấn tài chính cá nhân; nên đọc cùng id 6 (Sales Tài chính/Ngân hàng/Bảo hiểm)."
+}

@@ -1,0 +1,34 @@
+{
+  "id": 145,
+  "nhom": "Thiết kế",
+  "nghe": "Nghiên cứu người dùng",
+  "soJD": 2,
+  "doTinCay": "thap",
+  "capBac": "2 JD (nghề mỏng): 1 JD phó phòng R&D máy rửa bát (3 năm, 1 năm quản lý, CĐ/ĐH, nam), 1 JD chuyên viên phát triển sản phẩm bán lẻ (dưới 1 năm, 25-35 tuổi, CĐ/ĐH); cả hai lệch khỏi nghiên cứu người dùng (UX Research) thật sự",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; 1/2 nêu tuổi/giới tính (nam; 25-35); nghề nghiên cứu/phát triển sản phẩm (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc",
+    "kinh-nghiem-lam-viec": "can — 2/2 hỏi kinh nghiệm (3 năm R&D thiết bị gia dụng; 6 tháng R&D sản phẩm/mua hàng/merchandising)",
+    "hoc-van": "can — 2/2 nêu CĐ/ĐH chuyên ngành Cơ khí, Điện-Điện tử, Kinh doanh, Nghiên cứu/Phát triển sản phẩm",
+    "ky-nang-chuyen-mon": "can — quản lý tiến độ thiết kế/chế tạo mẫu/thử nghiệm, kiểm tra bản vẽ 2D/3D và BOM, nghiên cứu xu hướng thị trường/đối thủ/phản hồi khách hàng, theo dõi hàng mẫu",
+    "ky-nang-mem": "can — 2/2: phối hợp nhiều bộ phận, quản lý tiến độ, giao tiếp rõ ràng, xử lý vấn đề",
+    "cong-cu-phan-mem": "can — 2/2: AutoCAD, SolidWorks (JD#1); Excel/Google Sheets (JD#2)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — 1/2 nhắc dự án/phát triển sản phẩm mới; nên ghi sản phẩm đã phát triển",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "nen — 1/2 (JD#1) có nhắc ngoại ngữ ở mức cơ bản; không rõ",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/2 JD nêu tuổi/giới tính (nam; 25-35); không đồng nhất",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Nghiên cứu sản phẩm/người dùng", "R&D", "phát triển sản phẩm", "nghiên cứu xu hướng và đối thủ", "BOM", "Excel", "hàng mẫu"],
+  "bangChung": [
+    "JD#1: 'Tối thiểu 3 năm kinh nghiệm trong lĩnh vực R&D, phát triển sản phẩm'; 'AutoCAD, SolidWorks'; 'Nam'",
+    "JD#2: 'Theo dõi sản phẩm cùng phân khúc, đối thủ cạnh tranh và phản hồi từ cửa hàng/khách hàng'; 'Tuổi 25 - 35'",
+    "JD#2: 'Sử dụng tốt Excel/Google Sheets; tổng hợp dữ liệu chính xác'"
+  ],
+  "ghiChu": "Nghề mỏng (2 JD) và lệch hướng: không có JD UX Research thật sự (phỏng vấn, khảo sát, usability test). Độ tin cậy thấp; cần crawl lại với từ khóa UX Researcher/Nghiên cứu người dùng."
+}

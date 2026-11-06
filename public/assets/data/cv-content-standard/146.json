@@ -1,0 +1,36 @@
+{
+  "id": 146,
+  "nhom": "Thiết kế",
+  "nghe": "Quản lý thiết kế",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "4/6 JD cấp nhân viên/chuyên viên (2-5 năm), 1 JD quản lý (1 năm quản lý), 1 JD trưởng phòng (3 năm quản lý); mảng xây dựng: cơ điện cao tầng, thiết kế-thi công cửa hàng, kết cấu, kiến trúc-kết cấu-MEP, xử lý khí thải",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; 3/6 nêu tuổi/giới tính (nam 26-30, nam 27-35); nghề kỹ thuật-quản lý (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "can — 4/6 nhắc định hướng/gắn bó lâu dài (JD#1, JD#6...); nên nêu định hướng quản lý thiết kế",
+    "kinh-nghiem-lam-viec": "can — 6/6 hỏi 1-5 năm thiết kế/quản lý thiết kế (cao tầng, nhà công nghiệp, cửa hàng, khí thải), ưu tiên chung cư/khách sạn/văn phòng",
+    "hoc-van": "can — 6/6 nêu ĐH/CĐ chuyên ngành Xây dựng, Kết cấu, Kiến trúc, Cơ điện, Cơ khí; JD#3 bằng Khá trở lên",
+    "ky-nang-chuyen-mon": "can — kiểm soát hồ sơ thiết kế (cơ sở, kỹ thuật, thi công), nhiệm vụ khảo sát, bóc tách khối lượng/dự toán, thẩm tra, quy chuẩn tiêu chuẩn xây dựng, quản lý nhà thầu tư vấn",
+    "ky-nang-mem": "can — 4/6: trách nhiệm, phối hợp phòng ban/nhà thầu, giao tiếp, làm việc độc lập, quản lý tiến độ",
+    "cong-cu-phan-mem": "can — 5/6: AutoCAD, Revit, Etabs, SAP, Safe, Tekla, SolidWorks, SketchUp, MS Project, Word/Excel",
+    "chung-chi": "nen — 2/6 nêu chứng chỉ hành nghề phù hợp (JD#4) và TOEIC 550 (JD#3)",
+    "du-an": "can — 4/6 nhắc dự án (công trình cao tầng, dự án công ty, cửa hàng, dự án khí thải); CV nên liệt kê dự án và quy mô",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "nen — JD#3 TOEIC ≥ 550; 1/6 nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "nen — JD#4 chứng chỉ hành nghề; JD#2 sẵn sàng công tác dài ngày; không JD nào đòi bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 nêu tuổi/giới tính (nam 26-30, 27-35, 20-40); JD#2 sẵn sàng công tác dài ngày",
+    "so-thich": "nen — JD#2 'biết chơi thể thao là một lợi thế'; chỉ 1/6 nêu"
+  },
+  "tuKhoaNenCo": ["Quản lý thiết kế", "hồ sơ thiết kế TKCS/TKKT/BVTC", "thẩm tra thiết kế", "Etabs/SAP/Revit", "quy chuẩn tiêu chuẩn xây dựng", "bóc tách khối lượng", "quản lý nhà thầu tư vấn", "chứng chỉ hành nghề"],
+  "bangChung": [
+    "JD#1: 'Tối thiểu 04 năm kinh nghiệm về thiết kế cơ điện các công trình cao tầng'; 'Ưu tiên ứng viên có thể sử dụng được Revit'",
+    "JD#2: 'Nam', 'Tuổi 26 - 30'; 'Sẵn sàng công tác dài ngày, tăng ca khi cần'; 'Biết chơi thể thao là một lợi thế'",
+    "JD#3: 'Thành thạo các phần mềm chuyên ngành (AutoCAD, Etabs, Sap, Safe, Prokon, Plaxis, Geo5, Tekla, Revit,...)'; 'TOEIC ≥ 550'",
+    "JD#4: 'Chứng chỉ hành nghề phù hợp với vị trí phụ trách'; 'Có tối thiểu 03-05 năm kinh nghiệm làm việc ở vị trí thiết kế'",
+    "JD#6: 'Thành thạo: AutoCAD / SolidWorks / SketchUp'; 'Có kinh nghiệm quản lý hoặc lead đội thiết kế kỹ thuật'"
+  ],
+  "ghiChu": "Toàn bộ JD là quản lý thiết kế trong xây dựng/kỹ thuật, chưa phủ quản lý thiết kế đồ họa/sản phẩm."
+}

@@ -1,0 +1,36 @@
+{
+  "id": 36,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Artificial Intelligence (AI)",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5 JD: 3 nhân viên AI Engineer (2-3 năm), 1 trưởng nhóm kỹ sư AI (3 năm, Computer Vision), 1 trưởng/phó phòng AI (1 năm, 1 năm quản lý); đều ĐH trở lên chuyên ngành CNTT/Khoa học máy tính/Toán-Tin",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình (JD#1 chỉ ghi giới tính Nam/Nữ); công việc kỹ thuật (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/5 JD nhắc định hướng R&D, phát triển năng lực team AI, tinh thần nghiên cứu công nghệ mới (JD#1, #4)",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD nhắc 1-4 năm AI/ML/LLM/Computer Vision/Backend; nên ghi sản phẩm AI đã đưa vào vận hành",
+    "hoc-van": "can — 5/5 yêu cầu ĐH; ngành CNTT, Khoa học máy tính, Điện tử viễn thông, Toán-Tin, Tự động hóa",
+    "ky-nang-chuyen-mon": "can — 5/5: phát triển ứng dụng LLM/AI Agent/RAG/chatbot, huấn luyện và tối ưu mô hình, Computer Vision, Prompt Engineering, thiết kế microservice, API, vector database",
+    "ky-nang-mem": "can — 5/5: tư duy giải quyết vấn đề, phân tích, chủ động nghiên cứu, dẫn dắt đội nhóm (JD#1, #4), review code",
+    "cong-cu-phan-mem": "can — 5/5: Python, Go, C/C++, PyTorch, TensorFlow, OpenCV, YOLO, LangChain/LangGraph, Gemini/OpenAI/Anthropic, PostgreSQL/pgvector, Docker/Kubernetes, Git",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "can — 4/5 nhắc dự án (JD#3 ít nhất một dự án đưa mô hình AI vào vận hành, JD#2 chatbot/RAG, JD#4 CV sản xuất, JD#5 AI Agents); CV phải có dự án, công nghệ, kết quả",
+    "thanh-tich-kpi": "nen — JD#3 độ chính xác mô hình cao, tối ưu lượng tử hóa/cắt tỉa (1/5); nên nêu độ chính xác/hiệu năng",
+    "ngoai-ngu": "nen — JD#3 đọc hiểu tài liệu kỹ thuật và bài báo khoa học tiếng Anh (1/5)",
+    "portfolio-link": "nen — JD#1 sản phẩm/nghiên cứu AI thực tế (tín hiệu 1/5); nên có GitHub/demo (suy từ tính chất công việc)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — 5/5 JD đòi 1-4 năm kinh nghiệm",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — chỉ JD#1 ghi giới tính Nam/Nữ (không phân biệt)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["AI Engineer", "LLM/RAG/AI Agent", "Python", "PyTorch/TensorFlow", "Computer Vision/YOLO", "LangChain/LangGraph", "Vector Database", "Prompt Engineering", "Docker/Kubernetes"],
+  "bangChung": [
+    "JD#1: 'Tối thiểu 1 năm ... Python'; 'Google Gemini, OpenAI, Anthropic'; 'Prompt Engineering'; 'LangChain'",
+    "JD#2: 'Có từ 2 năm kinh nghiệm AI, ưu tiên ... LLM'; 'PostgreSQL Vector Extension, Vector Database'",
+    "JD#3: 'tham gia ít nhất một dự án đưa mô hình AI vào vận hành thực tế'; 'PyTorch hoặc TensorFlow'; 'bài báo khoa học bằng tiếng Anh'",
+    "JD#4: 'Từ 3 năm ... AI/Machine Learning, 2 năm ... Computer Vision'; 'train và fine-tune model detection (YOLO)'",
+    "JD#5: 'Microservice Architecture'; 'LLM Agents ... LangChain / LangGraph, RAG pipelines, Vector Database'"
+  ],
+  "ghiChu": "Chỉ 5 JD."
+}

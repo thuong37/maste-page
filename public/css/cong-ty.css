@@ -238,3 +238,47 @@
 .company-page .profile-jobs .co-job-body{gap:4px}
 .company-page .profile-jobs .co-job-foot{padding-top:8px}
 @media(max-width:760px){.company-page .profile-jobs .co-job-logo{width:56px;height:56px}}
+
+.company-discover-page .co-search{position:relative}.co-location{gap:8px;color:var(--eb-text-400)}.co-location .location-trigger{padding:10px 6px}.co-location .location-label{max-width:170px}.company-discover-page .location-picker{z-index:30}
+
+/* Khối chia sẻ công ty (cột phải) */
+.company-page .share-panel h3{margin:16px 0 10px;font-size:var(--font-size-md,14px);font-weight:700;color:var(--eb-text-900,#1c2733)}
+.company-page .share-link{display:flex;align-items:center;gap:8px;padding:6px 6px 6px 14px;border:1px solid #e5e7eb;border-radius:12px}
+.company-page .share-link input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:inherit;font-size:var(--font-size-md,14px);color:var(--eb-text-600,#5b6670);text-overflow:ellipsis}
+.company-page .share-link button{display:grid;place-items:center;width:36px;height:36px;flex-shrink:0;border:1px solid #e5e7eb;border-radius:10px;background:#fff;color:var(--eb-text-900,#1c2733);cursor:pointer}
+.company-page .share-link button:hover{background:var(--eb-primary-50)}
+.company-page .share-socials{display:flex;gap:12px}
+.company-page .share-socials a{display:grid;place-items:center;width:48px;height:48px;border:1px solid #e5e7eb;border-radius:50%;background:#fff;cursor:pointer}
+.company-page .share-socials a:nth-child(2){background:#000;border-color:#000}
+.company-page .share-socials a:hover{box-shadow:0 2px 8px rgb(6 14 24 / .15)}
+
+/* Bố cục mới: ảnh bìa lên đầu, logo đè lên mép dưới ảnh bìa, tên + nút ở dưới */
+.company-page .profile-brand{overflow:hidden}
+.company-page .profile-cover{margin:0;position:relative}
+.company-page .profile-cover>img{display:block;width:100%;height:auto;aspect-ratio:1220/238;min-height:160px;object-fit:cover;border-radius:0}
+@media(min-width:761px){
+  .company-page .profile-identity{padding:0 28px 24px;gap:24px;align-items:flex-end}
+  .company-page .profile-logo{position:relative;width:120px;height:120px;margin-top:-44px;padding:16px;border:4px solid var(--color-surface-base,#fff);border-radius:20px;box-shadow:0 4px 16px rgb(6 14 24 / .1);background:#fff}
+  .company-page .profile-intro{padding-top:16px}
+}
+@media(max-width:760px){
+  .company-page .profile-identity{padding:0 16px 16px}
+  .company-page .profile-logo{position:relative;margin-top:-28px;border:3px solid #fff;background:#fff;border-radius:14px}
+}
+
+/* Tìm kiếm tin tuyển dụng trong trang công ty */
+.company-page .job-search{display:flex;gap:12px;align-items:center;margin:0 0 14px}
+.company-page .job-search-field{display:flex;align-items:center;gap:10px;height:44px;padding:0 14px;border:1px solid var(--eb-text-100,#e5e7eb);border-radius:999px;background:#fff;color:var(--eb-text-400,#8a949e)}
+.company-page .job-search-field:focus-within{border-color:var(--eb-primary-300);box-shadow:0 0 0 3px rgb(255 101 0 / .14)}
+.company-page .job-search-field svg{flex-shrink:0}
+.company-page .job-search-keyword{flex:1;min-width:0}
+.company-page .job-search-location{flex:0 0 240px;min-width:0}
+.company-page .job-search-field input,.company-page .job-search-field select{flex:1;min-width:0;width:100%;border:0;outline:0;background:transparent;font:inherit;font-size:var(--font-size-md,14px);color:var(--eb-text-900,#1c2733);text-overflow:ellipsis}
+.company-page .job-search-btn{height:44px;padding:0 22px;gap:8px;flex-shrink:0;display:inline-flex;align-items:center}
+@media(max-width:760px){
+  .company-page .job-search{flex-wrap:wrap;gap:8px}
+  .company-page .job-search-keyword,.company-page .job-search-location{flex:1 1 100%}
+  .company-page .job-search-btn{flex:1 1 100%;justify-content:center}
+}
+.company-page .job-search .job-search-btn{background:var(--eb-primary-500);border-color:var(--eb-primary-500);color:#fff;font-weight:700}
+.company-page .job-search .job-search-btn:hover{background:var(--eb-primary-600)}

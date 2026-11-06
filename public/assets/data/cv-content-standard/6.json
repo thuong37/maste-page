@@ -1,0 +1,37 @@
+{
+  "id": 6,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Tài chính/Ngân hàng/Bảo hiểm",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên/chuyên viên tư vấn; 2/6 không hoặc dưới 1 năm kinh nghiệm, 2/6 cần 6 tháng sales tài chính-bảo hiểm, 1 JD 2 năm, 1 JD private banking 3 năm (ĐH); từ THPT/cao đẳng trở lên",
+  "muc": {
+    "anh-chan-dung": "nen — JD#2 nêu thẳng 'Ngoại hình: khá, ưa nhìn' (1/6), 2/6 nêu phát âm chuẩn/giọng nói tốt; nghề gặp khách hàng nên ảnh nghiêm túc là lợi thế",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 JD nhắc cam kết lâu dài/đam mê kinh doanh/phát triển sự nghiệp (JD#1, JD#3)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc; ưu tiên sales ngân hàng/tài chính/bảo hiểm, bancassurance, tư vấn trực tiếp khách hàng",
+    "hoc-van": "can — 6/6 nêu bậc học (THPT đến ĐH), ưu tiên Kinh tế, Tài chính, Ngân hàng, Bảo hiểm, Marketing, Kế toán",
+    "ky-nang-chuyen-mon": "can — 6/6: tư vấn sản phẩm tài chính/bảo hiểm, bán hàng và chốt sale, đàm phán, chăm sóc khách hàng, lập kế hoạch bán hàng, hiểu quyền lợi/điều khoản hợp đồng",
+    "ky-nang-mem": "can — 6/6: giao tiếp, thuyết phục, xây dựng quan hệ, lắng nghe, làm việc độc lập/nhóm, quản lý thời gian",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc công cụ/phần mềm",
+    "chung-chi": "nen — JD#6 học lấy chứng chỉ MIT, ILP của Bộ Tài chính (1/6, JD hướng dẫn đào tạo, không đòi có sẵn); JD#4 cần am hiểu sản phẩm bảo hiểm liên kết đầu tư",
+    "du-an": "khong — chỉ JD#5 nhắc 'Dự án Sun Life X ACB' là tên chương trình, không yêu cầu mục dự án",
+    "thanh-tich-kpi": "can — 4/6 nhắc chỉ tiêu doanh số tháng/quý/năm, kết quả bán hàng tốt (JD#2, #3, #5, #6)",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "nen — JD#5 ưu tiên kinh nghiệm bancassurance 'với kết quả tốt' (1/6), nên ghi danh hiệu sales xuất sắc nếu có",
+    "hoat-dong-ngoai-khoa": "nen — 2/6 JD không yêu cầu kinh nghiệm/dưới 1 năm (JD#1, JD#6), phù hợp ứng viên mới",
+    "giay-phep": "nen — JD#1 'đi thị trường hỗ trợ khách hàng' (1/6), không đòi bằng lái (suy từ công việc)",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/6 JD nêu độ tuổi (từ 20, 23-35, 25-39), JD#2 nêu ngoại hình; nên có tuổi/nơi ở",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["tư vấn bảo hiểm", "tư vấn tài chính", "bancassurance", "chỉ tiêu doanh số", "chăm sóc khách hàng", "đàm phán", "sản phẩm bảo hiểm liên kết đầu tư", "kinh nghiệm sales ngân hàng/tài chính"],
+  "bangChung": [
+    "JD#1: 'Từ đủ 20 tuổi trở lên, có bằng tốt nghiệp THPT'; 'Có giọng nói tốt'",
+    "JD#2: 'Ngoại hình: Khá, ưa nhìn'; 'Tối thiểu 6 tháng ... sales Ngân hàng/Tài chính/Bảo hiểm'; 'Độ tuổi: 23 - 35'",
+    "JD#3: 'Có ít nhất 2 năm kinh nghiệm ... tư vấn cho khách hàng'; 'Độ tuổi 25-39'",
+    "JD#4: 'Am hiểu sản phẩm bảo hiểm liên kết đầu tư, bảo hiểm tích lũy, bảo hiểm hưu trí'",
+    "JD#5: 'tối thiểu 06 tháng kinh nghiệm bán hàng ... Bancassurance với kết quả tốt'",
+    "JD#6: 'Học lấy chứng chỉ MIT ... ILP của Bộ Tài Chính'"
+  ],
+  "ghiChu": ""
+}

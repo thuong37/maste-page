@@ -1,0 +1,149 @@
+{
+ "id": 40,
+ "nhom": "Công nghệ Thông tin",
+ "nghe": "IoT/Embedded Engineer",
+ "crawledAt": "2026-10-22T03:18:37.273Z",
+ "candidates": 80,
+ "thin": false,
+ "jds": [
+  {
+   "url": "https://www.topcv.vn/viec-lam/ky-su-iot-iot-engineer/2264317.html",
+   "title": "Kỹ Sư IoT (IoT Engineer)",
+   "company": "CÔNG TY CỔ PHẦN THƯƠNG MẠI PHƯƠNG TRUNG",
+   "query": "Kỹ sư IoT (IoT Engineer)",
+   "score": 1,
+   "chips": {
+    "Yêu cầu": [
+     "1 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Kỹ sư IoT (IoT Engineer)",
+     "IT - Phần mềm",
+     "IT - Phần cứng và máy tính",
+     "Cơ khí / Tự động hóa"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Thu thập dữ liệu thiết bị thông qua PLC hoặc IOT về server hoặc SQL để quản lý dữ liệu và trực quan hóa dữ liệu.",
+    "Yêu cầu ứng viên": "- Tốt nghiệp đại học chuyên ngành tự động hóa hoặc kỹ thuật vi xử lý.\n- Có kinh nghiệm về IOT, PLC và coding Arduino.\n\nKiến thức ngành\nIT - Phần mềm, IT - Phần cứng và máy tính, Cơ khí / Tự động hóa",
+    "Quyền lợi ứng viên": "Yêu cầu các phòng ban liên quan cung cấp số liệu, các thông tin cần thiết để thực hiện chức năng nhiệm vụ của mình.\n\nTham gia, đóng góp ý kiến với các cá nhân/ bộ phận khác trong Công ty với mục đích nâng cao hiệu quả công việc của cá nhân/ bộ phận đó cũng như hiệu quả sản xuất kinh doanh chung của toàn Công ty.\n\nCó quyền báo cáo vượt cấp nếu thấy cần thiết vì lợi ích chung của Công ty.\n\n- Mức lương cạnh tranh, thưởng tháng lương thứ 13 theo hiệu suất làm việc.\n\n- Được tham gia bảo hiểm xã hội, bảo hiểm y tế và bảo hiểm thất nghiệp theo quy định của pháp luật.\n\n- Hỗ trợ bữa trưa tại công ty hoặc phụ cấp ăn trưa hàng tháng.\n\n- Nghỉ phép hàng năm theo quy định, tối thiểu 12 ngày/năm.\n\n- Cơ hội tham gia các khóa đào tạo nâng cao kỹ năng và phát triển nghề nghiệp.\n\n- Môi trường làm việc chuyên nghiệp, thân thiện và có cơ hội thăng tiến.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHải Phòng: KCN Gia Lộc, Xã Gia Phúc (Xã Gia Phúc thuộc huyện Gia Lộc cũ)\nThời gian làm việc\nThứ 2 - Thứ 7 (từ 08:00 đến 17:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 30/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/ky-su-lap-trinh-nhung-embedded-firmware/2126366.html",
+   "title": "Kỹ Sư Lập Trình Nhúng (Embedded Firmware)",
+   "company": "INTECH GROUP\n                                Công ty Cổ phần công nghệ và đầu tư Intech",
+   "query": "Embedded Engineer/Lập trình nhúng",
+   "score": 0.8,
+   "chips": {
+    "Yêu cầu": [
+     "1 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Embedded Engineer/Lập trình nhúng",
+     "Điện / Điện tử / Điện lạnh",
+     "Cơ khí / Tự động hóa"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Phát triển firmware điều khiển động cơ BLDC/PMSM: Six-step, SinPWM, Sensorless (ZCD/Back-EMF), hoặc FOC.\nXây dựng thuật toán bảo vệ: quá dòng, quá áp, mất pha, kẹt rotor, overheat.\nLập trình trên dòng STM32 / MSP430 cho điều khiển công suất.\nXử lý tín hiệu ADC, tính RMS điện áp/dòng, tính công suất, lọc nhiễu.\nTối ưu startup BLDC, giảm tiếng ồn, tăng hiệu suất vận hành.\nGiao tiếp và truyền thông: UART, Modbus RTU, SPI, I2C.\nViết bootloader, cập nhật firmware, logging và debug lỗi thực tế.\nTest tải thực tế, phân tích dữ liệu, cải tiến thuật toán.\nViết tài liệu kỹ thuật (firmware spec, hướng dẫn dùng, hướng dẫn test).",
+    "Yêu cầu ứng viên": "Thành thạo lập trình C nhúng, hiểu vững timer, PWM, ADC, interrupt.\nCó kinh nghiệm điều khiển động cơ BLDC/PMSM, ưu tiên đã làm thực tế.\nHiểu về PI/PID control, SinPWM, SVPWM là lợi thế.\nCó tư duy xử lý tín hiệu (filtering, RMS, phase).\nBiết đọc schematic, hiểu cơ bản mạch công suất để phối hợp nhóm.\nTối thiểu 1 năm kinh nghiệm embedded, ưu tiên dự án motor/inverter.\nChủ động trong công việc và có tinh thần học hỏi cao.\nKỹ năng máy tính và kỹ năng tin học văn phòng tốt.\nKỹ năng lập kế hoạch và triển khai dự án, quản lý dự án\nChủ động trong công việc, lập kế hoạch, phân công công việc công việc, đảm bảo tiến độ.\nTinh thần trách nhiệm cao, nhiệt tình với công việc\nThực hiện các công việc khác được cấp quản lý phân công\nKiến thức ngành\nĐiện / Điện tử / Điện lạnh, Cơ khí / Tự động hóa",
+    "Quyền lợi ứng viên": "Chế độ thưởng theo dự án, hiệu quả công việc hấp dẫn.\nChính sách phúc lợi toàn diện: BHXH, BHYT, BHTN; phép năm, thưởng các ngày lễ tết, khám sức khỏe định kỳ, quỹ Intech Care\nCác hoạt động gắn kết thường niên trong năm: Intech sportday, Intech day, Ngày hội giao lưu đồng nghiệp, đại hội CBNV & Tiệc cuối năm và các chương trình văn hóa đa dạng theo từng quý\nMôi trường làm việc trẻ trung, năng động, tôn trọng màu sắc và cá tính của từng CBNV, văn hóa tin tưởng & trao quyền\nLộ trình phát triển nghề nghiệp rõ ràng, được thiết kế theo từng cá nhân hóa",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Số 145 Ngọc Hồi, Phường Yên Sở (Phường Yên Sở thuộc quận Hoàng Mai cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:30)\n8h - 17h30 từ thứ 2 – thứ 6 và 2 thứ 7/tháng\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 30/10/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/truong-nhom-ky-su-ai-ai-engineer-team-lead/2334844.html",
+   "title": "Trưởng Nhóm Kỹ Sư AI - AI Engineer Team Lead",
+   "company": "CÔNG TY CỔ PHẦN COWATECH",
+   "query": "IoT Embedded Engineer",
+   "score": 0.75,
+   "chips": {
+    "Yêu cầu": [
+     "3 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Quyền lợi": [
+     "Bảo hiểm xã hội",
+     "Team building",
+     "Du lịch hàng năm"
+    ],
+    "Chuyên môn": [
+     "AI Engineer",
+     "IT - Phần mềm",
+     "Công nghệ kỹ thuật"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Dẫn dắt kỹ thuật, nghiên cứu và phát triển các giải pháp AI ứng dụng Computer Vision trong môi trường sản xuất, tự động hóa quy trình và nâng cao hiệu quả.\n\nTham gia phát triển sản phẩm từ nghiên cứu đến triển khai thực tế, đồng thời định hướng kỹ thuật và phát triển năng lực cho team AI.\n\nĐịnh hướng phát triển: Team AI sẽ phụ trách chính toàn bộ các công việc liên quan đến AI trong cowa Group, từ nghiên cứu, phát triển giải pháp đến triển khai và tối ưu ứng dụng thực tế.\n\nNghiên cứu, training và tối ưu các mô hình Computer Vision: Object Detection, Tracking, Pose Estimation, nhận diện hành vi.\nReview code, hỗ trợ kỹ thuật và chia sẻ kiến thức với các thành viên trong team AI.\nPhát triển các ứng dụng AI từ dữ liệu camera IP phục vụ giám sát an toàn, đếm số lượng, giám sát thao tác và quy trình sản xuất.\nXây dựng và tối ưu hệ thống xử lý video thời gian thực (Real-time Video Processing), giám sát đa camera (Multi-camera Monitoring) và AI Inference Pipeline.\nTriển khai, kiểm thử và tối ưu mô hình AI trên thiết bị Edge tại nhà máy.\nTối ưu hiệu năng mô hình và tốc độ suy luận trên thiết bị triển khai.\nPhối hợp với Manager xác định giải pháp kỹ thuật, nghiên cứu tính khả thi và phát triển các sản phẩm AI mới.",
+    "Yêu cầu ứng viên": "Từ 3 năm kinh nghiệm trong lĩnh vực phát triển AI/Machine Learning, 2 năm kinh nghiệm thực tế với Computer Vision.\nThành thạo C++; Git.\nCó kinh nghiệm xử lý dữ liệu video, object/human tracking, làm việc với Camera IP và xây dựng hệ thống AI xử lý thời gian thực là lợi thế.\nCó kinh nghiệm sử dụng Python, PyTorch, OpenCV; đã train và fine-tune model detection (YOLO hoặc tương tự).\nCó tư duy thiết kế giải pháp, khả năng phân tích vấn đề và lựa chọn công nghệ phù hợp với yêu cầu thực tế.\nCó khả năng dẫn dắt đội nhóm kỹ thuật, review code, hướng dẫn và hỗ trợ các thành viên trong team.\nChủ động nghiên cứu công nghệ mới, có tinh thần trách nhiệm và khả năng phối hợp làm việc với các bộ phận liên quan.\n\n➢ Ưu tiên:\n\nĐã triển khai model trên Jetson hoặc thiết bị edge, có kinh nghiệm với TensorRT/ONNX.\nĐã làm pose estimation hoặc action recognition.\nHiểu môi trường nhà máy.\n\nYêu cầu về trình độ Tốt nghiệp đại học các ngành Công nghệ thông tin, Khoa học máy tính, Kỹ thuật phần mềm, và các ngành liên quan\n\nKiến thức ngành\nIT - Phần mềm, Công nghệ kỹ thuật\nKỹ năng cần có\nC++, Git, Python, Pytorch, Computer Vision, Machine Learning, object detection, OpenCV, tracking, Pose Estimation\nKỹ năng nên có\nJetson, TensorRT, onnx, môi trường nhà máy, Pose Estimation, action recognition",
+    "Quyền lợi ứng viên": "Lương(Gross) : Thu nhập: 25-30 triệu VNĐ/tháng (Gross) + Thưởng theo hiệu suất công việc.\n\nThưởng hiệu suất kinh doanh 2 lần/năm.\n(Thực tế: 3–4 tháng lương/năm tùy theo kết quả đánh giá cá nhân)\n\nTăng lương Tháng 1 hàng năm\n\nCơ hội & Quyền lợi\n\n- Được tham gia vào domain ổn định, có tiềm năng phát triển cao. Không cần phải thay đổi KNOW HOW theo dự án\n\n- Được tiếp cận: Bài toán thực tế trong nhà máy, Dữ liệu lớn & quy trình automation, IOT\n\n- Có cơ hội phát triển lên các vị trí Quản lý theo sự phát triển của công ty\n\n- Nghỉ lễ & Chế độ phúc lợi theo quy định.\n\n- Du lịch công ty, Team building, Happy hour,\n\n- Đóng BHXH đầy đủ theo luật LĐ\n\nQUYỀN LỢI BỔ SUNG\nPhúc lợi\nBảo hiểm xã hội, Team building, Du lịch hàng năm, Thưởng hiệu quả làm việc",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: TTH Building, Di Trạch, Xã Hoài Đức (Xã Hoài Đức thuộc huyện Hoài Đức cũ)\nThời gian làm việc\nTừ Thứ 2 - Thứ 6: 08:30 – 17:30, nghỉ trưa 12:00 – 13:00\nAuto Remote 2 ngày thứ 7 mỗi tháng\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 19/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nTrưởng nhóm\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite, Làm việc từ xa (Remote)\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/ky-su-iot-agv/2330866.html",
+   "title": "Kỹ Sư IoT – AGV",
+   "company": "CÔNG TY TNHH SHN TECHNOLOGY",
+   "query": "Kỹ sư IoT (IoT Engineer)",
+   "score": 0.75,
+   "chips": {
+    "Yêu cầu": [
+     "Không yêu cầu kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Kỹ sư IoT (IoT Engineer)",
+     "Công nghệ kỹ thuật"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Lập trình và triển khai các thiết bị nhúng, IoT phục vụ hệ thống AGV/AMR.\nPhát triển mạch giao tiếp giữa AGV và thang máy, PLC hoặc các thiết bị ngoại vi.\nLập trình và triển khai hệ thống gọi AGV tại các chuyền sản xuất, bao gồm nút nhấn, gateway và giao tiếp với hệ thống trung tâm.\nThực hiện đấu nối, cấu hình, kiểm thử và xử lý lỗi thiết bị tại nhà máy.\nPhối hợp với đội ngũ phần mềm và kỹ thuật để tích hợp, vận hành hệ thống AGV.\nHỗ trợ triển khai dự án, nghiệm thu và hướng dẫn khách hàng khi cần.",
+    "Yêu cầu ứng viên": "Tốt nghiệp chuyên ngành Điện, Điện tử, Điện tử viễn thông, Tự động hóa hoặc liên quan.\nCó kiến thức cơ bản về lập trình C/C++ và Python.\nCó kinh nghiệm học tập hoặc thực hành với Arduino, vi điều khiển hoặc các nền tảng nhúng tương tự.\nCó kiến thức cơ bản về giao tiếp thiết bị như UART, RS485, Modbus TCP/RTU hoặc TCP/IP là lợi thế.\nCó khả năng đọc hiểu sơ đồ điện, đấu nối thiết bị và xử lý lỗi cơ bản.\nChủ động học hỏi, có tinh thần trách nhiệm và sẵn sàng đi công tác khi triển khai dự án.\nKiến thức ngành\nCông nghệ kỹ thuật\nKỹ năng cần có\nPython, TCP/IP, Arduino, Lập trình C/C++, Đấu nối thiết bị, RS485, Vi Điều Khiển, Giao tiếp UART, Modbus TCP/RTU, Đọc Hiểu Sơ Đồ Điện, xử lý lỗi cơ bản",
+    "Quyền lợi ứng viên": "Được đào tạo về hệ thống AGV/AMR, thiết bị nhúng và IoT công nghiệp.\nĐược tham gia trực tiếp các dự án tự động hóa tại nhà máy.\nCó cơ hội phát triển chuyên môn về Embedded, IoT và tích hợp hệ thống công nghiệp.\nMức lương: Thỏa thuận theo năng lực và kinh nghiệm.\nĐóng BHXH theo quy định của nhà nước\nLương tháng 13, team building,...",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Phòng 703, Tầng 7, Toà tháp Thiên Niên kỷ, Số 4 Đường Quang Trung Thành phố Hà Nội, Việt Nam, Phường Hà Đông (Phường Hà Đông thuộc quận Hà Đông cũ)\nThời gian làm việc\nThứ 2 - Thứ 7 (từ 08:30 đến 17:30)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 13/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/thuc-tap-ky-su-lap-trinh-embedded-iot/2263402.html",
+   "title": "Thực Tập Kỹ Sư Lập Trình EMBEDDED/IOT",
+   "company": "Công ty cổ phần phần mềm nhúng NATA",
+   "query": "Kỹ sư IoT (IoT Engineer)",
+   "score": 0.75,
+   "chips": {
+    "Yêu cầu": [
+     "Dưới 1 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Kỹ sư IoT (IoT Engineer)",
+     "IT - Phần mềm"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Thực tập (giai đoạn trước khi tham gia dự án thực tế) về phát triển các hệ thống Embedded, AIoT như: thiết bị quan trắc - điều khiển, hệ thống truyền thông, camera thông minh, thiết bị y tế ...\nLập trình cho các thiết bị edge devices (như Raspberry Pi, ESP32, Jetson Nano) và tính toán tại cloud (như AWS)\nTham gia vào các quá trình từ thiết kế, phát triển, kiểm thử đến triển khai hệ thống phần cứng và phần mềm\nTiếp cận, nghiên cứu, ứng dụng các công nghệ mới về AI, Edge Computing, IoT\nThực tập xây dựng tài liệu báo cáo, quản lý dự án",
+    "Yêu cầu ứng viên": "Có kinh nghiệm lập trình ngôn ngữ C/C++/C#, Python tối thiểu 06 tháng và khả năng học hỏi nhanh\nTốt nghiệp đại học các chuyên ngành Điện - Điện tử, Cơ – Điện tử, CNTT, Kỹ thuật máy tính với tư duy lập trình tốt\nCó kinh nghiệm lập trình với ít nhất một loại thuộc MCU, SoC hay SoM như: Rasp Pi, ESP32, Jetson Nano, Zynq, ...\nCó khả năng hàn, lắp mạch điện tử\nƯu tiên ứng viên biết tiếng Nhật\nKiến thức ngành\nIT - Phần mềm\nKỹ năng cần có\nC/C++, Lập Trình Nhúng, Đọc Hiểu Datasheet, Giao Tiếp Ngoại Vi (uart, Spi, I2c), Kiến Thức Về Vi Điều Khiển (arm, Stm32, Esp32,...)",
+    "Quyền lợi ứng viên": "Có hiểu biết về Embedded Linux, Android, ESP-IDF, ...\nCó khả năng sử dụng tiếng Anh trong công việc\nCó tinh thần làm việc nhóm, năng động, có khả năng làm việc dưới áp lực cao\nBiết sử dụng Altium trong thiết kế mạch điện tử\nCó cơ hội trở thành nhân viên chính thức ngay khi đáp ứng được công việc\nCó thể được nhận trợ cấp thực tập nếu có đóng góp tốt vào dự án\nĐược hướng dẫn bởi những người có kinh nghiệm nhiều năm\nĐược trải nghiệm trong môi trường năng động, thân thiện, khuyến khích ý tưởng sáng tạo",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: 46C Ngõ 4 Đường Phú Mỹ, Từ Liêm, Phường Từ Liêm (Phường Từ Liêm thuộc quận Nam Từ Liêm cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 14/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nThực tập sinh\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n2 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": 63,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Thẩm định và quản trị rủi ro",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5 JD quản trị rủi ro: 3 chuyên viên (1, 2, 4 năm), 1 trưởng nhóm ERM (5 năm), 1 quản lý rủi ro và tuân thủ (5 năm quản lý, tuổi 35-45); ĐH trở lên ngành Tài chính-Ngân hàng, Kinh tế, Kiểm toán; không có JD thẩm định tín dụng thuần",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình; 2/5 chỉ nêu tuổi (25-30, 35-45); công việc phân tích (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — tín hiệu 1/5; dùng để nêu định hướng quản trị rủi ro/tuân thủ (suy từ tính chất công việc)",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD nhắc 1-5+ năm quản trị rủi ro tín dụng/ERM/margin tại ngân hàng, chứng khoán, fintech, công ty kiểm toán/tư vấn",
+    "hoc-van": "can — 5/5 yêu cầu ĐH (JD#1 loại khá trở lên); ngành Quản trị rủi ro, Tài chính-Ngân hàng, Kinh tế, Toán kinh tế, Kiểm toán, Chứng khoán, Luật",
+    "ky-nang-chuyen-mon": "can — 5/5: xây dựng khung/chính sách rủi ro, hạn mức và khẩu vị rủi ro, rủi ro tín dụng, phân loại nợ/trích lập dự phòng, rủi ro margin/thanh khoản/CAR, RCSA/KRI, báo cáo rủi ro cho HĐQT",
+    "ky-nang-mem": "nen — 3/5: phân tích, tư duy logic số liệu, giao tiếp/đàm phán/thuyết trình, dẫn dắt đội (JD#3)",
+    "cong-cu-phan-mem": "can — 3/5: R, Python, SAS, SPSS, SQL (JD#2), Excel/báo cáo rủi ro; quy định/chuẩn mực COSO ERM, ISO 31000 (JD#1)",
+    "chung-chi": "can — 4/5: CFA, FRM (JD#2), chứng chỉ hành nghề chứng khoán (JD#5), TOEIC 600-650+ (JD#1, #2); nên liệt kê chứng chỉ",
+    "du-an": "can — JD#1 trực tiếp triển khai các cấu phần ERM (Risk Library, RCSA, KRI), JD#3 xây dựng quy trình kiểm soát (2/5); nên nêu khung/dự án rủi ro đã làm",
+    "thanh-tich-kpi": "nen — JD#4 báo cáo tỷ lệ an toàn tài khoản (Rtt), call margin, CAR (1/5 nhắc chỉ số); nên nêu quy mô danh mục/hạn mức quản lý",
+    "ngoai-ngu": "can — 3/5: TOEIC 650+ (JD#1), TOEIC 600 và giao tiếp tốt (JD#2), tiếng Anh trong tài liệu chuẩn quốc tế",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — 5/5 JD đòi 1-5+ năm kinh nghiệm",
+    "giay-phep": "can — chứng chỉ hành nghề chứng khoán (JD#5 ưu tiên, 1/5 nêu thẳng) là giấy phép nghề nghiệp",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#2 tuổi 25-30, JD#3 tuổi 35-45 (2/5 nêu độ tuổi)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["quản trị rủi ro", "ERM/COSO/ISO 31000", "RCSA/KRI", "rủi ro tín dụng", "margin/Rtt/CAR", "CFA/FRM", "chứng chỉ hành nghề chứng khoán", "Python/SAS/SQL", "tuân thủ"],
+  "bangChung": [
+    "JD#1: 'Tối thiểu 5 năm kinh nghiệm ... ERM'; 'COSO ERM 2017 & ISO 31000'; 'TOEIC 650+'; 'Thư viện rủi ro, RCSA, KRI'",
+    "JD#2: 'Ưu tiên ứng viên có chứng chỉ CFA, FRM'; 'R, Python, SAS, SPSS, SQL'; 'TOEIC 600'; 'Tuổi 25 - 30'",
+    "JD#3: 'Trên 5 năm'; 'Tuổi 35 - 45'; 'xây dựng qui trình kiểm soát và phòng ngừa rủi ro, tuân thủ'",
+    "JD#4: 'Hiểu sâu về quản trị rủi ro Margin'; 'Tối thiểu 04 năm ... KSRR trong ngành tài chính, chứng khoán'",
+    "JD#5: 'Ưu tiên ứng viên đã có Chứng chỉ hành nghề Chứng khoán'; 'RCSA, KRI'"
+  ],
+  "ghiChu": "Chỉ 5 JD; chưa có JD thẩm định tín dụng/định giá thuần."
+}

@@ -1,0 +1,36 @@
+{
+  "id": 102,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Dịch vụ làm đẹp",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "3/6 JD kỹ thuật viên spa/da liễu (0-2 năm, THPT-CĐ, nữ), 3/6 JD telesale/CSKH/tư vấn (trong đó 2 trưởng nhóm 1-2 năm); phần lớn nữ",
+  "muc": {
+    "anh-chan-dung": "can — 3/6 nêu thẳng ngoại hình: 'ngoại hình tươi tắn', 'vẻ ngoài tươi tắn, gọn gàng, không hình xăm lộ rõ'; thêm 5/6 nêu tuổi/giới tính",
+    "muc-tieu-nghe-nghiep": "nen — 3/6 nhắc gắn bó lâu dài, cầu tiến; nên nêu định hướng chăm sóc da/tư vấn",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm hoặc không yêu cầu (6 tháng telesale, 1-2 năm lead, 2 năm KTV spa), ưu tiên spa/thẩm mỹ/phòng khám",
+    "hoc-van": "nen — 3/6 nêu cấp học (THPT đến CĐ), 1 JD ưu tiên ngành chăm sóc sắc đẹp/học nghề học viện uy tín; không đòi chuyên ngành bắt buộc",
+    "ky-nang-chuyen-mon": "can — massage, facial, làm sạch da, lấy nhân mụn, đắp mặt nạ, SOP vô trùng, telesale/tư vấn liệu trình, xử lý khiếu nại, quản lý KPI nhóm",
+    "ky-nang-mem": "can — 6/6: giao tiếp, lắng nghe, tỉ mỉ, thân thiện, chịu áp lực doanh số, xử lý tình huống",
+    "cong-cu-phan-mem": "nen — 1/6 nhắc Zalo và Excel/Google Sheet cơ bản; còn lại là máy móc spa",
+    "chung-chi": "nen — không JD nào đòi chứng chỉ; 1 JD ưu tiên bằng ngành chăm sóc sắc đẹp",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "can — 3/6 nêu doanh số/KPI (telesale, leader tư vấn); CV nên có số liệu doanh số/tỷ lệ chuyển đổi",
+    "ngoai-ngu": "nen — 2/6 nhắc tiếng Anh giao tiếp/đọc hiểu là lợi thế",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#4 không yêu cầu kinh nghiệm, được đào tạo; hữu ích cho ứng viên mới",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/6 nêu tuổi 19-35, nữ, giọng nói dễ nghe/phát âm chuẩn, không hình xăm lộ rõ",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Kỹ thuật viên spa", "massage mặt/body", "chăm sóc da", "lấy nhân mụn", "SOP", "telesale thẩm mỹ", "chăm sóc khách hàng", "KPI"],
+  "bangChung": [
+    "JD#1: 'Độ tuổi 22 đến 35'; 'Giọng nói dễ nghe, truyền cảm'; 'chịu được áp lực doanh số'",
+    "JD#2: 'Nữ'; 'Ngoại hình tươi tắn và Tiếng Anh giao tiếp là một lợi thế'",
+    "JD#3: 'Phân bổ KPI, giám sát hiệu suất'; 'Có từ 1 năm kinh nghiệm quản lý CSKH/lễ tân/tư vấn bán hàng'",
+    "JD#4: 'Vẻ ngoài tươi tắn, gọn gàng; không có hình xăm lộ rõ khi mặc đồng phục'; 'Không yêu cầu kinh nghiệm'",
+    "JD#5: 'Ưu tiên: Tốt nghiệp ngành chăm sóc sắc đẹp hoặc học nghề tại các học viện uy tín'"
+  ],
+  "ghiChu": "Hai nhánh: kỹ thuật viên tay nghề và tư vấn/sales dịch vụ; yêu cầu ngoại hình ghi nhận như dữ liệu JD."
+}

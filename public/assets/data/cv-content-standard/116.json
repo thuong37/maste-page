@@ -1,0 +1,35 @@
+{
+  "id": 116,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Điện tử/Phần cứng",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5/5 JD cấp nhân viên kỹ sư (0-3 năm, CĐ/ĐH); 2/5 JD sát điện tử (kỹ sư điện-điện tử sửa chữa PLC/board mạch; kỹ sư điện tử-viễn thông), 3/5 lệch sang điện/M&E/MEP (JD#4 trùng nghề #117)",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; nghề kỹ thuật (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#3 nhắc mong muốn phát triển nghề nghiệp trong lĩnh vực M&E; nên nêu hướng điện tử/viễn thông/điều khiển",
+    "kinh-nghiem-lam-viec": "can — 5/5 nhắc kinh nghiệm (không yêu cầu đến 2-3 năm), ưu tiên sửa chữa thiết bị tại nhà máy, dự án M&E/viễn thông",
+    "hoc-van": "can — 5/5 nêu CĐ/ĐH chuyên ngành Điện, Điện tử, Viễn thông, Tự động hóa, Cơ điện lạnh/MEP",
+    "ky-nang-chuyen-mon": "can — sửa chữa board mạch, PLC/HMI/biến tần/servo, đọc sơ đồ điện, thiết kế hệ thống viễn thông, giám sát thi công, bóc tách khối lượng, dự toán",
+    "ky-nang-mem": "can — 5/5: làm việc độc lập/nhóm, giao tiếp, chịu áp lực, trách nhiệm, chủ động học hỏi",
+    "cong-cu-phan-mem": "can — 5/5: AutoCAD, OrCAD, Revit, MS Project, Excel, Word, phần mềm bản đồ",
+    "chung-chi": "nen — JD#1 ưu tiên chứng chỉ hành nghề (chấp nhận sinh viên mới ra trường)",
+    "du-an": "can — 3/5 nhắc dự án (viễn thông, M&E, MEP); CV nên liệt kê dự án",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "can — 3/5: tiếng Anh B trở lên, giao tiếp cơ bản, đọc hiểu tài liệu kỹ thuật",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/5 nhận sinh viên mới ra trường/thực tập tại công ty sản xuất",
+    "giay-phep": "nen — 3/5 yêu cầu đi công tác, làm ngoài hiện trường/công trường; không JD nào đòi bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/5 nêu nam, 23-40 tuổi; 3/5 nêu sẵn sàng đi công tác",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Điện tử công nghiệp", "sửa chữa board mạch", "PLC/HMI", "biến tần/servo", "OrCAD", "AutoCAD", "viễn thông", "M&E", "đọc sơ đồ mạch"],
+  "bangChung": [
+    "JD#1: 'Hiểu biết về hệ thống truyền dẫn, mạng di động, cáp quang'; 'Ưu tiên ứng viên có chứng chỉ hành nghề'; 'AutoCAD, Excel, MS Project'",
+    "JD#2: 'Nam, Tốt nghiệp Đại học chuyên ngành Điện/Điện tử'; 'Sử dụng OrCAD, Thành thạo AutoCAD'; 'Anh văn trình độ B trở lên'",
+    "JD#3: 'Phù hợp với ứng viên mới tốt nghiệp hoặc dưới 02 năm kinh nghiệm'; 'Biết sử dụng AutoCAD'",
+    "JD#5: 'Chẩn đoán, sửa chữa board mạch, linh kiện điện tử và thiết bị điều khiển công nghiệp'; 'Có 2–3 năm kinh nghiệm'"
+  ],
+  "ghiChu": "Chỉ 2/5 JD sát điện tử/phần cứng; còn lại lệch sang điện/MEP. JD#4 trùng nghề #117."
+}

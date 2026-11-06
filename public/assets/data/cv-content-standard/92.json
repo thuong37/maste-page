@@ -1,0 +1,47 @@
+{
+  "id": 92,
+  "nhom": "Sản xuất",
+  "nghe": "Sản xuất khác",
+  "soJD": 5,
+  "doTinCay": "thap",
+  "capBac": "5/5 JD cấp nhân viên kỹ sư an toàn lao động (HSE) tại công trường; 1 JD không yêu cầu kinh nghiệm, 1 JD 1 năm, 2 JD 2-3 năm, 1 JD 3-5 năm; Cao đẳng/Đại học",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; 2/5 JD nêu giới tính nam; nghề làm tại công trường nên ảnh không bắt buộc (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc định hướng",
+    "kinh-nghiem-lam-viec": "can — 5/5 hỏi kinh nghiệm HSE/ATLĐ tại công trường xây dựng; nên ghi loại công trình, quy mô, số công nhân phụ trách",
+    "hoc-van": "can — 5/5 nêu Cao đẳng/Đại học chuyên ngành Bảo hộ lao động, An toàn lao động, Môi trường, Xây dựng",
+    "ky-nang-chuyen-mon": "can — 5/5: giám sát ATLĐ-vệ sinh môi trường-PCCC, nhận diện nguy cơ/đánh giá rủi ro, huấn luyện an toàn, lập hồ sơ/biên bản/báo cáo, kiểm tra hiện trường",
+    "ky-nang-mem": "can — 4/5: làm việc nhóm, đàm phán/giải quyết vấn đề, giao tiếp hướng dẫn công nhân, chịu áp lực, kỷ luật, kiên quyết xử lý vi phạm",
+    "cong-cu-phan-mem": "nen — 2/5 nêu Word/Excel (Microsoft Office); không JD nêu phần mềm HSE chuyên dụng",
+    "chung-chi": "can — 2/5 nêu rõ chứng chỉ: chứng nhận huấn luyện ATLĐ, chứng chỉ nghiệp vụ ATVSLĐ, huấn luyện PCCC & CNCH (JD#1), chứng chỉ nhóm 2 (JD#5), ưu tiên ISO 45001/14001; nghề an toàn nên chứng chỉ ATLĐ là trọng tâm",
+    "du-an": "nen — 3/5 ưu tiên kinh nghiệm theo dự án/công trình (tổng thầu, dự án quy mô lớn, nhà ở dân dụng, nhà xưởng); nên ghi dự án đã làm",
+    "thanh-tich-kpi": "nen — không JD nêu chỉ tiêu; nên ghi số vụ tai nạn giảm, số buổi huấn luyện, số giờ không tai nạn (suy từ công việc)",
+    "ngoai-ngu": "khong — không JD HSE nào nhắc ngoại ngữ",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "nen — chứng nhận ATLĐ/PCCC (xếp ở mục chứng chỉ); không JD nêu bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "can — 3/5 JD nêu thẳng giới tính nam và/hoặc độ tuổi (22-45, 27-45); JD#2 còn nêu sức khỏe tốt, sẵn sàng làm công trường theo điều động",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": [
+    "Kỹ sư an toàn lao động (HSE)",
+    "ATVSLĐ",
+    "PCCC & CNCH",
+    "đánh giá rủi ro",
+    "huấn luyện an toàn",
+    "biên bản/báo cáo an toàn",
+    "ISO 45001/14001",
+    "QCVN/TCVN",
+    "giám sát công trường",
+    "chứng chỉ nhóm 2"
+  ],
+  "bangChung": [
+    "JD#1 (EPM): 'Tối thiểu 02 năm kinh nghiệm HSE tại công trình xây dựng'; 'Chứng nhận huấn luyện PCCC & CNCH'; 'ISO 45001, ISO 14001'",
+    "JD#2 (Đại Tín): 'Nắm vững các quy định pháp luật ... QCVN, TCVN'; Nam, Tuổi 22-45",
+    "JD#3 (Kurihara): 'Giới tính: Nam'; 'Thành thạo Microsoft Office'; 'Kỹ năng đàm phán và giải quyết vấn đề'",
+    "JD#5 (Everland): 'Có chứng chỉ nhóm 2'; '3-5 năm kinh nghiệm làm công tác ATLĐ'; Nam, Tuổi 27-45",
+    "JD#6: 'Kiểm soát an toàn ... làm việc trên cao, lắp dựng giàn giáo'; 'sử dụng được Word, Excel'"
+  ],
+  "ghiChu": "Nghề thuộc nhóm Sản xuất khác (tạp) nên doTinCay=thap theo quy tắc, dù crawl lại cho 5 JD cùng vai trò Kỹ sư an toàn lao động (HSE) tại công trường, nên nội dung nhất quán và có thể dùng tham khảo. Đã loại JD#4 (Tổng công ty Công trình đường sắt: thực chất là kỹ sư M&E giám sát thi công, QA/QC); mọi số liệu x/5 tính trên 5 JD HSE còn lại (JD#1,2,3,5,6). JD#6 tên công ty là biến mẫu chưa render."
+}

@@ -1,0 +1,36 @@
+{
+  "id": 32,
+  "nhom": "Nhân sự/Hành chính/Pháp chế",
+  "nghe": "Dịch vụ pháp chế (In-house)",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "5/6 JD cấp nhân viên/chuyên viên pháp chế (1-5+ năm), 1 JD trưởng nhóm pháp chế (5 năm); đều ĐH trở lên, chuyên ngành Luật (1 JD pháp chế an toàn thực phẩm yêu cầu công nghệ thực phẩm)",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình; JD#5 ưu tiên nam, JD#6 từ 25 tuổi (2/6 chỉ nêu giới tính/tuổi); công việc pháp lý (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — dùng để nêu định hướng pháp chế doanh nghiệp/tuân thủ; không JD nhắc thẳng (suy từ tính chất công việc)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc; 1 đến 5+ năm pháp chế doanh nghiệp/công ty luật/tuân thủ/kiểm soát nội bộ",
+    "hoc-van": "can — 6/6 yêu cầu ĐH; 5/6 ngành Luật (Luật Kinh tế, ĐH Luật Hà Nội), 1 JD ngành Công nghệ thực phẩm/Hóa sinh",
+    "ky-nang-chuyen-mon": "can — 6/6: soạn thảo, rà soát, đàm phán hợp đồng, tư vấn pháp lý, quản trị rủi ro pháp lý, kiểm soát tuân thủ, xử lý tranh chấp, nghiên cứu văn bản pháp luật, PCRT/AML",
+    "ky-nang-mem": "can — 5/6: phân tích, đàm phán, giao tiếp phối hợp, cẩn trọng, tư duy logic, chịu áp lực, chính trực",
+    "cong-cu-phan-mem": "nen — JD#1, JD#5 tin học văn phòng, JD#2 máy tính (3/6 nhắc chung chung)",
+    "chung-chi": "can — 4/6 ưu tiên thẻ luật sư/chứng chỉ hành nghề luật sư/chứng chỉ đào tạo nghề luật sư (JD#1, #3, #4); JD#2 GMP, HACCP, ISO (mảng thực phẩm)",
+    "du-an": "nen — 2/6 nhắc dự án/vụ việc (JD#3 đầu tư-BĐS, JD#6 thẩm định khách hàng); nên nêu vụ việc/hợp đồng tiêu biểu",
+    "thanh-tich-kpi": "khong — không JD nào nhắc KPI/số liệu",
+    "ngoai-ngu": "can — 4/6: tiếng Anh hoặc tiếng Trung thành thạo (JD#1), tiếng Anh giao tiếp và viết tốt (JD#2), tiếng Anh đọc hiểu (JD#2, #3)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — 6/6 JD đòi 1-5+ năm kinh nghiệm",
+    "giay-phep": "can — chứng chỉ hành nghề luật sư/thẻ luật sư là giấy phép nghề nghiệp, được 3/6 JD ưu tiên (JD#1, #3, #4)",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#5 ưu tiên nam, JD#6 từ 25 tuổi (2/6 nêu thẳng)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["pháp chế doanh nghiệp", "soạn thảo/rà soát hợp đồng", "quản trị rủi ro pháp lý", "tuân thủ/kiểm soát nội bộ", "thẻ luật sư", "Luật Doanh nghiệp/Thương mại/Lao động", "phòng chống rửa tiền", "tiếng Anh/Trung"],
+  "bangChung": [
+    "JD#1: 'Tốt nghiệp Đại học chuyên ngành Luật (có thẻ luật sư là lợi thế)'; 'Thành thạo tiếng Anh hoặc tiếng Trung'",
+    "JD#2: 'Có 4–8 năm kinh nghiệm trong lĩnh vực Regulatory & Food Safety'; 'GMP, HACCP, ISO'",
+    "JD#3: 'ưu tiên có Chứng chỉ hành nghề Luật sư'; 'tư vấn pháp lý, soạn thảo, rà soát và đàm phán hợp đồng'",
+    "JD#4: 'Ưu tiên ứng viên có Chứng chỉ đào tạo nghề luật sư, ... hoặc có Thẻ luật sư'",
+    "JD#6: 'Tốt nghiệp Đại học Luật Hà Nội hoặc Khoa Luật'; 'Luật phòng, chống rửa tiền'"
+  ],
+  "ghiChu": "JD#2 là pháp chế an toàn thực phẩm (ngành công nghệ thực phẩm) - mảng chuyên biệt, không điển hình."
+}

@@ -1,0 +1,33 @@
+{
+  "id": 162,
+  "nhom": "Nhóm nghề khác",
+  "nghe": "Hàng hải",
+  "soJD": 2,
+  "doTinCay": "thap",
+  "capBac": "2/2 JD sát nghề cấp nhân viên khối hỗ trợ thuyền viên (tuyển dụng, đào tạo); 1 JD không yêu cầu kinh nghiệm (CĐ/ĐH), 1 JD 2-3 năm (ĐH Điều khiển tàu biển/Hàng hải)",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nêu ảnh; JD tuyển dụng nêu Nữ, tuổi 23-32 nhưng không nói về ảnh",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc định hướng",
+    "kinh-nghiem-lam-viec": "can — 2/2 JD nhắc kinh nghiệm hoặc mức yêu cầu: tuyển dụng không yêu cầu; đào tạo thuyền viên cần 2-3 năm trong hàng hải, ưu tiên từng đi biển ở chức danh Đại phó/Thuyền trưởng",
+    "hoc-van": "can — 2/2 JD nêu CĐ/ĐH; JD đào tạo đòi ĐH chuyên ngành Điều khiển tàu biển hoặc Hàng hải liên quan",
+    "ky-nang-chuyen-mon": "can — 2/2: tuyển dụng, phỏng vấn, đánh giá ứng viên; xây dựng kế hoạch đào tạo thuyền viên, đánh giá năng lực, quản lý giáo trình, hiểu SMS/PSC/Vetting/ISM/ISPS/MLC",
+    "ky-nang-mem": "can — 2/2: giao tiếp, đàm phán, tổ chức công việc, độc lập và nhóm, chịu áp lực",
+    "cong-cu-phan-mem": "nen — 1/2 JD nêu Word, Excel, PowerPoint và mạng xã hội/Linkedin tìm ứng viên",
+    "chung-chi": "can — 1/2 JD đòi chứng chỉ hàng hải quốc tế theo STCW; kiến thức công ước SOLAS, MARPOL, ISM Code",
+    "du-an": "khong — không JD sát nghề nhắc dự án",
+    "thanh-tich-kpi": "khong — không JD sát nghề nhắc chỉ tiêu/số liệu",
+    "ngoai-ngu": "nen — 1/2 JD đòi tiếng Anh giao tiếp thành thạo (đào tạo thuyền viên)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "khong — không JD nào nhắc giấy phép; chứng chỉ STCW tính ở mục chứng chỉ",
+    "thong-tin-ca-nhan-mo-rong": "nen — 1/2 JD nêu Nữ, tuổi 23-32; JD còn lại không nêu",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Hàng hải", "thuyền viên", "tuyển dụng thuyền viên", "đào tạo thuyền viên", "STCW", "SOLAS/MARPOL/ISM Code", "PSC/Vetting", "Điều khiển tàu biển"],
+  "bangChung": [
+    "JD#1 (tuyển dụng thuyền viên): 'Tốt nghiệp Cao đẳng/Đại học'; 'Thành thạo tin học văn phòng (Word, Excel, Powerpoint)'; 'Tuổi 23 - 32, Nữ'",
+    "JD#2 (đào tạo thuyền viên): 'Tốt nghiệp Đại học chuyên ngành Điều khiển tàu biển'; 'Có các chứng chỉ chuyên ngành hàng hải quốc tế theo quy định STCW'; 'tối thiểu 02 - 03 năm kinh nghiệm trong lĩnh vực hàng hải'"
+  ],
+  "ghiChu": "Rất mỏng: crawl lại chỉ có 2 JD sát nghề (cả hai là khối hỗ trợ thuyền viên trên bờ, không phải thuyền trưởng/sĩ quan/thủy thủ đi biển). JD#3 (Kỹ sư chất lượng xây dựng hạ tầng FECON) lệch nghề, đã loại khỏi số liệu x/2; số JD thu được là 3. Nghề là nhóm 'khác' tạp, nhận định chỉ tham khảo."
+}

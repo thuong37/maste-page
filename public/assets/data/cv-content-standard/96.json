@@ -1,0 +1,36 @@
+{
+  "id": 96,
+  "nhom": "Giáo dục/Đào tạo",
+  "nghe": "Quản lý giáo dục",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "1/6 thực tập sinh, 3/6 nhân viên/chuyên viên (0-3 năm, ĐH), 2/6 quản lý học vụ (trưởng nhóm 3 năm, quản lý 2 năm); phần lớn trong trung tâm ngoại ngữ",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 3/6 nêu tuổi/giới tính (nữ 23-30, 32-38; 22-32); nghề tiếp xúc phụ huynh nên ảnh chỉn chu là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "can — 4/6 nhắc định hướng/đam mê/gắn bó lâu dài với giáo dục; nên nêu mục tiêu rõ",
+    "kinh-nghiem-lam-viec": "can — 5/6 nhắc kinh nghiệm hoặc ưu tiên kinh nghiệm giáo dục/tuyển sinh/quản lý học vụ (0-5 năm)",
+    "hoc-van": "can — 6/6 nêu ĐH (1 JD CĐ), ngành Ngôn ngữ Anh, Sư phạm, Quản lý giáo dục",
+    "ky-nang-chuyen-mon": "can — điều phối lịch học và giáo viên, theo dõi điểm danh/tiến độ, quản trị LMS, tuyển dụng/đào tạo giáo viên, báo cáo học vụ, xây dựng giáo trình",
+    "ky-nang-mem": "can — 5/6: giao tiếp, xử lý tình huống, trách nhiệm, chịu áp lực, làm việc nhóm, quản lý thời gian",
+    "cong-cu-phan-mem": "can — 3/6: Word, Excel, PowerPoint, LMS, công cụ làm việc trực tuyến",
+    "chung-chi": "nen — 3/6 nêu IELTS 6.0/VSTEP B2, TOEIC, hoặc PGCE/CELTA/TESOL (lợi thế)",
+    "du-an": "nen — 2/6 nhắc kế hoạch hoạt động/cuộc thi/sự kiện (JD#2, JD#6)",
+    "thanh-tich-kpi": "nen — 2/6 nhắc chất lượng chương trình/hiệu quả lớp học; nên có số liệu học viên (suy từ công việc)",
+    "ngoai-ngu": "can — 5/6 nhắc ngoại ngữ (Anh IELTS 6.0, B2; Pháp A2); JD#5 thành thạo cả Anh và Việt",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 nhận sinh viên năm cuối/mới ra trường",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/6 nêu tuổi/giới tính (22-32, 23-30 nữ, 32-38 nữ) và JD#4 ưu tiên sống gần Bắc Từ Liêm/Tây Hồ; nên có độ tuổi/nơi ở",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Quản lý giáo dục", "học vụ", "điều phối giáo viên", "LMS", "điểm danh", "tư vấn tuyển sinh", "Cambridge/IGCSE", "IELTS", "báo cáo học tập"],
+  "bangChung": [
+    "JD#1: 'Hỗ trợ quản lý, sắp xếp giáo viên cho các lớp học và vận hành ca học'; 'Định hướng rõ ràng và lâu dài cùng doanh nghiệp'",
+    "JD#2: 'Yêu cầu tiếng Pháp trình độ A2 trở lên'; 'Sử dụng thành thạo word, excel, PP'",
+    "JD#3: 'Quản trị LMS: Cập nhật, duy trì tài liệu và bài giảng trên hệ thống'; 'Có Laptop cá nhân'",
+    "JD#4: 'tương đương IELTS 6.0 hoặc bằng B2 VSTEP trở lên'; 'ƯU TIÊN ỨNG VIÊN NỮ'",
+    "JD#5: 'ưu tiên ... chứng chỉ quốc tế như PGCE, CELTA, TESOL, hoặc Cambridge PDQ'"
+  ],
+  "ghiChu": "Nghề thiên về vận hành học vụ trung tâm ngoại ngữ."
+}

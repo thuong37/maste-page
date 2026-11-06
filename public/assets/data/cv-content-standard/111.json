@@ -1,0 +1,37 @@
+{
+  "id": 111,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Bán lẻ/Dịch vụ đời sống khác",
+  "soJD": 6,
+  "doTinCay": "thap",
+  "capBac": "6/6 JD cấp nhân viên; kinh nghiệm từ dưới 1 năm đến 2-3 năm; học vấn Trung cấp đến ĐH (đa số CĐ/ĐH)",
+  "muc": {
+    "anh-chan-dung": "nen — 2/6 JD có yêu cầu giới tính/tuổi (Wedding Planner: Nữ 22-40; Media: ưu tiên nam); không đòi ảnh, nhưng nghề gặp khách nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 3/6 JD nhắc đam mê/định hướng ngành sự kiện, tư duy sáng tạo",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD hỏi kinh nghiệm (dưới 1 đến 3 năm) tại agency sự kiện, wedding planner hoặc media; nên ghi số proposal/sự kiện đã làm",
+    "hoc-van": "can — 6/6 JD nêu bậc học (Trung cấp đến ĐH); 1 JD ưu tiên chuyên ngành xã hội, báo chí, truyền thông, ngoại ngữ",
+    "ky-nang-chuyen-mon": "can — 5/6: lên concept, viết proposal, master plan, timeline, rundown, tiếp nhận brief, pitching; 1 JD media: quay, dựng, chụp ảnh",
+    "ky-nang-mem": "can — 5/6: giao tiếp, thuyết trình, chịu áp lực, chủ động, cẩn thận, sáng tạo, ham học hỏi",
+    "cong-cu-phan-mem": "can — 5/6: Word, PowerPoint, Excel, Canva, InDesign, Adobe Premiere/After Effects, CapCut, ChatGPT/Gemini",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "can — 3/6 JD nhắc kinh nghiệm làm proposal/sự kiện cụ thể (vd trên 20 proposal, nhiều loại hình sự kiện); nên liệt kê sự kiện/dự án đã tham gia",
+    "thanh-tich-kpi": "nen — JD#3 yêu cầu từng thực hiện trên 20 proposal; JD khác không nêu chỉ tiêu",
+    "ngoai-ngu": "can — 3/6: tiếng Anh đọc/viết tốt, viết bản đề xuất bằng cả tiếng Anh và tiếng Việt; JD khác coi là lợi thế",
+    "portfolio-link": "nen — 2 JD yêu cầu năng lực diễn họa/làm proposal đẹp và media (ảnh/video) nên đính kèm sản phẩm; không JD nào ghi bắt buộc nộp portfolio",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD sự kiện coi trọng đam mê ngành sự kiện; hoạt động tổ chức sự kiện có thể thay kinh nghiệm cho người mới (suy từ tính chất công việc)",
+    "giay-phep": "nen — 1/6 JD wedding planner yêu cầu có phương tiện đi lại, laptop cá nhân",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/6 JD nêu tuổi/giới tính (Nữ 22-40; ưu tiên nam); 1 JD nhắc làm ngoài giờ/tăng ca",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Event planner", "Wedding planner", "proposal", "concept", "brief", "master plan/timeline/rundown", "pitching", "Canva/PowerPoint", "agency sự kiện", "activation"],
+  "bangChung": [
+    "JD#1 (Wedding Planner): 'Tuổi 22 - 40, Nữ'; 'Lập timeline quá trình cưới'; 'Có phương tiện đi lại, có laptop cá nhân'",
+    "JD#2 (Media): 'Sử dụng cơ bản được ... Adobe Premier, Adobe After Effect, Capcut'; 'Ưu tiên nam' (lạc nghề: quay/dựng cho công ty BĐS)",
+    "JD#3 (Event Planner): 'Thực hiện trên 20 proposal'; 'Biết thiết kế trình bày proposal trên canva, powerpoint, indesign'; 'Đọc và viết tốt tiếng anh'",
+    "JD#4 (Creative Event Planner): 'viết bản đề xuất (proposal) cho đa dạng các loại hình sự kiện'; 'xuất sắc bằng cả tiếng Anh và tiếng Việt'",
+    "JD#5: 'Mắt thẩm mỹ tốt và khả năng làm proposal là yêu cầu bắt buộc'; 'Lên Master Plan cho sự kiện/chiến dịch'",
+    "JD#6: 'Word, Powerpoint, Excel, Canva ... thành thạo'; 'Kỹ năng sử dụng AI ChatGPT, Gemini'"
+  ],
+  "ghiChu": "Nghề là nhóm 'khác' tạp nên đặt thap dù có cụm rõ: 5/6 JD là wedding/event planner (cụm sát nhau), 1/6 JD (#2 media photographer/video editor cho BĐS) lệch cụm. Chỉ dùng được cho hướng tổ chức sự kiện/wedding, không đại diện cho cả 'Bán lẻ/Dịch vụ đời sống khác'."
+}

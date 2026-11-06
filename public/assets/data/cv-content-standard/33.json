@@ -1,0 +1,36 @@
+{
+  "id": 33,
+  "nhom": "Nhân sự/Hành chính/Pháp chế",
+  "nghe": "Nhân sự/Hành chính/Pháp chế khác",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "2/6 JD nhân viên HCNS (1-2 năm, cao đẳng trở lên), 4/6 JD trưởng phòng HCNS (2-7 năm kinh nghiệm, 2-3 năm quản lý, cao đẳng/ĐH); chưa có JD pháp chế trong mẫu",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình; 3/6 chỉ nêu giới hạn tuổi; vị trí văn phòng (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "can — 4/6 nhắc chiến lược/định hướng nhân sự (JD#3, #4 xây dựng chiến lược nhân sự, tầm nhìn; JD#1 cơ hội thăng tiến); với vị trí trưởng phòng nên nêu định hướng",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc (1-7 năm); HCNS, quản lý phòng HCNS, tuyển dụng, C&B, nhà máy/vận tải",
+    "hoc-van": "can — 6/6 nêu bậc học; chuyên ngành Quản trị nhân sự, Luật, QTKD, Kinh tế, Hành chính",
+    "ky-nang-chuyen-mon": "can — 6/6: tuyển dụng, hợp đồng lao động, chấm công-lương-BHXH, đánh giá nhân sự, đào tạo, xây dựng hệ thống 3P/KPI/BSC, quy chế nội bộ, am hiểu Luật Lao động",
+    "ky-nang-mem": "can — 6/6: lãnh đạo, quản lý đội nhóm, giao tiếp, thuyết trình, đàm phán, cẩn thận, bảo mật",
+    "cong-cu-phan-mem": "nen — 2/6: Word/Excel, phần mềm quản lý nhân sự/chấm công, AI (JD#1, #2)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — JD#3 xây dựng hệ thống lương 3P, tổ chức sự kiện, đào tạo (1/6); nên nêu dự án nhân sự đã triển khai",
+    "thanh-tich-kpi": "nen — JD#3 xây dựng hệ thống KPI, BSC (2/6 nhắc KPI); nên nêu số lượng tuyển dụng/quy mô nhân sự",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — 6/6 JD đòi 1-7 năm kinh nghiệm",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 4/6 JD nêu độ tuổi (từ 24, 36-45, 25-40, dưới 40); JD#4 nêu địa điểm nhà máy Bắc Ninh có xe đưa đón",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["hành chính nhân sự", "chiến lược nhân sự", "tuyển dụng", "lương 3P/KPI/BSC", "Luật Lao động/BHXH", "C&B", "chế độ chính sách", "quản lý phòng ban"],
+  "bangChung": [
+    "JD#1: 'Ưu tiên có kinh nghiệm 1–2 năm ... vận tải/logistics là lợi thế'; 'Từ 24 tuổi trở lên'",
+    "JD#2: 'Có kinh nghiệm tối thiểu 2 năm ở vị trí HCNS'; 'ưu tiên ... Excel, AI tốt'",
+    "JD#3: 'Xây dựng hệ thống 3P – KPI – BSC'; 'ít nhất 3 năm ở vị trí quản lý cấp phòng'; 'Am hiểu luật lao động, BHXH'",
+    "JD#4: 'ít nhất 2 năm kinh nghiệm quản lý phòng ban'; 'Luật Lao động, Luật Doanh nghiệp'",
+    "JD#6: 'Có từ 3 – 5 năm kinh nghiệm ở vị trí tương đương'; 'Am hiểu luật lao động'"
+  ],
+  "ghiChu": "Nhóm 'khác' nhưng JD thực tế đều là HCNS (nhiều trưởng phòng); nên đọc cùng id 30, 31 và 32 (pháp chế)."
+}

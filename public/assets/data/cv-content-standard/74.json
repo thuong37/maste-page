@@ -1,0 +1,45 @@
+{
+  "id": 74,
+  "nhom": "Xây dựng",
+  "nghe": "Công nhân Xây dựng/Cải tạo",
+  "soJD": 6,
+  "doTinCay": "thap",
+  "capBac": "6/6 JD cấp nhân viên/thợ hàn-cơ khí; 3 JD dưới 1 năm hoặc không yêu cầu kinh nghiệm, 2 JD 1 năm, 1 JD 6 tháng; học vấn THCS/THPT đến Trung cấp",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; lao động tay nghề, ảnh không cần (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 3/6 JD nhắc gắn bó lâu dài/công việc ổn định; có thể ghi một dòng định hướng ngắn",
+    "kinh-nghiem-lam-viec": "can — 6/6 hỏi kinh nghiệm hàn/cơ khí (0-1 năm); nên ghi loại hàn, loại sản phẩm/công trình và nơi làm",
+    "hoc-van": "nen — 5/6 nêu bậc học THCS/THPT/Trung cấp ở mức thấp; 1/6 chỉ cần từng học cơ khí/hàn",
+    "ky-nang-chuyen-mon": "can — 6/6: hàn TIG/MIG/que/laser, cắt, khoan, mài, đọc bản vẽ cơ bản, kiểm tra chất lượng mối hàn, lắp đặt tại nhà máy/công trình",
+    "ky-nang-mem": "nen — 2/6: cẩn thận tỉ mỉ, kỷ luật đúng giờ, chịu khó, chịu áp lực/môi trường nóng bụi",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc phần mềm; chỉ 1/6 nhắc biết thiết kế được lương cao hơn",
+    "chung-chi": "nen — 3/6 ưu tiên/yêu cầu chứng chỉ-bằng nghề hàn; không JD nào bắt buộc ở mọi vị trí",
+    "du-an": "khong — không JD nào nhắc dự án (chỉ nhắc thi công công trình theo phân công)",
+    "thanh-tich-kpi": "khong — không JD nào nhắc chỉ tiêu số liệu; chỉ yêu cầu mối hàn đạt chất lượng, đúng tiến độ",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "nen — 3/6 nhắc tuân thủ an toàn lao động/bảo hộ (chưa phải giấy phép); không JD nêu bằng lái hay chứng chỉ ATLĐ cụ thể",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/6 JD nêu thẳng giới tính nam (JD#1,2,5,6) và 2/6 độ tuổi (25-45, 19-39); 3/6 nêu sức khỏe tốt/thể lực",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": [
+    "thợ hàn",
+    "hàn TIG/MIG/que",
+    "cắt khoan mài",
+    "đọc bản vẽ cơ khí",
+    "kiểm tra mối hàn",
+    "an toàn lao động",
+    "chứng chỉ nghề hàn",
+    "thi công lắp đặt"
+  ],
+  "bangChung": [
+    "JD#1: 'Nam Kinh nghiệm =>1 năm'; 'Thành thạo máy công cụ cầm tay (cắt, khoan), máy hàn (tig, điện)'; 'Thể lực dẻo dai'",
+    "JD#2: 'Nam, tuổi từ 25 – 45'; 'Chưa có kinh nghiệm sẽ được đào tạo'",
+    "JD#4: 'có chứng chỉ/bằng nghề liên quan đến hàn, cơ khí'; 'Có từ 6 tháng kinh nghiệm'",
+    "JD#5: 'Ưu tiên ứng viên có chứng chỉ hàn (nếu có)'; Nam, Tuổi 19-39",
+    "JD#6: 'Có chứng chỉ nghề hàn và tay nghề vững'"
+  ],
+  "ghiChu": "LỆCH NGHỀ: sau khi crawl lại, cả 6 JD đều là thợ hàn/thợ cơ khí xưởng chế tạo, không phải công nhân xây dựng/cải tạo (thợ xây, thợ sơn, thợ điện nước...). Không loại được JD nào vì không còn JD sát nghề; nội dung chỉ phản ánh thợ hàn/cơ khí nên chỉ dùng tham khảo cho nhóm lao động tay nghề. doTinCay=thap, cần crawl lại bằng từ khóa thợ xây/thợ hoàn thiện nếu muốn có chuẩn đúng nghề."
+}

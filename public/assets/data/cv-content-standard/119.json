@@ -1,0 +1,36 @@
+{
+  "id": 119,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Quản lý/Vận hành dự án kỹ thuật",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "3/6 JD cấp nhân viên (0 năm, Trung cấp/CĐ), 1 JD kỹ sư quản lý dự án (3 năm), 1 JD chuyên viên (1 năm), 1 JD trưởng phòng kỹ thuật (5 năm quản lý); JD#1 (quản lý dự án diễn họa kiến trúc D5 Render) lạc nghề",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 3/6 nêu nam/tuổi; nghề kỹ thuật nên ảnh chỉ là phụ (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 nhắc tinh thần học hỏi/tự phấn đấu; nên nêu hướng quản lý dự án kỹ thuật",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm (không yêu cầu đến 10 năm), ưu tiên công trình xây lắp, EPC, B2B công nghiệp, đấu thầu",
+    "hoc-van": "can — 6/6 nêu CĐ/ĐH/Trung cấp chuyên ngành Điện, Điện tử, Tự động hóa, Cơ điện tử, Xây dựng, Hóa/Môi trường",
+    "ky-nang-chuyen-mon": "can — lập kế hoạch/tiến độ dự án, bóc tách khối lượng, dự toán, giám sát thi công, nghiệm thu/thanh quyết toán, đấu thầu và chào giá, FAT/SAT, quản lý nhà thầu phụ",
+    "ky-nang-mem": "can — 6/6: giao tiếp, lập kế hoạch, quản lý đội nhóm, chịu áp lực, trách nhiệm",
+    "cong-cu-phan-mem": "nen — 2/6: AutoCAD căn bản; JD#1 D5 Render (lạc nghề)",
+    "chung-chi": "nen — không JD nào đòi chứng chỉ; JD#5 ưu tiên bằng lái B1",
+    "du-an": "can — 6/6 là quản lý/vận hành dự án; CV phải liệt kê dự án, giá trị, vai trò và kết quả",
+    "thanh-tich-kpi": "nen — JD#6 KPI, doanh thu, lợi nhuận, forecast; JD#5 chất lượng-tiến độ-chi phí; chỉ JD cấp trưởng phòng nêu rõ",
+    "ngoai-ngu": "can — 5/6 nhắc tiếng Anh (đọc hiểu, giao tiếp, dùng trong công việc)",
+    "portfolio-link": "nen — JD#1 đòi portfolio diễn họa (lạc nghề); các JD kỹ thuật không nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 không yêu cầu kinh nghiệm/nhận người mới",
+    "giay-phep": "can — JD#5 ưu tiên bằng lái B1 trở lên; JD#2, JD#5 sẵn sàng đi công trình ngoại tỉnh/xa nhà",
+    "thong-tin-ca-nhan-mo-rong": "can — 3/6 nêu nam, tuổi 22-35; JD#5 ưu tiên thường trú tại Bắc Ninh/Thái Nguyên; đi công trình ngoại tỉnh",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Quản lý dự án kỹ thuật", "giám sát thi công", "đấu thầu/chào giá", "bóc tách khối lượng", "nghiệm thu thanh quyết toán", "EPC", "FAT/SAT", "tiến độ chất lượng chi phí"],
+  "bangChung": [
+    "JD#2: 'Khảo sát dự án, bóc tách khối lượng, lập dự toán và lập kế hoạch thi công'; 'Có thể đi công trình ngoại tỉnh'",
+    "JD#3: 'Giới tính Nam'; 'Tuổi: Từ 22 - 35 tuổi'; 'Sử dụng AutoCAD căn bản'",
+    "JD#4: 'Nắm vững quy trình nghiệm thu, thanh quyết toán'; 'Có kinh nghiệm tối thiểu 01 năm'",
+    "JD#5: 'Từ 3-4 năm kinh nghiệm'; 'Sử dụng Tiếng Anh trong công việc'; 'Ưu tiên: Có bằng lái xe B1 trở lên'",
+    "JD#6: 'Xây dựng AOP, mục tiêu, KPI'; 'Tối thiểu 10 năm thực chiến kỹ thuật B2B công nghiệp'; 'FAT/SAT - nghiệm thu'"
+  ],
+  "ghiChu": "JD#1 (quản lý dự án diễn họa kiến trúc) lạc nghề, bỏ qua khi tổng hợp."
+}

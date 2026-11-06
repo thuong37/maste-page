@@ -1,0 +1,35 @@
+{
+  "id": 108,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Dịch vụ bà mẹ trẻ em",
+  "soJD": 4,
+  "doTinCay": "vua",
+  "capBac": "4/4 JD cấp nhân viên chăm sóc mẹ và bé/điều dưỡng (0-1 năm, THPT/Trung cấp đến CĐ-ĐH), 4/4 tuyển nữ; làm ca ngày/đêm",
+  "muc": {
+    "anh-chan-dung": "can — JD#3 nêu thẳng 'ngoại hình ưa nhìn', chiều cao 1m55 trở lên; JD#2 'ngoại hình gọn gàng, không hình xăm hở'; thêm 4/4 tuyển nữ",
+    "muc-tieu-nghe-nghiep": "nen — không JD nào nhắc rõ; JD#1 yêu thích công việc chăm sóc mẹ và bé; nên nêu định hướng",
+    "kinh-nghiem-lam-viec": "can — 4/4 nhắc kinh nghiệm chăm sóc mẹ và bé/sơ sinh (từ không yêu cầu đến 1 năm), ưu tiên trung tâm ở cữ",
+    "hoc-van": "can — 3/4 nêu Trung cấp/CĐ/ĐH chuyên ngành Điều dưỡng/Hộ sinh (JD#2 chỉ THPT)",
+    "ky-nang-chuyen-mon": "can — tắm bé, vệ sinh rốn, massage bé, cho bú/hút sữa, chăm sóc mẹ sau sinh, theo dõi dấu hiệu bất thường, ghi hồ sơ chăm sóc, tuân thủ quy trình",
+    "ky-nang-mem": "can — 4/4: yêu trẻ, kiên nhẫn, cẩn thận, giao tiếp nhẹ nhàng, trách nhiệm",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc (chỉ JD#2 có smartphone)",
+    "chung-chi": "can — JD#1 nêu thẳng chứng chỉ hành nghề; JD#4 điều dưỡng/hộ sinh là lợi thế",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#1, JD#3 chào đón ứng viên mới tốt nghiệp; hữu ích cho người chưa có kinh nghiệm",
+    "giay-phep": "can — JD#1 chứng chỉ hành nghề; JD#2 có xe máy để đến nhà khách hàng",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/4 nêu nữ, tuổi 20-50/21-28, chiều cao 1m55+, sức khỏe làm ca đêm, có xe máy",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Chăm sóc mẹ và bé", "điều dưỡng/hộ sinh", "tắm bé", "vệ sinh rốn", "chăm sóc sau sinh", "trẻ sơ sinh", "chứng chỉ hành nghề", "ca đêm"],
+  "bangChung": [
+    "JD#1: 'Tốt nghiệp ... chuyên ngành Điều dưỡng hoặc Hộ sinh'; 'Có chứng chỉ hành nghề'; 'Nữ'",
+    "JD#2: 'Có xe máy và điện thoại smartphone'; 'Ngoại hình gọn gàng, không có hình xăm hở'",
+    "JD#3: 'Ngoại hình ưa nhìn, sức khỏe tốt'; 'Nữ, chiều cao 1m55 trở lên'",
+    "JD#4: 'Có kinh nghiệm chăm sóc trẻ sơ sinh, tốt nghiệp điều dưỡng, hộ sinh là lợi thế'; 'làm việc theo ca (ca sáng, ca chiều, ca đêm)'"
+  ],
+  "ghiChu": "Chỉ 4 JD. Yêu cầu ngoại hình/giới tính ghi nhận như dữ liệu JD."
+}

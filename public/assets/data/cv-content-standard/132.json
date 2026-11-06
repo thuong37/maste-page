@@ -1,0 +1,33 @@
+{
+  "id": 132,
+  "nhom": "Tư vấn chuyên môn",
+  "nghe": "Tư vấn/Phân tích chuyên môn",
+  "soJD": 2,
+  "doTinCay": "thap",
+  "capBac": "2/2 JD cấp nhân viên; 1 JD dưới 1 năm kinh nghiệm (tuổi 22-35, ĐH Luật), 1 JD 3 năm (ĐH, tiếng Nhật N2/N1)",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nêu ảnh/ngoại hình; nghề gặp khách nên ảnh nghiêm túc có thể hữu ích (suy từ tính chất công việc, không có bằng chứng JD)",
+    "muc-tieu-nghe-nghiep": "nen — 1/2 JD nhắc định hướng phát triển/vận hành doanh nghiệp; JD còn lại không nhắc",
+    "kinh-nghiem-lam-viec": "can — 2/2 JD hỏi kinh nghiệm tư vấn luật doanh nghiệp hoặc 3 năm vận hành doanh nghiệp/HR/kế toán/consulting",
+    "hoc-van": "can — 2/2 JD nêu ĐH trở lên: Luật; hoặc Kinh tế, Quản trị, Nhân sự, Kế toán, Luật",
+    "ky-nang-chuyen-mon": "can — 2/2: tư vấn pháp lý/thành lập doanh nghiệp, phân tích nhu cầu khách; khảo sát hiện trạng, cải thiện quy trình/quy chế, lập kế hoạch cải thiện",
+    "ky-nang-mem": "can — 2/2: chủ động, cẩn thận, trách nhiệm, hoạt ngôn, phối hợp/điều phối nhiều bên",
+    "cong-cu-phan-mem": "khong — không JD nào nêu phần mềm; chỉ nhắc có laptop cá nhân",
+    "chung-chi": "nen — 1/2 JD yêu cầu tiếng Nhật N2 trở lên (chứng chỉ ngôn ngữ); không có chứng chỉ nghiệp vụ",
+    "du-an": "nen — 1/2 JD đòi từng xây dựng/cải thiện quy trình, quy chế, bộ máy vận hành",
+    "thanh-tich-kpi": "khong — không JD nào nhắc chỉ tiêu/số liệu",
+    "ngoai-ngu": "nen — 1/2 JD đòi tiếng Nhật N2/N1 dùng tốt trong công việc; JD luật không nhắc ngoại ngữ",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 1/2 JD nêu độ tuổi 22-35; không JD nào nêu giới tính",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Tư vấn luật doanh nghiệp", "thủ tục thành lập doanh nghiệp", "tư vấn vận hành doanh nghiệp", "cải thiện quy trình/quy chế", "khảo sát hiện trạng", "tiếng Nhật N2"],
+  "bangChung": [
+    "JD#1 (Việt Mỹ): 'Tốt nghiệp chuyên ngành Luật'; 'Có kinh nghiệm và kiến thức về quy trình thành lập doanh nghiệp'; 'Có laptop cá nhân'; 'Tuổi 22 - 35'",
+    "JD#2 (One-Value): 'Trình độ tiếng Nhật từ N2 trở lên'; 'kinh nghiệm từ 3 năm trở lên trong các lĩnh vực vận hành doanh nghiệp, tổng vụ, HR, kế toán, consulting'; 'Đã từng xây dựng hoặc cải thiện quy trình, quy chế'"
+  ],
+  "ghiChu": "Rất mỏng: crawl lại chỉ thu được 2 JD và hai JD thuộc hai mảng khác nhau (tư vấn luật doanh nghiệp, tư vấn vận hành Việt-Nhật), nên không có chuẩn chung của 'tư vấn/phân tích chuyên môn'. Nhận định x/2 chỉ tham khảo; không bịa thêm."
+}

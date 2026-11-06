@@ -1,0 +1,36 @@
+{
+  "id": 53,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Chăm sóc sức khoẻ/Làm đẹp",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD nhân viên: 1 tư vấn thẩm mỹ viện (1 năm), 5 kỹ thuật viên spa/da liễu (3/5 không hoặc dưới 1 năm, 2/5 cần 2 năm, 1 JD cao đẳng); từ THPT, đa số nữ",
+  "muc": {
+    "anh-chan-dung": "can — JD#1 'ngoại hình ưa nhìn, da ít khuyết điểm', JD#2 'vẻ ngoài tươi tắn, gọn gàng, không có hình xăm lộ rõ' (2/6 nêu thẳng ngoại hình); 3/6 nêu độ tuổi/giới tính; nghề làm đẹp nên ảnh chân dung gọn gàng",
+    "muc-tieu-nghe-nghiep": "can — 4/6 nhắc yêu nghề/gắn bó lâu dài/cầu tiến/phát triển chuyên môn (JD#2, #4, #5...)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc; spa, skincare, phòng khám da liễu, tư vấn thẩm mỹ; 3/6 không hoặc dưới 1 năm",
+    "hoc-van": "nen — 5/6 yêu cầu từ THPT đến cao đẳng; ưu tiên ngành chăm sóc sắc đẹp/spa trị liệu; ghi ngắn và khóa đào tạo nghề",
+    "ky-nang-chuyen-mon": "can — 6/6: chăm sóc da, lấy nhân mụn, massage mặt/body, gội đầu dưỡng sinh, đắp mặt nạ, tuân thủ SOP, vô trùng dụng cụ; tư vấn/chốt sale dịch vụ",
+    "ky-nang-mem": "can — 6/6: giao tiếp lịch sự, tinh tế, lắng nghe, trung thực, cẩn thận, tỉ mỉ, kỷ luật, hợp tác nhóm",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc phần mềm (máy xông hơi, điện di là thiết bị, không phải phần mềm)",
+    "chung-chi": "can — JD#6 'bắt buộc có 1 trong những chứng chỉ': hành nghề Spa/Chăm sóc da, Massage trị liệu, Chăm sóc mẹ và bé (1/6 đòi thẳng); JD#3 ưu tiên tốt nghiệp chăm sóc sắc đẹp",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — JD#1 'chốt sale' (1/6); có thể ghi số khách/doanh số nếu là tư vấn",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "nen — nghề làm đẹp nên có ảnh/video kết quả trị liệu (suy từ tính chất công việc; không JD nhắc)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 JD không yêu cầu kinh nghiệm/đào tạo khi nhận việc (JD#2, #5, #4 dưới 1 năm)",
+    "giay-phep": "khong — không JD nào nhắc (tín hiệu bằng lái 1/6 không xác nhận)",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/6 JD nêu giới tính Nữ/độ tuổi (19-28, 18-35, 26-40); JD#6 yêu cầu bàn tay ấm mềm, móng tay cắt ngắn; JD#2 không có hình xăm lộ rõ",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["kỹ thuật viên spa", "chăm sóc da/skincare", "massage trị liệu", "lấy nhân mụn", "tư vấn thẩm mỹ", "SOP/quy trình", "chứng chỉ spa/massage", "da liễu"],
+  "bangChung": [
+    "JD#1: 'Ngoại hình ưa nhìn, da ít khuyết điểm'; 'Có kinh nghiệm về sales, tư vấn'",
+    "JD#2: 'Nữ, độ tuổi 19 - 28'; 'Vẻ ngoài tươi tắn, gọn gàng; không có hình xăm lộ rõ'; 'Không yêu cầu kinh nghiệm'",
+    "JD#3: 'Ưu tiên: Tốt nghiệp ngành chăm sóc sắc đẹp hoặc học nghề tại các học viện uy tín'; '2 năm kinh nghiệm'",
+    "JD#5: 'Không yêu cầu kinh nghiệm'; 'Yêu nghề, gắn bó lâu dài'; 'Tuổi 18 - 35'",
+    "JD#6: 'Bắt buộc có 1 trong những chứng chỉ: Chứng chỉ hành nghề Spa / Chăm sóc da ... Massage trị liệu'; 'Bàn tay ấm, mềm mại'"
+  ],
+  "ghiChu": "Giới tính/ngoại hình do nhà tuyển dụng nêu; CV nên có ảnh chân dung gọn gàng và chứng chỉ nghề."
+}

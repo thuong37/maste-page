@@ -1,0 +1,37 @@
+{
+  "id": 122,
+  "nhom": "Điện/Điện tử/Viễn thông",
+  "nghe": "Sales Điện/Điện tử/Viễn thông",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên kinh doanh (0-3 năm; 2 JD không yêu cầu kinh nghiệm), từ Trung cấp/CĐ trở lên; B2B dự án, đại lý, thiết bị điện, điện lạnh, linh kiện điện tử, năng lượng mặt trời, giải pháp camera/mạng",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 3/6 nêu tuổi/giới tính (20-40, ≤30 nữ, 20-35); nghề tiếp xúc khách nên ảnh chỉn chu là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 1/6 nhắc đam mê kinh doanh; nên nêu hướng sales B2B kỹ thuật",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm sales (0-3 năm), ưu tiên sales dự án/B2B/đại lý trong ngành điện, điện tử, điện lạnh, ICT",
+    "hoc-van": "can — 6/6 nêu Trung cấp/CĐ/ĐH, ngành Điện, QTKD, Kinh tế, CNTT, Điện tử, Ngôn ngữ Trung",
+    "ky-nang-chuyen-mon": "can — tìm kiếm khách hàng/dự án, tư vấn giải pháp, báo giá, lập hồ sơ thầu, đàm phán, theo dõi công nợ, quản lý chu kỳ bán hàng dài",
+    "ky-nang-mem": "can — 6/6: giao tiếp, đàm phán, thuyết phục, chủ động, chịu áp lực doanh số",
+    "cong-cu-phan-mem": "can — 5/6: Word, Excel, PowerPoint, Zalo, Email, Facebook, Google Map",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "can — 3/6 nhắc dự án (B2B, hồ sơ thầu, SI/M&E); nên ghi dự án đã bán/đấu thầu",
+    "thanh-tich-kpi": "can — 3/6 nêu mục tiêu doanh số/forecast; CV nên có số liệu doanh số/tỷ lệ chốt",
+    "ngoai-ngu": "can — 4/6 nhắc tiếng Anh/Trung/Nhật (JD#4 yêu cầu Trung giao tiếp thành thạo)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/6 không yêu cầu kinh nghiệm, nhận mới ra trường",
+    "giay-phep": "can — 3/6 nêu có phương tiện di chuyển/có thể đi thị trường, đi công tác",
+    "thong-tin-ca-nhan-mo-rong": "can — 3/6 nêu tuổi/giới tính (20-40; nữ ≤30; 20-35), khu vực phụ trách; 3/6 nêu phương tiện di chuyển",
+    "so-thich": "nen — JD#5 nêu 'đam mê ... sản phẩm điện thoại thông minh, điện tử, điện lạnh'"
+  },
+  "tuKhoaNenCo": ["Sales B2B", "bán hàng dự án", "hồ sơ thầu", "thiết bị điện/UPS", "điện lạnh/điện tử", "năng lượng mặt trời", "đại lý/nhà phân phối", "báo giá đàm phán", "tiếng Trung"],
+  "bangChung": [
+    "JD#1: 'Ưu tiên có kinh nghiệm 1- 2 năm ... sales đại lý hoặc phân phối mảng năng lượng mặt trời'; 'Biết tiếng Trung / Anh là một lợi thế'",
+    "JD#2: 'Có kinh nghiệm bán hàng dự án B2B là lợi thế'; 'Có kỹ năng quản lý chu kỳ bán hàng dài & phức tạp'",
+    "JD#3: 'Biết đọc - phân tích HSMT và độc lập lập Hồ sơ dự thầu (HSDT)'; 'Từ 2- 3 năm kinh nghiệm làm Sales Dự án'",
+    "JD#4: 'Từ 30 tuổi trở xuống, Nữ, Tiếng Trung Giao tiếp thành thạo'; 'Có phương tiện di chuyển'",
+    "JD#5: 'Có ít nhất 1 năm kinh nghiệm bán hàng trong ngành hàng điện tử, điện máy, điện lạnh'; 'Có thể đi thị trường'",
+    "JD#6: 'chịu được áp lực doanh số'; 'Thành thạo tin học văn phòng (Word, Excel, PowerPoint)'"
+  ],
+  "ghiChu": "JD#2 trùng JD#1 của nghề #123; JD#5 trùng JD#3 của #123."
+}

@@ -1,0 +1,36 @@
+{
+  "id": 114,
+  "nhom": "Phim và truyền hình/Báo chí/Xuất bản",
+  "nghe": "Phim và truyền hình/Báo chí/Xuất bản khác",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "4/5 JD cấp nhân viên (0-2 năm: AI Video Creator, biên tập fanpage phim, quay phim, biên tập nội dung số), 1 JD trưởng phòng truyền thông (3 năm, 2 năm quản lý); từ CĐ/ĐH",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 1/5 nêu giới tính (nữ); ảnh chỉ là phụ (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 3/5 nhắc đam mê/định hướng (yêu thích phim ngắn, tư duy kể chuyện, nhiệt huyết); nên nêu hướng sản xuất nội dung",
+    "kinh-nghiem-lam-viec": "can — 5/5 nhắc kinh nghiệm (dưới 1 đến 3 năm), ưu tiên làm phim ngắn/Agency/social video/báo điện tử",
+    "hoc-van": "can — 5/5 nêu CĐ/ĐH, ngành Truyền thông, Báo chí, QTKD, Kinh tế, Luật hoặc phù hợp",
+    "ky-nang-chuyen-mon": "can — kịch bản, storyboard, chọn góc máy, quay, chỉnh màu, cắt dựng, sản xuất phóng sự, điều phối dự án/sự kiện truyền thông, biên tập đa nền tảng",
+    "ky-nang-mem": "can — 5/5: tư duy kể chuyện, sáng tạo, làm việc nhóm, độc lập, trách nhiệm, quản lý đội nhóm",
+    "cong-cu-phan-mem": "can — 4/5: Premiere Pro, DaVinci Resolve, CapCut, Photoshop, Canva, công cụ AI tạo storyboard/video",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "can — 3/5 nhắc dự án (làm phim, quản lý/điều phối dự án truyền thông, kênh social media); nên ghi dự án/video đã làm",
+    "thanh-tich-kpi": "nen — JD#3 review hiệu quả công việc; JD#5 đánh giá hiệu quả nội dung; ít JD đòi số liệu",
+    "ngoai-ngu": "khong — chỉ có 1/5 mơ hồ; chủ yếu không nhắc",
+    "portfolio-link": "can — nghề sản xuất video/phim cần show reel/sản phẩm đã làm ở 4/5 JD (suy từ tính chất công việc); không JD nào nêu thẳng link",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#3 dưới 1 năm kinh nghiệm; làm phim Roblox/phim ngắn nghiệp dư được JD liệt kê là kỹ năng nên có",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — chỉ 1/5 nêu giới tính (nữ); không đồng nhất",
+    "so-thich": "can — 2/5 nêu thẳng yêu thích phim ngắn, hài kịch, drama (JD#1, JD#3)"
+  },
+  "tuKhoaNenCo": ["Kịch bản phim ngắn", "storyboard", "AI video", "quay phim/videographer", "Premiere/DaVinci/CapCut", "biên tập nội dung số", "fanpage phim", "phóng sự truyền hình"],
+  "bangChung": [
+    "JD#1: 'Sử dụng các công cụ AI để vẽ storyboard'; 'Có tư duy kể chuyện'; 'Nữ'",
+    "JD#2: 'Có trên 03 năm kinh nghiệm trong lĩnh vực truyền thông, báo chí truyền hình'; '2 năm kinh nghiệm quản lý đội nhóm'",
+    "JD#3: 'Yêu thích hoặc có hiểu biết về các chủ đề: Phim ngắn, hài kịch, drama'; 'Premiere, Photoshop'",
+    "JD#4: 'Sử dụng tốt máy quay/máy ảnh và các thiết bị hỗ trợ như gimbal, tripod, lighting, micro'; 'DaVinci Resolve, CapCut'",
+    "JD#5: 'CapCut, Canva hoặc công cụ tương đương'; 'Hiểu đặc điểm nội dung trên Facebook, YouTube, TikTok'"
+  ],
+  "ghiChu": "Nhóm 'khác' trải nhiều vai (AI video, quay phim, biên tập fanpage, truyền thông); portfolio là suy từ công việc."
+}

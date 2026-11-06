@@ -1,0 +1,36 @@
+{
+  "id": 45,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Game Development",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD: 4 game developer (1-5 năm; Unity/Cocos/fullstack), 1 concept artist (3 năm), 1 trưởng/phó phòng Technical Training cho ngành game (3 năm, lạc nghề một phần); trung cấp/cao đẳng/ĐH",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình; JD#2 chỉ nêu tuổi 24-40 (1/6); công việc kỹ thuật/sáng tạo (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "can — JD#5 'đam mê tuyệt đối và mong muốn phát triển chuyên sâu', JD#1 định hướng L&D (3/6 nhắc định hướng); nên nêu định hướng phát triển game",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc 1-5 năm lập trình game (Unity, Cocos Creator, Java/C++/C#) hoặc concept art",
+    "hoc-van": "can — 6/6 nêu bậc học; ưu tiên CNTT, Khoa học máy tính; JD#6 mỹ thuật/concept",
+    "ky-nang-chuyen-mon": "can — 6/6: lập trình gameplay, client-server/multiplayer/real-time networking, tối ưu hiệu năng, game loop, design pattern, thuật toán; concept art 2D/3D; xây learning path (JD#1)",
+    "ky-nang-mem": "can — 6/6: trách nhiệm, cầu tiến, tư duy logic/hệ thống, làm việc nhóm, giao tiếp, chịu áp lực",
+    "cong-cu-phan-mem": "can — 5/6: Unity, Cocos Creator, JavaScript/TypeScript, C#, C/C++, Java, Photoshop, công cụ AI",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "can — 5/6 (tín hiệu 5/6): ít nhất một sản phẩm Mobile/Web Game (JD#2), sản phẩm phát hành Android/iOS/Facebook (JD#3), dự án game (JD#6); CV phải nêu game đã làm, nền tảng, vai trò",
+    "thanh-tich-kpi": "nen — JD#3 tối ưu hiệu suất trải nghiệm người chơi, JD#4 hiệu năng; nên nêu số tải/FPS/người dùng (suy từ mô tả)",
+    "ngoai-ngu": "nen — JD#5 đọc hiểu tiếng Anh (1/6)",
+    "portfolio-link": "can — nghề game/art nên có link game/ArtStation/GitHub (JD#3 ưu tiên sản phẩm đã phát hành, JD#6 vẽ tay/concept; không JD ghi chữ 'portfolio')",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — 6/6 JD đòi 1-5 năm kinh nghiệm",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "khong — chỉ JD#2 tuổi 24-40 (1/6)",
+    "so-thich": "nen — JD#5 đam mê game; nên ghi game đã chơi/yêu thích (suy từ JD; 1/6 nhắc đam mê phát triển game)"
+  },
+  "tuKhoaNenCo": ["Unity/C#", "Cocos Creator", "Mobile/Web Game", "gameplay/client-server", "multiplayer/real-time networking", "tối ưu hiệu năng", "concept art", "game đã phát hành"],
+  "bangChung": [
+    "JD#2: 'Có ít nhất 5 năm kinh nghiệm lập trình game'; 'Cocos Creator, Unity'; 'Tuổi 24 - 40'",
+    "JD#3: 'Tối thiểu 01 năm ... Cocos Creator'; 'Ưu tiên ứng viên đã có sản phẩm phát hành trên Android, iOS, Facebook'",
+    "JD#4: 'Có trên 03 năm kinh nghiệm làm các dự án Unity Game'; 'Real-time Networking'; 'Design Pattern ... Strategy, Observer'",
+    "JD#5: 'Có ít nhất 1 năm kinh nghiệm phát triển game với Unity'; 'đọc hiểu tiếng Anh'",
+    "JD#6: 'Thành thạo Photoshop, vẽ tay ... 2D concept'; 'sử dụng AI để brainstorm, xây dựng Moodboard'"
+  ],
+  "ghiChu": "JD#1 là Technical Training/L&D cho ngành game (không phải lập trình); JD#6 là concept artist, nên mục công cụ thay đổi theo vị trí."
+}

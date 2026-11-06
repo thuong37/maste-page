@@ -1,0 +1,36 @@
+{
+  "id": 19,
+  "nhom": "Marketing/PR/Quảng cáo",
+  "nghe": "Quảng cáo/Sáng tạo",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên (designer, quay chụp, video editor, 3D artist); kinh nghiệm từ dưới 1 đến 3 năm; trung cấp/cao đẳng/ĐH",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình (chỉ JD#5 nêu Nam 28-40); công việc sáng tạo thiên về sản phẩm, portfolio quan trọng hơn ảnh (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — chỉ 1/6 nhắc (tư duy phát triển ý tưởng/concept); dùng để nêu thế mạnh thiết kế/dựng",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc (dưới 1 đến 3 năm); designer/video editor/quay dựng/3D artist, ưu tiên ngành game, mỹ phẩm, beauty",
+    "hoc-van": "can — 6/6 nêu bậc học; chuyên ngành Thiết kế đồ họa, Mỹ thuật, Multimedia, Marketing",
+    "ky-nang-chuyen-mon": "can — 6/6: thiết kế đồ họa/UI/key visual, quay chụp, dựng video/motion/3D/VFX, chỉnh màu, rigging/texture, phát triển concept",
+    "ky-nang-mem": "can — 6/6: tư duy thẩm mỹ, sáng tạo, trách nhiệm, chủ động, phối hợp nhóm, cẩn thận chi tiết",
+    "cong-cu-phan-mem": "can — 6/6: Photoshop, Illustrator, Figma, Premiere, DaVinci Resolve, After Effects, Cinema 4D, Blender, Maya, 3ds Max, công cụ AI",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "can — 3/6 nhắc dự án (JD#1 phần việc trực tiếp trong từng sản phẩm, JD#3 dự án Pharmology, JD#4 sản phẩm game); nên nêu dự án và vai trò",
+    "thanh-tich-kpi": "khong — không JD nào nhắc KPI/số liệu",
+    "ngoai-ngu": "nen — JD#1 tiếng Anh đọc hiểu (1/6)",
+    "portfolio-link": "can — JD#1 'Portfolio bắt buộc', JD#3 'Showreel/Portfolio' (2/6 đòi thẳng); nghề sáng tạo nên có link portfolio/showreel",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#2 không yêu cầu kinh nghiệm, JD#6 dưới 1 năm (2/6)",
+    "giay-phep": "khong — không JD nào nhắc (JD#2 chỉ 'sẵn sàng đi công tác')",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#5 Nam tuổi 28-40 (1/6)",
+    "so-thich": "nen — JD#6 'thường xuyên chơi game, am hiểu mobile games là lợi thế' (1/6)"
+  },
+  "tuKhoaNenCo": ["graphic design", "video editor", "motion graphics/VFX", "Photoshop/Illustrator/Figma", "Premiere/After Effects", "3D Blender", "portfolio/showreel", "key visual/UI", "concept/visual direction"],
+  "bangChung": [
+    "JD#1: 'Portfolio bắt buộc thể hiện rõ năng lực graphic design và video production'; 'Photoshop và Illustrator'",
+    "JD#3: 'có Showreel/Portfolio'; 'Premiere Pro hoặc DaVinci Resolve'; 'After Effects, Cinema 4D, Blender'",
+    "JD#4: 'Thiết kế Character, Background, UI, Banner, Poster'; 'Figma'; 'công cụ AI hỗ trợ thiết kế'",
+    "JD#5: 'Trên 3 năm kinh nghiệm Quay dựng'; 'Adobe Premiere'; 'Nam 28-40'",
+    "JD#6: 'Blender, Maya, 3ds Max'; 'Thường xuyên chơi game ... là một lợi thế'"
+  ],
+  "ghiChu": "JD gồm thiết kế, quay dựng, 3D nên mục công cụ và portfolio phụ thuộc chuyên ngành con."
+}

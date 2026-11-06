@@ -1,0 +1,36 @@
+{
+  "id": 93,
+  "nhom": "Giáo dục/Đào tạo",
+  "nghe": "Giáo viên/Giảng viên/Gia sư",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5/5 JD cấp nhân viên giáo viên mầm non (tiểu học 1 JD), 3/5 hỏi 1 năm kinh nghiệm, 2/5 không yêu cầu; từ Trung cấp/Cao đẳng/Đại học; 2/5 tuyển nữ; chưa có JD giảng viên đại học hay gia sư",
+  "muc": {
+    "anh-chan-dung": "can — 3/5 JD nêu thẳng 'ưa nhìn/ngoại hình ưa nhìn', không nói giọng địa phương; ảnh chân dung nên có (vị trí mầm non)",
+    "muc-tieu-nghe-nghiep": "nen — 1/5 nhắc mong muốn phát triển nghề nghiệp; 2/5 nhắc tâm huyết với nghề; dùng để nêu triết lý giáo dục",
+    "kinh-nghiem-lam-viec": "can — 5/5 nhắc kinh nghiệm dạy (0-1 năm), ưu tiên đã dạy ở trường/trung tâm uy tín, song ngữ, quốc tế",
+    "hoc-van": "can — 5/5 nêu bậc học và ngành Sư phạm mầm non/Sư phạm tiếng Anh/giáo dục đặc biệt/Tâm lý học",
+    "ky-nang-chuyen-mon": "can — soạn giáo án, quản lý lớp, chăm sóc-giáo dục trẻ, hiểu tâm lý trẻ, can thiệp sớm (trẻ tự kỷ), tổ chức hoạt động, phối hợp phụ huynh",
+    "ky-nang-mem": "can — 4/5: yêu trẻ, kiên nhẫn, giao tiếp, trách nhiệm, thân thiện, nhanh nhẹn",
+    "cong-cu-phan-mem": "nen — 1/5 nêu thành thạo tin học văn phòng",
+    "chung-chi": "can — 2/5 nêu thẳng: chứng chỉ sư phạm mầm non, tiếng Anh từ B2; chứng chỉ nghiệp vụ sư phạm",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "khong — không JD nào nhắc",
+    "ngoai-ngu": "can — 4/5: tiếng Anh (B2, giao tiếp, đọc hiểu); JD#1 dạy tiếng Anh nên bắt buộc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/5 nhận mới tốt nghiệp; JD#1 nhắc hát, kể chuyện, vận động (năng khiếu)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 4/5 nêu giới tính nữ/độ tuổi (từ 23 tuổi)/không nói lắp, nói ngọng, giọng địa phương; nên có độ tuổi/nơi ở",
+    "so-thich": "nen — JD#1, JD#4 nhắc năng khiếu (hát, vẽ, vận động) là lợi thế; suy từ công việc"
+  },
+  "tuKhoaNenCo": ["Giáo viên mầm non", "Sư phạm mầm non", "giáo án", "quản lý lớp học", "can thiệp sớm", "tiếng Anh B2", "chăm sóc trẻ", "phụ huynh", "năng khiếu"],
+  "bangChung": [
+    "JD#1: 'Có trình độ tiếng Anh từ B2 hoặc tương đương'; 'Nữ'",
+    "JD#3: 'Ưa nhìn, nhanh nhẹn, tác phong chuyên nghiệp'; 'Thành thạo tin học văn phòng'",
+    "JD#4: 'Tốt nghiệp chuyên nghiệp mầm non, chứng chỉ sư phạm mầm non'; 'Không nói lắp, nói ngọng, nói giọng địa phương'",
+    "JD#5: 'Có kinh nghiệm dạy mầm non, tối thiểu 01 năm'; 'ngoại hình ưa nhìn, không nói tiếng địa phương'",
+    "JD#2: 'Yêu thích làm việc với trẻ em'; 'Trung tâm sẽ đào tạo nếu chưa có kinh nghiệm'"
+  ],
+  "ghiChu": "Cả 5 JD là giáo viên mầm non/tiểu học, chưa phủ giảng viên đại học và gia sư; JD#3-5 nêu yêu cầu ngoại hình, ghi nhận như dữ liệu JD."
+}

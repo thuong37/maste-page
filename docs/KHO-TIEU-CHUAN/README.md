@@ -1,6 +1,6 @@
 # Kho tiêu chuẩn nội dung CV theo nghề — hướng dẫn làm tiếp giữa các phiên
 
-**Mục tiêu:** với mỗi nghề (164 nghề, 25 nhóm trong `assets/data/Danh mục nhóm nghề…xlsx`) xác định CV cần có những mục nội dung nào, dựa trên JD thật của TopCV. Sau đó đối chiếu với nội dung từng template CV (65 mẫu, 5 phong cách) để biết **nghề nào hợp mẫu nào cụ thể**, thay cho kết luận cấp phong cách ở [TRI-THUC-PHONG-CACH-CV-THEO-NGANH.md](../TRI-THUC-PHONG-CACH-CV-THEO-NGANH.md).
+**Mục tiêu:** với mỗi nghề (164 nghề, 25 nhóm trong `assets/data/Danh mục nhóm nghề…xlsx`) xác định CV cần có những mục nội dung nào, dựa trên JD thật của TopCV. Sau đó đối chiếu với nội dung từng template CV (65 mẫu, 5 phong cách) để biết **nghề nào hợp mẫu nào cụ thể**, thay cho kết luận cấp phong cách ở [TRI-THUC-PHONG-CACH-CV-THEO-NGANH.md](../PHONG-CACH-CV/TRI-THUC-PHONG-CACH-CV-THEO-NGANH.md).
 
 **Phiên mới: đọc file này, chạy `npm run jd:status`, mở [STATUS.md](STATUS.md) rồi làm tiếp giai đoạn dở dang đầu tiên.** Mọi tiến độ được suy ra từ file trên đĩa (không có file trạng thái riêng cần nhớ cập nhật).
 

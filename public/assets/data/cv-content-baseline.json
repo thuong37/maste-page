@@ -1,0 +1,28 @@
+{
+  "moTa": "Mức nền của từng mục trong một CV thông thường, KHÔNG phụ thuộc JD. Căn cứ: tần suất trong 65 mẫu TopCV (cv-template-sections.json) và quy ước CV Việt Nam. JD chỉ được nâng mức, không được hạ xuống dưới mức nền (xem docs/KHO-TIEU-CHUAN/CV-THONG-THUONG.md).",
+  "mucDo": {
+    "can": "cốt lõi, CV nào cũng có",
+    "nen": "phổ biến, nên có",
+    "tuy-chon": "tùy chọn, có thì tốt",
+    "khong-can": "chỉ có ý nghĩa với nghề đặc thù; JD không đòi thì không cần"
+  },
+  "muc": {
+    "muc-tieu-nghe-nghiep": { "nen": "can", "lyDo": "61/65 mẫu có; phần giới thiệu ngắn đầu CV" },
+    "kinh-nghiem-lam-viec": { "nen": "can", "lyDo": "65/65 mẫu có" },
+    "hoc-van": { "nen": "can", "lyDo": "65/65 mẫu có" },
+    "ky-nang-chuyen-mon": { "nen": "can", "lyDo": "64/65 mẫu có" },
+    "anh-chan-dung": { "nen": "nen", "lyDo": "chuẩn CV Việt Nam; 62/65 mẫu có ô ảnh" },
+    "ngoai-ngu": { "nen": "nen", "lyDo": "thông tin phổ biến trong CV Việt Nam" },
+    "chung-chi": { "nen": "nen", "lyDo": "60/65 mẫu có" },
+    "thong-tin-ca-nhan-mo-rong": { "nen": "nen", "lyDo": "ngày sinh/địa chỉ...; 51/65 mẫu có" },
+    "ky-nang-mem": { "nen": "nen", "lyDo": "thường gộp trong kỹ năng" },
+    "hoat-dong-ngoai-khoa": { "nen": "nen", "lyDo": "62/65 mẫu có; quan trọng với người ít kinh nghiệm" },
+    "giai-thuong": { "nen": "tuy-chon", "lyDo": "59/65 mẫu có nhưng không bắt buộc" },
+    "so-thich": { "nen": "tuy-chon", "lyDo": "55/65 mẫu có nhưng không bắt buộc" },
+    "du-an": { "nen": "tuy-chon", "lyDo": "chỉ 11/65 mẫu có mục riêng" },
+    "thanh-tich-kpi": { "nen": "tuy-chon", "lyDo": "thường nằm trong mô tả kinh nghiệm" },
+    "cong-cu-phan-mem": { "nen": "tuy-chon", "lyDo": "thường gộp trong kỹ năng" },
+    "portfolio-link": { "nen": "khong-can", "lyDo": "chỉ nghề sáng tạo/kỹ thuật cần" },
+    "giay-phep": { "nen": "khong-can", "lyDo": "chỉ nghề có giấy phép hành nghề/bằng lái cần" }
+  }
+}

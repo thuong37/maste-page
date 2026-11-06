@@ -1,0 +1,36 @@
+{
+  "id": 7,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Bán lẻ/Dịch vụ tiêu dùng",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "5/6 JD cấp nhân viên (1-2 năm kinh nghiệm kênh MT/B2B, trung cấp/cao đẳng trở lên), 1 JD quản lý kinh doanh kênh MT (3-5 năm, 3 năm quản lý)",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình; công việc làm việc với buyer/hệ thống siêu thị, ảnh không phải yếu tố (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 JD nhắc định hướng phát triển lâu dài lên quản trị hệ thống (JD#3) và theo đuổi mục tiêu (JD#6)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc (1-3 năm); ưu tiên kênh MT/Key Account/B2B, ngành FMCG, hóa mỹ phẩm, gia dụng, thực phẩm; làm việc với buyer siêu thị",
+    "hoc-van": "can — 6/6 nêu bậc học (trung cấp/cao đẳng/ĐH), ưu tiên Kinh tế, QTKD, Marketing, Thương mại",
+    "ky-nang-chuyen-mon": "can — 6/6: phát triển hệ thống siêu thị/kênh MT, đàm phán thương mại, quản lý key account, lập kế hoạch bán hàng, phân tích doanh số/chiết khấu, mở độ phủ điểm bán",
+    "ky-nang-mem": "can — 6/6: giao tiếp, đàm phán, thuyết phục, chủ động, trách nhiệm, làm việc độc lập, lãnh đạo (JD#1)",
+    "cong-cu-phan-mem": "can — 3/6: Word, Excel, PowerPoint (JD#2); Excel phân tích dữ liệu (JD#3); Excel/Google Sheets/CRM (JD#5)",
+    "chung-chi": "khong — không JD nào nhắc",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "can — 6/6 nhắc chỉ tiêu doanh số, độ phủ, doanh thu/chiết khấu/lợi nhuận",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — 6/6 JD đòi kinh nghiệm 1-3 năm, không JD nhận ứng viên mới",
+    "giay-phep": "nen — JD#4 'phụ cấp xăng xe', 'đi thị trường', JD#3 chấp nhận đi thị trường; không JD đòi bằng lái (suy từ công việc)",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/6 JD nêu độ tuổi (27-45, từ 22); nên có tuổi/nơi ở, sẵn sàng đi công tác (JD#1, JD#4)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["kênh MT", "Modern Trade", "Key Account", "siêu thị/chuỗi bán lẻ", "buyer/Category Manager", "FMCG", "đàm phán thương mại", "chỉ tiêu doanh số", "độ phủ", "Excel/CRM"],
+  "bangChung": [
+    "JD#1: 'Có 3–5 năm kinh nghiệm ... kênh MT, ưu tiên ngành FMCG'; 'đàm phán thương mại và quản lý đội ngũ bán hàng'",
+    "JD#2: 'Tối thiểu 2 năm kinh nghiệm ... kênh MT hoặc Sales Key Account'; 'Microsoft Word, Excel, PowerPoint'",
+    "JD#3: 'Sử dụng thành thạo tin học văn phòng, đặc biệt Excel'; 'Chấp nhận đi thị trường'",
+    "JD#5: 'làm việc trực tiếp với Buyer/Category Manager'; 'sử dụng Excel/Google Sheets/CRM'",
+    "JD#6: 'chịu trách nhiệm về chỉ tiêu doanh số'; 'phát triển kênh siêu thị, chuỗi bán lẻ'"
+  ],
+  "ghiChu": "Tên nghề là Bán lẻ nhưng JD thực tế tập trung kênh MT (siêu thị) và B2B, không phải bán hàng tại cửa hàng."
+}

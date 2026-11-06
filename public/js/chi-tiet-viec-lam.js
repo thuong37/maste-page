@@ -325,9 +325,12 @@ document.addEventListener('DOMContentLoaded', () => {
       : [];
     companyJobsList.innerHTML = companyJobs.map(j => `
       <a class="jd-company-job" href="${jobUrl(j)}">
-        <h3 class="jd-company-job-title">${esc(j.title)}</h3>
-        <span class="jd-company-job-salary">${esc(j.salaryBadge)}</span>
-        <span class="jd-related-tags"><span>${esc(j.city)}</span><span>${esc(expLabel(j))}</span></span>
+        <img class="jd-related-logo jd-company-job-logo" src="${esc(j.logo || job.logo)}" alt="${esc(j.company || job.company)}" loading="lazy" />
+        <div class="jd-company-job-body">
+          <h3 class="jd-company-job-title">${esc(j.title)}</h3>
+          <span class="jd-company-job-salary">${esc(j.salaryBadge)}</span>
+          <span class="jd-related-tags"><span>${esc(j.city)}</span><span>${esc(expLabel(j))}</span></span>
+        </div>
       </a>`).join('');
     if (!companyJobs.length) companyJobsList.closest('.jd-company-jobs').hidden = true;
   }
@@ -389,12 +392,6 @@ document.addEventListener('DOMContentLoaded', () => {
     showToast(next.includes(jobKey) ? `Đã lưu "${job.title}" vào mục yêu thích!` : `Đã bỏ lưu "${job.title}"`, next.includes(jobKey) ? '❤️' : 'ℹ️');
   }));
   paintSaved();
-
-  const alertBtn = $('jdSimilarAlert');
-  alertBtn.addEventListener('click', () => {
-    const on = alertBtn.classList.toggle('is-on');
-    showToast(on ? 'Đã bật gửi việc làm tương tự qua thông báo.' : 'Đã tắt nhận việc làm tương tự.', on ? '🔔' : 'ℹ️');
-  });
 
   $('jdReportLink').addEventListener('click', event => {
     event.preventDefault();

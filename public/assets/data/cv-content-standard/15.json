@@ -1,0 +1,35 @@
+{
+  "id": 15,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Thương mại điện tử",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5 JD: 3 JD nhân viên vận hành sàn TMĐT cần 1 năm kinh nghiệm (trung cấp đến ĐH), 1 JD nhân viên CSKH TMĐT không yêu cầu kinh nghiệm, 1 JD thực tập sinh (sinh viên năm cuối/mới tốt nghiệp)",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình (JD#5 chỉ nêu giới tính Nữ); công việc vận hành online, ít gặp trực tiếp (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 3/5 JD nhắc mong muốn phát triển lâu dài (JD#3, #5 'định hướng Customer Service/Operations', JD#1)",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD nhắc; 3/5 đòi 1 năm vận hành sàn Amazon/Etsy/TikTok/Shopee, 2/5 nhận ứng viên mới/thực tập",
+    "hoc-van": "can — 5/5 nêu bậc học (trung cấp đến ĐH), ưu tiên QTKD, Marketing, E-commerce, Kinh tế/Ngoại thương",
+    "ky-nang-chuyen-mon": "can — 5/5: đăng/tối ưu listing (SEO), xử lý đơn hàng và vận chuyển, chăm sóc khách hàng trên sàn, chạy ads, nghiên cứu thị trường và đối thủ, xử lý khiếu nại",
+    "ky-nang-mem": "can — 5/5: giao tiếp online, xử lý tình huống, chủ động, tỉ mỉ, trách nhiệm, tư duy phân tích",
+    "cong-cu-phan-mem": "can — 4/5: Excel/Google Sheets, Helium10, Jungle Scout, TikTok Shop, Shopee, Amazon, Etsy, CapCut/quay chụp content",
+    "chung-chi": "nen — JD#5 TOEIC 450+ là lợi thế (1/5)",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "can — JD#3 theo dõi GMV, CVR, CTR, ROI; JD#1 đề xuất cải tiến dựa trên hiệu suất bán hàng (2/5; CV nên có số liệu doanh thu/chuyển đổi)",
+    "ngoai-ngu": "can — 4/5: Tiếng Anh đọc/viết/giao tiếp (JD#1, #3, #5), tiếng Hoa lợi thế có phụ cấp (JD#2)",
+    "portfolio-link": "nen — JD#2, JD#4 nhắc quay chụp, viết content cơ bản/tạo nội dung số (2/5); không JD đòi link portfolio",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#4 không yêu cầu kinh nghiệm, JD#5 thực tập nhận sinh viên năm cuối (2/5)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#3 tuổi 22-35, JD#5 Nữ (2/5 nêu độ tuổi/giới tính)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["vận hành sàn TMĐT", "Amazon/Etsy/TikTok Shop/Shopee", "listing/SEO", "xử lý đơn hàng", "GMV/CVR/ROI", "chạy ads", "chăm sóc khách hàng online", "Tiếng Anh", "Excel/Google Sheets"],
+  "bangChung": [
+    "JD#1: 'Thành thạo up listings, chăm sóc khách hàng, xử lý đơn hàng trên sàn Amazon, Esty, Tiktok'; 'Helium10, Jungle Scout là một lợi thế'",
+    "JD#2: 'Hiểu biết về TMDT, sàn Tiktok Shop, Shopee'; 'Biết quay chụp, viết content cơ bản'; 'Biết tiếng Hoa là một lợi thế'",
+    "JD#3: 'Theo dõi GMV, CVR, CTR, ROI'; 'Thành thạo Excel'; 'Tuổi 22 - 35'",
+    "JD#5: 'TOEIC 450+ hoặc tương đương'; 'Sinh viên năm cuối hoặc mới tốt nghiệp'"
+  ],
+  "ghiChu": "Nghề thiên về vận hành gian hàng hơn là bán trực tiếp; chỉ 5 JD."
+}

@@ -1,0 +1,36 @@
+{
+  "id": 143,
+  "nhom": "Thiết kế",
+  "nghe": "Thiết kế Thời trang",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "4/6 JD cấp nhân viên (dưới 1 đến 3 năm, CĐ/ĐH), 1 JD trưởng nhóm (4 năm, 1-2 năm quản lý), 1 JD trưởng phòng thiết kế/R&D (3 năm quản lý, 28-35 tuổi); chủ yếu thời trang nam, nữ công sở, trẻ em",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 2/6 nêu tuổi/giới tính (22-30, từ 22 nữ, 28-35); nghề sáng tạo nên ảnh là phụ (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "can — 5/6 nhắc định hướng/phong cách thiết kế (thời trang công sở, tối giản, Gen Z, nữ trẻ); nên nêu định hướng phong cách",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm (dưới 1 đến 5 năm), ưu tiên thương hiệu thời trang công sở/nữ/fast fashion/retail",
+    "hoc-van": "can — 6/6 nêu CĐ/ĐH chuyên ngành Thiết kế thời trang, Mỹ thuật ứng dụng, Công nghệ may",
+    "ky-nang-chuyen-mon": "can — nghiên cứu xu hướng, sketch, phát triển bộ sưu tập, chọn chất liệu/phối màu, tài liệu công nghệ may, bản vẽ kỹ thuật, phát triển sản phẩm, quản lý design brief",
+    "ky-nang-mem": "nen — 3/6: thích nghi nhanh, trách nhiệm, chịu áp lực, trình bày ý tưởng, nhiệt huyết",
+    "cong-cu-phan-mem": "can — 3/6: Illustrator, Photoshop, CorelDraw, Procreate, công cụ AI",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "can — 3/6 nhắc dự án/bộ sưu tập; JD#6 chấp nhận dự án cá nhân hoặc đồ án tốt nghiệp; nên liệt kê BST đã thiết kế",
+    "thanh-tich-kpi": "nen — 2/6 nhắc năng suất sketch (15-20 mẫu/tháng), phân tích dữ liệu bán hàng; ít số liệu",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "can — 2/6 nêu thẳng gửi CV kèm Portfolio/Case Study (JD#3, JD#6); nghề thiết kế sản phẩm nhìn được",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#6 nhận Junior dưới 1 năm, chấp nhận dự án cá nhân/đồ án",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 nêu tuổi/giới tính (22-30, 28-35, nữ từ 22); không đồng nhất",
+    "so-thich": "nen — JD#2 yêu thích style tối giản, thanh lịch; JD#1 'cá tính, ham học hỏi'; nêu thẳng ở 2/6"
+  },
+  "tuKhoaNenCo": ["Thiết kế thời trang", "research xu hướng", "sketch/bản vẽ kỹ thuật", "bộ sưu tập", "Illustrator/Photoshop/Procreate", "tài liệu công nghệ may", "design brief", "portfolio"],
+  "bangChung": [
+    "JD#1: 'Tốt nghiệp chuyên ngành thiết kế thời trang'; 'ít nhất 2 năm kinh nghiệm làm thiết kế tại các hãng thời trang công sở'",
+    "JD#2: 'Có khả năng sketch được 15 - 20 mẫu/ tháng'; 'Độ tuổi: 22 - 30'; 'Yêu thích style tối giản, thanh lịch, tinh tế'",
+    "JD#3: 'Ứng viên vui lòng gửi CV kèm Portfolio hoặc Case Study thực tế'; 'Tuổi 28 - 35'",
+    "JD#4: 'Sử dụng thành thạo các phần mềm AI, Ps, Procreate...'; 'Từ 03 năm kinh nghiệm ... thương hiệu thời trang công sở nữ cao cấp'",
+    "JD#6: 'Yêu cầu gửi kèm Portfolio (chấp nhận dự án cá nhân hoặc đồ án tốt nghiệp)'; 'Sử dụng tốt Adobe Illustrator, Photoshop'"
+  ],
+  "ghiChu": ""
+}

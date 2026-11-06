@@ -1,0 +1,36 @@
+{
+  "id": 62,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Chứng khoán",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD: 1 thực tập sinh tư vấn chứng khoán, 1 trợ lý kinh doanh (không yêu cầu kinh nghiệm, ĐH, Nữ sinh 2004), 2 chuyên viên (1-2 năm: tư vấn đầu tư, quản trị khách hàng), 1 chuyên gia Marcom chứng khoán (5 năm, lạc nghề), 1 phó phòng pháp chế công ty chứng khoán (2 năm quản lý, lạc nghề); ĐH trở lên",
+  "muc": {
+    "anh-chan-dung": "nen — JD#6 'ngoại hình khá, tác phong chuyên nghiệp, tự tin' (1/6, vị trí pháp chế); 3/6 nêu độ tuổi/giới tính; nghề gặp khách nên ảnh nghiêm túc là lợi thế",
+    "muc-tieu-nghe-nghiep": "can — JD#1 'định hướng phát triển sự nghiệp lên cấp quản lý', JD#2 'định hướng gắn bó lâu dài', JD#1 đam mê đầu tư chứng khoán (3/6 nhắc định hướng)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc (không yêu cầu đến 5 năm); tư vấn chứng khoán, môi giới, quản trị khách hàng; kinh nghiệm công ty chứng khoán là lợi thế",
+    "hoc-van": "can — 6/6 yêu cầu ĐH; ưu tiên Kinh tế, Tài chính, Ngân hàng, Chứng khoán, Luật (JD#6)",
+    "ky-nang-chuyen-mon": "can — chăm sóc/tư vấn khách hàng chứng khoán, mở tài khoản và giao dịch, phân tích kỹ thuật/cơ bản, quản trị danh mục, quản trị khách hàng/chính sách phân hạng, marketing sản phẩm tài chính, pháp chế chứng khoán",
+    "ky-nang-mem": "can — 6/6: giao tiếp, thuyết phục, chủ động, trách nhiệm, tự lập, chịu áp lực",
+    "cong-cu-phan-mem": "can — 3/6: Excel, quản lý dữ liệu (JD#2), tin học văn phòng (JD#4), Excel/PowerPoint/Looker Studio/Power BI/CRM (JD#5)",
+    "chung-chi": "can — 4/6: chứng chỉ hành nghề chứng khoán (JD#4, #5, #6), CFA Level 1 (JD#5), thẻ luật sư (JD#6), IELTS 6.0/TOEIC 700 (JD#5)",
+    "du-an": "nen — JD#3 xây dựng chính sách khách hàng, JD#5 kế hoạch go-to-market (2/6); nên nêu chương trình/sản phẩm đã triển khai",
+    "thanh-tich-kpi": "nen — JD#5 KPI kinh doanh, ROI/CAC (1/6); nên nêu số tài khoản mở/doanh số môi giới nếu có",
+    "ngoai-ngu": "nen — JD#5 IELTS 6.0/TOEIC 700 (1/6); JD#3 tiêu chuẩn song ngữ Việt-Anh",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "can — JD#1 thực tập sinh, JD#2 không yêu cầu kinh nghiệm (2/6); nên ghi câu lạc bộ đầu tư/tài chính, đầu tư cá nhân",
+    "giay-phep": "can — chứng chỉ hành nghề chứng khoán là giấy phép nghề nghiệp, được 3/6 JD ưu tiên (JD#4, #5, #6)",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#2 Nữ, sinh năm 2004 (1/6 nêu thẳng)",
+    "so-thich": "nen — JD#1 'thích làm việc với các con số', 'đam mê đầu tư chứng khoán' (1/6); có thể ghi đầu tư/tài chính cá nhân"
+  },
+  "tuKhoaNenCo": ["tư vấn đầu tư chứng khoán", "môi giới/chăm sóc khách hàng", "chứng chỉ hành nghề chứng khoán", "phân tích kỹ thuật/cơ bản", "quản trị danh mục", "quản trị khách hàng", "CFA", "Luật Chứng khoán"],
+  "bangChung": [
+    "JD#1: 'Có định hướng phát triển sự nghiệp lên cấp quản lý'; 'ĐAM MÊ VÀ YÊU THÍCH LĨNH VỰC ĐẦU TƯ CHỨNG KHOÁN'; 'Không yêu cầu kinh nghiệm'",
+    "JD#2: 'Nữ, sinh năm 2004'; 'Excel, Quản Lý Dữ Liệu'; 'định hướng gắn bó lâu dài'",
+    "JD#4: 'Có ít nhất 1 năm kinh nghiệm ... kinh doanh, bảo hiểm, bất động sản, tài chính, ngân hàng'; 'có chứng chỉ hành nghề là một lợi thế'",
+    "JD#5 (Marcom): 'Chứng chỉ hành nghề chứng khoán, CFA Level 1'; 'IELTS 6.0 / TOEIC 700'; 'Tối thiểu 5 năm'",
+    "JD#6 (pháp chế): 'có thẻ Luật sư ... chứng chỉ hành nghề chứng khoán'; 'Ngoại hình khá, tác phong chuyên nghiệp'"
+  ],
+  "ghiChu": "JD#5 (Marcom) và JD#6 (pháp chế) là vị trí gián tiếp trong công ty chứng khoán; các mục lấy chủ yếu từ JD#1-#4."
+}

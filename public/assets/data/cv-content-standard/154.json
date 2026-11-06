@@ -1,0 +1,35 @@
+{
+  "id": 154,
+  "nhom": "Năng lượng/Môi trường/Nông nghiệp",
+  "nghe": "An toàn lao động/Môi trường",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "4/6 JD cấp nhân viên/kỹ sư HSE (không yêu cầu đến 2-3 năm, Cao đẳng/ĐH), 1 JD giám sát (5 năm, 2 năm quản lý), 1 JD trưởng ban HSE (5 năm, 1 năm quản lý); 5/6 JD ưu tiên hoặc yêu cầu Nam",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ảnh/ngoại hình; 5/6 nêu Nam hoặc độ tuổi nhưng không nhắc ngoại hình; nghề công trường nên ảnh không phải trọng tâm (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc định hướng nghề nghiệp",
+    "kinh-nghiem-lam-viec": "can — 5/6 JD nêu số năm HSE (2-5 năm), ưu tiên công trình xây dựng/sản xuất/kho bãi logistics; JD#6 chỉ cần kinh nghiệm thực tế công trường nếu không đúng ngành",
+    "hoc-van": "can — 6/6 nêu bậc học (Cao đẳng/ĐH) và chuyên ngành Bảo hộ lao động, Môi trường, Xây dựng, Kỹ thuật",
+    "ky-nang-chuyen-mon": "can — 6/6: tuân thủ ATVSLĐ/môi trường/PCCC, đánh giá rủi ro, kiểm tra hiện trường lập biên bản, huấn luyện an toàn, điều tra tai nạn, xây dựng hệ thống quản lý HSE, QCVN/TCVN",
+    "ky-nang-mem": "can — 5/6: làm việc nhóm/độc lập, giao tiếp, thuyết trình/đào tạo, đàm phán, giải quyết vấn đề, chịu áp lực",
+    "cong-cu-phan-mem": "can — 5/6 nêu tin học văn phòng (Word, Excel, PowerPoint) hoặc Microsoft Office",
+    "chung-chi": "can — JD#2 yêu cầu Chứng nhận huấn luyện ATLĐ, Chứng chỉ nghiệp vụ ATVSLĐ, Chứng nhận PCCC & CNCH, ưu tiên ISO 45001/14001; 3/6 JD nhắc chứng chỉ/tiêu chuẩn",
+    "du-an": "nen — 2/6 JD liên quan công trường/dự án (JD#4 dự án xây dựng, JD#6 hồ sơ an toàn tại dự án); ghi dự án đã làm HSE",
+    "thanh-tich-kpi": "nen — chỉ 1/6 JD gián tiếp (điều tra tai nạn, giảm sự cố); nên ghi số giờ không tai nạn/số buổi huấn luyện (suy từ tính chất công việc)",
+    "ngoai-ngu": "nen — JD#1 yêu cầu bắt buộc tiếng Anh thành thạo (kho logistics); 5 JD còn lại không nhắc; 1/6",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc; chỉ JD#6 nhận không kinh nghiệm",
+    "giay-phep": "khong — không JD nào nhắc bằng lái; giấy chứng nhận huấn luyện xếp ở chung-chi",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/6 JD nêu giới tính Nam và/hoặc độ tuổi (22-40, 22-45); 2 JD nêu sức khỏe tốt, sẵn sàng làm công trường",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["HSE", "an toàn vệ sinh lao động", "PCCC & CNCH", "đánh giá rủi ro", "ISO 45001", "ISO 14001", "huấn luyện an toàn", "QCVN/TCVN", "biên bản/báo cáo an toàn", "công trường xây dựng"],
+  "bangChung": [
+    "JD#1: 'Giao tiếp và làm việc thành thạo bằng tiếng Anh (đây là yêu cầu bắt buộc)'; 'Microsoft Office: Word, Excel, PowerPoint'; Nam",
+    "JD#2: 'CHỨNG CHỈ YÊU CẦU: Chứng nhận huấn luyện ATLĐ ... Chứng nhận huấn luyện PCCC & CNCH'; 'Ưu tiên có chứng chỉ ISO 45001, ISO 14001'",
+    "JD#4: 'Tốt nghiệp Đại học ... Bảo hộ lao động, Kỹ thuật môi trường, Xây dựng'; '2-3 năm kinh nghiệm ... Kỹ sư An toàn Lao động (HSE) tại các dự án xây dựng'",
+    "JD#6: 'Giới tính: Nam'; 'Thành thạo Microsoft Office'; 'Kỹ năng đàm phán và giải quyết vấn đề'"
+  ],
+  "ghiChu": "6 JD đồng nhất nghề HSE, chủ yếu xây dựng/sản xuất. JD#6 là JD duy nhất nhận không kinh nghiệm."
+}

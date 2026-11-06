@@ -1,0 +1,37 @@
+{
+  "id": 16,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Quản lý kinh doanh",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp quản lý/trưởng phòng/giám sát; yêu cầu 2-3 năm kinh nghiệm chuyên môn kèm 2-3 năm quản lý; cao đẳng/ĐH trở lên",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình (chỉ nêu tuổi/giới tính ở 2 JD); vị trí quản lý, ảnh không phải yếu tố (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 3/6 nhắc định hướng kết quả/tinh thần cầu tiến; dùng để nêu định hướng quản lý kinh doanh",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD đòi 2-3 năm kinh nghiệm quản lý, vị trí tương đương (leader resales, trưởng nhóm kinh doanh, kênh MT, ngành IT, trang sức)",
+    "hoc-van": "can — 6/6 nêu bậc học (cao đẳng/ĐH), ưu tiên Kinh tế, QTKD",
+    "ky-nang-chuyen-mon": "can — 6/6: lập kế hoạch bán hàng/dự báo doanh số, quản lý kênh phân phối/nhà phân phối, quản lý giá và tồn kho, phân tích thị trường và đối thủ, điều hành cửa hàng",
+    "ky-nang-mem": "can — 6/6: lãnh đạo, quản lý đội nhóm, đào tạo nhân sự, giao tiếp, thuyết phục, xử lý từ chối, chịu áp lực doanh số",
+    "cong-cu-phan-mem": "nen — JD#1 Excel, PowerPoint, OneDrive, Power BI (1/6); JD#6 làm việc với số liệu kinh doanh",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "can — 6/6 nhắc chỉ tiêu doanh số tháng/quý/năm, KPI, tỷ lệ chốt đơn, phân tích hiệu suất; CV cần số liệu doanh số/quy mô đội/độ phủ",
+    "ngoai-ngu": "nen — JD#1 tiếng Anh tốt làm việc với đối tác nước ngoài (1/6)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "nen — không JD nhắc thẳng; vị trí đòi thành tích nên nêu giải thưởng/thi đua kinh doanh (suy từ tính chất công việc)",
+    "hoat-dong-ngoai-khoa": "khong — 6/6 JD đòi 2-3 năm kinh nghiệm quản lý, không nhận ứng viên mới",
+    "giay-phep": "nen — JD#1, #2 sẵn sàng đi công tác (2/6)",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#2 tuổi 27-45, JD#3 Nam 28-38, JD#5 tuổi 22-40 (3/6 nêu độ tuổi/giới tính)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["quản lý đội ngũ kinh doanh", "chỉ tiêu doanh số/KPI", "kế hoạch sell-in sell-thru", "quản lý nhà phân phối", "kênh MT", "dự báo doanh số", "đào tạo nhân sự", "Power BI/Excel"],
+  "bangChung": [
+    "JD#1: 'Có ít nhất 02 năm kinh nghiệm ... ngành hàng IT'; 'Power BI, Excel'; 'Tiếng Anh tốt'",
+    "JD#2: 'Có 3–5 năm kinh nghiệm ... kênh MT'; 'Từ 27 - 45 tuổi'",
+    "JD#3: 'đảm bảo hoàn thành chỉ tiêu doanh số theo tháng/quý/năm'; 'Sales Forecasting & Goal Setting'",
+    "JD#4: 'tối thiểu 3 năm Leader resales'; 'Quản lý KPI, đọc số liệu, phân tích hiệu suất'",
+    "JD#5: 'Có 2 - 3 năm trở lên ở vị trí quản lý trưởng nhóm kinh doanh ở lĩnh vực ngân hàng, công ty tài chính'",
+    "JD#6: 'Tối thiểu 03 năm kinh nghiệm trong ngành kim cương, trang sức'; 'quản lý đội ngũ'"
+  ],
+  "ghiChu": "Ngành rất đa dạng (IT, FMCG, tài chính, trang sức) nên kinh nghiệm ngành là điểm khác nhau giữa các JD; cấu trúc quản lý chung giống nhau."
+}

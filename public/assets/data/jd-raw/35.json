@@ -1,0 +1,121 @@
+{
+ "id": 35,
+ "nhom": "Công nghệ Thông tin",
+ "nghe": "Software Testing",
+ "method": "category",
+ "categoryUrl": "https://www.topcv.vn/tim-viec-lam-software-testing-cr257cb259",
+ "categoryTotal": 143,
+ "categoryVerified": true,
+ "crawledAt": "2026-10-22T04:11:48.709Z",
+ "candidates": 46,
+ "thin": false,
+ "jds": [
+  {
+   "url": "https://www.topcv.vn/viec-lam/chuyen-vien-kiem-thu-phan-mem-tester-2-nam-kinh-nghiem-thu-nhap-upto-25m-tai-ha-noi/2331879.html",
+   "title": "Chuyên Viên Kiểm Thử Phần Mềm (Tester) - 2 Năm Kinh Nghiệm - Thu Nhập Upto 25M - Tại Hà Nội",
+   "company": "CÔNG TY CỔ PHẦN CÔNG NGHỆ SỐ VCI",
+   "query": "https://www.topcv.vn/tim-viec-lam-software-testing-cr257cb259",
+   "score": 1,
+   "via": "category",
+   "chips": {
+    "Yêu cầu": [
+     "2 năm kinh nghiệm chuyên môn",
+     "Cao Đẳng trở lên"
+    ],
+    "Chuyên môn": [
+     "Software Tester (Automation & Manual)",
+     "IT - Phần mềm"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Phân tích tài liệu yêu cầu (SRS, User Story, Wireframe...), làm rõ nghiệp vụ và xác định các tình huống cần kiểm thử.\nThiết kế Test Scenario, Test Case; chuẩn bị dữ liệu kiểm thử và thực hiện kiểm thử trên nền tảng Web/Mobile.\nThực hiện các loại kiểm thử phổ biến: chức năng (Functional), giao diện (UI), hồi quy (Regression), Smoke/Retest và kiểm thử tích hợp khi cần.\nPhát hiện, ghi nhận, theo dõi và xác minh lỗi trên công cụ quản lý; phối hợp với Developer, BA và Test Lead để xử lý các vấn đề phát sinh.\nCập nhật kết quả kiểm thử, báo cáo tiến độ, chất lượng và rủi ro; tham gia các hoạt động dự án theo quy trình làm việc chung.\nChủ động đề xuất cải tiến test case, cách kiểm thử và ứng dụng công cụ phù hợp nhằm nâng cao hiệu quả công việc.",
+    "Yêu cầu ứng viên": "1. Yêu cầu bắt buộc\n\nCó từ 02 năm kinh nghiệm làm việc ở vị trí Tester/Manual Tester; đã tham gia kiểm thử sản phẩm Web hoặc Mobile.\nTốt nghiệp Cao đẳng/Đại học chuyên ngành CNTT hoặc ngành liên quan; hiểu SDLC, STLC và quy trình quản lý lỗi.\nCó khả năng phân tích yêu cầu, xây dựng và thực thi test case; nắm được các kỹ thuật thiết kế test cơ bản (phân vùng tương đương, giá trị biên, ...).\nCó kinh nghiệm kiểm thử chức năng, hồi quy, giao diện; biết ghi nhận lỗi rõ ràng và theo dõi lỗi đến khi đóng.\nBiết sử dụng công cụ quản lý công việc/lỗi như Jira, Redmine hoặc tương đương; có kiến thức cơ bản về kiểm thử API (Postman/Swagger) là lợi thế.\nTư duy logic, cẩn thận, chủ động, giao tiếp tốt và phối hợp hiệu quả với Developer, BA cùng các thành viên trong dự án.\n\n2. Ưu tiên\n\nĐã từng làm việc với AI hoặc ứng dụng công cụ AI vào công việc, đặc biệt trong kiểm thử phần mềm (phân tích yêu cầu, thiết kế test case, tạo dữ liệu test, hỗ trợ phân tích lỗi...).\nCó khả năng review tài liệu đặc tả yêu cầu (Spec) để phát hiện điểm thiếu, chưa rõ hoặc chưa thống nhất; review test case để đánh giá tính đầy đủ, logic và độ bao phủ kiểm thử.\nCó kinh nghiệm kiểm thử hệ thống quản trị doanh nghiệp (ERP, HRM, quản lý dự án...) hoặc sản phẩm trong lĩnh vực xây dựng.\nCó kiến thức về SQL, đọc log, Automation Test hoặc Performance Test; có khả năng đọc hiểu tài liệu kỹ thuật tiếng Anh.\nKiến thức ngành\nIT - Phần mềm\nKỹ năng cần có\nTư duy logic, Giao tiếp tốt, phân tích yêu cầu, Kiểm Thử Chức Năng, Thiết Kế Test Case, Kiểm Thử Hồi Quy, Kiểm thử giao diện, Sử dụng Jira hoặc Redmine, Kiểm thử API cơ bản\nKỹ năng nên có\nAutomation Test, Performance Test, Đọc Hiểu Tài Liệu Kỹ Thuật Tiếng Anh, Kiến thức SQL, AI trong kiểm thử phần mềm, Review tài liệu đặc tả yêu cầu, Kiểm thử ERP, HRM, quản lý dự án",
+    "Quyền lợi ứng viên": "Mức lương thỏa thuận theo năng lực (Mức tham khảo từ 25tr)\nCó lương tháng thứ 13, thưởng lễ tết, thưởng hiệu quả kinh doanh theo kết quả kinh doanh của Công ty\nĐược tham gia đào tạo phục vụ yêu cầu công việc\nTham gia các khóa đào tạo kỹ năng mềm phục vụ cho công việc và định hướng Carrer Path rõ ràng\nReview lương 1 lần/năm\nOT theo quy định của pháp luật\nChế độ bảo hiểm xã hội đầy đủ theo quy định của Luật.\nGói bảo hiểm chăm sóc sức khỏe cho CBNV\nKhám sức khỏe định kỳ hằng năm\nChương trình nghỉ mát hàng năm theo công ty tổ chức\nTham gia các chương trình Teambuilding\nTham gia các chương trình Sinh nhật, Noel, Year End Party...\nTham gia các CLB Bóng đá, Cầu lông, Xem phim...",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Tầng 12A, Tòa A3 Ecolife Capitol, 58 Tố Hữu thuộc quận Nam Từ Liêm cũ), Phường Đại Mỗ (Phường Đại Mỗ thuộc quận Nam Từ Liêm cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 12:00)\nThứ 2 - Thứ 6 (từ 13:00 đến 17:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 15/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nCao Đẳng trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/chuyen-vien-qa-qc-tester-manual/2328072.html",
+   "title": "Chuyên Viên QA/QC TESTER (MANUAL)",
+   "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN TRUYỀN THÔNG HALOTIMES",
+   "query": "https://www.topcv.vn/tim-viec-lam-software-testing-cr257cb259",
+   "score": 1,
+   "via": "category",
+   "chips": {
+    "Yêu cầu": [
+     "1 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Manual Tester",
+     "IT - Phần mềm"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Thực hiện kiểm thử Mobile App (iOS/Android) và Web.\nPhân tích yêu cầu, thiết kế và thực hiện Test Case / Test Scenario / Checklist.\nThực hiện Functional Testing, Regression Testing và kiểm tra các trường hợp Edge Case.\nPhát hiện, phân tích và ghi nhận Bug rõ ràng, đầy đủ thông tin.\nVerify bug sau khi Developer xử lý và thực hiện Regression Test.\nKiểm thử API cơ bản bằng Postman.\nPhối hợp với Developer, BA và Tech Lead trong quá trình phát triển và release sản phẩm.\nChủ động phát hiện các vấn đề trong requirement hoặc những trường hợp có thể phát sinh lỗi.",
+    "Yêu cầu ứng viên": "Có 1–3 năm kinh nghiệm ở vị trí QA/QC/Tester.\nAm hiểu quy trình kiểm thử phần mềm và có khả năng áp dụng vào thực tế.\nCó kinh nghiệm Manual Testing, ưu tiên đã từng test Mobile App.\nCó khả năng viết Test Case, Bug Report rõ ràng và có hệ thống.\nCó khả năng tiếp nhận và nắm bắt yêu cầu/bàn giao nhanh, chủ động tìm hiểu khi chưa rõ.\nCó tinh thần trách nhiệm cao, theo sát công việc và Bug từ lúc tiếp nhận đến khi hoàn tất.\nTư duy logic, cẩn thận và có khả năng phát hiện các trường hợp lỗi ngoài dự kiến.\nCó khả năng giao tiếp và phối hợp tốt với Developer/BA.\nBiết sử dụng Postman để test API là lợi thế.\nCó kinh nghiệm sử dụng Jira, GitHub Issues hoặc công cụ quản lý công việc tương đương.\nKiến thức ngành\nIT - Phần mềm\nKỹ năng cần có\nJira, Manual Testing, Postman, Bug Report, Test case writing, GitHub Issues\nKỹ năng nên có\nAgile, JSON, REST API, SQL, Database, Fintech, E-commerce, Social Network, marketplace, SCRUM",
+    "Quyền lợi ứng viên": "Mức lương thỏa thuận theo năng lực.\nLàm việc trực tiếp với Developer, BA và Tech Lead trong quá trình phát triển sản phẩm.\nCó cơ hội tham gia xây dựng và cải thiện quy trình QA/QC của team.\nMôi trường phát triển sản phẩm thực tế, tham gia xuyên suốt quá trình từ Development đến Production Release.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHồ Chí Minh: 46 đường số 5, KDC Cityland, Phường Hạnh Thông (Phường Hạnh Thông thuộc quận Gò Vấp cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:00)\nthứ 7 cách tuần: 09h00 - 17h00\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 12/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite, Kết hợp tại văn phòng và từ xa (Hybrid), Làm việc từ xa (Remote)\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/nhan-vien-kiem-thu-manual-test/2331237.html",
+   "title": "Nhân Viên Kiểm Thử (Manual Test)",
+   "company": "CÔNG TY CỔ PHẦN YOOTEK HOLDINGS",
+   "query": "https://www.topcv.vn/tim-viec-lam-software-testing-cr257cb259",
+   "score": 1,
+   "via": "category",
+   "chips": {
+    "Yêu cầu": [
+     "3 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Software Tester (Automation & Manual)"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Đề xuất và đưa ra quy trình phát triển (development process) sản phẩm phù hợp với yêu cầu cụ thể của từng dự án.\nĐưa ra những tài liệu, biểu mẫu, hướng dẫn để đảm bảo chất lượng của sản phẩm cho tất cả các bộ phận trong nhóm phát triển sản phẩm.\nLên kế hoạch test, thiết kế test case, test script.\nThực thi theo test plan, test case.\nChủ động follow lỗi với IT (dev, code từng phần).\nChủ động báo cáo lỗi xu hướng tăng giảm, tỷ trọng lỗi, chủ động xây tài liệu, gửi tài liệu từng phần hoàn thiện, chủ động tổ chức hướng dẫn sử dụng phần mềm.",
+    "Yêu cầu ứng viên": "Tốt nghiệp Đại học chuyên ngành CNTT, Hệ thống thông tin,...\nCó từ 03 năm kinh nghiệm ở vị trí tương đương.\nTiếng Anh thành thạo là một lợi thế.\nKiến thức cơ bản về Cơ sở dữ liệu/SQL.\nThông thạo ít nhất 1 công cụ Test Management tools.\nLàm việc với ít nhất 1 Defect Tracking tools: Jira, QC, Bugzilla...\nCó khả năng viết test case và xây dựng test plan.\nCó khả năng làm xây dựng tài liệu, xây dựng video hướng dẫn sử dụng phần mềm.\nCó khả năng thuyết trình và xây dựng slide thuyết trình.\nCó khả năng giao tiếp tốt.\nCó laptop cá nhân.",
+    "Quyền lợi ứng viên": "Lương/thưởng theo chế độ của công ty.\nThưởng upto 3 tháng lương/năm.\nReview lương hàng năm.\nMôi trường chuyên nghiệp, năng động, thân thiện, cơ hội thăng tiến.\nChế độ BHYT, BHXH theo Luật Lao động.\nKhám sức khỏe định kỳ hàng năm.\nDu lịch hàng năm (trong và ngoài nước)\nTham gia các hoạt động, sự kiện của công ty.",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: Tầng 2, Tòa N09-B2 KĐT Dịch Vọng, Phường Cầu Giấy (Phường Cầu Giấy thuộc quận Cầu Giấy cũ)\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:30)\nThứ 7 (từ 08:00 đến 12:00)\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 13/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  },
+  {
+   "url": "https://www.topcv.vn/viec-lam/senior-tester-automation-manual-id1792/2333659.html",
+   "title": "Senior Tester (Automation/Manual) - ID1792",
+   "company": "Ngân Hàng TMCP Việt Nam Thịnh Vượng (VPBank)",
+   "query": "https://www.topcv.vn/tim-viec-lam-software-testing-cr257cb259",
+   "score": 1,
+   "via": "category",
+   "chips": {
+    "Yêu cầu": [
+     "5 năm kinh nghiệm chuyên môn",
+     "Đại Học trở lên"
+    ],
+    "Chuyên môn": [
+     "Software Tester (Automation & Manual)",
+     "IT - Phần mềm"
+    ]
+   },
+   "sections": {
+    "Tổng quan": "Gửi tôi việc làm tương tự",
+    "Mô tả công việc": "Study the requirement for Product/API/System developed\nDesign test scenarios for Product/API/System developed\nDevelop automation test script for Micro-service application and API (Nice to have)\nExecute SIT\nSupport SIT and UAT testing\nSupport verify issue/problem fix\nReview and accept testing related deliverables from vendor\nResearch and improve automation testing framework/standard (Nice to have)\nTraining for other members in your team\nManage automation activities implemented by vendor in the project",
+    "Yêu cầu ứng viên": "1. Trình độ đào tạo\n\nEducational Qualifications\n\n• Bachelor’s degree in Computer Science, Engineering, Mathematics, or related field of study: or equivalent education, training & experience\n\n2. Kiến thức/ Chuyên môn cần có\n\nRelevant Knowledge/ Expertise\n\n• Having at least 5 years’ experience Testing with Banking/Financial product, banking system. web service API testing (SOAP and Restful)\n\n• Having experience with API testing tool like SoapUI, Postman\n\n• Having experience with design and develop automation test script base on Java development language\n\n• Having experience with database like MS SQL, MySQL, Oracle, Mongo\n\n• Familiar with CI/CD tools like Jenkin, GIT, Ant, Maven, Gradle or similarly\n\n3. Các kỹ năng/ Skills\n\n• Ability in English reading and writing (mandatory), and speaking, listening (preferable).\n\n• Teamwork, careful, attention to detail, logical thinking\n\n• Self-development.\n\n• Communication, negotiation, and problem solving\n\n• Having manager experience with team size 3-5 members\n\n4. Các kinh nghiệm liên quan/ Relevant Experience\n\n• Banking domain experiences\n\n• Agile/Scrum experiences\n\n5. Các năng lực liên quan khác\n\nKiến thức ngành\nIT - Phần mềm",
+    "Quyền lợi ứng viên": "Thu nhập hấp dẫn, lương thưởng cạnh tranh theo năng lực\nThưởng các Ngày lễ, Tết (theo chính sách ngân hàng từng thời kỳ)\nĐược vay ưu đãi theo chính sách ngân hàng từng thời kỳ\nChế độ ngày phép hấp dẫn theo cấp bậc công việc\nBảo hiểm bắt buộc theo luật lao động + Bảo hiểm VPBank care cho CBNV tùy theo cấp bậc và thời gian công tác\nĐược tham gia các khóa đào tạo tùy thuộc vào Khung đào tạo cho từng vị trí\nMôi trường làm việc năng động, thân thiện, có nhiều cơ hội học đào tạo, học hỏi và phát triển; được tham gia nhiều hoạt động văn hóa thú vị (cuộc thi về thể thao, tài năng, hoạt động teambuiding...)",
+    "Địa điểm và thời gian": "Địa điểm làm việc\nHà Nội: (Tất cả các phường) - Phạm vi làm việc trên toàn khu vực trên.\nThời gian làm việc\nThứ 2 - Thứ 6 (từ 08:00 đến 17:00)\nThứ 7 (từ 08:00 đến 12:00)\nThứ 2 – Thứ 6 & 2 sáng Thứ 7/ tháng\nCách thức ứng tuyển\nỨng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây.\nỨng tuyển ngay\nLưu tin\n\nHạn ứng tuyển: 15/11/2026\n\nBáo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu hiệu lừa đảo, hãy phản ánh với chúng tôi.",
+    "Việc làm liên quan": "Đang tải việc làm liên quan...",
+    "Thông tin chung": "Cấp bậc\nNhân viên\nHọc vấn\nĐại Học trở lên\nSố lượng tuyển\n1 người\nHình thức làm việc\nLàm việc tại văn phòng / Onsite\nLoại hình làm việc\nToàn thời gian"
+   }
+  }
+ ]
+}

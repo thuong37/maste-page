@@ -1,0 +1,36 @@
+{
+  "id": 51,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Bảo vệ/Bảo trì/Sửa chữa",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên (1 trưởng phòng sửa chữa): 3 JD bảo vệ (dưới 1 đến 1 năm, THCS/THPT, Nam), 3 JD sửa chữa điện thoại/máy tính (không đến 2 năm, trung cấp trở lên, Nam 20-30); hai hướng nghề khác nhau",
+  "muc": {
+    "anh-chan-dung": "nen — JD#1 'ngoại hình tươm tất, tác phong chuyên nghiệp' (bảo vệ), JD#5 không xăm trổ/dị tật/dị hình (2/6 nhắc hình thức); 5/6 nêu giới tính/độ tuổi; ảnh gọn gàng là lợi thế",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc định hướng/mục tiêu",
+    "kinh-nghiem-lam-viec": "nen — 6/6 JD nhắc; bảo vệ ưu tiên kinh nghiệm bảo vệ trường học/bộ đội xuất ngũ; sửa chữa ưu tiên điện thoại/laptop (JD#3 không yêu cầu)",
+    "hoc-van": "nen — bảo vệ chỉ cần THCS/THPT (9/12), kỹ thuật sửa chữa cần trung cấp trở lên ngành Điện tử/CNTT; ghi ngắn",
+    "ky-nang-chuyen-mon": "can — bảo vệ: kiểm soát ra vào, tuần tra, PCCC, giám sát camera, lập biên bản; sửa chữa: chẩn đoán lỗi phần cứng/phần mềm, thay linh kiện, bảo hành, quản lý đội kỹ thuật (JD#2)",
+    "ky-nang-mem": "can — 6/6: trung thực, cẩn thận, trách nhiệm, giao tiếp, xử lý tình huống, chịu áp lực, làm việc nhóm/độc lập",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc phần mềm",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ (bảo vệ chỉ cần có bằng cấp hiện hữu)",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "nen — JD#2 kiểm soát số liệu, doanh số, hiệu suất nhân sự, lỗi quay lại (1/6, vị trí trưởng phòng)",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#3 nhận sinh viên mới ra trường, JD#1 dưới 1 năm (2/6)",
+    "giay-phep": "khong — không JD nào nhắc (tín hiệu bằng lái 2/6 không xác nhận trong 6 JD)",
+    "thong-tin-ca-nhan-mo-rong": "can — 6/6 JD nêu giới tính Nam hoặc độ tuổi (18-48, 20-30, 30-50, 20-45); bảo vệ yêu cầu không xăm trổ, không tiền án tiền sự, không bệnh truyền nhiễm, làm ca xoay",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["bảo vệ", "tuần tra/kiểm soát ra vào", "PCCC", "ca xoay", "sửa chữa điện thoại/laptop", "chẩn đoán lỗi phần cứng", "bảo hành", "không tiền án tiền sự"],
+  "bangChung": [
+    "JD#1: 'Nam, tuổi từ 18-48'; 'Ngoại hình tươm tất, tác phong chuyên nghiệp'; 'Ưu tiên ... bộ đội xuất ngũ'; 'ca xoay'",
+    "JD#2: 'Có từ 2 năm kinh nghiệm trong lĩnh vực sửa chữa điện thoại/laptop'; 'kiểm soát số liệu, doanh số, chi phí'",
+    "JD#3: 'Không yêu cầu kinh nghiệm chuyên sâu'; 'Nam. Độ tuổi: 18 – 28'; 'sinh viên mới ra trường'",
+    "JD#5: 'Không xăm trổ, không mắc các tệ nạn xã hội, không tiền án, tiền sự'; 'Nam, tuổi từ 30 – 50'",
+    "JD#6: 'Có kinh nghiệm làm bảo vệ 1 năm trở lên'; 'Độ tuổi: Từ 20 – 45 tuổi'"
+  ],
+  "ghiChu": "Hai nhóm vị trí (bảo vệ và sửa chữa điện thoại) khác nhau; mục kỹ năng chuyên môn phụ thuộc vị trí; CV tối giản."
+}

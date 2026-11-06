@@ -1,0 +1,36 @@
+{
+  "id": 59,
+  "nhom": "Lao động phổ thông",
+  "nghe": "Thợ xây dựng",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5/5 JD thợ/công nhân: 4 thợ sơn (sơn xây dựng, sơn nước, sơn nhựa, sơn xe ô tô; không đến 2 năm kinh nghiệm), 1 công nhân/đội trưởng thi công (không yêu cầu kinh nghiệm); từ THCS/THPT/trung cấp",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình; JD#4 chỉ nêu Nam, tuổi 23-40 (1/5); công việc tay nghề (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc định hướng/mục tiêu",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD nhắc; thợ sơn/thợ nề/thợ xây, phun sơn, sơn xe; 3/5 đòi 2 năm; nên ghi loại công trình, hạng mục",
+    "hoc-van": "nen — JD chỉ yêu cầu THCS/THPT/trung cấp, JD#5 'không yêu cầu bằng cấp cao'; ghi ngắn",
+    "ky-nang-chuyen-mon": "can — pha sơn, bả bột, chà nhám, lăn/phun sơn, thi công trần thạch cao, xây tô, đọc bản vẽ xây dựng, phân công tổ công nhân, an toàn lao động",
+    "ky-nang-mem": "nen — 2/5: làm việc độc lập và nhóm, chịu khó, trung thực, cẩn thận, trách nhiệm (JD#2, #5)",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc phần mềm (máy phun sơn là thiết bị)",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — JD#1 dặm vá/bảo trì các hạng mục xây dựng, JD#5 công trình thi công (tín hiệu dự án 1/5); nên ghi công trình đã làm",
+    "thanh-tich-kpi": "nen — JD#1, #2 đảm bảo chất lượng và tiến độ, kiểm tra độ bám dính/độ bóng (2/5); không có chỉ tiêu số",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "nen — nghề thợ nên có ảnh công trình đã hoàn thiện (suy từ tính chất công việc; không JD nhắc)",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#2, JD#5 không yêu cầu kinh nghiệm/đào tạo (2/5)",
+    "giay-phep": "khong — không JD nào nhắc (JD#4 ưu tiên hộ khẩu Đồng Nai, không phải giấy phép)",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#4 Nam tuổi 23-40, ưu tiên hộ khẩu Đồng Nai; JD yêu cầu sức khỏe tốt (2/5 nêu thẳng)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["thợ sơn", "bả bột/chà nhám/lăn sơn", "thợ nề/xây tô", "trần thạch cao", "phun sơn", "sơn xe ô tô", "đội trưởng thi công", "an toàn lao động"],
+  "bangChung": [
+    "JD#1: 'Có kinh nghiệm từ 2 năm làm thợ sơn, thợ xây dựng, thợ nề'; 'Thành thạo kỹ năng bả bột, chà nhám, lăn sơn'",
+    "JD#2: 'Không yêu cầu kinh nghiệm, sẵn sàng đào tạo'; 'Có sức khỏe tốt, chịu khó'",
+    "JD#3: 'Ít nhất 2 năm kinh nghiệm ở vị trí kỹ thuật phun sơn trên bề mặt nhựa'",
+    "JD#4: 'Giới tính: Nam'; 'Kinh nghiệm từ 2 năm trở lên'; 'Ưu tiên hộ khẩu tại Đồng Nai'",
+    "JD#5: 'Biết đọc hiểu bản vẽ xây dựng'; 'Không yêu cầu bằng cấp cao; ưu tiên người có kinh nghiệm thực tế'"
+  ],
+  "ghiChu": "Chỉ 5 JD, thiên về thợ sơn; CV tối giản."
+}

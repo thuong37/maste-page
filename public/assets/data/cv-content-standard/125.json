@@ -1,0 +1,36 @@
+{
+  "id": 125,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Xuất nhập khẩu/Logistics",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5/5 JD cấp nhân viên (0-2 năm, CĐ/ĐH): 3 JD sales XNK/logistics, 1 JD nhân viên chứng từ XNK, 1 JD kế toán tổng hợp logistics (lệch sang kế toán)",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 2/5 nêu tuổi/giới tính (nữ 24-38; từ 24 tuổi); ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 1/5 nhắc định hướng lâu dài trong logistics; nên nêu hướng sales/chứng từ",
+    "kinh-nghiem-lam-viec": "can — 5/5 nhắc kinh nghiệm (0-3 năm), ưu tiên freight forwarding, XNK thực phẩm, kho lạnh, kế toán logistics",
+    "hoc-van": "can — 5/5 nêu CĐ/ĐH, ngành Kinh tế đối ngoại, XNK, Logistics, Ngoại thương, Kế toán",
+    "ky-nang-chuyen-mon": "can — chứng từ XNK (invoice, packing list, B/L), thủ tục hải quan, sea/air freight, FCL/LCL, báo giá cước, hạch toán và công nợ logistics",
+    "ky-nang-mem": "can — 4/5: giao tiếp, đàm phán, chủ động, chịu áp lực KPI, cẩn thận",
+    "cong-cu-phan-mem": "nen — 1/5 nêu Excel và phần mềm kế toán; ít JD nhắc phần mềm",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "khong — không JD nào nhắc",
+    "thanh-tich-kpi": "can — 5/5 nhắc kết quả/KPI/thành tích kinh doanh (JD#2 'thành tích kinh doanh thực tế'); CV nên có số liệu doanh số",
+    "ngoai-ngu": "can — 4/5: tiếng Anh giao tiếp/tốt, Trung/Nhật/Hàn là lợi thế",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "nen — JD#2 thích 'thành tích kinh doanh thực tế'; không JD nào nhắc giải thưởng",
+    "hoat-dong-ngoai-khoa": "nen — JD#5 chấp nhận sinh viên mới/trái ngành có định hướng",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 2/5 nêu thẳng nữ 24-38 tuổi, từ 24 tuổi; JD#1 đi công tác nước ngoài",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Chứng từ xuất nhập khẩu", "Freight Forwarding", "Sea/Air Freight", "FCL/LCL", "Incoterms", "thủ tục hải quan", "kho lạnh/3PL", "Sales Logistics"],
+  "bangChung": [
+    "JD#1: 'Làm Việc Với Các Chứng Từ Xuất Nhập Khẩu (invoice, Packing List, Bill Of Lading...)'; 'Nữ', 'Tuổi 24 - 38'",
+    "JD#2: 'Có thành tích kinh doanh thực tế'; 'Hiểu ít nhất một nhóm dịch vụ Sea Freight/Air Freight/FCL/LCL'",
+    "JD#3: 'Sử dụng tốt Excel và phần mềm kế toán'; 'Ưu tiên ứng viên từng làm Kế toán Logistics'",
+    "JD#4: 'chịu được áp lực KPI'; 'Biết tiếng Anh hoặc tiếng Trung là lợi thế'",
+    "JD#5: 'Chấp nhận sinh viên mới tốt nghiệp'; 'Tiếng Anh giao tiếp tốt (Đọc - Viết)'"
+  ],
+  "ghiChu": "JD#3 (kế toán tổng hợp logistics) lệch nghề."
+}

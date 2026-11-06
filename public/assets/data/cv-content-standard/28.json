@@ -1,0 +1,36 @@
+{
+  "id": 28,
+  "nhom": "Chăm sóc khách hàng (Customer Service)/Vận hành",
+  "nghe": "Quản lý vận hành",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp quản lý/trưởng-phó phòng (2-5 năm kinh nghiệm quản lý, tổng 2-5+ năm), cao đẳng/ĐH trở lên; ngành vận hành tòa nhà (4 JD), F&B/bakery, phòng chờ sân bay, TMĐT",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình; 3/6 chỉ nêu tuổi/giới tính Nam; vị trí quản lý vận hành (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — dùng để nêu định hướng quản lý vận hành; không JD nhắc thẳng (suy từ tính chất công việc)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD đòi 2-5 năm kinh nghiệm quản lý vận hành (tòa nhà, F&B, sân bay, TMĐT)",
+    "hoc-van": "can — 6/6 nêu bậc học; chuyên ngành Kỹ thuật Điện, Xây dựng, QTKD, Quản lý bất động sản, Kinh tế",
+    "ky-nang-chuyen-mon": "can — 6/6: xây dựng quy trình/SOP, kiểm soát chất lượng dịch vụ, quản lý hệ thống kỹ thuật tòa nhà/PCCC, quản lý ngân sách/chi phí, kiểm soát nhà thầu, kế hoạch doanh số",
+    "ky-nang-mem": "can — 6/6: lãnh đạo, quản lý đội nhóm, đàm phán, giải quyết vấn đề, lập kế hoạch, chịu áp lực",
+    "cong-cu-phan-mem": "nen — JD#2 MS Office, Canva, AI (1/6); JD#6 số liệu TMĐT",
+    "chung-chi": "nen — JD#2 tiêu chuẩn/ISO (hiểu biết), JD#5 quy định PCCC, Luật Nhà ở (kiến thức pháp luật, không chứng chỉ nêu thẳng)",
+    "du-an": "can — 3/6 nhắc dự án/khu chung cư/khu đô thị/dự án bất động sản đã quản lý (JD#4, #5 và JD#3); nên nêu quy mô tòa nhà/dự án",
+    "thanh-tich-kpi": "can — 4/6: theo dõi chỉ số vận hành, ngân sách vận hành, KPI đội ngũ, kế hoạch doanh số; CV cần số liệu chi phí/quy mô đội",
+    "ngoai-ngu": "nen — JD#1, JD#2 tiếng Anh giao tiếp (2/6)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — 6/6 JD đòi 2-5 năm kinh nghiệm",
+    "giay-phep": "nen — JD#1 bằng lái/phương tiện (1/6 theo tín hiệu), không rõ cụ thể (suy từ tính chất công việc)",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 JD nêu độ tuổi/giới tính (từ 30 tuổi; 30-49 Nam; 28-50 Nam)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["quản lý vận hành tòa nhà", "SOP/quy trình vận hành", "PCCC", "quản lý ngân sách/chi phí", "quản lý đội nhóm", "quản lý nhà thầu", "F&B", "chất lượng dịch vụ"],
+  "bangChung": [
+    "JD#1: 'Tối thiểu 4 năm kinh nghiệm quản lý vận hành trong lĩnh vực F&B'; 'Thiết lập SOP'; 'Từ 30 tuổi trở lên'",
+    "JD#2: 'Tối thiểu 2 năm kinh nghiệm ở vị trí quản lý'; 'MS Office, Canva, AI'",
+    "JD#3: 'ít nhất 2 năm kinh nghiệm Quản lý tòa nhà văn phòng'; 'Độ tuổi từ 30 - 49'",
+    "JD#4: 'Tối thiểu 03 năm ... quản lý vận hành bất động sản toà nhà cao tầng'; 'Luật Nhà ở'",
+    "JD#5: 'Tối thiểu 2 năm kinh nghiệm ở vị trí Kỹ sư trưởng'; 'PCCC'"
+  ],
+  "ghiChu": "JD#6 trùng với nghề id 26 (Tendre)."
+}

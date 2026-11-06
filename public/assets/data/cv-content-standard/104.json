@@ -1,0 +1,36 @@
+{
+  "id": 104,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Dịch vụ vệ sinh/nhà cửa",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "2/6 JD cấp nhân viên tạp vụ (0-1 năm, THCS/Trung cấp), 4/6 JD giám sát vệ sinh/công trình (0-3 năm, Sơ cấp đến CĐ; 3 JD quản lý/giám sát)",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào đòi ảnh; công việc tay chân/giám sát hiện trường (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "khong — không JD nào nhắc; chỉ có 'làm việc ổn định và lâu dài' ở JD#1",
+    "kinh-nghiem-lam-viec": "can — 6/6 nhắc kinh nghiệm hoặc không yêu cầu (tạp vụ 6 tháng, giám sát 2-3 năm), ưu tiên vệ sinh công nghiệp/bệnh viện/trường học/tòa nhà",
+    "hoc-van": "nen — 5/6 nêu cấp học (THCS đến CĐ, 1 JD không yêu cầu bằng cấp); không đòi chuyên ngành bắt buộc",
+    "ky-nang-chuyen-mon": "can — quy trình vệ sinh công nghiệp, hóa chất và máy móc vệ sinh, chấm công, phân công/giám sát chất lượng, đào tạo nhân viên mới, cấp phát vật tư",
+    "ky-nang-mem": "can — 5/6: chăm chỉ, trách nhiệm, giao tiếp, làm việc nhóm, chịu áp lực",
+    "cong-cu-phan-mem": "nen — 1/6 nêu biết tin học văn phòng là lợi thế",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — JD#5, JD#6 quản lý công trình/dự án vệ sinh; nên ghi công trình/địa điểm đã phụ trách",
+    "thanh-tich-kpi": "khong — không JD nào nhắc số liệu",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/6 nêu độ tuổi (tới 54, 25-50, 26-40, 22-40, 20-60), giới tính (nữ ở JD#2), sức khỏe, làm theo ca",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Vệ sinh công nghiệp", "tạp vụ", "giám sát vệ sinh", "chấm công", "hóa chất vệ sinh", "máy móc vệ sinh", "đào tạo nhân viên mới", "làm theo ca"],
+  "bangChung": [
+    "JD#1: 'Không yêu cầu kinh nghiệm, được hướng dẫn khi nhận việc'; 'Sức khỏe tốt, làm việc ổn định và lâu dài'",
+    "JD#2: 'Nữ. Tuổi < 54, có kinh nghiệm vị trí tương đương tối thiểu 6 tháng'; 'xoay ca linh hoạt'",
+    "JD#3: 'Chấm công hàng ngày, chụp ảnh gửi báo cáo'; 'Biết tin học văn phòng là một lợi thế'",
+    "JD#4: 'kiến thức vững chắc về các quy trình vệ sinh công nghiệp, các loại hóa chất và thiết bị vệ sinh chuyên dụng'",
+    "JD#6: 'Không yêu cầu bằng cấp'; 'độ tuổi : 20- 60 tuổi'"
+  ],
+  "ghiChu": ""
+}

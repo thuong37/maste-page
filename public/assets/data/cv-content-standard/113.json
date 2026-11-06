@@ -1,0 +1,35 @@
+{
+  "id": 113,
+  "nhom": "Phim và truyền hình/Báo chí/Xuất bản",
+  "nghe": "Phim và truyền hình",
+  "soJD": 4,
+  "doTinCay": "vua",
+  "capBac": "4/4 JD sát nghề cấp nhân viên biên kịch; 3 JD nhận 0-1 năm hoặc mới ra trường, 1 JD cần 1-2 năm; CĐ/ĐH trở lên",
+  "muc": {
+    "anh-chan-dung": "khong — 4 JD biên kịch không nêu ngoại hình; chỉ JD#1 (media kiêm diễn viên, lệch nghề) đòi ngoại hình, nên không tính vào số liệu",
+    "muc-tieu-nghe-nghiep": "nen — 1/4 JD nhắc đào tạo mới ra trường/yêu thích viết lách, storytelling; dùng nêu định hướng biên kịch (suy từ JD)",
+    "kinh-nghiem-lam-viec": "can — 4/4 JD hỏi kinh nghiệm biên kịch/viết nội dung (từ 6 tháng đến 1-2 năm), 1 JD không yêu cầu nhưng ưu tiên từng viết kịch bản stories",
+    "hoc-van": "can — 4/4 JD nêu CĐ/ĐH; ưu tiên ngành Ngôn ngữ Anh/Nhật, Báo chí, Truyền thông, Marketing hoặc được đào tạo nghề biên kịch/sáng tạo nội dung",
+    "ky-nang-chuyen-mon": "can — 4/4: ý tưởng, concept, xây dựng nhân vật, cốt truyện, tình huống, viết kịch bản video/phim AI/series/kids song, nhịp truyện và hook",
+    "ky-nang-mem": "can — 4/4: chủ động, trách nhiệm, bám deadline, nhận feedback, phối hợp với editor/nhóm sản xuất, sáng tạo",
+    "cong-cu-phan-mem": "can — 3/4: ChatGPT, Gemini, Claude, Kling, Veo3, Runway, MidJourney, Stable Diffusion; viết prompt (Prompt Engineering)",
+    "chung-chi": "nen — 1/4 JD ưu tiên chứng chỉ ngôn ngữ (tiếng Anh/Nhật); không JD nào đòi chứng chỉ nghiệp vụ",
+    "du-an": "can — 3/4 JD nhắc sản phẩm/kịch bản cụ thể (phim AI, kids cartoon, video ngắn, 2D/3D); nên liệt kê kịch bản đã viết",
+    "thanh-tich-kpi": "khong — không JD biên kịch nào nhắc chỉ tiêu/số liệu",
+    "ngoai-ngu": "nen — 1/4 JD cần đọc hiểu tiếng Anh hoặc Nhật cho kênh YouTube thị trường nước ngoài",
+    "portfolio-link": "can — 1/4 JD (Pantado) nêu portfolio/thành phẩm; 3 JD còn lại không nhắc nhưng nghề viết kịch bản nên có mẫu (suy từ tính chất công việc); đánh can theo nghề, bằng chứng trực tiếp yếu",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 1/4 JD nhận ứng viên mới ra trường, được đào tạo; ngoại khóa viết lách/truyền thông có thể bổ sung",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/4 JD nêu giới tính/độ tuổi (Nữ; tuổi 20-27); không phải đa số",
+    "so-thich": "nen — 2/4 JD nhắc yêu thích viết lách/yêu trẻ con là điểm cộng"
+  },
+  "tuKhoaNenCo": ["Biên kịch", "kịch bản video/YouTube", "phim AI", "storytelling", "xây dựng nhân vật", "kịch bản kids/cartoon", "prompt AI", "portfolio kịch bản"],
+  "bangChung": [
+    "JD#2 (Skyware): 'Sử dụng các công cụ AI (ChatGPT, Gemini, Claude...)'; 'Ưu tiên ứng viên tốt nghiệp ... Ngôn ngữ Anh, Ngôn ngữ Nhật, Báo chí, Truyền thông'",
+    "JD#3 (TWEN): 'Có kinh nghiệm biên kịch từ 06 tháng trở lên'; 'Có khả năng xây dựng nhân vật, tình huống, cao trào và mạch truyện'",
+    "JD#4 (PAMMedia): 'Kinh nghiệm tối thiểu 1 năm viết nội dung kids cartoon, kids song'; 'Thuần thục sử dụng AI'",
+    "JD#5 (Pantado): 'Có 1–2 năm kinh nghiệm viết kịch bản video'; 'viết prompt (Prompt Engineering)'; 'Có portfolio/...'"
+  ],
+  "ghiChu": "Loại JD#1 (Media kiêm diễn viên cho ngành điện mặt trời: quay/dựng/xuất hiện trước ống kính, lệch nghề) khỏi số liệu x/4; số JD thu được là 5. Sau crawl lại 4 JD sát nghề đều là biên kịch nội dung số/AI; thiếu hẳn đạo diễn, dựng phim, diễn viên truyền hình, nên chỉ đại diện cho hướng biên kịch."
+}

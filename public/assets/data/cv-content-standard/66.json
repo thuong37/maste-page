@@ -1,0 +1,36 @@
+{
+  "id": 66,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Sales Tài chính/Ngân hàng/Bảo hiểm",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên tư vấn; 3/6 không yêu cầu hoặc dưới 1 năm kinh nghiệm (6 tháng sales), 1 JD 2 năm, 1 JD 3 năm; THPT đến Đại học",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; 1/6 nêu ngoại hình khá ưa nhìn, 1/6 có giọng nói tốt, 4/6 nêu độ tuổi; nghề gặp khách nên ảnh nghiêm túc là lợi thế",
+    "muc-tieu-nghe-nghiep": "can — 3/6 JD nhấn đam mê kinh doanh, cầu tiến, cam kết lâu dài; nên nêu mục tiêu rõ",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nêu kinh nghiệm (3/6 chấp nhận chưa có, 3/6 yêu cầu 6 tháng đến 3 năm sales/tư vấn); nên ghi sản phẩm bán và kênh (Bancassurance)",
+    "hoc-van": "can — 6/6 nêu bậc học từ THPT đến Đại học, ưu tiên Kinh tế, Tài chính, Ngân hàng, Bảo hiểm",
+    "ky-nang-chuyen-mon": "can — 6/6: tư vấn sản phẩm bảo hiểm/vay/đầu tư, chăm sóc khách hàng, hoàn thiện hồ sơ hợp đồng, kiến thức tài chính-ngân hàng",
+    "ky-nang-mem": "can — 5/6: giao tiếp, thuyết phục, đàm phán, lắng nghe, xây dựng quan hệ, làm việc nhóm",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc phần mềm",
+    "chung-chi": "nen — 1/6 học lấy chứng chỉ MIT/ILP của Bộ Tài chính sau khi vào làm; không JD đòi chứng chỉ trước",
+    "du-an": "khong — chỉ nhắc dự án hợp tác ngân hàng ở phần mô tả; không đòi dự án",
+    "thanh-tich-kpi": "can — 3/6 nhắc chỉ tiêu doanh số tháng/quý/năm, thu nhập; CV nên có số liệu doanh số, số hợp đồng",
+    "ngoai-ngu": "khong — không JD nào nhắc",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc; chỉ hữu ích nếu có danh hiệu sales xuất sắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 nhận chưa có kinh nghiệm hoặc dưới 1 năm",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 4/6 nêu độ tuổi (20+, 23-35, 25-39); 2/6 phát âm chuẩn/giọng nói tốt; nên có độ tuổi, nơi ở",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["tư vấn bảo hiểm", "Bancassurance", "tư vấn tài chính", "chăm sóc khách hàng", "chỉ tiêu doanh số", "bảo hiểm nhân thọ", "thẻ tín dụng/gói vay", "đàm phán", "giao tiếp thuyết phục"],
+  "bangChung": [
+    "JD#1 (Home Credit): 'Từ đủ 20 tuổi trở lên, có bằng tốt nghiệp THPT'; 'Có giọng nói tốt'",
+    "JD#2: 'Học lấy chứng chỉ MIT ... ILP của Bộ Tài Chính'; 'Có đam mê và khát khao kinh doanh'",
+    "JD#3 (Sun Life): 'Có tối thiểu 06 tháng kinh nghiệm bán hàng trong lĩnh vực tài chính, ngân hàng, bảo hiểm'",
+    "JD#4 (MB Life): 'Ngoại hình: Khá, ưa nhìn'; 'đảm bảo chỉ tiêu doanh số theo tháng/quý/năm'",
+    "JD#6 (Prudential): 'Độ tuổi 25-39 tuổi'; 'ít nhất 2 năm kinh nghiệm ... tư vấn cho khách hàng'"
+  ],
+  "ghiChu": ""
+}

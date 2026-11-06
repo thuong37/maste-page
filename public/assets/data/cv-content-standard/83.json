@@ -1,0 +1,36 @@
+{
+  "id": 83,
+  "nhom": "Sản xuất",
+  "nghe": "Hoá chất/Hoá mỹ phẩm",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD cấp nhân viên (kỹ thuật viên lab, R&D, xét nghiệm); 3/6 không hoặc dưới 1 năm kinh nghiệm, 1 JD đòi trên 5 năm; từ THPT đến Đại học; JD khá lệch (lab hóa, R&D nhựa/cà phê, lab IVF)",
+  "muc": {
+    "anh-chan-dung": "nen — không JD nào đòi ảnh; 1/6 nêu độ tuổi 22-30, 1/6 nêu giới tính Nữ; ảnh gọn gàng là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — không JD nhắc trực tiếp; nên nêu định hướng phòng thí nghiệm/R&D hóa chất (suy từ tính chất công việc)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nêu mức kinh nghiệm (từ không yêu cầu đến 7 năm test màu, nhuộm sợi); nên ghi rõ phép thử, thiết bị đã dùng",
+    "hoc-van": "can — 6/6 JD nêu bậc học (THPT đến Đại học) và chuyên ngành Hóa học/Kỹ thuật hóa/Công nghệ thực phẩm/Kỹ thuật xét nghiệm y học",
+    "ky-nang-chuyen-mon": "can — 6/6: lấy mẫu, pha dung dịch, phép phân tích/thí nghiệm, kiểm tra chất lượng, test màu/nhuộm sợi, phát triển công thức sản phẩm",
+    "ky-nang-mem": "can — 5/6: cẩn thận, trung thực, trách nhiệm, làm việc độc lập/nhóm, chịu áp lực",
+    "cong-cu-phan-mem": "nen — 1/6 Word, Excel; 1/6 máy Datacolor; thiết bị lab là công cụ chính",
+    "chung-chi": "nen — 1/6 chứng chỉ hành nghề và chứng chỉ hỗ trợ sinh sản (lab IVF); 1/6 ưu tiên kiến thức ISO, GMP, GLP",
+    "du-an": "nen — chỉ JD R&D (2/6) nhắc phát triển sản phẩm/công thức mới; nên nêu đề tài nghiên cứu nếu có",
+    "thanh-tich-kpi": "nen — 1/6 có chỉ tiêu test 5 màu/ngày đạt yêu cầu khách hàng; còn lại không nhắc",
+    "ngoai-ngu": "nen — 3/6 nhắc tiếng Trung (lợi thế/HSK 3), 1/6 tiếng Anh giao tiếp, đọc tài liệu kỹ thuật",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 2/6 nhận ứng viên mới ra trường/không yêu cầu kinh nghiệm; dành cho sinh viên mới ra trường",
+    "giay-phep": "nen — 1/6 chứng chỉ hành nghề (xét nghiệm y học); còn lại không nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/6 nêu độ tuổi/giới tính; nên có độ tuổi, nơi ở (suy từ tính chất công việc)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["phòng thí nghiệm", "pha dung dịch", "phân tích mẫu", "SOP", "ISO/GMP/GLP", "R&D", "phát triển công thức", "test màu Datacolor", "an toàn hóa chất", "tiếng Trung"],
+  "bangChung": [
+    "JD#1: 'Tốt nghiệp Cao đẳng/Đại học chuyên ngành Hóa học'; 'Biết tiếng Trung là một lợi thế'",
+    "JD#2: 'Biết sử dụng máy datacolor'; 'Test mỗi ngày 5 màu đạt yêu cầu KH'",
+    "JD#3: 'Ưu tiên ứng viên có kiến thức về hệ thống quản lý chất lượng như ISO, GMP, GLP'; 'Word, Excel'",
+    "JD#4: 'Độ tuổi: 22-30 tuổi'; 'Tư duy nghiên cứu, phân tích'",
+    "JD#6: 'Có chứng chỉ hành nghề; có các chứng chỉ lẻ liên quan đến lĩnh vực hỗ trợ sinh sản'"
+  ],
+  "ghiChu": "JD lệch nhau (lab hóa, R&D nhựa, R&D cà phê, lab IVF) nên mục chung chỉ mang tính tổng quát."
+}

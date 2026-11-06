@@ -1,0 +1,37 @@
+{
+  "id": 5,
+  "nhom": "Kinh doanh/Bán hàng",
+  "nghe": "Sales Admin/Sales Support",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên; 2 JD nhận không/dưới 1 năm kinh nghiệm, 2 JD yêu cầu 1 năm, 2 JD yêu cầu 2 năm; từ Cao đẳng trở lên",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; 5/6 JD nêu giới tính nữ/độ tuổi hoặc giọng miền Bắc, nên ảnh gọn gàng là lợi thế (suy từ tính chất công việc văn phòng)",
+    "muc-tieu-nghe-nghiep": "nen — 1/6 JD (Comi Homes) nhắc phát triển quản trị kinh doanh, dữ liệu, vận hành; dùng nêu định hướng sales admin",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD hỏi mức kinh nghiệm (0-2 năm); nên ghi vị trí sales admin/trợ lý kinh doanh, báo giá, đơn hàng, công nợ",
+    "hoc-van": "can — 6/6 JD nêu Cao đẳng/Đại học, chuyên ngành Kinh tế/Kinh doanh/Kế toán, Logistics/Ngoại thương hoặc kỹ thuật tùy ngành hàng",
+    "ky-nang-chuyen-mon": "can — 6/6: báo giá, lên đơn, theo dõi đơn hàng/công nợ, soạn hợp đồng, chứng từ thanh toán, báo cáo nhập-xuất-tồn, xử lý/tổng hợp dữ liệu",
+    "ky-nang-mem": "can — 5/6: giao tiếp, chăm sóc khách hàng, cẩn thận/trung thực số liệu, tổ chức nhiều đầu việc, phối hợp bộ phận, chịu áp lực",
+    "cong-cu-phan-mem": "can — 5/6 nêu Word/Excel/tin học văn phòng; 1 JD Google Sheets, 1 JD phần mềm FAST, 1 JD ứng dụng AI/tự động hóa",
+    "chung-chi": "khong — không JD nào nhắc chứng chỉ",
+    "du-an": "nen — 1/6 (Comi Homes) nhắc cải tiến quy trình/tự động hóa; ghi dự án chỉ khi có",
+    "thanh-tich-kpi": "nen — chỉ 1/6 nhắc báo cáo số liệu bán hàng; nên nêu số đơn/độ chính xác số liệu đã xử lý (suy từ công việc)",
+    "ngoai-ngu": "nen — 2/6 JD nêu tiếng Anh (giao tiếp/đọc hiểu, email tốt), 1 JD ưu tiên nộp CV tiếng Anh",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 1/6 JD không cần kinh nghiệm, ứng viên mới ra trường có thể ghi hoạt động; không JD nhắc trực tiếp",
+    "giay-phep": "nen — 1/6 (Truwater) nêu có phương tiện di chuyển",
+    "thong-tin-ca-nhan-mo-rong": "can — 5/6 JD nêu thẳng giới tính (nữ) và/hoặc độ tuổi (21-30, 22-30, 24-28) hoặc giọng miền Bắc",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Sales Admin", "báo giá", "đơn hàng", "công nợ", "hợp đồng", "chứng từ", "báo cáo số liệu", "Excel", "Word", "chăm sóc khách hàng", "quản lý dữ liệu", "tiếng Anh"],
+  "bangChung": [
+    "JD#1: 'Lên đơn đặt hàng, quản lý và thu hồi công nợ khách hàng'; 'Sử dụng thành thạo ... word, excel'",
+    "JD#2: 'Ưu tiên nộp CV tiếng Anh'; 'Có phương tiện di chuyển'; Nữ, Cao đẳng trở lên",
+    "JD#3: 'Tối thiểu 02 năm kinh nghiệm ở vị trí Sales Admin'; 'Excel/Google Sheets'; Tuổi 24-28, Nữ, giọng miền Bắc",
+    "JD#4: 'Giới tính: Nữ, độ tuổi: 21 - 30 tuổi'; 'Soạn hợp đồng nguyên tắc, hợp đồng mua bán'",
+    "JD#5: 'Nhập giá mua/giá bán vào phần mềm FAST'; 'Tiếng Anh email tốt, thành thạo Excel'",
+    "JD#6: 'Chỉ nhận Nữ'; 'Độ tuổi ứng viên từ năm 1995->2003'"
+  ],
+  "ghiChu": "Crawl lại: 6/6 JD sát nghề (JD#5 là Pricing & Sales Support ngành forwarder, vẫn thuộc nhóm hỗ trợ bán hàng). Chuyên ngành ưu tiên khác nhau theo ngành hàng của từng công ty."
+}

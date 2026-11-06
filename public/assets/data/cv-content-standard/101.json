@@ -1,0 +1,36 @@
+{
+  "id": 101,
+  "nhom": "Bán lẻ/Dịch vụ đời sống",
+  "nghe": "Bán lẻ",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "4/6 JD cấp nhân viên/sales (1-5 năm), 1 JD ASM (2 năm, quản lý đội sales), 1 JD quản lý marketing (5 năm, 2 năm quản lý); JD#6 là C&B chuỗi bán lẻ (lạc sang nhân sự)",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; 3/6 nêu tuổi/giới tính (nữ 23+, 25-40, ≤36); nghề tiếp xúc khách nên ảnh chỉn chu là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 1/6 nhắc định hướng kết quả; nên nêu hướng sales/quản lý kênh bán lẻ",
+    "kinh-nghiem-lam-viec": "can — 6/6 hỏi 1-5 năm, ưu tiên FMCG, Modern Trade, chuỗi bán lẻ, mỹ phẩm, thực phẩm",
+    "hoc-van": "can — 6/6 nêu CĐ/ĐH (JD#3 chỉ THPT), ngành QTKD, Marketing, Kinh tế, Thương mại",
+    "ky-nang-chuyen-mon": "can — quản lý kênh GT/MT, nhà phân phối, listing sản phẩm, PO/tồn kho, trưng bày in-store, đàm phán, phát triển thị trường, marketing",
+    "ky-nang-mem": "can — 5/6: giao tiếp, đàm phán, thuyết phục, giải quyết vấn đề, chịu áp lực, làm việc nhóm",
+    "cong-cu-phan-mem": "can — 4/6: Office (thành thạo), quản lý đơn hàng/tồn kho; JD#4 nhắc TikTok/Facebook",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "nen — JD#4 chiến dịch marketing/khuyến mãi; JD#1 phát triển thị trường; nên ghi chiến dịch/khu vực phụ trách",
+    "thanh-tich-kpi": "can — 4/6 nêu doanh số, KPI, độ phủ cửa hàng; CV nên có số liệu doanh số/tăng trưởng",
+    "ngoai-ngu": "nen — 4/6 nhắc tiếng Anh (giao tiếp cơ bản/đọc hiểu, báo cáo cho Thái Lan), JD#2 tiếng Trung giao tiếp",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc",
+    "giay-phep": "can — 2/6 nêu có phương tiện di chuyển/sẵn sàng đi thị trường (JD#1, JD#5)",
+    "thong-tin-ca-nhan-mo-rong": "can — 3/6 nêu tuổi/giới tính (nữ từ 23, 25-40, nữ ≤36); 2/6 nêu đi thị trường/có phương tiện",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Sales FMCG", "Modern Trade/General Trade", "nhà phân phối", "listing sản phẩm", "doanh số KPI", "đàm phán", "in-store execution", "Key Account"],
+  "bangChung": [
+    "JD#1: 'Có từ 2 năm kinh nghiệm Sales FMCG'; 'Có kinh nghiệm quản lý kênh General Trade (GT) & Modern Trade (MT)'",
+    "JD#2: 'Có từ 02 năm kinh nghiệm Sales B2B'; 'Tiếng Trung Giao tiếp'",
+    "JD#3: 'Giới tính: Nữ, từ 23 tuổi trở lên'; 'Đảm bảo đạt và vượt các chỉ tiêu doanh số'",
+    "JD#5: 'Sẵn sàng đi thị trường'; 'Có phương tiện di chuyển'; 'thực hiện các báo cáo ... cho đội ngũ tại Thái Lan'",
+    "JD#4: 'Tối thiểu 05 năm kinh nghiệm trong lĩnh vực Marketing'; 'am hiểu TikTok, Facebook'"
+  ],
+  "ghiChu": "JD#4 (marketing) và JD#6 (C&B) lệch hướng; cốt lõi là sales bán lẻ/FMCG."
+}

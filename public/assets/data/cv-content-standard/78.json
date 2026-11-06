@@ -1,0 +1,36 @@
+{
+  "id": 78,
+  "nhom": "Kế toán/Kiểm toán/Thuế",
+  "nghe": "Kiểm toán",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "6/6 JD yêu cầu Đại học; 3/6 trợ lý/kỹ thuật viên (không đến 1 năm kinh nghiệm), 2/6 trưởng nhóm kiểm toán (2 năm), 1/6 kiểm toán nội bộ (5 năm)",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; kiểm toán gặp khách hàng nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — không JD nhắc trực tiếp; nên nêu định hướng kiểm toán/kiểm soát nội bộ (suy từ tính chất công việc)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nêu kinh nghiệm kế toán/kiểm toán (từ không yêu cầu đến 5 năm); nên ghi công ty kiểm toán, loại hình khách hàng (FDI), số cuộc kiểm toán",
+    "hoc-van": "can — 6/6 nêu Đại học chuyên ngành Kế toán, Kiểm toán, Tài chính (kiểm toán xây dựng: ngành kỹ thuật/kinh tế xây dựng)",
+    "ky-nang-chuyen-mon": "can — 6/6: lập kế hoạch và thực hiện kiểm toán, lập hồ sơ/giấy tờ làm việc, chuẩn mực kế toán-kiểm toán, thuế, kiểm soát nội bộ",
+    "ky-nang-mem": "can — 6/6: cẩn thận, trung thực, trách nhiệm, giao tiếp, làm việc nhóm, quản lý thời gian, sức khỏe tốt, sẵn sàng đi công tác",
+    "cong-cu-phan-mem": "nen — 2/6 Excel/Microsoft Office; phần mềm dự toán là lợi thế (kiểm toán xây dựng)",
+    "chung-chi": "nen — 3/6 ưu tiên CPA, ACCA hoặc chứng chỉ nghề nghiệp khác",
+    "du-an": "nen — 2/6 nhắc dự án (kiểm toán quyết toán dự án xây dựng; hợp đồng kiểm toán); nên nêu số hợp đồng/khách hàng đã tham gia",
+    "thanh-tich-kpi": "nen — chỉ nhắc hoàn thành đúng thời hạn, kiểm soát chất lượng hồ sơ; không có chỉ tiêu số cụ thể",
+    "ngoai-ngu": "nen — 2/6 ưu tiên ngoại ngữ tốt, tiếng Anh hoặc Trung",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — 3/6 nhận sinh viên mới tốt nghiệp/chưa có kinh nghiệm (được đào tạo)",
+    "giay-phep": "nen — 2/6 yêu cầu sức khỏe tốt, sẵn sàng đi công tác xa; không JD nhắc bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "nen — không JD nêu thẳng; nên có nơi ở, tình trạng sức khỏe/đi công tác (suy từ tính chất công việc)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["kiểm toán báo cáo tài chính", "chuẩn mực kiểm toán", "giấy tờ làm việc", "kiểm toán nội bộ", "kiểm soát nội bộ", "CPA/ACCA", "FDI", "kế toán thuế", "Excel", "sẵn sàng đi công tác"],
+  "bangChung": [
+    "JD#2: 'Chưa có kinh nghiệm sẽ được đào tạo'; 'Có sức khoẻ, sẵn sàng đi công tác xa'",
+    "JD#3: 'Có tối thiểu 1 năm kinh nghiệm làm kiểm toán tại các công ty kiểm toán'",
+    "JD#4: 'Ưu tiên ứng viên có CPA'; 'Có khả năng lãnh đạo, quản lý, phân công, kiểm soát nhóm kiểm toán'",
+    "JD#5: 'Ưu tiên ứng viên có CPA, ACCA'; 'tiếng Anh hoặc tiếng Trung trong công việc là một lợi thế'",
+    "JD#6: 'Có từ 05 năm kinh nghiệm... kiểm toán nội bộ'; 'Sử dụng tốt Microsoft Office, đặc biệt là Excel'"
+  ],
+  "ghiChu": "JD#1 là kiểm toán xây dựng cơ bản (ngành kỹ thuật), hơi lệch với kiểm toán tài chính."
+}

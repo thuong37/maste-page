@@ -1,0 +1,36 @@
+{
+  "id": 64,
+  "nhom": "Tài chính/Ngân hàng/Bảo hiểm",
+  "nghe": "Đầu tư và Tài trợ",
+  "soJD": 6,
+  "doTinCay": "vua",
+  "capBac": "2/6 thực tập sinh (sinh viên năm 3-cuối), 4/6 nhân viên/chuyên viên (từ dưới 1 năm đến trên 5 năm); Cao đẳng/Đại học chuyên ngành Tài chính, Ngân hàng, Chứng khoán, Kinh tế",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; 2/6 nêu độ tuổi (18-24, từ 22); ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "can — 2/6 JD nhấn đam mê chứng khoán/đầu tư, định hướng theo đuổi nghề tư vấn đầu tư; nên nêu mục tiêu rõ",
+    "kinh-nghiem-lam-viec": "can — 4/6 JD nêu kinh nghiệm (dưới 1 đến trên 5 năm) trong phân tích đầu tư, chứng khoán, tư vấn sản phẩm giá trị cao; nên ghi thị trường/sản phẩm đã làm",
+    "hoc-van": "can — 6/6 nêu chuyên ngành Tài chính, Ngân hàng, Chứng khoán, Kinh tế, Kế toán-Kiểm toán, Kinh tế xây dựng",
+    "ky-nang-chuyen-mon": "can — 6/6: phân tích báo cáo tài chính, thị trường, định giá, mô hình tài chính, thẩm định pháp lý dự án, tư vấn khách hàng",
+    "ky-nang-mem": "can — 4/6: giao tiếp, thuyết trình, thuyết phục, tư duy logic, làm việc nhóm/độc lập",
+    "cong-cu-phan-mem": "can — 3/6: Excel, PowerPoint, công cụ xử lý dữ liệu, CRM, mô hình tài chính",
+    "chung-chi": "nen — 1/6 nêu chứng chỉ; không JD đòi chứng chỉ bắt buộc ở các JD đọc được",
+    "du-an": "nen — 2/6 nhắc dự án đầu tư/M&A, dự án bất động sản; nên nêu dự án phân tích nếu có",
+    "thanh-tich-kpi": "nen — 1/6 nhắc tăng trưởng/dòng tiền; chưa có chỉ tiêu số; nên có kết quả đầu tư/khuyến nghị nếu có",
+    "ngoai-ngu": "nen — 1/6 tiếng Anh giao tiếp cơ bản",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "can — 2/6 JD thực tập nhận sinh viên năm 3-cuối (CLB, kinh nghiệm đầu tư chứng khoán cá nhân là lợi thế)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/6 nêu độ tuổi; nên có độ tuổi, nơi ở",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["phân tích báo cáo tài chính", "mô hình tài chính", "định giá", "chứng khoán", "phân tích đầu tư", "thẩm định pháp lý dự án", "tư vấn đầu tư", "Excel/PowerPoint", "CRM"],
+  "bangChung": [
+    "JD#1: 'kinh nghiệm từ 2 năm tư vấn sản phẩm trong các lĩnh vực định cư, du học, bất động sản, ngân hàng, bảo hiểm'",
+    "JD#2: 'Sinh viên năm 3, năm cuối'; 'Thành thạo Microsoft Office (đặc biệt là Excel và PowerPoint)'; 'Tuổi 18 - 24'",
+    "JD#3: 'Có mong muốn và đam mê với chứng khoán, đầu tư tài chính'",
+    "JD#4: 'Có trên 5 năm kinh nghiệm ... phân tích đầu tư'; 'biết xây dựng hoặc sử dụng mô hình tài chính'",
+    "JD#6: 'Có khả năng giao tiếp và thuyết trình tốt'; 'kỹ năng sử dụng Excel tốt'"
+  ],
+  "ghiChu": "JD#1 (tư vấn định cư) hơi lệch nghề; JD#5 thiên về thẩm định dự án BĐS."
+}

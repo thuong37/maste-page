@@ -1,0 +1,36 @@
+{
+  "id": 44,
+  "nhom": "Công nghệ Thông tin",
+  "nghe": "Product Management",
+  "soJD": 5,
+  "doTinCay": "vua",
+  "capBac": "5 JD: 3 nhân viên/product owner (không yêu cầu đến 3 năm), 1 Product Manager trưởng phòng (4 năm, 2 năm quản lý), 1 chuyên viên quản lý sản phẩm điện tử (2 năm); 2/5 JD thiên về quản lý nhà cung cấp/sourcing điện tử, 3/5 thiên về Product Owner/Manager phần mềm",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ngoại hình; JD#5 chỉ nêu Nam, năm sinh 1990-1998 (1/5); công việc sản phẩm (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — 3/5 JD nhắc chiến lược/định hướng sản phẩm; dùng để nêu định hướng PM/PO",
+    "kinh-nghiem-lam-viec": "can — 5/5 JD nhắc; Product Owner/PM SaaS, sourcing điện tử, quản lý sản phẩm; từ không yêu cầu đến 4 năm",
+    "hoc-van": "can — 5/5 nêu bậc học; ngành QTKD, Kinh doanh quốc tế, Marketing, Chuỗi cung ứng, Điện-Điện tử, Quản trị nhà hàng (JD#3)",
+    "ky-nang-chuyen-mon": "can — 5/5: hoạch định chiến lược/roadmap sản phẩm, product discovery, viết PRD, wireframe/prototype, phân tích funnel/cohort, A/B testing, đàm phán nhà cung cấp, nghiên cứu thị trường",
+    "ky-nang-mem": "can — 5/5: giao tiếp, thuyết phục, đàm phán, tư duy chiến lược/hệ thống, làm việc với Engineering",
+    "cong-cu-phan-mem": "can — 4/5: Figma, AI tạo prototype, tin học văn phòng, SaaS tools",
+    "chung-chi": "khong — không JD nào đòi chứng chỉ",
+    "du-an": "can — JD#4 phát triển sản phẩm SaaS qua nhiều vòng cải tiến, JD#5 đưa sản phẩm từ 0→1 (2/5); CV nên nêu sản phẩm đã quản lý và kết quả",
+    "thanh-tich-kpi": "can — 3/5 nhắc dữ liệu/chỉ số: funnel, cohort retention, ra quyết định bằng dữ liệu (JD#4, #5, #3); nên nêu số liệu sản phẩm",
+    "ngoai-ngu": "can — 2/5: tiếng Anh thành thạo (JD#2), giao tiếp đàm phán tiếng Anh tốt (JD#1)",
+    "portfolio-link": "nen — tín hiệu portfolio/sản phẩm 1/5; nên có link sản phẩm đã ra mắt (suy từ JD#5 'đưa sản phẩm 0→1')",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#2 không yêu cầu kinh nghiệm (1/5)",
+    "giay-phep": "khong — không JD nào nhắc",
+    "thong-tin-ca-nhan-mo-rong": "nen — JD#5 Nam, năm sinh 1990-1998 (1/5 nêu thẳng)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Product Owner/Manager", "roadmap sản phẩm", "PRD/product discovery", "funnel/cohort/A-B test", "SaaS", "wireframe Figma", "quản lý nhà cung cấp/sourcing", "đàm phán thương mại"],
+  "bangChung": [
+    "JD#1: 'Có từ 2–3 năm kinh nghiệm ... mua hàng, sourcing, quản lý sản phẩm'; 'đàm phán thương mại (giá, MOQ, lead time, Incoterms)'",
+    "JD#2: 'Không yêu cầu kinh nghiệm'; 'Tiếng Anh thành thạo'; 'R&D sản phẩm điện tử'",
+    "JD#3: 'Tối thiểu 2 năm kinh nghiệm quản lý/vận hành F&B'; 'PM, Product Lead'",
+    "JD#4: 'Ít nhất 3 năm làm Product Owner cho sản phẩm SaaS'; 'viết PRD'; 'AI tạo prototype HTML tương tác'",
+    "JD#5: 'Năm sinh từ 1990 - 1998'; 'Đã trực tiếp đưa ít nhất 01 sản phẩm digital từ 0→1'; 'funnel, cohort retention ... A/B Testing'; 'Figma'"
+  ],
+  "ghiChu": "JD gồm 2 hướng khác nhau: sourcing/quản lý nhà cung cấp điện tử và Product Owner/Manager phần mềm."
+}

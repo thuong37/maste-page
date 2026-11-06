@@ -1,0 +1,36 @@
+{
+  "id": 70,
+  "nhom": "Bất động sản",
+  "nghe": "Sales Bất động sản",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD nhân viên kinh doanh; 4/6 không yêu cầu hoặc dưới 1 năm kinh nghiệm, 1 JD 1 năm, 1 JD 2 năm; từ THPT/Trung cấp đến Đại học",
+  "muc": {
+    "anh-chan-dung": "nen — không JD đòi ảnh; 3/6 nêu độ tuổi (18-50, 22-35, 22-40); nghề gặp khách nên ảnh nghiêm túc là lợi thế (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "can — 3/6 JD nhấn mục tiêu thu nhập, khát khao thành công, mong muốn chinh phục nghề kinh doanh; nên nêu mục tiêu rõ",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD hỏi kinh nghiệm (4/6 chấp nhận chưa có); nên ghi sales/CSKH/BĐS đã làm và khu vực",
+    "hoc-van": "can — 6/6 nêu bậc học THPT, Trung cấp, Cao đẳng hoặc Đại học; không bắt buộc chuyên ngành",
+    "ky-nang-chuyen-mon": "can — 6/6: tìm kiếm, khai thác, tư vấn, chăm sóc khách hàng, đàm phán, chốt giao dịch, đăng tin, thị trường BĐS",
+    "ky-nang-mem": "can — 6/6: giao tiếp, thuyết phục, chủ động, trung thực, chịu áp lực doanh số, hướng ngoại",
+    "cong-cu-phan-mem": "nen — 3/6: laptop cá nhân, Word, Excel, Google Sheets, chạy marketing Facebook/Google, AI/ChatGPT",
+    "chung-chi": "can — 3/6 yêu cầu hoặc ưu tiên chứng chỉ hành nghề môi giới BĐS (JD#1, JD#3 bắt buộc, JD#6 lợi thế)",
+    "du-an": "nen — nhắc dự án BĐS ở phần mô tả sản phẩm; không JD đòi dự án cụ thể",
+    "thanh-tich-kpi": "can — 3/6 nhắc chỉ tiêu/áp lực doanh số, hoa hồng, thu nhập; CV nên có số liệu doanh số, số giao dịch",
+    "ngoai-ngu": "nen — 1/6 tiếng Anh giao tiếp cơ bản",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc; chỉ hữu ích nếu có danh hiệu sales xuất sắc",
+    "hoat-dong-ngoai-khoa": "nen — 4/6 nhận ứng viên không có kinh nghiệm (được đào tạo)",
+    "giay-phep": "nen — 1/6 yêu cầu phương tiện di chuyển cá nhân; 2/6 laptop",
+    "thong-tin-ca-nhan-mo-rong": "nen — 3/6 nêu độ tuổi; 1/6 phát âm chuẩn, diễn đạt trôi chảy; nên có độ tuổi, nơi ở (ưu tiên khu vực)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["sales bất động sản", "chăm sóc khách hàng", "chứng chỉ môi giới BĐS", "chỉ tiêu doanh số", "khai thác data khách hàng", "đàm phán", "tư vấn dự án", "hoa hồng", "giao tiếp"],
+  "bangChung": [
+    "JD#1: 'Có chứng chỉ hành nghề môi giới bất động sản còn hiệu lực'; 'chịu được áp lực doanh số'",
+    "JD#2: 'Trình độ: Không yêu cầu / Kinh nghiệm: Không yêu cầu'",
+    "JD#3: 'Có Chứng chỉ hành nghề môi giới bất động sản'; 'Microsoft Word, Excel, Google Sheets'; 'tiếng Anh giao tiếp cơ bản'",
+    "JD#4: 'Có mục tiêu rõ ràng về thu nhập'; 'Tuổi 22 - 35'",
+    "JD#5: 'Có Laptop và phương tiện di chuyển cá nhân'; JD#6: 'Phát âm chuẩn, Diễn đạt trôi chảy'"
+  ],
+  "ghiChu": "JD#3 trùng với JD ở #79 (Nhịp Cầu Việt)."
+}

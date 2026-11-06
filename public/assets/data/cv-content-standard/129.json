@@ -1,0 +1,36 @@
+{
+  "id": 129,
+  "nhom": "Logistics/Thu mua/Kho/Vận tải",
+  "nghe": "Thu mua/Mua hàng",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "5/6 JD cấp nhân viên mua hàng (1-3 năm), 1 JD trưởng nhóm mua hàng (4 năm, 1 năm quản lý); từ CĐ/ĐH; ngành thực phẩm/F&B, khí công nghiệp, PCCC-PPE, thiết bị công nghệ, hàng kỹ thuật tiếng Trung",
+  "muc": {
+    "anh-chan-dung": "nen — JD không đòi ảnh; JD#6 'chỉ tuyển nữ, yêu cầu ngoại hình ưa nhìn', JD#4 tuổi 23-35; ảnh chỉ là phụ đối với đa số JD",
+    "muc-tieu-nghe-nghiep": "nen — 2/6 nhắc mong muốn ổn định, gắn bó; nên nêu hướng thu mua theo ngành",
+    "kinh-nghiem-lam-viec": "can — 6/6 hỏi 1-5 năm mua hàng, ưu tiên thực phẩm/FMCG/chuỗi nhà hàng, thiết bị công nghệ, PCCC, nhập khẩu",
+    "hoc-van": "can — 6/6 nêu CĐ/ĐH, ngành Kinh tế, QTKD, Logistics, Thương mại, Công nghệ Thực phẩm, tiếng Trung",
+    "ky-nang-chuyen-mon": "can — tìm kiếm/đánh giá NCC, đàm phán giá/công nợ, lập PO/RFQ, theo dõi giao hàng, kiểm soát chất lượng đầu vào, hợp đồng, Incoterms, thủ tục nhập khẩu",
+    "ky-nang-mem": "can — 6/6: đàm phán, trung thực, cẩn thận, giao tiếp, xử lý tình huống, tư duy phân tích",
+    "cong-cu-phan-mem": "can — 5/6: Excel/MS Office, ERP/phần mềm mua hàng (lợi thế), kế toán",
+    "chung-chi": "nen — JD#1 hiểu ATVSTP, VietGAP, HACCP, ISO của NCC; JD#3 ISO là lợi thế; không JD nào đòi chứng chỉ của ứng viên",
+    "du-an": "nen — JD#3 mua hàng theo nhu cầu dự án; ít JD nhắc",
+    "thanh-tich-kpi": "nen — JD#1, JD#3 nhắc tối ưu chi phí/biên lợi nhuận; nên ghi % tiết giảm chi phí (suy từ công việc)",
+    "ngoai-ngu": "can — 4/6: tiếng Anh thành thạo (B trở lên), 4 kỹ năng; tiếng Trung thành thạo 4 kỹ năng (JD#6)",
+    "portfolio-link": "khong — không JD nào nhắc",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "khong — không JD nào nhắc (JD đòi kinh nghiệm)",
+    "giay-phep": "nen — JD#4 có khả năng đi công tác; không JD nào đòi bằng lái",
+    "thong-tin-ca-nhan-mo-rong": "nen — 2/6 nêu tuổi/giới tính (nữ; 23-35; 24-35)",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Mua hàng/Thu mua", "đánh giá nhà cung cấp", "đàm phán giá", "PO/RFQ", "Incoterms/nhập khẩu", "an toàn vệ sinh thực phẩm", "Excel", "tiếng Trung/Anh"],
+  "bangChung": [
+    "JD#1: 'kiểm tra hồ sơ pháp lý (ATVSTP, VietGAP, HACCP, ISO) của các nhà cung cấp'; 'Từ 01 – 02 năm kinh nghiệm ở vị trí Mua hàng'",
+    "JD#2: 'Sử dụng tiếng Anh thành thạo (Bằng B tiếng Anh trở lên)'; 'Sử dụng thành thạo MS Office'",
+    "JD#3: 'Tối thiểu 4 năm kinh nghiệm mua hàng, trong đó ít nhất 1 năm ở vị trí trưởng nhóm'; 'Hiểu biết về hợp đồng thương mại, Incoterms, thủ tục nhập khẩu'",
+    "JD#4: 'Tuổi từ 23 - 35'; 'Sử dụng thành thạo word, excel'",
+    "JD#6: 'Yêu cầu tiếng Trung thành thạo 4 kỹ năng'; 'Chỉ tuyển nữ, yêu cầu có ngoại hình ưa nhìn'"
+  ],
+  "ghiChu": "Yêu cầu ngoại hình/giới tính ghi nhận như dữ liệu JD."
+}

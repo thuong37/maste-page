@@ -1,0 +1,36 @@
+{
+  "id": 155,
+  "nhom": "Năng lượng/Môi trường/Nông nghiệp",
+  "nghe": "Nông/Lâm/Ngư nghiệp",
+  "soJD": 6,
+  "doTinCay": "cao",
+  "capBac": "6/6 JD cấp nhân viên kỹ sư nông nghiệp (2 JD không yêu cầu hoặc dưới 1 năm, 3 JD 1 năm, 1 JD 3 năm); từ Cao đẳng trở lên, 4/6 JD nêu Nam hoặc giới hạn tuổi",
+  "muc": {
+    "anh-chan-dung": "khong — không JD nào nhắc ảnh; 4/6 nêu giới tính/độ tuổi nhưng không nhắc ngoại hình; nghề thực địa nên ảnh không phải trọng tâm (suy từ tính chất công việc)",
+    "muc-tieu-nghe-nghiep": "nen — JD#4 'mong muốn gắn bó lâu dài', JD#6 'yêu thích công việc hướng dẫn'; nên nêu định hướng nông nghiệp bền vững/kỹ thuật cây trồng (suy)",
+    "kinh-nghiem-lam-viec": "can — 6/6 JD nhắc kinh nghiệm (ưu tiên): vườn ươm/cây xanh (JD#3), sầu riêng/cà phê/hồ tiêu (JD#5), làm việc với nông dân (JD#6), ngành nông nghiệp (JD#1); 2 JD nhận không kinh nghiệm",
+    "hoc-van": "can — 6/6 yêu cầu chuyên ngành: Nông nghiệp, Nông học, Khoa học cây trồng, Bảo vệ thực vật, Lâm nghiệp, Công nghệ sinh học (Cao đẳng/ĐH)",
+    "ky-nang-chuyen-mon": "can — 6/6: dinh dưỡng cây trồng, đất, phân bón, quản lý sâu bệnh, kỹ thuật canh tác/nhân giống, quy trình sản xuất, kiểm tra chất lượng, an toàn thực phẩm, tư vấn kỹ thuật cho nông dân",
+    "ky-nang-mem": "can — 6/6: giao tiếp, làm việc nhóm/độc lập, giải quyết vấn đề, chịu áp lực, trách nhiệm, ham học hỏi, xây dựng niềm tin với nông dân",
+    "cong-cu-phan-mem": "khong — không JD nào nhắc phần mềm; JD#5 nhắc email với nhà cung cấp nước ngoài",
+    "chung-chi": "khong — không JD nào nhắc chứng chỉ; chỉ nêu bằng cấp chuyên ngành",
+    "du-an": "nen — JD#2 chương trình canh tác lúa bền vững (AWD) và tập huấn nông dân, JD#4 kế hoạch sản xuất EcoFarm; chỉ 2/6 JD",
+    "thanh-tich-kpi": "nen — JD#2 'tư duy hướng đến kết quả cao, mục tiêu tham vọng'; JD#4 quản lý chi phí sản xuất; ghi sản lượng/diện tích/số hộ nông dân hỗ trợ nếu có (suy)",
+    "ngoai-ngu": "nen — chỉ JD#5 'Tiếng anh cơ bản' và đọc hiểu qua email với nhà cung cấp; 1/6 JD",
+    "portfolio-link": "khong — không JD nào nhắc; JD#6 nhắc livestream/video TikTok chia sẻ nông nghiệp nhưng không đòi link",
+    "giai-thuong": "khong — không JD nào nhắc",
+    "hoat-dong-ngoai-khoa": "nen — JD#4 không yêu cầu kinh nghiệm (22-28 tuổi), JD#2 dưới 1 năm; nghiên cứu/thực tập trang trại phù hợp ứng viên mới ra trường (suy)",
+    "giay-phep": "khong — không JD nào nhắc bằng lái; chỉ JD#5 'sẵn sàng đi thực địa, công tác'",
+    "thong-tin-ca-nhan-mo-rong": "nen — 4/6 JD nêu giới tính Nam hoặc độ tuổi (22-28, 25-60); nên ghi nơi ở/khả năng đi thực địa",
+    "so-thich": "khong — không JD nào nhắc"
+  },
+  "tuKhoaNenCo": ["Nông học", "khoa học cây trồng", "bảo vệ thực vật", "dinh dưỡng cây trồng", "quản lý sâu bệnh", "phân bón", "tư vấn kỹ thuật cho nông dân", "vườn ươm/nhân giống", "an toàn thực phẩm", "thực địa/đi công tác"],
+  "bangChung": [
+    "JD#1: 'Tốt nghiệp từ Cao đẳng trở lên, chuyên ngành Nông nghiệp, Khoa học Cây trồng'; 'kiến thức về quy trình sản xuất, kiểm tra chất lượng và an toàn thực phẩm'",
+    "JD#2: 'Tổ chức các cuộc hội thảo, tập huấn ... canh tác lúa theo hướng an toàn, bền vững'; 'Dưới 1 năm kinh nghiệm', Nam",
+    "JD#3: 'Ưu tiên có kinh nghiệm làm việc tại vườn ươm, công ty cây xanh hoặc đơn vị cảnh quan'",
+    "JD#5: 'Ưu tiên kinh nghiệm trên sầu riêng, cà phê, hồ tiêu, chanh dây'; 'Tiếng anh cơ bản'; 'Sẵn sàng đi thực địa'",
+    "JD#6: 'Hiểu sâu về dinh dưỡng cây trồng, phân bón'; 'Có kinh nghiệm thực tế làm việc với nông dân là một lợi thế'"
+  ],
+  "ghiChu": "6 JD đồng nhất vị trí kỹ sư nông nghiệp; ngành chủ yếu Nông/Lâm nghiệp trồng trọt, thủy sản chỉ xuất hiện ở tiêu đề JD#1 (nội dung chung chung)."
+}
